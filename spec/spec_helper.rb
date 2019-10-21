@@ -1,5 +1,5 @@
 require "bundler/setup"
-require "OpenActive"
+require "openactive"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure

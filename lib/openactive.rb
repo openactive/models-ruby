@@ -1,4 +1,4 @@
-require "OpenActive/version"
+require "openactive/version"
 
 module OpenActive
   class Error < StandardError; end
