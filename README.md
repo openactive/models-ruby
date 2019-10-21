@@ -1,13 +1,8 @@
-# models-ruby
+# OpenActive
+
 Ruby Models for the OpenActive Opportunity and Booking Specifications
 
 OpenActive aims to provide model files for all classes defined in its Opportunity and Booking specifications across the PHP, Ruby, and .NET languages. This repository is intended for the Ruby files; see also the [PHP](https://github.com/openactive/models-php) and [.NET](https://github.com/openactive/OpenActive.NET) implementations.
-
-# OpenActive
-
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/OpenActive`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
 
 ## Installation
 
