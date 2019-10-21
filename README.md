@@ -1,4 +1,4 @@
-# OpenActive
+# openactive gem - Ruby implementation of OpenActive's data model
 
 Ruby Models for the OpenActive Opportunity and Booking Specifications
 
