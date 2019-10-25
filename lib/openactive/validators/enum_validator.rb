@@ -7,7 +7,7 @@ module OpenActive
 
       # Coerce enum url to the enum instance
       #
-      # @param mixed $value Unum instance or URL
+      # @param value mixed Unum instance or URL
       # @return int The coerced enum
       def coerce(value)
         return value if value.is_a?(classname)
@@ -17,7 +17,7 @@ module OpenActive
 
       # Run validation on the given value.
       #
-      # @param mixed $value The value to validate.
+      # @param value mixed The value to validate.
       # @return bool Whether validation passes or not.
       def run(value)
         classname.find_by_value(value)
