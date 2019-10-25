@@ -7,7 +7,6 @@ module OpenActive
       #
       # @param value mixed The value to coerce.
       # @return int The coerced value
-
       def coerce(value)
         value.to_i
       end
@@ -16,7 +15,6 @@ module OpenActive
       #
       # @param value mixed The value to validate.
       # @return bool Whether validation passes or not.
-
       def run(value)
         Int(value)
         true

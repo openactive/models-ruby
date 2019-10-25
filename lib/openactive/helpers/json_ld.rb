@@ -5,8 +5,8 @@ module OpenActive
       #
       # @var array
       @default_context = [
-        "https:#openactive.io/",
-        "https:#openactive.io/ns-beta"
+        "https://openactive.io/",
+        "https://openactive.io/ns-beta"
       ].freeze
 
       # Returns the JSON-LD type from a given thing.

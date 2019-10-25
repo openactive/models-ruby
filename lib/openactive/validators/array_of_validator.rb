@@ -1,11 +1,7 @@
 module OpenActive
   module Validators
     class ArrayOfValidator < BaseValidator
-      # The validator of the single array item.
-      #
-      # @var ValidatorInterface
-
-      # protected $item_validator
+      attr_accessor :item_validator
 
       def initialize(item_validator)
         @item_validator = item_validator
@@ -67,8 +63,6 @@ module OpenActive
         end
         true
       end
-
-      attr_accessor :item_validator
     end
   end
 end

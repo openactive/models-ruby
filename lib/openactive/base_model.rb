@@ -52,7 +52,7 @@ module OpenActive
 
         if value.is_a?(Array)
           inst.instance_variable_set(attr_name, deserialize_value(value))
-        elsif is_object($value)
+        elsif value.is_a?(BaseModel)
           inst.instance_variable_set(attr_name, value.deserialize(value))
         elsif key != "@context" && key != "type"
           # Calling the setter will type-enforce it
@@ -100,7 +100,7 @@ module OpenActive
     # TODO: make this more Ruby-esque (to_h, to_hash, to_json)
     def self.serialize(obj)
       # Get data ready to be encoded
-      data = JsonLdHelper.prepare_data_for_serialization(obj)
+      data = ::OpenActive::Helpers::JsonLd.prepare_data_for_serialization(obj)
 
       data.to_json
     end

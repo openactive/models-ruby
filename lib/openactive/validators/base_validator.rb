@@ -7,7 +7,6 @@ module OpenActive
       #
       # @param value mixed The value to coerce.
       # @return mixed The same value.
-
       def coerce(value)
         # For all the classes that inherit BaseValidator
         # that don't need to coerce,
@@ -19,7 +18,6 @@ module OpenActive
       #
       # @param value mixed The value to validate.
       # @return bool Whether validation passes or not.
-
       def run(_value)
         false
       end
@@ -28,7 +26,6 @@ module OpenActive
       #
       # @param string The type name
       # @return ::OpenActive::Validators::ValidatorInterface
-
       def self.get_validator(type)
         # If last 2 characters are "[]"
         # We are validating an array
