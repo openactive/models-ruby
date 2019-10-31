@@ -1,7 +1,7 @@
 module OpenActive
   class BaseModel
-    include ActiveModel::Model
-    include ActiveModel::Serialization
+    # include ActiveModel::Model
+    # include ActiveModel::Serialization
 
     # Gets or sets the identifier used to uniquely identify things that are being described in the document with
     # IRIs or blank node identifiers.
@@ -40,15 +40,15 @@ module OpenActive
     #
     def self.deserialize(data)
       # If a string is provided, we attempt JSON-decoding first
-      data = json_decode(data, true) if data.is_a?(String)
+      data = JSON.parse(data) if data.is_a?(String)
 
       inst = new
 
       # If data provided is not an array, return an empty class
-      return inst unless data.is_a?(Array) || data.data.is_a?(Hash)
+      return inst unless data.is_a?(Array) || data.is_a?(Hash)
 
       data.each do |key, value|
-        attr_name = key.underscore
+        attr_name = key.methodize
 
         if value.is_a?(Array)
           inst.instance_variable_set(attr_name, deserialize_value(value))
@@ -86,7 +86,7 @@ module OpenActive
 
         # If providing a non-associative array
         # Loop through it and serialize each item if needed
-        value.each do |idx, item|
+        value.each_with_index do |item, idx|
           value[idx] = deserialize_value(item)
         end
       end
@@ -102,7 +102,7 @@ module OpenActive
       # Get data ready to be encoded
       data = ::OpenActive::Helpers::JsonLd.prepare_data_for_serialization(obj)
 
-      data.to_json
+      # data.to_json
     end
   end
 end

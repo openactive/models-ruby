@@ -1,7 +1,5 @@
 module OpenActive
   module Validators
-    use OpenActive::Helpers::DateTime as DateTimeHelper
-
     class DateTimeValidator < BaseValidator
       # Coerce given value to the type the validator is validating against.
       # PLEASE NOTE: no checks are performed on the given $value.
