@@ -5,7 +5,7 @@ module OpenActive
   require "openactive/version"
 
   require "openactive/concerns/type_checker"
-  require "openactive/concerns/attribute"
+  require "openactive/concerns/json_ld_serializable"
 
   require "openactive/exceptions/invalid_argument_exception"
 

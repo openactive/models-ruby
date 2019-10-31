@@ -1,5 +1,6 @@
 module OpenActive
   class BaseModel
+    include OpenActive::Concerns::JsonLdSerializable
     # include ActiveModel::Model
     # include ActiveModel::Serialization
 
@@ -12,6 +13,7 @@ module OpenActive
     #
     # @var string
     attr_accessor :id
+    property :id, as: "id"
 
     # Gets the context used to define the short-hand names that are used throughout a JSON-LD document.
     # These short-hand names are called terms and help developers to express specific identifiers in a compact

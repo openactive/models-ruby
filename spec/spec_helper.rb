@@ -1,6 +1,6 @@
+require "byebug"
 require "openactive"
 require "rspec/json_expectations"
-require "byebug"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure

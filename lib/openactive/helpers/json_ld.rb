@@ -33,11 +33,6 @@ module OpenActive
         # (BaseModel's are all protected)
         # class_methods = obj.methods
 
-        # Get fully qualified namespace of the object's class name
-        # fq_classname = "\\"+get_class(obj)
-
-        fq_classname = obj.class.name
-
         data = obj.values
         #
         # # Add type to data if not an RpdeItem
@@ -52,7 +47,6 @@ module OpenActive
         # and no parent, or parent is an RPDE item
         data["@context"] = @@default_context if
         obj.is_a?(::OpenActive::BaseModel) &&
-
         parent.nil?
 
         # ||
@@ -63,56 +57,39 @@ module OpenActive
 
         # Loop all class methods, find the getters
         # and map defined attributes, normalizing attribute name
-        data.each do |method_name, attr_value|
+        data = Hash[data.map do |method_name, attr_value|
           attr_name = method_name
 
-          if attr_value.is_a?(Array)
-            # If attribute value is an array,
-            # get data for serialization from each of the item.
-            attr_value = attr_value.map do |item|
-              if item.is_a?(::OpenActive::Concerns::Attribute)
-                item = prepare_data_for_serialization(
-                  item,
-                  attr_value,
-                )
-              end
+          attr_value = self.serialize_value(attr_value, obj)
 
-              item
-            end
-            data[attr_name] = attr_value
-          elsif attr_value.is_a?(::OpenActive::Concerns::Attribute)
-            # If attribute value is an object,
-            # get the data for the individual object
-
-            # Get fully qualified namespace of the item's class name
-            fq_classname = attr.class.name
-
-            # attr_value = case fq_classname
-            #              when "\\DateInterval"
-            #                # Get interval spec string, e.g. "P1D"
-            #                DateIntervalHelper.specString(attr_value)
-            #              when "\\DateTime"
-            #                # Get ISO 8601 date time representation,
-            #                # e.g. "2019-01-01T00:00:00-08:00"
-            #                DateTimeHelper.iso8601(attr_value)
-            #              else
-            #                prepare_data_for_serialization(
-            #                  attr_value,
-            #                  obj,
-            #                )
-            #              end
-
-            data[attr_name] = attr_value
-          end
-        end
+          [attr_name.to_s, attr_value]
+        end]
 
         # Remove empty elements
         Hash[data.select do |_key, value|
           next false if value.is_a?(Array) && value.length === 0
-
-          # next false if value.empty?
+          next false if value === nil
           true
         end]
+      end
+
+      private
+
+      def self.serialize_value(value, parent)
+        if value.respond_to?(:iso8601)
+          value.iso8601
+        elsif value.is_a?(Array)
+          value.map do |item|
+            self.serialize_value(item, parent)
+          end
+        elsif value.is_a?(OpenActive::BaseModel)
+          prepare_data_for_serialization(
+            value,
+            parent,
+            )
+        else
+          value
+        end
       end
     end
   end
