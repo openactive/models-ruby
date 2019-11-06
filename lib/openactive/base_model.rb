@@ -1,8 +1,23 @@
 module OpenActive
   class BaseModel
     include OpenActive::Concerns::JsonLdSerializable
-    # include ActiveModel::Model
-    # include ActiveModel::Serialization
+    include OpenActive::Concerns::TypeChecker
+    # class << self
+    #   extend OpenActive::Concerns::TypeChecker::PrependedClassMethods
+    # end
+
+    def initialize(attributes = {})
+      assign_attributes(attributes) if attributes
+
+      super()
+    end
+
+    def assign_attributes(attributes)
+      attributes.each do |k, v|
+        setter = "#{k}="
+        public_send(setter, v) if respond_to?(setter)
+      end
+    end
 
     # Gets or sets the identifier used to uniquely identify things that are being described in the document with
     # IRIs or blank node identifiers.
@@ -27,12 +42,13 @@ module OpenActive
     # is not a reserved JSON-LD keyword can be used as a term.
     #
     # @var string[]
-    context = [
-      "https://openactive.io/",
-      "https://openactive.io/ns-beta"
-    ]
-
     attr_accessor :context
+    def context
+      @context ||= [
+        "https://openactive.io/",
+        "https://openactive.io/ns-beta"
+      ]
+    end
 
     ##
     # Returns an object from a given JSON-LD representation.
@@ -50,12 +66,16 @@ module OpenActive
       return inst unless data.is_a?(Array) || data.is_a?(Hash)
 
       data.each do |key, value|
-        attr_name = key.methodize
+        attr_name = key.underscore
 
-        if value.is_a?(Array)
-          inst.instance_variable_set(attr_name, deserialize_value(value))
+        attr_name = attr_name[1..] if attr_name.start_with?('@')
+
+        inst_var_name = :"@#{attr_name}"
+
+        if value.is_a?(Array) || value.is_a?(Hash)
+          inst.instance_variable_set(inst_var_name, deserialize_value(value))
         elsif value.is_a?(BaseModel)
-          inst.instance_variable_set(attr_name, value.deserialize(value))
+          inst.instance_variable_set(inst_var_name, value.deserialize(value))
         elsif key != "@context" && key != "type"
           # Calling the setter will type-enforce it
           inst.send("#{attr_name}=", value)
@@ -88,8 +108,8 @@ module OpenActive
 
         # If providing a non-associative array
         # Loop through it and serialize each item if needed
-        value.each_with_index do |item, idx|
-          value[idx] = deserialize_value(item)
+        value = value.map do |item|
+          deserialize_value(item)
         end
       end
       value
@@ -105,6 +125,14 @@ module OpenActive
       data = ::OpenActive::Helpers::JsonLd.prepare_data_for_serialization(obj)
 
       # data.to_json
+    end
+
+    def serialize
+      self.class.serialize(self)
+    end
+
+    def to_json(*_args)
+      serialize.to_json
     end
   end
 end

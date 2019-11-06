@@ -3,7 +3,7 @@ module OpenActive
     class RpdeEnumValidator < BaseValidator
       attr_accessor :classname
 
-      def initializer(classname)
+      def initialize(classname)
         @classname = classname
       end
 

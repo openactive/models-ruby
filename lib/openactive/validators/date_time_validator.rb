@@ -37,8 +37,8 @@ module OpenActive
       private
 
       FORMATS = [
-        "Y-m-d::TH:i:sP", # ISO 8601 date-time format
-        "Y-m-d" # date ISO 8601 format
+        "%Y-%m-%dT%H:%M:%S%z", # ISO 8601 date-time format
+        "%Y-%m-%d" # date ISO 8601 format
       ].freeze
 
       def parse_date(value)

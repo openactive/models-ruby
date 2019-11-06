@@ -37,7 +37,7 @@ module OpenActive
 
       def to_h
         data = {}
-        self.class.properties.each do |key, field:|
+        self.class.properties.each do |_key, field:|
           data[field] = send(field)
         end
         data

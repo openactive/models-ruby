@@ -60,7 +60,7 @@ module OpenActive
         data = Hash[data.map do |method_name, attr_value|
           attr_name = method_name
 
-          attr_value = self.serialize_value(attr_value, obj)
+          attr_value = serialize_value(attr_value, obj)
 
           [attr_name.to_s, attr_value]
         end]
@@ -68,7 +68,8 @@ module OpenActive
         # Remove empty elements
         Hash[data.select do |_key, value|
           next false if value.is_a?(Array) && value.length === 0
-          next false if value === nil
+          next false if value.nil?
+
           true
         end]
       end
@@ -80,13 +81,13 @@ module OpenActive
           value.iso8601
         elsif value.is_a?(Array)
           value.map do |item|
-            self.serialize_value(item, parent)
+            serialize_value(item, parent)
           end
         elsif value.is_a?(OpenActive::BaseModel)
           prepare_data_for_serialization(
             value,
             parent,
-            )
+          )
         else
           value
         end

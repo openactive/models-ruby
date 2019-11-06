@@ -16,7 +16,7 @@ module OpenActive
       # @param value mixed The value to validate.
       # @return bool Whether validation passes or not.
       def run(value)
-        Int(value)
+        Integer(value)
         true
       rescue ArgumentError => _e
         false

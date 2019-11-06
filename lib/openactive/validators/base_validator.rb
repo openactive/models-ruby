@@ -37,50 +37,45 @@ module OpenActive
           item_type = type[0...-2]
 
           # Instantiate validator
-          return ArrayOfValidator.new(get_validator(itemType))
+          return ArrayOfValidator.new(get_validator(item_type))
         end
 
         # If first letter of type is a lower case letter
         # We are validating a native type
-        if ctype_lower(substr(type, 0, 1)) === true
+        if type.match(/^[[:lower:]]/)
           # Build item validator name (FQ)
-          className = "#{type.canonicalize}Validator"
-          validator = ::OpenActive::Validators.get_const(validator)
+          class_name = "#{type.classify}Validator"
+          validator = ::OpenActive::Validators.const_get(class_name)
 
-          return validatorName.new
+          return validator.new
         end
+
+        return if type == "URI"
 
         return DateTimeValidator.new if type === "DateTime"
 
         return DateIntervalValidator.new if type === "DateInterval"
 
+        # everything beyond this we're dealing with actual classes.. hopefully
+        klass = Object.const_get(type)
+
+        return EnumValidator.new(klass) if klass.ancestors.include?(TypesafeEnum::Base)
+
         # If type is an OpenActive Enum
-        return EnumValidator.new(type) if strpos(type, "::OpenActive::Enums") === 0
+        # return EnumValidator.new(type) if strpos(type, "::OpenActive::Enums") === 0
 
         # If type is an OpenActive RPDE class
-        if
-        type === "::OpenActive::Rpde::RpdeKind" ||
-        type === "::OpenActive::Rpde::RpdeState"
-
-          return RpdeEnumValidator.new(type)
-        end
+        # if
+        # type === "::OpenActive::Rpde::RpdeKind" ||
+        # type === "::OpenActive::Rpde::RpdeState"
+        #
+        #   return RpdeEnumValidator.new(type)
+        # end
 
         # If type is an OpenActive BaseModel class
-        return BaseModelValidator.new if type === "::OpenActive::BaseModel"
+        return BaseModelValidator.new if klass == OpenActive::BaseModel
 
-        classname = nil
-        # If providing an OpenActive class
-        # just check if it's the right instance
-        classname = if strpos(type, "::OpenActive::") === 0
-                      type
-                    else
-                      # Add OpenActive's namespace
-                      # and force global namespace on class
-                      # TODO: check whether it's SchemaOrg or OA's?
-                      "::OpenActive::Models::".type
-                    end
-
-        InstanceValidator.new(classname)
+        InstanceValidator.new(klass)
       end
     end
   end
