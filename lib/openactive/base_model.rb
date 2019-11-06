@@ -13,10 +13,20 @@ module OpenActive
     end
 
     def assign_attributes(attributes)
-      attributes.each do |k, v|
-        setter = "#{k}="
-        public_send(setter, v) if respond_to?(setter)
+      # attributes.each do |k, v|
+      #   setter = "#{k}="
+      #   public_send(setter, v) if respond_to?(setter)
+      # end
+
+      attributes.each do |key, value|
+        set_property(key, value)
       end
+    end
+
+    def self.define_property(property, types:nil, as:nil)
+      attr_accessor property
+      property property, as: as if as
+      validate_property property, types: types if types
     end
 
     # Gets or sets the identifier used to uniquely identify things that are being described in the document with
@@ -50,6 +60,25 @@ module OpenActive
       ]
     end
 
+    def set_property(key, value)
+      attr_name = key.to_s.underscore
+
+      attr_name = attr_name[1..] if attr_name.start_with?('@')
+
+      inst_var_name = :"@#{attr_name}"
+
+      if value.is_a?(Array) || value.is_a?(Hash)
+        # self.instance_variable_set(inst_var_name, deserialize_value(value))
+        self.send("#{attr_name}=", deserialize_value(value))
+      elsif value.is_a?(BaseModel)
+        # self.instance_variable_set(inst_var_name, value.deserialize(value))
+        self.send("#{attr_name}=", value.class.deserialize(value))
+      elsif key != "@context" && key != "type"
+        # Calling the setter will type-enforce it
+        self.send("#{attr_name}=", value)
+      end
+    end
+
     ##
     # Returns an object from a given JSON-LD representation.
     #
@@ -66,36 +95,33 @@ module OpenActive
       return inst unless data.is_a?(Array) || data.is_a?(Hash)
 
       data.each do |key, value|
-        attr_name = key.underscore
-
-        attr_name = attr_name[1..] if attr_name.start_with?('@')
-
-        inst_var_name = :"@#{attr_name}"
-
-        if value.is_a?(Array) || value.is_a?(Hash)
-          inst.instance_variable_set(inst_var_name, deserialize_value(value))
-        elsif value.is_a?(BaseModel)
-          inst.instance_variable_set(inst_var_name, value.deserialize(value))
-        elsif key != "@context" && key != "type"
-          # Calling the setter will type-enforce it
-          inst.send("#{attr_name}=", value)
-        end
+        inst.set_property(key, value)
       end
 
       inst
+    end
+
+    def deserialize(*data)
+      self.class.deserialize(data)
     end
 
     # Returns a value from a given JSON-LD deserialized array.
     #
     # @param value mixed If an array is provided, we recursively deserialize it
     # @return mixed
-    def self.deserialize_value(value)
+    def deserialize_value(value)
       if value.is_a?(Hash)
         # If an associative array with a type, return its deserialization form,
         # so that it gets converted from array to object
         # (associative arrays are still arrays in PHP)
         if value.key?("type")
-          klass = ::OpenActive::Models.const_get(value["type"])
+
+          type = value["type"]
+
+          # only schema is in a subdir, everything else is flat
+          type = type.split(":")[1] if (type.include?(':') && !type.start_with?("schema:"))
+
+          klass = ::OpenActive::Models.const_get(type)
 
           return klass.deserialize(value)
         end
