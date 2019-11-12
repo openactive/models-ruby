@@ -45,9 +45,7 @@ module OpenActive
 
         # Only add context if object is subclass of BaseModel
         # and no parent, or parent is an RPDE item
-        data["@context"] = @@default_context if
-        obj.is_a?(::OpenActive::BaseModel) &&
-        parent.nil?
+        data["@context"] = obj.context if obj.respond_to?(:context) && parent.nil?
 
         # ||
         # (
@@ -69,6 +67,7 @@ module OpenActive
         Hash[data.select do |_key, value|
           next false if value.is_a?(Array) && value.length === 0
           next false if value.nil?
+          next false if value == ""
 
           true
         end]
@@ -79,6 +78,8 @@ module OpenActive
       def self.serialize_value(value, parent)
         if value.respond_to?(:iso8601)
           value.iso8601
+        elsif value.is_a?(TypesafeEnum::Base)
+          value.value
         elsif value.is_a?(Array)
           value.map do |item|
             serialize_value(item, parent)

@@ -54,6 +54,8 @@ RSpec.describe OpenActive::Models::Order do
       "taxCalculationExcluded",
       "bookingService",
       "totalPaymentDue",
+      "orderProposalVersion",
+      "totalPaymentTax"
     ]
 
     # Serialize the order and JSON-decode it

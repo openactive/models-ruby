@@ -38,8 +38,10 @@ module OpenActive
       # @param value mixed
       # @param types string[]
       # @return bool
-      # @throws \OpenActive\Exceptions\InvalidArgumentException If the provided argument is not of a supported type.
+      # @throws OpenActive::Exceptions::InvalidArgumentException If the provided argument is not of a supported type.
       def check_types(value, types:)
+        # return value
+
         validators = types.map { |type| OpenActive::Validators::BaseValidator.get_validator(type) }.compact
 
         return value if validators.empty?
@@ -52,9 +54,11 @@ module OpenActive
           end
         end
 
+        debugger
+
         # If validation does not pass for any of the provided types,
         # type invalid
-        raise StandardError, "The first argument type does not match any of the declared parameter types (" + types.join(",") + ") for " + value.to_json + "."
+        raise StandardError, "The first argument type does not match any of the declared parameter types (#{types.join(",")}) for #{value.to_s} (#{value.to_h})."
       end
     end
   end

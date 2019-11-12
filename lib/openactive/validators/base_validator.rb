@@ -29,12 +29,12 @@ module OpenActive
       def self.get_validator(type)
         # If last 2 characters are "[]"
         # We are validating an array
-        is_type_array = type[-2..] == "[]"
-
-        if is_type_array == true
+        if type.end_with?('[]')
           # Build item validator name
           # (remove last 2 characters "[]")
           item_type = type[0...-2]
+
+          # debugger
 
           # Instantiate validator
           return ArrayOfValidator.new(get_validator(item_type))

@@ -1,6 +1,6 @@
 require 'json'
-require 'facets/string/methodize'
 require 'active_support/duration'
+require 'active_support/core_ext/date_time'
 
 module OpenActive
   require "openactive/version"

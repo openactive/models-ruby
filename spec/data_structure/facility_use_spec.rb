@@ -12,7 +12,7 @@ RSpec.describe OpenActive::Models::FacilityUse do
   # @return void
   it "facility use is an array" do
     expect(inst.event).not_to be_nil
-    expect(inst).to be_a(Array)
+    expect(inst.event).to be_a(Array)
   end
 
   # Test that has the correct properties.

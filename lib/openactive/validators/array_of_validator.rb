@@ -28,6 +28,8 @@ module OpenActive
         # }
 
         # Otherwise this is a no-op
+        # return [value] unless  value.is_a?(Array)
+
         value
       end
 
@@ -50,6 +52,8 @@ module OpenActive
         # }
 
         # Check if value is an array
+        return true if item_validator.run(value) === true
+
         return false if ArrayValidator.new.run(value) === false
 
         value.each do |item|

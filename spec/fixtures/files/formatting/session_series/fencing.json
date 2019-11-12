@@ -23,6 +23,7 @@
     "taxMode":"https://openactive.io/TaxGross",
     "vatID":"12345",
     "address":{
+      "type": "PostalAddress",
       "addressCountry":"United Kingdom",
       "addressLocality":"Pimlico",
       "postalCode":"SW55 P23",
@@ -30,6 +31,7 @@
     }
   },
   "ageRange":{
+    "type": "QuantitativeValue",
     "minValue":11,
     "maxValue":17
   },
