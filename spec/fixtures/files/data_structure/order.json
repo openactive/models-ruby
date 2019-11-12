@@ -38,12 +38,11 @@
           "type":"Place",
           "name":"Pimlico Fencing Club Suite"
         },
-        "organizer":[
+        "organizer":
           {
             "type":"Organization",
             "name":"Pimlico Fencing Club"
           }
-        ]
       },
       "acceptedOffer":{
         "type":"Offer",
@@ -64,6 +63,7 @@
     "taxMode":"https://openactive.io/TaxGross",
     "vatID":"12345",
     "address":{
+      "type": "PostalAddress",
       "addressCountry":"United Kingdom",
       "addressLocality":"Pimlico",
       "postalCode":"SW55 P23",

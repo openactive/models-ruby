@@ -78,6 +78,8 @@ module OpenActive
       def self.serialize_value(value, parent)
         if value.respond_to?(:iso8601)
           value.iso8601
+        elsif value.is_a?(TypesafeEnum::Base)
+          value.value
         elsif value.is_a?(Array)
           value.map do |item|
             serialize_value(item, parent)

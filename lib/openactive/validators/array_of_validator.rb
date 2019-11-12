@@ -28,7 +28,7 @@ module OpenActive
         # }
 
         # Otherwise this is a no-op
-        return [value] unless  value.is_a?(Array)
+        # return [value] unless  value.is_a?(Array)
 
         value
       end

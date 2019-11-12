@@ -23,7 +23,7 @@ module OpenActive
       end
     end
 
-    def self.define_property(property, types:nil, as:nil)
+    def self.define_property(property, types: nil, as: nil)
       attr_accessor property
       property property, as: as if as
       validate_property property, types: types if types
@@ -53,6 +53,7 @@ module OpenActive
     #
     # @var string[]
     attr_accessor :context
+
     def context
       @context ||= [
         "https://openactive.io/",
@@ -65,17 +66,17 @@ module OpenActive
 
       attr_name = attr_name[1..] if attr_name.start_with?('@')
 
-      inst_var_name = :"@#{attr_name}"
+      val = value
 
       if value.is_a?(Array) || value.is_a?(Hash)
-        # self.instance_variable_set(inst_var_name, deserialize_value(value))
-        self.send("#{attr_name}=", deserialize_value(value))
-      elsif value.is_a?(BaseModel)
-        # self.instance_variable_set(inst_var_name, value.deserialize(value))
-        self.send("#{attr_name}=", value.class.deserialize(value))
-      elsif key != "@context" && key != "type"
+        val = deserialize_value(value)
+      # elsif value.is_a?(BaseModel)
+      #   val = value.class.deserialize(value)
+      end
+
+      if key != "@context" && key != "type"
         # Calling the setter will type-enforce it
-        self.send("#{attr_name}=", value)
+        self.send("#{attr_name}=", val)
       end
     end
 
@@ -123,7 +124,11 @@ module OpenActive
 
           klass = ::OpenActive::Models.const_get(type)
 
-          return klass.deserialize(value)
+          inst = klass.deserialize(value)
+
+          # debugger if klass == OpenActive::Models::Place
+
+          return inst
         end
       elsif value.is_a?(Array)
         # NOTE: OpenActive is more strict than schema.org in this regard, so commenting out this for now

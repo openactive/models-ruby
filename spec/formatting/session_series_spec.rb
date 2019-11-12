@@ -22,25 +22,23 @@ RSpec.describe 'Session Series' do
     describe 'date time handling' do
       let (:start_date) { series.sub_event.start_date }
       let (:end_date) { series.sub_event.end_date }
-      let (:duration) { start_date.diff(end_date) }
+      let (:duration) { series.duration }
 
       it 'has correct start date' do
-        expect(start_date.iso8601).to eq(series_json["subEvent"]["startDate"])
+        expect(start_date).to eq(DateTime.parse(series_json["subEvent"]["startDate"]))
       end
 
       it "has correct end date" do
-        expect(end_date.iso8601).to eq(series_json["subEvent"]["endDate"])
+        expect(end_date).to eq(DateTime.parse(series_json["subEvent"]["endDate"]))
       end
 
       it "has a valid duration" do
         expect(duration.iso8601).to eq(series_json["duration"])
       end
 
-      # TODO: Check duration field is same as difference between start and end date
-      # $this->assertEquals(
-      #     DateIntervalHelper::specString($duration),
-      #     DateIntervalHelper::specString($dateDifference)
-      # )}
+      it "has a duration that matches up with start and end" do
+        expect(duration.since(start_date)).to eq(end_date)
+      end
     end
 
     # Test are URLs are in correct format.

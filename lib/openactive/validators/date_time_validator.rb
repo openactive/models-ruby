@@ -36,18 +36,9 @@ module OpenActive
 
       private
 
-      FORMATS = [
-        "%Y-%m-%dT%H:%M:%S%z", # ISO 8601 date-time format
-        "%Y-%m-%d" # date ISO 8601 format
-      ].freeze
-
       def parse_date(value)
-        FORMATS.each do |format|
-          return DateTime.strptime(value, format)
-        rescue ArgumentError => _e
-          nil
-        end
-
+        DateTime.parse(value)
+      rescue ArgumentError => _e
         nil
       end
     end

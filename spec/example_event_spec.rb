@@ -90,7 +90,7 @@ RSpec.describe "Example Event" do
         name: "Virtual BODYPUMP",
         description: "This is the virtual version of the original barbell class, which will help you get lean, toned and fit - fast. Les Mills™ Virtual classes are designed for people who cannot get access to our live classes or who want to get a ‘taste’ of a Les Mills™ class before taking a live class with an instructor. The classes are played on a big video screen, with dimmed lighting and pumping surround sound, and are led onscreen by the people who actually choreograph the classes.",
         duration: ActiveSupport::Duration.parse("P1D"),
-        start_date: DateTime.parse("2017-04-24 19:30:00T-08:00"),
+        start_date: DateTime.parse("2017-04-24T19:30:00-08:00"),
         location: OpenActive::Models::Place.new(
           name: "Santa Clara City Library, Central Park Library",
           address: OpenActive::Models::PostalAddress.new(
@@ -106,13 +106,13 @@ RSpec.describe "Example Event" do
             url: "http://www.example.com/event_image/12345",
           )
         ],
-        end_date: DateTime.parse("2017-04-24 23:00:00T-08:00"),
+        end_date: DateTime.parse("2017-04-24T23:00:00-08:00"),
         offers: [
-          OpenActive::Models::IndicativeOffer.new(
+          OpenActive::Models::Offer.new(
             url: "https://www.example.com/event_offer/12345_201803180430",
             price: 30,
             price_currency: "USD",
-            valid_from: DateTime.parse("2017-01-20 16:20:00T-08:00"),
+            valid_from: DateTime.parse("2017-01-20T16:20:00-08:00"),
           )
         ],
         attendee_instructions: "Ensure you bring trainers and a bottle of water.",

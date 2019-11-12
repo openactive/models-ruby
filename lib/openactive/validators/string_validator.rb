@@ -8,7 +8,7 @@ module OpenActive
       # @param value mixed The value to coerce.
       # @return mixed The same value.
       def coerce(value)
-        value.to_s
+        value
       end
 
       # Run validation on the given value.
