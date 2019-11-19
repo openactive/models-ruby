@@ -54,11 +54,12 @@ module OpenActive
           end
         end
 
-        debugger
+        val = value.to_s
+        val += " (#{val.to_h})" if val.respond_to?(:to_h)
 
         # If validation does not pass for any of the provided types,
         # type invalid
-        raise StandardError, "The first argument type does not match any of the declared parameter types (#{types.join(",")}) for #{value.to_s} (#{value.to_h})."
+        raise StandardError, "The first argument type does not match any of the declared parameter types (#{types.join(',')}) for #{val}."
       end
     end
   end

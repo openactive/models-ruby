@@ -61,7 +61,7 @@ RSpec.describe 'Session Series' do
       end
 
       it "has correct value for sub event url" do
-        expect(series.sub_event.url).to eq(series_json["subEvent"]["url"])
+        expect(series.sub_event.url.to_s).to eq(series_json["subEvent"]["url"])
       end
     end
   end

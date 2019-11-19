@@ -70,13 +70,13 @@ module OpenActive
 
       if value.is_a?(Array) || value.is_a?(Hash)
         val = deserialize_value(value)
-      # elsif value.is_a?(BaseModel)
-      #   val = value.class.deserialize(value)
+        # elsif value.is_a?(BaseModel)
+        #   val = value.class.deserialize(value)
       end
 
       if key != "@context" && key != "type"
         # Calling the setter will type-enforce it
-        self.send("#{attr_name}=", val)
+        send("#{attr_name}=", val)
       end
     end
 
@@ -120,13 +120,11 @@ module OpenActive
           type = value["type"]
 
           # only schema is in a subdir, everything else is flat
-          type = type.split(":")[1] if (type.include?(':') && !type.start_with?("schema:"))
+          type = type.split(":")[1] if type.include?(':') && !type.start_with?("schema:")
 
           klass = ::OpenActive::Models.const_get(type)
 
           inst = klass.deserialize(value)
-
-          # debugger if klass == OpenActive::Models::Place
 
           return inst
         end
@@ -152,10 +150,7 @@ module OpenActive
     # @return string JSON-LD string representation of the given instance.
     # TODO: make this more Ruby-esque (to_h, to_hash, to_json)
     def self.serialize(obj)
-      # Get data ready to be encoded
-      data = ::OpenActive::Helpers::JsonLd.prepare_data_for_serialization(obj)
-
-      # data.to_json
+      ::OpenActive::Helpers::JsonLd.prepare_data_for_serialization(obj)
     end
 
     def serialize

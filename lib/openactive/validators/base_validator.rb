@@ -34,8 +34,6 @@ module OpenActive
           # (remove last 2 characters "[]")
           item_type = type[0...-2]
 
-          # debugger
-
           # Instantiate validator
           return ArrayOfValidator.new(get_validator(item_type))
         end
@@ -50,7 +48,7 @@ module OpenActive
           return validator.new
         end
 
-        return if type == "URI"
+        return UriValidator.new if type == "URI"
 
         return DateTimeValidator.new if type === "DateTime"
 
@@ -60,9 +58,6 @@ module OpenActive
         klass = Object.const_get(type)
 
         return EnumValidator.new(klass) if klass.ancestors.include?(TypesafeEnum::Base)
-
-        # If type is an OpenActive Enum
-        # return EnumValidator.new(type) if strpos(type, "::OpenActive::Enums") === 0
 
         # If type is an OpenActive RPDE class
         # if

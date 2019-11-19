@@ -89,8 +89,10 @@ module OpenActive
             value,
             parent,
           )
-        else
+        elsif value.is_a?(Numeric)
           value
+        else
+          value.to_s
         end
       end
     end
