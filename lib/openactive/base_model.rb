@@ -23,10 +23,14 @@ module OpenActive
       end
     end
 
-    def self.define_property(property, types: nil, as: nil)
+    def self.define_property(property, types: nil, as: nil, default: nil)
       attr_accessor property
       property property, as: as if as
       validate_property property, types: types if types
+
+      define_method property do
+        instance_variable_get("@#{property}") || default
+      end if default
     end
 
     # Gets or sets the identifier used to uniquely identify things that are being described in the document with
