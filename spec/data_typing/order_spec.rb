@@ -21,9 +21,8 @@ RSpec.describe OpenActive::Models::Order do
   end
 
   describe "Primitive type validation" do
-    it "returns a float for price", pending: "floats are terrible for money" do
-      # TODO: really not comfortable with this, use a BigDecimal instead
-      expect(order.ordered_item.first.unit_tax_specification.first.price).to be_a(Float)
+    it "returns a BigDecimal for price" do
+      expect(order.ordered_item.first.unit_tax_specification.first.price).to be_a(BigDecimal)
     end
 
     it "returns int for event maximum uses" do

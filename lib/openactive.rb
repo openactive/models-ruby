@@ -24,6 +24,7 @@ module OpenActive
   require "openactive/validators/instance_validator"
   require "openactive/validators/int_validator"
   require "openactive/validators/null_validator"
+  require "openactive/validators/number_validator"
   require "openactive/validators/rpde_enum_validator"
   require "openactive/validators/string_validator"
   require "openactive/validators/uri_validator"

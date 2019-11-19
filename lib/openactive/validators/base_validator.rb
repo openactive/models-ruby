@@ -48,11 +48,19 @@ module OpenActive
           return validator.new
         end
 
-        return UriValidator.new if type == "URI"
+        validator =
+          case type
+          when "URI"
+            UriValidator.new
+          when "DateTime"
+            DateTimeValidator.new
+          when "DateInterval"
+            DateIntervalValidator.new
+          when "Number"
+            NumberValidator.new
+          end
 
-        return DateTimeValidator.new if type === "DateTime"
-
-        return DateIntervalValidator.new if type === "DateInterval"
+        return validator if validator
 
         # everything beyond this we're dealing with actual classes.. hopefully
         klass = Object.const_get(type)
