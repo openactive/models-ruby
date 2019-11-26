@@ -1,10 +1,10 @@
 RSpec.describe "RPDE" do
   let(:session_series_event) do
-    return SessionSeries.new(
+    return OpenActive::Models::SessionSeries.new(
       "Name" => "Virtual BODYPUMP",
       "Description" => "This is the virtual version of the original barbell class, which will help you get lean, toned and fit - fast. Les Mills™ Virtual classes are designed for people who cannot get access to our live classes or who want to get a ‘taste’ of a Les Mills™ class before taking a live class with an instructor. The classes are played on a big video screen, with dimmed lighting and pumping surround sound, and are led onscreen by the people who actually choreograph the classes.",
       "Duration" => ActiveSupport::Duration.parse("P1D"),
-      "StartDate" => DateTime.new("2017-04-24T19:30:00-0800"),
+      "StartDate" => DateTime.parse("2017-04-24T19:30:00-0800"),
       "Location" => OpenActive::Models::Place.new(
         "Name" => "Santa Clara City Library, Central Park Library",
         "Address" => OpenActive::Models::PostalAddress.new(
@@ -51,5 +51,28 @@ RSpec.describe "RPDE" do
         "Data" => nil,
       )
     ]
+  end
+
+
+  describe 'Create from modified ID' do
+    let (:json_items) { JSON.parse(file_fixture("rpde/session_series-items.json").read) }
+    let(:json) do
+      {
+        "next" => "https://www.example.com/feed?afterTimestamp=5&afterId=1",
+        "items" => json_items,
+        "license" => "https://creativecommons.org/licenses/by/4.0/"
+      }
+    end
+
+    it 'Correctly serializes RPDE Feed Page' do
+      feed = OpenActive::Rpde::RpdeBody.create_from_modified_id(
+        "https://www.example.com/feed",
+        1,
+        "1",
+        feed_items
+      )
+
+      expect(feed.serialize).to eq(json)
+    end
   end
 end

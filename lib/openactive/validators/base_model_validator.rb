@@ -10,7 +10,7 @@ module OpenActive
         # in terms of checking the class name.
         # We allow the class to be an instanceof BaseModel
         # Or to be a sub class (BaseModel is one of its parent)
-        value.is_a?(OpenActive::BaseModel)
+        value.is_a?(OpenActive::JsonLdModel)
       end
     end
   end

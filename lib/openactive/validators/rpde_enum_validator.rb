@@ -22,6 +22,8 @@ module OpenActive
       # @param value [mixed] The value to validate.
       # @return [Boolean] Whether validation passes or not.
       def run(value)
+        return true if value.is_a?(classname)
+
         classname.find_by_key(value)
       end
     end

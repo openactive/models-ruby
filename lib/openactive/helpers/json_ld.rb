@@ -11,7 +11,7 @@ module OpenActive
 
       # Returns the JSON-LD type from a given thing.
       #
-      # @param thing [::OpenActive::BaseModel]
+      # @param thing [::OpenActive::JsonLdModel]
       # @return [string]
       def self.get_type(thing)
         # Append "type" attribute for all other classes
@@ -23,7 +23,7 @@ module OpenActive
 
       # Returns an associative array with the data ready for JSON-LD serialization.
       #
-      # @param obj [::OpenActive::BaseModel] The given instance to convert to JSON-LD
+      # @param obj [::OpenActive::JsonLdModel] The given instance to convert to JSON-LD
       # @param parent [object,null] The parent node in the structure.
       # @return [array]
       def self.prepare_data_for_serialization(obj, parent = nil)
@@ -39,7 +39,9 @@ module OpenActive
 
         # Only add context if object is subclass of BaseModel
         # and no parent, or parent is an RPDE item
-        data["@context"] = obj.context if obj.respond_to?(:context) && parent.nil?
+        if obj.respond_to?(:context) && (parent.nil? || !parent.is_a?(OpenActive::JsonLdModel))
+          data["@context"] = obj.context
+        end
 
         # TODO: RPDE logic here
 

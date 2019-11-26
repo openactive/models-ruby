@@ -36,11 +36,11 @@ module OpenActive
           current_modified = -1
           current_id = first_item.id
           items.each do |item|
-            if item.state == OpenActive::Rpde::RpdeState.DELETED && item.data != nil
+            if item.state == OpenActive::Rpde::RpdeState::DELETED && item.data != nil
               # throw new DeletedItemsDataException();
             end
 
-            if item.state == nil || item.kind == nil || item.modified == nil || item.id == nil
+            if item.state.nil? || item.kind.nil? || item.modified.nil? || item.id.nil?
               raise Exceptions::IncompleteItemsDataException
             end
 
@@ -52,10 +52,10 @@ module OpenActive
             end
           end
           # Create 'next' URL depending on whether there are items available
-          rpde_body.next = "#{feed_base_url}?afterTimestamp=#{CGI::Util.escape(items.last.modified)}&afterId=#{CGI::Util.escape(items.last.id)}"
+          rpde_body.next = "#{feed_base_url}?afterTimestamp=#{CGI::escape(items.last.modified.to_s)}&afterId=#{CGI::escape(items.last.id.to_s)}"
         else
           if modified != nil && id != nil
-            rpde_body.next = "#{feed_base_url}?afterTimestamp=#{CGI::Util.escape(modified)}&afterId=#{CGI::Util.escape(id)}"
+            rpde_body.next = "#{feed_base_url}?afterTimestamp=#{CGI::escape(modified.to_s)}&afterId=#{CGI::escape(id.to_s)}"
           end
         end
         rpde_body
@@ -90,11 +90,11 @@ module OpenActive
 
           current_change_number = -1
           items.each do |item|
-            if item.state == OpenActive::Rpde::RpdeState.DELETED && item.data != nil
+            if item.state == OpenActive::Rpde::RpdeState::DELETED && item.data != nil
               raise Exceptions::DeletedItemsDataException
             end
 
-            if item.state == nil || item.kind == nil || item.modified == nil || item.id == nil
+            if item.state.nil? || item.kind.nil? || item.modified.nil? || item.id.nil?
               raise Exceptions::IncompleteItemsDataException
             end
 
@@ -105,10 +105,10 @@ module OpenActive
             end
           end
           # Create 'next' URL depending on whether there are items available
-          rpde_body.next = "#{feed_base_url}?afterChangeNumber=#{CGI::Util.escape(items.last.modified)}"
+          rpde_body.next = "#{feed_base_url}?afterChangeNumber=#{CGI::escape(items.last.modified.to_s)}"
         else
           if change_number != nil
-            rpde_body.next = "#{feed_base_url}?afterChangeNumber=#{CGI::Util.escape(change_number)}"
+            rpde_body.next = "#{feed_base_url}?afterChangeNumber=#{CGI::escape(change_number.to_s)}"
           end
         end
         rpde_body

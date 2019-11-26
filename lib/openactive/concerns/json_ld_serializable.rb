@@ -10,10 +10,12 @@ module OpenActive
           @attributes ||= begin
             if superclass.respond_to?(:properties)
               superclass.properties.clone
-            else
+            elsif method_defined?(:type)
               {
                 "type" => {field: :type}
               }
+            else
+              {}
             end
           end
         end
