@@ -24,4 +24,11 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "bundler", "~> 1.17"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rspec", "~> 3.0"
+  spec.add_development_dependency "rspec-json_expectations"
+  spec.add_development_dependency "rubocop"
+  spec.add_development_dependency "rubocop-rspec"
+  spec.add_development_dependency "yard"
+
+  spec.add_runtime_dependency "activesupport"
+  spec.add_runtime_dependency "typesafe_enum"
 end
