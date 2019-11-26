@@ -8,9 +8,6 @@ module OpenActive
       # @param value [mixed] The value to coerce.
       # @return [mixed] The same value.
       def coerce(value)
-        # instanceof does not throw any error
-        # if the variable being tested is not an object,
-        # it simply returns FALSE.
         return value if value.is_a?(::DateTime)
 
         # if it's a date/time object other than datetime, convert it (Date/Time)
@@ -24,9 +21,6 @@ module OpenActive
       # @param value [mixed] The value to validate.
       # @return [bool] Whether validation passes or not.
       def run(value)
-        # instanceof does not throw any error
-        # if the variable being tested is not an object,
-        # it simply returns FALSE.
         return true if value.is_a?(::DateTime) || value.respond_to?(:to_datetime)
 
         return false unless value.is_a?(String)

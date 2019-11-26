@@ -9,9 +9,6 @@ module OpenActive
       # @return [mixed] The same value.
       # @raise [::Exception] When value cannot be parsed as a ::DateInterval
       def coerce(value)
-        # instanceof does not throw any error
-        # if the variable being tested is not an object,
-        # it simply returns FALSE.
         return value if value.is_a?(ActiveSupport::Duration)
 
         # If not passing a DateInterval object, try and create one from value
@@ -24,9 +21,6 @@ module OpenActive
       # @param value [mixed] The value to validate.
       # @return [bool] Whether validation passes or not.
       def run(value)
-        # instanceof does not throw any error
-        # if the variable being tested is not an object,
-        # it simply returns FALSE.
         return true if value.is_a?(ActiveSupport::Duration)
 
         # If not a string - fail validation

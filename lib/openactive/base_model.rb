@@ -2,9 +2,6 @@ module OpenActive
   class BaseModel
     include OpenActive::Concerns::JsonLdSerializable
     include OpenActive::Concerns::TypeChecker
-    # class << self
-    #   extend OpenActive::Concerns::TypeChecker::PrependedClassMethods
-    # end
 
     def initialize(attributes = {})
       assign_attributes(attributes) if attributes
@@ -13,11 +10,6 @@ module OpenActive
     end
 
     def assign_attributes(attributes)
-      # attributes.each do |k, v|
-      #   setter = "#{k}="
-      #   public_send(setter, v) if respond_to?(setter)
-      # end
-
       attributes.each do |key, value|
         set_property(key, value)
       end

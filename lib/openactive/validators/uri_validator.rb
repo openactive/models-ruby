@@ -8,9 +8,6 @@ module OpenActive
       # @param value [mixed] The value to coerce.
       # @return [mixed] The same value.
       def coerce(value)
-        # instanceof does not throw any error
-        # if the variable being tested is not an object,
-        # it simply returns FALSE.
         return value if value.is_a?(::URI)
 
         URI.parse(value)
