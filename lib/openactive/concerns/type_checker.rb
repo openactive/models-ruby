@@ -2,9 +2,6 @@ module OpenActive
   module Concerns
     module TypeChecker
       def self.included(base)
-        # class << base
-        #   prepend PrependedClassMethods
-        # end
         base.extend ClassMethods
       end
 
