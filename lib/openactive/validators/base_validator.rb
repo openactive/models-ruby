@@ -2,11 +2,11 @@ module OpenActive
   module Validators
     class BaseValidator
       # Coerce given value to the type the validator is validating against.
-      # PLEASE NOTE: no checks are performed on the given $value.
+      # PLEASE NOTE: no checks are performed on the given value.
       # It is therefore recommended to call the "run" method first before this.
       #
-      # @param value mixed The value to coerce.
-      # @return mixed The same value.
+      # @param value [mixed] The value to coerce.
+      # @return [mixed] The same value.
       def coerce(value)
         # For all the classes that inherit BaseValidator
         # that don't need to coerce,
@@ -16,16 +16,16 @@ module OpenActive
 
       # Run validation on the given value.
       #
-      # @param value mixed The value to validate.
-      # @return bool Whether validation passes or not.
+      # @param _value [mixed] The value to validate.
+      # @return [bool] Whether validation passes or not.
       def run(_value)
         false
       end
 
       # Returns a validator instance from a given type name.
       #
-      # @param string The type name
-      # @return ::OpenActive::Validators::ValidatorInterface
+      # @param type [string] The type name
+      # @return [::OpenActive::Validators::ValidatorInterface]
       def self.get_validator(type)
         # If last 2 characters are "[]"
         # We are validating an array

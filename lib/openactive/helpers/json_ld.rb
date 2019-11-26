@@ -3,7 +3,7 @@ module OpenActive
     class JsonLd
       # The default JSON-LD context for this package.
       #
-      # @var array
+      # @return [array]
       @@default_context = [
         "https://openactive.io/",
         "https://openactive.io/ns-beta"
@@ -11,8 +11,8 @@ module OpenActive
 
       # Returns the JSON-LD type from a given thing.
       #
-      # @param \OpenActive\BaseModel $thing
-      # @return string
+      # @param thing [::OpenActive::BaseModel]
+      # @return [string]
       def self.get_type(thing)
         # Append "type" attribute for all other classes
         reflect = ::ReflectionClass.new(thing)
@@ -23,9 +23,9 @@ module OpenActive
 
       # Returns an associative array with the data ready for JSON-LD serialization.
       #
-      # @param \OpenActive\BaseModel $obj The given instance to convert to JSON-LD
-      # @param object|null $parent The parent node in the structure.
-      # @return array
+      # @param obj [::OpenActive::BaseModel] The given instance to convert to JSON-LD
+      # @param parent [object,null] The parent node in the structure.
+      # @return [array]
       def self.prepare_data_for_serialization(obj, parent = nil)
         # Get all defined methods for the object
         # Please note we don't use get_object_vars() here,

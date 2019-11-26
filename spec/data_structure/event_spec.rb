@@ -9,7 +9,7 @@ RSpec.describe OpenActive::Models::Event do
   # Test that Event.attendeeinstructions exists.
   #
   # @dataProvider eventProvider
-  # @return void
+  # @return [void]
   it "has event attendee instructions" do
     expect(inst.attendee_instructions).not_to be_nil
   end
@@ -28,7 +28,7 @@ RSpec.describe OpenActive::Models::Event do
   # - totalPaymentDue
   #
   # @dataProvider eventProvider
-  # @return void
+  # @return [void]
   it "has correct properties" do
     correct_properties = [
       "type",
