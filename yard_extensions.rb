@@ -1,2 +1,4 @@
-require 'yard'
-require_relative './yard_extensions/define_property_handler'
+# Load all Ruby files inside of the YARD extensions directory.
+Dir.glob('yard_extensions/**.rb') do |file|
+  require_relative file
+end
