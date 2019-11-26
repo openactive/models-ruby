@@ -6,61 +6,6 @@ require "spec_helper"
 #
 # @see https://github.com/openactive/models-lib/tree/master/test-description For the test description
 RSpec.describe "Example Event" do
-  # it "returns expected json ld" do
-  # Test that serialized serialized event returns expected JSON-LD.
-  #
-  # @dataProvider sessionSeriesProvider
-  # @return void
-  # def compare_event_jsonld($event, $json)
-  # {
-  #     $classname = "\\".get_class($event);
-  #
-  #     $jsonEvent = $classname::serialize($event);
-  #
-  #     $this->assertEquals(
-  #         json_decode($json, true),
-  #         json_decode($jsonEvent, true)
-  #     );
-  # }
-
-  # Test event accessors.
-  #
-  # @dataProvider sessionSeriesProvider
-  # @return void
-  # public function testSerializeEventAccessor($event)
-  # {
-  #     $this->assertSame(
-  #         "Santa Clara City Library, Central Park Library",
-  #         $event->getLocation()->getName()
-  #     );
-  # }
-
-  # This test does not make sense.
-  #
-  # @return void
-  # public function testSerializeOfferCast()
-  # {
-  #     $event = new Event([
-  #         "Offers" => [
-  #             new IndicativeOffer([
-  #                 "Url" => "https://www.example.com/event_offer/12345_201803180430",
-  #                 "Price" => 30,
-  #                 "PriceCurrency" => "USD",
-  #                 "ValidFrom" => new \DateTime(
-  #                     "2017-01-20 16:20:00",
-  #                     new \DateTimeZone("-0800")
-  #                 )
-  #             ])
-  #         ]
-  #         // .Cast<Offer>().ToList()
-  #     ]);
-  #
-  #     $this->assertSame(
-  #         "Santa Clara City Library, Central Park Library",
-  #         BaseModel::serialize($event)
-  #     );
-  # }
-
   # Test that serialization and deserialization return the same result
   # after the process.
   context "Basic example" do

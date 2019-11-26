@@ -41,7 +41,7 @@ RSpec.describe OpenActive::Models::Order do
   # - totalPaymentDue
   #
   # @dataProvider orderProvider
-  # @return void
+  # @return [void]
   it "has correct properties" do
     correct_properties = [
       "type",

@@ -2,9 +2,6 @@ module OpenActive
   module Concerns
     module TypeChecker
       def self.included(base)
-        # class << base
-        #   prepend PrependedClassMethods
-        # end
         base.extend ClassMethods
       end
 
@@ -35,13 +32,11 @@ module OpenActive
 
       # Check if the given value is of at least one of the given types.
       #
-      # @param value mixed
-      # @param types string[]
-      # @return bool
-      # @throws OpenActive::Exceptions::InvalidArgumentException If the provided argument is not of a supported type.
+      # @param value [Object]
+      # @param types [Array<string>]
+      # @return [Boolean]
+      # @raise [OpenActive::Exceptions::InvalidArgumentException] If the provided argument is not of a supported type.
       def check_types(value, types:)
-        # return value
-
         validators = types.map { |type| OpenActive::Validators::BaseValidator.get_validator(type) }.compact
 
         return value if validators.empty?

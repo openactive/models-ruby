@@ -2,9 +2,6 @@ module OpenActive
   class BaseModel
     include OpenActive::Concerns::JsonLdSerializable
     include OpenActive::Concerns::TypeChecker
-    # class << self
-    #   extend OpenActive::Concerns::TypeChecker::PrependedClassMethods
-    # end
 
     def initialize(attributes = {})
       assign_attributes(attributes) if attributes
@@ -13,11 +10,6 @@ module OpenActive
     end
 
     def assign_attributes(attributes)
-      # attributes.each do |k, v|
-      #   setter = "#{k}="
-      #   public_send(setter, v) if respond_to?(setter)
-      # end
-
       attributes.each do |key, value|
         set_property(key, value)
       end
@@ -40,7 +32,7 @@ module OpenActive
     # result in a representation of that node.This may allow an application to retrieve further information about
     # a node. In JSON-LD, a node is identified using the @id keyword:
     #
-    # @var string
+    # @return [string]
     attr_accessor :id
     property :id, as: "id"
 
@@ -55,7 +47,7 @@ module OpenActive
     # Simply speaking, a context is used to map terms to IRIs. Terms are case sensitive and any valid string that
     # is not a reserved JSON-LD keyword can be used as a term.
     #
-    # @var string[]
+    # @return [Array<string>]
     attr_accessor :context
 
     def context
@@ -74,8 +66,6 @@ module OpenActive
 
       if value.is_a?(Array) || value.is_a?(Hash)
         val = deserialize_value(value)
-        # elsif value.is_a?(BaseModel)
-        #   val = value.class.deserialize(value)
       end
 
       if key != "@context" && key != "type"
@@ -87,8 +77,8 @@ module OpenActive
     ##
     # Returns an object from a given JSON-LD representation.
     #
-    # @param data string|array If a string is provided, we attempt JSON-decoding first
-    # @return object
+    # @param data [string,Array] If a string is provided, we attempt JSON-decoding first
+    # @return [object]
     #
     def self.deserialize(data)
       # If a string is provided, we attempt JSON-decoding first
@@ -112,8 +102,8 @@ module OpenActive
 
     # Returns a value from a given JSON-LD deserialized array.
     #
-    # @param value mixed If an array is provided, we recursively deserialize it
-    # @return mixed
+    # @param value [mixed] If an array is provided, we recursively deserialize it
+    # @return [mixed]
     def deserialize_value(value)
       if value.is_a?(Hash)
         # If an associative array with a type, return its deserialization form,
@@ -133,12 +123,7 @@ module OpenActive
           return inst
         end
       elsif value.is_a?(Array)
-        # NOTE: OpenActive is more strict than schema.org in this regard, so commenting out this for now
-        # If one-item array, deserialize into the actual item
-        # if(count($value) === 1) {
-        #    return static::deserializeValue($value[0]);
-        # }
-
+        # NOTE: OpenActive is more strict than schema.org in this regard, so no single element array handling here.
         # If providing a non-associative array
         # Loop through it and serialize each item if needed
         value = value.map do |item|
@@ -150,8 +135,8 @@ module OpenActive
 
     # Returns the JSON-LD representation of the given instance.
     #
-    # @param \OpenActive\BaseModel $obj The given instance to convert to JSON-LD
-    # @return string JSON-LD string representation of the given instance.
+    # @param obj [::OpenActive::BaseModel] The given instance to convert to JSON-LD
+    # @return [string] JSON-LD string representation of the given instance.
     # TODO: make this more Ruby-esque (to_h, to_hash, to_json)
     def self.serialize(obj)
       ::OpenActive::Helpers::JsonLd.prepare_data_for_serialization(obj)

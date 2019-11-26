@@ -3,7 +3,7 @@ module OpenActive
     class JsonLd
       # The default JSON-LD context for this package.
       #
-      # @var array
+      # @return [array]
       @@default_context = [
         "https://openactive.io/",
         "https://openactive.io/ns-beta"
@@ -11,8 +11,8 @@ module OpenActive
 
       # Returns the JSON-LD type from a given thing.
       #
-      # @param \OpenActive\BaseModel $thing
-      # @return string
+      # @param thing [::OpenActive::BaseModel]
+      # @return [string]
       def self.get_type(thing)
         # Append "type" attribute for all other classes
         reflect = ::ReflectionClass.new(thing)
@@ -23,9 +23,9 @@ module OpenActive
 
       # Returns an associative array with the data ready for JSON-LD serialization.
       #
-      # @param \OpenActive\BaseModel $obj The given instance to convert to JSON-LD
-      # @param object|null $parent The parent node in the structure.
-      # @return array
+      # @param obj [::OpenActive::BaseModel] The given instance to convert to JSON-LD
+      # @param parent [object,null] The parent node in the structure.
+      # @return [array]
       def self.prepare_data_for_serialization(obj, parent = nil)
         # Get all defined methods for the object
         # Please note we don't use get_object_vars() here,
@@ -35,23 +35,13 @@ module OpenActive
 
         data = obj.values
         #
-        # # Add type to data if not an RpdeItem
-        # if (
-        #     $fq_classname != "\\OpenActive\\Rpde\\RpdeBody" &&
-        #     $fq_classname != "\\OpenActive\\Rpde\\RpdeItem"
-        # ) {
-        #     $data["type"] = self::getType($obj)
-        # }
+        # TODO: RPDE logic here
 
         # Only add context if object is subclass of BaseModel
         # and no parent, or parent is an RPDE item
         data["@context"] = obj.context if obj.respond_to?(:context) && parent.nil?
 
-        # ||
-        # (
-        # is_object(parent) &&
-        #   parent.is_a?(::OpenActive::Rpde::RpdeItem)
-        # )
+        # TODO: RPDE logic here
 
         # Loop all class methods, find the getters
         # and map defined attributes, normalizing attribute name

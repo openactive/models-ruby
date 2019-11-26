@@ -9,7 +9,7 @@ RSpec.describe OpenActive::Models::FacilityUse do
   # Test that Event.attendeeinstructions exists.
   #
   # @dataProvider eventProvider
-  # @return void
+  # @return [void]
   it "facility use is an array" do
     expect(inst.event).not_to be_nil
     expect(inst.event).to be_a(Array)
@@ -29,7 +29,7 @@ RSpec.describe OpenActive::Models::FacilityUse do
   # - totalPaymentDue
   #
   # @dataProvider facilityUseProvider
-  # @return void
+  # @return [void]
   it "has correct properties" do
     correct_properties = [
       "type",

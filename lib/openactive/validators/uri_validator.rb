@@ -2,15 +2,12 @@ module OpenActive
   module Validators
     class UriValidator < BaseValidator
       # Coerce given value to the type the validator is validating against.
-      # PLEASE NOTE: no checks are performed on the given $value.
+      # PLEASE NOTE: no checks are performed on the given value.
       # It is therefore recommended to call the "run" method first before this.
       #
-      # @param value mixed The value to coerce.
-      # @return mixed The same value.
+      # @param value [mixed] The value to coerce.
+      # @return [mixed] The same value.
       def coerce(value)
-        # instanceof does not throw any error
-        # if the variable being tested is not an object,
-        # it simply returns FALSE.
         return value if value.is_a?(::URI)
 
         URI.parse(value)
@@ -18,8 +15,8 @@ module OpenActive
 
       # Run validation on the given value.
       #
-      # @param value mixed The value to validate.
-      # @return bool Whether validation passes or not.
+      # @param value [mixed] The value to validate.
+      # @return [Boolean] Whether validation passes or not.
       def run(value)
         return true if value.is_a?(::URI)
 

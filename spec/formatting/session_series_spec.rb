@@ -13,7 +13,7 @@ RSpec.describe 'Session Series' do
   # to the pre-deserialization ones.
   #
   # @dataProvider sessionSeriesProvider
-  # @return void
+  # @return [void]
   context 'fencing data' do
     let (:series_json) { JSON.parse(file_fixture("formatting/session_series/fencing.json").read) }
 
@@ -50,7 +50,7 @@ RSpec.describe 'Session Series' do
     # to the pre-deserialization ones, and are valid URLs.
     #
     # @dataProvider sessionSeriesProvider
-    # @return void
+    # @return [void]
     describe "URL handling" do
       it "has correct value for session id" do
         expect(series.id).to eq(series_json["id"])
