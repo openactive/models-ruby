@@ -35,23 +35,13 @@ module OpenActive
 
         data = obj.values
         #
-        # # Add type to data if not an RpdeItem
-        # if (
-        #     $fq_classname != "\\OpenActive\\Rpde\\RpdeBody" &&
-        #     $fq_classname != "\\OpenActive\\Rpde\\RpdeItem"
-        # ) {
-        #     $data["type"] = self::getType($obj)
-        # }
+        # TODO: RPDE logic here
 
         # Only add context if object is subclass of BaseModel
         # and no parent, or parent is an RPDE item
         data["@context"] = obj.context if obj.respond_to?(:context) && parent.nil?
 
-        # ||
-        # (
-        # is_object(parent) &&
-        #   parent.is_a?(::OpenActive::Rpde::RpdeItem)
-        # )
+        # TODO: RPDE logic here
 
         # Loop all class methods, find the getters
         # and map defined attributes, normalizing attribute name
