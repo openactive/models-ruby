@@ -19,7 +19,7 @@ module OpenActive
       # Run validation on the given value.
       #
       # @param value [mixed] The value to validate.
-      # @return [bool] Whether validation passes or not.
+      # @return [Boolean] Whether validation passes or not.
       def run(value)
         return true if value.is_a?(::DateTime) || value.respond_to?(:to_datetime)
 

@@ -43,7 +43,7 @@ module OpenActive
     # Simply speaking, a context is used to map terms to IRIs. Terms are case sensitive and any valid string that
     # is not a reserved JSON-LD keyword can be used as a term.
     #
-    # @return [string[]]
+    # @return [Array<string>]
     attr_accessor :context
 
     def context
