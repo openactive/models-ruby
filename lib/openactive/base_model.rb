@@ -62,8 +62,6 @@ module OpenActive
 
       if value.is_a?(Array) || value.is_a?(Hash)
         val = deserialize_value(value)
-        # elsif value.is_a?(BaseModel)
-        #   val = value.class.deserialize(value)
       end
 
       if key != "@context" && key != "type"
