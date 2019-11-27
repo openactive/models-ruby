@@ -11,7 +11,7 @@ module OpenActive
 
       # Returns the JSON-LD type from a given thing.
       #
-      # @param thing [::OpenActive::BaseModel]
+      # @param thing [::OpenActive::JsonLdModel]
       # @return [string]
       def self.get_type(thing)
         # Append "type" attribute for all other classes
@@ -23,25 +23,17 @@ module OpenActive
 
       # Returns an associative array with the data ready for JSON-LD serialization.
       #
-      # @param obj [::OpenActive::BaseModel] The given instance to convert to JSON-LD
+      # @param obj [::OpenActive::JsonLdModel] The given instance to convert to JSON-LD
       # @param parent [object,null] The parent node in the structure.
       # @return [array]
       def self.prepare_data_for_serialization(obj, parent = nil)
-        # Get all defined methods for the object
-        # Please note we don't use get_object_vars() here,
-        # As it would only return the public attributes
-        # (BaseModel's are all protected)
-        # class_methods = obj.methods
-
         data = obj.values
-        #
-        # TODO: RPDE logic here
 
         # Only add context if object is subclass of BaseModel
         # and no parent, or parent is an RPDE item
-        data["@context"] = obj.context if obj.respond_to?(:context) && parent.nil?
-
-        # TODO: RPDE logic here
+        if obj.respond_to?(:context) && (parent.nil? || !parent.is_a?(OpenActive::JsonLdModel))
+          data["@context"] = obj.context
+        end
 
         # Loop all class methods, find the getters
         # and map defined attributes, normalizing attribute name

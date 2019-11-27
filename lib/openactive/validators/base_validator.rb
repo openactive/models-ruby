@@ -67,10 +67,8 @@ module OpenActive
 
         return EnumValidator.new(klass) if klass.ancestors.include?(TypesafeEnum::Base)
 
-        # TODO: RPDE logic here
-
         # If type is an OpenActive BaseModel class
-        return BaseModelValidator.new if klass == OpenActive::BaseModel
+        return BaseModelValidator.new if klass == OpenActive::JsonLdModel
 
         InstanceValidator.new(klass)
       end

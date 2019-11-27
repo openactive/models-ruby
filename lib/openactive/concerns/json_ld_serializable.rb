@@ -10,17 +10,17 @@ module OpenActive
           @attributes ||= begin
             if superclass.respond_to?(:properties)
               superclass.properties.clone
-            else
+            elsif respond_to?(:type)
               {
                 "type" => {field: :type}
               }
+            else
+              {}
             end
           end
         end
 
         def property(field, as:)
-          # attr_accessor field unless respond_to?(field)
-
           properties[as] = {
             field: field,
           }

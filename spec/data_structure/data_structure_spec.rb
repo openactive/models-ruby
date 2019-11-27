@@ -23,7 +23,7 @@ RSpec.describe "Data structure tests" do
       let(:inst) { model.deserialize(data) }
 
       it "object is single and not an array" do
-        expect(inst).to be_a_kind_of(OpenActive::BaseModel)
+        expect(inst).to be_a_kind_of(OpenActive::JsonLdModel)
       end
 
       it "has a context containing open-active beta" do

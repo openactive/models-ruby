@@ -1,4 +1,3 @@
-require "byebug"
 require "openactive"
 require "rspec/json_expectations"
 
