@@ -27,23 +27,13 @@ module OpenActive
       # @param parent [object,null] The parent node in the structure.
       # @return [array]
       def self.prepare_data_for_serialization(obj, parent = nil)
-        # Get all defined methods for the object
-        # Please note we don't use get_object_vars() here,
-        # As it would only return the public attributes
-        # (BaseModel's are all protected)
-        # class_methods = obj.methods
-
         data = obj.values
-        #
-        # TODO: RPDE logic here
 
         # Only add context if object is subclass of BaseModel
         # and no parent, or parent is an RPDE item
         if obj.respond_to?(:context) && (parent.nil? || !parent.is_a?(OpenActive::JsonLdModel))
           data["@context"] = obj.context
         end
-
-        # TODO: RPDE logic here
 
         # Loop all class methods, find the getters
         # and map defined attributes, normalizing attribute name
