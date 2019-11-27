@@ -103,7 +103,7 @@ module OpenActive
 
     # Returns the JSON-LD representation of the given instance.
     #
-    # @param obj [::OpenActive::JsonLdModel] The given instance to convert to JSON-LD
+    # @param obj [::OpenActive::BaseModel] The given instance to convert to JSON-LD
     # @return [string] JSON-LD string representation of the given instance.
     # TODO: make this more Ruby-esque (to_h, to_hash, to_json)
     def self.serialize(obj)

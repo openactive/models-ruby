@@ -75,4 +75,313 @@ RSpec.describe "RPDE" do
       expect(feed.serialize).to eq(json)
     end
   end
+
+  describe 'Create from next change number' do
+    let (:json_items) { JSON.parse(file_fixture("rpde/session_series-items.json").read) }
+    let(:json) do
+      {
+        "next" => "https://www.example.com/feed?afterChangeNumber=5",
+        "items" => json_items,
+        "license" => "https://creativecommons.org/licenses/by/4.0/"
+      }
+    end
+
+    it 'Correctly serialzes RPDE feed page' do
+      feed = OpenActive::Rpde::RpdeBody.create_from_next_change_number(
+        "https://www.example.com/feed",
+        1,
+        feed_items
+      )
+    end
+  end
+
+
+  describe 'Unordered item handling' do
+    context 'Unordered modified timestamps' do
+      let (:unordered) do
+        OpenActive::Rpde::RpdeBody::create_from_modified_id(
+          "https://www.example.com/feed",
+          1,
+          "1",
+          [
+            OpenActive::Rpde::RpdeItem.new(
+              "Id" => "1",
+              "Modified" => 5,
+              "State" => OpenActive::Rpde::RpdeState::UPDATED,
+              "Kind" => OpenActive::Rpde::RpdeKind::SESSION_SERIES,
+              "Data" => session_series_event
+            ),
+            OpenActive::Rpde::RpdeItem.new(
+              "Id" => "2",
+              "Modified" => 4,
+              "State" => OpenActive::Rpde::RpdeState::DELETED,
+              "Kind" => OpenActive::Rpde::RpdeKind::SESSION_SERIES,
+              "Data" => nil
+            )
+          ])
+      end
+
+      it 'throws a ModifiedIdItemsOrderException exception' do
+        expect { unordered }.to raise_exception(OpenActive::Rpde::Exceptions::ModifiedIdItemsOrderException)
+      end
+    end
+
+
+    context 'Unordered IDs' do
+      let (:unordered) do
+        OpenActive::Rpde::RpdeBody::create_from_modified_id(
+          "https://www.example.com/feed",
+          1,
+          "1",
+          [
+            OpenActive::Rpde::RpdeItem.new(
+              "Id" => "2",
+              "Modified" => 4,
+              "State" => OpenActive::Rpde::RpdeState::UPDATED,
+              "Kind" => OpenActive::Rpde::RpdeKind::SESSION_SERIES,
+              "Data" => session_series_event
+            ),
+            OpenActive::Rpde::RpdeItem.new(
+              "Id" => "1",
+              "Modified" => 4,
+              "State" => OpenActive::Rpde::RpdeState::DELETED,
+              "Kind" => OpenActive::Rpde::RpdeKind::SESSION_SERIES,
+              "Data" => nil
+            )
+          ])
+      end
+
+      it 'throws a ModifiedIdItemsOrderException exception' do
+        expect { unordered }.to raise_exception(OpenActive::Rpde::Exceptions::ModifiedIdItemsOrderException)
+      end
+    end
+  end
+
+  describe 'Deleted body without data' do
+    let (:body) do
+      OpenActive::Rpde::RpdeBody::create_from_modified_id(
+        "https://www.example.com/feed",
+        1,
+        "1",
+        [
+          OpenActive::Rpde::RpdeItem.new(
+            "Id" => "1",
+            "Modified" => 3,
+            "State" => OpenActive::Rpde::RpdeState::UPDATED,
+            "Kind" => OpenActive::Rpde::RpdeKind::SESSION_SERIES,
+            "Data" => session_series_event
+          ),
+          OpenActive::Rpde::RpdeItem.new(
+            "Id" => "2",
+            "Modified" => 4,
+            "State" => OpenActive::Rpde::RpdeState::DELETED,
+            "Kind" => OpenActive::Rpde::RpdeKind::SESSION_SERIES,
+            "Data" => session_series_event
+          )
+        ])
+    end
+
+    it 'throws DeletedItemsDataException exception' do
+      expect { body }.to raise_exception(OpenActive::Rpde::Exceptions::DeletedItemsDataException)
+    end
+  end
+
+  describe 'Body containing same first item as querystring' do
+    let (:body) do
+      OpenActive::Rpde::RpdeBody::create_from_modified_id(
+        "https://www.example.com/feed",
+        4,
+        "2",
+        [
+          OpenActive::Rpde::RpdeItem.new(
+            "Id" => "2",
+            "Modified" => 4,
+            "State" => OpenActive::Rpde::RpdeState::UPDATED,
+            "Kind" => OpenActive::Rpde::RpdeKind::SESSION_SERIES,
+            "Data" => session_series_event
+          ),
+          OpenActive::Rpde::RpdeItem.new(
+            "Id" => "1",
+            "Modified" => 5,
+            "State" => OpenActive::Rpde::RpdeState::DELETED,
+            "Kind" => OpenActive::Rpde::RpdeKind::SESSION_SERIES,
+            "Data" => nil
+          )
+        ])
+    end
+
+    it 'throws FirstTimeAfterTimestampAndAfterIdException exception' do
+      expect { body }.to raise_exception(OpenActive::Rpde::Exceptions::FirstTimeAfterTimestampAndAfterIdException)
+    end
+  end
+
+  describe 'Body containing unordered modified timestamps' do
+    let (:body) do
+      OpenActive::Rpde::RpdeBody::create_from_modified_id(
+        "https://www.example.com/feed",
+        4,
+        "2",
+        [
+          OpenActive::Rpde::RpdeItem.new(
+            "Id" => 2,
+            "Modified" => 5,
+            "State" => OpenActive::Rpde::RpdeState::UPDATED,
+            "Kind" => OpenActive::Rpde::RpdeKind::SESSION_SERIES,
+            "Data" => session_series_event
+          ),
+          OpenActive::Rpde::RpdeItem.new(
+            "Id" => 1,
+            "Modified" => 4,
+            "State" => OpenActive::Rpde::RpdeState::DELETED,
+            "Kind" => OpenActive::Rpde::RpdeKind::SESSION_SERIES,
+            "Data" => nil
+          )
+        ])
+    end
+
+    it 'throws ModifiedIdItemsOrderException exception' do
+      expect { body }.to raise_exception(OpenActive::Rpde::Exceptions::ModifiedIdItemsOrderException)
+    end
+  end
+
+  describe 'Body containing unordered modified timestamps' do
+    let (:body) do
+      OpenActive::Rpde::RpdeBody::create_from_next_change_number(
+        "https://www.example.com/feed",
+        1,
+        [
+          OpenActive::Rpde::RpdeItem.new(
+            "Id" => 2,
+            "Modified" => 5,
+            "State" => OpenActive::Rpde::RpdeState::UPDATED,
+            "Kind" => OpenActive::Rpde::RpdeKind::SESSION_SERIES,
+            "Data" => session_series_event
+          ),
+          OpenActive::Rpde::RpdeItem.new(
+            "Id" => 1,
+            "Modified" => 4,
+            "State" => OpenActive::Rpde::RpdeState::DELETED,
+            "Kind" => OpenActive::Rpde::RpdeKind::SESSION_SERIES,
+            "Data" => nil
+          )
+        ])
+    end
+
+    it 'throws NextChangeNumbersItemsOrderException exception' do
+      expect { body }.to raise_exception(OpenActive::Rpde::Exceptions::NextChangeNumbersItemsOrderException)
+    end
+  end
+
+  describe 'Body containing change number with unordered id' do
+    let (:body) do
+      OpenActive::Rpde::RpdeBody::create_from_next_change_number(
+        "https://www.example.com/feed",
+        1,
+        [
+          OpenActive::Rpde::RpdeItem.new(
+            "Id" => 2,
+            "Modified" => 4,
+            "State" => OpenActive::Rpde::RpdeState::UPDATED,
+            "Kind" => OpenActive::Rpde::RpdeKind::SESSION_SERIES,
+            "Data" => session_series_event
+          ),
+          OpenActive::Rpde::RpdeItem.new(
+            "Id" => 1,
+            "Modified" => 4,
+            "State" => OpenActive::Rpde::RpdeState::DELETED,
+            "Kind" => OpenActive::Rpde::RpdeKind::SESSION_SERIES,
+            "Data" => nil
+          )
+        ])
+    end
+
+    it 'throws NextChangeNumbersItemsOrderException exception' do
+      expect { body }.to raise_exception(OpenActive::Rpde::Exceptions::NextChangeNumbersItemsOrderException)
+    end
+  end
+
+
+  describe 'Body containing change number with unordered id' do
+    let (:body) do
+      OpenActive::Rpde::RpdeBody::create_from_next_change_number(
+        "https://www.example.com/feed",
+        1,
+        [
+          OpenActive::Rpde::RpdeItem.new(
+            "Id" => 2,
+            "Modified" => 4,
+            "State" => OpenActive::Rpde::RpdeState::UPDATED,
+            "Kind" => OpenActive::Rpde::RpdeKind::SESSION_SERIES,
+            "Data" => session_series_event
+          ),
+          OpenActive::Rpde::RpdeItem.new(
+            "Id" => 1,
+            "Modified" => 5,
+            "State" => OpenActive::Rpde::RpdeState::DELETED,
+            "Kind" => OpenActive::Rpde::RpdeKind::SESSION_SERIES,
+            "Data" => session_series_event
+          )
+        ])
+    end
+
+    it 'throws DeletedItemsDataException exception' do
+      expect { body }.to raise_exception(OpenActive::Rpde::Exceptions::DeletedItemsDataException)
+    end
+  end
+
+  describe 'Body containing queried change number' do
+    let (:body) do
+      OpenActive::Rpde::RpdeBody::create_from_next_change_number(
+        "https://www.example.com/feed",
+        4,
+        [
+          OpenActive::Rpde::RpdeItem.new(
+            "Id" => 2,
+            "Modified" => 4,
+            "State" => OpenActive::Rpde::RpdeState::UPDATED,
+            "Kind" => OpenActive::Rpde::RpdeKind::SESSION_SERIES,
+            "Data" => session_series_event
+          ),
+          OpenActive::Rpde::RpdeItem.new(
+            "Id" => 1,
+            "Modified" => 5,
+            "State" => OpenActive::Rpde::RpdeState::DELETED,
+            "Kind" => OpenActive::Rpde::RpdeKind::SESSION_SERIES,
+            "Data" => nil
+          )
+        ])
+    end
+
+    it 'throws FirstTimeAfterChangeNumberException exception' do
+      expect { body }.to raise_exception(OpenActive::Rpde::Exceptions::FirstTimeAfterChangeNumberException)
+    end
+  end
+
+
+  describe 'Body missing fields' do
+    let (:body) do
+      OpenActive::Rpde::RpdeBody::create_from_next_change_number(
+        "https://www.example.com/feed",
+        1,
+        [
+          OpenActive::Rpde::RpdeItem.new(
+            "Id" => 2,
+            "Modified" => 4,
+            "State" => OpenActive::Rpde::RpdeState::UPDATED,
+            "Data" => session_series_event
+          ),
+          OpenActive::Rpde::RpdeItem.new(
+            "Id" => 1,
+            "Modified" => 5,
+            "State" => OpenActive::Rpde::RpdeState::DELETED,
+            "Data" => nil
+          )
+        ])
+    end
+
+    it 'throws IncompleteItemsDataException exception' do
+      expect { body }.to raise_exception(OpenActive::Rpde::Exceptions::IncompleteItemsDataException)
+    end
+  end
+
 end
