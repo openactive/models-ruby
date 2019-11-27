@@ -15,11 +15,11 @@ module OpenActive
       # @option opts [String,Integer]  id string|int
       # @option opts [Array<::OpenActive::Rpde::RpdeItem>] items
       # @return self
-      # @throws ::OpenActive::Rpde::Exceptions::FirstTimeAfterTimestampAndAfterIdException If the afterId and afterTimestamp provided are of the first item in the feed
-      # @throws ::OpenActive::Rpde::Exceptions::DeletedItemsDataException If any deleted items provided (if any) contain data
-      # @throws ::OpenActive::Rpde::Exceptions::IncompleteItemsDataException If any RPDE feed item does not include id, modified, state, or kind.
-      # @throws ::OpenActive::Rpde::Exceptions::ModifiedIdItemsOrderException If the feed items are not in "modified", then "id", order.
-      # @throws ::OpenActive::Exceptions::InvalidArgumentException If the provided argument is not of a supported type.
+      # @throws [::OpenActive::Rpde::Exceptions::FirstTimeAfterTimestampAndAfterIdException] If the afterId and afterTimestamp provided are of the first item in the feed
+      # @throws [::OpenActive::Rpde::Exceptions::DeletedItemsDataException] If any deleted items provided (if any) contain data
+      # @throws [::OpenActive::Rpde::Exceptions::IncompleteItemsDataException] If any RPDE feed item does not include id, modified, state, or kind.
+      # @throws [::OpenActive::Rpde::Exceptions::ModifiedIdItemsOrderException] If the feed items are not in "modified", then "id", order.
+      # @throws [::OpenActive::Exceptions::InvalidArgumentException] If the provided argument is not of a supported type.
       def self.create(feed_base_url:, modified: nil, id: nil, change_number: nil, items:)
         if !modified.nil? && !id.nil? && change_number.nil?
           self.create_from_modified_id(feed_base_url, modified, id, items)
@@ -35,16 +35,16 @@ module OpenActive
       # Checks are performed to see if the provided "modified" and "id" attributes
       # are valid.
       #
-      # @param feed_base_url string
-      # @param modified int
-      # @param id string|int
-      # @param items ::OpenActive::Rpde::RpdeItem[]
+      # @param [String] feed_base_url
+      # @param [Integer] modified int
+      # @param [String,Integer] id
+      # @param [Array<::OpenActive::Rpde::RpdeItem>] items
       # @return self
-      # @throws ::OpenActive::Rpde::Exceptions::FirstTimeAfterTimestampAndAfterIdException If the afterId and afterTimestamp provided are of the first item in the feed
-      # @throws ::OpenActive::Rpde::Exceptions::DeletedItemsDataException If any deleted items provided (if any) contain data
-      # @throws ::OpenActive::Rpde::Exceptions::IncompleteItemsDataException If any RPDE feed item does not include id, modified, state, or kind.
-      # @throws ::OpenActive::Rpde::Exceptions::ModifiedIdItemsOrderException If the feed items are not in "modified", then "id", order.
-      # @throws ::OpenActive::Exceptions::InvalidArgumentException If the provided argument is not of a supported type.
+      # @throws [::OpenActive::Rpde::Exceptions::FirstTimeAfterTimestampAndAfterIdException] If the afterId and afterTimestamp provided are of the first item in the feed
+      # @throws [::OpenActive::Rpde::Exceptions::DeletedItemsDataException] If any deleted items provided (if any) contain data
+      # @throws [::OpenActive::Rpde::Exceptions::IncompleteItemsDataException] If any RPDE feed item does not include id, modified, state, or kind.
+      # @throws [::OpenActive::Rpde::Exceptions::ModifiedIdItemsOrderException] If the feed items are not in "modified", then "id", order.
+      # @throws [::OpenActive::Exceptions::InvalidArgumentException] If the provided argument is not of a supported type.
       def self.create_from_modified_id(feed_base_url, modified, id, items)
         rpde_body = self.new(
           items: items
@@ -91,15 +91,15 @@ module OpenActive
       # Checks are performed to see if the provided "changeNumber" attribute
       # is valid.
       #
-      # @param feed_base_url string
-      # @param change_number int
-      # @param items ::OpenActive::Rpde::RpdeItem[]
+      # @param [String] feed_base_url
+      # @param [Integer] change_number
+      # @param [Array<::OpenActive::Rpde::RpdeItem>]items
       # @return self
-      # @throws ::OpenActive::Rpde::Exceptions::FirstTimeAfterTimestampAndAfterIdException If the afterId and afterTimestamp provided are of the first item in the feed
-      # @throws ::OpenActive::Rpde::Exceptions::DeletedItemsDataException If any deleted items provided (if any) contain data
-      # @throws ::OpenActive::Rpde::Exceptions::IncompleteItemsDataException If any RPDE feed item does not include id, modified, state, or kind.
-      # @throws ::OpenActive::Rpde::Exceptions::ModifiedIdItemsOrderException If the feed items are not in "modified", then "id", order.
-      # @throws ::OpenActive::Exceptions::InvalidArgumentException If the provided argument is not of a supported type.
+      # @throws [::OpenActive::Rpde::Exceptions::FirstTimeAfterTimestampAndAfterIdException] If the afterId and afterTimestamp provided are of the first item in the feed
+      # @throws [::OpenActive::Rpde::Exceptions::DeletedItemsDataException] If any deleted items provided (if any) contain data
+      # @throws [::OpenActive::Rpde::Exceptions::IncompleteItemsDataException] If any RPDE feed item does not include id, modified, state, or kind.
+      # @throws [::OpenActive::Rpde::Exceptions::ModifiedIdItemsOrderException] If the feed items are not in "modified", then "id", order.
+      # @throws [::OpenActive::Exceptions::InvalidArgumentException] If the provided argument is not of a supported type.
       def self.create_from_next_change_number(feed_base_url, change_number, items)
         rpde_body = self.new(
           items: items
