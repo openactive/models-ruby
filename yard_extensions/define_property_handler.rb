@@ -10,36 +10,36 @@ class DefinePropertyHandler < YARD::Handlers::Ruby::Base
     params = statement.parameters(false).dup
 
     # Add all attributes
-    validated_attribute_names(params).each do |name|
-      namespace.attributes[scope][name] ||= SymbolHash[:read => nil, :write => nil]
+    name = validated_attribute_names(params)
 
-      # Show their methods as well
-      {:read => name, :write => "#{name}="}.each do |type, meth|
-        if type == :read ? read : write
-          o = MethodObject.new(namespace, meth, scope)
-          if type == :write
-            o.parameters = [['value', nil]]
-            src = "def #{meth}(value)"
-            full_src = "#{src}\n  @#{name} = value\nend"
-            doc = "Sets the attribute #{name}\n@param value the value to set the attribute #{name} to."
-          else
-            src = "def #{meth}"
-            full_src = "#{src}\n  @#{name}\nend"
-            doc = "Returns the value of attribute #{name}"
-          end
-          o.source ||= full_src
-          o.signature ||= src
-          register(o)
-          o.docstring = doc if o.docstring.blank?(false)
+    namespace.attributes[scope][name] ||= SymbolHash[:read => nil, :write => nil]
 
-          # Register the object explicitly
-          namespace.attributes[scope][name][type] = o
+    # Show their methods as well
+    {:read => name, :write => "#{name}="}.each do |type, meth|
+      if type == :read ? read : write
+        o = MethodObject.new(namespace, meth, scope)
+        if type == :write
+          o.parameters = [['value', nil]]
+          src = "def #{meth}(value)"
+          full_src = "#{src}\n  @#{name} = value\nend"
+          doc = "Sets the attribute #{name}\n@param value the value to set the attribute #{name} to."
         else
-          obj = namespace.children.find { |other| other.name == meth.to_sym && other.scope == scope }
-
-          # register an existing method as attribute
-          namespace.attributes[scope][name][type] = obj if obj
+          src = "def #{meth}"
+          full_src = "#{src}\n  @#{name}\nend"
+          doc = "Returns the value of attribute #{name}"
         end
+        o.source ||= full_src
+        o.signature ||= src
+        register(o)
+        o.docstring = doc if o.docstring.blank?(false)
+
+        # Register the object explicitly
+        namespace.attributes[scope][name][type] = o
+      else
+        obj = namespace.children.find { |other| other.name == meth.to_sym && other.scope == scope }
+
+        # register an existing method as attribute
+        namespace.attributes[scope][name][type] = obj if obj
       end
     end
   end
