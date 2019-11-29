@@ -58,9 +58,7 @@ module OpenActive
           end]
         end
 
-        private
-
-        def serialize_value(value, parent)
+        def serialize_value(value, parent = nil)
           if value.respond_to?(:iso8601)
             value.iso8601
           elsif value.is_a?(TypesafeEnum::Base)

@@ -7,9 +7,13 @@ module OpenActive
 
       module ClassMethods
         def validate_property(meth, types:)
-          type_validation_module.define_method "#{meth}=" do |value|
-            result = check_types(value, types: types)
-            super(result)
+          begin
+            type_validation_module.define_method "#{meth}=" do |value|
+              result = check_types(value, types: types)
+              super(result)
+            rescue StandardError => e
+              raise $!, "error setting field \"#{meth}\"", $!.backtrace
+            end
           end
         end
 
