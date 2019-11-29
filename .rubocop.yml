@@ -1,0 +1,77 @@
+require:
+  - rubocop-rspec
+
+Layout/SpaceInsideHashLiteralBraces:
+  Enabled: false
+
+Lint/ScriptPermission:
+  Enabled: false
+Metrics/AbcSize:
+  Enabled: false
+Metrics/BlockLength:
+  Enabled: false
+Metrics/MethodLength:
+  Enabled: true
+  Max: 20
+  Exclude:
+    - 'db/**/*.rb'
+
+Bundler/OrderedGems:
+  Enabled: false
+RSpec/ExampleWording:
+  Enabled: false
+RSpec/MultipleExpectations:
+  Enabled: false
+Style/Documentation:
+  Enabled: false
+Style/EmptyCaseCondition:
+  Enabled: false
+Style/FrozenStringLiteralComment:
+  Enabled: false
+Style/StringLiterals:
+  Enabled: false
+# check this against SW styleguide
+Style/TrailingCommaInArrayLiteral:
+  Enabled: false
+  EnforcedStyleForMultiline: comma
+Style/TrailingCommaInArguments:
+  Enabled: true
+  EnforcedStyleForMultiline: comma
+# check this against SW styleguide
+Style/TrailingCommaInHashLiteral:
+  Enabled: false
+  EnforcedStyleForMultiline: comma
+Style/SymbolArray:
+  EnforcedStyle: brackets
+Style/WordArray:
+  EnforcedStyle: brackets
+RSpec/ExampleLength:
+  Max: 15
+  Exclude:
+    - 'spec/features/**/*.rb' # feature specs are just naturally long
+Style/ClassAndModuleChildren:
+  AutoCorrect: true
+RSpec/NestedGroups:
+  Max: 5
+Style/AsciiComments:
+  Enabled: false
+
+Metrics/LineLength:
+  Enabled: true
+  Max: 120
+  Exclude:
+    - 'lib/openactive/models/**/*.rb'
+    - 'lib/openactive/enums/**/*.rb'
+    - 'openactive.gemspec'
+Naming/PredicateName:
+  Exclude:
+    - 'lib/openactive/models/**/*.rb'
+    - 'lib/openactive/enums/**/*.rb'
+Style/TrivialAccessors:
+  Exclude:
+    - 'lib/openactive/models/**/*.rb'
+    - 'lib/openactive/enums/**/*.rb'
+Metrics/ClassLength:
+  Exclude:
+    - 'lib/openactive/models/**/*.rb'
+    - 'lib/openactive/enums/**/*.rb'
