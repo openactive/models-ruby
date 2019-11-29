@@ -2,7 +2,7 @@
 #
 # @see https://github.com/openactive/models-lib/blob/master/test-description/data-structure.md For the test description
 RSpec.describe "Data structure tests" do
-  data =
+  objs =
     [
       {
         model: OpenActive::Models::Event,
@@ -18,7 +18,7 @@ RSpec.describe "Data structure tests" do
       }
     ]
 
-  data.each do |model:, data:|
+  objs.each do |model:, data:|
     describe model do
       let(:inst) { model.deserialize(data) }
 

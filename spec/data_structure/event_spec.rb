@@ -2,9 +2,9 @@
 #
 # @see https://github.com/openactive/models-lib/blob/master/test-description/data-structure.md For the test description
 RSpec.describe OpenActive::Models::Event do
-  let (:event_json) { JSON.parse(file_fixture("data_structure/event.json").read) }
+  let(:event_json) { JSON.parse(file_fixture("data_structure/event.json").read) }
 
-  let (:inst) { described_class.new(event_json) }
+  let(:inst) { described_class.new(event_json) }
 
   # Test that Event.attendeeinstructions exists.
   #

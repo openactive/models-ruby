@@ -26,7 +26,7 @@ module OpenActive
       #
       # @param type [string] The type name
       # @return [::OpenActive::Validators::ValidatorInterface]
-      def self.get_validator(type)
+      def self.get_validator(type) # rubocop:disable Metrics/MethodLength
         # If last 2 characters are "[]"
         # We are validating an array
         if type.end_with?('[]')

@@ -56,6 +56,11 @@ RSpec/NestedGroups:
 Style/AsciiComments:
   Enabled: false
 
+Naming/UncommunicativeMethodParamName:
+  AllowedNames:
+    - as
+    - id
+
 Metrics/LineLength:
   Enabled: true
   Max: 120
@@ -75,3 +80,16 @@ Metrics/ClassLength:
   Exclude:
     - 'lib/openactive/models/**/*.rb'
     - 'lib/openactive/enums/**/*.rb'
+
+# Specs aren't being used in an entirely typical way, so these rules clash
+RSpec/DescribeClass:
+  Enabled: false
+RSpec/FilePath:
+  Enabled: false
+
+# While these do great at indicating code smell, the code is inheritantly complicated and would need major refactoring
+# (which would further obfuscate what it's doing!)
+Metrics/CyclomaticComplexity:
+  Enabled: false
+Metrics/PerceivedComplexity:
+  Enabled: false

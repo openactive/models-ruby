@@ -2,7 +2,12 @@ RSpec.describe OpenActive::Rpde::RpdeBody do
   let(:session_series_event) do
     return OpenActive::Models::SessionSeries.new(
       "Name" => "Virtual BODYPUMP",
-      "Description" => "This is the virtual version of the original barbell class, which will help you get lean, toned and fit - fast. Les Mills™ Virtual classes are designed for people who cannot get access to our live classes or who want to get a ‘taste’ of a Les Mills™ class before taking a live class with an instructor. The classes are played on a big video screen, with dimmed lighting and pumping surround sound, and are led onscreen by the people who actually choreograph the classes.",
+      "Description" => "This is the virtual version of the original barbell class, which will help you get lean, toned"\
+                       " and fit - fast. Les Mills™ Virtual classes are designed for people who cannot get access to "\
+                       "our live classes or who want to get a ‘taste’ of a Les Mills™ class before taking a live class"\
+                       " with an instructor. The classes are played on a big video screen, with dimmed lighting and "\
+                       "pumping surround sound, and are led onscreen by the people who actually choreograph the "\
+                       "classes.",
       "Duration" => ActiveSupport::Duration.parse("P1D"),
       "StartDate" => DateTime.parse("2017-04-24T19:30:00-0800"),
       "Location" => OpenActive::Models::Place.new(
@@ -34,7 +39,7 @@ RSpec.describe OpenActive::Rpde::RpdeBody do
     )
   end
 
-  let (:feed_items) do
+  let(:feed_items) do
     return [
       OpenActive::Rpde::RpdeItem.new(
         "Id" => "2",
@@ -55,7 +60,7 @@ RSpec.describe OpenActive::Rpde::RpdeBody do
 
   describe '.create_from_modified_id' do
     context 'with entirely valid data' do
-      let (:json_items) { JSON.parse(file_fixture("rpde/session_series-items.json").read) }
+      let(:json_items) { JSON.parse(file_fixture("rpde/session_series-items.json").read) }
       let(:json) do
         {
           "next" => "https://www.example.com/feed?afterTimestamp=5&afterId=1",
@@ -77,7 +82,7 @@ RSpec.describe OpenActive::Rpde::RpdeBody do
     end
 
     context 'with unordered modified timestamps' do
-      let (:body) do
+      let(:body) do
         described_class.create_from_modified_id(
           "https://www.example.com/feed",
           1,
@@ -107,7 +112,7 @@ RSpec.describe OpenActive::Rpde::RpdeBody do
     end
 
     context 'with unordered IDs' do
-      let (:body) do
+      let(:body) do
         described_class.create_from_modified_id(
           "https://www.example.com/feed",
           1,
@@ -137,7 +142,7 @@ RSpec.describe OpenActive::Rpde::RpdeBody do
     end
 
     context 'with a delete containing data' do
-      let (:body) do
+      let(:body) do
         described_class.create_from_modified_id(
           "https://www.example.com/feed",
           1,
@@ -167,7 +172,7 @@ RSpec.describe OpenActive::Rpde::RpdeBody do
     end
 
     context 'with first item containing queried duplicate id/modified' do
-      let (:body) do
+      let(:body) do
         described_class.create_from_modified_id(
           "https://www.example.com/feed",
           4,
@@ -197,7 +202,7 @@ RSpec.describe OpenActive::Rpde::RpdeBody do
     end
 
     context 'with body containing unordered modified timestamps' do
-      let (:body) do
+      let(:body) do
         described_class.create_from_modified_id(
           "https://www.example.com/feed",
           4,
@@ -229,7 +234,7 @@ RSpec.describe OpenActive::Rpde::RpdeBody do
 
   describe '.create_from_next_change_number' do
     context 'with valid data' do
-      let (:json_items) { JSON.parse(file_fixture("rpde/session_series-items.json").read) }
+      let(:json_items) { JSON.parse(file_fixture("rpde/session_series-items.json").read) }
       let(:json) do
         {
           "next" => "https://www.example.com/feed?afterChangeNumber=5",
@@ -248,7 +253,7 @@ RSpec.describe OpenActive::Rpde::RpdeBody do
     end
 
     context 'with body containing unordered modified timestamps' do
-      let (:body) do
+      let(:body) do
         described_class.create_from_next_change_number(
           "https://www.example.com/feed",
           1,
@@ -277,7 +282,7 @@ RSpec.describe OpenActive::Rpde::RpdeBody do
     end
 
     context 'with body containing change number with unordered id' do
-      let (:body) do
+      let(:body) do
         described_class.create_from_next_change_number(
           "https://www.example.com/feed",
           1,
@@ -306,7 +311,7 @@ RSpec.describe OpenActive::Rpde::RpdeBody do
     end
 
     context 'with body containing change numbers with unordered id + duplicate modified' do
-      let (:body) do
+      let(:body) do
         described_class.create_from_next_change_number(
           "https://www.example.com/feed",
           1,
@@ -335,7 +340,7 @@ RSpec.describe OpenActive::Rpde::RpdeBody do
     end
 
     context 'with body containing queried change number' do
-      let (:body) do
+      let(:body) do
         described_class.create_from_next_change_number(
           "https://www.example.com/feed",
           4,
@@ -364,7 +369,7 @@ RSpec.describe OpenActive::Rpde::RpdeBody do
     end
 
     context 'with missing fields' do
-      let (:body) do
+      let(:body) do
         described_class.create_from_next_change_number(
           "https://www.example.com/feed",
           1,

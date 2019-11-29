@@ -54,7 +54,9 @@ module OpenActive
 
         # If validation does not pass for any of the provided types,
         # type invalid
-        raise StandardError, "The first argument type does not match any of the declared parameter types (#{types.join(',')}) for #{val}."
+        raise StandardError,
+              "The first argument type does not match any of the declared parameter types "\
+              "(#{types.join(',')}) for #{val}."
       end
     end
   end
