@@ -1,3 +1,4 @@
+# rubocop:disable Metrics/MethodLength
 module OpenActive
   module Rpde
     class RpdeBody < OpenActive::BaseModel
@@ -15,11 +16,16 @@ module OpenActive
       # @option opts [String,Integer]  id string|int
       # @option opts [Array<::OpenActive::Rpde::RpdeItem>] items
       # @return self
-      # @raise [::OpenActive::Rpde::Exceptions::FirstTimeAfterTimestampAndAfterIdException] If the afterId and afterTimestamp provided are of the first item in the feed
-      # @raise [::OpenActive::Rpde::Exceptions::DeletedItemsDataException] If any deleted items provided (if any) contain data
-      # @raise [::OpenActive::Rpde::Exceptions::IncompleteItemsDataException] If any RPDE feed item does not include id, modified, state, or kind.
-      # @raise [::OpenActive::Rpde::Exceptions::ModifiedIdItemsOrderException] If the feed items are not in "modified", then "id", order.
-      # @raise [::OpenActive::Exceptions::InvalidArgumentException] If the provided argument is not of a supported type.
+      # @raise [::OpenActive::Rpde::Exceptions::FirstTimeAfterTimestampAndAfterIdException]
+      #        If the afterId and afterTimestamp provided are of the first item in the feed
+      # @raise [::OpenActive::Rpde::Exceptions::DeletedItemsDataException]
+      #        If any deleted items provided (if any) contain data
+      # @raise [::OpenActive::Rpde::Exceptions::IncompleteItemsDataException]
+      #        If any RPDE feed item does not include id, modified, state, or kind.
+      # @raise [::OpenActive::Rpde::Exceptions::ModifiedIdItemsOrderException]
+      #        If the feed items are not in "modified", then "id", order.
+      # @raise [::OpenActive::Exceptions::InvalidArgumentException]
+      #        If the provided argument is not of a supported type.
       def self.create(feed_base_url:, modified: nil, id: nil, change_number: nil, items:)
         if !modified.nil? && !id.nil? && change_number.nil?
           create_from_modified_id(feed_base_url, modified, id, items)
@@ -40,11 +46,16 @@ module OpenActive
       # @param [String,Integer] id
       # @param [Array<::OpenActive::Rpde::RpdeItem>] items
       # @return self
-      # @raise [::OpenActive::Rpde::Exceptions::FirstTimeAfterTimestampAndAfterIdException] If the afterId and afterTimestamp provided are of the first item in the feed
-      # @raise [::OpenActive::Rpde::Exceptions::DeletedItemsDataException] If any deleted items provided (if any) contain data
-      # @raise [::OpenActive::Rpde::Exceptions::IncompleteItemsDataException] If any RPDE feed item does not include id, modified, state, or kind.
-      # @raise [::OpenActive::Rpde::Exceptions::ModifiedIdItemsOrderException] If the feed items are not in "modified", then "id", order.
-      # @raise [::OpenActive::Exceptions::InvalidArgumentException] If the provided argument is not of a supported type.
+      # @raise [::OpenActive::Rpde::Exceptions::FirstTimeAfterTimestampAndAfterIdException]
+      #        If the afterId and afterTimestamp provided are of the first item in the feed
+      # @raise [::OpenActive::Rpde::Exceptions::DeletedItemsDataException]
+      #        If any deleted items provided (if any) contain data
+      # @raise [::OpenActive::Rpde::Exceptions::IncompleteItemsDataException]
+      #        If any RPDE feed item does not include id, modified, state, or kind.
+      # @raise [::OpenActive::Rpde::Exceptions::ModifiedIdItemsOrderException]
+      #        If the feed items are not in "modified", then "id", order.
+      # @raise [::OpenActive::Exceptions::InvalidArgumentException]
+      #        If the provided argument is not of a supported type.
       def self.create_from_modified_id(feed_base_url, modified, id, items)
         rpde_body = new(
           items: items,
@@ -69,19 +80,20 @@ module OpenActive
               raise Exceptions::IncompleteItemsDataException
             end
 
-            if item.modified > current_modified || (item.modified == current_modified && item.id > current_id)
-              current_modified = item.modified
-              current_id = item.id
-            else
+            unless item.modified > current_modified ||
+                   (item.modified == current_modified && item.id > current_id)
               raise Exceptions::ModifiedIdItemsOrderException
             end
+
+            current_modified = item.modified
+            current_id = item.id
           end
           # Create 'next' URL depending on whether there are items available
-          rpde_body.next = "#{feed_base_url}?afterTimestamp=#{CGI.escape(items.last.modified.to_s)}&afterId=#{CGI.escape(items.last.id.to_s)}"
-        else
-          if !modified.nil? && !id.nil?
-            rpde_body.next = "#{feed_base_url}?afterTimestamp=#{CGI.escape(modified.to_s)}&afterId=#{CGI.escape(id.to_s)}"
-          end
+          rpde_body.next = "#{feed_base_url}?afterTimestamp=#{CGI.escape(items.last.modified.to_s)}&"\
+                           "afterId=#{CGI.escape(items.last.id.to_s)}"
+        elsif !modified.nil? && !id.nil?
+          rpde_body.next = "#{feed_base_url}?afterTimestamp=#{CGI.escape(modified.to_s)}&"\
+                           "afterId=#{CGI.escape(id.to_s)}"
         end
         rpde_body
       end
@@ -95,11 +107,16 @@ module OpenActive
       # @param [Integer] change_number
       # @param [Array<::OpenActive::Rpde::RpdeItem>]items
       # @return self
-      # @raise [::OpenActive::Rpde::Exceptions::FirstTimeAfterTimestampAndAfterIdException] If the afterId and afterTimestamp provided are of the first item in the feed
-      # @raise [::OpenActive::Rpde::Exceptions::DeletedItemsDataException] If any deleted items provided (if any) contain data
-      # @raise [::OpenActive::Rpde::Exceptions::IncompleteItemsDataException] If any RPDE feed item does not include id, modified, state, or kind.
-      # @raise [::OpenActive::Rpde::Exceptions::ModifiedIdItemsOrderException] If the feed items are not in "modified", then "id", order.
-      # @raise [::OpenActive::Exceptions::InvalidArgumentException] If the provided argument is not of a supported type.
+      # @raise [::OpenActive::Rpde::Exceptions::FirstTimeAfterTimestampAndAfterIdException]
+      #        If the afterId and afterTimestamp provided are of the first item in the feed
+      # @raise [::OpenActive::Rpde::Exceptions::DeletedItemsDataException]
+      #        If any deleted items provided (if any) contain data
+      # @raise [::OpenActive::Rpde::Exceptions::IncompleteItemsDataException]
+      #        If any RPDE feed item does not include id, modified, state, or kind.
+      # @raise [::OpenActive::Rpde::Exceptions::ModifiedIdItemsOrderException]
+      #        If the feed items are not in "modified", then "id", order.
+      # @raise [::OpenActive::Exceptions::InvalidArgumentException]
+      #        If the provided argument is not of a supported type.
       def self.create_from_next_change_number(feed_base_url, change_number, items)
         rpde_body = new(
           items: items,
@@ -121,11 +138,9 @@ module OpenActive
               raise Exceptions::IncompleteItemsDataException
             end
 
-            if item.modified > current_change_number
-              current_change_number = item.modified
-            else
-              raise Exceptions::NextChangeNumbersItemsOrderException
-            end
+            raise Exceptions::NextChangeNumbersItemsOrderException unless item.modified > current_change_number
+
+            current_change_number = item.modified
           end
           # Create 'next' URL depending on whether there are items available
           rpde_body.next = "#{feed_base_url}?afterChangeNumber=#{CGI.escape(items.last.modified.to_s)}"
@@ -139,3 +154,4 @@ module OpenActive
     end
   end
 end
+# rubocop:enable Metrics/MethodLength

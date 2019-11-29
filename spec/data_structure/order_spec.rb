@@ -2,11 +2,28 @@
 #
 # @see https://github.com/openactive/models-lib/blob/master/test-description/data-structure.md For the test description
 RSpec.describe OpenActive::Models::Order do
-  let (:order_json) { JSON.parse(file_fixture("data_structure/order.json").read) }
+  let(:order_json) { JSON.parse(file_fixture("data_structure/order.json").read) }
 
-  let (:inst) { described_class.deserialize(order_json) }
+  let(:inst) { described_class.deserialize(order_json) }
 
   # Test that Order.orderedItem.orderedItem exists.
+  let(:correct_properties) do
+    [
+      "type",
+      "id",
+      "orderedItem",
+      "seller",
+      "broker",
+      "brokerRole",
+      "customer",
+      "taxCalculationExcluded",
+      "bookingService",
+      "totalPaymentDue",
+      "orderProposalVersion",
+      "totalPaymentTax"
+    ]
+  end
+
   it "contains an array of OrderedItems" do
     expect(inst.ordered_item).not_to be_nil
     expect(inst.ordered_item).to be_a(Array)
@@ -42,22 +59,9 @@ RSpec.describe OpenActive::Models::Order do
   #
   # @dataProvider orderProvider
   # @return [void]
-  it "has correct properties" do
-    correct_properties = [
-      "type",
-      "id",
-      "orderedItem",
-      "seller",
-      "broker",
-      "brokerRole",
-      "customer",
-      "taxCalculationExcluded",
-      "bookingService",
-      "totalPaymentDue",
-      "orderProposalVersion",
-      "totalPaymentTax"
-    ]
+  #
 
+  it "has correct properties" do
     # Serialize the order and JSON-decode it
     # to compare the expected properties
     # and the ones in common (with "@context" removed)

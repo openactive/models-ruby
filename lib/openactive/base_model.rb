@@ -25,6 +25,7 @@ module OpenActive
           instance_variable_get("@#{property}") || default
         end
       end
+      property
     end
 
     def set_property(key, value)
@@ -36,10 +37,10 @@ module OpenActive
 
       val = deserialize_value(value) if value.is_a?(Array) || value.is_a?(Hash)
 
-      if key != "@context" && key != "type"
-        # Calling the setter will type-enforce it
-        send("#{attr_name}=", val)
-      end
+      return if ["@context", "type"].include?(key)
+
+      # Calling the setter will type-enforce it
+      send("#{attr_name}=", val)
     end
 
     ##

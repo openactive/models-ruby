@@ -1,6 +1,6 @@
 RSpec.describe OpenActive::Models::SessionSeries do
-  let (:session_series_json) { JSON.parse(file_fixture("accessors/session_series_fencing.json").read) }
-  let (:session_series) { described_class.deserialize(session_series_json) }
+  let(:session_series_json) { JSON.parse(file_fixture("accessors/session_series_fencing.json").read) }
+  let(:session_series) { described_class.deserialize(session_series_json) }
 
   it "returns correct start date" do
     date = DateTime.parse(session_series_json["startDate"])
