@@ -8,7 +8,6 @@ module OpenActive
           "schema:HealthClub"
         end
         property :type, as: "type"
-
       end
     end
   end

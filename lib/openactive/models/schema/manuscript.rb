@@ -8,7 +8,6 @@ module OpenActive
           "schema:Manuscript"
         end
         property :type, as: "type"
-
       end
     end
   end

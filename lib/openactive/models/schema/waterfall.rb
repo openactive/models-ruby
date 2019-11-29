@@ -8,7 +8,6 @@ module OpenActive
           "schema:Waterfall"
         end
         property :type, as: "type"
-
       end
     end
   end

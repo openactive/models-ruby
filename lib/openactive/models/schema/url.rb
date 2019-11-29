@@ -8,7 +8,6 @@ module OpenActive
           "schema:URL"
         end
         property :type, as: "type"
-
       end
     end
   end

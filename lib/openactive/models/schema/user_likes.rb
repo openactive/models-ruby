@@ -8,7 +8,6 @@ module OpenActive
           "schema:UserLikes"
         end
         property :type, as: "type"
-
       end
     end
   end

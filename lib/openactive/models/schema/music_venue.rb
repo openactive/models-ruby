@@ -8,7 +8,6 @@ module OpenActive
           "schema:MusicVenue"
         end
         property :type, as: "type"
-
       end
     end
   end

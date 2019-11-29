@@ -8,7 +8,6 @@ module OpenActive
           "schema:Car"
         end
         property :type, as: "type"
-
       end
     end
   end

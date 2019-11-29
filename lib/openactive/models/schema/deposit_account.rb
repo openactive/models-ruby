@@ -8,7 +8,6 @@ module OpenActive
           "schema:DepositAccount"
         end
         property :type, as: "type"
-
       end
     end
   end

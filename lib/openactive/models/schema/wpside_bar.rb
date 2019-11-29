@@ -8,7 +8,6 @@ module OpenActive
           "schema:WPSideBar"
         end
         property :type, as: "type"
-
       end
     end
   end

@@ -8,7 +8,6 @@ module OpenActive
           "schema:MonetaryGrant"
         end
         property :type, as: "type"
-
       end
     end
   end

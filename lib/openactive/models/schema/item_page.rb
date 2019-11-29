@@ -8,7 +8,6 @@ module OpenActive
           "schema:ItemPage"
         end
         property :type, as: "type"
-
       end
     end
   end

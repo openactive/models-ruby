@@ -8,7 +8,6 @@ module OpenActive
           "schema:FastFoodRestaurant"
         end
         property :type, as: "type"
-
       end
     end
   end

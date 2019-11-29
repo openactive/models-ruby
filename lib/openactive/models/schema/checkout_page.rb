@@ -8,7 +8,6 @@ module OpenActive
           "schema:CheckoutPage"
         end
         property :type, as: "type"
-
       end
     end
   end

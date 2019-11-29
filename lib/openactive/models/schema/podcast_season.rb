@@ -8,7 +8,6 @@ module OpenActive
           "schema:PodcastSeason"
         end
         property :type, as: "type"
-
       end
     end
   end

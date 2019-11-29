@@ -8,7 +8,6 @@ module OpenActive
           "schema:TouristTrip"
         end
         property :type, as: "type"
-
       end
     end
   end

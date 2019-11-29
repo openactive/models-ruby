@@ -8,7 +8,6 @@ module OpenActive
           "schema:SeaBodyOfWater"
         end
         property :type, as: "type"
-
       end
     end
   end

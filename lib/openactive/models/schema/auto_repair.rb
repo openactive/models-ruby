@@ -8,7 +8,6 @@ module OpenActive
           "schema:AutoRepair"
         end
         property :type, as: "type"
-
       end
     end
   end

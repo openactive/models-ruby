@@ -8,7 +8,6 @@ module OpenActive
           "schema:AllocateAction"
         end
         property :type, as: "type"
-
       end
     end
   end

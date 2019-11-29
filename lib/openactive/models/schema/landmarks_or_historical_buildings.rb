@@ -8,7 +8,6 @@ module OpenActive
           "schema:LandmarksOrHistoricalBuildings"
         end
         property :type, as: "type"
-
       end
     end
   end

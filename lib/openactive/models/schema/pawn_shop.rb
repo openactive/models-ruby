@@ -8,7 +8,6 @@ module OpenActive
           "schema:PawnShop"
         end
         property :type, as: "type"
-
       end
     end
   end

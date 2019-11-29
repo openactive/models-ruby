@@ -8,7 +8,6 @@ module OpenActive
           "schema:ComputerLanguage"
         end
         property :type, as: "type"
-
       end
     end
   end

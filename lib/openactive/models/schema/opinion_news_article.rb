@@ -8,7 +8,6 @@ module OpenActive
           "schema:OpinionNewsArticle"
         end
         property :type, as: "type"
-
       end
     end
   end

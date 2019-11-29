@@ -8,7 +8,6 @@ module OpenActive
           "schema:RadioStation"
         end
         property :type, as: "type"
-
       end
     end
   end

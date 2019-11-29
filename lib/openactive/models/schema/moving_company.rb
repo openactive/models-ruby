@@ -8,7 +8,6 @@ module OpenActive
           "schema:MovingCompany"
         end
         property :type, as: "type"
-
       end
     end
   end

@@ -8,7 +8,6 @@ module OpenActive
           "schema:InvestmentFund"
         end
         property :type, as: "type"
-
       end
     end
   end

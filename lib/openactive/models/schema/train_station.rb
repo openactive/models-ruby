@@ -8,7 +8,6 @@ module OpenActive
           "schema:TrainStation"
         end
         property :type, as: "type"
-
       end
     end
   end

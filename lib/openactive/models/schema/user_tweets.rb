@@ -8,7 +8,6 @@ module OpenActive
           "schema:UserTweets"
         end
         property :type, as: "type"
-
       end
     end
   end

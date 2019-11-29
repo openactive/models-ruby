@@ -8,7 +8,6 @@ module OpenActive
           "schema:NGO"
         end
         property :type, as: "type"
-
       end
     end
   end

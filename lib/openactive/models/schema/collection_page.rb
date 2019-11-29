@@ -8,7 +8,6 @@ module OpenActive
           "schema:CollectionPage"
         end
         property :type, as: "type"
-
       end
     end
   end

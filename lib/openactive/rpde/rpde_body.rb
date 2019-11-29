@@ -22,9 +22,9 @@ module OpenActive
       # @raise [::OpenActive::Exceptions::InvalidArgumentException] If the provided argument is not of a supported type.
       def self.create(feed_base_url:, modified: nil, id: nil, change_number: nil, items:)
         if !modified.nil? && !id.nil? && change_number.nil?
-          self.create_from_modified_id(feed_base_url, modified, id, items)
+          create_from_modified_id(feed_base_url, modified, id, items)
         elsif modified.nil? && id.nil? && !change_number.nil?
-          self.create_from_next_change_number(feed_base_url, change_number, items)
+          create_from_next_change_number(feed_base_url, change_number, items)
         else
           raise ArgumentError
         end
@@ -46,10 +46,10 @@ module OpenActive
       # @raise [::OpenActive::Rpde::Exceptions::ModifiedIdItemsOrderException] If the feed items are not in "modified", then "id", order.
       # @raise [::OpenActive::Exceptions::InvalidArgumentException] If the provided argument is not of a supported type.
       def self.create_from_modified_id(feed_base_url, modified, id, items)
-        rpde_body = self.new(
-          items: items
+        rpde_body = new(
+          items: items,
         )
-        if items.length > 0
+        if !items.empty?
           first_item = items.first
 
           # Checks that the afterId and afterTimestamp provided are not the
@@ -61,7 +61,7 @@ module OpenActive
           current_modified = -1
           current_id = first_item.id
           items.each do |item|
-            if item.state == OpenActive::Rpde::RpdeState::DELETED && item.data != nil
+            if item.state == OpenActive::Rpde::RpdeState::DELETED && !item.data.nil?
               raise Exceptions::DeletedItemsDataException
             end
 
@@ -77,10 +77,10 @@ module OpenActive
             end
           end
           # Create 'next' URL depending on whether there are items available
-          rpde_body.next = "#{feed_base_url}?afterTimestamp=#{CGI::escape(items.last.modified.to_s)}&afterId=#{CGI::escape(items.last.id.to_s)}"
+          rpde_body.next = "#{feed_base_url}?afterTimestamp=#{CGI.escape(items.last.modified.to_s)}&afterId=#{CGI.escape(items.last.id.to_s)}"
         else
-          if modified != nil && id != nil
-            rpde_body.next = "#{feed_base_url}?afterTimestamp=#{CGI::escape(modified.to_s)}&afterId=#{CGI::escape(id.to_s)}"
+          if !modified.nil? && !id.nil?
+            rpde_body.next = "#{feed_base_url}?afterTimestamp=#{CGI.escape(modified.to_s)}&afterId=#{CGI.escape(id.to_s)}"
           end
         end
         rpde_body
@@ -101,21 +101,19 @@ module OpenActive
       # @raise [::OpenActive::Rpde::Exceptions::ModifiedIdItemsOrderException] If the feed items are not in "modified", then "id", order.
       # @raise [::OpenActive::Exceptions::InvalidArgumentException] If the provided argument is not of a supported type.
       def self.create_from_next_change_number(feed_base_url, change_number, items)
-        rpde_body = self.new(
-          items: items
+        rpde_body = new(
+          items: items,
         )
-        if items.length > 0
+        if !items.empty?
           first_item = items.first
 
           # Checks that the afterId and afterTimestamp provided are not the
           # first item in the feed (helps detect whether query is correct)
-          if first_item.modified == change_number
-            raise Exceptions::FirstTimeAfterChangeNumberException
-          end
+          raise Exceptions::FirstTimeAfterChangeNumberException if first_item.modified == change_number
 
           current_change_number = -1
           items.each do |item|
-            if item.state == OpenActive::Rpde::RpdeState::DELETED && item.data != nil
+            if item.state == OpenActive::Rpde::RpdeState::DELETED && !item.data.nil?
               raise Exceptions::DeletedItemsDataException
             end
 
@@ -130,10 +128,10 @@ module OpenActive
             end
           end
           # Create 'next' URL depending on whether there are items available
-          rpde_body.next = "#{feed_base_url}?afterChangeNumber=#{CGI::escape(items.last.modified.to_s)}"
+          rpde_body.next = "#{feed_base_url}?afterChangeNumber=#{CGI.escape(items.last.modified.to_s)}"
         else
-          if change_number != nil
-            rpde_body.next = "#{feed_base_url}?afterChangeNumber=#{CGI::escape(change_number.to_s)}"
+          unless change_number.nil?
+            rpde_body.next = "#{feed_base_url}?afterChangeNumber=#{CGI.escape(change_number.to_s)}"
           end
         end
         rpde_body

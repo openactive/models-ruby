@@ -8,7 +8,6 @@ module OpenActive
           "schema:OfferForPurchase"
         end
         property :type, as: "type"
-
       end
     end
   end

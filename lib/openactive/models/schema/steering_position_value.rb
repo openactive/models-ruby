@@ -8,7 +8,6 @@ module OpenActive
           "schema:SteeringPositionValue"
         end
         property :type, as: "type"
-
       end
     end
   end

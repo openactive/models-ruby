@@ -8,7 +8,6 @@ module OpenActive
           "schema:FAQPage"
         end
         property :type, as: "type"
-
       end
     end
   end

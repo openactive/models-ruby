@@ -8,7 +8,6 @@ module OpenActive
           "schema:LiteraryEvent"
         end
         property :type, as: "type"
-
       end
     end
   end

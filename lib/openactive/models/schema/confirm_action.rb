@@ -8,7 +8,6 @@ module OpenActive
           "schema:ConfirmAction"
         end
         property :type, as: "type"
-
       end
     end
   end

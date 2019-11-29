@@ -8,7 +8,6 @@ module OpenActive
           "schema:CatholicChurch"
         end
         property :type, as: "type"
-
       end
     end
   end

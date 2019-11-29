@@ -8,7 +8,6 @@ module OpenActive
           "schema:Attorney"
         end
         property :type, as: "type"
-
       end
     end
   end

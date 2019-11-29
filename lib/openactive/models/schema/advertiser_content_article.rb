@@ -8,7 +8,6 @@ module OpenActive
           "schema:AdvertiserContentArticle"
         end
         property :type, as: "type"
-
       end
     end
   end

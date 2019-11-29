@@ -8,7 +8,6 @@ module OpenActive
           "schema:SheetMusic"
         end
         property :type, as: "type"
-
       end
     end
   end

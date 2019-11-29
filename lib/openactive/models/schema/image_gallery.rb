@@ -8,7 +8,6 @@ module OpenActive
           "schema:ImageGallery"
         end
         property :type, as: "type"
-
       end
     end
   end

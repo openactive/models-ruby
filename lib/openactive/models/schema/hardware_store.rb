@@ -8,7 +8,6 @@ module OpenActive
           "schema:HardwareStore"
         end
         property :type, as: "type"
-
       end
     end
   end

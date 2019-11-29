@@ -8,7 +8,6 @@ module OpenActive
           "schema:Continent"
         end
         property :type, as: "type"
-
       end
     end
   end

@@ -8,7 +8,6 @@ module OpenActive
           "schema:GolfCourse"
         end
         property :type, as: "type"
-
       end
     end
   end

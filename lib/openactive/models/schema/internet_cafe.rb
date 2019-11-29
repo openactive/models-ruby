@@ -8,7 +8,6 @@ module OpenActive
           "schema:InternetCafe"
         end
         property :type, as: "type"
-
       end
     end
   end

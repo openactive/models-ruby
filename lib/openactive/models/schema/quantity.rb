@@ -8,7 +8,6 @@ module OpenActive
           "schema:Quantity"
         end
         property :type, as: "type"
-
       end
     end
   end

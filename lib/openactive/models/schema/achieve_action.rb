@@ -8,7 +8,6 @@ module OpenActive
           "schema:AchieveAction"
         end
         property :type, as: "type"
-
       end
     end
   end

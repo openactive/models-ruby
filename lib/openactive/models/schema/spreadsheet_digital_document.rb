@@ -8,7 +8,6 @@ module OpenActive
           "schema:SpreadsheetDigitalDocument"
         end
         property :type, as: "type"
-
       end
     end
   end

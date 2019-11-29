@@ -8,7 +8,6 @@ module OpenActive
           "schema:WPFooter"
         end
         property :type, as: "type"
-
       end
     end
   end

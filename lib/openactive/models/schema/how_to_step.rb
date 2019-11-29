@@ -8,7 +8,6 @@ module OpenActive
           "schema:HowToStep"
         end
         property :type, as: "type"
-
       end
     end
   end

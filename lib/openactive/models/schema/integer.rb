@@ -8,7 +8,6 @@ module OpenActive
           "schema:Integer"
         end
         property :type, as: "type"
-
       end
     end
   end

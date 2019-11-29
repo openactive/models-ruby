@@ -8,7 +8,6 @@ module OpenActive
           "schema:TakeAction"
         end
         property :type, as: "type"
-
       end
     end
   end

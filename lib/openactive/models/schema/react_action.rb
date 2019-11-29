@@ -8,7 +8,6 @@ module OpenActive
           "schema:ReactAction"
         end
         property :type, as: "type"
-
       end
     end
   end

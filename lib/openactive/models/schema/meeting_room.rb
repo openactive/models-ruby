@@ -8,7 +8,6 @@ module OpenActive
           "schema:MeetingRoom"
         end
         property :type, as: "type"
-
       end
     end
   end

@@ -8,7 +8,6 @@ module OpenActive
           "schema:InstallAction"
         end
         property :type, as: "type"
-
       end
     end
   end

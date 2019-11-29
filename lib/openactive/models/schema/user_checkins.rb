@@ -8,7 +8,6 @@ module OpenActive
           "schema:UserCheckins"
         end
         property :type, as: "type"
-
       end
     end
   end

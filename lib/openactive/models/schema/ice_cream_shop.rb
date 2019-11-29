@@ -8,7 +8,6 @@ module OpenActive
           "schema:IceCreamShop"
         end
         property :type, as: "type"
-
       end
     end
   end

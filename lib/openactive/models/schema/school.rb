@@ -8,7 +8,6 @@ module OpenActive
           "schema:School"
         end
         property :type, as: "type"
-
       end
     end
   end

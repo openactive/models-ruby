@@ -8,7 +8,6 @@ module OpenActive
           "schema:EventReservation"
         end
         property :type, as: "type"
-
       end
     end
   end

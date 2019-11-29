@@ -8,7 +8,6 @@ module OpenActive
           "schema:Volcano"
         end
         property :type, as: "type"
-
       end
     end
   end

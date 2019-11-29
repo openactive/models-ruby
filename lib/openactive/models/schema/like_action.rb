@@ -8,7 +8,6 @@ module OpenActive
           "schema:LikeAction"
         end
         property :type, as: "type"
-
       end
     end
   end

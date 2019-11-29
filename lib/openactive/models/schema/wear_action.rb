@@ -8,7 +8,6 @@ module OpenActive
           "schema:WearAction"
         end
         property :type, as: "type"
-
       end
     end
   end

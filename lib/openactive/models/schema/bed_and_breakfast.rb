@@ -8,7 +8,6 @@ module OpenActive
           "schema:BedAndBreakfast"
         end
         property :type, as: "type"
-
       end
     end
   end

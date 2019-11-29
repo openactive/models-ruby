@@ -8,7 +8,6 @@ module OpenActive
           "schema:CollegeOrUniversity"
         end
         property :type, as: "type"
-
       end
     end
   end

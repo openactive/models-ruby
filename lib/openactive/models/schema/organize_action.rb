@@ -8,7 +8,6 @@ module OpenActive
           "schema:OrganizeAction"
         end
         property :type, as: "type"
-
       end
     end
   end

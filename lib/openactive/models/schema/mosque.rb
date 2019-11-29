@@ -8,7 +8,6 @@ module OpenActive
           "schema:Mosque"
         end
         property :type, as: "type"
-
       end
     end
   end

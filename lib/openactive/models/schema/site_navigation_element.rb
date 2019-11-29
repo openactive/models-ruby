@@ -8,7 +8,6 @@ module OpenActive
           "schema:SiteNavigationElement"
         end
         property :type, as: "type"
-
       end
     end
   end

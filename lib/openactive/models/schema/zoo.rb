@@ -8,7 +8,6 @@ module OpenActive
           "schema:Zoo"
         end
         property :type, as: "type"
-
       end
     end
   end

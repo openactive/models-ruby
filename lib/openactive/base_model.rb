@@ -20,9 +20,11 @@ module OpenActive
       property property, as: as || property.to_s if as != false
       validate_property property, types: types if types
 
-      define_method property do
-        instance_variable_get("@#{property}") || default
-      end if default
+      if default
+        define_method property do
+          instance_variable_get("@#{property}") || default
+        end
+      end
     end
 
     def set_property(key, value)
@@ -32,9 +34,7 @@ module OpenActive
 
       val = value
 
-      if value.is_a?(Array) || value.is_a?(Hash)
-        val = deserialize_value(value)
-      end
+      val = deserialize_value(value) if value.is_a?(Array) || value.is_a?(Hash)
 
       if key != "@context" && key != "type"
         # Calling the setter will type-enforce it

@@ -12,12 +12,12 @@ RSpec.describe OpenActive::Rpde::RpdeBody do
           "AddressLocality" => "Santa Clara",
           "PostalCode" => "95051",
           "AddressRegion" => "CA",
-          "AddressCountry" => "US"
-        )
+          "AddressCountry" => "US",
+        ),
       ),
       "Image" => [
         OpenActive::Models::ImageObject.new(
-          "Url" => "http://www.example.com/event_image/12345"
+          "Url" => "http://www.example.com/event_image/12345",
         )
       ],
       "EndDate" => DateTime.parse("2017-04-24T23:00:00-0800"),
@@ -26,11 +26,11 @@ RSpec.describe OpenActive::Rpde::RpdeBody do
           "Url" => "https://www.example.com/event_offer/12345_201803180430",
           "Price" => 30,
           "PriceCurrency" => "USD",
-          "ValidFrom" => DateTime.parse("2017-01-20T16:20:00-0800")
+          "ValidFrom" => DateTime.parse("2017-01-20T16:20:00-0800"),
         )
       ],
       "AttendeeInstructions" => "Ensure you bring trainers and a bottle of water.",
-      "MeetingPoint" => ""
+      "MeetingPoint" => "",
     )
   end
 
@@ -69,7 +69,7 @@ RSpec.describe OpenActive::Rpde::RpdeBody do
           "https://www.example.com/feed",
           1,
           "1",
-          feed_items
+          feed_items,
         )
 
         expect(feed.serialize).to eq(json)
@@ -88,16 +88,17 @@ RSpec.describe OpenActive::Rpde::RpdeBody do
               "Modified" => 5,
               "State" => OpenActive::Rpde::RpdeState::UPDATED,
               "Kind" => OpenActive::Rpde::RpdeKind::SESSION_SERIES,
-              "Data" => session_series_event
+              "Data" => session_series_event,
             ),
             OpenActive::Rpde::RpdeItem.new(
               "Id" => "2",
               "Modified" => 4,
               "State" => OpenActive::Rpde::RpdeState::DELETED,
               "Kind" => OpenActive::Rpde::RpdeKind::SESSION_SERIES,
-              "Data" => nil
+              "Data" => nil,
             )
-          ])
+          ],
+        )
       end
 
       it 'throws a ModifiedIdItemsOrderException exception' do
@@ -117,16 +118,17 @@ RSpec.describe OpenActive::Rpde::RpdeBody do
               "Modified" => 4,
               "State" => OpenActive::Rpde::RpdeState::UPDATED,
               "Kind" => OpenActive::Rpde::RpdeKind::SESSION_SERIES,
-              "Data" => session_series_event
+              "Data" => session_series_event,
             ),
             OpenActive::Rpde::RpdeItem.new(
               "Id" => "1",
               "Modified" => 4,
               "State" => OpenActive::Rpde::RpdeState::DELETED,
               "Kind" => OpenActive::Rpde::RpdeKind::SESSION_SERIES,
-              "Data" => nil
+              "Data" => nil,
             )
-          ])
+          ],
+        )
       end
 
       it 'throws a ModifiedIdItemsOrderException exception' do
@@ -146,16 +148,17 @@ RSpec.describe OpenActive::Rpde::RpdeBody do
               "Modified" => 3,
               "State" => OpenActive::Rpde::RpdeState::UPDATED,
               "Kind" => OpenActive::Rpde::RpdeKind::SESSION_SERIES,
-              "Data" => session_series_event
+              "Data" => session_series_event,
             ),
             OpenActive::Rpde::RpdeItem.new(
               "Id" => "2",
               "Modified" => 4,
               "State" => OpenActive::Rpde::RpdeState::DELETED,
               "Kind" => OpenActive::Rpde::RpdeKind::SESSION_SERIES,
-              "Data" => session_series_event
+              "Data" => session_series_event,
             )
-          ])
+          ],
+        )
       end
 
       it 'throws DeletedItemsDataException exception' do
@@ -175,16 +178,17 @@ RSpec.describe OpenActive::Rpde::RpdeBody do
               "Modified" => 4,
               "State" => OpenActive::Rpde::RpdeState::UPDATED,
               "Kind" => OpenActive::Rpde::RpdeKind::SESSION_SERIES,
-              "Data" => session_series_event
+              "Data" => session_series_event,
             ),
             OpenActive::Rpde::RpdeItem.new(
               "Id" => "1",
               "Modified" => 5,
               "State" => OpenActive::Rpde::RpdeState::DELETED,
               "Kind" => OpenActive::Rpde::RpdeKind::SESSION_SERIES,
-              "Data" => nil
+              "Data" => nil,
             )
-          ])
+          ],
+        )
       end
 
       it 'throws FirstTimeAfterTimestampAndAfterIdException exception' do
@@ -204,16 +208,17 @@ RSpec.describe OpenActive::Rpde::RpdeBody do
               "Modified" => 5,
               "State" => OpenActive::Rpde::RpdeState::UPDATED,
               "Kind" => OpenActive::Rpde::RpdeKind::SESSION_SERIES,
-              "Data" => session_series_event
+              "Data" => session_series_event,
             ),
             OpenActive::Rpde::RpdeItem.new(
               "Id" => 1,
               "Modified" => 4,
               "State" => OpenActive::Rpde::RpdeState::DELETED,
               "Kind" => OpenActive::Rpde::RpdeKind::SESSION_SERIES,
-              "Data" => nil
+              "Data" => nil,
             )
-          ])
+          ],
+        )
       end
 
       it 'throws ModifiedIdItemsOrderException exception' do
@@ -237,7 +242,7 @@ RSpec.describe OpenActive::Rpde::RpdeBody do
         feed = described_class.create_from_next_change_number(
           "https://www.example.com/feed",
           1,
-          feed_items
+          feed_items,
         )
       end
     end
@@ -253,16 +258,17 @@ RSpec.describe OpenActive::Rpde::RpdeBody do
               "Modified" => 5,
               "State" => OpenActive::Rpde::RpdeState::UPDATED,
               "Kind" => OpenActive::Rpde::RpdeKind::SESSION_SERIES,
-              "Data" => session_series_event
+              "Data" => session_series_event,
             ),
             OpenActive::Rpde::RpdeItem.new(
               "Id" => 1,
               "Modified" => 4,
               "State" => OpenActive::Rpde::RpdeState::DELETED,
               "Kind" => OpenActive::Rpde::RpdeKind::SESSION_SERIES,
-              "Data" => nil
+              "Data" => nil,
             )
-          ])
+          ],
+        )
       end
 
       it 'throws NextChangeNumbersItemsOrderException exception' do
@@ -281,16 +287,17 @@ RSpec.describe OpenActive::Rpde::RpdeBody do
               "Modified" => 4,
               "State" => OpenActive::Rpde::RpdeState::UPDATED,
               "Kind" => OpenActive::Rpde::RpdeKind::SESSION_SERIES,
-              "Data" => session_series_event
+              "Data" => session_series_event,
             ),
             OpenActive::Rpde::RpdeItem.new(
               "Id" => 1,
               "Modified" => 5,
               "State" => OpenActive::Rpde::RpdeState::DELETED,
               "Kind" => OpenActive::Rpde::RpdeKind::SESSION_SERIES,
-              "Data" => session_series_event
+              "Data" => session_series_event,
             )
-          ])
+          ],
+        )
       end
 
       it 'throws DeletedItemsDataException exception' do
@@ -309,16 +316,17 @@ RSpec.describe OpenActive::Rpde::RpdeBody do
               "Modified" => 4,
               "State" => OpenActive::Rpde::RpdeState::UPDATED,
               "Kind" => OpenActive::Rpde::RpdeKind::SESSION_SERIES,
-              "Data" => session_series_event
+              "Data" => session_series_event,
             ),
             OpenActive::Rpde::RpdeItem.new(
               "Id" => 1,
               "Modified" => 4,
               "State" => OpenActive::Rpde::RpdeState::DELETED,
               "Kind" => OpenActive::Rpde::RpdeKind::SESSION_SERIES,
-              "Data" => nil
+              "Data" => nil,
             )
-          ])
+          ],
+        )
       end
 
       it 'throws NextChangeNumbersItemsOrderException exception' do
@@ -337,16 +345,17 @@ RSpec.describe OpenActive::Rpde::RpdeBody do
               "Modified" => 4,
               "State" => OpenActive::Rpde::RpdeState::UPDATED,
               "Kind" => OpenActive::Rpde::RpdeKind::SESSION_SERIES,
-              "Data" => session_series_event
+              "Data" => session_series_event,
             ),
             OpenActive::Rpde::RpdeItem.new(
               "Id" => 1,
               "Modified" => 5,
               "State" => OpenActive::Rpde::RpdeState::DELETED,
               "Kind" => OpenActive::Rpde::RpdeKind::SESSION_SERIES,
-              "Data" => nil
+              "Data" => nil,
             )
-          ])
+          ],
+        )
       end
 
       it 'throws FirstTimeAfterChangeNumberException exception' do
@@ -364,15 +373,16 @@ RSpec.describe OpenActive::Rpde::RpdeBody do
               "Id" => 2,
               "Modified" => 4,
               "State" => OpenActive::Rpde::RpdeState::UPDATED,
-              "Data" => session_series_event
+              "Data" => session_series_event,
             ),
             OpenActive::Rpde::RpdeItem.new(
               "Id" => 1,
               "Modified" => 5,
               "State" => OpenActive::Rpde::RpdeState::DELETED,
-              "Data" => nil
+              "Data" => nil,
             )
-          ])
+          ],
+        )
       end
 
       it 'throws IncompleteItemsDataException exception' do

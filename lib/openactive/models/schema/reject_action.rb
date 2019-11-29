@@ -8,7 +8,6 @@ module OpenActive
           "schema:RejectAction"
         end
         property :type, as: "type"
-
       end
     end
   end

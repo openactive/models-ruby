@@ -8,7 +8,6 @@ module OpenActive
           "schema:BackgroundNewsArticle"
         end
         property :type, as: "type"
-
       end
     end
   end

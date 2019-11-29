@@ -8,7 +8,6 @@ module OpenActive
           "schema:ShoppingCenter"
         end
         property :type, as: "type"
-
       end
     end
   end

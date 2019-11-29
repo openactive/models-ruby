@@ -8,7 +8,6 @@ module OpenActive
           "schema:UserBlocks"
         end
         property :type, as: "type"
-
       end
     end
   end

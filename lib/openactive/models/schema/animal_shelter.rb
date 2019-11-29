@@ -8,7 +8,6 @@ module OpenActive
           "schema:AnimalShelter"
         end
         property :type, as: "type"
-
       end
     end
   end

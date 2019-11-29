@@ -8,7 +8,6 @@ module OpenActive
           "schema:Notary"
         end
         property :type, as: "type"
-
       end
     end
   end

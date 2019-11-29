@@ -8,7 +8,6 @@ module OpenActive
           "schema:Canal"
         end
         property :type, as: "type"
-
       end
     end
   end

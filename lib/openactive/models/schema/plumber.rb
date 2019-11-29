@@ -8,7 +8,6 @@ module OpenActive
           "schema:Plumber"
         end
         property :type, as: "type"
-
       end
     end
   end

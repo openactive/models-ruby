@@ -8,7 +8,6 @@ module OpenActive
           "schema:HinduTemple"
         end
         property :type, as: "type"
-
       end
     end
   end

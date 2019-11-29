@@ -8,7 +8,6 @@ module OpenActive
           "schema:RadioClip"
         end
         property :type, as: "type"
-
       end
     end
   end

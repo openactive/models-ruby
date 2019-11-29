@@ -8,7 +8,6 @@ module OpenActive
           "schema:PoliceStation"
         end
         property :type, as: "type"
-
       end
     end
   end

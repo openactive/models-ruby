@@ -8,7 +8,6 @@ module OpenActive
           "schema:AnalysisNewsArticle"
         end
         property :type, as: "type"
-
       end
     end
   end

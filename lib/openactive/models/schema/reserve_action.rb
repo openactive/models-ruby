@@ -8,7 +8,6 @@ module OpenActive
           "schema:ReserveAction"
         end
         property :type, as: "type"
-
       end
     end
   end

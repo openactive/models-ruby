@@ -8,7 +8,6 @@ module OpenActive
           "schema:Taxi"
         end
         property :type, as: "type"
-
       end
     end
   end

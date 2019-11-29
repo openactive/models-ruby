@@ -8,7 +8,6 @@ module OpenActive
           "schema:EatAction"
         end
         property :type, as: "type"
-
       end
     end
   end

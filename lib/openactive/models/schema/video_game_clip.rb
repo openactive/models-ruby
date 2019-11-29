@@ -8,7 +8,6 @@ module OpenActive
           "schema:VideoGameClip"
         end
         property :type, as: "type"
-
       end
     end
   end

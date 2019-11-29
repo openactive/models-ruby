@@ -8,7 +8,6 @@ module OpenActive
           "schema:RVPark"
         end
         property :type, as: "type"
-
       end
     end
   end

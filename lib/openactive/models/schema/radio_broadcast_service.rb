@@ -8,7 +8,6 @@ module OpenActive
           "schema:RadioBroadcastService"
         end
         property :type, as: "type"
-
       end
     end
   end

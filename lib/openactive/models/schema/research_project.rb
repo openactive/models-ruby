@@ -8,7 +8,6 @@ module OpenActive
           "schema:ResearchProject"
         end
         property :type, as: "type"
-
       end
     end
   end

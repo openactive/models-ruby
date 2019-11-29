@@ -8,7 +8,6 @@ module OpenActive
           "schema:CompleteDataFeed"
         end
         property :type, as: "type"
-
       end
     end
   end

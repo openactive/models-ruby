@@ -8,7 +8,6 @@ module OpenActive
           "schema:AutomatedTeller"
         end
         property :type, as: "type"
-
       end
     end
   end

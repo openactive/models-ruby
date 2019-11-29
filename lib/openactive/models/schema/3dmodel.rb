@@ -8,7 +8,6 @@ module OpenActive
           "schema:3DModel"
         end
         property :type, as: "type"
-
       end
     end
   end

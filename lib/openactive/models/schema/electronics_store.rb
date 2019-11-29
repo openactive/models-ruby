@@ -8,7 +8,6 @@ module OpenActive
           "schema:ElectronicsStore"
         end
         property :type, as: "type"
-
       end
     end
   end

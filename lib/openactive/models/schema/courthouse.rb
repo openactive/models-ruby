@@ -8,7 +8,6 @@ module OpenActive
           "schema:Courthouse"
         end
         property :type, as: "type"
-
       end
     end
   end

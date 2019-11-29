@@ -8,7 +8,6 @@ module OpenActive
           "schema:BowlingAlley"
         end
         property :type, as: "type"
-
       end
     end
   end

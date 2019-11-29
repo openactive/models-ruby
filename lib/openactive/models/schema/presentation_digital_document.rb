@@ -8,7 +8,6 @@ module OpenActive
           "schema:PresentationDigitalDocument"
         end
         property :type, as: "type"
-
       end
     end
   end

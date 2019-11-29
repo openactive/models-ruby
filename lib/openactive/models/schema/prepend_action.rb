@@ -8,7 +8,6 @@ module OpenActive
           "schema:PrependAction"
         end
         property :type, as: "type"
-
       end
     end
   end

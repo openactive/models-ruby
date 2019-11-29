@@ -4,9 +4,9 @@ module OpenActive
   module Enums
     module Schema
       # A payment method is a standardized procedure for transferring the monetary amount for a purchase. Payment methods are characterized by the legal and technical structures used, and by the organization or group carrying out the transaction.<br/><br/>
-      # 
+      #
       # Commonly used values:<br/><br/>
-      # 
+      #
       # <ul>
       # <li>http://purl.org/goodrelations/v1#ByBankTransferInAdvance</li>
       # <li>http://purl.org/goodrelations/v1#ByInvoice</li>
@@ -18,7 +18,7 @@ module OpenActive
       # <li>http://purl.org/goodrelations/v1#PayPal</li>
       # <li>http://purl.org/goodrelations/v1#PaySwarm</li>
       # </ul>
-      # 
+      #
       class PaymentMethod < TypesafeEnum::Base
       end
     end

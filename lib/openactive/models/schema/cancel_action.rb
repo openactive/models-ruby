@@ -8,7 +8,6 @@ module OpenActive
           "schema:CancelAction"
         end
         property :type, as: "type"
-
       end
     end
   end

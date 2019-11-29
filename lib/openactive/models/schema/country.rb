@@ -8,7 +8,6 @@ module OpenActive
           "schema:Country"
         end
         property :type, as: "type"
-
       end
     end
   end

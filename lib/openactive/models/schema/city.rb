@@ -8,7 +8,6 @@ module OpenActive
           "schema:City"
         end
         property :type, as: "type"
-
       end
     end
   end

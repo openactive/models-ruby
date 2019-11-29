@@ -8,7 +8,6 @@ module OpenActive
           "schema:MovieRentalStore"
         end
         property :type, as: "type"
-
       end
     end
   end

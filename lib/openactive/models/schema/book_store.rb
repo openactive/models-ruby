@@ -8,7 +8,6 @@ module OpenActive
           "schema:BookStore"
         end
         property :type, as: "type"
-
       end
     end
   end

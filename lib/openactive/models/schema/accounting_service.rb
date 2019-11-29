@@ -8,7 +8,6 @@ module OpenActive
           "schema:AccountingService"
         end
         property :type, as: "type"
-
       end
     end
   end

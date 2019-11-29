@@ -8,7 +8,6 @@ module OpenActive
           "schema:FundingScheme"
         end
         property :type, as: "type"
-
       end
     end
   end

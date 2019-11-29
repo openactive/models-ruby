@@ -8,7 +8,6 @@ module OpenActive
           "schema:AskPublicNewsArticle"
         end
         property :type, as: "type"
-
       end
     end
   end

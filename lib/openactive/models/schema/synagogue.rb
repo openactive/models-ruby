@@ -8,7 +8,6 @@ module OpenActive
           "schema:Synagogue"
         end
         property :type, as: "type"
-
       end
     end
   end

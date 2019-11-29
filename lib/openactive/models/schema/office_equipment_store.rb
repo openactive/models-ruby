@@ -8,7 +8,6 @@ module OpenActive
           "schema:OfficeEquipmentStore"
         end
         property :type, as: "type"
-
       end
     end
   end

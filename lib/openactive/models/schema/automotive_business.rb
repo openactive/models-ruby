@@ -8,7 +8,6 @@ module OpenActive
           "schema:AutomotiveBusiness"
         end
         property :type, as: "type"
-
       end
     end
   end
