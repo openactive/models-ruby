@@ -80,6 +80,9 @@ Metrics/ClassLength:
   Exclude:
     - 'lib/openactive/models/**/*.rb'
     - 'lib/openactive/enums/**/*.rb'
+Layout/SpaceInsideArrayLiteralBrackets:
+  Exclude:
+    - 'lib/openactive/models/**/*.rb'
 
 # Specs aren't being used in an entirely typical way, so these rules clash
 RSpec/DescribeClass:
