@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:NewsMediaOrganization"
         end
-        property :type, as: "type"
 
         # @return [URI,OpenActive::Models::Schema::Article]
         define_property :diversity_staffing_report, as: "diversityStaffingReport", types: [

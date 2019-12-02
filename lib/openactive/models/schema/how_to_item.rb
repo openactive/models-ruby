@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:HowToItem"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Models::Schema::QuantitativeValue,String,BigDecimal,nil]
         define_property :required_quantity, as: "requiredQuantity", types: [

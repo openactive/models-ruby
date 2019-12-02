@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:MusicRelease"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Enums::Schema::MusicReleaseFormatType,nil]
         define_property :music_release_format, as: "musicReleaseFormat", types: [

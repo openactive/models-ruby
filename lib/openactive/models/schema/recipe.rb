@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:Recipe"
         end
-        property :type, as: "type"
 
         # @return [String]
         define_property :ingredients, as: "ingredients", types: [

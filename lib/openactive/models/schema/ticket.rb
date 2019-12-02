@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:Ticket"
         end
-        property :type, as: "type"
 
         # @return [Date,DateTime,nil]
         define_property :date_issued, as: "dateIssued", types: [

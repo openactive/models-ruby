@@ -7,7 +7,6 @@ module OpenActive
       def type
         "Schedule"
       end
-      property :type, as: "type"
 
       # @return [Array<String>,Array<OpenActive::Enums::Schema::DayOfWeek>,nil]
       define_property :by_day, as: "byDay", types: [

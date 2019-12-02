@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:WriteAction"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Models::Schema::Language]
         define_property :language, as: "language", types: [

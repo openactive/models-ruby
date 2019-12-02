@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:SoftwareSourceCode"
         end
-        property :type, as: "type"
 
         # @return [String]
         define_property :runtime, as: "runtime", types: [

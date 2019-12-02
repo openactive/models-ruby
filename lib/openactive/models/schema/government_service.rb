@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:GovernmentService"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Models::Schema::Organization]
         define_property :service_operator, as: "serviceOperator", types: [

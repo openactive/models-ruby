@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:MusicPlaylist"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Models::Schema::MusicRecording]
         define_property :tracks, as: "tracks", types: [

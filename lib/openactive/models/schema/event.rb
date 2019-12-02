@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:Event"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Models::Schema::Offer]
         define_property :offers, as: "offers", types: [

@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:MusicAlbum"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Models::Schema::MusicRelease]
         define_property :album_release, as: "albumRelease", types: [

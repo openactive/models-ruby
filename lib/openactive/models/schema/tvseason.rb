@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:TVSeason"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Models::Schema::Country]
         define_property :country_of_origin, as: "countryOfOrigin", types: [

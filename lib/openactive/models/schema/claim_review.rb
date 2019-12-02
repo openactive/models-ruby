@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:ClaimReview"
         end
-        property :type, as: "type"
 
         # @return [String]
         define_property :claim_reviewed, as: "claimReviewed", types: [

@@ -7,7 +7,6 @@ module OpenActive
       def type
         "PropertyValueSpecification"
       end
-      property :type, as: "type"
 
       # @return [String]
       define_property :name, as: "name", types: [

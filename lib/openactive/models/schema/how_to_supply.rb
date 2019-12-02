@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:HowToSupply"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Models::Schema::MonetaryAmount,String]
         define_property :estimated_cost, as: "estimatedCost", types: [

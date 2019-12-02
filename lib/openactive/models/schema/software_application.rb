@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:SoftwareApplication"
         end
-        property :type, as: "type"
 
         # @return [String]
         define_property :application_suite, as: "applicationSuite", types: [

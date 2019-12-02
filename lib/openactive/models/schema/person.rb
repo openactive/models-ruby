@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:Person"
         end
-        property :type, as: "type"
 
         # @return [String]
         define_property :additional_name, as: "additionalName", types: [

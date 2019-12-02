@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:Reservation"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Models::Schema::Thing]
         define_property :reservation_for, as: "reservationFor", types: [

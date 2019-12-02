@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:Place"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Models::Schema::Event]
         define_property :events, as: "events", types: [

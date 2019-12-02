@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:Menu"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Models::Schema::MenuSection]
         define_property :has_menu_section, as: "hasMenuSection", types: [

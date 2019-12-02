@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:Review"
         end
-        property :type, as: "type"
 
         # @return [String]
         define_property :review_aspect, as: "reviewAspect", types: [

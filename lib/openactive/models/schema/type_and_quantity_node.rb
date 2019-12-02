@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:TypeAndQuantityNode"
         end
-        property :type, as: "type"
 
         # @return [String]
         define_property :unit_text, as: "unitText", types: [

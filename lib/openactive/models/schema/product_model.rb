@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:ProductModel"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Models::Schema::ProductModel]
         define_property :is_variant_of, as: "isVariantOf", types: [

@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:MovieSeries"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Models::Schema::Person]
         define_property :actors, as: "actors", types: [

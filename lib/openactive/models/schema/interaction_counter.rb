@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:InteractionCounter"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Models::Schema::Action]
         define_property :interaction_type, as: "interactionType", types: [

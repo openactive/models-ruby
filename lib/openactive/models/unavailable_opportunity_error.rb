@@ -6,7 +6,6 @@ module OpenActive
       def type
         "UnavailableOpportunityError"
       end
-      property :type, as: "type"
     end
   end
 end

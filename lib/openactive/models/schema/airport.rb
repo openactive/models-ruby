@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:Airport"
         end
-        property :type, as: "type"
 
         # @return [String]
         define_property :icao_code, as: "icaoCode", types: [

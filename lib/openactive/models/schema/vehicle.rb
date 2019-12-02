@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:Vehicle"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Models::Schema::QuantitativeValue]
         define_property :fuel_consumption, as: "fuelConsumption", types: [

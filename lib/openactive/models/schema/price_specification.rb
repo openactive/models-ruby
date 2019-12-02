@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:PriceSpecification"
         end
-        property :type, as: "type"
 
         # @return [Boolean,nil]
         define_property :value_added_tax_included, as: "valueAddedTaxIncluded", types: [

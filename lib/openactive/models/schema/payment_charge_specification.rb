@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:PaymentChargeSpecification"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Enums::Schema::DeliveryMethod,nil]
         define_property :applies_to_delivery_method, as: "appliesToDeliveryMethod", types: [

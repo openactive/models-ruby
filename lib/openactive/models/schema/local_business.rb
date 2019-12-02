@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:LocalBusiness"
         end
-        property :type, as: "type"
 
         # @return [String]
         define_property :currencies_accepted, as: "currenciesAccepted", types: [

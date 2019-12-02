@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:MovieTheater"
         end
-        property :type, as: "type"
 
         # @return [BigDecimal,nil]
         define_property :screen_count, as: "screenCount", types: [

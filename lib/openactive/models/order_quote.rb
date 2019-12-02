@@ -7,7 +7,6 @@ module OpenActive
       def type
         "OrderQuote"
       end
-      property :type, as: "type"
 
       # @return [OpenActive::Models::Lease]
       define_property :lease, as: "lease", types: [

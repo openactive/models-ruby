@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:UserComments"
         end
-        property :type, as: "type"
 
         # @return [URI]
         define_property :reply_to_url, as: "replyToUrl", types: [

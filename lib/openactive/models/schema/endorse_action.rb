@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:EndorseAction"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Models::Schema::Person,OpenActive::Models::Schema::Organization]
         define_property :endorsee, as: "endorsee", types: [

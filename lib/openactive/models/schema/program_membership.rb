@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:ProgramMembership"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Models::Schema::QuantitativeValue,BigDecimal,nil]
         define_property :membership_points_earned, as: "membershipPointsEarned", types: [

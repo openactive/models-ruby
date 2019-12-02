@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:Role"
         end
-        property :type, as: "type"
 
         # @return [URI,String]
         define_property :role_name, as: "roleName", types: [

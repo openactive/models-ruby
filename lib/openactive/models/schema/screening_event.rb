@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:ScreeningEvent"
         end
-        property :type, as: "type"
 
         # @return [String,OpenActive::Models::Schema::Language]
         define_property :subtitle_language, as: "subtitleLanguage", types: [

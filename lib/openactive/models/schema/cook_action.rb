@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:CookAction"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Models::Schema::FoodEvent]
         define_property :food_event, as: "foodEvent", types: [

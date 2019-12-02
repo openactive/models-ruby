@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:TVClip"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Models::Schema::TVSeries]
         define_property :part_of_tvseries, as: "partOfTVSeries", types: [

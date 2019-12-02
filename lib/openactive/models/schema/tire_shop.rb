@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:TireShop"
         end
-        property :type, as: "type"
       end
     end
   end

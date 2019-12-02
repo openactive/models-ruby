@@ -6,7 +6,6 @@ module OpenActive
       def type
         "IndividualFacilityUse"
       end
-      property :type, as: "type"
 
       # @return [OpenActive::Models::FacilityUse]
       define_property :aggregate_facility_use, as: "aggregateFacilityUse", types: [

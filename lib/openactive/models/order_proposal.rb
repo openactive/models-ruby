@@ -7,7 +7,6 @@ module OpenActive
       def type
         "OrderProposal"
       end
-      property :type, as: "type"
 
       # @return [String]
       define_property :order_customer_note, as: "orderCustomerNote", types: [

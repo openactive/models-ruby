@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:MonetaryAmountDistribution"
         end
-        property :type, as: "type"
 
         # @return [String]
         define_property :currency, as: "currency", types: [

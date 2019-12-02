@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:LendAction"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Models::Schema::Person]
         define_property :borrower, as: "borrower", types: [

@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:ToyStore"
         end
-        property :type, as: "type"
       end
     end
   end

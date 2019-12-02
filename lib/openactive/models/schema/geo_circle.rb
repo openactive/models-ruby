@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:GeoCircle"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Models::Schema::GeoCoordinates]
         define_property :geo_midpoint, as: "geoMidpoint", types: [

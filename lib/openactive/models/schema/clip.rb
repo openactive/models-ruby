@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:Clip"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Models::Schema::Person]
         define_property :directors, as: "directors", types: [

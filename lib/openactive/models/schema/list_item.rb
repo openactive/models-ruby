@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:ListItem"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Models::Schema::Thing]
         define_property :item, as: "item", types: [

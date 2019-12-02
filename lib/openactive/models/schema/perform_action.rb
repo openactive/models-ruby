@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:PerformAction"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Models::Schema::EntertainmentBusiness]
         define_property :entertainment_business, as: "entertainmentBusiness", types: [

@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:Invoice"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Enums::Schema::PaymentStatusType,String,nil]
         define_property :payment_status, as: "paymentStatus", types: [

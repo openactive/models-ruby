@@ -6,7 +6,6 @@ module OpenActive
       def type
         "TemporarilyUnableToDeleteOrderError"
       end
-      property :type, as: "type"
     end
   end
 end

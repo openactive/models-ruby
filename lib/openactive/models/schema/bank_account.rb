@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:BankAccount"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Models::Schema::MonetaryAmount]
         define_property :account_overdraft_limit, as: "accountOverdraftLimit", types: [

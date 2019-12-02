@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:LinkRole"
         end
-        property :type, as: "type"
 
         # @return [String]
         define_property :link_relationship, as: "linkRelationship", types: [

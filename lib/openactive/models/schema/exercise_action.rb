@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:ExerciseAction"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Models::Schema::Place]
         define_property :exercise_course, as: "exerciseCourse", types: [

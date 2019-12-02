@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:Book"
         end
-        property :type, as: "type"
 
         # @return [int,nil]
         define_property :number_of_pages, as: "numberOfPages", types: [

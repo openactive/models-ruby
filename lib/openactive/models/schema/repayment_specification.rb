@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:RepaymentSpecification"
         end
-        property :type, as: "type"
 
         # @return [BigDecimal,nil]
         define_property :number_of_loan_payments, as: "numberOfLoanPayments", types: [

@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:SingleFamilyResidence"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Models::Schema::QuantitativeValue,BigDecimal,nil]
         define_property :number_of_rooms, as: "numberOfRooms", types: [

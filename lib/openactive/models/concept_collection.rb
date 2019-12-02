@@ -7,7 +7,6 @@ module OpenActive
       def type
         "beta:ConceptCollection"
       end
-      property :type, as: "type"
     end
   end
 end

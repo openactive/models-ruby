@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:Legislation"
         end
-        property :type, as: "type"
 
         # @return [String,OpenActive::Models::Schema::AdministrativeArea]
         define_property :legislation_jurisdiction, as: "legislationJurisdiction", types: [

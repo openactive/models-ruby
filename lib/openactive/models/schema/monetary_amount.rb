@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:MonetaryAmount"
         end
-        property :type, as: "type"
 
         # @return [BigDecimal,nil]
         define_property :max_value, as: "maxValue", types: [

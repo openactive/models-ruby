@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:Seat"
         end
-        property :type, as: "type"
 
         # @return [String]
         define_property :seat_number, as: "seatNumber", types: [

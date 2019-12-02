@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:DigitalDocumentPermission"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Enums::Schema::DigitalDocumentPermissionType,nil]
         define_property :permission_type, as: "permissionType", types: [

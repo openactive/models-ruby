@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:CategoryCodeSet"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Models::Schema::CategoryCode]
         define_property :has_category_code, as: "hasCategoryCode", types: [

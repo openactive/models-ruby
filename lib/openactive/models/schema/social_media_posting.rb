@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:SocialMediaPosting"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Models::Schema::CreativeWork]
         define_property :shared_content, as: "sharedContent", types: [

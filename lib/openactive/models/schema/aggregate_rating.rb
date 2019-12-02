@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:AggregateRating"
         end
-        property :type, as: "type"
 
         # @return [int,nil]
         define_property :rating_count, as: "ratingCount", types: [

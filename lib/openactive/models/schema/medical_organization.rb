@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:MedicalOrganization"
         end
-        property :type, as: "type"
 
         # @return [String]
         define_property :health_plan_network_id, as: "healthPlanNetworkId", types: [

@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:PropertyValueSpecification"
         end
-        property :type, as: "type"
 
         # @return [Boolean,nil]
         define_property :readonly_value, as: "readonlyValue", types: [

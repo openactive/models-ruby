@@ -7,7 +7,6 @@ module OpenActive
       def type
         "OpeningHoursSpecification"
       end
-      property :type, as: "type"
 
       # @return [Time,nil]
       define_property :closes, as: "closes", types: [

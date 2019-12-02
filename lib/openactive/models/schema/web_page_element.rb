@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:WebPageElement"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Models::Schema::XPathType]
         define_property :xpath, as: "xpath", types: [

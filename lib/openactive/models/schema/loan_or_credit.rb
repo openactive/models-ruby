@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:LoanOrCredit"
         end
-        property :type, as: "type"
 
         # @return [String,URI]
         define_property :loan_type, as: "loanType", types: [

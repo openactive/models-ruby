@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:TrackAction"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Enums::Schema::DeliveryMethod,nil]
         define_property :delivery_method, as: "deliveryMethod", types: [

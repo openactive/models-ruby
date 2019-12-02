@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:MoveAction"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Models::Schema::Place]
         define_property :from_location, as: "fromLocation", types: [

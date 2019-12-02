@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:PayAction"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Models::Schema::Person,OpenActive::Models::Schema::ContactPoint,OpenActive::Models::Schema::Organization,OpenActive::Models::Schema::Audience]
         define_property :recipient, as: "recipient", types: [

@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:ContactPoint"
         end
-        property :type, as: "type"
 
         # @return [String,OpenActive::Models::Schema::AdministrativeArea,OpenActive::Models::Schema::GeoShape,OpenActive::Models::Schema::Place]
         define_property :area_served, as: "areaServed", types: [

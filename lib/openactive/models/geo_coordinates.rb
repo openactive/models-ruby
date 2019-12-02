@@ -7,7 +7,6 @@ module OpenActive
       def type
         "GeoCoordinates"
       end
-      property :type, as: "type"
 
       # @return [BigDecimal,nil]
       define_property :latitude, as: "latitude", types: [

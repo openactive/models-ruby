@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:InteractAction"
         end
-        property :type, as: "type"
       end
     end
   end

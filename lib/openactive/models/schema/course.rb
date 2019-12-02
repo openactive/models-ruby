@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:Course"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Models::Schema::EducationalOccupationalCredential,URI,String]
         define_property :occupational_credential_awarded, as: "occupationalCredentialAwarded", types: [

@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:DeliveryEvent"
         end
-        property :type, as: "type"
 
         # @return [String]
         define_property :access_code, as: "accessCode", types: [

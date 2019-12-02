@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:EngineSpecification"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Enums::Schema::QualitativeValue,String,URI,nil]
         define_property :fuel_type, as: "fuelType", types: [

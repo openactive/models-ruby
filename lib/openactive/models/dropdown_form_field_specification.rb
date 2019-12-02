@@ -7,7 +7,6 @@ module OpenActive
       def type
         "DropdownFormFieldSpecification"
       end
-      property :type, as: "type"
 
       # @return [Array<String>]
       define_property :value_option, as: "valueOption", types: [

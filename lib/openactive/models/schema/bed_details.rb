@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:BedDetails"
         end
-        property :type, as: "type"
 
         # @return [BigDecimal,nil]
         define_property :number_of_beds, as: "numberOfBeds", types: [

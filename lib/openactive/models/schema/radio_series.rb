@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:RadioSeries"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Models::Schema::CreativeWorkSeason]
         define_property :contains_season, as: "containsSeason", types: [

@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:RentAction"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Models::Schema::RealEstateAgent]
         define_property :real_estate_agent, as: "realEstateAgent", types: [

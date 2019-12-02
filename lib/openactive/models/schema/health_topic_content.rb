@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:HealthTopicContent"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Enums::Schema::HealthAspectEnumeration,nil]
         define_property :has_health_aspect, as: "hasHealthAspect", types: [

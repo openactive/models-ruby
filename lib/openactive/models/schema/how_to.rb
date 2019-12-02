@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:HowTo"
         end
-        property :type, as: "type"
 
         # @return [String,OpenActive::Models::Schema::QuantitativeValue]
         define_property :yield, as: "yield", types: [

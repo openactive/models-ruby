@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:CategoryCode"
         end
-        property :type, as: "type"
 
         # @return [String]
         define_property :code_value, as: "codeValue", types: [

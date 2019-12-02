@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:OrderItem"
         end
-        property :type, as: "type"
 
         # @return [String]
         define_property :order_item_number, as: "orderItemNumber", types: [

@@ -6,7 +6,6 @@ module OpenActive
       def type
         "UnknownOfferError"
       end
-      property :type, as: "type"
     end
   end
 end

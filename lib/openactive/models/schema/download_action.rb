@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:DownloadAction"
         end
-        property :type, as: "type"
       end
     end
   end

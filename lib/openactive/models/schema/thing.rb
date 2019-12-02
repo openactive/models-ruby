@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:Thing"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Models::Schema::PropertyValue,URI,String]
         define_property :identifier, as: "identifier", types: [

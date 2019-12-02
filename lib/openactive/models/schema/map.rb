@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:Map"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Enums::Schema::MapCategoryType,nil]
         define_property :map_type, as: "mapType", types: [

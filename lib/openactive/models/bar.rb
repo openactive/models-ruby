@@ -8,7 +8,6 @@ module OpenActive
       def type
         "beta:Bar"
       end
-      property :type, as: "type"
     end
   end
 end

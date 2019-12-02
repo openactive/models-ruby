@@ -7,7 +7,6 @@ module OpenActive
       def type
         "Parking"
       end
-      property :type, as: "type"
 
       # @return [String]
       define_property :name, as: "name", types: [

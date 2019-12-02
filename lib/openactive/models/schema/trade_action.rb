@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:TradeAction"
         end
-        property :type, as: "type"
 
         # @return [String,BigDecimal,nil]
         define_property :price, as: "price", types: [

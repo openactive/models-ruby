@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:Service"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Models::Schema::Organization,OpenActive::Models::Schema::Person]
         define_property :broker, as: "broker", types: [

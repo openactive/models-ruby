@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:MusicRecording"
         end
-        property :type, as: "type"
 
         # @return [ActiveSupport::Duration,nil]
         define_property :duration, as: "duration", types: [

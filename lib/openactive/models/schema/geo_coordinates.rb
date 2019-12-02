@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:GeoCoordinates"
         end
-        property :type, as: "type"
 
         # @return [String,BigDecimal,nil]
         define_property :elevation, as: "elevation", types: [

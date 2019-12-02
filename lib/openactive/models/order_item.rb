@@ -7,7 +7,6 @@ module OpenActive
       def type
         "OrderItem"
       end
-      property :type, as: "type"
 
       # @return [OpenActive::Models::Offer]
       define_property :accepted_offer, as: "acceptedOffer", types: [

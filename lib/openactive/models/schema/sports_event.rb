@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:SportsEvent"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Models::Schema::SportsTeam,OpenActive::Models::Schema::Person]
         define_property :home_team, as: "homeTeam", types: [

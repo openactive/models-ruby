@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:ArchiveComponent"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Models::Schema::Place,String,OpenActive::Models::Schema::PostalAddress]
         define_property :item_location, as: "itemLocation", types: [

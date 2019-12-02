@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:CreativeWork"
         end
-        property :type, as: "type"
 
         # @return [String]
         define_property :accessibility_api, as: "accessibilityAPI", types: [

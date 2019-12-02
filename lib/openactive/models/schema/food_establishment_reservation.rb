@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:FoodEstablishmentReservation"
         end
-        property :type, as: "type"
 
         # @return [int,OpenActive::Models::Schema::QuantitativeValue,nil]
         define_property :party_size, as: "partySize", types: [

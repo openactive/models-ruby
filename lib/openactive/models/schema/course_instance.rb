@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:CourseInstance"
         end
-        property :type, as: "type"
 
         # @return [String]
         define_property :course_workload, as: "courseWorkload", types: [

@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:RealEstateListing"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Models::Schema::QuantitativeValue,ActiveSupport::Duration,nil]
         define_property :lease_length, as: "leaseLength", types: [

@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:DefinedTerm"
         end
-        property :type, as: "type"
 
         # @return [String]
         define_property :term_code, as: "termCode", types: [

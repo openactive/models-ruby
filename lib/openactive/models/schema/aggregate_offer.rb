@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:AggregateOffer"
         end
-        property :type, as: "type"
 
         # @return [BigDecimal,String,nil]
         define_property :high_price, as: "highPrice", types: [

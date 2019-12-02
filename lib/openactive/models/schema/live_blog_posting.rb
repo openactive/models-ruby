@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:LiveBlogPosting"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Models::Schema::BlogPosting]
         define_property :live_blog_update, as: "liveBlogUpdate", types: [

@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:Order"
         end
-        property :type, as: "type"
 
         # @return [Boolean,nil]
         define_property :is_gift, as: "isGift", types: [

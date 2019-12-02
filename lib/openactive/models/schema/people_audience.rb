@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:PeopleAudience"
         end
-        property :type, as: "type"
 
         # @return [BigDecimal,nil]
         define_property :suggested_min_age, as: "suggestedMinAge", types: [

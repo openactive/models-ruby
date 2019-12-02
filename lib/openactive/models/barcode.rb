@@ -7,7 +7,6 @@ module OpenActive
       def type
         "Barcode"
       end
-      property :type, as: "type"
 
       # @return [String]
       define_property :text, as: "text", types: [

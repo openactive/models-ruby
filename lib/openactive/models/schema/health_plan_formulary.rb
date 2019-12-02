@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:HealthPlanFormulary"
         end
-        property :type, as: "type"
 
         # @return [Boolean,nil]
         define_property :offers_prescription_by_mail, as: "offersPrescriptionByMail", types: [

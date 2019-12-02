@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:DefinedTermSet"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Models::Schema::DefinedTerm]
         define_property :has_defined_term, as: "hasDefinedTerm", types: [

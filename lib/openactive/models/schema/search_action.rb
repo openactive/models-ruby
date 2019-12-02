@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:SearchAction"
         end
-        property :type, as: "type"
 
         # @return [String]
         define_property :query, as: "query", types: [

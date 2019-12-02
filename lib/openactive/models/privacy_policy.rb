@@ -6,7 +6,6 @@ module OpenActive
       def type
         "PrivacyPolicy"
       end
-      property :type, as: "type"
     end
   end
 end

@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:EducationalOrganization"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Models::Schema::Person]
         define_property :alumni, as: "alumni", types: [

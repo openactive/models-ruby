@@ -6,7 +6,6 @@ module OpenActive
       def type
         "OpenBookingError"
       end
-      property :type, as: "type"
 
       # @return [String]
       define_property :name, as: "name", types: [

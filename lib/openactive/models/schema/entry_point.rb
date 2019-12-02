@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:EntryPoint"
         end
-        property :type, as: "type"
 
         # @return [String]
         define_property :content_type, as: "contentType", types: [

@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:ParentAudience"
         end
-        property :type, as: "type"
 
         # @return [BigDecimal,nil]
         define_property :child_min_age, as: "childMinAge", types: [

@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:BusTrip"
         end
-        property :type, as: "type"
 
         # @return [String]
         define_property :bus_number, as: "busNumber", types: [

@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:PublicationVolume"
         end
-        property :type, as: "type"
 
         # @return [int,String,nil]
         define_property :page_start, as: "pageStart", types: [

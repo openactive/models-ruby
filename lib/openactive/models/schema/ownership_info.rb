@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:OwnershipInfo"
         end
-        property :type, as: "type"
 
         # @return [DateTime,nil]
         define_property :owned_from, as: "ownedFrom", types: [

@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:EmployeeRole"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Models::Schema::PriceSpecification,OpenActive::Models::Schema::MonetaryAmount,BigDecimal,nil]
         define_property :base_salary, as: "baseSalary", types: [

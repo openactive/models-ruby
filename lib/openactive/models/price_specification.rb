@@ -7,7 +7,6 @@ module OpenActive
       def type
         "PriceSpecification"
       end
-      property :type, as: "type"
 
       # @return [BigDecimal,nil]
       define_property :price, as: "price", types: [

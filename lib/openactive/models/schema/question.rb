@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:Question"
         end
-        property :type, as: "type"
 
         # @return [int,nil]
         define_property :downvote_count, as: "downvoteCount", types: [

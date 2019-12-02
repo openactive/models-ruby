@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:DatedMoneySpecification"
         end
-        property :type, as: "type"
 
         # @return [DateTime,Date,nil]
         define_property :start_date, as: "startDate", types: [

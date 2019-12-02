@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:StatisticalPopulation"
         end
-        property :type, as: "type"
 
         # @return []
         define_property :population_type, as: "populationType", types: [

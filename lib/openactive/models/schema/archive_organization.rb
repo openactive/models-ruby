@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:ArchiveOrganization"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Models::Schema::ArchiveComponent]
         define_property :archive_held, as: "archiveHeld", types: [

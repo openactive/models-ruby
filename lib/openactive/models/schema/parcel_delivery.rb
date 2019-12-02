@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:ParcelDelivery"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Models::Schema::Organization]
         define_property :carrier, as: "carrier", types: [

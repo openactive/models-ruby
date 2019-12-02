@@ -6,7 +6,6 @@ module OpenActive
       def type
         "DynamicPayment"
       end
-      property :type, as: "type"
     end
   end
 end

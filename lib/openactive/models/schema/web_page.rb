@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:WebPage"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Enums::Schema::Specialty,nil]
         define_property :specialty, as: "specialty", types: [
