@@ -6,7 +6,7 @@
   "activity": {
     "@type": "Concept",
     "prefLabel": "Tai Chi",
-    "id": "https://activity-list-editor.openactive.io/_c16df6ed-a4a0-4275-a8c3-1c8cff56856f"
+    "@id": "https://activity-list-editor.openactive.io/_c16df6ed-a4a0-4275-a8c3-1c8cff56856f"
   },
   "description": "A tai chi class intended for beginners",
   "attendeeInstructions": "Please wear trainers and comfortable clothing",

@@ -7,7 +7,7 @@
   "activity":{
     "@type":"Concept",
     "prefLabel":"Table Tennis",
-    "id":"https://activity-list-editor.openactive.io/_1a05993d-b206-4efe-85da-646fa340bdf4"
+    "@id":"https://activity-list-editor.openactive.io/_1a05993d-b206-4efe-85da-646fa340bdf4"
   },
   "provider":{
     "@type":"Organization",
@@ -36,7 +36,7 @@
   "event":[
     {
       "@type":"Slot",
-      "id":"http://www.example.org/facility-use/slots/1",
+      "@id":"http://www.example.org/facility-use/slots/1",
       "facilityUse":"http://www.example.org/facility-use/1",
       "startDate":"2018-03-01T10:00:00Z",
       "duration":"PT30M",
@@ -45,7 +45,7 @@
     },
     {
       "@type":"Slot",
-      "id":"http://www.example.org/facility-use/slots/2",
+      "@id":"http://www.example.org/facility-use/slots/2",
       "facilityUse":"http://www.example.org/facility-use/1",
       "startDate":"2018-03-01T10:30:00Z",
       "duration":"PT30M",

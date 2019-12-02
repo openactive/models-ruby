@@ -1,7 +1,7 @@
 {
   "@context": "https://openactive.io/",
   "@type":"SessionSeries",
-  "id":"https://pimlico-fencing-club/intermediate-classes/juniors/fencing-fridays",
+  "@id":"https://pimlico-fencing-club/intermediate-classes/juniors/fencing-fridays",
   "url":"https://pimlico-fencing-club/intermediate-classes/juniors/fencing-fridays#about",
   "name":"Fencing Fridays! Junior class",
   "startDate":"2019-09-06",
@@ -10,7 +10,7 @@
   "activity":{
     "@type":"Concept",
     "prefLabel":"Fencing",
-    "id":"https://activity-list-editor.openactive.io/_92808e60-820c-4ee2-89ec-ea8d99d3f528"
+    "@id":"https://activity-list-editor.openactive.io/_92808e60-820c-4ee2-89ec-ea8d99d3f528"
   },
   "location":{
     "@type":"Place",
@@ -37,7 +37,7 @@
   },
   "subEvent":{
     "@type":"ScheduledSession",
-    "id":"https://pimlico-fencing-club.example.com/intermediate/12345",
+    "@id":"https://pimlico-fencing-club.example.com/intermediate/12345",
     "url":"https://pimlico-fencing-club.example.com/intermediate-classes/juniors",
     "name":"Fencing Fridays! Junior class - First Friday in October",
     "startDate":"2019-10-04T19:00:00Z",
@@ -45,7 +45,7 @@
     "offers": [
       {
         "@type":"Offer",
-        "id":"https://pimlico-fencing-club.example.com/junior-regular/12345",
+        "@id":"https://pimlico-fencing-club.example.com/junior-regular/12345",
         "price":6,
         "priceCurrency":"GBP",
         "availableChannel":[
