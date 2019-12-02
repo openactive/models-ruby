@@ -9,7 +9,7 @@ RSpec.describe OpenActive::Models::Order do
   # Test that Order.orderedItem.orderedItem exists.
   let(:correct_properties) do
     [
-      "type",
+      "@type",
       "@id",
       "orderedItem",
       "seller",

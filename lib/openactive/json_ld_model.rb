@@ -11,6 +11,8 @@ module OpenActive
     attr_accessor :id
     property :id, as: "@id"
 
+    property :type, as: "@type"
+
     # Gets the context used to define the short-hand names that are used throughout a JSON-LD document.
     # These short-hand names are called terms and help developers to express specific identifiers in a compact
     # manner.

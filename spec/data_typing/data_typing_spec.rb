@@ -21,7 +21,7 @@ RSpec.describe "Data typing" do
         it "reserializes to original value" do
           reserialized = described_class.deserialize(data).serialize
 
-          expect(reserialized["type"]).to eq(data["type"])
+          expect(reserialized["@type"]).to eq(data["@type"])
         end
       end
     end

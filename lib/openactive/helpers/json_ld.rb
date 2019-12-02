@@ -66,7 +66,7 @@ module OpenActive
             prepare_data_for_serialization(
               value,
               parent,
-              **kwargs
+              **kwargs,
             )
           elsif value.is_a?(Numeric)
             value

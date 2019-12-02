@@ -31,7 +31,7 @@ RSpec.describe OpenActive::Models::Event do
   # @return [void]
   it "has correct properties" do
     correct_properties = [
-      "type",
+      "@type",
       "url",
       "name",
       "activity",
