@@ -74,6 +74,8 @@ module OpenActive
             )
           elsif value.is_a?(Numeric)
             value
+          elsif value.nil? # let nil be nil
+            nil
           else
             value.to_s
           end
