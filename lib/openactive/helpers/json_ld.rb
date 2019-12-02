@@ -1,16 +1,6 @@
 module OpenActive
   module Helpers
     class JsonLd
-      # rubocop:disable Style/ClassVars
-      # The default JSON-LD context for this package.
-      #
-      # @return [array]
-      @@default_context = [
-        "https://openactive.io/",
-        "https://openactive.io/ns-beta"
-      ].freeze
-      # rubocop:enable Style/ClassVars
-
       class << self
         # Returns the JSON-LD type from a given thing.
         #
