@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:GameServer"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Enums::Schema::GameServerStatus,nil]
         define_property :server_status, as: "serverStatus", types: [

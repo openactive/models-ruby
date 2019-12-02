@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:PodcastSeries"
         end
-        property :type, as: "type"
 
         # @return [URI]
         define_property :web_feed, as: "webFeed", types: [

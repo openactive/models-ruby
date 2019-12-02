@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:CreditCard"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Models::Schema::MonetaryAmount,BigDecimal,nil]
         define_property :monthly_minimum_repayment_amount, as: "monthlyMinimumRepaymentAmount", types: [

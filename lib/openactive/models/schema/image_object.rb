@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:ImageObject"
         end
-        property :type, as: "type"
 
         # @return [String,OpenActive::Models::Schema::MediaObject]
         define_property :caption, as: "caption", types: [

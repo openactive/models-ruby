@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:ReviewAction"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Models::Schema::Review]
         define_property :result_review, as: "resultReview", types: [

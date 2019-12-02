@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:Rating"
         end
-        property :type, as: "type"
 
         # @return [String]
         define_property :rating_explanation, as: "ratingExplanation", types: [

@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:RentalCarReservation"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Models::Schema::Place]
         define_property :pickup_location, as: "pickupLocation", types: [

@@ -7,7 +7,6 @@ module OpenActive
       def type
         "PostalAddress"
       end
-      property :type, as: "type"
 
       # @return [String]
       define_property :address_country, as: "addressCountry", types: [

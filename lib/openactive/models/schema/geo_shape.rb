@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:GeoShape"
         end
-        property :type, as: "type"
 
         # @return [String]
         define_property :line, as: "line", types: [

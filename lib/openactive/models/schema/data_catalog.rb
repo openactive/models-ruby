@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:DataCatalog"
         end
-        property :type, as: "type"
 
         # @return [String,URI]
         define_property :measurement_technique, as: "measurementTechnique", types: [

@@ -37,7 +37,7 @@ module OpenActive
 
       val = deserialize_value(value) if value.is_a?(Array) || value.is_a?(Hash)
 
-      return if ["@context", "type"].include?(key)
+      return if ["context", "type"].include?(attr_name)
 
       # Calling the setter will type-enforce it
       send("#{attr_name}=", val)
@@ -78,9 +78,9 @@ module OpenActive
         # If an associative array with a type, return its deserialization form,
         # so that it gets converted from array to object
         # (associative arrays are still arrays in PHP)
-        if value.key?("type")
+        if value.key?("@type") || value.key?("type")
 
-          type = value["type"]
+          type = value["@type"] || value["type"]
 
           # only schema is in a subdir, everything else is flat
           type = type.split(":")[1] if type.include?(':') && !type.start_with?("schema:")
@@ -107,16 +107,16 @@ module OpenActive
     # @param obj [::OpenActive::BaseModel] The given instance to convert to JSON-LD
     # @return [string] JSON-LD string representation of the given instance.
     # TODO: make this more Ruby-esque (to_h, to_hash, to_json)
-    def self.serialize(obj)
-      ::OpenActive::Helpers::JsonLd.prepare_data_for_serialization(obj)
+    def self.serialize(obj, **kwargs)
+      ::OpenActive::Helpers::JsonLd.prepare_data_for_serialization(obj, **kwargs)
     end
 
-    def serialize
-      self.class.serialize(self)
+    def serialize(**kwargs)
+      self.class.serialize(self, **kwargs)
     end
 
-    def to_json(*_args)
-      serialize.to_json
+    def to_json(*args, schema: false, **kwargs)
+      serialize(schema: schema).to_json(*args, **kwargs)
     end
   end
 end

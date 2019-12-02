@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:BroadcastService"
         end
-        property :type, as: "type"
 
         # @return [String]
         define_property :call_sign, as: "callSign", types: [

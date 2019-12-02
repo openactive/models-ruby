@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:UnitPriceSpecification"
         end
-        property :type, as: "type"
 
         # @return [String]
         define_property :price_type, as: "priceType", types: [

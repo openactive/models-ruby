@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:EducationalOccupationalCredential"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Models::Schema::Organization]
         define_property :recognized_by, as: "recognizedBy", types: [

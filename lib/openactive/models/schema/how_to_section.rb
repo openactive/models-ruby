@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:HowToSection"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Models::Schema::CreativeWork,OpenActive::Models::Schema::ItemList,String]
         define_property :steps, as: "steps", types: [

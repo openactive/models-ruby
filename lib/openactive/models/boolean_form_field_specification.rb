@@ -7,7 +7,6 @@ module OpenActive
       def type
         "BooleanFormFieldSpecification"
       end
-      property :type, as: "type"
 
       # @return [String]
       define_property :value_required, as: "valueRequired", types: [

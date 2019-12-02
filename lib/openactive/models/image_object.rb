@@ -7,7 +7,6 @@ module OpenActive
       def type
         "ImageObject"
       end
-      property :type, as: "type"
 
       # @return [Array<OpenActive::Models::ImageObject>]
       define_property :thumbnail, as: "thumbnail", types: [

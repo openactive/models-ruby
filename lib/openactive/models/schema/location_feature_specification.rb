@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:LocationFeatureSpecification"
         end
-        property :type, as: "type"
 
         # @return [Date,DateTime,nil]
         define_property :valid_through, as: "validThrough", types: [

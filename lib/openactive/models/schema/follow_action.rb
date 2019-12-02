@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:FollowAction"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Models::Schema::Person,OpenActive::Models::Schema::Organization]
         define_property :followee, as: "followee", types: [

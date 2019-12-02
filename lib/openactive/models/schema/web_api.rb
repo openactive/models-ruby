@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:WebAPI"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Models::Schema::CreativeWork,URI]
         define_property :documentation, as: "documentation", types: [

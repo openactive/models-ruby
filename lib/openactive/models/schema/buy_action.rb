@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:BuyAction"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Models::Schema::WarrantyPromise]
         define_property :warranty_promise, as: "warrantyPromise", types: [

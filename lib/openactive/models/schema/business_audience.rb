@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:BusinessAudience"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Models::Schema::QuantitativeValue]
         define_property :number_of_employees, as: "numberOfEmployees", types: [

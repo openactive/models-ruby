@@ -7,7 +7,6 @@ module OpenActive
       def type
         "PartialSchedule"
       end
-      property :type, as: "type"
 
       # @return [String]
       define_property :time_zone, as: "beta:timeZone", types: [

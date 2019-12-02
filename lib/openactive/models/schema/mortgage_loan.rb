@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:MortgageLoan"
         end
-        property :type, as: "type"
 
         # @return [Boolean,nil]
         define_property :domiciled_mortgage, as: "domiciledMortgage", types: [

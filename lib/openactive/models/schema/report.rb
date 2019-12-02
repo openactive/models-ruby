@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:Report"
         end
-        property :type, as: "type"
 
         # @return [String]
         define_property :report_number, as: "reportNumber", types: [

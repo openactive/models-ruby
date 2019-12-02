@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:InsertAction"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Models::Schema::Place]
         define_property :to_location, as: "toLocation", types: [

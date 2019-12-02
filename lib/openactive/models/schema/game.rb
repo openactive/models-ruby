@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:Game"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Models::Schema::QuantitativeValue]
         define_property :number_of_players, as: "numberOfPlayers", types: [

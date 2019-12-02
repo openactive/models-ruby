@@ -7,7 +7,6 @@ module OpenActive
       def type
         "CourseInstance"
       end
-      property :type, as: "type"
 
       # @return [OpenActive::Models::Course]
       define_property :course, as: "beta:course", types: [

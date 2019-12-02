@@ -7,7 +7,6 @@ module OpenActive
       def type
         "SessionSeries"
       end
-      property :type, as: "type"
 
       # @return [int,nil]
       define_property :remaining_attendee_capacity, as: "remainingAttendeeCapacity", types: [

@@ -7,7 +7,6 @@ module OpenActive
       def type
         "OfferOverride"
       end
-      property :type, as: "type"
     end
   end
 end

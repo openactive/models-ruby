@@ -7,7 +7,6 @@ module OpenActive
       def type
         "EntryPoint"
       end
-      property :type, as: "type"
 
       # @return [String]
       define_property :encoding_type, as: "encodingType", types: [

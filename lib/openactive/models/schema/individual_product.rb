@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:IndividualProduct"
         end
-        property :type, as: "type"
 
         # @return [String]
         define_property :serial_number, as: "serialNumber", types: [

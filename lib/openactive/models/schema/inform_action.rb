@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:InformAction"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Models::Schema::Event]
         define_property :event, as: "event", types: [

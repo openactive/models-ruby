@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:VoteAction"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Models::Schema::Person]
         define_property :candidate, as: "candidate", types: [

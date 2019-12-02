@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:FinancialProduct"
         end
-        property :type, as: "type"
 
         # @return [BigDecimal,OpenActive::Models::Schema::QuantitativeValue,nil]
         define_property :interest_rate, as: "interestRate", types: [

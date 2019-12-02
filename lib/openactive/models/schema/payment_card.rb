@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:PaymentCard"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Models::Schema::MonetaryAmount]
         define_property :floor_limit, as: "floorLimit", types: [

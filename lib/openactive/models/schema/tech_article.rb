@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:TechArticle"
         end
-        property :type, as: "type"
 
         # @return [String]
         define_property :dependencies, as: "dependencies", types: [

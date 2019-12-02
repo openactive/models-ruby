@@ -7,7 +7,6 @@ module OpenActive
       def type
         "Concept"
       end
-      property :type, as: "type"
 
       # @return [Array<String>]
       define_property :alt_label, as: "altLabel", types: [

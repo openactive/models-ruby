@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:VisualArtwork"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Models::Schema::QuantitativeValue,OpenActive::Models::Schema::Distance]
         define_property :depth, as: "depth", types: [

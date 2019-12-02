@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:ChooseAction"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Models::Schema::Thing,String]
         define_property :option, as: "option", types: [

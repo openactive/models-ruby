@@ -7,7 +7,6 @@ module OpenActive
       def type
         "SportsActivityLocation"
       end
-      property :type, as: "type"
 
       # @return [URI,OpenActive::Models::Place]
       define_property :contained_in_place, as: "containedInPlace", types: [

@@ -6,7 +6,6 @@ module OpenActive
       def type
         "OrderCreationFailedError"
       end
-      property :type, as: "type"
     end
   end
 end

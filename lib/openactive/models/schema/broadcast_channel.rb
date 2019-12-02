@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:BroadcastChannel"
         end
-        property :type, as: "type"
 
         # @return [String,URI]
         define_property :genre, as: "genre", types: [

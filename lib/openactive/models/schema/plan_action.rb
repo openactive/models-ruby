@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:PlanAction"
         end
-        property :type, as: "type"
 
         # @return [DateTime,nil]
         define_property :scheduled_time, as: "scheduledTime", types: [

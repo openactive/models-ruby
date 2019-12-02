@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:InvestmentOrDeposit"
         end
-        property :type, as: "type"
 
         # @return [BigDecimal,OpenActive::Models::Schema::MonetaryAmount,nil]
         define_property :amount, as: "amount", types: [

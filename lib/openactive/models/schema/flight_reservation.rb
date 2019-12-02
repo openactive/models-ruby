@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:FlightReservation"
         end
-        property :type, as: "type"
 
         # @return [String]
         define_property :boarding_group, as: "boardingGroup", types: [

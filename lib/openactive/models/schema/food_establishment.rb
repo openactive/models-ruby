@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:FoodEstablishment"
         end
-        property :type, as: "type"
 
         # @return [URI,String,Boolean,nil]
         define_property :accepts_reservations, as: "acceptsReservations", types: [

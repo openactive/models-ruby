@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:Accommodation"
         end
-        property :type, as: "type"
 
         # @return [String]
         define_property :accommodation_category, as: "accommodationCategory", types: [

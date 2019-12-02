@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:ReservationPackage"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Models::Schema::Reservation]
         define_property :sub_reservation, as: "subReservation", types: [

@@ -32,7 +32,7 @@ RSpec.describe OpenActive::Models::FacilityUse do
   # @return [void]
   it "has correct properties" do
     correct_properties = [
-      "type",
+      "@type",
       "url",
       "name",
       "description",

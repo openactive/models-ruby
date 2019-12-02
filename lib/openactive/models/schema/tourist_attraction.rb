@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:TouristAttraction"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Models::Schema::Language,String]
         define_property :available_language, as: "availableLanguage", types: [

@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:Audience"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Models::Schema::AdministrativeArea]
         define_property :geographic_area, as: "geographicArea", types: [

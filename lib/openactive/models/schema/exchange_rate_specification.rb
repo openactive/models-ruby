@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:ExchangeRateSpecification"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Models::Schema::UnitPriceSpecification]
         define_property :current_exchange_rate, as: "currentExchangeRate", types: [

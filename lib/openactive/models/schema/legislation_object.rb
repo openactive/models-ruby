@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:LegislationObject"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Enums::Schema::LegalValueLevel,nil]
         define_property :legislation_legal_value, as: "legislationLegalValue", types: [

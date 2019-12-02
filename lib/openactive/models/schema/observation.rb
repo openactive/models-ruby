@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:Observation"
         end
-        property :type, as: "type"
 
         # @return [URI]
         define_property :measured_property, as: "measuredProperty", types: [

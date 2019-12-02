@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:LodgingReservation"
         end
-        property :type, as: "type"
 
         # @return [int,OpenActive::Models::Schema::QuantitativeValue,nil]
         define_property :num_adults, as: "numAdults", types: [

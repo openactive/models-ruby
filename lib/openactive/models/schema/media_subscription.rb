@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:MediaSubscription"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Models::Schema::Offer]
         define_property :expects_acceptance_of, as: "expectsAcceptanceOf", types: [

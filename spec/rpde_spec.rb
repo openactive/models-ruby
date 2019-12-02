@@ -77,6 +77,7 @@ RSpec.describe OpenActive::Rpde::RpdeBody do
           feed_items,
         )
 
+        expect(feed.serialize).to include_json(json)
         expect(feed.serialize).to eq(json)
       end
     end

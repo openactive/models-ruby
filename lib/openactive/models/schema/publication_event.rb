@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:PublicationEvent"
         end
-        property :type, as: "type"
 
         # @return [Boolean,nil]
         define_property :is_accessible_for_free, as: "isAccessibleForFree", types: [

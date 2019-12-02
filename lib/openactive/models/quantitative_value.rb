@@ -7,7 +7,6 @@ module OpenActive
       def type
         "QuantitativeValue"
       end
-      property :type, as: "type"
 
       # @return [int,nil]
       define_property :max_value, as: "maxValue", types: [

@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:ServiceChannel"
         end
-        property :type, as: "type"
 
         # @return [ActiveSupport::Duration,nil]
         define_property :processing_time, as: "processingTime", types: [

@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:Motel"
         end
-        property :type, as: "type"
       end
     end
   end

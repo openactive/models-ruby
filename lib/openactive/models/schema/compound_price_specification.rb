@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:CompoundPriceSpecification"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Models::Schema::UnitPriceSpecification]
         define_property :price_component, as: "priceComponent", types: [

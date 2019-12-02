@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:ProductReturnPolicy"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Enums::Schema::ProductReturnEnumeration,nil]
         define_property :return_policy_category, as: "returnPolicyCategory", types: [

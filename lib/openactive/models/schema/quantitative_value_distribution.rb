@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:QuantitativeValueDistribution"
         end
-        property :type, as: "type"
 
         # @return [BigDecimal,nil]
         define_property :percentile75, as: "percentile75", types: [

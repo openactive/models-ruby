@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:WarrantyPromise"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Enums::Schema::WarrantyScope,nil]
         define_property :warranty_scope, as: "warrantyScope", types: [

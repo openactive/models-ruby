@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:Article"
         end
-        property :type, as: "type"
 
         # @return [String,OpenActive::Models::Schema::CreativeWork]
         define_property :backstory, as: "backstory", types: [

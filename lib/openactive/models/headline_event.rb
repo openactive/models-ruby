@@ -7,7 +7,6 @@ module OpenActive
       def type
         "HeadlineEvent"
       end
-      property :type, as: "type"
 
       # @return [Array<OpenActive::Models::Schedule>]
       define_property :event_schedule, as: "eventSchedule", types: [

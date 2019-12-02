@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:HealthPlanCostSharingSpecification"
         end
-        property :type, as: "type"
 
         # @return [String]
         define_property :health_plan_copay_option, as: "healthPlanCopayOption", types: [

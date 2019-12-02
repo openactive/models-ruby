@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:MusicComposition"
         end
-        property :type, as: "type"
 
         # @return [String]
         define_property :musical_key, as: "musicalKey", types: [

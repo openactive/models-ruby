@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:ItemList"
         end
-        property :type, as: "type"
 
         # @return [int,nil]
         define_property :number_of_items, as: "numberOfItems", types: [

@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:Grant"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Models::Schema::Thing]
         define_property :funded_item, as: "fundedItem", types: [

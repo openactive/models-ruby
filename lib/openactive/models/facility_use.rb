@@ -6,7 +6,6 @@ module OpenActive
       def type
         "FacilityUse"
       end
-      property :type, as: "type"
 
       # @return [int,String,OpenActive::Models::PropertyValue,Array<OpenActive::Models::PropertyValue>,nil]
       define_property :identifier, as: "identifier", types: [

@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:TouristDestination"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Models::Schema::TouristAttraction]
         define_property :includes_attraction, as: "includesAttraction", types: [

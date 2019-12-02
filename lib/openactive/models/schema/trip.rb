@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:Trip"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Models::Schema::Trip]
         define_property :sub_trip, as: "subTrip", types: [

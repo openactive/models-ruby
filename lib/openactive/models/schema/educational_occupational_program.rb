@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:EducationalOccupationalProgram"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Models::Schema::MonetaryAmountDistribution]
         define_property :salary_upon_completion, as: "salaryUponCompletion", types: [

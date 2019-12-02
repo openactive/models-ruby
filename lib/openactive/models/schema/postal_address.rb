@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:PostalAddress"
         end
-        property :type, as: "type"
 
         # @return [String]
         define_property :address_locality, as: "addressLocality", types: [

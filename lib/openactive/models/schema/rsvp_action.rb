@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:RsvpAction"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Enums::Schema::RsvpResponseType,nil]
         define_property :rsvp_response, as: "rsvpResponse", types: [

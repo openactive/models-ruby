@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:HotelRoom"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Models::Schema::BedDetails,OpenActive::Models::Schema::BedType,String]
         define_property :bed, as: "bed", types: [

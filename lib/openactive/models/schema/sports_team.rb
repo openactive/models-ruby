@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:SportsTeam"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Enums::Schema::GenderType,String,nil]
         define_property :gender, as: "gender", types: [

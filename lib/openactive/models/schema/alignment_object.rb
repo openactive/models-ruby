@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:AlignmentObject"
         end
-        property :type, as: "type"
 
         # @return [String]
         define_property :educational_framework, as: "educationalFramework", types: [

@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:DeliveryChargeSpecification"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Models::Schema::GeoShape,OpenActive::Models::Schema::Place,String]
         define_property :ineligible_region, as: "ineligibleRegion", types: [

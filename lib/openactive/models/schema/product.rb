@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:Product"
         end
-        property :type, as: "type"
 
         # @return [String]
         define_property :gtin12, as: "gtin12", types: [

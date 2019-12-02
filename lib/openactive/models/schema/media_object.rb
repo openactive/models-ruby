@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:MediaObject"
         end
-        property :type, as: "type"
 
         # @return [String]
         define_property :content_size, as: "contentSize", types: [

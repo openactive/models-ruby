@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:OfferForPurchase"
         end
-        property :type, as: "type"
       end
     end
   end

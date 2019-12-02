@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:NutritionInformation"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Models::Schema::Mass]
         define_property :protein_content, as: "proteinContent", types: [

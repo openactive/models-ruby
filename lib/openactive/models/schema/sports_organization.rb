@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:SportsOrganization"
         end
-        property :type, as: "type"
 
         # @return [String,URI]
         define_property :sport, as: "sport", types: [

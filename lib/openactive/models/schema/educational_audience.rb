@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:EducationalAudience"
         end
-        property :type, as: "type"
 
         # @return [String]
         define_property :educational_role, as: "educationalRole", types: [

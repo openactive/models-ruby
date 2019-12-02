@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:Airline"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Enums::Schema::BoardingPolicyType,nil]
         define_property :boarding_policy, as: "boardingPolicy", types: [

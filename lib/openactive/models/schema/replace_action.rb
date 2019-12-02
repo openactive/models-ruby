@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:ReplaceAction"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Models::Schema::Thing]
         define_property :replacer, as: "replacer", types: [

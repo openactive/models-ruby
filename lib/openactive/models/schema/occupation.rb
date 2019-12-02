@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:Occupation"
         end
-        property :type, as: "type"
 
         # @return [String,OpenActive::Models::Schema::EducationalOccupationalCredential]
         define_property :qualifications, as: "qualifications", types: [

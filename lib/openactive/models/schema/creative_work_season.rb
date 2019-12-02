@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:CreativeWorkSeason"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Models::Schema::Episode]
         define_property :episodes, as: "episodes", types: [

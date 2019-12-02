@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:Brand"
         end
-        property :type, as: "type"
 
         # @return [String]
         define_property :slogan, as: "slogan", types: [

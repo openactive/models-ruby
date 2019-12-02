@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:TrainTrip"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Models::Schema::TrainStation]
         define_property :arrival_station, as: "arrivalStation", types: [

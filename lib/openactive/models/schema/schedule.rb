@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:Schedule"
         end
-        property :type, as: "type"
 
         # @return [String,ActiveSupport::Duration,nil]
         define_property :repeat_frequency, as: "repeatFrequency", types: [

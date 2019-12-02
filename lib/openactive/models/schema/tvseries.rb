@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:TVSeries"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Models::Schema::MusicGroup,OpenActive::Models::Schema::Person]
         define_property :music_by, as: "musicBy", types: [

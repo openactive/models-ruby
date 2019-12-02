@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:Claim"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Models::Schema::CreativeWork]
         define_property :appearance, as: "appearance", types: [

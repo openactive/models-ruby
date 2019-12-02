@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:ReceiveAction"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Models::Schema::Audience,OpenActive::Models::Schema::Person,OpenActive::Models::Schema::Organization]
         define_property :sender, as: "sender", types: [

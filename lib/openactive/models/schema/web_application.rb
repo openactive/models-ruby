@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:WebApplication"
         end
-        property :type, as: "type"
 
         # @return [String]
         define_property :browser_requirements, as: "browserRequirements", types: [

@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:MobileApplication"
         end
-        property :type, as: "type"
 
         # @return [String]
         define_property :carrier_requirements, as: "carrierRequirements", types: [

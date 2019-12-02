@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:OpeningHoursSpecification"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Enums::Schema::DayOfWeek,nil]
         define_property :day_of_week, as: "dayOfWeek", types: [

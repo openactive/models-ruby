@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:BroadcastFrequencySpecification"
         end
-        property :type, as: "type"
 
         # @return [String,OpenActive::Enums::Schema::QualitativeValue,nil]
         define_property :broadcast_signal_modulation, as: "broadcastSignalModulation", types: [

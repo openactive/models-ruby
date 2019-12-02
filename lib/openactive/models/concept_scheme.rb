@@ -7,7 +7,6 @@ module OpenActive
       def type
         "ConceptScheme"
       end
-      property :type, as: "type"
 
       # @return [String]
       define_property :title, as: "title", types: [

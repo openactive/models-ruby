@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:APIReference"
         end
-        property :type, as: "type"
 
         # @return [String]
         define_property :target_platform, as: "targetPlatform", types: [

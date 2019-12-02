@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:Corporation"
         end
-        property :type, as: "type"
 
         # @return [String]
         define_property :ticker_symbol, as: "tickerSymbol", types: [

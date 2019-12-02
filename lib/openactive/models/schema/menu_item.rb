@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:MenuItem"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Enums::Schema::RestrictedDiet,nil]
         define_property :suitable_for_diet, as: "suitableForDiet", types: [

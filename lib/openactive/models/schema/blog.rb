@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:Blog"
         end
-        property :type, as: "type"
 
         # @return [String]
         define_property :issn, as: "issn", types: [

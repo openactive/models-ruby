@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:AudioObject"
         end
-        property :type, as: "type"
 
         # @return [String,OpenActive::Models::Schema::MediaObject]
         define_property :caption, as: "caption", types: [

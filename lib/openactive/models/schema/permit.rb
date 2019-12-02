@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:Permit"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Models::Schema::AdministrativeArea]
         define_property :valid_in, as: "validIn", types: [

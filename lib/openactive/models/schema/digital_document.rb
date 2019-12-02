@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:DigitalDocument"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Models::Schema::DigitalDocumentPermission]
         define_property :has_digital_document_permission, as: "hasDigitalDocumentPermission", types: [

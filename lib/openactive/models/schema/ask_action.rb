@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:AskAction"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Models::Schema::Question]
         define_property :question, as: "question", types: [

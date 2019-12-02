@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:Quotation"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Models::Schema::Organization,OpenActive::Models::Schema::Person]
         define_property :spoken_by_character, as: "spokenByCharacter", types: [

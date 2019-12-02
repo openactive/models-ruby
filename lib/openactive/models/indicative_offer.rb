@@ -8,7 +8,6 @@ module OpenActive
       def type
         "beta:IndicativeOffer"
       end
-      property :type, as: "type"
     end
   end
 end

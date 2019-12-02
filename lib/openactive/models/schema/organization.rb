@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:Organization"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Models::Schema::Organization]
         define_property :parent_organization, as: "parentOrganization", types: [

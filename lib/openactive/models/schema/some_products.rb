@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:SomeProducts"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Models::Schema::QuantitativeValue]
         define_property :inventory_level, as: "inventoryLevel", types: [

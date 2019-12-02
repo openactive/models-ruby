@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:Action"
         end
-        property :type, as: "type"
 
         # @return [Time,DateTime,nil]
         define_property :end_time, as: "endTime", types: [

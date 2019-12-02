@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:Demand"
         end
-        property :type, as: "type"
 
         # @return [String]
         define_property :gtin13, as: "gtin13", types: [

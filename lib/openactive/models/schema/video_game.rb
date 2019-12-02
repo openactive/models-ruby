@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:VideoGame"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Models::Schema::CreativeWork]
         define_property :game_tip, as: "gameTip", types: [

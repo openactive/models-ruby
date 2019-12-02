@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:Offer"
         end
-        property :type, as: "type"
 
         # @return [String,BigDecimal,nil]
         define_property :price, as: "price", types: [

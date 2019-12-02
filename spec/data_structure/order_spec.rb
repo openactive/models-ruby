@@ -9,8 +9,8 @@ RSpec.describe OpenActive::Models::Order do
   # Test that Order.orderedItem.orderedItem exists.
   let(:correct_properties) do
     [
-      "type",
-      "id",
+      "@type",
+      "@id",
       "orderedItem",
       "seller",
       "broker",
@@ -52,7 +52,7 @@ RSpec.describe OpenActive::Models::Order do
   # - seller
   # - broker
   # - brokerRole
-  # - ustomer
+  # - customer
   # - taxCalculationExcluded
   # - bookingService
   # - totalPaymentDue

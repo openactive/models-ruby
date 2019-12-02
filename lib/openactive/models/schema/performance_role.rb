@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:PerformanceRole"
         end
-        property :type, as: "type"
 
         # @return [String]
         define_property :character_name, as: "characterName", types: [

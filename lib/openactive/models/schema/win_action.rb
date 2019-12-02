@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:WinAction"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Models::Schema::Person]
         define_property :loser, as: "loser", types: [

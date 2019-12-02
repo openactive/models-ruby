@@ -7,7 +7,6 @@ module OpenActive
       def type
         "ShortAnswerFormFieldSpecification"
       end
-      property :type, as: "type"
     end
   end
 end

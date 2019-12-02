@@ -7,7 +7,6 @@ module OpenActive
       def type
         "ChangingFacilities"
       end
-      property :type, as: "type"
 
       # @return [String]
       define_property :name, as: "name", types: [

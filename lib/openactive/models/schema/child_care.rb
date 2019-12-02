@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:ChildCare"
         end
-        property :type, as: "type"
       end
     end
   end

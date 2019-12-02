@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:NewsArticle"
         end
-        property :type, as: "type"
 
         # @return [String]
         define_property :dateline, as: "dateline", types: [

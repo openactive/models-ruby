@@ -53,11 +53,11 @@ RSpec.describe 'Session Series' do
     # @return [void]
     describe "URL handling" do
       it "has correct value for session id" do
-        expect(series.id).to eq(series_json["id"])
+        expect(series.id).to eq(series_json["@id"])
       end
 
       it "has correct value for activity id" do
-        expect(series.activity.id).to eq(series_json["activity"]["id"])
+        expect(series.activity.id).to eq(series_json["activity"]["@id"])
       end
 
       it "has correct value for sub event url" do

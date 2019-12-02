@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:CollegeOrUniversity"
         end
-        property :type, as: "type"
       end
     end
   end

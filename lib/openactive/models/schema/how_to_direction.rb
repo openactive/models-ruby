@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:HowToDirection"
         end
-        property :type, as: "type"
 
         # @return [String,OpenActive::Models::Schema::HowToTool]
         define_property :tool, as: "tool", types: [

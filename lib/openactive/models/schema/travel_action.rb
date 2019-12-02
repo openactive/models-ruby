@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:TravelAction"
         end
-        property :type, as: "type"
 
         # @return [OpenActive::Models::Schema::Distance]
         define_property :distance, as: "distance", types: [

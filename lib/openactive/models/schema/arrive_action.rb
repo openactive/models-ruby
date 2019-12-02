@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:ArriveAction"
         end
-        property :type, as: "type"
       end
     end
   end

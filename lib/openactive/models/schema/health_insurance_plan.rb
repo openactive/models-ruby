@@ -7,7 +7,6 @@ module OpenActive
         def type
           "schema:HealthInsurancePlan"
         end
-        property :type, as: "type"
 
         # @return [String]
         define_property :health_plan_drug_option, as: "healthPlanDrugOption", types: [
