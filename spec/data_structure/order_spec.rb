@@ -10,7 +10,7 @@ RSpec.describe OpenActive::Models::Order do
   let(:correct_properties) do
     [
       "type",
-      "id",
+      "@id",
       "orderedItem",
       "seller",
       "broker",
@@ -52,7 +52,7 @@ RSpec.describe OpenActive::Models::Order do
   # - seller
   # - broker
   # - brokerRole
-  # - ustomer
+  # - customer
   # - taxCalculationExcluded
   # - bookingService
   # - totalPaymentDue

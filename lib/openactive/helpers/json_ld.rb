@@ -29,13 +29,18 @@ module OpenActive
         # @param obj [::OpenActive::JsonLdModel] The given instance to convert to JSON-LD
         # @param parent [object,null] The parent node in the structure.
         # @return [array]
-        def prepare_data_for_serialization(obj, parent = nil)
+        def prepare_data_for_serialization(obj, parent = nil, schema: false)
           data = obj.values
 
           # Only add context if object is subclass of BaseModel
           # and no parent, or parent is an RPDE item
           if obj.respond_to?(:context) && (parent.nil? || !parent.is_a?(OpenActive::JsonLdModel))
-            data["@context"] = obj.context
+
+            data["@context"] =
+              [
+                *obj.context,
+                *(schema ? ["https://schema.org"] : [])
+              ]
           end
 
           # Loop all class methods, find the getters
@@ -43,7 +48,7 @@ module OpenActive
           data = Hash[data.map do |method_name, attr_value|
             attr_name = method_name
 
-            attr_value = serialize_value(attr_value, obj)
+            attr_value = serialize_value(attr_value, obj, schema: schema)
 
             [attr_name.to_s, attr_value]
           end]
@@ -58,19 +63,20 @@ module OpenActive
           end]
         end
 
-        def serialize_value(value, parent = nil)
+        def serialize_value(value, parent = nil, **kwargs)
           if value.respond_to?(:iso8601)
             value.iso8601
           elsif value.is_a?(TypesafeEnum::Base)
             value.value
           elsif value.is_a?(Array)
             value.map do |item|
-              serialize_value(item, parent)
+              serialize_value(item, parent, **kwargs)
             end
           elsif value.is_a?(OpenActive::BaseModel)
             prepare_data_for_serialization(
               value,
               parent,
+              **kwargs
             )
           elsif value.is_a?(Numeric)
             value
