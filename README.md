@@ -116,7 +116,7 @@ items = [
     )
 ]
 
-json_Ld = OpenActive::Rpde::RpdeBody.create_from_next_change_number("https://www.example.com/feed", 2, items).to_json
+json_ld = OpenActive::Rpde::RpdeBody.create_from_next_change_number("https://www.example.com/feed", 2, items).to_json
 ```
 
 ## Serialization
