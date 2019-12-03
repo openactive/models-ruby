@@ -26,6 +26,7 @@ module OpenActive
   require "openactive/validators/null_validator"
   require "openactive/validators/number_validator"
   require "openactive/validators/string_validator"
+  require "openactive/validators/time_validator"
   require "openactive/validators/uri_validator"
 
   require "openactive/base_model"

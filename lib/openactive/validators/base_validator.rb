@@ -52,6 +52,8 @@ module OpenActive
           case type
           when "URI"
             UriValidator.new
+          when "Time"
+            TimeValidator.new
           when "DateTime"
             DateTimeValidator.new
           when "DateInterval"
