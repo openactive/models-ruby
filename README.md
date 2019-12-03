@@ -22,10 +22,17 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+This package provides Ruby models for the OpenActive specifications.
+
+It also provide a set of models for the [schema.org](https://schema.org) specifications.
+
+Finally it provides a set of classes to handle OpenActive's [RPDE](https://developer.openactive.io/publishing-data/data-feeds/how-a-data-feed-works) data feeds.
 
 ### Models
 OpenActive includes OpenActive.io objects as objects for use in Ruby. All classes can be serialized into JSON-LD, to provide easy conformance with the [Modelling Specification](https://www.openactive.io/modelling-opportunity-data/) and [Open Booking API Specification](https://www.openactive.io/open-booking-api/).
+
+
+Please note that type enforcement is in place for both class construction and attribute assignment, providing an invalid type will result in a OpenActive::Exception::InvalidArgumentException being thrown.
 
 ### OpenActive
 Classes for all OpenActive classes are available in the `OpenActive::Models` and `OpenActive::Enums` namespaces, and can be easily serialized to JSON-LD, as follows. Enumerations are available as `enum`s for properties that require their use.
@@ -34,7 +41,7 @@ Classes for all OpenActive classes are available in the `OpenActive::Models` and
 event = OpenActive::Models::Event.new(
     name: "Virtual BODYPUMP",
     event_status: OpenActive::Enums::Schema::EventStatusType::EventScheduled
-};
+)
 json_ld = event.to_json
 ```
 
@@ -112,7 +119,49 @@ items = [
 json_Ld = OpenActive::Rpde::RpdeBody.create_from_next_change_number("https://www.example.com/feed", 2, items).to_json
 ```
 
+## Serialization
 
+### `obj.serialize`
+Returns the serialized object in hash form complying to json-ld structure (unlike .to_h this serializes everything all the way down.)
+```
+event.serialize
+```
+```
+{"@type"=>"Event", "name"=>"Virtual BODYPUMP", "eventStatus"=>"https://schema.org/EventScheduled", "@context"=>["https://openactive.io/", "https://openactive.io/ns-beta"]}
+```
+### `obj.to_json`
+Serializes down to a json-ld string.
+```ruby
+event.to_json
+```
+returns
+```ruby
+"{\"@type\":\"Event\",\"name\":\"Virtual BODYPUMP\",\"eventStatus\":\"https://schema.org/EventScheduled\",\"@context\":[\"https://openactive.io/\",\"https://openactive.io/ns-beta\"]}"
+```
+
+## Deserialization
+```ruby
+
+data = JSON.parse('{"@context": ["https:\/\/openactive.io\/","https:\/\/openactive.io\/ns-beta"],"type": "Action","name": "Book","target": {"type": "EntryPoint","encodingType": "application\/vnd.openactive.v1.0+json","httpMethod": "POST","type": "EntryPoint","url": "https:\/\/example.com\/orders"}}')
+
+deserialized = OpenActive::BaseModel.deserialize(data)
+
+pp deserialized
+```
+
+will result in
+```ruby
+#<OpenActive::Models::Action:0x00007ff6fd0966d0
+ @name="Book",
+ @target=
+  #<OpenActive::Models::EntryPoint:0x00007ff6fd095fa0
+   @encoding_type="application/vnd.openactive.v1.0+json",
+   @http_method="POST",
+   @url=#<URI::HTTPS https://example.com/orders>>>
+=> #<OpenActive::Models::Action:0x00007ff6fd0966d0
+ @name="Book",
+ @target=#<OpenActive::Models::EntryPoint:0x00007ff6fd095fa0 @encoding_type="application/vnd.openactive.v1.0+json", @http_method="POST", @url=#<URI::HTTPS https://example.com/orders>>>
+```
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
