@@ -35,7 +35,7 @@ module OpenActive
 
       val = value
 
-      val = deserialize_value(value) if value.is_a?(Array) || value.is_a?(Hash)
+      val = deserialize(value) if value.is_a?(Array) || value.is_a?(Hash)
 
       return if ["context", "type"].include?(attr_name)
 
@@ -49,10 +49,7 @@ module OpenActive
     # @param data [string,Array] If a string is provided, we attempt JSON-decoding first
     # @return [object]
     #
-    def self.deserialize(data)
-      # If a string is provided, we attempt JSON-decoding first
-      data = JSON.parse(data) if data.is_a?(String)
-
+    def self.deserialize_class(data)
       inst = new
 
       # If data provided is not an array, return an empty class
@@ -65,15 +62,11 @@ module OpenActive
       inst
     end
 
-    def deserialize(*data)
-      self.class.deserialize(data)
-    end
-
     # Returns a value from a given JSON-LD deserialized array.
     #
     # @param value [mixed] If an array is provided, we recursively deserialize it
     # @return [mixed]
-    def deserialize_value(value)
+    def self.deserialize(value)
       if value.is_a?(Hash)
         # If an associative array with a type, return its deserialization form,
         # so that it gets converted from array to object
@@ -87,7 +80,7 @@ module OpenActive
 
           klass = ::OpenActive::Models.const_get(type)
 
-          inst = klass.deserialize(value)
+          inst = klass.deserialize_class(value)
 
           return inst
         end
@@ -96,10 +89,14 @@ module OpenActive
         # If providing a non-associative array
         # Loop through it and serialize each item if needed
         value = value.map do |item|
-          deserialize_value(item)
+          deserialize(item)
         end
       end
       value
+    end
+
+    def deserialize(*data)
+      self.class.deserialize(*data)
     end
 
     # Returns the JSON-LD representation of the given instance.
