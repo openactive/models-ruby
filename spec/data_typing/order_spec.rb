@@ -1,6 +1,6 @@
 RSpec.describe OpenActive::Models::Order do
-  let (:order_json) { JSON.parse(file_fixture("data_structure/order.json").read) }
-  let (:order) { described_class.deserialize(order_json) }
+  let(:order_json) { JSON.parse(file_fixture("data_structure/order.json").read) }
+  let(:order) { described_class.deserialize(order_json) }
 
   describe "Instance validation" do
     it "correctly instantiate order" do

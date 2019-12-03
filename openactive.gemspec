@@ -11,6 +11,7 @@ Gem::Specification.new do |spec|
   spec.summary       = 'OpenActive.io objects turned into strongly typed classes for use in Ruby.'
   spec.description   = 'OpenActive.io objects turned into strongly typed classes for use in Ruby. All classes can be serialized into JSON/JSON-LD, to provide easy conformance with the OpenActive Modelling Specification.'
   spec.homepage      = "https://github.com/openactive/models-ruby/"
+  spec.license       = "MIT"
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.

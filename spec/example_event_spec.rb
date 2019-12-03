@@ -8,15 +8,15 @@ require "spec_helper"
 RSpec.describe "Example Event" do
   # Test that serialization and deserialization return the same result
   # after the process.
-  context "Basic example" do
+  describe "Basic example" do
     let(:original) do
       {
         "@context" => [
           "https://openactive.io/",
           "https://openactive.io/ns-beta"
         ],
-        "type" => "Concept",
-        "id" => "https://openactive.io/facility-types#37bbed12-270b-42b1-9af2-70f0273990dd",
+        "@type" => "Concept",
+        "@id" => "https://openactive.io/facility-types#37bbed12-270b-42b1-9af2-70f0273990dd",
         "prefLabel" => "Grass",
         "inScheme" => "https://openactive.io/facility-types"
       }
@@ -33,7 +33,13 @@ RSpec.describe "Example Event" do
     let(:session) do
       OpenActive::Models::SessionSeries.new(
         name: "Virtual BODYPUMP",
-        description: "This is the virtual version of the original barbell class, which will help you get lean, toned and fit - fast. Les Mills™ Virtual classes are designed for people who cannot get access to our live classes or who want to get a ‘taste’ of a Les Mills™ class before taking a live class with an instructor. The classes are played on a big video screen, with dimmed lighting and pumping surround sound, and are led onscreen by the people who actually choreograph the classes.",
+        "Description" =>
+        "This is the virtual version of the original barbell class, which will help you get lean, toned"\
+         " and fit - fast. Les Mills™ Virtual classes are designed for people who cannot get access to "\
+         "our live classes or who want to get a ‘taste’ of a Les Mills™ class before taking a live class"\
+         " with an instructor. The classes are played on a big video screen, with dimmed lighting and "\
+         "pumping surround sound, and are led onscreen by the people who actually choreograph the "\
+         "classes.",
         duration: ActiveSupport::Duration.parse("P1D"),
         start_date: DateTime.parse("2017-04-24T19:30:00-08:00"),
         location: OpenActive::Models::Place.new(
@@ -65,7 +71,7 @@ RSpec.describe "Example Event" do
       )
     end
 
-    let (:session_json) { JSON.parse(file_fixture("example_event/session_series.json").read) }
+    let(:session_json) { JSON.parse(file_fixture("example_event/session_series.json").read) }
 
     it 'Serializes + Deserializes' do
       expect(session.serialize).to include_json(session_json)

@@ -1,5 +1,5 @@
 RSpec.describe "Data typing" do
-  data =
+  objs =
     [
       {
         model: OpenActive::Models::Event,
@@ -15,13 +15,13 @@ RSpec.describe "Data typing" do
       }
     ]
 
-  data.each do |model:, data:|
+  objs.each do |model:, data:|
     describe model do
       describe "#type" do
         it "reserializes to original value" do
           reserialized = described_class.deserialize(data).serialize
 
-          expect(reserialized["type"]).to eq(data["type"])
+          expect(reserialized["@type"]).to eq(data["@type"])
         end
       end
     end

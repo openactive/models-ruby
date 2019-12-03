@@ -2,7 +2,12 @@ RSpec.describe OpenActive::Rpde::RpdeBody do
   let(:session_series_event) do
     return OpenActive::Models::SessionSeries.new(
       "Name" => "Virtual BODYPUMP",
-      "Description" => "This is the virtual version of the original barbell class, which will help you get lean, toned and fit - fast. Les Mills™ Virtual classes are designed for people who cannot get access to our live classes or who want to get a ‘taste’ of a Les Mills™ class before taking a live class with an instructor. The classes are played on a big video screen, with dimmed lighting and pumping surround sound, and are led onscreen by the people who actually choreograph the classes.",
+      "Description" => "This is the virtual version of the original barbell class, which will help you get lean, toned"\
+                       " and fit - fast. Les Mills™ Virtual classes are designed for people who cannot get access to "\
+                       "our live classes or who want to get a ‘taste’ of a Les Mills™ class before taking a live class"\
+                       " with an instructor. The classes are played on a big video screen, with dimmed lighting and "\
+                       "pumping surround sound, and are led onscreen by the people who actually choreograph the "\
+                       "classes.",
       "Duration" => ActiveSupport::Duration.parse("P1D"),
       "StartDate" => DateTime.parse("2017-04-24T19:30:00-0800"),
       "Location" => OpenActive::Models::Place.new(
@@ -12,12 +17,12 @@ RSpec.describe OpenActive::Rpde::RpdeBody do
           "AddressLocality" => "Santa Clara",
           "PostalCode" => "95051",
           "AddressRegion" => "CA",
-          "AddressCountry" => "US"
-        )
+          "AddressCountry" => "US",
+        ),
       ),
       "Image" => [
         OpenActive::Models::ImageObject.new(
-          "Url" => "http://www.example.com/event_image/12345"
+          "Url" => "http://www.example.com/event_image/12345",
         )
       ],
       "EndDate" => DateTime.parse("2017-04-24T23:00:00-0800"),
@@ -26,15 +31,15 @@ RSpec.describe OpenActive::Rpde::RpdeBody do
           "Url" => "https://www.example.com/event_offer/12345_201803180430",
           "Price" => 30,
           "PriceCurrency" => "USD",
-          "ValidFrom" => DateTime.parse("2017-01-20T16:20:00-0800")
+          "ValidFrom" => DateTime.parse("2017-01-20T16:20:00-0800"),
         )
       ],
       "AttendeeInstructions" => "Ensure you bring trainers and a bottle of water.",
-      "MeetingPoint" => ""
+      "MeetingPoint" => "",
     )
   end
 
-  let (:feed_items) do
+  let(:feed_items) do
     return [
       OpenActive::Rpde::RpdeItem.new(
         "Id" => "2",
@@ -55,7 +60,7 @@ RSpec.describe OpenActive::Rpde::RpdeBody do
 
   describe '.create_from_modified_id' do
     context 'with entirely valid data' do
-      let (:json_items) { JSON.parse(file_fixture("rpde/session_series-items.json").read) }
+      let(:json_items) { JSON.parse(file_fixture("rpde/session_series-items.json").read) }
       let(:json) do
         {
           "next" => "https://www.example.com/feed?afterTimestamp=5&afterId=1",
@@ -69,15 +74,16 @@ RSpec.describe OpenActive::Rpde::RpdeBody do
           "https://www.example.com/feed",
           1,
           "1",
-          feed_items
+          feed_items,
         )
 
+        expect(feed.serialize).to include_json(json)
         expect(feed.serialize).to eq(json)
       end
     end
 
     context 'with unordered modified timestamps' do
-      let (:body) do
+      let(:body) do
         described_class.create_from_modified_id(
           "https://www.example.com/feed",
           1,
@@ -88,16 +94,17 @@ RSpec.describe OpenActive::Rpde::RpdeBody do
               "Modified" => 5,
               "State" => OpenActive::Rpde::RpdeState::UPDATED,
               "Kind" => OpenActive::Rpde::RpdeKind::SESSION_SERIES,
-              "Data" => session_series_event
+              "Data" => session_series_event,
             ),
             OpenActive::Rpde::RpdeItem.new(
               "Id" => "2",
               "Modified" => 4,
               "State" => OpenActive::Rpde::RpdeState::DELETED,
               "Kind" => OpenActive::Rpde::RpdeKind::SESSION_SERIES,
-              "Data" => nil
+              "Data" => nil,
             )
-          ])
+          ],
+        )
       end
 
       it 'throws a ModifiedIdItemsOrderException exception' do
@@ -106,7 +113,7 @@ RSpec.describe OpenActive::Rpde::RpdeBody do
     end
 
     context 'with unordered IDs' do
-      let (:body) do
+      let(:body) do
         described_class.create_from_modified_id(
           "https://www.example.com/feed",
           1,
@@ -117,16 +124,17 @@ RSpec.describe OpenActive::Rpde::RpdeBody do
               "Modified" => 4,
               "State" => OpenActive::Rpde::RpdeState::UPDATED,
               "Kind" => OpenActive::Rpde::RpdeKind::SESSION_SERIES,
-              "Data" => session_series_event
+              "Data" => session_series_event,
             ),
             OpenActive::Rpde::RpdeItem.new(
               "Id" => "1",
               "Modified" => 4,
               "State" => OpenActive::Rpde::RpdeState::DELETED,
               "Kind" => OpenActive::Rpde::RpdeKind::SESSION_SERIES,
-              "Data" => nil
+              "Data" => nil,
             )
-          ])
+          ],
+        )
       end
 
       it 'throws a ModifiedIdItemsOrderException exception' do
@@ -135,7 +143,7 @@ RSpec.describe OpenActive::Rpde::RpdeBody do
     end
 
     context 'with a delete containing data' do
-      let (:body) do
+      let(:body) do
         described_class.create_from_modified_id(
           "https://www.example.com/feed",
           1,
@@ -146,16 +154,17 @@ RSpec.describe OpenActive::Rpde::RpdeBody do
               "Modified" => 3,
               "State" => OpenActive::Rpde::RpdeState::UPDATED,
               "Kind" => OpenActive::Rpde::RpdeKind::SESSION_SERIES,
-              "Data" => session_series_event
+              "Data" => session_series_event,
             ),
             OpenActive::Rpde::RpdeItem.new(
               "Id" => "2",
               "Modified" => 4,
               "State" => OpenActive::Rpde::RpdeState::DELETED,
               "Kind" => OpenActive::Rpde::RpdeKind::SESSION_SERIES,
-              "Data" => session_series_event
+              "Data" => session_series_event,
             )
-          ])
+          ],
+        )
       end
 
       it 'throws DeletedItemsDataException exception' do
@@ -164,7 +173,7 @@ RSpec.describe OpenActive::Rpde::RpdeBody do
     end
 
     context 'with first item containing queried duplicate id/modified' do
-      let (:body) do
+      let(:body) do
         described_class.create_from_modified_id(
           "https://www.example.com/feed",
           4,
@@ -175,16 +184,17 @@ RSpec.describe OpenActive::Rpde::RpdeBody do
               "Modified" => 4,
               "State" => OpenActive::Rpde::RpdeState::UPDATED,
               "Kind" => OpenActive::Rpde::RpdeKind::SESSION_SERIES,
-              "Data" => session_series_event
+              "Data" => session_series_event,
             ),
             OpenActive::Rpde::RpdeItem.new(
               "Id" => "1",
               "Modified" => 5,
               "State" => OpenActive::Rpde::RpdeState::DELETED,
               "Kind" => OpenActive::Rpde::RpdeKind::SESSION_SERIES,
-              "Data" => nil
+              "Data" => nil,
             )
-          ])
+          ],
+        )
       end
 
       it 'throws FirstTimeAfterTimestampAndAfterIdException exception' do
@@ -193,7 +203,7 @@ RSpec.describe OpenActive::Rpde::RpdeBody do
     end
 
     context 'with body containing unordered modified timestamps' do
-      let (:body) do
+      let(:body) do
         described_class.create_from_modified_id(
           "https://www.example.com/feed",
           4,
@@ -204,16 +214,17 @@ RSpec.describe OpenActive::Rpde::RpdeBody do
               "Modified" => 5,
               "State" => OpenActive::Rpde::RpdeState::UPDATED,
               "Kind" => OpenActive::Rpde::RpdeKind::SESSION_SERIES,
-              "Data" => session_series_event
+              "Data" => session_series_event,
             ),
             OpenActive::Rpde::RpdeItem.new(
               "Id" => 1,
               "Modified" => 4,
               "State" => OpenActive::Rpde::RpdeState::DELETED,
               "Kind" => OpenActive::Rpde::RpdeKind::SESSION_SERIES,
-              "Data" => nil
+              "Data" => nil,
             )
-          ])
+          ],
+        )
       end
 
       it 'throws ModifiedIdItemsOrderException exception' do
@@ -224,7 +235,7 @@ RSpec.describe OpenActive::Rpde::RpdeBody do
 
   describe '.create_from_next_change_number' do
     context 'with valid data' do
-      let (:json_items) { JSON.parse(file_fixture("rpde/session_series-items.json").read) }
+      let(:json_items) { JSON.parse(file_fixture("rpde/session_series-items.json").read) }
       let(:json) do
         {
           "next" => "https://www.example.com/feed?afterChangeNumber=5",
@@ -237,13 +248,13 @@ RSpec.describe OpenActive::Rpde::RpdeBody do
         feed = described_class.create_from_next_change_number(
           "https://www.example.com/feed",
           1,
-          feed_items
+          feed_items,
         )
       end
     end
 
     context 'with body containing unordered modified timestamps' do
-      let (:body) do
+      let(:body) do
         described_class.create_from_next_change_number(
           "https://www.example.com/feed",
           1,
@@ -253,16 +264,17 @@ RSpec.describe OpenActive::Rpde::RpdeBody do
               "Modified" => 5,
               "State" => OpenActive::Rpde::RpdeState::UPDATED,
               "Kind" => OpenActive::Rpde::RpdeKind::SESSION_SERIES,
-              "Data" => session_series_event
+              "Data" => session_series_event,
             ),
             OpenActive::Rpde::RpdeItem.new(
               "Id" => 1,
               "Modified" => 4,
               "State" => OpenActive::Rpde::RpdeState::DELETED,
               "Kind" => OpenActive::Rpde::RpdeKind::SESSION_SERIES,
-              "Data" => nil
+              "Data" => nil,
             )
-          ])
+          ],
+        )
       end
 
       it 'throws NextChangeNumbersItemsOrderException exception' do
@@ -271,7 +283,7 @@ RSpec.describe OpenActive::Rpde::RpdeBody do
     end
 
     context 'with body containing change number with unordered id' do
-      let (:body) do
+      let(:body) do
         described_class.create_from_next_change_number(
           "https://www.example.com/feed",
           1,
@@ -281,16 +293,17 @@ RSpec.describe OpenActive::Rpde::RpdeBody do
               "Modified" => 4,
               "State" => OpenActive::Rpde::RpdeState::UPDATED,
               "Kind" => OpenActive::Rpde::RpdeKind::SESSION_SERIES,
-              "Data" => session_series_event
+              "Data" => session_series_event,
             ),
             OpenActive::Rpde::RpdeItem.new(
               "Id" => 1,
               "Modified" => 5,
               "State" => OpenActive::Rpde::RpdeState::DELETED,
               "Kind" => OpenActive::Rpde::RpdeKind::SESSION_SERIES,
-              "Data" => session_series_event
+              "Data" => session_series_event,
             )
-          ])
+          ],
+        )
       end
 
       it 'throws DeletedItemsDataException exception' do
@@ -299,7 +312,7 @@ RSpec.describe OpenActive::Rpde::RpdeBody do
     end
 
     context 'with body containing change numbers with unordered id + duplicate modified' do
-      let (:body) do
+      let(:body) do
         described_class.create_from_next_change_number(
           "https://www.example.com/feed",
           1,
@@ -309,16 +322,17 @@ RSpec.describe OpenActive::Rpde::RpdeBody do
               "Modified" => 4,
               "State" => OpenActive::Rpde::RpdeState::UPDATED,
               "Kind" => OpenActive::Rpde::RpdeKind::SESSION_SERIES,
-              "Data" => session_series_event
+              "Data" => session_series_event,
             ),
             OpenActive::Rpde::RpdeItem.new(
               "Id" => 1,
               "Modified" => 4,
               "State" => OpenActive::Rpde::RpdeState::DELETED,
               "Kind" => OpenActive::Rpde::RpdeKind::SESSION_SERIES,
-              "Data" => nil
+              "Data" => nil,
             )
-          ])
+          ],
+        )
       end
 
       it 'throws NextChangeNumbersItemsOrderException exception' do
@@ -327,7 +341,7 @@ RSpec.describe OpenActive::Rpde::RpdeBody do
     end
 
     context 'with body containing queried change number' do
-      let (:body) do
+      let(:body) do
         described_class.create_from_next_change_number(
           "https://www.example.com/feed",
           4,
@@ -337,16 +351,17 @@ RSpec.describe OpenActive::Rpde::RpdeBody do
               "Modified" => 4,
               "State" => OpenActive::Rpde::RpdeState::UPDATED,
               "Kind" => OpenActive::Rpde::RpdeKind::SESSION_SERIES,
-              "Data" => session_series_event
+              "Data" => session_series_event,
             ),
             OpenActive::Rpde::RpdeItem.new(
               "Id" => 1,
               "Modified" => 5,
               "State" => OpenActive::Rpde::RpdeState::DELETED,
               "Kind" => OpenActive::Rpde::RpdeKind::SESSION_SERIES,
-              "Data" => nil
+              "Data" => nil,
             )
-          ])
+          ],
+        )
       end
 
       it 'throws FirstTimeAfterChangeNumberException exception' do
@@ -355,7 +370,7 @@ RSpec.describe OpenActive::Rpde::RpdeBody do
     end
 
     context 'with missing fields' do
-      let (:body) do
+      let(:body) do
         described_class.create_from_next_change_number(
           "https://www.example.com/feed",
           1,
@@ -364,15 +379,16 @@ RSpec.describe OpenActive::Rpde::RpdeBody do
               "Id" => 2,
               "Modified" => 4,
               "State" => OpenActive::Rpde::RpdeState::UPDATED,
-              "Data" => session_series_event
+              "Data" => session_series_event,
             ),
             OpenActive::Rpde::RpdeItem.new(
               "Id" => 1,
               "Modified" => 5,
               "State" => OpenActive::Rpde::RpdeState::DELETED,
-              "Data" => nil
+              "Data" => nil,
             )
-          ])
+          ],
+        )
       end
 
       it 'throws IncompleteItemsDataException exception' do

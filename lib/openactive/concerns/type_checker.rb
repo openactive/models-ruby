@@ -10,6 +10,8 @@ module OpenActive
           type_validation_module.define_method "#{meth}=" do |value|
             result = check_types(value, types: types)
             super(result)
+          rescue StandardError => e
+            raise $ERROR_INFO, "error setting field \"#{meth}\"", $ERROR_INFO.backtrace
           end
         end
 
@@ -54,7 +56,9 @@ module OpenActive
 
         # If validation does not pass for any of the provided types,
         # type invalid
-        raise StandardError, "The first argument type does not match any of the declared parameter types (#{types.join(',')}) for #{val}."
+        raise StandardError,
+              "The first argument type does not match any of the declared parameter types "\
+              "(#{types.join(',')}) for #{val}."
       end
     end
   end

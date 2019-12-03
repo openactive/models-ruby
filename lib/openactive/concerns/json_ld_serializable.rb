@@ -7,13 +7,9 @@ module OpenActive
 
       module ClassMethods
         def properties
-          @attributes ||= begin
+          @properties ||= begin
             if superclass.respond_to?(:properties)
               superclass.properties.clone
-            elsif respond_to?(:type)
-              {
-                "type" => {field: :type}
-              }
             else
               {}
             end

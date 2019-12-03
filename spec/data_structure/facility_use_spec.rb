@@ -2,9 +2,9 @@
 #
 # @see https://github.com/openactive/models-lib/blob/master/test-description/data-structure.md For the test description
 RSpec.describe OpenActive::Models::FacilityUse do
-  let (:facility_use_json) { JSON.parse(file_fixture("data_structure/facility_use.json").read) }
+  let(:facility_use_json) { JSON.parse(file_fixture("data_structure/facility_use.json").read) }
 
-  let (:inst) { described_class.deserialize(facility_use_json) }
+  let(:inst) { described_class.deserialize(facility_use_json) }
 
   # Test that Event.attendeeinstructions exists.
   #
@@ -32,7 +32,7 @@ RSpec.describe OpenActive::Models::FacilityUse do
   # @return [void]
   it "has correct properties" do
     correct_properties = [
-      "type",
+      "@type",
       "url",
       "name",
       "description",

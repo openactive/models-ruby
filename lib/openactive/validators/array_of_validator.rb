@@ -30,18 +30,13 @@ module OpenActive
         # NOTE: OpenActive is more strict than plain json-ld, so no coercion into arrays
 
         # Check if value is an array
-        return true if item_validator.run(value) === true
+        return true if item_validator.run(value) == true
 
-        return false if ArrayValidator.new.run(value) === false
+        return false if ArrayValidator.new.run(value) == false
 
         value.each do |item|
           # If any of the provided items is not null nor an instance of the provided class name
-          if
-          null_validator.run(item) === false &&
-          item_validator.run(item) === false
-
-            return false
-          end
+          return false if null_validator.run(item) == false && item_validator.run(item) == false
         end
         true
       end

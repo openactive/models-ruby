@@ -14,15 +14,15 @@ RSpec.describe 'Session Series' do
   #
   # @dataProvider sessionSeriesProvider
   # @return [void]
-  context 'fencing data' do
-    let (:series_json) { JSON.parse(file_fixture("formatting/session_series/fencing.json").read) }
+  context 'with fencing data' do
+    let(:series_json) { JSON.parse(file_fixture("formatting/session_series/fencing.json").read) }
 
-    let (:series) { OpenActive::Models::SessionSeries.deserialize(series_json) }
+    let(:series) { OpenActive::Models::SessionSeries.deserialize(series_json) }
 
     describe 'date time handling' do
-      let (:start_date) { series.sub_event.start_date }
-      let (:end_date) { series.sub_event.end_date }
-      let (:duration) { series.duration }
+      let(:start_date) { series.sub_event.start_date }
+      let(:end_date) { series.sub_event.end_date }
+      let(:duration) { series.duration }
 
       it 'has correct start date' do
         expect(start_date).to eq(DateTime.parse(series_json["subEvent"]["startDate"]))
@@ -53,11 +53,11 @@ RSpec.describe 'Session Series' do
     # @return [void]
     describe "URL handling" do
       it "has correct value for session id" do
-        expect(series.id).to eq(series_json["id"])
+        expect(series.id).to eq(series_json["@id"])
       end
 
       it "has correct value for activity id" do
-        expect(series.activity.id).to eq(series_json["activity"]["id"])
+        expect(series.activity.id).to eq(series_json["activity"]["@id"])
       end
 
       it "has correct value for sub event url" do

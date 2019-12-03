@@ -5,6 +5,7 @@ class DefinePropertyHandler < YARD::Handlers::Ruby::Base
 
   process do
     return if statement.type == :var_ref || statement.type == :vcall
+
     read = true
     write = true
     params = statement.parameters(false).dup
@@ -12,10 +13,10 @@ class DefinePropertyHandler < YARD::Handlers::Ruby::Base
     # Add all attributes
     name = validated_attribute_names(params)
 
-    namespace.attributes[scope][name] ||= SymbolHash[:read => nil, :write => nil]
+    namespace.attributes[scope][name] ||= SymbolHash[read: nil, write: nil]
 
     # Show their methods as well
-    {:read => name, :write => "#{name}="}.each do |type, meth|
+    {read: name, write: "#{name}="}.each do |type, meth|
       if type == :read ? read : write
         o = MethodObject.new(namespace, meth, scope)
         if type == :write
