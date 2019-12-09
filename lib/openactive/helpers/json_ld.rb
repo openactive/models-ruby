@@ -28,8 +28,8 @@ module OpenActive
 
             data["@context"] =
               [
+                *(schema ? ["https://schema.org"] : []),
                 *obj.context,
-                *(schema ? ["https://schema.org"] : [])
               ]
           end
 
