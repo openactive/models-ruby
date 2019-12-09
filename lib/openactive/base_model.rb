@@ -1,3 +1,5 @@
+require 'json'
+
 module OpenActive
   class BaseModel
     include OpenActive::Concerns::JsonLdSerializable
@@ -112,8 +114,12 @@ module OpenActive
       self.class.serialize(self, **kwargs)
     end
 
-    def to_json(*args, schema: false, **kwargs)
-      serialize(schema: schema).to_json(*args, **kwargs)
+    def to_json(schema: false, pretty: false)
+      serialized = serialize(schema: schema)
+
+      return JSON.pretty_generate(serialized) if pretty
+
+      serialized.to_json
     end
   end
 end
