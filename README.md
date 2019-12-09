@@ -60,6 +60,81 @@ The OpenActive data model builds on top of Schema.org, which means that you are 
 
 To reflect this, OpenActive uses inheritance to build ontop of a copy of Schema.org, these are available within the OpenActive::Models::Schema and OpenActive::Enums::Schema namespaces. And so makes it easy to use additional properties from schema.org on any given type.
 
+### Full Models Example
+```ruby
+session_series = OpenActive::Models::SessionSeries.new(
+    name: "Virtual BODYPUMP",
+    description: "This is the virtual version of the original barbell class, which will help you get lean, toned and fit - fast",
+    start_date: "2017-04-24T19:30:00-08:00",
+    end_date: "2017-04-24T23:00:00-08:00",
+    location: OpenActive::Models::Place.new(
+        name: "Raynes Park High School, 46A West Barnes Lane",
+        geo: OpenActive::Models::GeoCoordinates.new(
+            latitude: 51.4034423828125,
+            longitude: -0.2369088977575302,
+        )
+    ),
+    activity: OpenActive::Models::Concept.new(
+        id: "https://openactive.io/activity-list#5e78bcbe-36db-425a-9064-bf96d09cc351",
+        pref_label: "Bodypump™",
+        in_scheme: "https://openactive.io/activity-list"
+    ),
+    organizer: OpenActive::Models::Organization.new(
+        name: "Central Speedball Association",
+        url: "http://www.speedball-world.com"
+    ),
+    offers: [OpenActive::Models::Offer.new(
+        identifier: "OX-AD",
+        name: "Adult",
+        price: 3.30,
+        price_currency: "GBP",
+        url: "https://profile.everyoneactive.com/booking?Site=0140&Activities=1402CBP20150217&Culture=en-GB"
+    )]
+)
+
+session_series.to_json
+```
+This results in
+
+```json
+{
+  "@context": ["https://openactive.io/", "https://openactive.io/ns-beta"],
+  "@type": "SessionSeries",
+  "description": "This is the virtual version of the original barbell class, which will help you get lean, toned and fit - fast",
+  "offers": [{
+    "@type": "Offer",
+    "name": "Adult",
+    "url": "https://profile.everyoneactive.com/booking?Site=0140&Activities=1402CBP20150217&Culture=en-GB",
+    "price": "3.33",
+    "priceCurrency": "GBP",
+    "identifier": "OX-AD"
+  }],
+  "startDate": "2017-04-24T19:30:00-08:00",
+  "endDate": "2017-04-24T23:00:00-08:00",
+  "location": {
+    "@type": "Place",
+    "name": "Raynes Park High School, 46A West Barnes Lane",
+    "geo": {
+      "@type": "GeoCoordinates",
+      "longitude": "-0.2369088977575302e0",
+      "latitude": "0.514034423828125e2"
+    }
+  },
+  "organizer": {
+    "@type": "Organization",
+    "name": "Central Speedball Association",
+    "url": "http://www.speedball-world.com"
+  },
+  "activity": {
+    "@type": "Concept",
+    "@id": "https://openactive.io/activity-list#5e78bcbe-36db-425a-9064-bf96d09cc351",
+    "inScheme": "https://openactive.io/activity-list",
+    "prefLabel": "Bodypump™"
+  },
+  "name": "Virtual BODYPUMP"
+}
+```
+
 ## RPDE Feed Publishing 
 
 To publish an OpenActive data feed (see this [video explainer](https://developer.openactive.io/publishing-data/data-feeds/how-a-data-feed-works)), The OpenActive gem provides a drop-in solution to render the feed pages. This also includes validation for the underlying feed query.

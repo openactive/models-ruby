@@ -33,6 +33,24 @@ module OpenActive
               ]
           end
 
+          # push @'s to the start
+          data = data.sort_by do |k, _v|
+            case k
+            when '@context'
+              0
+            when '@type'
+              1
+            when '@id'
+              2
+            else
+              if k.start_with?('@')
+                3
+              else
+                4
+              end
+            end
+          end
+
           # Loop all class methods, find the getters
           # and map defined attributes, normalizing attribute name
           data = Hash[data.map do |method_name, attr_value|
