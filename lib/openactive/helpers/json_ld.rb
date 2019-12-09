@@ -68,6 +68,8 @@ module OpenActive
               parent,
               **kwargs,
             )
+          elsif value.is_a?(BigDecimal)
+            value.to_s('F')
           elsif value.is_a?(Numeric)
             value
           elsif value.nil? # let nil be nil
