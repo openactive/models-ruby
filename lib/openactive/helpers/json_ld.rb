@@ -35,16 +35,19 @@ module OpenActive
 
           # push @'s to the start
           data = data.sort_by do |k, _v|
-            if k == '@context'
+            case k
+            when '@context'
               0
-            elsif k == '@type'
+            when '@type'
+              1
+            when '@id'
               2
-            elsif k == '@id'
-              3
-            elsif k.start_with?('@')
-              4
             else
-              5
+              if k.start_with?('@')
+                3
+              else
+                4
+              end
             end
           end
 
