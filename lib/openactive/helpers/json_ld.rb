@@ -87,7 +87,7 @@ module OpenActive
               **kwargs,
             )
           elsif value.is_a?(BigDecimal)
-            value.to_s('F')
+            value.to_f
           elsif value.is_a?(Numeric)
             value
           elsif value.nil? # let nil be nil
