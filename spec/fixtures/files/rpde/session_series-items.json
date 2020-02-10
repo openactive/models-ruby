@@ -2,7 +2,7 @@
   {
     "state": "updated",
     "kind": "SessionSeries",
-    "@id": "2",
+    "id": "2",
     "modified": 4,
     "data": {
       "@context": [
@@ -48,7 +48,7 @@
   {
     "state": "deleted",
     "kind": "SessionSeries",
-    "@id": "1",
+    "id": "1",
     "modified": 5
   }
 ]
