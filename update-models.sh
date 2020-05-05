@@ -27,4 +27,4 @@ bundle exec rubocop -a "${GENERATED_DIRS[@]}";
 
 bundle exec rspec;
 
-git add "${GENERATED_DIRS[@]}";
+git add "${GENERATED_DIRS[@]}" "${TARGET_DIR}/files_index.json";

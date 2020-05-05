@@ -22,7 +22,7 @@ rubocop exec rubocop -a lib/openactive/models lib/openactive/enums
 rubocop exec rubocop -a rspec
 
 # add the newly generated models
-git add lib/openactive/models lib/openactive/enums
+git add lib/openactive/models lib/openactive/enums lib/openactive/files-index.json
 ```
 
 The next step is to commit it.
