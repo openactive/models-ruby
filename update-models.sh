@@ -31,7 +31,7 @@ fi
   npm run app-dev -- generate Ruby --destination "${TARGET_DIR}";
 )
 
-bundle exec rubocop -a "${GENERATED_DIRS[@]}";
+bundle exec rubocop -a "${GENERATED_DIRS[@]}" || true;
 
 bundle exec rspec;
 
