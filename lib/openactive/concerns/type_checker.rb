@@ -11,7 +11,7 @@ module OpenActive
             result = check_types(value, types: types)
             super(result)
           rescue StandardError => e
-            raise $ERROR_INFO, "error setting field \"#{meth}\"", $ERROR_INFO.backtrace
+            raise e, "error setting field \"#{meth}\"", e&.backtrace
           end
         end
 

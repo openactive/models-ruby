@@ -56,12 +56,12 @@ RSpec/NestedGroups:
 Style/AsciiComments:
   Enabled: false
 
-Naming/UncommunicativeMethodParamName:
+Naming/MethodParameterName:
   AllowedNames:
     - as
     - id
 
-Metrics/LineLength:
+Layout/LineLength:
   Enabled: true
   Max: 120
   Exclude:

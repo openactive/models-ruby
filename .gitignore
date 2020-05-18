@@ -1,3 +1,5 @@
+/vendor
+
 ### Ruby template
 *.gem
 *.rbc
