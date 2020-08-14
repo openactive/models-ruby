@@ -66,6 +66,7 @@ RSpec.describe "Example Event" do
             valid_from: DateTime.parse("2017-01-20T16:20:00-08:00"),
           )
         ],
+        isAccessibleForFree: false,
         attendee_instructions: "Ensure you bring trainers and a bottle of water.",
         meeting_point: "",
       )
