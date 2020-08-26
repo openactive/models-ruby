@@ -151,6 +151,12 @@ module OpenActive
         end
         rpde_body
       end
+
+      def serialize(**kwargs)
+        super.tap do |data|
+          data["items"] ||= []
+        end
+      end
     end
   end
 end

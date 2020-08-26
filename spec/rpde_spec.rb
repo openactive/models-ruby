@@ -396,4 +396,21 @@ RSpec.describe OpenActive::Rpde::RpdeBody do
       end
     end
   end
+
+  context "with no items" do
+    it "includes an empty items array" do
+      feed = described_class.create(
+        feed_base_url: "https://www.example.com/feed",
+        id: 1,
+        modified: 5,
+        items: []
+      )
+
+      expect(feed.serialize).to eq(
+        "items" => [],
+        "license" => "https://creativecommons.org/licenses/by/4.0/",
+        "next" => "https://www.example.com/feed?afterTimestamp=5&afterId=1",
+      )
+    end
+  end
 end
