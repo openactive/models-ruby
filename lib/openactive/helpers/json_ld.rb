@@ -90,6 +90,8 @@ module OpenActive
             value.to_f
           elsif value.is_a?(Numeric)
             value
+          elsif value.is_a?(TrueClass) || value.is_a?(FalseClass)
+            value
           elsif value.nil? # let nil be nil
             nil
           else

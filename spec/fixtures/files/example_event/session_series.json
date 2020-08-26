@@ -34,6 +34,7 @@
       "validFrom":"2017-01-20T16:20:00-08:00"
     }
   ],
+  "isAccessibleForFree": false,
   "startDate":"2017-04-24T19:30:00-08:00",
   "endDate":"2017-04-24T23:00:00-08:00",
   "attendeeInstructions":"Ensure you bring trainers and a bottle of water."
