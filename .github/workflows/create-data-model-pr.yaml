@@ -35,8 +35,23 @@ jobs:
         run: npm update @openactive/data-models
         working-directory: ./models-lib/
 
+      - name: Remove existing model files
+        run: rm -rf lib/openactive/models lib/openactive/enums
+        working-directory: ./models-lib/
+
       - name: Run PHP models generator
         run: npm start -- generate Ruby --destination ../models-ruby/lib/openactive/
+        working-directory: ./models-lib/
+        
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.0
+          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+          working-directory: ./models-lib/
+
+      - name: Fix syntax / linting
+        run: bundle exec rubocop -a lib/openactive/models lib/openactive/enums
         working-directory: ./models-lib/
         
       - name: Create Pull Request
