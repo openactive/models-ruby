@@ -39,7 +39,7 @@ jobs:
         run: rm -rf lib/openactive/models lib/openactive/enums
         working-directory: ./models-lib/
 
-      - name: Run PHP models generator
+      - name: Run Ruby models generator
         run: npm start -- generate Ruby --destination ../models-ruby/lib/openactive/
         working-directory: ./models-lib/
         
