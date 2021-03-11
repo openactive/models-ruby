@@ -1,4 +1,4 @@
-# openactive gem - Ruby implementation of OpenActive's data model
+# openactive gem - Ruby implementation of OpenActive's data model [![Tests](https://github.com/openactive/models-ruby/actions/workflows/tests.yaml/badge.svg?branch=master)](https://github.com/openactive/models-ruby/actions/workflows/tests.yaml)
 
 Ruby Models for the OpenActive Opportunity and Booking Specifications
 
