@@ -48,11 +48,11 @@ jobs:
         with:
           ruby-version: 3.0
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
-          working-directory: ./models-lib/
+          working-directory: ./models-ruby/
 
       - name: Fix syntax / linting
         run: bundle exec rubocop -a lib/openactive/models lib/openactive/enums
-        working-directory: ./models-lib/
+        working-directory: ./models-ruby/
         
       - name: Create Pull Request
         id: cpr
