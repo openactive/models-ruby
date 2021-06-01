@@ -8,16 +8,18 @@ module OpenActive
           "schema:ArchiveComponent"
         end
 
-        # @return [OpenActive::Models::Schema::Place,String,OpenActive::Models::Schema::PostalAddress]
-        define_property :item_location, as: "itemLocation", types: [
-          "OpenActive::Models::Schema::Place",
-          "string",
-          "OpenActive::Models::Schema::PostalAddress",
-        ]
-
-        # @return [OpenActive::Models::Schema::ArchiveOrganization]
+        # @return [OpenActive::Models::Schema::ArchiveOrganization,URI]
         define_property :holding_archive, as: "holdingArchive", types: [
           "OpenActive::Models::Schema::ArchiveOrganization",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::PostalAddress,OpenActive::Models::Schema::Place,String,URI]
+        define_property :item_location, as: "itemLocation", types: [
+          "OpenActive::Models::Schema::PostalAddress",
+          "OpenActive::Models::Schema::Place",
+          "string",
+          "URI",
         ]
       end
     end

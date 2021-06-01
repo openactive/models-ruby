@@ -8,12 +8,13 @@ module OpenActive
           "schema:DonateAction"
         end
 
-        # @return [OpenActive::Models::Schema::Person,OpenActive::Models::Schema::ContactPoint,OpenActive::Models::Schema::Organization,OpenActive::Models::Schema::Audience]
+        # @return [OpenActive::Models::Schema::Organization,OpenActive::Models::Schema::ContactPoint,OpenActive::Models::Schema::Person,OpenActive::Models::Schema::Audience,URI]
         define_property :recipient, as: "recipient", types: [
-          "OpenActive::Models::Schema::Person",
-          "OpenActive::Models::Schema::ContactPoint",
           "OpenActive::Models::Schema::Organization",
+          "OpenActive::Models::Schema::ContactPoint",
+          "OpenActive::Models::Schema::Person",
           "OpenActive::Models::Schema::Audience",
+          "URI",
         ]
       end
     end

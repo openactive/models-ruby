@@ -1,6 +1,6 @@
 module OpenActive
   module Models
-    # This type is derived from [Schedule](https://pending.schema.org/Schedule), which means that any of this type's properties within schema.org may also be used. Note however the properties on this page must be used in preference if a relevant property is available.
+    # This type is derived from https://pending.schema.org/Schedule.
     class Schedule < ::OpenActive::JsonLdModel
       # @!attribute type
       # @return [String]
@@ -46,9 +46,9 @@ module OpenActive
         "null",
       ]
 
-      # @return [URI]
+      # @return [String]
       define_property :id_template, as: "idTemplate", types: [
-        "URI",
+        "string",
       ]
 
       # @return [int,nil]
@@ -65,6 +65,11 @@ module OpenActive
 
       # @return [String]
       define_property :scheduled_event_type, as: "scheduledEventType", types: [
+        "string",
+      ]
+
+      # @return [String]
+      define_property :schedule_timezone, as: "scheduleTimezone", types: [
         "string",
       ]
 
@@ -86,9 +91,9 @@ module OpenActive
         "null",
       ]
 
-      # @return [URI]
+      # @return [String]
       define_property :url_template, as: "urlTemplate", types: [
-        "URI",
+        "string",
       ]
 
       # @return [String]

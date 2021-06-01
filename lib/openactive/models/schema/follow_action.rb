@@ -8,10 +8,11 @@ module OpenActive
           "schema:FollowAction"
         end
 
-        # @return [OpenActive::Models::Schema::Person,OpenActive::Models::Schema::Organization]
+        # @return [OpenActive::Models::Schema::Organization,OpenActive::Models::Schema::Person,URI]
         define_property :followee, as: "followee", types: [
-          "OpenActive::Models::Schema::Person",
           "OpenActive::Models::Schema::Organization",
+          "OpenActive::Models::Schema::Person",
+          "URI",
         ]
       end
     end

@@ -8,9 +8,10 @@ module OpenActive
           "schema:WinAction"
         end
 
-        # @return [OpenActive::Models::Schema::Person]
+        # @return [OpenActive::Models::Schema::Person,URI]
         define_property :loser, as: "loser", types: [
           "OpenActive::Models::Schema::Person",
+          "URI",
         ]
       end
     end

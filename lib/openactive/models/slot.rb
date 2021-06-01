@@ -1,6 +1,6 @@
 module OpenActive
   module Models
-    # This type is derived from [Event](https://schema.org/Event), which means that any of this type's properties within schema.org may also be used. Note however the properties on this page must be used in preference if a relevant property is available.
+    # This type is derived from https://schema.org/Event, which means that any of this type's properties within schema.org may also be used.
     class Slot < ::OpenActive::Models::Event
       # @!attribute type
       # @return [String]
@@ -47,6 +47,11 @@ module OpenActive
         "OpenActive::Models::QuantitativeValue",
       ]
 
+      # @return [OpenActive::Models::QuantitativeValue]
+      define_property :age_restriction, as: "ageRestriction", types: [
+        "OpenActive::Models::QuantitativeValue",
+      ]
+
       # @return [String]
       define_property :attendee_instructions, as: "attendeeInstructions", types: [
         "string",
@@ -69,9 +74,10 @@ module OpenActive
         "null",
       ]
 
-      # @return [Array<OpenActive::Models::Schedule>]
-      define_property :event_schedule, as: "eventSchedule", types: [
-        "OpenActive::Models::Schedule[]",
+      # @return [OpenActive::Enums::Schema::EventAttendanceModeEnumeration,nil]
+      define_property :event_attendance_mode, as: "eventAttendanceMode", types: [
+        "OpenActive::Enums::Schema::EventAttendanceModeEnumeration",
+        "null",
       ]
 
       # @return [OpenActive::Enums::Schema::EventStatusType,nil]
@@ -80,11 +86,10 @@ module OpenActive
         "null",
       ]
 
-      # @return [URI,OpenActive::Models::IndividualFacilityUse,OpenActive::Models::FacilityUse]
+      # @return [OpenActive::Models::FacilityUse,URI]
       define_property :facility_use, as: "facilityUse", types: [
-        "URI",
-        "OpenActive::Models::IndividualFacilityUse",
         "OpenActive::Models::FacilityUse",
+        "URI",
       ]
 
       # @return [OpenActive::Enums::GenderRestrictionType,nil]
@@ -138,6 +143,12 @@ module OpenActive
         "null",
       ]
 
+      # @return [int,nil]
+      define_property :maximum_virtual_attendee_capacity, as: "maximumVirtualAttendeeCapacity", types: [
+        "int",
+        "null",
+      ]
+
       # @return [String]
       define_property :meeting_point, as: "meetingPoint", types: [
         "string",
@@ -146,17 +157,6 @@ module OpenActive
       # @return [Array<OpenActive::Models::Offer>]
       define_property :offers, as: "offers", types: [
         "OpenActive::Models::Offer[]",
-      ]
-
-      # @return [OpenActive::Models::Person,OpenActive::Models::Organization]
-      define_property :organizer, as: "organizer", types: [
-        "OpenActive::Models::Person",
-        "OpenActive::Models::Organization",
-      ]
-
-      # @return [Array<OpenActive::Models::Action>]
-      define_property :potential_action, as: "potentialAction", types: [
-        "OpenActive::Models::Action[]",
       ]
 
       # @return [OpenActive::Models::Brand]
@@ -181,16 +181,14 @@ module OpenActive
         "string",
       ]
 
-      # @return [Date,DateTime,nil]
+      # @return [DateTime,nil]
       define_property :start_date, as: "startDate", types: [
-        "Date",
         "DateTime",
         "null",
       ]
 
-      # @return [Date,DateTime,nil]
+      # @return [DateTime,nil]
       define_property :end_date, as: "endDate", types: [
-        "Date",
         "DateTime",
         "null",
       ]
@@ -210,9 +208,9 @@ module OpenActive
         "URI",
       ]
 
-      # @return [Array<OpenActive::Models::SportsActivityLocation>]
+      # @return [Array<OpenActive::Models::Schema::SportsActivityLocation>]
       define_property :sports_activity_location, as: "beta:sportsActivityLocation", types: [
-        "OpenActive::Models::SportsActivityLocation[]",
+        "OpenActive::Models::Schema::SportsActivityLocation[]",
       ]
     end
   end

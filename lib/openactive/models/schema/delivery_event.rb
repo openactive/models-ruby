@@ -13,6 +13,12 @@ module OpenActive
           "string",
         ]
 
+        # @return [OpenActive::Enums::Schema::DeliveryMethod,nil]
+        define_property :has_delivery_method, as: "hasDeliveryMethod", types: [
+          "OpenActive::Enums::Schema::DeliveryMethod",
+          "null",
+        ]
+
         # @return [DateTime,nil]
         define_property :available_from, as: "availableFrom", types: [
           "DateTime",
@@ -22,12 +28,6 @@ module OpenActive
         # @return [DateTime,nil]
         define_property :available_through, as: "availableThrough", types: [
           "DateTime",
-          "null",
-        ]
-
-        # @return [OpenActive::Enums::Schema::DeliveryMethod,nil]
-        define_property :has_delivery_method, as: "hasDeliveryMethod", types: [
-          "OpenActive::Enums::Schema::DeliveryMethod",
           "null",
         ]
       end

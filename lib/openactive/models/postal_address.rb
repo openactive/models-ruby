@@ -1,6 +1,6 @@
 module OpenActive
   module Models
-    # This type is derived from [PostalAddress](https://schema.org/PostalAddress), which means that any of this type's properties within schema.org may also be used. Note however the properties on this page must be used in preference if a relevant property is available.
+    # This type is derived from https://schema.org/PostalAddress, which means that any of this type's properties within schema.org may also be used.
     class PostalAddress < ::OpenActive::Models::Schema::PostalAddress
       # @!attribute type
       # @return [String]

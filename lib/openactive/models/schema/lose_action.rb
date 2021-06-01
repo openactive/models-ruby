@@ -8,9 +8,10 @@ module OpenActive
           "schema:LoseAction"
         end
 
-        # @return [OpenActive::Models::Schema::Person]
+        # @return [OpenActive::Models::Schema::Person,URI]
         define_property :winner, as: "winner", types: [
           "OpenActive::Models::Schema::Person",
+          "URI",
         ]
       end
     end

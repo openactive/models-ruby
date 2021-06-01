@@ -9,13 +9,15 @@ module OpenActive
         end
 
         # @return [String]
-        define_property :rating_explanation, as: "ratingExplanation", types: [
+        define_property :review_aspect, as: "reviewAspect", types: [
           "string",
         ]
 
-        # @return [String]
-        define_property :review_aspect, as: "reviewAspect", types: [
+        # @return [BigDecimal,String,nil]
+        define_property :rating_value, as: "ratingValue", types: [
+          "Number",
           "string",
+          "null",
         ]
 
         # @return [String,BigDecimal,nil]
@@ -25,21 +27,20 @@ module OpenActive
           "null",
         ]
 
-        # @return [OpenActive::Models::Schema::Person,OpenActive::Models::Schema::Organization]
+        # @return [OpenActive::Models::Schema::Person,OpenActive::Models::Schema::Organization,URI]
         define_property :author, as: "author", types: [
           "OpenActive::Models::Schema::Person",
           "OpenActive::Models::Schema::Organization",
+          "URI",
+        ]
+
+        # @return [String]
+        define_property :rating_explanation, as: "ratingExplanation", types: [
+          "string",
         ]
 
         # @return [String,BigDecimal,nil]
         define_property :best_rating, as: "bestRating", types: [
-          "string",
-          "Number",
-          "null",
-        ]
-
-        # @return [String,BigDecimal,nil]
-        define_property :rating_value, as: "ratingValue", types: [
           "string",
           "Number",
           "null",

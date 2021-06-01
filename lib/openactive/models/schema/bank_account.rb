@@ -8,14 +8,16 @@ module OpenActive
           "schema:BankAccount"
         end
 
-        # @return [OpenActive::Models::Schema::MonetaryAmount]
-        define_property :account_overdraft_limit, as: "accountOverdraftLimit", types: [
-          "OpenActive::Models::Schema::MonetaryAmount",
-        ]
-
-        # @return [OpenActive::Models::Schema::MonetaryAmount]
+        # @return [OpenActive::Models::Schema::MonetaryAmount,URI]
         define_property :account_minimum_inflow, as: "accountMinimumInflow", types: [
           "OpenActive::Models::Schema::MonetaryAmount",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::MonetaryAmount,URI]
+        define_property :account_overdraft_limit, as: "accountOverdraftLimit", types: [
+          "OpenActive::Models::Schema::MonetaryAmount",
+          "URI",
         ]
 
         # @return [URI,String]

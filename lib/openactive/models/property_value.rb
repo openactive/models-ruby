@@ -1,6 +1,6 @@
 module OpenActive
   module Models
-    # This type is derived from [PropertyValue](https://schema.org/PropertyValue), which means that any of this type's properties within schema.org may also be used. Note however the properties on this page must be used in preference if a relevant property is available.
+    # This type is derived from https://schema.org/PropertyValue, which means that any of this type's properties within schema.org may also be used.
     class PropertyValue < ::OpenActive::Models::Schema::PropertyValue
       # @!attribute type
       # @return [String]
@@ -24,9 +24,9 @@ module OpenActive
         "URI",
       ]
 
-      # @return [int,String,nil]
+      # @return [Boolean,String,nil]
       define_property :value, as: "value", types: [
-        "int",
+        "bool",
         "string",
         "null",
       ]

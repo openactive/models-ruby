@@ -8,9 +8,10 @@ module OpenActive
           "schema:TravelAction"
         end
 
-        # @return [OpenActive::Models::Schema::Distance]
+        # @return [OpenActive::Models::Schema::Distance,URI]
         define_property :distance, as: "distance", types: [
           "OpenActive::Models::Schema::Distance",
+          "URI",
         ]
       end
     end

@@ -8,14 +8,16 @@ module OpenActive
           "schema:PlayAction"
         end
 
-        # @return [OpenActive::Models::Schema::Event]
+        # @return [OpenActive::Models::Schema::Event,URI]
         define_property :event, as: "event", types: [
           "OpenActive::Models::Schema::Event",
+          "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::Audience]
+        # @return [OpenActive::Models::Schema::Audience,URI]
         define_property :audience, as: "audience", types: [
           "OpenActive::Models::Schema::Audience",
+          "URI",
         ]
       end
     end

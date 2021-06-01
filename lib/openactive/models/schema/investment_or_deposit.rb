@@ -8,10 +8,11 @@ module OpenActive
           "schema:InvestmentOrDeposit"
         end
 
-        # @return [BigDecimal,OpenActive::Models::Schema::MonetaryAmount,nil]
+        # @return [BigDecimal,OpenActive::Models::Schema::MonetaryAmount,URI,nil]
         define_property :amount, as: "amount", types: [
           "Number",
           "OpenActive::Models::Schema::MonetaryAmount",
+          "URI",
           "null",
         ]
       end

@@ -8,35 +8,36 @@ module OpenActive
           "schema:FoodEstablishment"
         end
 
-        # @return [URI,String,Boolean,nil]
-        define_property :accepts_reservations, as: "acceptsReservations", types: [
-          "URI",
+        # @return [String]
+        define_property :serves_cuisine, as: "servesCuisine", types: [
           "string",
-          "bool",
-          "null",
         ]
 
-        # @return [OpenActive::Models::Schema::Rating]
+        # @return [OpenActive::Models::Schema::Rating,URI]
         define_property :star_rating, as: "starRating", types: [
           "OpenActive::Models::Schema::Rating",
+          "URI",
         ]
 
-        # @return [URI,String,OpenActive::Models::Schema::Menu]
+        # @return [String,URI,OpenActive::Models::Schema::Menu]
         define_property :menu, as: "menu", types: [
-          "URI",
           "string",
+          "URI",
           "OpenActive::Models::Schema::Menu",
+        ]
+
+        # @return [URI,Boolean,String,nil]
+        define_property :accepts_reservations, as: "acceptsReservations", types: [
+          "URI",
+          "bool",
+          "string",
+          "null",
         ]
 
         # @return [URI,OpenActive::Models::Schema::Menu,String]
         define_property :has_menu, as: "hasMenu", types: [
           "URI",
           "OpenActive::Models::Schema::Menu",
-          "string",
-        ]
-
-        # @return [String]
-        define_property :serves_cuisine, as: "servesCuisine", types: [
           "string",
         ]
       end

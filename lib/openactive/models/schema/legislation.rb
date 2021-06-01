@@ -8,39 +8,17 @@ module OpenActive
           "schema:Legislation"
         end
 
-        # @return [String,OpenActive::Models::Schema::AdministrativeArea]
-        define_property :legislation_jurisdiction, as: "legislationJurisdiction", types: [
-          "string",
-          "OpenActive::Models::Schema::AdministrativeArea",
-        ]
-
-        # @return [Date,nil]
-        define_property :legislation_date_version, as: "legislationDateVersion", types: [
-          "Date",
-          "null",
-        ]
-
-        # @return [URI,String]
-        define_property :legislation_identifier, as: "legislationIdentifier", types: [
-          "URI",
-          "string",
-        ]
-
-        # @return [String,OpenActive::Models::Schema::CategoryCode]
+        # @return [OpenActive::Models::Schema::CategoryCode,String,URI]
         define_property :legislation_type, as: "legislationType", types: [
-          "string",
           "OpenActive::Models::Schema::CategoryCode",
+          "string",
+          "URI",
         ]
 
-        # @return [OpenActive::Enums::Schema::LegalForceStatus,nil]
+        # @return [OpenActive::Models::Schema::LegalForceStatus,URI]
         define_property :legislation_legal_force, as: "legislationLegalForce", types: [
-          "OpenActive::Enums::Schema::LegalForceStatus",
-          "null",
-        ]
-
-        # @return [OpenActive::Models::Schema::Legislation]
-        define_property :legislation_applies, as: "legislationApplies", types: [
-          "OpenActive::Models::Schema::Legislation",
+          "OpenActive::Models::Schema::LegalForceStatus",
+          "URI",
         ]
 
         # @return [Date,nil]
@@ -49,31 +27,68 @@ module OpenActive
           "null",
         ]
 
-        # @return [OpenActive::Models::Schema::Person,OpenActive::Models::Schema::Organization]
+        # @return [String,OpenActive::Models::Schema::AdministrativeArea,URI]
+        define_property :legislation_jurisdiction, as: "legislationJurisdiction", types: [
+          "string",
+          "OpenActive::Models::Schema::AdministrativeArea",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::Legislation,URI]
+        define_property :legislation_consolidates, as: "legislationConsolidates", types: [
+          "OpenActive::Models::Schema::Legislation",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::Person,OpenActive::Models::Schema::Organization,URI]
         define_property :legislation_responsible, as: "legislationResponsible", types: [
           "OpenActive::Models::Schema::Person",
           "OpenActive::Models::Schema::Organization",
+          "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::Legislation]
-        define_property :legislation_consolidates, as: "legislationConsolidates", types: [
+        # @return [OpenActive::Models::Schema::Legislation,URI]
+        define_property :legislation_changes, as: "legislationChanges", types: [
           "OpenActive::Models::Schema::Legislation",
+          "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::Legislation]
-        define_property :legislation_transposes, as: "legislationTransposes", types: [
-          "OpenActive::Models::Schema::Legislation",
-        ]
-
-        # @return [OpenActive::Models::Schema::Organization,OpenActive::Models::Schema::Person]
+        # @return [OpenActive::Models::Schema::Organization,OpenActive::Models::Schema::Person,URI]
         define_property :legislation_passed_by, as: "legislationPassedBy", types: [
           "OpenActive::Models::Schema::Organization",
           "OpenActive::Models::Schema::Person",
+          "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::Legislation]
-        define_property :legislation_changes, as: "legislationChanges", types: [
+        # @return [OpenActive::Models::Schema::AdministrativeArea,String,URI]
+        define_property :jurisdiction, as: "jurisdiction", types: [
+          "OpenActive::Models::Schema::AdministrativeArea",
+          "string",
+          "URI",
+        ]
+
+        # @return [Date,nil]
+        define_property :legislation_date_version, as: "legislationDateVersion", types: [
+          "Date",
+          "null",
+        ]
+
+        # @return [String,URI]
+        define_property :legislation_identifier, as: "legislationIdentifier", types: [
+          "string",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::Legislation,URI]
+        define_property :legislation_applies, as: "legislationApplies", types: [
           "OpenActive::Models::Schema::Legislation",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::Legislation,URI]
+        define_property :legislation_transposes, as: "legislationTransposes", types: [
+          "OpenActive::Models::Schema::Legislation",
+          "URI",
         ]
       end
     end

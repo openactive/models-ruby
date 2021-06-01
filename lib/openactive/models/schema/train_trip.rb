@@ -8,18 +8,8 @@ module OpenActive
           "schema:TrainTrip"
         end
 
-        # @return [OpenActive::Models::Schema::TrainStation]
-        define_property :arrival_station, as: "arrivalStation", types: [
-          "OpenActive::Models::Schema::TrainStation",
-        ]
-
         # @return [String]
-        define_property :train_number, as: "trainNumber", types: [
-          "string",
-        ]
-
-        # @return [String]
-        define_property :train_name, as: "trainName", types: [
+        define_property :arrival_platform, as: "arrivalPlatform", types: [
           "string",
         ]
 
@@ -28,14 +18,26 @@ module OpenActive
           "string",
         ]
 
+        # @return [OpenActive::Models::Schema::TrainStation,URI]
+        define_property :departure_station, as: "departureStation", types: [
+          "OpenActive::Models::Schema::TrainStation",
+          "URI",
+        ]
+
         # @return [String]
-        define_property :arrival_platform, as: "arrivalPlatform", types: [
+        define_property :train_number, as: "trainNumber", types: [
           "string",
         ]
 
-        # @return [OpenActive::Models::Schema::TrainStation]
-        define_property :departure_station, as: "departureStation", types: [
+        # @return [OpenActive::Models::Schema::TrainStation,URI]
+        define_property :arrival_station, as: "arrivalStation", types: [
           "OpenActive::Models::Schema::TrainStation",
+          "URI",
+        ]
+
+        # @return [String]
+        define_property :train_name, as: "trainName", types: [
+          "string",
         ]
       end
     end

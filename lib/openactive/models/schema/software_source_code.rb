@@ -9,28 +9,19 @@ module OpenActive
         end
 
         # @return [String]
-        define_property :runtime, as: "runtime", types: [
-          "string",
-        ]
-
-        # @return [String]
-        define_property :sample_type, as: "sampleType", types: [
-          "string",
-        ]
-
-        # @return [String]
         define_property :runtime_platform, as: "runtimePlatform", types: [
           "string",
         ]
 
-        # @return [String]
-        define_property :code_sample_type, as: "codeSampleType", types: [
+        # @return [String,OpenActive::Models::Schema::ComputerLanguage,URI]
+        define_property :programming_language, as: "programmingLanguage", types: [
           "string",
+          "OpenActive::Models::Schema::ComputerLanguage",
+          "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::ComputerLanguage,String]
-        define_property :programming_language, as: "programmingLanguage", types: [
-          "OpenActive::Models::Schema::ComputerLanguage",
+        # @return [String]
+        define_property :code_sample_type, as: "codeSampleType", types: [
           "string",
         ]
 
@@ -39,9 +30,20 @@ module OpenActive
           "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::SoftwareApplication]
+        # @return [String]
+        define_property :runtime, as: "runtime", types: [
+          "string",
+        ]
+
+        # @return [OpenActive::Models::Schema::SoftwareApplication,URI]
         define_property :target_product, as: "targetProduct", types: [
           "OpenActive::Models::Schema::SoftwareApplication",
+          "URI",
+        ]
+
+        # @return [String]
+        define_property :sample_type, as: "sampleType", types: [
+          "string",
         ]
       end
     end

@@ -8,9 +8,10 @@ module OpenActive
           "schema:VoteAction"
         end
 
-        # @return [OpenActive::Models::Schema::Person]
+        # @return [OpenActive::Models::Schema::Person,URI]
         define_property :candidate, as: "candidate", types: [
           "OpenActive::Models::Schema::Person",
+          "URI",
         ]
       end
     end

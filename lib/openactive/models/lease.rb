@@ -1,5 +1,6 @@
 module OpenActive
   module Models
+    # This type is derived from https://schema.org/Thing, which means that any of this type's properties within schema.org may also be used.
     class Lease < ::OpenActive::Models::Schema::Thing
       # @!attribute type
       # @return [String]

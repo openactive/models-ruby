@@ -8,9 +8,10 @@ module OpenActive
           "schema:LeaveAction"
         end
 
-        # @return [OpenActive::Models::Schema::Event]
+        # @return [OpenActive::Models::Schema::Event,URI]
         define_property :event, as: "event", types: [
           "OpenActive::Models::Schema::Event",
+          "URI",
         ]
       end
     end

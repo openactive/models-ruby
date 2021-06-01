@@ -8,11 +8,6 @@ module OpenActive
           "schema:LiveBlogPosting"
         end
 
-        # @return [OpenActive::Models::Schema::BlogPosting]
-        define_property :live_blog_update, as: "liveBlogUpdate", types: [
-          "OpenActive::Models::Schema::BlogPosting",
-        ]
-
         # @return [DateTime,nil]
         define_property :coverage_end_time, as: "coverageEndTime", types: [
           "DateTime",
@@ -23,6 +18,12 @@ module OpenActive
         define_property :coverage_start_time, as: "coverageStartTime", types: [
           "DateTime",
           "null",
+        ]
+
+        # @return [OpenActive::Models::Schema::BlogPosting,URI]
+        define_property :live_blog_update, as: "liveBlogUpdate", types: [
+          "OpenActive::Models::Schema::BlogPosting",
+          "URI",
         ]
       end
     end

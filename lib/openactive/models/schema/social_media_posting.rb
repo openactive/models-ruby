@@ -8,9 +8,10 @@ module OpenActive
           "schema:SocialMediaPosting"
         end
 
-        # @return [OpenActive::Models::Schema::CreativeWork]
+        # @return [OpenActive::Models::Schema::CreativeWork,URI]
         define_property :shared_content, as: "sharedContent", types: [
           "OpenActive::Models::Schema::CreativeWork",
+          "URI",
         ]
       end
     end

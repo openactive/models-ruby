@@ -1,6 +1,6 @@
 module OpenActive
   module Models
-    # This type is derived from [Order](https://schema.org/Order), which means that any of this type's properties within schema.org may also be used. Note however the properties on this page must be used in preference if a relevant property is available.
+    # This type is derived from https://schema.org/Order, which means that any of this type's properties within schema.org may also be used.
     class Order < ::OpenActive::Models::Schema::Order
       # @!attribute type
       # @return [String]
@@ -8,13 +8,9 @@ module OpenActive
         "Order"
       end
 
-      # @return [int,String,OpenActive::Models::PropertyValue,Array<OpenActive::Models::PropertyValue>,nil]
+      # @return [String]
       define_property :identifier, as: "identifier", types: [
-        "int",
         "string",
-        "OpenActive::Models::PropertyValue",
-        "OpenActive::Models::PropertyValue[]",
-        "null",
       ]
 
       # @return [OpenActive::Models::BookingService]
@@ -65,10 +61,11 @@ module OpenActive
         "OpenActive::Models::Payment",
       ]
 
-      # @return [OpenActive::Models::Person,OpenActive::Models::Organization]
+      # @return [OpenActive::Models::Person,OpenActive::Models::Organization,URI]
       define_property :seller, as: "seller", types: [
         "OpenActive::Models::Person",
         "OpenActive::Models::Organization",
+        "URI",
       ]
 
       # @return [Boolean,nil]

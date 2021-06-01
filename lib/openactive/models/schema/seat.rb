@@ -8,6 +8,18 @@ module OpenActive
           "schema:Seat"
         end
 
+        # @return [OpenActive::Enums::Schema::QualitativeValue,String,nil]
+        define_property :seating_type, as: "seatingType", types: [
+          "OpenActive::Enums::Schema::QualitativeValue",
+          "string",
+          "null",
+        ]
+
+        # @return [String]
+        define_property :seat_section, as: "seatSection", types: [
+          "string",
+        ]
+
         # @return [String]
         define_property :seat_number, as: "seatNumber", types: [
           "string",
@@ -16,18 +28,6 @@ module OpenActive
         # @return [String]
         define_property :seat_row, as: "seatRow", types: [
           "string",
-        ]
-
-        # @return [String]
-        define_property :seat_section, as: "seatSection", types: [
-          "string",
-        ]
-
-        # @return [String,OpenActive::Enums::Schema::QualitativeValue,nil]
-        define_property :seating_type, as: "seatingType", types: [
-          "string",
-          "OpenActive::Enums::Schema::QualitativeValue",
-          "null",
         ]
       end
     end

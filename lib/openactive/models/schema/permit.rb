@@ -8,31 +8,35 @@ module OpenActive
           "schema:Permit"
         end
 
-        # @return [OpenActive::Models::Schema::AdministrativeArea]
-        define_property :valid_in, as: "validIn", types: [
-          "OpenActive::Models::Schema::AdministrativeArea",
-        ]
-
-        # @return [OpenActive::Models::Schema::Audience]
-        define_property :permit_audience, as: "permitAudience", types: [
-          "OpenActive::Models::Schema::Audience",
-        ]
-
-        # @return [OpenActive::Models::Schema::Service]
-        define_property :issued_through, as: "issuedThrough", types: [
-          "OpenActive::Models::Schema::Service",
-        ]
-
-        # @return [OpenActive::Models::Schema::Organization]
-        define_property :issued_by, as: "issuedBy", types: [
-          "OpenActive::Models::Schema::Organization",
-        ]
-
         # @return [DateTime,Date,nil]
         define_property :valid_from, as: "validFrom", types: [
           "DateTime",
           "Date",
           "null",
+        ]
+
+        # @return [OpenActive::Models::Schema::Audience,URI]
+        define_property :permit_audience, as: "permitAudience", types: [
+          "OpenActive::Models::Schema::Audience",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::AdministrativeArea,URI]
+        define_property :valid_in, as: "validIn", types: [
+          "OpenActive::Models::Schema::AdministrativeArea",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::Service,URI]
+        define_property :issued_through, as: "issuedThrough", types: [
+          "OpenActive::Models::Schema::Service",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::Organization,URI]
+        define_property :issued_by, as: "issuedBy", types: [
+          "OpenActive::Models::Schema::Organization",
+          "URI",
         ]
 
         # @return [Date,nil]
@@ -41,9 +45,10 @@ module OpenActive
           "null",
         ]
 
-        # @return [ActiveSupport::Duration,nil]
+        # @return [ActiveSupport::Duration,URI,nil]
         define_property :valid_for, as: "validFor", types: [
           "DateInterval",
+          "URI",
           "null",
         ]
       end

@@ -12,6 +12,13 @@ module OpenActive
         define_property :link_relationship, as: "linkRelationship", types: [
           "string",
         ]
+
+        # @return [String,OpenActive::Models::Schema::Language,URI]
+        define_property :in_language, as: "inLanguage", types: [
+          "string",
+          "OpenActive::Models::Schema::Language",
+          "URI",
+        ]
       end
     end
   end

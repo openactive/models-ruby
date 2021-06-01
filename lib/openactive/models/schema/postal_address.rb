@@ -13,19 +13,15 @@ module OpenActive
           "string",
         ]
 
-        # @return [String]
-        define_property :postal_code, as: "postalCode", types: [
-          "string",
-        ]
-
-        # @return [String]
-        define_property :address_region, as: "addressRegion", types: [
-          "string",
-        ]
-
-        # @return [OpenActive::Models::Schema::Country,String]
+        # @return [String,OpenActive::Models::Schema::Country,URI]
         define_property :address_country, as: "addressCountry", types: [
+          "string",
           "OpenActive::Models::Schema::Country",
+          "URI",
+        ]
+
+        # @return [String]
+        define_property :post_office_box_number, as: "postOfficeBoxNumber", types: [
           "string",
         ]
 
@@ -35,7 +31,12 @@ module OpenActive
         ]
 
         # @return [String]
-        define_property :post_office_box_number, as: "postOfficeBoxNumber", types: [
+        define_property :address_region, as: "addressRegion", types: [
+          "string",
+        ]
+
+        # @return [String]
+        define_property :postal_code, as: "postalCode", types: [
           "string",
         ]
       end

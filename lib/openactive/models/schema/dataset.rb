@@ -8,26 +8,23 @@ module OpenActive
           "schema:Dataset"
         end
 
-        # @return [String,URI]
-        define_property :measurement_technique, as: "measurementTechnique", types: [
-          "string",
+        # @return [DateTime,nil]
+        define_property :dataset_time_interval, as: "datasetTimeInterval", types: [
+          "DateTime",
+          "null",
+        ]
+
+        # @return [OpenActive::Models::Schema::DataCatalog,URI]
+        define_property :included_in_data_catalog, as: "includedInDataCatalog", types: [
+          "OpenActive::Models::Schema::DataCatalog",
           "URI",
         ]
 
-        # @return [String,OpenActive::Models::Schema::PropertyValue]
+        # @return [String,OpenActive::Models::Schema::PropertyValue,URI]
         define_property :variable_measured, as: "variableMeasured", types: [
           "string",
           "OpenActive::Models::Schema::PropertyValue",
-        ]
-
-        # @return [OpenActive::Models::Schema::DataDownload]
-        define_property :distribution, as: "distribution", types: [
-          "OpenActive::Models::Schema::DataDownload",
-        ]
-
-        # @return [OpenActive::Models::Schema::DataCatalog]
-        define_property :included_data_catalog, as: "includedDataCatalog", types: [
-          "OpenActive::Models::Schema::DataCatalog",
+          "URI",
         ]
 
         # @return [String]
@@ -35,20 +32,28 @@ module OpenActive
           "string",
         ]
 
-        # @return [OpenActive::Models::Schema::DataCatalog]
+        # @return [String,URI]
+        define_property :measurement_technique, as: "measurementTechnique", types: [
+          "string",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::DataDownload,URI]
+        define_property :distribution, as: "distribution", types: [
+          "OpenActive::Models::Schema::DataDownload",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::DataCatalog,URI]
+        define_property :included_data_catalog, as: "includedDataCatalog", types: [
+          "OpenActive::Models::Schema::DataCatalog",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::DataCatalog,URI]
         define_property :catalog, as: "catalog", types: [
           "OpenActive::Models::Schema::DataCatalog",
-        ]
-
-        # @return [DateTime,nil]
-        define_property :dataset_time_interval, as: "datasetTimeInterval", types: [
-          "DateTime",
-          "null",
-        ]
-
-        # @return [OpenActive::Models::Schema::DataCatalog]
-        define_property :included_in_data_catalog, as: "includedInDataCatalog", types: [
-          "OpenActive::Models::Schema::DataCatalog",
+          "URI",
         ]
       end
     end

@@ -8,15 +8,16 @@ module OpenActive
           "schema:AudioObject"
         end
 
-        # @return [String,OpenActive::Models::Schema::MediaObject]
-        define_property :caption, as: "caption", types: [
-          "string",
-          "OpenActive::Models::Schema::MediaObject",
-        ]
-
         # @return [String]
         define_property :transcript, as: "transcript", types: [
           "string",
+        ]
+
+        # @return [String,OpenActive::Models::Schema::MediaObject,URI]
+        define_property :caption, as: "caption", types: [
+          "string",
+          "OpenActive::Models::Schema::MediaObject",
+          "URI",
         ]
       end
     end

@@ -14,9 +14,10 @@ module OpenActive
           "null",
         ]
 
-        # @return [OpenActive::Models::Schema::MonetaryAmount]
+        # @return [OpenActive::Models::Schema::MonetaryAmount,URI]
         define_property :loan_mortgage_mandate_amount, as: "loanMortgageMandateAmount", types: [
           "OpenActive::Models::Schema::MonetaryAmount",
+          "URI",
         ]
       end
     end

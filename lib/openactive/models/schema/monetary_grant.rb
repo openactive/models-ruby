@@ -7,6 +7,21 @@ module OpenActive
         def type
           "schema:MonetaryGrant"
         end
+
+        # @return [BigDecimal,OpenActive::Models::Schema::MonetaryAmount,URI,nil]
+        define_property :amount, as: "amount", types: [
+          "Number",
+          "OpenActive::Models::Schema::MonetaryAmount",
+          "URI",
+          "null",
+        ]
+
+        # @return [OpenActive::Models::Schema::Organization,OpenActive::Models::Schema::Person,URI]
+        define_property :funder, as: "funder", types: [
+          "OpenActive::Models::Schema::Organization",
+          "OpenActive::Models::Schema::Person",
+          "URI",
+        ]
       end
     end
   end

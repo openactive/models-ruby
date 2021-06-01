@@ -8,10 +8,11 @@ module OpenActive
           "schema:HowToSupply"
         end
 
-        # @return [OpenActive::Models::Schema::MonetaryAmount,String]
+        # @return [String,OpenActive::Models::Schema::MonetaryAmount,URI]
         define_property :estimated_cost, as: "estimatedCost", types: [
-          "OpenActive::Models::Schema::MonetaryAmount",
           "string",
+          "OpenActive::Models::Schema::MonetaryAmount",
+          "URI",
         ]
       end
     end

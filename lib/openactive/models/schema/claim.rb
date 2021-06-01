@@ -8,14 +8,16 @@ module OpenActive
           "schema:Claim"
         end
 
-        # @return [OpenActive::Models::Schema::CreativeWork]
-        define_property :appearance, as: "appearance", types: [
-          "OpenActive::Models::Schema::CreativeWork",
-        ]
-
-        # @return [OpenActive::Models::Schema::CreativeWork]
+        # @return [OpenActive::Models::Schema::CreativeWork,URI]
         define_property :first_appearance, as: "firstAppearance", types: [
           "OpenActive::Models::Schema::CreativeWork",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::CreativeWork,URI]
+        define_property :appearance, as: "appearance", types: [
+          "OpenActive::Models::Schema::CreativeWork",
+          "URI",
         ]
       end
     end

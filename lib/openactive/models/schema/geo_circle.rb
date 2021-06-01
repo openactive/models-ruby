@@ -8,16 +8,18 @@ module OpenActive
           "schema:GeoCircle"
         end
 
-        # @return [OpenActive::Models::Schema::GeoCoordinates]
+        # @return [OpenActive::Models::Schema::GeoCoordinates,URI]
         define_property :geo_midpoint, as: "geoMidpoint", types: [
           "OpenActive::Models::Schema::GeoCoordinates",
+          "URI",
         ]
 
-        # @return [BigDecimal,OpenActive::Models::Schema::Distance,String,nil]
+        # @return [String,OpenActive::Models::Schema::Distance,BigDecimal,URI,nil]
         define_property :geo_radius, as: "geoRadius", types: [
-          "Number",
-          "OpenActive::Models::Schema::Distance",
           "string",
+          "OpenActive::Models::Schema::Distance",
+          "Number",
+          "URI",
           "null",
         ]
       end

@@ -9,20 +9,22 @@ module OpenActive
         end
 
         # @return [Boolean,nil]
-        define_property :is_accessible_for_free, as: "isAccessibleForFree", types: [
-          "bool",
-          "null",
-        ]
-
-        # @return [Boolean,nil]
         define_property :free, as: "free", types: [
           "bool",
           "null",
         ]
 
-        # @return [OpenActive::Models::Schema::BroadcastService]
+        # @return [OpenActive::Models::Schema::BroadcastService,URI]
         define_property :published_on, as: "publishedOn", types: [
           "OpenActive::Models::Schema::BroadcastService",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::Person,OpenActive::Models::Schema::Organization,URI]
+        define_property :published_by, as: "publishedBy", types: [
+          "OpenActive::Models::Schema::Person",
+          "OpenActive::Models::Schema::Organization",
+          "URI",
         ]
       end
     end

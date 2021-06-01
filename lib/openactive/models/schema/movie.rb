@@ -8,57 +8,73 @@ module OpenActive
           "schema:Movie"
         end
 
-        # @return [String,OpenActive::Models::Schema::Language]
+        # @return [String,OpenActive::Models::Schema::Language,URI]
         define_property :subtitle_language, as: "subtitleLanguage", types: [
           "string",
           "OpenActive::Models::Schema::Language",
+          "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::Person]
-        define_property :actors, as: "actors", types: [
-          "OpenActive::Models::Schema::Person",
-        ]
-
-        # @return [ActiveSupport::Duration,nil]
-        define_property :duration, as: "duration", types: [
-          "DateInterval",
-          "null",
-        ]
-
-        # @return [OpenActive::Models::Schema::Organization]
-        define_property :production_company, as: "productionCompany", types: [
-          "OpenActive::Models::Schema::Organization",
-        ]
-
-        # @return [OpenActive::Models::Schema::Person]
-        define_property :director, as: "director", types: [
-          "OpenActive::Models::Schema::Person",
-        ]
-
-        # @return [OpenActive::Models::Schema::Person]
+        # @return [OpenActive::Models::Schema::Person,URI]
         define_property :directors, as: "directors", types: [
           "OpenActive::Models::Schema::Person",
+          "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::MusicGroup,OpenActive::Models::Schema::Person]
-        define_property :music_by, as: "musicBy", types: [
-          "OpenActive::Models::Schema::MusicGroup",
-          "OpenActive::Models::Schema::Person",
+        # @return [URI,String]
+        define_property :title_eidr, as: "titleEIDR", types: [
+          "URI",
+          "string",
         ]
 
-        # @return [OpenActive::Models::Schema::Country]
-        define_property :country_of_origin, as: "countryOfOrigin", types: [
-          "OpenActive::Models::Schema::Country",
-        ]
-
-        # @return [OpenActive::Models::Schema::VideoObject]
-        define_property :trailer, as: "trailer", types: [
-          "OpenActive::Models::Schema::VideoObject",
-        ]
-
-        # @return [OpenActive::Models::Schema::Person]
+        # @return [OpenActive::Models::Schema::Person,URI]
         define_property :actor, as: "actor", types: [
           "OpenActive::Models::Schema::Person",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::Person,URI]
+        define_property :director, as: "director", types: [
+          "OpenActive::Models::Schema::Person",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::Person,OpenActive::Models::Schema::MusicGroup,URI]
+        define_property :music_by, as: "musicBy", types: [
+          "OpenActive::Models::Schema::Person",
+          "OpenActive::Models::Schema::MusicGroup",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::Person,URI]
+        define_property :actors, as: "actors", types: [
+          "OpenActive::Models::Schema::Person",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::Country,URI]
+        define_property :country_of_origin, as: "countryOfOrigin", types: [
+          "OpenActive::Models::Schema::Country",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::Organization,URI]
+        define_property :production_company, as: "productionCompany", types: [
+          "OpenActive::Models::Schema::Organization",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::VideoObject,URI]
+        define_property :trailer, as: "trailer", types: [
+          "OpenActive::Models::Schema::VideoObject",
+          "URI",
+        ]
+
+        # @return [ActiveSupport::Duration,URI,nil]
+        define_property :duration, as: "duration", types: [
+          "DateInterval",
+          "URI",
+          "null",
         ]
       end
     end

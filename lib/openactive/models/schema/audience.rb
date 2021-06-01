@@ -8,9 +8,10 @@ module OpenActive
           "schema:Audience"
         end
 
-        # @return [OpenActive::Models::Schema::AdministrativeArea]
+        # @return [OpenActive::Models::Schema::AdministrativeArea,URI]
         define_property :geographic_area, as: "geographicArea", types: [
           "OpenActive::Models::Schema::AdministrativeArea",
+          "URI",
         ]
 
         # @return [String]

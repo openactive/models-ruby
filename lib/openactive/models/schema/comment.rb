@@ -8,15 +8,16 @@ module OpenActive
           "schema:Comment"
         end
 
+        # @return [OpenActive::Models::Schema::Comment,URI]
+        define_property :parent_item, as: "parentItem", types: [
+          "OpenActive::Models::Schema::Comment",
+          "URI",
+        ]
+
         # @return [int,nil]
         define_property :downvote_count, as: "downvoteCount", types: [
           "int",
           "null",
-        ]
-
-        # @return [OpenActive::Models::Schema::Question]
-        define_property :parent_item, as: "parentItem", types: [
-          "OpenActive::Models::Schema::Question",
         ]
 
         # @return [int,nil]

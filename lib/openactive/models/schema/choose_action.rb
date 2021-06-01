@@ -8,16 +8,18 @@ module OpenActive
           "schema:ChooseAction"
         end
 
-        # @return [OpenActive::Models::Schema::Thing,String]
+        # @return [OpenActive::Models::Schema::Thing,String,URI]
         define_property :option, as: "option", types: [
           "OpenActive::Models::Schema::Thing",
           "string",
+          "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::Thing,String]
+        # @return [String,OpenActive::Models::Schema::Thing,URI]
         define_property :action_option, as: "actionOption", types: [
-          "OpenActive::Models::Schema::Thing",
           "string",
+          "OpenActive::Models::Schema::Thing",
+          "URI",
         ]
       end
     end

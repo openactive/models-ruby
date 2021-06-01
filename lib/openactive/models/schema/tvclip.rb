@@ -8,9 +8,10 @@ module OpenActive
           "schema:TVClip"
         end
 
-        # @return [OpenActive::Models::Schema::TVSeries]
+        # @return [OpenActive::Models::Schema::TVSeries,URI]
         define_property :part_of_tvseries, as: "partOfTVSeries", types: [
           "OpenActive::Models::Schema::TVSeries",
+          "URI",
         ]
       end
     end

@@ -8,9 +8,10 @@ module OpenActive
           "schema:ReservationPackage"
         end
 
-        # @return [OpenActive::Models::Schema::Reservation]
+        # @return [OpenActive::Models::Schema::Reservation,URI]
         define_property :sub_reservation, as: "subReservation", types: [
           "OpenActive::Models::Schema::Reservation",
+          "URI",
         ]
       end
     end

@@ -8,15 +8,15 @@ module OpenActive
           "schema:DefinedTerm"
         end
 
-        # @return [String]
-        define_property :term_code, as: "termCode", types: [
-          "string",
-        ]
-
         # @return [OpenActive::Models::Schema::DefinedTermSet,URI]
         define_property :in_defined_term_set, as: "inDefinedTermSet", types: [
           "OpenActive::Models::Schema::DefinedTermSet",
           "URI",
+        ]
+
+        # @return [String]
+        define_property :term_code, as: "termCode", types: [
+          "string",
         ]
       end
     end

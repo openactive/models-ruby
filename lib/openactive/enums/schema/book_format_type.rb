@@ -9,6 +9,7 @@ module OpenActive
         new :AudiobookFormat, "https://schema.org/AudiobookFormat"
         new :Hardcover, "https://schema.org/Hardcover"
         new :Paperback, "https://schema.org/Paperback"
+        new :GraphicNovel, "https://schema.org/GraphicNovel"
       end
     end
   end

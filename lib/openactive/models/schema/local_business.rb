@@ -1,7 +1,7 @@
 module OpenActive
   module Models
     module Schema
-      class LocalBusiness < ::OpenActive::Models::Schema::Place
+      class LocalBusiness < ::OpenActive::Models::Schema::Organization
         # @!attribute type
         # @return [String]
         def type
@@ -23,14 +23,15 @@ module OpenActive
           "string",
         ]
 
-        # @return [OpenActive::Models::Schema::Organization]
-        define_property :branch_of, as: "branchOf", types: [
-          "OpenActive::Models::Schema::Organization",
-        ]
-
         # @return [String]
         define_property :price_range, as: "priceRange", types: [
           "string",
+        ]
+
+        # @return [OpenActive::Models::Schema::Organization,URI]
+        define_property :branch_of, as: "branchOf", types: [
+          "OpenActive::Models::Schema::Organization",
+          "URI",
         ]
       end
     end

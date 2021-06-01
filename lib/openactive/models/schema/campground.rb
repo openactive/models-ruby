@@ -1,7 +1,7 @@
 module OpenActive
   module Models
     module Schema
-      class Campground < ::OpenActive::Models::Schema::CivicStructure
+      class Campground < ::OpenActive::Models::Schema::LodgingBusiness
         # @!attribute type
         # @return [String]
         def type

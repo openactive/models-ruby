@@ -8,9 +8,10 @@ module OpenActive
           "schema:CategoryCodeSet"
         end
 
-        # @return [OpenActive::Models::Schema::CategoryCode]
+        # @return [OpenActive::Models::Schema::CategoryCode,URI]
         define_property :has_category_code, as: "hasCategoryCode", types: [
           "OpenActive::Models::Schema::CategoryCode",
+          "URI",
         ]
       end
     end

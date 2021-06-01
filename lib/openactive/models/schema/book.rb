@@ -14,9 +14,9 @@ module OpenActive
           "null",
         ]
 
-        # @return [OpenActive::Models::Schema::Person]
-        define_property :illustrator, as: "illustrator", types: [
-          "OpenActive::Models::Schema::Person",
+        # @return [String]
+        define_property :book_edition, as: "bookEdition", types: [
+          "string",
         ]
 
         # @return [OpenActive::Enums::Schema::BookFormatType,nil]
@@ -25,9 +25,16 @@ module OpenActive
           "null",
         ]
 
-        # @return [String]
-        define_property :book_edition, as: "bookEdition", types: [
-          "string",
+        # @return [Boolean,nil]
+        define_property :abridged, as: "abridged", types: [
+          "bool",
+          "null",
+        ]
+
+        # @return [OpenActive::Models::Schema::Person,URI]
+        define_property :illustrator, as: "illustrator", types: [
+          "OpenActive::Models::Schema::Person",
+          "URI",
         ]
 
         # @return [String]

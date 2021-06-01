@@ -8,24 +8,25 @@ module OpenActive
           "schema:FoodEstablishmentReservation"
         end
 
-        # @return [int,OpenActive::Models::Schema::QuantitativeValue,nil]
-        define_property :party_size, as: "partySize", types: [
-          "int",
-          "OpenActive::Models::Schema::QuantitativeValue",
-          "null",
-        ]
-
-        # @return [Time,DateTime,nil]
-        define_property :end_time, as: "endTime", types: [
-          "Time",
-          "DateTime",
-          "null",
-        ]
-
-        # @return [Time,DateTime,nil]
+        # @return [DateTime,Time,nil]
         define_property :start_time, as: "startTime", types: [
-          "Time",
           "DateTime",
+          "Time",
+          "null",
+        ]
+
+        # @return [OpenActive::Models::Schema::QuantitativeValue,int,URI,nil]
+        define_property :party_size, as: "partySize", types: [
+          "OpenActive::Models::Schema::QuantitativeValue",
+          "int",
+          "URI",
+          "null",
+        ]
+
+        # @return [DateTime,Time,nil]
+        define_property :end_time, as: "endTime", types: [
+          "DateTime",
+          "Time",
           "null",
         ]
       end
