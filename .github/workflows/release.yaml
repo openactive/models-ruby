@@ -25,9 +25,6 @@ jobs:
         ruby-version: 2.7
         bundler-cache: true # runs 'bundle install' and caches installed gems automatically
 
-    - name: Run tests
-      run: bundle exec rspec
-
     - name: Publish to RubyGems
       run: |
         mkdir -p $HOME/.gem
