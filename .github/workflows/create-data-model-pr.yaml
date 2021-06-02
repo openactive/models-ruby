@@ -54,6 +54,10 @@ jobs:
         run: bundle exec rubocop -a lib/openactive/models lib/openactive/enums
         working-directory: ./models-ruby/
         
+      - name: Fix syntax / linting
+        run: bundle exec rubocop -a lib/openactive/models lib/openactive/enums
+        working-directory: ./models-ruby/
+
       - name: Create Pull Request
         id: cpr
         uses: peter-evans/create-pull-request@v3
