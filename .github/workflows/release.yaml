@@ -11,13 +11,6 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v2
-      with:
-        token: ${{ secrets.PUBLIC_REPO_ACCESS_TOKEN }}
-
-    - name: Identify
-      run: |
-        git config user.name OpenActive Bot
-        git config user.email hello@openactive.io
 
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1
@@ -29,4 +22,9 @@ jobs:
       run: bundle exec rspec
 
     - name: Release based on version.rb
-      run: bundle exec rake release # will create a git tag for the version, push git commits and tags, and push the .gem file to rubygems.org
+      # will create a git tag for the version, push git commits and tags, and push the .gem file to rubygems.org
+      uses: cadwallion/publish-rubygems-action@master
+      env:
+        GITHUB_TOKEN: ${{secrets.PUBLIC_REPO_ACCESS_TOKEN}}
+        RUBYGEMS_API_KEY: ${{secrets.RUBYGEMS_API_KEY}}
+        RELEASE_COMMAND: rake release
