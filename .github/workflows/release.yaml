@@ -9,8 +9,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-      refs: master
+    - name: Checkout
+      uses: actions/checkout@v2
+      with:
+        token: ${{ secrets.PUBLIC_REPO_ACCESS_TOKEN }}
+
+    - name: Identify
+      run: |
+        git config user.name OpenActive Bot
+        git config user.email hello@openactive.io
+
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1
       with:
