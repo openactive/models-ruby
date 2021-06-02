@@ -8,18 +8,6 @@ module OpenActive
           "schema:Role"
         end
 
-        # @return [URI,String]
-        define_property :role_name, as: "roleName", types: [
-          "URI",
-          "string",
-        ]
-
-        # @return [String,URI]
-        define_property :named_position, as: "namedPosition", types: [
-          "string",
-          "URI",
-        ]
-
         # @return [DateTime,Date,nil]
         define_property :start_date, as: "startDate", types: [
           "DateTime",
@@ -32,6 +20,18 @@ module OpenActive
           "Date",
           "DateTime",
           "null",
+        ]
+
+        # @return [URI,String]
+        define_property :named_position, as: "namedPosition", types: [
+          "URI",
+          "string",
+        ]
+
+        # @return [URI,String]
+        define_property :role_name, as: "roleName", types: [
+          "URI",
+          "string",
         ]
       end
     end

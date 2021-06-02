@@ -1,6 +1,6 @@
 module OpenActive
   module Models
-    # This type is derived from [OrderItem](https://schema.org/OrderItem), which means that any of this type's properties within schema.org may also be used. Note however the properties on this page must be used in preference if a relevant property is available.
+    # This type is derived from https://schema.org/OrderItem, which means that any of this type's properties within schema.org may also be used.
     class OrderItem < ::OpenActive::Models::Schema::OrderItem
       # @!attribute type
       # @return [String]
@@ -8,9 +8,15 @@ module OpenActive
         "OrderItem"
       end
 
-      # @return [OpenActive::Models::Offer]
+      # @return [OpenActive::Models::Offer,URI]
       define_property :accepted_offer, as: "acceptedOffer", types: [
         "OpenActive::Models::Offer",
+        "URI",
+      ]
+
+      # @return [OpenActive::Models::VirtualLocation]
+      define_property :access_channel, as: "accessChannel", types: [
+        "OpenActive::Models::VirtualLocation",
       ]
 
       # @return [Array<OpenActive::Models::PropertyValue>]
@@ -19,19 +25,8 @@ module OpenActive
       ]
 
       # @return [Array<OpenActive::Models::ImageObject>]
-      define_property :access_token, as: "accessToken", types: [
+      define_property :access_pass, as: "accessPass", types: [
         "OpenActive::Models::ImageObject[]",
-      ]
-
-      # @return [Array<OpenActive::Models::PropertyValue>]
-      define_property :additional_property, as: "additionalProperty", types: [
-        "OpenActive::Models::PropertyValue[]",
-      ]
-
-      # @return [Boolean,nil]
-      define_property :allow_customer_cancellation_full_refund, as: "allowCustomerCancellationFullRefund", types: [
-        "bool",
-        "null",
       ]
 
       # @return [OpenActive::Models::Person]
@@ -39,9 +34,10 @@ module OpenActive
         "OpenActive::Models::Person",
       ]
 
-      # @return [Array<URI>]
+      # @return [Array<OpenActive::Enums::PropertyEnumeration>,nil]
       define_property :attendee_details_required, as: "attendeeDetailsRequired", types: [
-        "URI[]",
+        "OpenActive::Enums::PropertyEnumeration[]",
+        "null",
       ]
 
       # @return [String]
@@ -59,9 +55,10 @@ module OpenActive
         "OpenActive::Models::OpenBookingError[]",
       ]
 
-      # @return [OpenActive::Models::Event]
+      # @return [OpenActive::Models::Event,URI]
       define_property :ordered_item, as: "orderedItem", types: [
         "OpenActive::Models::Event",
+        "URI",
       ]
 
       # @return [Array<OpenActive::Models::PropertyValueSpecification>]
@@ -77,6 +74,12 @@ module OpenActive
       # @return [OpenActive::Enums::OrderItemStatus,nil]
       define_property :order_item_status, as: "orderItemStatus", types: [
         "OpenActive::Enums::OrderItemStatus",
+        "null",
+      ]
+
+      # @return [int,nil]
+      define_property :position, as: "position", types: [
+        "int",
         "null",
       ]
 

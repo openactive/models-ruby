@@ -1,6 +1,6 @@
 module OpenActive
   module Models
-    # This type is derived from [Action](https://schema.org/Action), which means that any of this type's properties within schema.org may also be used. Note however the properties on this page must be used in preference if a relevant property is available.
+    # This type is derived from https://schema.org/Action, which means that any of this type's properties within schema.org may also be used.
     class Action < ::OpenActive::Models::Schema::Action
       # @!attribute type
       # @return [String]
@@ -8,14 +8,10 @@ module OpenActive
         "Action"
       end
 
-      # @return [String]
-      define_property :name, as: "name", types: [
-        "string",
-      ]
-
-      # @return [OpenActive::Models::EntryPoint]
-      define_property :target, as: "target", types: [
-        "OpenActive::Models::EntryPoint",
+      # @return [OpenActive::Models::Order,OpenActive::Models::Event]
+      define_property :object, as: "object", types: [
+        "OpenActive::Models::Order",
+        "OpenActive::Models::Event",
       ]
     end
   end

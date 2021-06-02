@@ -1,6 +1,6 @@
 module OpenActive
   module Models
-    # This type is derived from [Person](https://schema.org/Person), which means that any of this type's properties within schema.org may also be used. Note however the properties on this page must be used in preference if a relevant property is available.
+    # This type is derived from https://schema.org/Person, which means that any of this type's properties within schema.org may also be used.
     class Person < ::OpenActive::Models::Schema::Person
       # @!attribute type
       # @return [String]
@@ -53,6 +53,12 @@ module OpenActive
         "string",
       ]
 
+      # @return [Boolean,nil]
+      define_property :is_open_booking_allowed, as: "isOpenBookingAllowed", types: [
+        "bool",
+        "null",
+      ]
+
       # @return [String]
       define_property :job_title, as: "jobTitle", types: [
         "string",
@@ -102,6 +108,11 @@ module OpenActive
       # @return [String]
       define_property :formatted_description, as: "beta:formattedDescription", types: [
         "string",
+      ]
+
+      # @return [Array<URI>]
+      define_property :formal_criteria_met, as: "beta:formalCriteriaMet", types: [
+        "URI[]",
       ]
     end
   end

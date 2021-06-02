@@ -8,25 +8,11 @@ module OpenActive
           "schema:BroadcastChannel"
         end
 
-        # @return [String,URI]
-        define_property :genre, as: "genre", types: [
+        # @return [String,OpenActive::Models::Schema::BroadcastFrequencySpecification,URI]
+        define_property :broadcast_frequency, as: "broadcastFrequency", types: [
           "string",
+          "OpenActive::Models::Schema::BroadcastFrequencySpecification",
           "URI",
-        ]
-
-        # @return [OpenActive::Models::Schema::BroadcastService]
-        define_property :provides_broadcast_service, as: "providesBroadcastService", types: [
-          "OpenActive::Models::Schema::BroadcastService",
-        ]
-
-        # @return [OpenActive::Models::Schema::CableOrSatelliteService]
-        define_property :in_broadcast_lineup, as: "inBroadcastLineup", types: [
-          "OpenActive::Models::Schema::CableOrSatelliteService",
-        ]
-
-        # @return [String]
-        define_property :broadcast_service_tier, as: "broadcastServiceTier", types: [
-          "string",
         ]
 
         # @return [String]
@@ -34,10 +20,27 @@ module OpenActive
           "string",
         ]
 
-        # @return [String,OpenActive::Models::Schema::BroadcastFrequencySpecification]
-        define_property :broadcast_frequency, as: "broadcastFrequency", types: [
+        # @return [String]
+        define_property :broadcast_service_tier, as: "broadcastServiceTier", types: [
           "string",
-          "OpenActive::Models::Schema::BroadcastFrequencySpecification",
+        ]
+
+        # @return [URI,String]
+        define_property :genre, as: "genre", types: [
+          "URI",
+          "string",
+        ]
+
+        # @return [OpenActive::Models::Schema::CableOrSatelliteService,URI]
+        define_property :in_broadcast_lineup, as: "inBroadcastLineup", types: [
+          "OpenActive::Models::Schema::CableOrSatelliteService",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::BroadcastService,URI]
+        define_property :provides_broadcast_service, as: "providesBroadcastService", types: [
+          "OpenActive::Models::Schema::BroadcastService",
+          "URI",
         ]
       end
     end

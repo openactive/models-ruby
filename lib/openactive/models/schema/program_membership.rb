@@ -8,11 +8,24 @@ module OpenActive
           "schema:ProgramMembership"
         end
 
-        # @return [OpenActive::Models::Schema::QuantitativeValue,BigDecimal,nil]
+        # @return [OpenActive::Models::Schema::QuantitativeValue,BigDecimal,URI,nil]
         define_property :membership_points_earned, as: "membershipPointsEarned", types: [
           "OpenActive::Models::Schema::QuantitativeValue",
           "Number",
+          "URI",
           "null",
+        ]
+
+        # @return [String]
+        define_property :membership_number, as: "membershipNumber", types: [
+          "string",
+        ]
+
+        # @return [OpenActive::Models::Schema::Person,OpenActive::Models::Schema::Organization,URI]
+        define_property :members, as: "members", types: [
+          "OpenActive::Models::Schema::Person",
+          "OpenActive::Models::Schema::Organization",
+          "URI",
         ]
 
         # @return [String]
@@ -20,26 +33,17 @@ module OpenActive
           "string",
         ]
 
-        # @return [OpenActive::Models::Schema::Organization]
-        define_property :hosting_organization, as: "hostingOrganization", types: [
-          "OpenActive::Models::Schema::Organization",
-        ]
-
-        # @return [OpenActive::Models::Schema::Organization,OpenActive::Models::Schema::Person]
+        # @return [OpenActive::Models::Schema::Organization,OpenActive::Models::Schema::Person,URI]
         define_property :member, as: "member", types: [
           "OpenActive::Models::Schema::Organization",
           "OpenActive::Models::Schema::Person",
+          "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::Organization,OpenActive::Models::Schema::Person]
-        define_property :members, as: "members", types: [
+        # @return [OpenActive::Models::Schema::Organization,URI]
+        define_property :hosting_organization, as: "hostingOrganization", types: [
           "OpenActive::Models::Schema::Organization",
-          "OpenActive::Models::Schema::Person",
-        ]
-
-        # @return [String]
-        define_property :membership_number, as: "membershipNumber", types: [
-          "string",
+          "URI",
         ]
       end
     end

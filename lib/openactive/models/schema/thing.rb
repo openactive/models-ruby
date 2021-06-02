@@ -25,41 +25,32 @@ module OpenActive
           "string",
         ]
 
-        # @return [OpenActive::Models::Schema::CreativeWork,OpenActive::Models::Schema::Event]
-        define_property :subject_of, as: "subjectOf", types: [
-          "OpenActive::Models::Schema::CreativeWork",
-          "OpenActive::Models::Schema::Event",
-        ]
-
-        # @return [String]
-        define_property :disambiguating_description, as: "disambiguatingDescription", types: [
-          "string",
-        ]
-
         # @return [URI]
         define_property :same_as, as: "sameAs", types: [
           "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::ImageObject,URI]
-        define_property :image, as: "image", types: [
-          "OpenActive::Models::Schema::ImageObject",
-          "URI",
-        ]
-
-        # @return [URI,OpenActive::Models::Schema::CreativeWork]
-        define_property :main_entity_of_page, as: "mainEntityOfPage", types: [
-          "URI",
+        # @return [OpenActive::Models::Schema::Event,OpenActive::Models::Schema::CreativeWork,URI]
+        define_property :subject_of, as: "subjectOf", types: [
+          "OpenActive::Models::Schema::Event",
           "OpenActive::Models::Schema::CreativeWork",
+          "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::Action]
+        # @return [OpenActive::Models::Schema::Action,URI]
         define_property :potential_action, as: "potentialAction", types: [
           "OpenActive::Models::Schema::Action",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::CreativeWork,URI]
+        define_property :main_entity_of_page, as: "mainEntityOfPage", types: [
+          "OpenActive::Models::Schema::CreativeWork",
+          "URI",
         ]
 
         # @return [URI]
-        define_property :url, as: "url", types: [
+        define_property :additional_type, as: "additionalType", types: [
           "URI",
         ]
 
@@ -69,8 +60,19 @@ module OpenActive
         ]
 
         # @return [URI]
-        define_property :additional_type, as: "additionalType", types: [
+        define_property :url, as: "url", types: [
           "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::ImageObject,URI]
+        define_property :image, as: "image", types: [
+          "OpenActive::Models::Schema::ImageObject",
+          "URI",
+        ]
+
+        # @return [String]
+        define_property :disambiguating_description, as: "disambiguatingDescription", types: [
+          "string",
         ]
       end
     end

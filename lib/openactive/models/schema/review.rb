@@ -18,14 +18,16 @@ module OpenActive
           "string",
         ]
 
-        # @return [OpenActive::Models::Schema::Thing]
+        # @return [OpenActive::Models::Schema::Thing,URI]
         define_property :item_reviewed, as: "itemReviewed", types: [
           "OpenActive::Models::Schema::Thing",
+          "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::Rating]
+        # @return [OpenActive::Models::Schema::Rating,URI]
         define_property :review_rating, as: "reviewRating", types: [
           "OpenActive::Models::Schema::Rating",
+          "URI",
         ]
       end
     end

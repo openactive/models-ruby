@@ -1,6 +1,6 @@
 module OpenActive
   module Models
-    # This type is derived from [PropertyValueSpecification](https://schema.org/PropertyValueSpecification), which means that any of this type's properties within schema.org may also be used. Note however the properties on this page must be used in preference if a relevant property is available.
+    # This type is derived from https://schema.org/PropertyValueSpecification, which means that any of this type's properties within schema.org may also be used.
     class BooleanFormFieldSpecification < ::OpenActive::Models::PropertyValueSpecification
       # @!attribute type
       # @return [String]
@@ -8,9 +8,10 @@ module OpenActive
         "BooleanFormFieldSpecification"
       end
 
-      # @return [String]
+      # @return [Boolean,nil]
       define_property :value_required, as: "valueRequired", types: [
-        "string",
+        "bool",
+        "null",
       ]
     end
   end

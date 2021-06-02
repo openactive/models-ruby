@@ -1,6 +1,6 @@
 module OpenActive
   module Models
-    # This type is derived from [ConceptScheme](http://www.w3.org/2004/02/skos/core#ConceptScheme), which means that any of this type's properties within schema.org may also be used. Note however the properties on this page must be used in preference if a relevant property is available.
+    # This type is derived from http://www.w3.org/2004/02/skos/core#ConceptScheme.
     class ConceptScheme < ::OpenActive::JsonLdModel
       # @!attribute type
       # @return [String]

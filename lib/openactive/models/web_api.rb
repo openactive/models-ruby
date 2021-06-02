@@ -1,11 +1,9 @@
 module OpenActive
   module Models
     #
-    # ## **EARLY RELEASE NOTICE**
-    # In order to expedite the OpenActive tooling work, this class has been added to the model for the purposes of testing.
-    # IT IS SUBJECT TO CHANGE, as the [Dataset API Discovery specification](https://www.openactive.io/dataset-api-discovery/EditorsDraft/) evolves.
+    # EARLY RELEASE NOTICE: This class represents a draft that is designed to inform the OpenActive specification work with implementation feedback. IT IS SUBJECT TO CHANGE, as the [Dataset API Discovery specification](https://openactive.io/dataset-api-discovery/EditorsDraft/) evolves.
     #
-    # This type is derived from [WebAPI](https://pending.schema.org/WebAPI), which means that any of this type's properties within schema.org may also be used. Note however the properties on this page must be used in preference if a relevant property is available.
+    # This type is derived from https://pending.schema.org/WebAPI.
     class WebAPI < ::OpenActive::JsonLdModel
       # @!attribute type
       # @return [String]
@@ -21,6 +19,11 @@ module OpenActive
       # @return [String]
       define_property :description, as: "description", types: [
         "string",
+      ]
+
+      # @return [URI]
+      define_property :authentication_authority, as: "authenticationAuthority", types: [
+        "URI",
       ]
 
       # @return [Array<URI>]

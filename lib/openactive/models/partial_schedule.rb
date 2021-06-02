@@ -1,12 +1,27 @@
 module OpenActive
   module Models
-    # This type is derived from [Schedule](https://pending.schema.org/Schedule), which means that any of this type's properties within schema.org may also be used. Note however the properties on this page must be used in preference if a relevant property is available.
+    # This type is derived from https://pending.schema.org/Schedule.
     class PartialSchedule < ::OpenActive::Models::Schedule
       # @!attribute type
       # @return [String]
       def type
         "PartialSchedule"
       end
+
+      # @return [String]
+      define_property :id_template, as: "idTemplate", types: [
+        "string",
+      ]
+
+      # @return [String]
+      define_property :scheduled_event_type, as: "scheduledEventType", types: [
+        "string",
+      ]
+
+      # @return [String]
+      define_property :url_template, as: "urlTemplate", types: [
+        "string",
+      ]
 
       # @return [String]
       define_property :time_zone, as: "beta:timeZone", types: [

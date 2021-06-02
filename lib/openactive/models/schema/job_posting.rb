@@ -13,9 +13,70 @@ module OpenActive
           "string",
         ]
 
+        # @return [OpenActive::Models::Schema::ContactPoint,URI]
+        define_property :application_contact, as: "applicationContact", types: [
+          "OpenActive::Models::Schema::ContactPoint",
+          "URI",
+        ]
+
         # @return [String]
-        define_property :special_commitments, as: "specialCommitments", types: [
+        define_property :employer_overview, as: "employerOverview", types: [
           "string",
+        ]
+
+        # @return [String,OpenActive::Models::Schema::EducationalOccupationalCredential,URI]
+        define_property :education_requirements, as: "educationRequirements", types: [
+          "string",
+          "OpenActive::Models::Schema::EducationalOccupationalCredential",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::DefinedTerm,String,URI]
+        define_property :skills, as: "skills", types: [
+          "OpenActive::Models::Schema::DefinedTerm",
+          "string",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::MonetaryAmount,BigDecimal,OpenActive::Models::Schema::MonetaryAmountDistribution,URI,nil]
+        define_property :estimated_salary, as: "estimatedSalary", types: [
+          "OpenActive::Models::Schema::MonetaryAmount",
+          "Number",
+          "OpenActive::Models::Schema::MonetaryAmountDistribution",
+          "URI",
+          "null",
+        ]
+
+        # @return [String]
+        define_property :employment_type, as: "employmentType", types: [
+          "string",
+        ]
+
+        # @return [OpenActive::Models::Schema::Organization,URI]
+        define_property :hiring_organization, as: "hiringOrganization", types: [
+          "OpenActive::Models::Schema::Organization",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::DefinedTerm,URI,String]
+        define_property :sensory_requirement, as: "sensoryRequirement", types: [
+          "OpenActive::Models::Schema::DefinedTerm",
+          "URI",
+          "string",
+        ]
+
+        # @return [OpenActive::Models::Schema::DefinedTerm,String,URI]
+        define_property :industry, as: "industry", types: [
+          "OpenActive::Models::Schema::DefinedTerm",
+          "string",
+          "URI",
+        ]
+
+        # @return [Date,String,nil]
+        define_property :job_start_date, as: "jobStartDate", types: [
+          "Date",
+          "string",
+          "null",
         ]
 
         # @return [Boolean,nil]
@@ -24,32 +85,21 @@ module OpenActive
           "null",
         ]
 
-        # @return [String]
-        define_property :experience_requirements, as: "experienceRequirements", types: [
-          "string",
+        # @return [OpenActive::Models::Schema::Organization,URI]
+        define_property :employment_unit, as: "employmentUnit", types: [
+          "OpenActive::Models::Schema::Organization",
+          "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::Place]
-        define_property :job_location, as: "jobLocation", types: [
-          "OpenActive::Models::Schema::Place",
-        ]
-
-        # @return [String]
-        define_property :employment_type, as: "employmentType", types: [
+        # @return [URI,String]
+        define_property :security_clearance_requirement, as: "securityClearanceRequirement", types: [
+          "URI",
           "string",
         ]
 
         # @return [String]
-        define_property :work_hours, as: "workHours", types: [
+        define_property :responsibilities, as: "responsibilities", types: [
           "string",
-        ]
-
-        # @return [BigDecimal,OpenActive::Models::Schema::MonetaryAmountDistribution,OpenActive::Models::Schema::MonetaryAmount,nil]
-        define_property :estimated_salary, as: "estimatedSalary", types: [
-          "Number",
-          "OpenActive::Models::Schema::MonetaryAmountDistribution",
-          "OpenActive::Models::Schema::MonetaryAmount",
-          "null",
         ]
 
         # @return [String]
@@ -57,24 +107,82 @@ module OpenActive
           "string",
         ]
 
+        # @return [OpenActive::Models::Schema::Place,URI]
+        define_property :job_location, as: "jobLocation", types: [
+          "OpenActive::Models::Schema::Place",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::AdministrativeArea,URI]
+        define_property :applicant_location_requirements, as: "applicantLocationRequirements", types: [
+          "OpenActive::Models::Schema::AdministrativeArea",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::CategoryCode,String,URI]
+        define_property :occupational_category, as: "occupationalCategory", types: [
+          "OpenActive::Models::Schema::CategoryCode",
+          "string",
+          "URI",
+        ]
+
+        # @return [String,OpenActive::Models::Schema::EducationalOccupationalCredential,URI]
+        define_property :qualifications, as: "qualifications", types: [
+          "string",
+          "OpenActive::Models::Schema::EducationalOccupationalCredential",
+          "URI",
+        ]
+
+        # @return [String]
+        define_property :job_location_type, as: "jobLocationType", types: [
+          "string",
+        ]
+
+        # @return [OpenActive::Models::Schema::Occupation,URI]
+        define_property :relevant_occupation, as: "relevantOccupation", types: [
+          "OpenActive::Models::Schema::Occupation",
+          "URI",
+        ]
+
         # @return [String]
         define_property :incentive_compensation, as: "incentiveCompensation", types: [
           "string",
         ]
 
-        # @return [OpenActive::Models::Schema::DefinedTerm,String]
-        define_property :skills, as: "skills", types: [
+        # @return [Date,DateTime,nil]
+        define_property :date_posted, as: "datePosted", types: [
+          "Date",
+          "DateTime",
+          "null",
+        ]
+
+        # @return [OpenActive::Models::Schema::DefinedTerm,URI,String]
+        define_property :physical_requirement, as: "physicalRequirement", types: [
           "OpenActive::Models::Schema::DefinedTerm",
+          "URI",
+          "string",
+        ]
+
+        # @return [String,OpenActive::Models::Schema::OccupationalExperienceRequirements,URI]
+        define_property :experience_requirements, as: "experienceRequirements", types: [
+          "string",
+          "OpenActive::Models::Schema::OccupationalExperienceRequirements",
+          "URI",
+        ]
+
+        # @return [Boolean,nil]
+        define_property :experience_in_place_of_education, as: "experienceInPlaceOfEducation", types: [
+          "bool",
+          "null",
+        ]
+
+        # @return [String]
+        define_property :special_commitments, as: "specialCommitments", types: [
           "string",
         ]
 
         # @return [String]
-        define_property :industry, as: "industry", types: [
-          "string",
-        ]
-
-        # @return [String]
-        define_property :responsibilities, as: "responsibilities", types: [
+        define_property :work_hours, as: "workHours", types: [
           "string",
         ]
 
@@ -84,72 +192,18 @@ module OpenActive
           "null",
         ]
 
-        # @return [Date,DateTime,nil]
-        define_property :valid_through, as: "validThrough", types: [
-          "Date",
-          "DateTime",
-          "null",
-        ]
-
-        # @return [OpenActive::Models::Schema::AdministrativeArea]
-        define_property :applicant_location_requirements, as: "applicantLocationRequirements", types: [
-          "OpenActive::Models::Schema::AdministrativeArea",
-        ]
-
-        # @return [OpenActive::Models::Schema::Occupation]
-        define_property :relevant_occupation, as: "relevantOccupation", types: [
-          "OpenActive::Models::Schema::Occupation",
-        ]
-
-        # @return [String,Date,nil]
-        define_property :job_start_date, as: "jobStartDate", types: [
-          "string",
-          "Date",
-          "null",
-        ]
-
-        # @return [OpenActive::Models::Schema::CategoryCode,String]
-        define_property :occupational_category, as: "occupationalCategory", types: [
-          "OpenActive::Models::Schema::CategoryCode",
-          "string",
-        ]
-
-        # @return [Date,nil]
-        define_property :date_posted, as: "datePosted", types: [
-          "Date",
-          "null",
-        ]
-
-        # @return [OpenActive::Models::Schema::Organization]
-        define_property :employment_unit, as: "employmentUnit", types: [
-          "OpenActive::Models::Schema::Organization",
-        ]
-
-        # @return [String,OpenActive::Models::Schema::EducationalOccupationalCredential]
-        define_property :qualifications, as: "qualifications", types: [
-          "string",
-          "OpenActive::Models::Schema::EducationalOccupationalCredential",
-        ]
-
-        # @return [String]
-        define_property :job_location_type, as: "jobLocationType", types: [
-          "string",
-        ]
-
-        # @return [OpenActive::Models::Schema::EducationalOccupationalCredential,String]
-        define_property :education_requirements, as: "educationRequirements", types: [
-          "OpenActive::Models::Schema::EducationalOccupationalCredential",
-          "string",
-        ]
-
-        # @return [String]
-        define_property :incentives, as: "incentives", types: [
-          "string",
-        ]
-
         # @return [String]
         define_property :salary_currency, as: "salaryCurrency", types: [
           "string",
+        ]
+
+        # @return [OpenActive::Models::Schema::MonetaryAmount,OpenActive::Models::Schema::PriceSpecification,BigDecimal,URI,nil]
+        define_property :base_salary, as: "baseSalary", types: [
+          "OpenActive::Models::Schema::MonetaryAmount",
+          "OpenActive::Models::Schema::PriceSpecification",
+          "Number",
+          "URI",
+          "null",
         ]
 
         # @return [String]
@@ -157,17 +211,21 @@ module OpenActive
           "string",
         ]
 
-        # @return [OpenActive::Models::Schema::Organization]
-        define_property :hiring_organization, as: "hiringOrganization", types: [
-          "OpenActive::Models::Schema::Organization",
+        # @return [String]
+        define_property :eligibility_to_work_requirement, as: "eligibilityToWorkRequirement", types: [
+          "string",
         ]
 
-        # @return [OpenActive::Models::Schema::PriceSpecification,OpenActive::Models::Schema::MonetaryAmount,BigDecimal,nil]
-        define_property :base_salary, as: "baseSalary", types: [
-          "OpenActive::Models::Schema::PriceSpecification",
-          "OpenActive::Models::Schema::MonetaryAmount",
-          "Number",
+        # @return [DateTime,Date,nil]
+        define_property :valid_through, as: "validThrough", types: [
+          "DateTime",
+          "Date",
           "null",
+        ]
+
+        # @return [String]
+        define_property :incentives, as: "incentives", types: [
+          "string",
         ]
       end
     end

@@ -8,32 +8,11 @@ module OpenActive
           "schema:Ticket"
         end
 
-        # @return [Date,DateTime,nil]
-        define_property :date_issued, as: "dateIssued", types: [
-          "Date",
-          "DateTime",
-          "null",
-        ]
-
-        # @return [OpenActive::Models::Schema::Seat]
-        define_property :ticketed_seat, as: "ticketedSeat", types: [
-          "OpenActive::Models::Schema::Seat",
-        ]
-
-        # @return [URI,String]
-        define_property :ticket_token, as: "ticketToken", types: [
-          "URI",
-          "string",
-        ]
-
-        # @return [OpenActive::Models::Schema::Organization]
-        define_property :issued_by, as: "issuedBy", types: [
+        # @return [OpenActive::Models::Schema::Person,OpenActive::Models::Schema::Organization,URI]
+        define_property :under_name, as: "underName", types: [
+          "OpenActive::Models::Schema::Person",
           "OpenActive::Models::Schema::Organization",
-        ]
-
-        # @return [String]
-        define_property :ticket_number, as: "ticketNumber", types: [
-          "string",
+          "URI",
         ]
 
         # @return [String]
@@ -41,18 +20,43 @@ module OpenActive
           "string",
         ]
 
-        # @return [String,BigDecimal,OpenActive::Models::Schema::PriceSpecification,nil]
-        define_property :total_price, as: "totalPrice", types: [
+        # @return [String]
+        define_property :ticket_number, as: "ticketNumber", types: [
           "string",
+        ]
+
+        # @return [BigDecimal,String,OpenActive::Models::Schema::PriceSpecification,URI,nil]
+        define_property :total_price, as: "totalPrice", types: [
           "Number",
+          "string",
           "OpenActive::Models::Schema::PriceSpecification",
+          "URI",
           "null",
         ]
 
-        # @return [OpenActive::Models::Schema::Organization,OpenActive::Models::Schema::Person]
-        define_property :under_name, as: "underName", types: [
+        # @return [OpenActive::Models::Schema::Organization,URI]
+        define_property :issued_by, as: "issuedBy", types: [
           "OpenActive::Models::Schema::Organization",
-          "OpenActive::Models::Schema::Person",
+          "URI",
+        ]
+
+        # @return [String,URI]
+        define_property :ticket_token, as: "ticketToken", types: [
+          "string",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::Seat,URI]
+        define_property :ticketed_seat, as: "ticketedSeat", types: [
+          "OpenActive::Models::Schema::Seat",
+          "URI",
+        ]
+
+        # @return [Date,DateTime,nil]
+        define_property :date_issued, as: "dateIssued", types: [
+          "Date",
+          "DateTime",
+          "null",
         ]
       end
     end

@@ -6,7 +6,7 @@
     {
       "@type":"OrderItem",
       "@id":"https://fencing-book/item/12345",
-      "orderItemStatus":"https://openactive.io/OrderConfirmed",
+      "orderItemStatus":"https://openactive.io/OrderItemConfirmed",
       "unitTaxSpecification":[
         {
           "@type":"TaxChargeSpecification",
@@ -48,11 +48,7 @@
         "@type":"Offer",
         "@id":"https://pimlico-fencing-club.example.com/junior-regular/12345",
         "price":6.00,
-        "priceCurrency":"GBP",
-        "availableChannel":[
-          "https://openactive.io/OpenBookingPrepayment",
-          "https://openactive.io/OnlinePrepayment"
-        ]
+        "priceCurrency":"GBP"
       }
     }
   ],

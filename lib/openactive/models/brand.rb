@@ -1,6 +1,6 @@
 module OpenActive
   module Models
-    # This type is derived from [Brand](https://schema.org/Brand), which means that any of this type's properties within schema.org may also be used. Note however the properties on this page must be used in preference if a relevant property is available.
+    # This type is derived from https://schema.org/Brand, which means that any of this type's properties within schema.org may also be used.
     class Brand < ::OpenActive::Models::Schema::Brand
       # @!attribute type
       # @return [String]
@@ -37,9 +37,14 @@ module OpenActive
         "URI",
       ]
 
-      # @return [Array<OpenActive::Models::Schema::VideoObject>]
+      # @return [String]
+      define_property :formatted_description, as: "beta:formattedDescription", types: [
+        "string",
+      ]
+
+      # @return [Array<OpenActive::Models::VideoObject>]
       define_property :video, as: "beta:video", types: [
-        "OpenActive::Models::Schema::VideoObject[]",
+        "OpenActive::Models::VideoObject[]",
       ]
     end
   end

@@ -8,27 +8,25 @@ module OpenActive
           "schema:LoanOrCredit"
         end
 
-        # @return [String,URI]
-        define_property :loan_type, as: "loanType", types: [
-          "string",
-          "URI",
-        ]
-
-        # @return [Boolean,nil]
-        define_property :recourse_loan, as: "recourseLoan", types: [
-          "bool",
-          "null",
-        ]
-
-        # @return [OpenActive::Models::Schema::RepaymentSpecification]
-        define_property :loan_repayment_form, as: "loanRepaymentForm", types: [
-          "OpenActive::Models::Schema::RepaymentSpecification",
-        ]
-
-        # @return [ActiveSupport::Duration,nil]
+        # @return [ActiveSupport::Duration,URI,nil]
         define_property :grace_period, as: "gracePeriod", types: [
           "DateInterval",
+          "URI",
           "null",
+        ]
+
+        # @return [BigDecimal,OpenActive::Models::Schema::MonetaryAmount,URI,nil]
+        define_property :amount, as: "amount", types: [
+          "Number",
+          "OpenActive::Models::Schema::MonetaryAmount",
+          "URI",
+          "null",
+        ]
+
+        # @return [URI,String]
+        define_property :loan_type, as: "loanType", types: [
+          "URI",
+          "string",
         ]
 
         # @return [Boolean,nil]
@@ -37,17 +35,23 @@ module OpenActive
           "null",
         ]
 
-        # @return [OpenActive::Models::Schema::Thing,String]
-        define_property :required_collateral, as: "requiredCollateral", types: [
-          "OpenActive::Models::Schema::Thing",
-          "string",
+        # @return [Boolean,nil]
+        define_property :recourse_loan, as: "recourseLoan", types: [
+          "bool",
+          "null",
         ]
 
-        # @return [BigDecimal,OpenActive::Models::Schema::MonetaryAmount,nil]
-        define_property :amount, as: "amount", types: [
-          "Number",
-          "OpenActive::Models::Schema::MonetaryAmount",
-          "null",
+        # @return [String,OpenActive::Models::Schema::Thing,URI]
+        define_property :required_collateral, as: "requiredCollateral", types: [
+          "string",
+          "OpenActive::Models::Schema::Thing",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::RepaymentSpecification,URI]
+        define_property :loan_repayment_form, as: "loanRepaymentForm", types: [
+          "OpenActive::Models::Schema::RepaymentSpecification",
+          "URI",
         ]
 
         # @return [String]
@@ -55,9 +59,10 @@ module OpenActive
           "string",
         ]
 
-        # @return [OpenActive::Models::Schema::QuantitativeValue]
+        # @return [OpenActive::Models::Schema::QuantitativeValue,URI]
         define_property :loan_term, as: "loanTerm", types: [
           "OpenActive::Models::Schema::QuantitativeValue",
+          "URI",
         ]
       end
     end

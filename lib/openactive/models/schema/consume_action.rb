@@ -8,14 +8,16 @@ module OpenActive
           "schema:ConsumeAction"
         end
 
-        # @return [OpenActive::Models::Schema::Offer]
+        # @return [OpenActive::Models::Schema::Offer,URI]
         define_property :expects_acceptance_of, as: "expectsAcceptanceOf", types: [
           "OpenActive::Models::Schema::Offer",
+          "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::ActionAccessSpecification]
+        # @return [OpenActive::Models::Schema::ActionAccessSpecification,URI]
         define_property :action_accessibility_requirement, as: "actionAccessibilityRequirement", types: [
           "OpenActive::Models::Schema::ActionAccessSpecification",
+          "URI",
         ]
       end
     end

@@ -8,16 +8,18 @@ module OpenActive
           "schema:HotelRoom"
         end
 
-        # @return [OpenActive::Models::Schema::BedDetails,OpenActive::Models::Schema::BedType,String]
+        # @return [OpenActive::Models::Schema::BedDetails,String,OpenActive::Models::Schema::BedType,URI]
         define_property :bed, as: "bed", types: [
           "OpenActive::Models::Schema::BedDetails",
-          "OpenActive::Models::Schema::BedType",
           "string",
+          "OpenActive::Models::Schema::BedType",
+          "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::QuantitativeValue]
+        # @return [OpenActive::Models::Schema::QuantitativeValue,URI]
         define_property :occupancy, as: "occupancy", types: [
           "OpenActive::Models::Schema::QuantitativeValue",
+          "URI",
         ]
       end
     end

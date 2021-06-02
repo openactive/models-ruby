@@ -8,9 +8,10 @@ module OpenActive
           "schema:SomeProducts"
         end
 
-        # @return [OpenActive::Models::Schema::QuantitativeValue]
+        # @return [OpenActive::Models::Schema::QuantitativeValue,URI]
         define_property :inventory_level, as: "inventoryLevel", types: [
           "OpenActive::Models::Schema::QuantitativeValue",
+          "URI",
         ]
       end
     end

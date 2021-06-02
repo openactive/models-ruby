@@ -8,21 +8,22 @@ module OpenActive
           "schema:GameServer"
         end
 
-        # @return [OpenActive::Enums::Schema::GameServerStatus,nil]
+        # @return [OpenActive::Models::Schema::GameServerStatus,URI]
         define_property :server_status, as: "serverStatus", types: [
-          "OpenActive::Enums::Schema::GameServerStatus",
-          "null",
+          "OpenActive::Models::Schema::GameServerStatus",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::VideoGame,URI]
+        define_property :game, as: "game", types: [
+          "OpenActive::Models::Schema::VideoGame",
+          "URI",
         ]
 
         # @return [int,nil]
         define_property :players_online, as: "playersOnline", types: [
           "int",
           "null",
-        ]
-
-        # @return [OpenActive::Models::Schema::VideoGame]
-        define_property :game, as: "game", types: [
-          "OpenActive::Models::Schema::VideoGame",
         ]
       end
     end

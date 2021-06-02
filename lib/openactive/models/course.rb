@@ -1,6 +1,6 @@
 module OpenActive
   module Models
-    # This type is derived from [Course](https://schema.org/Course), which means that any of this type's properties within schema.org may also be used. Note however the properties on this page must be used in preference if a relevant property is available.
+    # This type is derived from https://schema.org/Course, which means that any of this type's properties within schema.org may also be used.
     class Course < ::OpenActive::Models::Schema::Course
       # @!attribute type
       # @return [String]
@@ -27,15 +27,54 @@ module OpenActive
         "string",
       ]
 
+      # @return [String]
+      define_property :accessibility_information, as: "accessibilityInformation", types: [
+        "string",
+      ]
+
+      # @return [Array<OpenActive::Models::Concept>]
+      define_property :accessibility_support, as: "accessibilitySupport", types: [
+        "OpenActive::Models::Concept[]",
+      ]
+
       # @return [Array<OpenActive::Models::Concept>]
       define_property :activity, as: "activity", types: [
         "OpenActive::Models::Concept[]",
       ]
 
-      # @return [OpenActive::Models::Person,OpenActive::Models::Organization]
+      # @return [OpenActive::Models::QuantitativeValue]
+      define_property :age_range, as: "ageRange", types: [
+        "OpenActive::Models::QuantitativeValue",
+      ]
+
+      # @return [OpenActive::Models::Person,OpenActive::Models::Organization,URI]
       define_property :author, as: "author", types: [
         "OpenActive::Models::Person",
         "OpenActive::Models::Organization",
+        "URI",
+      ]
+
+      # @return [Array<String>,Array<OpenActive::Models::Concept>]
+      define_property :category, as: "category", types: [
+        "string[]",
+        "OpenActive::Models::Concept[]",
+      ]
+
+      # @return [OpenActive::Enums::GenderRestrictionType,nil]
+      define_property :gender_restriction, as: "genderRestriction", types: [
+        "OpenActive::Enums::GenderRestrictionType",
+        "null",
+      ]
+
+      # @return [Array<OpenActive::Models::ImageObject>]
+      define_property :image, as: "image", types: [
+        "OpenActive::Models::ImageObject[]",
+      ]
+
+      # @return [Array<String>,Array<OpenActive::Models::Concept>]
+      define_property :level, as: "level", types: [
+        "string[]",
+        "OpenActive::Models::Concept[]",
       ]
 
       # @return [URI]
@@ -43,14 +82,9 @@ module OpenActive
         "URI",
       ]
 
-      # @return [Array<OpenActive::Models::Schema::VideoObject>]
+      # @return [Array<OpenActive::Models::VideoObject>]
       define_property :video, as: "beta:video", types: [
-        "OpenActive::Models::Schema::VideoObject[]",
-      ]
-
-      # @return [OpenActive::Models::ImageObject]
-      define_property :logo, as: "beta:logo", types: [
-        "OpenActive::Models::ImageObject",
+        "OpenActive::Models::VideoObject[]",
       ]
     end
   end

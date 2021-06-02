@@ -8,9 +8,10 @@ module OpenActive
           "schema:ReplyAction"
         end
 
-        # @return [OpenActive::Models::Schema::Comment]
+        # @return [OpenActive::Models::Schema::Comment,URI]
         define_property :result_comment, as: "resultComment", types: [
           "OpenActive::Models::Schema::Comment",
+          "URI",
         ]
       end
     end

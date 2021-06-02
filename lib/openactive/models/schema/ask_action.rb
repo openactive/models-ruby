@@ -8,9 +8,10 @@ module OpenActive
           "schema:AskAction"
         end
 
-        # @return [OpenActive::Models::Schema::Question]
+        # @return [OpenActive::Models::Schema::Question,URI]
         define_property :question, as: "question", types: [
           "OpenActive::Models::Schema::Question",
+          "URI",
         ]
       end
     end

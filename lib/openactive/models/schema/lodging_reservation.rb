@@ -8,10 +8,10 @@ module OpenActive
           "schema:LodgingReservation"
         end
 
-        # @return [int,OpenActive::Models::Schema::QuantitativeValue,nil]
-        define_property :num_adults, as: "numAdults", types: [
-          "int",
-          "OpenActive::Models::Schema::QuantitativeValue",
+        # @return [DateTime,Time,nil]
+        define_property :checkin_time, as: "checkinTime", types: [
+          "DateTime",
+          "Time",
           "null",
         ]
 
@@ -22,10 +22,11 @@ module OpenActive
           "null",
         ]
 
-        # @return [DateTime,Time,nil]
-        define_property :checkout_time, as: "checkoutTime", types: [
-          "DateTime",
-          "Time",
+        # @return [int,OpenActive::Models::Schema::QuantitativeValue,URI,nil]
+        define_property :num_children, as: "numChildren", types: [
+          "int",
+          "OpenActive::Models::Schema::QuantitativeValue",
+          "URI",
           "null",
         ]
 
@@ -34,17 +35,18 @@ module OpenActive
           "string",
         ]
 
-        # @return [int,OpenActive::Models::Schema::QuantitativeValue,nil]
-        define_property :num_children, as: "numChildren", types: [
+        # @return [int,OpenActive::Models::Schema::QuantitativeValue,URI,nil]
+        define_property :num_adults, as: "numAdults", types: [
           "int",
           "OpenActive::Models::Schema::QuantitativeValue",
+          "URI",
           "null",
         ]
 
-        # @return [Time,DateTime,nil]
-        define_property :checkin_time, as: "checkinTime", types: [
-          "Time",
+        # @return [DateTime,Time,nil]
+        define_property :checkout_time, as: "checkoutTime", types: [
           "DateTime",
+          "Time",
           "null",
         ]
       end

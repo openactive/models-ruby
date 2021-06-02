@@ -1,6 +1,6 @@
 module OpenActive
   module Models
-    # This type is derived from [Barcode](https://schema.org/Barcode), which means that any of this type's properties within schema.org may also be used. Note however the properties on this page must be used in preference if a relevant property is available.
+    # This type is derived from https://schema.org/Barcode, which means that any of this type's properties within schema.org may also be used.
     class Barcode < ::OpenActive::Models::ImageObject
       # @!attribute type
       # @return [String]
@@ -16,6 +16,11 @@ module OpenActive
       # @return [URI]
       define_property :url, as: "url", types: [
         "URI",
+      ]
+
+      # @return [String]
+      define_property :code_type, as: "beta:codeType", types: [
+        "string",
       ]
     end
   end

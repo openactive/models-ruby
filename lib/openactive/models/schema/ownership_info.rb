@@ -14,22 +14,24 @@ module OpenActive
           "null",
         ]
 
-        # @return [OpenActive::Models::Schema::Person,OpenActive::Models::Schema::Organization]
-        define_property :acquired_from, as: "acquiredFrom", types: [
-          "OpenActive::Models::Schema::Person",
-          "OpenActive::Models::Schema::Organization",
-        ]
-
         # @return [DateTime,nil]
         define_property :owned_through, as: "ownedThrough", types: [
           "DateTime",
           "null",
         ]
 
-        # @return [OpenActive::Models::Schema::Service,OpenActive::Models::Schema::Product]
+        # @return [OpenActive::Models::Schema::Service,OpenActive::Models::Schema::Product,URI]
         define_property :type_of_good, as: "typeOfGood", types: [
           "OpenActive::Models::Schema::Service",
           "OpenActive::Models::Schema::Product",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::Organization,OpenActive::Models::Schema::Person,URI]
+        define_property :acquired_from, as: "acquiredFrom", types: [
+          "OpenActive::Models::Schema::Organization",
+          "OpenActive::Models::Schema::Person",
+          "URI",
         ]
       end
     end

@@ -8,10 +8,15 @@ module OpenActive
           "schema:PublicationVolume"
         end
 
-        # @return [int,String,nil]
-        define_property :page_start, as: "pageStart", types: [
-          "int",
+        # @return [String]
+        define_property :pagination, as: "pagination", types: [
           "string",
+        ]
+
+        # @return [String,int,nil]
+        define_property :page_start, as: "pageStart", types: [
+          "string",
+          "int",
           "null",
         ]
 
@@ -27,11 +32,6 @@ module OpenActive
           "string",
           "int",
           "null",
-        ]
-
-        # @return [String]
-        define_property :pagination, as: "pagination", types: [
-          "string",
         ]
       end
     end

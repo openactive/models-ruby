@@ -14,18 +14,19 @@ module OpenActive
           "null",
         ]
 
+        # @return [String,OpenActive::Models::Schema::ListItem,OpenActive::Models::Schema::Thing,URI]
+        define_property :item_list_element, as: "itemListElement", types: [
+          "string",
+          "OpenActive::Models::Schema::ListItem",
+          "OpenActive::Models::Schema::Thing",
+          "URI",
+        ]
+
         # @return [OpenActive::Enums::Schema::ItemListOrderType,String,nil]
         define_property :item_list_order, as: "itemListOrder", types: [
           "OpenActive::Enums::Schema::ItemListOrderType",
           "string",
           "null",
-        ]
-
-        # @return [OpenActive::Models::Schema::Thing,String,OpenActive::Models::Schema::ListItem]
-        define_property :item_list_element, as: "itemListElement", types: [
-          "OpenActive::Models::Schema::Thing",
-          "string",
-          "OpenActive::Models::Schema::ListItem",
         ]
       end
     end

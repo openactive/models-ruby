@@ -8,9 +8,10 @@ module OpenActive
           "schema:LendAction"
         end
 
-        # @return [OpenActive::Models::Schema::Person]
+        # @return [OpenActive::Models::Schema::Person,URI]
         define_property :borrower, as: "borrower", types: [
           "OpenActive::Models::Schema::Person",
+          "URI",
         ]
       end
     end

@@ -1,5 +1,6 @@
 module OpenActive
   module Models
+    # This type is derived from https://schema.org/Thing, which means that any of this type's properties within schema.org may also be used.
     class Payment < ::OpenActive::Models::Schema::Thing
       # @!attribute type
       # @return [String]
@@ -7,13 +8,9 @@ module OpenActive
         "Payment"
       end
 
-      # @return [int,String,OpenActive::Models::PropertyValue,Array<OpenActive::Models::PropertyValue>,nil]
+      # @return [String]
       define_property :identifier, as: "identifier", types: [
-        "int",
         "string",
-        "OpenActive::Models::PropertyValue",
-        "OpenActive::Models::PropertyValue[]",
-        "null",
       ]
 
       # @return [String]
@@ -26,9 +23,14 @@ module OpenActive
         "string",
       ]
 
-      # @return [OpenActive::Enums::Schema::PaymentMethod,nil]
+      # @return [Array<OpenActive::Models::PropertyValue>]
+      define_property :additional_property, as: "additionalProperty", types: [
+        "OpenActive::Models::PropertyValue[]",
+      ]
+
+      # @return [OpenActive::Enums::PaymentMethod,nil]
       define_property :payment_method, as: "paymentMethod", types: [
-        "OpenActive::Enums::Schema::PaymentMethod",
+        "OpenActive::Enums::PaymentMethod",
         "null",
       ]
 

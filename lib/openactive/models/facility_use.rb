@@ -1,5 +1,6 @@
 module OpenActive
   module Models
+    # This type is derived from https://schema.org/Product, which means that any of this type's properties within schema.org may also be used.
     class FacilityUse < ::OpenActive::Models::Schema::Product
       # @!attribute type
       # @return [String]
@@ -39,6 +40,11 @@ module OpenActive
       # @return [Array<OpenActive::Models::Concept>]
       define_property :activity, as: "activity", types: [
         "OpenActive::Models::Concept[]",
+      ]
+
+      # @return [Array<String>]
+      define_property :additional_admission_restriction, as: "additionalAdmissionRestriction", types: [
+        "string[]",
       ]
 
       # @return [String]
@@ -82,11 +88,6 @@ module OpenActive
         "OpenActive::Models::Offer[]",
       ]
 
-      # @return [Array<OpenActive::Models::Action>]
-      define_property :potential_action, as: "potentialAction", types: [
-        "OpenActive::Models::Action[]",
-      ]
-
       # @return [OpenActive::Models::Organization]
       define_property :provider, as: "provider", types: [
         "OpenActive::Models::Organization",
@@ -97,21 +98,25 @@ module OpenActive
         "URI",
       ]
 
+      # @return [String]
+      define_property :formatted_description, as: "beta:formattedDescription", types: [
+        "string",
+      ]
+
       # @return [Boolean,nil]
       define_property :is_wheelchair_accessible, as: "beta:isWheelchairAccessible", types: [
         "bool",
         "null",
       ]
 
-      # @return [OpenActive::Enums::FacilitySettingType,nil]
-      define_property :facility_setting, as: "beta:facilitySetting", types: [
-        "OpenActive::Enums::FacilitySettingType",
-        "null",
+      # @return [Array<OpenActive::Models::VideoObject>]
+      define_property :video, as: "beta:video", types: [
+        "OpenActive::Models::VideoObject[]",
       ]
 
-      # @return [Array<OpenActive::Models::Concept>]
-      define_property :facility_type, as: "beta:facilityType", types: [
-        "OpenActive::Models::Concept[]",
+      # @return [Array<OpenActive::Models::Schema::SportsActivityLocation>]
+      define_property :sports_activity_location, as: "beta:sportsActivityLocation", types: [
+        "OpenActive::Models::Schema::SportsActivityLocation[]",
       ]
 
       # @return [ActiveSupport::Duration,nil]
@@ -120,19 +125,21 @@ module OpenActive
         "null",
       ]
 
-      # @return [Array<OpenActive::Models::SportsActivityLocation>]
-      define_property :sports_activity_location, as: "beta:sportsActivityLocation", types: [
-        "OpenActive::Models::SportsActivityLocation[]",
+      # @return [Array<OpenActive::Models::Concept>]
+      define_property :facility_type, as: "beta:facilityType", types: [
+        "OpenActive::Models::Concept[]",
       ]
 
-      # @return [Array<OpenActive::Models::Schema::VideoObject>]
-      define_property :video, as: "beta:video", types: [
-        "OpenActive::Models::Schema::VideoObject[]",
+      # @return [OpenActive::Enums::FacilitySettingType,nil]
+      define_property :facility_setting, as: "beta:facilitySetting", types: [
+        "OpenActive::Enums::FacilitySettingType",
+        "null",
       ]
 
-      # @return [String]
-      define_property :formatted_description, as: "beta:formattedDescription", types: [
-        "string",
+      # @return [Array<OpenActive::Enums::BookingChannelType>,nil]
+      define_property :booking_channel, as: "beta:bookingChannel", types: [
+        "OpenActive::Enums::BookingChannelType[]",
+        "null",
       ]
     end
   end

@@ -1,5 +1,6 @@
 module OpenActive
   module Models
+    # This type is derived from https://schema.org/Thing, which means that any of this type's properties within schema.org may also be used.
     class OpenBookingError < ::OpenActive::Models::Schema::Thing
       # @!attribute type
       # @return [String]
@@ -20,16 +21,6 @@ module OpenActive
       # @return [URI]
       define_property :instance, as: "instance", types: [
         "URI",
-      ]
-
-      # @return [Array<String>]
-      define_property :invalid_params, as: "invalidParams", types: [
-        "string[]",
-      ]
-
-      # @return [String]
-      define_property :method, as: "method", types: [
-        "string",
       ]
 
       # @return [String]

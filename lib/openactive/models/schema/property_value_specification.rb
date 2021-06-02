@@ -8,9 +8,21 @@ module OpenActive
           "schema:PropertyValueSpecification"
         end
 
-        # @return [Boolean,nil]
-        define_property :readonly_value, as: "readonlyValue", types: [
-          "bool",
+        # @return [String]
+        define_property :value_name, as: "valueName", types: [
+          "string",
+        ]
+
+        # @return [OpenActive::Models::Schema::Thing,String,URI]
+        define_property :default_value, as: "defaultValue", types: [
+          "OpenActive::Models::Schema::Thing",
+          "string",
+          "URI",
+        ]
+
+        # @return [BigDecimal,nil]
+        define_property :step_value, as: "stepValue", types: [
+          "Number",
           "null",
         ]
 
@@ -20,9 +32,14 @@ module OpenActive
           "null",
         ]
 
-        # @return [OpenActive::Models::Schema::Thing,String]
-        define_property :default_value, as: "defaultValue", types: [
-          "OpenActive::Models::Schema::Thing",
+        # @return [BigDecimal,nil]
+        define_property :max_value, as: "maxValue", types: [
+          "Number",
+          "null",
+        ]
+
+        # @return [String]
+        define_property :value_pattern, as: "valuePattern", types: [
           "string",
         ]
 
@@ -32,20 +49,9 @@ module OpenActive
           "null",
         ]
 
-        # @return [String]
-        define_property :value_name, as: "valueName", types: [
-          "string",
-        ]
-
-        # @return [BigDecimal,nil]
-        define_property :max_value, as: "maxValue", types: [
-          "Number",
-          "null",
-        ]
-
-        # @return [BigDecimal,nil]
-        define_property :value_min_length, as: "valueMinLength", types: [
-          "Number",
+        # @return [Boolean,nil]
+        define_property :readonly_value, as: "readonlyValue", types: [
+          "bool",
           "null",
         ]
 
@@ -62,14 +68,9 @@ module OpenActive
         ]
 
         # @return [BigDecimal,nil]
-        define_property :step_value, as: "stepValue", types: [
+        define_property :value_min_length, as: "valueMinLength", types: [
           "Number",
           "null",
-        ]
-
-        # @return [String]
-        define_property :value_pattern, as: "valuePattern", types: [
-          "string",
         ]
       end
     end

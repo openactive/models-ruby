@@ -9,30 +9,31 @@ module OpenActive
         end
 
         # @return [String]
-        define_property :line, as: "line", types: [
-          "string",
-        ]
-
-        # @return [String]
         define_property :polygon, as: "polygon", types: [
           "string",
         ]
 
-        # @return [String,BigDecimal,nil]
-        define_property :elevation, as: "elevation", types: [
+        # @return [String]
+        define_property :circle, as: "circle", types: [
           "string",
-          "Number",
-          "null",
+        ]
+
+        # @return [String,OpenActive::Models::Schema::PostalAddress,URI]
+        define_property :address, as: "address", types: [
+          "string",
+          "OpenActive::Models::Schema::PostalAddress",
+          "URI",
+        ]
+
+        # @return [String,OpenActive::Models::Schema::Country,URI]
+        define_property :address_country, as: "addressCountry", types: [
+          "string",
+          "OpenActive::Models::Schema::Country",
+          "URI",
         ]
 
         # @return [String]
-        define_property :postal_code, as: "postalCode", types: [
-          "string",
-        ]
-
-        # @return [OpenActive::Models::Schema::Country,String]
-        define_property :address_country, as: "addressCountry", types: [
-          "OpenActive::Models::Schema::Country",
+        define_property :line, as: "line", types: [
           "string",
         ]
 
@@ -42,14 +43,15 @@ module OpenActive
         ]
 
         # @return [String]
-        define_property :circle, as: "circle", types: [
+        define_property :postal_code, as: "postalCode", types: [
           "string",
         ]
 
-        # @return [String,OpenActive::Models::Schema::PostalAddress]
-        define_property :address, as: "address", types: [
+        # @return [BigDecimal,String,nil]
+        define_property :elevation, as: "elevation", types: [
+          "Number",
           "string",
-          "OpenActive::Models::Schema::PostalAddress",
+          "null",
         ]
       end
     end

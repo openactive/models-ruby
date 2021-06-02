@@ -1,6 +1,6 @@
 module OpenActive
   module Models
-    # This type is derived from [Place](https://schema.org/Place), which means that any of this type's properties within schema.org may also be used. Note however the properties on this page must be used in preference if a relevant property is available.
+    # This type is derived from https://schema.org/Place, which means that any of this type's properties within schema.org may also be used.
     class Place < ::OpenActive::Models::Schema::Place
       # @!attribute type
       # @return [String]
@@ -60,6 +60,11 @@ module OpenActive
 
       # @return [Array<OpenActive::Models::OpeningHoursSpecification>]
       define_property :opening_hours_specification, as: "openingHoursSpecification", types: [
+        "OpenActive::Models::OpeningHoursSpecification[]",
+      ]
+
+      # @return [Array<OpenActive::Models::OpeningHoursSpecification>]
+      define_property :special_opening_hours_specification, as: "specialOpeningHoursSpecification", types: [
         "OpenActive::Models::OpeningHoursSpecification[]",
       ]
 

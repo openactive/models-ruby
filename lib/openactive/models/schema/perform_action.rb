@@ -8,9 +8,10 @@ module OpenActive
           "schema:PerformAction"
         end
 
-        # @return [OpenActive::Models::Schema::EntertainmentBusiness]
+        # @return [OpenActive::Models::Schema::EntertainmentBusiness,URI]
         define_property :entertainment_business, as: "entertainmentBusiness", types: [
           "OpenActive::Models::Schema::EntertainmentBusiness",
+          "URI",
         ]
       end
     end

@@ -8,9 +8,10 @@ module OpenActive
           "schema:InsertAction"
         end
 
-        # @return [OpenActive::Models::Schema::Place]
+        # @return [OpenActive::Models::Schema::Place,URI]
         define_property :to_location, as: "toLocation", types: [
           "OpenActive::Models::Schema::Place",
+          "URI",
         ]
       end
     end

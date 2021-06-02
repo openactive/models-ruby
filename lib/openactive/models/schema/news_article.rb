@@ -9,7 +9,7 @@ module OpenActive
         end
 
         # @return [String]
-        define_property :dateline, as: "dateline", types: [
+        define_property :print_section, as: "printSection", types: [
           "string",
         ]
 
@@ -19,7 +19,7 @@ module OpenActive
         ]
 
         # @return [String]
-        define_property :print_section, as: "printSection", types: [
+        define_property :dateline, as: "dateline", types: [
           "string",
         ]
 

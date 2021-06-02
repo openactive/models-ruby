@@ -8,15 +8,11 @@ module OpenActive
           "schema:TaxiReservation"
         end
 
-        # @return [OpenActive::Models::Schema::Place]
-        define_property :pickup_location, as: "pickupLocation", types: [
-          "OpenActive::Models::Schema::Place",
-        ]
-
-        # @return [int,OpenActive::Models::Schema::QuantitativeValue,nil]
+        # @return [OpenActive::Models::Schema::QuantitativeValue,int,URI,nil]
         define_property :party_size, as: "partySize", types: [
-          "int",
           "OpenActive::Models::Schema::QuantitativeValue",
+          "int",
+          "URI",
           "null",
         ]
 
@@ -24,6 +20,12 @@ module OpenActive
         define_property :pickup_time, as: "pickupTime", types: [
           "DateTime",
           "null",
+        ]
+
+        # @return [OpenActive::Models::Schema::Place,URI]
+        define_property :pickup_location, as: "pickupLocation", types: [
+          "OpenActive::Models::Schema::Place",
+          "URI",
         ]
       end
     end

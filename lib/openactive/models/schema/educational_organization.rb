@@ -8,9 +8,10 @@ module OpenActive
           "schema:EducationalOrganization"
         end
 
-        # @return [OpenActive::Models::Schema::Person]
+        # @return [OpenActive::Models::Schema::Person,URI]
         define_property :alumni, as: "alumni", types: [
           "OpenActive::Models::Schema::Person",
+          "URI",
         ]
       end
     end

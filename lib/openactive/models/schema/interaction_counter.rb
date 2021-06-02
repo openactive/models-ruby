@@ -8,21 +8,23 @@ module OpenActive
           "schema:InteractionCounter"
         end
 
-        # @return [OpenActive::Models::Schema::Action]
-        define_property :interaction_type, as: "interactionType", types: [
-          "OpenActive::Models::Schema::Action",
-        ]
-
         # @return [int,nil]
         define_property :user_interaction_count, as: "userInteractionCount", types: [
           "int",
           "null",
         ]
 
-        # @return [OpenActive::Models::Schema::SoftwareApplication,OpenActive::Models::Schema::WebSite]
+        # @return [OpenActive::Models::Schema::SoftwareApplication,OpenActive::Models::Schema::WebSite,URI]
         define_property :interaction_service, as: "interactionService", types: [
           "OpenActive::Models::Schema::SoftwareApplication",
           "OpenActive::Models::Schema::WebSite",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::Action,URI]
+        define_property :interaction_type, as: "interactionType", types: [
+          "OpenActive::Models::Schema::Action",
+          "URI",
         ]
       end
     end

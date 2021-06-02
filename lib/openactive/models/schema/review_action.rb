@@ -8,9 +8,10 @@ module OpenActive
           "schema:ReviewAction"
         end
 
-        # @return [OpenActive::Models::Schema::Review]
+        # @return [OpenActive::Models::Schema::Review,URI]
         define_property :result_review, as: "resultReview", types: [
           "OpenActive::Models::Schema::Review",
+          "URI",
         ]
       end
     end

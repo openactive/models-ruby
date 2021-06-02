@@ -8,9 +8,10 @@ module OpenActive
           "schema:ArchiveOrganization"
         end
 
-        # @return [OpenActive::Models::Schema::ArchiveComponent]
+        # @return [OpenActive::Models::Schema::ArchiveComponent,URI]
         define_property :archive_held, as: "archiveHeld", types: [
           "OpenActive::Models::Schema::ArchiveComponent",
+          "URI",
         ]
       end
     end

@@ -8,14 +8,16 @@ module OpenActive
           "schema:MenuSection"
         end
 
-        # @return [OpenActive::Models::Schema::MenuSection]
-        define_property :has_menu_section, as: "hasMenuSection", types: [
-          "OpenActive::Models::Schema::MenuSection",
-        ]
-
-        # @return [OpenActive::Models::Schema::MenuItem]
+        # @return [OpenActive::Models::Schema::MenuItem,URI]
         define_property :has_menu_item, as: "hasMenuItem", types: [
           "OpenActive::Models::Schema::MenuItem",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::MenuSection,URI]
+        define_property :has_menu_section, as: "hasMenuSection", types: [
+          "OpenActive::Models::Schema::MenuSection",
+          "URI",
         ]
       end
     end
