@@ -7,6 +7,7 @@ module OpenActive
       new :CustomerCancelled, "https://openactive.io/CustomerCancelled"
       new :OrderItemConfirmed, "https://openactive.io/OrderItemConfirmed"
       new :CustomerAttended, "https://openactive.io/CustomerAttended"
+      new :CustomerAbsent, "https://openactive.io/CustomerAbsent"
     end
   end
 end
