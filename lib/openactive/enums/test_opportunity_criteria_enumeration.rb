@@ -6,8 +6,9 @@ module OpenActive
     # An enumeration of test opportunity criteria to which an opportunity must conform.
     class TestOpportunityCriteriaEnumeration < TypesafeEnum::Base
       new :TestOpportunityBookable, "https://openactive.io/test-interface#TestOpportunityBookable"
-      new :TestOpportunityOpenBookingNotAllowed, "https://openactive.io/test-interface#TestOpportunityOpenBookingNotAllowed"
+      new :TestOpportunityBookableInPast, "https://openactive.io/test-interface#TestOpportunityBookableInPast"
       new :TestOpportunityBookableNoSpaces, "https://openactive.io/test-interface#TestOpportunityBookableNoSpaces"
+      new :TestOpportunityBookableOneSpace, "https://openactive.io/test-interface#TestOpportunityBookableOneSpace"
       new :TestOpportunityBookableFiveSpaces, "https://openactive.io/test-interface#TestOpportunityBookableFiveSpaces"
       new :TestOpportunityBookableFree, "https://openactive.io/test-interface#TestOpportunityBookableFree"
       new :TestOpportunityBookableNonFree, "https://openactive.io/test-interface#TestOpportunityBookableNonFree"
