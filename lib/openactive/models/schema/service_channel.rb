@@ -8,34 +8,11 @@ module OpenActive
           "schema:ServiceChannel"
         end
 
-        # @return [OpenActive::Models::Schema::Service,URI]
-        define_property :provides_service, as: "providesService", types: [
-          "OpenActive::Models::Schema::Service",
+        # @return [ActiveSupport::Duration,URI,nil]
+        define_property :processing_time, as: "processingTime", types: [
+          "DateInterval",
           "URI",
-        ]
-
-        # @return [OpenActive::Models::Schema::ContactPoint,URI]
-        define_property :service_phone, as: "servicePhone", types: [
-          "OpenActive::Models::Schema::ContactPoint",
-          "URI",
-        ]
-
-        # @return [OpenActive::Models::Schema::Language,String,URI]
-        define_property :available_language, as: "availableLanguage", types: [
-          "OpenActive::Models::Schema::Language",
-          "string",
-          "URI",
-        ]
-
-        # @return [OpenActive::Models::Schema::ContactPoint,URI]
-        define_property :service_sms_number, as: "serviceSmsNumber", types: [
-          "OpenActive::Models::Schema::ContactPoint",
-          "URI",
-        ]
-
-        # @return [URI]
-        define_property :service_url, as: "serviceUrl", types: [
-          "URI",
+          "null",
         ]
 
         # @return [OpenActive::Models::Schema::Place,URI]
@@ -50,11 +27,34 @@ module OpenActive
           "URI",
         ]
 
-        # @return [ActiveSupport::Duration,URI,nil]
-        define_property :processing_time, as: "processingTime", types: [
-          "DateInterval",
+        # @return [URI]
+        define_property :service_url, as: "serviceUrl", types: [
           "URI",
-          "null",
+        ]
+
+        # @return [OpenActive::Models::Schema::Service,URI]
+        define_property :provides_service, as: "providesService", types: [
+          "OpenActive::Models::Schema::Service",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::ContactPoint,URI]
+        define_property :service_sms_number, as: "serviceSmsNumber", types: [
+          "OpenActive::Models::Schema::ContactPoint",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::ContactPoint,URI]
+        define_property :service_phone, as: "servicePhone", types: [
+          "OpenActive::Models::Schema::ContactPoint",
+          "URI",
+        ]
+
+        # @return [String,OpenActive::Models::Schema::Language,URI]
+        define_property :available_language, as: "availableLanguage", types: [
+          "string",
+          "OpenActive::Models::Schema::Language",
+          "URI",
         ]
       end
     end

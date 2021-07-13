@@ -8,12 +8,9 @@ module OpenActive
           "schema:CommunicateAction"
         end
 
-        # @return [OpenActive::Models::Schema::Organization,OpenActive::Models::Schema::ContactPoint,OpenActive::Models::Schema::Person,OpenActive::Models::Schema::Audience,URI]
-        define_property :recipient, as: "recipient", types: [
-          "OpenActive::Models::Schema::Organization",
-          "OpenActive::Models::Schema::ContactPoint",
-          "OpenActive::Models::Schema::Person",
-          "OpenActive::Models::Schema::Audience",
+        # @return [OpenActive::Models::Schema::Thing,URI]
+        define_property :about, as: "about", types: [
+          "OpenActive::Models::Schema::Thing",
           "URI",
         ]
 
@@ -23,9 +20,12 @@ module OpenActive
           "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::Thing,URI]
-        define_property :about, as: "about", types: [
-          "OpenActive::Models::Schema::Thing",
+        # @return [OpenActive::Models::Schema::Organization,OpenActive::Models::Schema::ContactPoint,OpenActive::Models::Schema::Person,OpenActive::Models::Schema::Audience,URI]
+        define_property :recipient, as: "recipient", types: [
+          "OpenActive::Models::Schema::Organization",
+          "OpenActive::Models::Schema::ContactPoint",
+          "OpenActive::Models::Schema::Person",
+          "OpenActive::Models::Schema::Audience",
           "URI",
         ]
 

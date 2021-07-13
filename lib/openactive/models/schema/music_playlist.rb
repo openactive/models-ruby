@@ -8,11 +8,10 @@ module OpenActive
           "schema:MusicPlaylist"
         end
 
-        # @return [OpenActive::Models::Schema::ItemList,OpenActive::Models::Schema::MusicRecording,URI]
-        define_property :track, as: "track", types: [
-          "OpenActive::Models::Schema::ItemList",
-          "OpenActive::Models::Schema::MusicRecording",
-          "URI",
+        # @return [int,nil]
+        define_property :num_tracks, as: "numTracks", types: [
+          "int",
+          "null",
         ]
 
         # @return [OpenActive::Models::Schema::MusicRecording,URI]
@@ -21,10 +20,11 @@ module OpenActive
           "URI",
         ]
 
-        # @return [int,nil]
-        define_property :num_tracks, as: "numTracks", types: [
-          "int",
-          "null",
+        # @return [OpenActive::Models::Schema::MusicRecording,OpenActive::Models::Schema::ItemList,URI]
+        define_property :track, as: "track", types: [
+          "OpenActive::Models::Schema::MusicRecording",
+          "OpenActive::Models::Schema::ItemList",
+          "URI",
         ]
       end
     end

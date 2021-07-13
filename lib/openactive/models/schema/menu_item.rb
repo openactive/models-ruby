@@ -8,23 +8,17 @@ module OpenActive
           "schema:MenuItem"
         end
 
-        # @return [OpenActive::Models::Schema::Offer,OpenActive::Models::Schema::Demand,URI]
-        define_property :offers, as: "offers", types: [
-          "OpenActive::Models::Schema::Offer",
-          "OpenActive::Models::Schema::Demand",
+        # @return [OpenActive::Models::Schema::MenuSection,OpenActive::Models::Schema::MenuItem,URI]
+        define_property :menu_add_on, as: "menuAddOn", types: [
+          "OpenActive::Models::Schema::MenuSection",
+          "OpenActive::Models::Schema::MenuItem",
           "URI",
         ]
 
-        # @return [OpenActive::Enums::Schema::RestrictedDiet,nil]
-        define_property :suitable_for_diet, as: "suitableForDiet", types: [
-          "OpenActive::Enums::Schema::RestrictedDiet",
-          "null",
-        ]
-
-        # @return [OpenActive::Models::Schema::MenuItem,OpenActive::Models::Schema::MenuSection,URI]
-        define_property :menu_add_on, as: "menuAddOn", types: [
-          "OpenActive::Models::Schema::MenuItem",
-          "OpenActive::Models::Schema::MenuSection",
+        # @return [OpenActive::Models::Schema::Demand,OpenActive::Models::Schema::Offer,URI]
+        define_property :offers, as: "offers", types: [
+          "OpenActive::Models::Schema::Demand",
+          "OpenActive::Models::Schema::Offer",
           "URI",
         ]
 
@@ -32,6 +26,12 @@ module OpenActive
         define_property :nutrition, as: "nutrition", types: [
           "OpenActive::Models::Schema::NutritionInformation",
           "URI",
+        ]
+
+        # @return [OpenActive::Enums::Schema::RestrictedDiet,nil]
+        define_property :suitable_for_diet, as: "suitableForDiet", types: [
+          "OpenActive::Enums::Schema::RestrictedDiet",
+          "null",
         ]
       end
     end

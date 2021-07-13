@@ -8,15 +8,15 @@ module OpenActive
           "schema:BusOrCoach"
         end
 
+        # @return [String]
+        define_property :acriss_code, as: "acrissCode", types: [
+          "string",
+        ]
+
         # @return [OpenActive::Models::Schema::QuantitativeValue,URI]
         define_property :roof_load, as: "roofLoad", types: [
           "OpenActive::Models::Schema::QuantitativeValue",
           "URI",
-        ]
-
-        # @return [String]
-        define_property :acriss_code, as: "acrissCode", types: [
-          "string",
         ]
       end
     end

@@ -9,19 +9,26 @@ module OpenActive
         end
 
         # @return [BigDecimal,nil]
-        define_property :median, as: "median", types: [
-          "Number",
-          "null",
-        ]
-
-        # @return [BigDecimal,nil]
         define_property :percentile75, as: "percentile75", types: [
           "Number",
           "null",
         ]
 
+        # @return [ActiveSupport::Duration,URI,nil]
+        define_property :duration, as: "duration", types: [
+          "DateInterval",
+          "URI",
+          "null",
+        ]
+
         # @return [BigDecimal,nil]
         define_property :percentile25, as: "percentile25", types: [
+          "Number",
+          "null",
+        ]
+
+        # @return [BigDecimal,nil]
+        define_property :percentile90, as: "percentile90", types: [
           "Number",
           "null",
         ]
@@ -33,15 +40,8 @@ module OpenActive
         ]
 
         # @return [BigDecimal,nil]
-        define_property :percentile90, as: "percentile90", types: [
+        define_property :median, as: "median", types: [
           "Number",
-          "null",
-        ]
-
-        # @return [ActiveSupport::Duration,URI,nil]
-        define_property :duration, as: "duration", types: [
-          "DateInterval",
-          "URI",
           "null",
         ]
       end

@@ -8,11 +8,6 @@ module OpenActive
           "schema:BroadcastFrequencySpecification"
         end
 
-        # @return [String]
-        define_property :broadcast_sub_channel, as: "broadcastSubChannel", types: [
-          "string",
-        ]
-
         # @return [String,OpenActive::Enums::Schema::QualitativeValue,nil]
         define_property :broadcast_signal_modulation, as: "broadcastSignalModulation", types: [
           "string",
@@ -26,6 +21,11 @@ module OpenActive
           "Number",
           "URI",
           "null",
+        ]
+
+        # @return [String]
+        define_property :broadcast_sub_channel, as: "broadcastSubChannel", types: [
+          "string",
         ]
       end
     end

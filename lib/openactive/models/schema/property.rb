@@ -8,13 +8,10 @@ module OpenActive
           "schema:Property"
         end
 
-        # @return [OpenActive::Enums::PropertyEnumeration,OpenActive::Models::Schema::Enumeration,OpenActive::Models::Schema::Class,URI,nil]
-        define_property :superseded_by, as: "supersededBy", types: [
-          "OpenActive::Enums::PropertyEnumeration",
-          "OpenActive::Models::Schema::Enumeration",
+        # @return [OpenActive::Models::Schema::Class,URI]
+        define_property :domain_includes, as: "domainIncludes", types: [
           "OpenActive::Models::Schema::Class",
           "URI",
-          "null",
         ]
 
         # @return [OpenActive::Models::Schema::Class,URI]
@@ -23,14 +20,17 @@ module OpenActive
           "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::Class,URI]
-        define_property :domain_includes, as: "domainIncludes", types: [
-          "OpenActive::Models::Schema::Class",
-          "URI",
-        ]
-
         # @return [OpenActive::Enums::PropertyEnumeration,URI,nil]
         define_property :inverse_of, as: "inverseOf", types: [
+          "OpenActive::Enums::PropertyEnumeration",
+          "URI",
+          "null",
+        ]
+
+        # @return [OpenActive::Models::Schema::Class,OpenActive::Models::Schema::Enumeration,OpenActive::Enums::PropertyEnumeration,URI,nil]
+        define_property :superseded_by, as: "supersededBy", types: [
+          "OpenActive::Models::Schema::Class",
+          "OpenActive::Models::Schema::Enumeration",
           "OpenActive::Enums::PropertyEnumeration",
           "URI",
           "null",

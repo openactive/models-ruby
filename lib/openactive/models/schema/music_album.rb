@@ -14,10 +14,10 @@ module OpenActive
           "null",
         ]
 
-        # @return [OpenActive::Models::Schema::MusicRelease,URI]
-        define_property :album_release, as: "albumRelease", types: [
-          "OpenActive::Models::Schema::MusicRelease",
-          "URI",
+        # @return [OpenActive::Enums::Schema::MusicAlbumReleaseType,nil]
+        define_property :album_release_type, as: "albumReleaseType", types: [
+          "OpenActive::Enums::Schema::MusicAlbumReleaseType",
+          "null",
         ]
 
         # @return [OpenActive::Models::Schema::MusicGroup,OpenActive::Models::Schema::Person,URI]
@@ -27,10 +27,10 @@ module OpenActive
           "URI",
         ]
 
-        # @return [OpenActive::Enums::Schema::MusicAlbumReleaseType,nil]
-        define_property :album_release_type, as: "albumReleaseType", types: [
-          "OpenActive::Enums::Schema::MusicAlbumReleaseType",
-          "null",
+        # @return [OpenActive::Models::Schema::MusicRelease,URI]
+        define_property :album_release, as: "albumRelease", types: [
+          "OpenActive::Models::Schema::MusicRelease",
+          "URI",
         ]
       end
     end

@@ -14,10 +14,10 @@ module OpenActive
           "null",
         ]
 
-        # @return [String,OpenActive::Models::Schema::BedType,URI]
+        # @return [OpenActive::Models::Schema::BedType,String,URI]
         define_property :type_of_bed, as: "typeOfBed", types: [
-          "string",
           "OpenActive::Models::Schema::BedType",
+          "string",
           "URI",
         ]
       end

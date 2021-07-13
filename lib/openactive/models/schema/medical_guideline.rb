@@ -8,10 +8,9 @@ module OpenActive
           "schema:MedicalGuideline"
         end
 
-        # @return [Date,nil]
-        define_property :guideline_date, as: "guidelineDate", types: [
-          "Date",
-          "null",
+        # @return [String]
+        define_property :evidence_origin, as: "evidenceOrigin", types: [
+          "string",
         ]
 
         # @return [OpenActive::Models::Schema::MedicalEvidenceLevel,URI]
@@ -20,9 +19,10 @@ module OpenActive
           "URI",
         ]
 
-        # @return [String]
-        define_property :evidence_origin, as: "evidenceOrigin", types: [
-          "string",
+        # @return [Date,nil]
+        define_property :guideline_date, as: "guidelineDate", types: [
+          "Date",
+          "null",
         ]
 
         # @return [OpenActive::Models::Schema::MedicalEntity,URI]

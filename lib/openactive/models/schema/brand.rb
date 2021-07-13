@@ -14,21 +14,21 @@ module OpenActive
           "URI",
         ]
 
+        # @return [String]
+        define_property :slogan, as: "slogan", types: [
+          "string",
+        ]
+
+        # @return [URI,OpenActive::Models::Schema::ImageObject]
+        define_property :logo, as: "logo", types: [
+          "URI",
+          "OpenActive::Models::Schema::ImageObject",
+        ]
+
         # @return [OpenActive::Models::Schema::Review,URI]
         define_property :review, as: "review", types: [
           "OpenActive::Models::Schema::Review",
           "URI",
-        ]
-
-        # @return [OpenActive::Models::Schema::ImageObject,URI]
-        define_property :logo, as: "logo", types: [
-          "OpenActive::Models::Schema::ImageObject",
-          "URI",
-        ]
-
-        # @return [String]
-        define_property :slogan, as: "slogan", types: [
-          "string",
         ]
       end
     end

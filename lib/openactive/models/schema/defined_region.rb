@@ -9,14 +9,13 @@ module OpenActive
         end
 
         # @return [String]
-        define_property :postal_code_prefix, as: "postalCodePrefix", types: [
+        define_property :postal_code, as: "postalCode", types: [
           "string",
         ]
 
-        # @return [OpenActive::Models::Schema::PostalCodeRangeSpecification,URI]
-        define_property :postal_code_range, as: "postalCodeRange", types: [
-          "OpenActive::Models::Schema::PostalCodeRangeSpecification",
-          "URI",
+        # @return [String]
+        define_property :postal_code_prefix, as: "postalCodePrefix", types: [
+          "string",
         ]
 
         # @return [String,OpenActive::Models::Schema::Country,URI]
@@ -26,13 +25,14 @@ module OpenActive
           "URI",
         ]
 
-        # @return [String]
-        define_property :address_region, as: "addressRegion", types: [
-          "string",
+        # @return [OpenActive::Models::Schema::PostalCodeRangeSpecification,URI]
+        define_property :postal_code_range, as: "postalCodeRange", types: [
+          "OpenActive::Models::Schema::PostalCodeRangeSpecification",
+          "URI",
         ]
 
         # @return [String]
-        define_property :postal_code, as: "postalCode", types: [
+        define_property :address_region, as: "addressRegion", types: [
           "string",
         ]
       end

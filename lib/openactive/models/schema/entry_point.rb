@@ -14,8 +14,20 @@ module OpenActive
         ]
 
         # @return [OpenActive::Models::Schema::SoftwareApplication,URI]
+        define_property :action_application, as: "actionApplication", types: [
+          "OpenActive::Models::Schema::SoftwareApplication",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::SoftwareApplication,URI]
         define_property :application, as: "application", types: [
           "OpenActive::Models::Schema::SoftwareApplication",
+          "URI",
+        ]
+
+        # @return [String,URI]
+        define_property :action_platform, as: "actionPlatform", types: [
+          "string",
           "URI",
         ]
 
@@ -24,21 +36,9 @@ module OpenActive
           "string",
         ]
 
-        # @return [OpenActive::Models::Schema::SoftwareApplication,URI]
-        define_property :action_application, as: "actionApplication", types: [
-          "OpenActive::Models::Schema::SoftwareApplication",
-          "URI",
-        ]
-
         # @return [String]
         define_property :http_method, as: "httpMethod", types: [
           "string",
-        ]
-
-        # @return [String,URI]
-        define_property :action_platform, as: "actionPlatform", types: [
-          "string",
-          "URI",
         ]
 
         # @return [String]

@@ -8,14 +8,14 @@ module OpenActive
           "schema:UnitPriceSpecification"
         end
 
-        # @return [OpenActive::Models::Schema::QuantitativeValue,URI]
-        define_property :reference_quantity, as: "referenceQuantity", types: [
-          "OpenActive::Models::Schema::QuantitativeValue",
-          "URI",
+        # @return [BigDecimal,nil]
+        define_property :billing_start, as: "billingStart", types: [
+          "Number",
+          "null",
         ]
 
         # @return [BigDecimal,nil]
-        define_property :billing_start, as: "billingStart", types: [
+        define_property :billing_increment, as: "billingIncrement", types: [
           "Number",
           "null",
         ]
@@ -23,6 +23,28 @@ module OpenActive
         # @return [String]
         define_property :unit_text, as: "unitText", types: [
           "string",
+        ]
+
+        # @return [String,OpenActive::Enums::Schema::PriceTypeEnumeration,nil]
+        define_property :price_type, as: "priceType", types: [
+          "string",
+          "OpenActive::Enums::Schema::PriceTypeEnumeration",
+          "null",
+        ]
+
+        # @return [OpenActive::Models::Schema::QuantitativeValue,ActiveSupport::Duration,BigDecimal,URI,nil]
+        define_property :billing_duration, as: "billingDuration", types: [
+          "OpenActive::Models::Schema::QuantitativeValue",
+          "DateInterval",
+          "Number",
+          "URI",
+          "null",
+        ]
+
+        # @return [OpenActive::Models::Schema::QuantitativeValue,URI]
+        define_property :reference_quantity, as: "referenceQuantity", types: [
+          "OpenActive::Models::Schema::QuantitativeValue",
+          "URI",
         ]
 
         # @return [String,URI]
@@ -34,28 +56,6 @@ module OpenActive
         # @return [OpenActive::Enums::Schema::PriceComponentTypeEnumeration,nil]
         define_property :price_component_type, as: "priceComponentType", types: [
           "OpenActive::Enums::Schema::PriceComponentTypeEnumeration",
-          "null",
-        ]
-
-        # @return [BigDecimal,nil]
-        define_property :billing_increment, as: "billingIncrement", types: [
-          "Number",
-          "null",
-        ]
-
-        # @return [BigDecimal,ActiveSupport::Duration,OpenActive::Models::Schema::QuantitativeValue,URI,nil]
-        define_property :billing_duration, as: "billingDuration", types: [
-          "Number",
-          "DateInterval",
-          "OpenActive::Models::Schema::QuantitativeValue",
-          "URI",
-          "null",
-        ]
-
-        # @return [OpenActive::Enums::Schema::PriceTypeEnumeration,String,nil]
-        define_property :price_type, as: "priceType", types: [
-          "OpenActive::Enums::Schema::PriceTypeEnumeration",
-          "string",
           "null",
         ]
       end

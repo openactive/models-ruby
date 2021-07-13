@@ -14,16 +14,16 @@ module OpenActive
           "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::VideoGame,URI]
-        define_property :game, as: "game", types: [
-          "OpenActive::Models::Schema::VideoGame",
-          "URI",
-        ]
-
         # @return [int,nil]
         define_property :players_online, as: "playersOnline", types: [
           "int",
           "null",
+        ]
+
+        # @return [OpenActive::Models::Schema::VideoGame,URI]
+        define_property :game, as: "game", types: [
+          "OpenActive::Models::Schema::VideoGame",
+          "URI",
         ]
       end
     end

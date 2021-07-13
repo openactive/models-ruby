@@ -8,15 +8,15 @@ module OpenActive
           "schema:MedicalConditionStage"
         end
 
-        # @return [String]
-        define_property :sub_stage_suffix, as: "subStageSuffix", types: [
-          "string",
-        ]
-
         # @return [BigDecimal,nil]
         define_property :stage_as_number, as: "stageAsNumber", types: [
           "Number",
           "null",
+        ]
+
+        # @return [String]
+        define_property :sub_stage_suffix, as: "subStageSuffix", types: [
+          "string",
         ]
       end
     end

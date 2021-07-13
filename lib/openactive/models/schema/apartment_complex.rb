@@ -8,10 +8,10 @@ module OpenActive
           "schema:ApartmentComplex"
         end
 
-        # @return [OpenActive::Models::Schema::QuantitativeValue,BigDecimal,URI,nil]
+        # @return [BigDecimal,OpenActive::Models::Schema::QuantitativeValue,URI,nil]
         define_property :number_of_bedrooms, as: "numberOfBedrooms", types: [
-          "OpenActive::Models::Schema::QuantitativeValue",
           "Number",
+          "OpenActive::Models::Schema::QuantitativeValue",
           "URI",
           "null",
         ]
@@ -22,7 +22,7 @@ module OpenActive
         ]
 
         # @return [OpenActive::Models::Schema::QuantitativeValue,URI]
-        define_property :number_of_available_accommodation_units, as: "numberOfAvailableAccommodationUnits", types: [
+        define_property :number_of_accommodation_units, as: "numberOfAccommodationUnits", types: [
           "OpenActive::Models::Schema::QuantitativeValue",
           "URI",
         ]
@@ -35,7 +35,7 @@ module OpenActive
         ]
 
         # @return [OpenActive::Models::Schema::QuantitativeValue,URI]
-        define_property :number_of_accommodation_units, as: "numberOfAccommodationUnits", types: [
+        define_property :number_of_available_accommodation_units, as: "numberOfAvailableAccommodationUnits", types: [
           "OpenActive::Models::Schema::QuantitativeValue",
           "URI",
         ]

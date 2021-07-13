@@ -26,18 +26,18 @@ module OpenActive
           "null",
         ]
 
+        # @return [OpenActive::Models::Schema::MonetaryAmount,URI]
+        define_property :early_prepayment_penalty, as: "earlyPrepaymentPenalty", types: [
+          "OpenActive::Models::Schema::MonetaryAmount",
+          "URI",
+        ]
+
         # @return [BigDecimal,OpenActive::Models::Schema::MonetaryAmount,URI,nil]
         define_property :down_payment, as: "downPayment", types: [
           "Number",
           "OpenActive::Models::Schema::MonetaryAmount",
           "URI",
           "null",
-        ]
-
-        # @return [OpenActive::Models::Schema::MonetaryAmount,URI]
-        define_property :early_prepayment_penalty, as: "earlyPrepaymentPenalty", types: [
-          "OpenActive::Models::Schema::MonetaryAmount",
-          "URI",
         ]
       end
     end

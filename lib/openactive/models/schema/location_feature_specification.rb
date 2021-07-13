@@ -15,17 +15,17 @@ module OpenActive
           "null",
         ]
 
+        # @return [Date,DateTime,nil]
+        define_property :valid_through, as: "validThrough", types: [
+          "Date",
+          "DateTime",
+          "null",
+        ]
+
         # @return [OpenActive::Models::Schema::OpeningHoursSpecification,URI]
         define_property :hours_available, as: "hoursAvailable", types: [
           "OpenActive::Models::Schema::OpeningHoursSpecification",
           "URI",
-        ]
-
-        # @return [DateTime,Date,nil]
-        define_property :valid_through, as: "validThrough", types: [
-          "DateTime",
-          "Date",
-          "null",
         ]
       end
     end

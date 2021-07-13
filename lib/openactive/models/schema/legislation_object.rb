@@ -1,7 +1,7 @@
 module OpenActive
   module Models
     module Schema
-      class LegislationObject < ::OpenActive::Models::Schema::Legislation
+      class LegislationObject < ::OpenActive::Models::Schema::MediaObject
         # @!attribute type
         # @return [String]
         def type

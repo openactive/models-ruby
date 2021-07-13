@@ -8,26 +8,28 @@ module OpenActive
           "schema:MusicComposition"
         end
 
-        # @return [String]
-        define_property :music_composition_form, as: "musicCompositionForm", types: [
-          "string",
-        ]
-
-        # @return [OpenActive::Models::Schema::Event,URI]
-        define_property :first_performance, as: "firstPerformance", types: [
-          "OpenActive::Models::Schema::Event",
+        # @return [OpenActive::Models::Schema::Organization,OpenActive::Models::Schema::Person,URI]
+        define_property :composer, as: "composer", types: [
+          "OpenActive::Models::Schema::Organization",
+          "OpenActive::Models::Schema::Person",
           "URI",
         ]
 
-        # @return [String]
-        define_property :iswc_code, as: "iswcCode", types: [
-          "string",
+        # @return [OpenActive::Models::Schema::MusicComposition,URI]
+        define_property :included_composition, as: "includedComposition", types: [
+          "OpenActive::Models::Schema::MusicComposition",
+          "URI",
         ]
 
         # @return [OpenActive::Models::Schema::CreativeWork,URI]
         define_property :lyrics, as: "lyrics", types: [
           "OpenActive::Models::Schema::CreativeWork",
           "URI",
+        ]
+
+        # @return [String]
+        define_property :musical_key, as: "musicalKey", types: [
+          "string",
         ]
 
         # @return [OpenActive::Models::Schema::MusicComposition,URI]
@@ -43,13 +45,13 @@ module OpenActive
         ]
 
         # @return [String]
-        define_property :musical_key, as: "musicalKey", types: [
+        define_property :iswc_code, as: "iswcCode", types: [
           "string",
         ]
 
-        # @return [OpenActive::Models::Schema::MusicComposition,URI]
-        define_property :included_composition, as: "includedComposition", types: [
-          "OpenActive::Models::Schema::MusicComposition",
+        # @return [OpenActive::Models::Schema::Event,URI]
+        define_property :first_performance, as: "firstPerformance", types: [
+          "OpenActive::Models::Schema::Event",
           "URI",
         ]
 
@@ -59,11 +61,9 @@ module OpenActive
           "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::Organization,OpenActive::Models::Schema::Person,URI]
-        define_property :composer, as: "composer", types: [
-          "OpenActive::Models::Schema::Organization",
-          "OpenActive::Models::Schema::Person",
-          "URI",
+        # @return [String]
+        define_property :music_composition_form, as: "musicCompositionForm", types: [
+          "string",
         ]
       end
     end

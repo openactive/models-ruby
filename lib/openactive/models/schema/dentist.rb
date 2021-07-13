@@ -1,7 +1,7 @@
 module OpenActive
   module Models
     module Schema
-      class Dentist < ::OpenActive::Models::Schema::MedicalBusiness
+      class Dentist < ::OpenActive::Models::Schema::LocalBusiness
         # @!attribute type
         # @return [String]
         def type

@@ -8,10 +8,10 @@ module OpenActive
           "schema:EndorseAction"
         end
 
-        # @return [OpenActive::Models::Schema::Organization,OpenActive::Models::Schema::Person,URI]
+        # @return [OpenActive::Models::Schema::Person,OpenActive::Models::Schema::Organization,URI]
         define_property :endorsee, as: "endorsee", types: [
-          "OpenActive::Models::Schema::Organization",
           "OpenActive::Models::Schema::Person",
+          "OpenActive::Models::Schema::Organization",
           "URI",
         ]
       end

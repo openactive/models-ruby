@@ -15,8 +15,35 @@ module OpenActive
         ]
 
         # @return [OpenActive::Models::Schema::Person,URI]
-        define_property :directors, as: "directors", types: [
+        define_property :actors, as: "actors", types: [
           "OpenActive::Models::Schema::Person",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::Person,URI]
+        define_property :director, as: "director", types: [
+          "OpenActive::Models::Schema::Person",
+          "URI",
+        ]
+
+        # @return [BigDecimal,OpenActive::Models::Schema::HyperTocEntry,URI,nil]
+        define_property :start_offset, as: "startOffset", types: [
+          "Number",
+          "OpenActive::Models::Schema::HyperTocEntry",
+          "URI",
+          "null",
+        ]
+
+        # @return [int,String,nil]
+        define_property :clip_number, as: "clipNumber", types: [
+          "int",
+          "string",
+          "null",
+        ]
+
+        # @return [OpenActive::Models::Schema::CreativeWorkSeries,URI]
+        define_property :part_of_series, as: "partOfSeries", types: [
+          "OpenActive::Models::Schema::CreativeWorkSeries",
           "URI",
         ]
 
@@ -32,15 +59,16 @@ module OpenActive
           "URI",
         ]
 
-        # @return [int,String,nil]
-        define_property :clip_number, as: "clipNumber", types: [
-          "int",
-          "string",
+        # @return [BigDecimal,OpenActive::Models::Schema::HyperTocEntry,URI,nil]
+        define_property :end_offset, as: "endOffset", types: [
+          "Number",
+          "OpenActive::Models::Schema::HyperTocEntry",
+          "URI",
           "null",
         ]
 
         # @return [OpenActive::Models::Schema::Person,URI]
-        define_property :director, as: "director", types: [
+        define_property :directors, as: "directors", types: [
           "OpenActive::Models::Schema::Person",
           "URI",
         ]
@@ -50,34 +78,6 @@ module OpenActive
           "OpenActive::Models::Schema::Person",
           "OpenActive::Models::Schema::MusicGroup",
           "URI",
-        ]
-
-        # @return [OpenActive::Models::Schema::HyperTocEntry,BigDecimal,URI,nil]
-        define_property :end_offset, as: "endOffset", types: [
-          "OpenActive::Models::Schema::HyperTocEntry",
-          "Number",
-          "URI",
-          "null",
-        ]
-
-        # @return [OpenActive::Models::Schema::Person,URI]
-        define_property :actors, as: "actors", types: [
-          "OpenActive::Models::Schema::Person",
-          "URI",
-        ]
-
-        # @return [OpenActive::Models::Schema::CreativeWorkSeries,URI]
-        define_property :part_of_series, as: "partOfSeries", types: [
-          "OpenActive::Models::Schema::CreativeWorkSeries",
-          "URI",
-        ]
-
-        # @return [OpenActive::Models::Schema::HyperTocEntry,BigDecimal,URI,nil]
-        define_property :start_offset, as: "startOffset", types: [
-          "OpenActive::Models::Schema::HyperTocEntry",
-          "Number",
-          "URI",
-          "null",
         ]
       end
     end

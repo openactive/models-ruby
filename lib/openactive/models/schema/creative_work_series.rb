@@ -9,22 +9,22 @@ module OpenActive
         end
 
         # @return [DateTime,Date,nil]
-        define_property :start_date, as: "startDate", types: [
+        define_property :end_date, as: "endDate", types: [
           "DateTime",
           "Date",
+          "null",
+        ]
+
+        # @return [Date,DateTime,nil]
+        define_property :start_date, as: "startDate", types: [
+          "Date",
+          "DateTime",
           "null",
         ]
 
         # @return [String]
         define_property :issn, as: "issn", types: [
           "string",
-        ]
-
-        # @return [Date,DateTime,nil]
-        define_property :end_date, as: "endDate", types: [
-          "Date",
-          "DateTime",
-          "null",
         ]
       end
     end

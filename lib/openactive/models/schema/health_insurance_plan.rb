@@ -8,12 +8,6 @@ module OpenActive
           "schema:HealthInsurancePlan"
         end
 
-        # @return [String,URI]
-        define_property :uses_health_plan_id_standard, as: "usesHealthPlanIdStandard", types: [
-          "string",
-          "URI",
-        ]
-
         # @return [OpenActive::Models::Schema::ContactPoint,URI]
         define_property :contact_point, as: "contactPoint", types: [
           "OpenActive::Models::Schema::ContactPoint",
@@ -21,14 +15,8 @@ module OpenActive
         ]
 
         # @return [String]
-        define_property :health_plan_drug_tier, as: "healthPlanDrugTier", types: [
+        define_property :health_plan_drug_option, as: "healthPlanDrugOption", types: [
           "string",
-        ]
-
-        # @return [OpenActive::Models::Schema::HealthPlanNetwork,URI]
-        define_property :includes_health_plan_network, as: "includesHealthPlanNetwork", types: [
-          "OpenActive::Models::Schema::HealthPlanNetwork",
-          "URI",
         ]
 
         # @return [URI]
@@ -36,9 +24,9 @@ module OpenActive
           "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::HealthPlanFormulary,URI]
-        define_property :includes_health_plan_formulary, as: "includesHealthPlanFormulary", types: [
-          "OpenActive::Models::Schema::HealthPlanFormulary",
+        # @return [String,URI]
+        define_property :uses_health_plan_id_standard, as: "usesHealthPlanIdStandard", types: [
+          "string",
           "URI",
         ]
 
@@ -52,9 +40,21 @@ module OpenActive
           "string",
         ]
 
+        # @return [OpenActive::Models::Schema::HealthPlanNetwork,URI]
+        define_property :includes_health_plan_network, as: "includesHealthPlanNetwork", types: [
+          "OpenActive::Models::Schema::HealthPlanNetwork",
+          "URI",
+        ]
+
         # @return [String]
-        define_property :health_plan_drug_option, as: "healthPlanDrugOption", types: [
+        define_property :health_plan_drug_tier, as: "healthPlanDrugTier", types: [
           "string",
+        ]
+
+        # @return [OpenActive::Models::Schema::HealthPlanFormulary,URI]
+        define_property :includes_health_plan_formulary, as: "includesHealthPlanFormulary", types: [
+          "OpenActive::Models::Schema::HealthPlanFormulary",
+          "URI",
         ]
       end
     end

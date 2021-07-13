@@ -9,14 +9,19 @@ module OpenActive
         end
 
         # @return [String]
-        define_property :strength_unit, as: "strengthUnit", types: [
+        define_property :active_ingredient, as: "activeIngredient", types: [
           "string",
         ]
 
-        # @return [OpenActive::Models::Schema::MaximumDoseSchedule,URI]
-        define_property :maximum_intake, as: "maximumIntake", types: [
-          "OpenActive::Models::Schema::MaximumDoseSchedule",
+        # @return [OpenActive::Models::Schema::AdministrativeArea,URI]
+        define_property :available_in, as: "availableIn", types: [
+          "OpenActive::Models::Schema::AdministrativeArea",
           "URI",
+        ]
+
+        # @return [String]
+        define_property :strength_unit, as: "strengthUnit", types: [
+          "string",
         ]
 
         # @return [BigDecimal,nil]
@@ -25,14 +30,9 @@ module OpenActive
           "null",
         ]
 
-        # @return [String]
-        define_property :active_ingredient, as: "activeIngredient", types: [
-          "string",
-        ]
-
-        # @return [OpenActive::Models::Schema::AdministrativeArea,URI]
-        define_property :available_in, as: "availableIn", types: [
-          "OpenActive::Models::Schema::AdministrativeArea",
+        # @return [OpenActive::Models::Schema::MaximumDoseSchedule,URI]
+        define_property :maximum_intake, as: "maximumIntake", types: [
+          "OpenActive::Models::Schema::MaximumDoseSchedule",
           "URI",
         ]
       end

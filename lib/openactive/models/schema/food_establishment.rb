@@ -8,8 +8,10 @@ module OpenActive
           "schema:FoodEstablishment"
         end
 
-        # @return [String]
-        define_property :serves_cuisine, as: "servesCuisine", types: [
+        # @return [OpenActive::Models::Schema::Menu,URI,String]
+        define_property :menu, as: "menu", types: [
+          "OpenActive::Models::Schema::Menu",
+          "URI",
           "string",
         ]
 
@@ -19,25 +21,23 @@ module OpenActive
           "URI",
         ]
 
-        # @return [String,URI,OpenActive::Models::Schema::Menu]
-        define_property :menu, as: "menu", types: [
-          "string",
-          "URI",
-          "OpenActive::Models::Schema::Menu",
-        ]
-
-        # @return [URI,Boolean,String,nil]
+        # @return [String,Boolean,URI,nil]
         define_property :accepts_reservations, as: "acceptsReservations", types: [
-          "URI",
-          "bool",
           "string",
+          "bool",
+          "URI",
           "null",
         ]
 
-        # @return [URI,OpenActive::Models::Schema::Menu,String]
+        # @return [OpenActive::Models::Schema::Menu,URI,String]
         define_property :has_menu, as: "hasMenu", types: [
-          "URI",
           "OpenActive::Models::Schema::Menu",
+          "URI",
+          "string",
+        ]
+
+        # @return [String]
+        define_property :serves_cuisine, as: "servesCuisine", types: [
           "string",
         ]
       end

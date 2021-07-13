@@ -14,16 +14,16 @@ module OpenActive
           "null",
         ]
 
-        # @return [DateTime,nil]
-        define_property :coverage_start_time, as: "coverageStartTime", types: [
-          "DateTime",
-          "null",
-        ]
-
         # @return [OpenActive::Models::Schema::BlogPosting,URI]
         define_property :live_blog_update, as: "liveBlogUpdate", types: [
           "OpenActive::Models::Schema::BlogPosting",
           "URI",
+        ]
+
+        # @return [DateTime,nil]
+        define_property :coverage_start_time, as: "coverageStartTime", types: [
+          "DateTime",
+          "null",
         ]
       end
     end

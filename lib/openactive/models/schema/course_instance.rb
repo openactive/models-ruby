@@ -8,12 +8,6 @@ module OpenActive
           "schema:CourseInstance"
         end
 
-        # @return [String,URI]
-        define_property :course_mode, as: "courseMode", types: [
-          "string",
-          "URI",
-        ]
-
         # @return [String]
         define_property :course_workload, as: "courseWorkload", types: [
           "string",
@@ -23,6 +17,12 @@ module OpenActive
         define_property :instructor, as: "instructor", types: [
           "OpenActive::Models::Schema::Person",
           "URI",
+        ]
+
+        # @return [URI,String]
+        define_property :course_mode, as: "courseMode", types: [
+          "URI",
+          "string",
         ]
       end
     end

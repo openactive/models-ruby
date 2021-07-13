@@ -8,25 +8,16 @@ module OpenActive
           "schema:GeoCoordinates"
         end
 
-        # @return [String,OpenActive::Models::Schema::PostalAddress,URI]
-        define_property :address, as: "address", types: [
+        # @return [String]
+        define_property :postal_code, as: "postalCode", types: [
           "string",
-          "OpenActive::Models::Schema::PostalAddress",
-          "URI",
         ]
 
-        # @return [String,BigDecimal,nil]
+        # @return [BigDecimal,String,nil]
         define_property :longitude, as: "longitude", types: [
-          "string",
           "Number",
-          "null",
-        ]
-
-        # @return [String,OpenActive::Models::Schema::Country,URI]
-        define_property :address_country, as: "addressCountry", types: [
           "string",
-          "OpenActive::Models::Schema::Country",
-          "URI",
+          "null",
         ]
 
         # @return [String,BigDecimal,nil]
@@ -36,16 +27,25 @@ module OpenActive
           "null",
         ]
 
-        # @return [String]
-        define_property :postal_code, as: "postalCode", types: [
+        # @return [String,BigDecimal,nil]
+        define_property :elevation, as: "elevation", types: [
           "string",
+          "Number",
+          "null",
         ]
 
-        # @return [BigDecimal,String,nil]
-        define_property :elevation, as: "elevation", types: [
-          "Number",
+        # @return [OpenActive::Models::Schema::PostalAddress,String,URI]
+        define_property :address, as: "address", types: [
+          "OpenActive::Models::Schema::PostalAddress",
           "string",
-          "null",
+          "URI",
+        ]
+
+        # @return [String,OpenActive::Models::Schema::Country,URI]
+        define_property :address_country, as: "addressCountry", types: [
+          "string",
+          "OpenActive::Models::Schema::Country",
+          "URI",
         ]
       end
     end

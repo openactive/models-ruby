@@ -9,7 +9,7 @@ module OpenActive
         end
 
         # @return [String]
-        define_property :currencies_accepted, as: "currenciesAccepted", types: [
+        define_property :price_range, as: "priceRange", types: [
           "string",
         ]
 
@@ -18,20 +18,20 @@ module OpenActive
           "string",
         ]
 
-        # @return [String]
-        define_property :payment_accepted, as: "paymentAccepted", types: [
-          "string",
-        ]
-
-        # @return [String]
-        define_property :price_range, as: "priceRange", types: [
-          "string",
-        ]
-
         # @return [OpenActive::Models::Schema::Organization,URI]
         define_property :branch_of, as: "branchOf", types: [
           "OpenActive::Models::Schema::Organization",
           "URI",
+        ]
+
+        # @return [String]
+        define_property :currencies_accepted, as: "currenciesAccepted", types: [
+          "string",
+        ]
+
+        # @return [String]
+        define_property :payment_accepted, as: "paymentAccepted", types: [
+          "string",
         ]
       end
     end

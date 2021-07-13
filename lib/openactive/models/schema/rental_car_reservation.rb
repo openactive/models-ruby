@@ -9,6 +9,12 @@ module OpenActive
         end
 
         # @return [OpenActive::Models::Schema::Place,URI]
+        define_property :pickup_location, as: "pickupLocation", types: [
+          "OpenActive::Models::Schema::Place",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::Place,URI]
         define_property :dropoff_location, as: "dropoffLocation", types: [
           "OpenActive::Models::Schema::Place",
           "URI",
@@ -18,12 +24,6 @@ module OpenActive
         define_property :pickup_time, as: "pickupTime", types: [
           "DateTime",
           "null",
-        ]
-
-        # @return [OpenActive::Models::Schema::Place,URI]
-        define_property :pickup_location, as: "pickupLocation", types: [
-          "OpenActive::Models::Schema::Place",
-          "URI",
         ]
 
         # @return [DateTime,nil]

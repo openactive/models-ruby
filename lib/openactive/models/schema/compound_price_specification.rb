@@ -8,10 +8,10 @@ module OpenActive
           "schema:CompoundPriceSpecification"
         end
 
-        # @return [OpenActive::Enums::Schema::PriceTypeEnumeration,String,nil]
+        # @return [String,OpenActive::Enums::Schema::PriceTypeEnumeration,nil]
         define_property :price_type, as: "priceType", types: [
-          "OpenActive::Enums::Schema::PriceTypeEnumeration",
           "string",
+          "OpenActive::Enums::Schema::PriceTypeEnumeration",
           "null",
         ]
 

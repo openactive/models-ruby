@@ -8,10 +8,10 @@ module OpenActive
           "schema:House"
         end
 
-        # @return [BigDecimal,OpenActive::Models::Schema::QuantitativeValue,URI,nil]
+        # @return [OpenActive::Models::Schema::QuantitativeValue,BigDecimal,URI,nil]
         define_property :number_of_rooms, as: "numberOfRooms", types: [
-          "Number",
           "OpenActive::Models::Schema::QuantitativeValue",
+          "Number",
           "URI",
           "null",
         ]

@@ -8,15 +8,15 @@ module OpenActive
           "schema:HyperTocEntry"
         end
 
+        # @return [String]
+        define_property :utterances, as: "utterances", types: [
+          "string",
+        ]
+
         # @return [OpenActive::Models::Schema::HyperTocEntry,URI]
         define_property :toc_continuation, as: "tocContinuation", types: [
           "OpenActive::Models::Schema::HyperTocEntry",
           "URI",
-        ]
-
-        # @return [String]
-        define_property :utterances, as: "utterances", types: [
-          "string",
         ]
 
         # @return [OpenActive::Models::Schema::MediaObject,URI]

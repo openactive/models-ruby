@@ -8,9 +8,10 @@ module OpenActive
           "schema:SellAction"
         end
 
-        # @return [OpenActive::Models::Schema::Person,URI]
+        # @return [OpenActive::Models::Schema::Person,OpenActive::Models::Schema::Organization,URI]
         define_property :buyer, as: "buyer", types: [
           "OpenActive::Models::Schema::Person",
+          "OpenActive::Models::Schema::Organization",
           "URI",
         ]
 

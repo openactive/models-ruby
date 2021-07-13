@@ -8,10 +8,10 @@ module OpenActive
           "schema:DataFeed"
         end
 
-        # @return [OpenActive::Models::Schema::Thing,String,OpenActive::Models::Schema::DataFeedItem,URI]
+        # @return [String,OpenActive::Models::Schema::Thing,OpenActive::Models::Schema::DataFeedItem,URI]
         define_property :data_feed_element, as: "dataFeedElement", types: [
-          "OpenActive::Models::Schema::Thing",
           "string",
+          "OpenActive::Models::Schema::Thing",
           "OpenActive::Models::Schema::DataFeedItem",
           "URI",
         ]

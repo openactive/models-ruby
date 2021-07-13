@@ -9,13 +9,14 @@ module OpenActive
         end
 
         # @return [String]
-        define_property :associated_pathophysiology, as: "associatedPathophysiology", types: [
+        define_property :significance, as: "significance", types: [
           "string",
         ]
 
-        # @return [OpenActive::Models::Schema::MedicalTherapy,URI]
-        define_property :related_therapy, as: "relatedTherapy", types: [
-          "OpenActive::Models::Schema::MedicalTherapy",
+        # @return [OpenActive::Models::Schema::AnatomicalStructure,OpenActive::Models::Schema::AnatomicalSystem,URI]
+        define_property :related_anatomy, as: "relatedAnatomy", types: [
+          "OpenActive::Models::Schema::AnatomicalStructure",
+          "OpenActive::Models::Schema::AnatomicalSystem",
           "URI",
         ]
 
@@ -25,16 +26,15 @@ module OpenActive
           "URI",
         ]
 
-        # @return [String]
-        define_property :significance, as: "significance", types: [
-          "string",
+        # @return [OpenActive::Models::Schema::MedicalTherapy,URI]
+        define_property :related_therapy, as: "relatedTherapy", types: [
+          "OpenActive::Models::Schema::MedicalTherapy",
+          "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::AnatomicalSystem,OpenActive::Models::Schema::AnatomicalStructure,URI]
-        define_property :related_anatomy, as: "relatedAnatomy", types: [
-          "OpenActive::Models::Schema::AnatomicalSystem",
-          "OpenActive::Models::Schema::AnatomicalStructure",
-          "URI",
+        # @return [String]
+        define_property :associated_pathophysiology, as: "associatedPathophysiology", types: [
+          "string",
         ]
       end
     end

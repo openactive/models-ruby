@@ -8,10 +8,10 @@ module OpenActive
           "schema:Joint"
         end
 
-        # @return [OpenActive::Models::Schema::MedicalEntity,String,URI]
+        # @return [String,OpenActive::Models::Schema::MedicalEntity,URI]
         define_property :functional_class, as: "functionalClass", types: [
-          "OpenActive::Models::Schema::MedicalEntity",
           "string",
+          "OpenActive::Models::Schema::MedicalEntity",
           "URI",
         ]
 
