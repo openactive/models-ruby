@@ -8,41 +8,37 @@ module OpenActive
           "schema:ContactPoint"
         end
 
-        # @return [OpenActive::Models::Schema::Language,String,URI]
-        define_property :available_language, as: "availableLanguage", types: [
-          "OpenActive::Models::Schema::Language",
-          "string",
-          "URI",
-        ]
-
-        # @return [String,OpenActive::Models::Schema::Place,OpenActive::Models::Schema::AdministrativeArea,OpenActive::Models::Schema::GeoShape,URI]
+        # @return [String,OpenActive::Models::Schema::GeoShape,OpenActive::Models::Schema::Place,OpenActive::Models::Schema::AdministrativeArea,URI]
         define_property :area_served, as: "areaServed", types: [
           "string",
+          "OpenActive::Models::Schema::GeoShape",
           "OpenActive::Models::Schema::Place",
           "OpenActive::Models::Schema::AdministrativeArea",
-          "OpenActive::Models::Schema::GeoShape",
           "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::Product,String,URI]
-        define_property :product_supported, as: "productSupported", types: [
-          "OpenActive::Models::Schema::Product",
+        # @return [String]
+        define_property :contact_type, as: "contactType", types: [
           "string",
+        ]
+
+        # @return [String,OpenActive::Models::Schema::Language,URI]
+        define_property :available_language, as: "availableLanguage", types: [
+          "string",
+          "OpenActive::Models::Schema::Language",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::GeoShape,OpenActive::Models::Schema::Place,OpenActive::Models::Schema::AdministrativeArea,URI]
+        define_property :service_area, as: "serviceArea", types: [
+          "OpenActive::Models::Schema::GeoShape",
+          "OpenActive::Models::Schema::Place",
+          "OpenActive::Models::Schema::AdministrativeArea",
           "URI",
         ]
 
         # @return [String]
         define_property :email, as: "email", types: [
-          "string",
-        ]
-
-        # @return [String]
-        define_property :telephone, as: "telephone", types: [
-          "string",
-        ]
-
-        # @return [String]
-        define_property :contact_type, as: "contactType", types: [
           "string",
         ]
 
@@ -52,16 +48,8 @@ module OpenActive
           "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::Place,OpenActive::Models::Schema::AdministrativeArea,OpenActive::Models::Schema::GeoShape,URI]
-        define_property :service_area, as: "serviceArea", types: [
-          "OpenActive::Models::Schema::Place",
-          "OpenActive::Models::Schema::AdministrativeArea",
-          "OpenActive::Models::Schema::GeoShape",
-          "URI",
-        ]
-
         # @return [String]
-        define_property :fax_number, as: "faxNumber", types: [
+        define_property :telephone, as: "telephone", types: [
           "string",
         ]
 
@@ -69,6 +57,18 @@ module OpenActive
         define_property :contact_option, as: "contactOption", types: [
           "OpenActive::Enums::Schema::ContactPointOption",
           "null",
+        ]
+
+        # @return [String]
+        define_property :fax_number, as: "faxNumber", types: [
+          "string",
+        ]
+
+        # @return [String,OpenActive::Models::Schema::Product,URI]
+        define_property :product_supported, as: "productSupported", types: [
+          "string",
+          "OpenActive::Models::Schema::Product",
+          "URI",
         ]
       end
     end

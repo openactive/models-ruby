@@ -8,11 +8,25 @@ module OpenActive
           "schema:HowTo"
         end
 
-        # @return [OpenActive::Models::Schema::HowToSupply,String,URI]
-        define_property :supply, as: "supply", types: [
-          "OpenActive::Models::Schema::HowToSupply",
+        # @return [String,OpenActive::Models::Schema::QuantitativeValue,URI]
+        define_property :yield, as: "yield", types: [
+          "string",
+          "OpenActive::Models::Schema::QuantitativeValue",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::MonetaryAmount,String,URI]
+        define_property :estimated_cost, as: "estimatedCost", types: [
+          "OpenActive::Models::Schema::MonetaryAmount",
           "string",
           "URI",
+        ]
+
+        # @return [ActiveSupport::Duration,URI,nil]
+        define_property :prep_time, as: "prepTime", types: [
+          "DateInterval",
+          "URI",
+          "null",
         ]
 
         # @return [OpenActive::Models::Schema::HowToStep,String,OpenActive::Models::Schema::CreativeWork,OpenActive::Models::Schema::HowToSection,URI]
@@ -25,39 +39,17 @@ module OpenActive
         ]
 
         # @return [ActiveSupport::Duration,URI,nil]
-        define_property :perform_time, as: "performTime", types: [
-          "DateInterval",
-          "URI",
-          "null",
-        ]
-
-        # @return [String,OpenActive::Models::Schema::MonetaryAmount,URI]
-        define_property :estimated_cost, as: "estimatedCost", types: [
-          "string",
-          "OpenActive::Models::Schema::MonetaryAmount",
-          "URI",
-        ]
-
-        # @return [String,OpenActive::Models::Schema::QuantitativeValue,URI]
-        define_property :yield, as: "yield", types: [
-          "string",
-          "OpenActive::Models::Schema::QuantitativeValue",
-          "URI",
-        ]
-
-        # @return [ActiveSupport::Duration,URI,nil]
         define_property :total_time, as: "totalTime", types: [
           "DateInterval",
           "URI",
           "null",
         ]
 
-        # @return [OpenActive::Models::Schema::CreativeWork,OpenActive::Models::Schema::ItemList,String,URI]
-        define_property :steps, as: "steps", types: [
-          "OpenActive::Models::Schema::CreativeWork",
-          "OpenActive::Models::Schema::ItemList",
-          "string",
+        # @return [ActiveSupport::Duration,URI,nil]
+        define_property :perform_time, as: "performTime", types: [
+          "DateInterval",
           "URI",
+          "null",
         ]
 
         # @return [String,OpenActive::Models::Schema::HowToTool,URI]
@@ -67,11 +59,19 @@ module OpenActive
           "URI",
         ]
 
-        # @return [ActiveSupport::Duration,URI,nil]
-        define_property :prep_time, as: "prepTime", types: [
-          "DateInterval",
+        # @return [String,OpenActive::Models::Schema::ItemList,OpenActive::Models::Schema::CreativeWork,URI]
+        define_property :steps, as: "steps", types: [
+          "string",
+          "OpenActive::Models::Schema::ItemList",
+          "OpenActive::Models::Schema::CreativeWork",
           "URI",
-          "null",
+        ]
+
+        # @return [String,OpenActive::Models::Schema::HowToSupply,URI]
+        define_property :supply, as: "supply", types: [
+          "string",
+          "OpenActive::Models::Schema::HowToSupply",
+          "URI",
         ]
       end
     end

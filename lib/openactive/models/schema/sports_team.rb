@@ -8,12 +8,6 @@ module OpenActive
           "schema:SportsTeam"
         end
 
-        # @return [OpenActive::Models::Schema::Person,URI]
-        define_property :coach, as: "coach", types: [
-          "OpenActive::Models::Schema::Person",
-          "URI",
-        ]
-
         # @return [OpenActive::Enums::Schema::GenderType,String,nil]
         define_property :gender, as: "gender", types: [
           "OpenActive::Enums::Schema::GenderType",
@@ -23,6 +17,12 @@ module OpenActive
 
         # @return [OpenActive::Models::Schema::Person,URI]
         define_property :athlete, as: "athlete", types: [
+          "OpenActive::Models::Schema::Person",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::Person,URI]
+        define_property :coach, as: "coach", types: [
           "OpenActive::Models::Schema::Person",
           "URI",
         ]

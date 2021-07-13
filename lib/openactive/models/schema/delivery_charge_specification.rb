@@ -8,20 +8,20 @@ module OpenActive
           "schema:DeliveryChargeSpecification"
         end
 
-        # @return [String,OpenActive::Models::Schema::GeoShape,OpenActive::Models::Schema::Place,URI]
-        define_property :eligible_region, as: "eligibleRegion", types: [
+        # @return [String,OpenActive::Models::Schema::GeoShape,OpenActive::Models::Schema::Place,OpenActive::Models::Schema::AdministrativeArea,URI]
+        define_property :area_served, as: "areaServed", types: [
           "string",
           "OpenActive::Models::Schema::GeoShape",
           "OpenActive::Models::Schema::Place",
+          "OpenActive::Models::Schema::AdministrativeArea",
           "URI",
         ]
 
-        # @return [String,OpenActive::Models::Schema::Place,OpenActive::Models::Schema::AdministrativeArea,OpenActive::Models::Schema::GeoShape,URI]
-        define_property :area_served, as: "areaServed", types: [
-          "string",
-          "OpenActive::Models::Schema::Place",
-          "OpenActive::Models::Schema::AdministrativeArea",
+        # @return [OpenActive::Models::Schema::GeoShape,OpenActive::Models::Schema::Place,String,URI]
+        define_property :eligible_region, as: "eligibleRegion", types: [
           "OpenActive::Models::Schema::GeoShape",
+          "OpenActive::Models::Schema::Place",
+          "string",
           "URI",
         ]
 
@@ -31,11 +31,11 @@ module OpenActive
           "null",
         ]
 
-        # @return [OpenActive::Models::Schema::GeoShape,String,OpenActive::Models::Schema::Place,URI]
+        # @return [OpenActive::Models::Schema::Place,OpenActive::Models::Schema::GeoShape,String,URI]
         define_property :ineligible_region, as: "ineligibleRegion", types: [
+          "OpenActive::Models::Schema::Place",
           "OpenActive::Models::Schema::GeoShape",
           "string",
-          "OpenActive::Models::Schema::Place",
           "URI",
         ]
       end

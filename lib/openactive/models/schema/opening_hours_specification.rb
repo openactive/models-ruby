@@ -8,6 +8,12 @@ module OpenActive
           "schema:OpeningHoursSpecification"
         end
 
+        # @return [Time,nil]
+        define_property :opens, as: "opens", types: [
+          "Time",
+          "null",
+        ]
+
         # @return [DateTime,Date,nil]
         define_property :valid_from, as: "validFrom", types: [
           "DateTime",
@@ -15,15 +21,10 @@ module OpenActive
           "null",
         ]
 
-        # @return [Time,nil]
-        define_property :opens, as: "opens", types: [
-          "Time",
-          "null",
-        ]
-
-        # @return [OpenActive::Enums::Schema::DayOfWeek,nil]
-        define_property :day_of_week, as: "dayOfWeek", types: [
-          "OpenActive::Enums::Schema::DayOfWeek",
+        # @return [Date,DateTime,nil]
+        define_property :valid_through, as: "validThrough", types: [
+          "Date",
+          "DateTime",
           "null",
         ]
 
@@ -33,10 +34,9 @@ module OpenActive
           "null",
         ]
 
-        # @return [DateTime,Date,nil]
-        define_property :valid_through, as: "validThrough", types: [
-          "DateTime",
-          "Date",
+        # @return [OpenActive::Enums::Schema::DayOfWeek,nil]
+        define_property :day_of_week, as: "dayOfWeek", types: [
+          "OpenActive::Enums::Schema::DayOfWeek",
           "null",
         ]
       end

@@ -8,12 +8,6 @@ module OpenActive
           "schema:Article"
         end
 
-        # @return [OpenActive::Models::Schema::SpeakableSpecification,URI]
-        define_property :speakable, as: "speakable", types: [
-          "OpenActive::Models::Schema::SpeakableSpecification",
-          "URI",
-        ]
-
         # @return [OpenActive::Models::Schema::CreativeWork,String,URI]
         define_property :backstory, as: "backstory", types: [
           "OpenActive::Models::Schema::CreativeWork",
@@ -22,22 +16,14 @@ module OpenActive
         ]
 
         # @return [String]
-        define_property :pagination, as: "pagination", types: [
+        define_property :article_section, as: "articleSection", types: [
           "string",
         ]
 
-        # @return [String,int,nil]
-        define_property :page_start, as: "pageStart", types: [
-          "string",
-          "int",
-          "null",
-        ]
-
-        # @return [String,int,nil]
-        define_property :page_end, as: "pageEnd", types: [
-          "string",
-          "int",
-          "null",
+        # @return [URI,OpenActive::Models::Schema::SpeakableSpecification]
+        define_property :speakable, as: "speakable", types: [
+          "URI",
+          "OpenActive::Models::Schema::SpeakableSpecification",
         ]
 
         # @return [int,nil]
@@ -47,13 +33,27 @@ module OpenActive
         ]
 
         # @return [String]
-        define_property :article_section, as: "articleSection", types: [
+        define_property :article_body, as: "articleBody", types: [
           "string",
         ]
 
-        # @return [String]
-        define_property :article_body, as: "articleBody", types: [
+        # @return [int,String,nil]
+        define_property :page_start, as: "pageStart", types: [
+          "int",
           "string",
+          "null",
+        ]
+
+        # @return [String]
+        define_property :pagination, as: "pagination", types: [
+          "string",
+        ]
+
+        # @return [int,String,nil]
+        define_property :page_end, as: "pageEnd", types: [
+          "int",
+          "string",
+          "null",
         ]
       end
     end

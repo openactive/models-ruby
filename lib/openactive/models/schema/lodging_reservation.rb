@@ -8,18 +8,9 @@ module OpenActive
           "schema:LodgingReservation"
         end
 
-        # @return [DateTime,Time,nil]
-        define_property :checkin_time, as: "checkinTime", types: [
-          "DateTime",
-          "Time",
-          "null",
-        ]
-
-        # @return [OpenActive::Enums::Schema::QualitativeValue,String,nil]
-        define_property :lodging_unit_type, as: "lodgingUnitType", types: [
-          "OpenActive::Enums::Schema::QualitativeValue",
+        # @return [String]
+        define_property :lodging_unit_description, as: "lodgingUnitDescription", types: [
           "string",
-          "null",
         ]
 
         # @return [int,OpenActive::Models::Schema::QuantitativeValue,URI,nil]
@@ -30,15 +21,17 @@ module OpenActive
           "null",
         ]
 
-        # @return [String]
-        define_property :lodging_unit_description, as: "lodgingUnitDescription", types: [
-          "string",
+        # @return [DateTime,Time,nil]
+        define_property :checkin_time, as: "checkinTime", types: [
+          "DateTime",
+          "Time",
+          "null",
         ]
 
-        # @return [int,OpenActive::Models::Schema::QuantitativeValue,URI,nil]
+        # @return [OpenActive::Models::Schema::QuantitativeValue,int,URI,nil]
         define_property :num_adults, as: "numAdults", types: [
-          "int",
           "OpenActive::Models::Schema::QuantitativeValue",
+          "int",
           "URI",
           "null",
         ]
@@ -47,6 +40,13 @@ module OpenActive
         define_property :checkout_time, as: "checkoutTime", types: [
           "DateTime",
           "Time",
+          "null",
+        ]
+
+        # @return [OpenActive::Enums::Schema::QualitativeValue,String,nil]
+        define_property :lodging_unit_type, as: "lodgingUnitType", types: [
+          "OpenActive::Enums::Schema::QualitativeValue",
+          "string",
           "null",
         ]
       end

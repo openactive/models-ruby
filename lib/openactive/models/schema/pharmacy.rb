@@ -1,7 +1,7 @@
 module OpenActive
   module Models
     module Schema
-      class Pharmacy < ::OpenActive::Models::Schema::MedicalOrganization
+      class Pharmacy < ::OpenActive::Models::Schema::MedicalBusiness
         # @!attribute type
         # @return [String]
         def type

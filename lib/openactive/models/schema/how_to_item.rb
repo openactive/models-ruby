@@ -8,11 +8,11 @@ module OpenActive
           "schema:HowToItem"
         end
 
-        # @return [String,OpenActive::Models::Schema::QuantitativeValue,BigDecimal,URI,nil]
+        # @return [BigDecimal,String,OpenActive::Models::Schema::QuantitativeValue,URI,nil]
         define_property :required_quantity, as: "requiredQuantity", types: [
+          "Number",
           "string",
           "OpenActive::Models::Schema::QuantitativeValue",
-          "Number",
           "URI",
           "null",
         ]

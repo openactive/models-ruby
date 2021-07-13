@@ -1,18 +1,18 @@
 module OpenActive
   module Models
     module Schema
-      class HowToSection < ::OpenActive::Models::Schema::ListItem
+      class HowToSection < ::OpenActive::Models::Schema::ItemList
         # @!attribute type
         # @return [String]
         def type
           "schema:HowToSection"
         end
 
-        # @return [OpenActive::Models::Schema::CreativeWork,OpenActive::Models::Schema::ItemList,String,URI]
+        # @return [String,OpenActive::Models::Schema::ItemList,OpenActive::Models::Schema::CreativeWork,URI]
         define_property :steps, as: "steps", types: [
-          "OpenActive::Models::Schema::CreativeWork",
-          "OpenActive::Models::Schema::ItemList",
           "string",
+          "OpenActive::Models::Schema::ItemList",
+          "OpenActive::Models::Schema::CreativeWork",
           "URI",
         ]
       end

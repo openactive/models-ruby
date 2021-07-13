@@ -9,12 +9,12 @@ module OpenActive
         end
 
         # @return [String]
-        define_property :programming_model, as: "programmingModel", types: [
+        define_property :assembly_version, as: "assemblyVersion", types: [
           "string",
         ]
 
         # @return [String]
-        define_property :target_platform, as: "targetPlatform", types: [
+        define_property :programming_model, as: "programmingModel", types: [
           "string",
         ]
 
@@ -29,7 +29,7 @@ module OpenActive
         ]
 
         # @return [String]
-        define_property :assembly_version, as: "assemblyVersion", types: [
+        define_property :target_platform, as: "targetPlatform", types: [
           "string",
         ]
       end

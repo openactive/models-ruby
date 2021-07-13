@@ -9,14 +9,8 @@ module OpenActive
         end
 
         # @return [OpenActive::Models::Schema::QuantitativeValue,URI]
-        define_property :handling_time, as: "handlingTime", types: [
+        define_property :transit_time, as: "transitTime", types: [
           "OpenActive::Models::Schema::QuantitativeValue",
-          "URI",
-        ]
-
-        # @return [OpenActive::Models::Schema::OpeningHoursSpecification,URI]
-        define_property :business_days, as: "businessDays", types: [
-          "OpenActive::Models::Schema::OpeningHoursSpecification",
           "URI",
         ]
 
@@ -27,8 +21,14 @@ module OpenActive
         ]
 
         # @return [OpenActive::Models::Schema::QuantitativeValue,URI]
-        define_property :transit_time, as: "transitTime", types: [
+        define_property :handling_time, as: "handlingTime", types: [
           "OpenActive::Models::Schema::QuantitativeValue",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::OpeningHoursSpecification,URI]
+        define_property :business_days, as: "businessDays", types: [
+          "OpenActive::Models::Schema::OpeningHoursSpecification",
           "URI",
         ]
       end

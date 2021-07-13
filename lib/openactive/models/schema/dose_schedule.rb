@@ -9,7 +9,7 @@ module OpenActive
         end
 
         # @return [String]
-        define_property :frequency, as: "frequency", types: [
+        define_property :target_population, as: "targetPopulation", types: [
           "string",
         ]
 
@@ -26,7 +26,7 @@ module OpenActive
         ]
 
         # @return [String]
-        define_property :target_population, as: "targetPopulation", types: [
+        define_property :frequency, as: "frequency", types: [
           "string",
         ]
       end

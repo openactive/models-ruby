@@ -8,16 +8,16 @@ module OpenActive
           "schema:GovernmentService"
         end
 
-        # @return [OpenActive::Models::Schema::Organization,URI]
-        define_property :service_operator, as: "serviceOperator", types: [
-          "OpenActive::Models::Schema::Organization",
-          "URI",
-        ]
-
         # @return [OpenActive::Models::Schema::AdministrativeArea,String,URI]
         define_property :jurisdiction, as: "jurisdiction", types: [
           "OpenActive::Models::Schema::AdministrativeArea",
           "string",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::Organization,URI]
+        define_property :service_operator, as: "serviceOperator", types: [
+          "OpenActive::Models::Schema::Organization",
           "URI",
         ]
       end

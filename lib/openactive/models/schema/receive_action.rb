@@ -8,11 +8,11 @@ module OpenActive
           "schema:ReceiveAction"
         end
 
-        # @return [OpenActive::Models::Schema::Person,OpenActive::Models::Schema::Audience,OpenActive::Models::Schema::Organization,URI]
+        # @return [OpenActive::Models::Schema::Organization,OpenActive::Models::Schema::Audience,OpenActive::Models::Schema::Person,URI]
         define_property :sender, as: "sender", types: [
-          "OpenActive::Models::Schema::Person",
-          "OpenActive::Models::Schema::Audience",
           "OpenActive::Models::Schema::Organization",
+          "OpenActive::Models::Schema::Audience",
+          "OpenActive::Models::Schema::Person",
           "URI",
         ]
 

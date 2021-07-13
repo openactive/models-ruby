@@ -8,6 +8,20 @@ module OpenActive
           "schema:Rating"
         end
 
+        # @return [BigDecimal,String,nil]
+        define_property :worst_rating, as: "worstRating", types: [
+          "Number",
+          "string",
+          "null",
+        ]
+
+        # @return [OpenActive::Models::Schema::Person,OpenActive::Models::Schema::Organization,URI]
+        define_property :author, as: "author", types: [
+          "OpenActive::Models::Schema::Person",
+          "OpenActive::Models::Schema::Organization",
+          "URI",
+        ]
+
         # @return [String]
         define_property :review_aspect, as: "reviewAspect", types: [
           "string",
@@ -20,29 +34,15 @@ module OpenActive
           "null",
         ]
 
-        # @return [String,BigDecimal,nil]
-        define_property :worst_rating, as: "worstRating", types: [
-          "string",
-          "Number",
-          "null",
-        ]
-
-        # @return [OpenActive::Models::Schema::Person,OpenActive::Models::Schema::Organization,URI]
-        define_property :author, as: "author", types: [
-          "OpenActive::Models::Schema::Person",
-          "OpenActive::Models::Schema::Organization",
-          "URI",
-        ]
-
         # @return [String]
         define_property :rating_explanation, as: "ratingExplanation", types: [
           "string",
         ]
 
-        # @return [String,BigDecimal,nil]
+        # @return [BigDecimal,String,nil]
         define_property :best_rating, as: "bestRating", types: [
-          "string",
           "Number",
+          "string",
           "null",
         ]
       end

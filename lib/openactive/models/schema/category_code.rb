@@ -8,15 +8,15 @@ module OpenActive
           "schema:CategoryCode"
         end
 
+        # @return [String]
+        define_property :code_value, as: "codeValue", types: [
+          "string",
+        ]
+
         # @return [URI,OpenActive::Models::Schema::CategoryCodeSet]
         define_property :in_code_set, as: "inCodeSet", types: [
           "URI",
           "OpenActive::Models::Schema::CategoryCodeSet",
-        ]
-
-        # @return [String]
-        define_property :code_value, as: "codeValue", types: [
-          "string",
         ]
       end
     end

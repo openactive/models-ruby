@@ -8,19 +8,10 @@ module OpenActive
           "schema:MedicalStudy"
         end
 
-        # @return [OpenActive::Models::Schema::MedicalCondition,URI]
-        define_property :health_condition, as: "healthCondition", types: [
-          "OpenActive::Models::Schema::MedicalCondition",
+        # @return [OpenActive::Models::Schema::AdministrativeArea,URI]
+        define_property :study_location, as: "studyLocation", types: [
+          "OpenActive::Models::Schema::AdministrativeArea",
           "URI",
-        ]
-
-        # @return [OpenActive::Enums::Schema::EventStatusType,String,OpenActive::Models::Schema::MedicalStudyStatus,URI,nil]
-        define_property :status, as: "status", types: [
-          "OpenActive::Enums::Schema::EventStatusType",
-          "string",
-          "OpenActive::Models::Schema::MedicalStudyStatus",
-          "URI",
-          "null",
         ]
 
         # @return [OpenActive::Models::Schema::MedicalEntity,URI]
@@ -29,16 +20,25 @@ module OpenActive
           "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::Person,OpenActive::Models::Schema::Organization,URI]
+        # @return [String,OpenActive::Models::Schema::MedicalStudyStatus,OpenActive::Enums::Schema::EventStatusType,URI,nil]
+        define_property :status, as: "status", types: [
+          "string",
+          "OpenActive::Models::Schema::MedicalStudyStatus",
+          "OpenActive::Enums::Schema::EventStatusType",
+          "URI",
+          "null",
+        ]
+
+        # @return [OpenActive::Models::Schema::Organization,OpenActive::Models::Schema::Person,URI]
         define_property :sponsor, as: "sponsor", types: [
-          "OpenActive::Models::Schema::Person",
           "OpenActive::Models::Schema::Organization",
+          "OpenActive::Models::Schema::Person",
           "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::AdministrativeArea,URI]
-        define_property :study_location, as: "studyLocation", types: [
-          "OpenActive::Models::Schema::AdministrativeArea",
+        # @return [OpenActive::Models::Schema::MedicalCondition,URI]
+        define_property :health_condition, as: "healthCondition", types: [
+          "OpenActive::Models::Schema::MedicalCondition",
           "URI",
         ]
       end

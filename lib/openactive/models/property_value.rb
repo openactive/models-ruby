@@ -24,9 +24,10 @@ module OpenActive
         "URI",
       ]
 
-      # @return [Boolean,String,nil]
+      # @return [Boolean,URI,String,nil]
       define_property :value, as: "value", types: [
         "bool",
+        "URI",
         "string",
         "null",
       ]

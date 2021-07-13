@@ -1,34 +1,27 @@
 module OpenActive
   module Models
     module Schema
-      class HowToDirection < ::OpenActive::Models::Schema::ListItem
+      class HowToDirection < ::OpenActive::Models::Schema::CreativeWork
         # @!attribute type
         # @return [String]
         def type
           "schema:HowToDirection"
         end
 
-        # @return [OpenActive::Models::Schema::HowToSupply,String,URI]
-        define_property :supply, as: "supply", types: [
-          "OpenActive::Models::Schema::HowToSupply",
-          "string",
+        # @return [URI,OpenActive::Models::Schema::MediaObject]
+        define_property :during_media, as: "duringMedia", types: [
           "URI",
-        ]
-
-        # @return [OpenActive::Models::Schema::MediaObject,URI]
-        define_property :after_media, as: "afterMedia", types: [
           "OpenActive::Models::Schema::MediaObject",
-          "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::MediaObject,URI]
+        # @return [URI,OpenActive::Models::Schema::MediaObject]
         define_property :before_media, as: "beforeMedia", types: [
-          "OpenActive::Models::Schema::MediaObject",
           "URI",
+          "OpenActive::Models::Schema::MediaObject",
         ]
 
         # @return [ActiveSupport::Duration,URI,nil]
-        define_property :perform_time, as: "performTime", types: [
+        define_property :prep_time, as: "prepTime", types: [
           "DateInterval",
           "URI",
           "null",
@@ -41,6 +34,13 @@ module OpenActive
           "null",
         ]
 
+        # @return [ActiveSupport::Duration,URI,nil]
+        define_property :perform_time, as: "performTime", types: [
+          "DateInterval",
+          "URI",
+          "null",
+        ]
+
         # @return [String,OpenActive::Models::Schema::HowToTool,URI]
         define_property :tool, as: "tool", types: [
           "string",
@@ -48,17 +48,17 @@ module OpenActive
           "URI",
         ]
 
-        # @return [ActiveSupport::Duration,URI,nil]
-        define_property :prep_time, as: "prepTime", types: [
-          "DateInterval",
+        # @return [OpenActive::Models::Schema::MediaObject,URI]
+        define_property :after_media, as: "afterMedia", types: [
+          "OpenActive::Models::Schema::MediaObject",
           "URI",
-          "null",
         ]
 
-        # @return [URI,OpenActive::Models::Schema::MediaObject]
-        define_property :during_media, as: "duringMedia", types: [
+        # @return [String,OpenActive::Models::Schema::HowToSupply,URI]
+        define_property :supply, as: "supply", types: [
+          "string",
+          "OpenActive::Models::Schema::HowToSupply",
           "URI",
-          "OpenActive::Models::Schema::MediaObject",
         ]
       end
     end

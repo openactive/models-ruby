@@ -14,15 +14,15 @@ module OpenActive
           "URI",
         ]
 
+        # @return [String]
+        define_property :muscle_action, as: "muscleAction", types: [
+          "string",
+        ]
+
         # @return [OpenActive::Models::Schema::Muscle,URI]
         define_property :antagonist, as: "antagonist", types: [
           "OpenActive::Models::Schema::Muscle",
           "URI",
-        ]
-
-        # @return [String]
-        define_property :muscle_action, as: "muscleAction", types: [
-          "string",
         ]
 
         # @return [OpenActive::Models::Schema::Vessel,URI]

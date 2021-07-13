@@ -8,14 +8,26 @@ module OpenActive
           "schema:ExercisePlan"
         end
 
-        # @return [String]
-        define_property :exercise_type, as: "exerciseType", types: [
-          "string",
+        # @return [OpenActive::Models::Schema::QuantitativeValue,BigDecimal,URI,nil]
+        define_property :repetitions, as: "repetitions", types: [
+          "OpenActive::Models::Schema::QuantitativeValue",
+          "Number",
+          "URI",
+          "null",
         ]
 
-        # @return [String]
-        define_property :additional_variable, as: "additionalVariable", types: [
+        # @return [OpenActive::Models::Schema::QuantitativeValue,String,URI]
+        define_property :rest_periods, as: "restPeriods", types: [
+          "OpenActive::Models::Schema::QuantitativeValue",
           "string",
+          "URI",
+        ]
+
+        # @return [String,OpenActive::Models::Schema::QuantitativeValue,URI]
+        define_property :intensity, as: "intensity", types: [
+          "string",
+          "OpenActive::Models::Schema::QuantitativeValue",
+          "URI",
         ]
 
         # @return [OpenActive::Models::Schema::Energy,OpenActive::Models::Schema::QuantitativeValue,URI]
@@ -25,26 +37,14 @@ module OpenActive
           "URI",
         ]
 
-        # @return [String,OpenActive::Models::Schema::QuantitativeValue,URI]
-        define_property :activity_frequency, as: "activityFrequency", types: [
+        # @return [String]
+        define_property :additional_variable, as: "additionalVariable", types: [
           "string",
-          "OpenActive::Models::Schema::QuantitativeValue",
-          "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::QuantitativeValue,String,URI]
-        define_property :intensity, as: "intensity", types: [
-          "OpenActive::Models::Schema::QuantitativeValue",
+        # @return [String]
+        define_property :exercise_type, as: "exerciseType", types: [
           "string",
-          "URI",
-        ]
-
-        # @return [BigDecimal,OpenActive::Models::Schema::QuantitativeValue,URI,nil]
-        define_property :repetitions, as: "repetitions", types: [
-          "Number",
-          "OpenActive::Models::Schema::QuantitativeValue",
-          "URI",
-          "null",
         ]
 
         # @return [OpenActive::Models::Schema::QuantitativeValue,ActiveSupport::Duration,URI,nil]
@@ -56,7 +56,7 @@ module OpenActive
         ]
 
         # @return [String,OpenActive::Models::Schema::QuantitativeValue,URI]
-        define_property :rest_periods, as: "restPeriods", types: [
+        define_property :activity_frequency, as: "activityFrequency", types: [
           "string",
           "OpenActive::Models::Schema::QuantitativeValue",
           "URI",

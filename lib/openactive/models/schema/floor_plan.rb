@@ -8,11 +8,17 @@ module OpenActive
           "schema:FloorPlan"
         end
 
-        # @return [OpenActive::Models::Schema::QuantitativeValue,BigDecimal,URI,nil]
+        # @return [BigDecimal,OpenActive::Models::Schema::QuantitativeValue,URI,nil]
         define_property :number_of_bedrooms, as: "numberOfBedrooms", types: [
-          "OpenActive::Models::Schema::QuantitativeValue",
           "Number",
+          "OpenActive::Models::Schema::QuantitativeValue",
           "URI",
+          "null",
+        ]
+
+        # @return [int,nil]
+        define_property :number_of_bathrooms_total, as: "numberOfBathroomsTotal", types: [
+          "int",
           "null",
         ]
 
@@ -22,36 +28,10 @@ module OpenActive
           "null",
         ]
 
-        # @return [OpenActive::Models::Schema::QuantitativeValue,URI]
-        define_property :number_of_available_accommodation_units, as: "numberOfAvailableAccommodationUnits", types: [
-          "OpenActive::Models::Schema::QuantitativeValue",
-          "URI",
-        ]
-
-        # @return [OpenActive::Models::Schema::Accommodation,URI]
-        define_property :is_plan_for_apartment, as: "isPlanForApartment", types: [
-          "OpenActive::Models::Schema::Accommodation",
-          "URI",
-        ]
-
-        # @return [OpenActive::Models::Schema::ImageObject,URI]
+        # @return [URI,OpenActive::Models::Schema::ImageObject]
         define_property :layout_image, as: "layoutImage", types: [
+          "URI",
           "OpenActive::Models::Schema::ImageObject",
-          "URI",
-        ]
-
-        # @return [OpenActive::Models::Schema::QuantitativeValue,URI]
-        define_property :floor_size, as: "floorSize", types: [
-          "OpenActive::Models::Schema::QuantitativeValue",
-          "URI",
-        ]
-
-        # @return [BigDecimal,OpenActive::Models::Schema::QuantitativeValue,URI,nil]
-        define_property :number_of_rooms, as: "numberOfRooms", types: [
-          "Number",
-          "OpenActive::Models::Schema::QuantitativeValue",
-          "URI",
-          "null",
         ]
 
         # @return [OpenActive::Models::Schema::LocationFeatureSpecification,URI]
@@ -60,10 +40,18 @@ module OpenActive
           "URI",
         ]
 
-        # @return [int,nil]
-        define_property :number_of_bathrooms_total, as: "numberOfBathroomsTotal", types: [
-          "int",
+        # @return [OpenActive::Models::Schema::QuantitativeValue,BigDecimal,URI,nil]
+        define_property :number_of_rooms, as: "numberOfRooms", types: [
+          "OpenActive::Models::Schema::QuantitativeValue",
+          "Number",
+          "URI",
           "null",
+        ]
+
+        # @return [OpenActive::Models::Schema::QuantitativeValue,URI]
+        define_property :number_of_accommodation_units, as: "numberOfAccommodationUnits", types: [
+          "OpenActive::Models::Schema::QuantitativeValue",
+          "URI",
         ]
 
         # @return [String,Boolean,nil]
@@ -74,8 +62,14 @@ module OpenActive
         ]
 
         # @return [OpenActive::Models::Schema::QuantitativeValue,URI]
-        define_property :number_of_accommodation_units, as: "numberOfAccommodationUnits", types: [
+        define_property :floor_size, as: "floorSize", types: [
           "OpenActive::Models::Schema::QuantitativeValue",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::Accommodation,URI]
+        define_property :is_plan_for_apartment, as: "isPlanForApartment", types: [
+          "OpenActive::Models::Schema::Accommodation",
           "URI",
         ]
 
@@ -83,6 +77,12 @@ module OpenActive
         define_property :number_of_full_bathrooms, as: "numberOfFullBathrooms", types: [
           "Number",
           "null",
+        ]
+
+        # @return [OpenActive::Models::Schema::QuantitativeValue,URI]
+        define_property :number_of_available_accommodation_units, as: "numberOfAvailableAccommodationUnits", types: [
+          "OpenActive::Models::Schema::QuantitativeValue",
+          "URI",
         ]
       end
     end

@@ -15,30 +15,14 @@ module OpenActive
           "URI",
         ]
 
-        # @return [String]
-        define_property :video_format, as: "videoFormat", types: [
-          "string",
-        ]
-
-        # @return [OpenActive::Models::Schema::BroadcastService,URI]
-        define_property :parent_service, as: "parentService", types: [
-          "OpenActive::Models::Schema::BroadcastService",
-          "URI",
-        ]
-
-        # @return [String]
-        define_property :broadcast_display_name, as: "broadcastDisplayName", types: [
-          "string",
-        ]
-
         # @return [OpenActive::Models::Schema::Organization,URI]
-        define_property :broadcast_affiliate_of, as: "broadcastAffiliateOf", types: [
+        define_property :broadcaster, as: "broadcaster", types: [
           "OpenActive::Models::Schema::Organization",
           "URI",
         ]
 
         # @return [String]
-        define_property :broadcast_timezone, as: "broadcastTimezone", types: [
+        define_property :video_format, as: "videoFormat", types: [
           "string",
         ]
 
@@ -48,8 +32,24 @@ module OpenActive
           "URI",
         ]
 
+        # @return [String]
+        define_property :broadcast_display_name, as: "broadcastDisplayName", types: [
+          "string",
+        ]
+
+        # @return [String]
+        define_property :broadcast_timezone, as: "broadcastTimezone", types: [
+          "string",
+        ]
+
+        # @return [OpenActive::Models::Schema::BroadcastChannel,URI]
+        define_property :has_broadcast_channel, as: "hasBroadcastChannel", types: [
+          "OpenActive::Models::Schema::BroadcastChannel",
+          "URI",
+        ]
+
         # @return [OpenActive::Models::Schema::Organization,URI]
-        define_property :broadcaster, as: "broadcaster", types: [
+        define_property :broadcast_affiliate_of, as: "broadcastAffiliateOf", types: [
           "OpenActive::Models::Schema::Organization",
           "URI",
         ]
@@ -61,9 +61,9 @@ module OpenActive
           "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::BroadcastChannel,URI]
-        define_property :has_broadcast_channel, as: "hasBroadcastChannel", types: [
-          "OpenActive::Models::Schema::BroadcastChannel",
+        # @return [OpenActive::Models::Schema::BroadcastService,URI]
+        define_property :parent_service, as: "parentService", types: [
+          "OpenActive::Models::Schema::BroadcastService",
           "URI",
         ]
 

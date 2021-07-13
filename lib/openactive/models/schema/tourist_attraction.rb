@@ -8,17 +8,17 @@ module OpenActive
           "schema:TouristAttraction"
         end
 
-        # @return [OpenActive::Models::Schema::Language,String,URI]
+        # @return [String,OpenActive::Models::Schema::Language,URI]
         define_property :available_language, as: "availableLanguage", types: [
-          "OpenActive::Models::Schema::Language",
           "string",
+          "OpenActive::Models::Schema::Language",
           "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::Audience,String,URI]
+        # @return [String,OpenActive::Models::Schema::Audience,URI]
         define_property :tourist_type, as: "touristType", types: [
-          "OpenActive::Models::Schema::Audience",
           "string",
+          "OpenActive::Models::Schema::Audience",
           "URI",
         ]
       end

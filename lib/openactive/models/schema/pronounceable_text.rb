@@ -18,16 +18,16 @@ module OpenActive
           "string",
         ]
 
+        # @return [String]
+        define_property :speech_to_text_markup, as: "speechToTextMarkup", types: [
+          "string",
+        ]
+
         # @return [String,OpenActive::Models::Schema::Language,URI]
         define_property :in_language, as: "inLanguage", types: [
           "string",
           "OpenActive::Models::Schema::Language",
           "URI",
-        ]
-
-        # @return [String]
-        define_property :speech_to_text_markup, as: "speechToTextMarkup", types: [
-          "string",
         ]
       end
     end

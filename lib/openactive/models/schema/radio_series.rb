@@ -9,8 +9,50 @@ module OpenActive
         end
 
         # @return [OpenActive::Models::Schema::Person,URI]
-        define_property :directors, as: "directors", types: [
+        define_property :actors, as: "actors", types: [
           "OpenActive::Models::Schema::Person",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::CreativeWorkSeason,URI]
+        define_property :contains_season, as: "containsSeason", types: [
+          "OpenActive::Models::Schema::CreativeWorkSeason",
+          "URI",
+        ]
+
+        # @return [int,nil]
+        define_property :number_of_seasons, as: "numberOfSeasons", types: [
+          "int",
+          "null",
+        ]
+
+        # @return [OpenActive::Models::Schema::VideoObject,URI]
+        define_property :trailer, as: "trailer", types: [
+          "OpenActive::Models::Schema::VideoObject",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::Episode,URI]
+        define_property :episodes, as: "episodes", types: [
+          "OpenActive::Models::Schema::Episode",
+          "URI",
+        ]
+
+        # @return [int,nil]
+        define_property :number_of_episodes, as: "numberOfEpisodes", types: [
+          "int",
+          "null",
+        ]
+
+        # @return [OpenActive::Models::Schema::Person,URI]
+        define_property :director, as: "director", types: [
+          "OpenActive::Models::Schema::Person",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::Organization,URI]
+        define_property :production_company, as: "productionCompany", types: [
+          "OpenActive::Models::Schema::Organization",
           "URI",
         ]
 
@@ -32,14 +74,14 @@ module OpenActive
           "URI",
         ]
 
-        # @return [int,nil]
-        define_property :number_of_seasons, as: "numberOfSeasons", types: [
-          "int",
-          "null",
+        # @return [OpenActive::Models::Schema::Episode,URI]
+        define_property :episode, as: "episode", types: [
+          "OpenActive::Models::Schema::Episode",
+          "URI",
         ]
 
         # @return [OpenActive::Models::Schema::Person,URI]
-        define_property :director, as: "director", types: [
+        define_property :directors, as: "directors", types: [
           "OpenActive::Models::Schema::Person",
           "URI",
         ]
@@ -48,48 +90,6 @@ module OpenActive
         define_property :music_by, as: "musicBy", types: [
           "OpenActive::Models::Schema::Person",
           "OpenActive::Models::Schema::MusicGroup",
-          "URI",
-        ]
-
-        # @return [int,nil]
-        define_property :number_of_episodes, as: "numberOfEpisodes", types: [
-          "int",
-          "null",
-        ]
-
-        # @return [OpenActive::Models::Schema::Episode,URI]
-        define_property :episodes, as: "episodes", types: [
-          "OpenActive::Models::Schema::Episode",
-          "URI",
-        ]
-
-        # @return [OpenActive::Models::Schema::Person,URI]
-        define_property :actors, as: "actors", types: [
-          "OpenActive::Models::Schema::Person",
-          "URI",
-        ]
-
-        # @return [OpenActive::Models::Schema::CreativeWorkSeason,URI]
-        define_property :contains_season, as: "containsSeason", types: [
-          "OpenActive::Models::Schema::CreativeWorkSeason",
-          "URI",
-        ]
-
-        # @return [OpenActive::Models::Schema::Episode,URI]
-        define_property :episode, as: "episode", types: [
-          "OpenActive::Models::Schema::Episode",
-          "URI",
-        ]
-
-        # @return [OpenActive::Models::Schema::Organization,URI]
-        define_property :production_company, as: "productionCompany", types: [
-          "OpenActive::Models::Schema::Organization",
-          "URI",
-        ]
-
-        # @return [OpenActive::Models::Schema::VideoObject,URI]
-        define_property :trailer, as: "trailer", types: [
-          "OpenActive::Models::Schema::VideoObject",
           "URI",
         ]
       end

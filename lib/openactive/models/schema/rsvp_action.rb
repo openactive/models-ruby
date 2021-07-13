@@ -14,16 +14,16 @@ module OpenActive
           "null",
         ]
 
-        # @return [OpenActive::Enums::Schema::RsvpResponseType,nil]
-        define_property :rsvp_response, as: "rsvpResponse", types: [
-          "OpenActive::Enums::Schema::RsvpResponseType",
-          "null",
-        ]
-
         # @return [OpenActive::Models::Schema::Comment,URI]
         define_property :comment, as: "comment", types: [
           "OpenActive::Models::Schema::Comment",
           "URI",
+        ]
+
+        # @return [OpenActive::Enums::Schema::RsvpResponseType,nil]
+        define_property :rsvp_response, as: "rsvpResponse", types: [
+          "OpenActive::Enums::Schema::RsvpResponseType",
+          "null",
         ]
       end
     end

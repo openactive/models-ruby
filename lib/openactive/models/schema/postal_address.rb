@@ -9,7 +9,22 @@ module OpenActive
         end
 
         # @return [String]
+        define_property :postal_code, as: "postalCode", types: [
+          "string",
+        ]
+
+        # @return [String]
+        define_property :street_address, as: "streetAddress", types: [
+          "string",
+        ]
+
+        # @return [String]
         define_property :address_locality, as: "addressLocality", types: [
+          "string",
+        ]
+
+        # @return [String]
+        define_property :post_office_box_number, as: "postOfficeBoxNumber", types: [
           "string",
         ]
 
@@ -21,22 +36,7 @@ module OpenActive
         ]
 
         # @return [String]
-        define_property :post_office_box_number, as: "postOfficeBoxNumber", types: [
-          "string",
-        ]
-
-        # @return [String]
-        define_property :street_address, as: "streetAddress", types: [
-          "string",
-        ]
-
-        # @return [String]
         define_property :address_region, as: "addressRegion", types: [
-          "string",
-        ]
-
-        # @return [String]
-        define_property :postal_code, as: "postalCode", types: [
           "string",
         ]
       end

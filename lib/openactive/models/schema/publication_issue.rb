@@ -8,18 +8,6 @@ module OpenActive
           "schema:PublicationIssue"
         end
 
-        # @return [String]
-        define_property :pagination, as: "pagination", types: [
-          "string",
-        ]
-
-        # @return [String,int,nil]
-        define_property :page_start, as: "pageStart", types: [
-          "string",
-          "int",
-          "null",
-        ]
-
         # @return [int,String,nil]
         define_property :issue_number, as: "issueNumber", types: [
           "int",
@@ -27,10 +15,22 @@ module OpenActive
           "null",
         ]
 
-        # @return [String,int,nil]
-        define_property :page_end, as: "pageEnd", types: [
-          "string",
+        # @return [int,String,nil]
+        define_property :page_start, as: "pageStart", types: [
           "int",
+          "string",
+          "null",
+        ]
+
+        # @return [String]
+        define_property :pagination, as: "pagination", types: [
+          "string",
+        ]
+
+        # @return [int,String,nil]
+        define_property :page_end, as: "pageEnd", types: [
+          "int",
+          "string",
           "null",
         ]
       end
