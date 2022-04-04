@@ -1,7 +1,9 @@
-require 'json'
+require 'active_support'
 require 'active_support/duration'
 require 'active_support/core_ext/date_time'
+require 'json'
 require 'typesafe_enum'
+
 module OpenActive
   require "openactive/version"
 
