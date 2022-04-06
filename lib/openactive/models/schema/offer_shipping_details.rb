@@ -8,12 +8,6 @@ module OpenActive
           "schema:OfferShippingDetails"
         end
 
-        # @return [OpenActive::Models::Schema::MonetaryAmount,URI]
-        define_property :shipping_rate, as: "shippingRate", types: [
-          "OpenActive::Models::Schema::MonetaryAmount",
-          "URI",
-        ]
-
         # @return [OpenActive::Models::Schema::DefinedRegion,URI]
         define_property :shipping_destination, as: "shippingDestination", types: [
           "OpenActive::Models::Schema::DefinedRegion",
@@ -26,11 +20,6 @@ module OpenActive
           "null",
         ]
 
-        # @return [String]
-        define_property :shipping_label, as: "shippingLabel", types: [
-          "string",
-        ]
-
         # @return [URI]
         define_property :shipping_settings_link, as: "shippingSettingsLink", types: [
           "URI",
@@ -41,9 +30,20 @@ module OpenActive
           "string",
         ]
 
+        # @return [String]
+        define_property :shipping_label, as: "shippingLabel", types: [
+          "string",
+        ]
+
         # @return [OpenActive::Models::Schema::ShippingDeliveryTime,URI]
         define_property :delivery_time, as: "deliveryTime", types: [
           "OpenActive::Models::Schema::ShippingDeliveryTime",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::MonetaryAmount,URI]
+        define_property :shipping_rate, as: "shippingRate", types: [
+          "OpenActive::Models::Schema::MonetaryAmount",
           "URI",
         ]
       end

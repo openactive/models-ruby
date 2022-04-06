@@ -1,7 +1,7 @@
 module OpenActive
   module Models
     module Schema
-      class TVSeason < ::OpenActive::Models::Schema::CreativeWork
+      class TVSeason < ::OpenActive::Models::Schema::CreativeWorkSeason
         # @!attribute type
         # @return [String]
         def type

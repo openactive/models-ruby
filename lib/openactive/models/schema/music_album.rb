@@ -14,23 +14,23 @@ module OpenActive
           "null",
         ]
 
+        # @return [OpenActive::Enums::Schema::MusicAlbumReleaseType,nil]
+        define_property :album_release_type, as: "albumReleaseType", types: [
+          "OpenActive::Enums::Schema::MusicAlbumReleaseType",
+          "null",
+        ]
+
         # @return [OpenActive::Models::Schema::MusicRelease,URI]
         define_property :album_release, as: "albumRelease", types: [
           "OpenActive::Models::Schema::MusicRelease",
           "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::MusicGroup,OpenActive::Models::Schema::Person,URI]
+        # @return [OpenActive::Models::Schema::Person,OpenActive::Models::Schema::MusicGroup,URI]
         define_property :by_artist, as: "byArtist", types: [
-          "OpenActive::Models::Schema::MusicGroup",
           "OpenActive::Models::Schema::Person",
+          "OpenActive::Models::Schema::MusicGroup",
           "URI",
-        ]
-
-        # @return [OpenActive::Enums::Schema::MusicAlbumReleaseType,nil]
-        define_property :album_release_type, as: "albumReleaseType", types: [
-          "OpenActive::Enums::Schema::MusicAlbumReleaseType",
-          "null",
         ]
       end
     end

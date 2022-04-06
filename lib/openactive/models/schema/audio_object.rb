@@ -9,7 +9,7 @@ module OpenActive
         end
 
         # @return [String]
-        define_property :transcript, as: "transcript", types: [
+        define_property :embedded_text_caption, as: "embeddedTextCaption", types: [
           "string",
         ]
 
@@ -18,6 +18,11 @@ module OpenActive
           "string",
           "OpenActive::Models::Schema::MediaObject",
           "URI",
+        ]
+
+        # @return [String]
+        define_property :transcript, as: "transcript", types: [
+          "string",
         ]
       end
     end

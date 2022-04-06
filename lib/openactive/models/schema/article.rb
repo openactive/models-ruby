@@ -8,40 +8,9 @@ module OpenActive
           "schema:Article"
         end
 
-        # @return [OpenActive::Models::Schema::SpeakableSpecification,URI]
-        define_property :speakable, as: "speakable", types: [
-          "OpenActive::Models::Schema::SpeakableSpecification",
-          "URI",
-        ]
-
-        # @return [OpenActive::Models::Schema::CreativeWork,String,URI]
-        define_property :backstory, as: "backstory", types: [
-          "OpenActive::Models::Schema::CreativeWork",
-          "string",
-          "URI",
-        ]
-
-        # @return [String]
-        define_property :pagination, as: "pagination", types: [
-          "string",
-        ]
-
         # @return [String,int,nil]
         define_property :page_start, as: "pageStart", types: [
           "string",
-          "int",
-          "null",
-        ]
-
-        # @return [String,int,nil]
-        define_property :page_end, as: "pageEnd", types: [
-          "string",
-          "int",
-          "null",
-        ]
-
-        # @return [int,nil]
-        define_property :word_count, as: "wordCount", types: [
           "int",
           "null",
         ]
@@ -51,8 +20,39 @@ module OpenActive
           "string",
         ]
 
+        # @return [String,int,nil]
+        define_property :page_end, as: "pageEnd", types: [
+          "string",
+          "int",
+          "null",
+        ]
+
+        # @return [String,OpenActive::Models::Schema::CreativeWork,URI]
+        define_property :backstory, as: "backstory", types: [
+          "string",
+          "OpenActive::Models::Schema::CreativeWork",
+          "URI",
+        ]
+
+        # @return [int,nil]
+        define_property :word_count, as: "wordCount", types: [
+          "int",
+          "null",
+        ]
+
         # @return [String]
         define_property :article_body, as: "articleBody", types: [
+          "string",
+        ]
+
+        # @return [URI,OpenActive::Models::Schema::SpeakableSpecification]
+        define_property :speakable, as: "speakable", types: [
+          "URI",
+          "OpenActive::Models::Schema::SpeakableSpecification",
+        ]
+
+        # @return [String]
+        define_property :pagination, as: "pagination", types: [
           "string",
         ]
       end

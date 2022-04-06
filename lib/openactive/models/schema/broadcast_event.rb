@@ -8,10 +8,10 @@ module OpenActive
           "schema:BroadcastEvent"
         end
 
-        # @return [String,OpenActive::Models::Schema::Language,URI]
+        # @return [OpenActive::Models::Schema::Language,String,URI]
         define_property :subtitle_language, as: "subtitleLanguage", types: [
-          "string",
           "OpenActive::Models::Schema::Language",
+          "string",
           "URI",
         ]
 

@@ -8,10 +8,9 @@ module OpenActive
           "schema:TVEpisode"
         end
 
-        # @return [String,OpenActive::Models::Schema::Language,URI]
-        define_property :subtitle_language, as: "subtitleLanguage", types: [
-          "string",
-          "OpenActive::Models::Schema::Language",
+        # @return [OpenActive::Models::Schema::Country,URI]
+        define_property :country_of_origin, as: "countryOfOrigin", types: [
+          "OpenActive::Models::Schema::Country",
           "URI",
         ]
 
@@ -21,9 +20,10 @@ module OpenActive
           "string",
         ]
 
-        # @return [OpenActive::Models::Schema::Country,URI]
-        define_property :country_of_origin, as: "countryOfOrigin", types: [
-          "OpenActive::Models::Schema::Country",
+        # @return [OpenActive::Models::Schema::Language,String,URI]
+        define_property :subtitle_language, as: "subtitleLanguage", types: [
+          "OpenActive::Models::Schema::Language",
+          "string",
           "URI",
         ]
 

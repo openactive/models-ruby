@@ -8,13 +8,43 @@ module OpenActive
           "schema:ParcelDelivery"
         end
 
+        # @return [OpenActive::Models::Schema::PostalAddress,URI]
+        define_property :origin_address, as: "originAddress", types: [
+          "OpenActive::Models::Schema::PostalAddress",
+          "URI",
+        ]
+
         # @return [String]
         define_property :tracking_number, as: "trackingNumber", types: [
           "string",
         ]
 
+        # @return [OpenActive::Models::Schema::Product,URI]
+        define_property :item_shipped, as: "itemShipped", types: [
+          "OpenActive::Models::Schema::Product",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::Organization,OpenActive::Models::Schema::Person,URI]
+        define_property :provider, as: "provider", types: [
+          "OpenActive::Models::Schema::Organization",
+          "OpenActive::Models::Schema::Person",
+          "URI",
+        ]
+
+        # @return [URI]
+        define_property :tracking_url, as: "trackingUrl", types: [
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::PostalAddress,URI]
+        define_property :delivery_address, as: "deliveryAddress", types: [
+          "OpenActive::Models::Schema::PostalAddress",
+          "URI",
+        ]
+
         # @return [Date,DateTime,nil]
-        define_property :expected_arrival_from, as: "expectedArrivalFrom", types: [
+        define_property :expected_arrival_until, as: "expectedArrivalUntil", types: [
           "Date",
           "DateTime",
           "null",
@@ -27,35 +57,10 @@ module OpenActive
         ]
 
         # @return [Date,DateTime,nil]
-        define_property :expected_arrival_until, as: "expectedArrivalUntil", types: [
+        define_property :expected_arrival_from, as: "expectedArrivalFrom", types: [
           "Date",
           "DateTime",
           "null",
-        ]
-
-        # @return [OpenActive::Enums::Schema::DeliveryMethod,nil]
-        define_property :has_delivery_method, as: "hasDeliveryMethod", types: [
-          "OpenActive::Enums::Schema::DeliveryMethod",
-          "null",
-        ]
-
-        # @return [OpenActive::Models::Schema::Organization,OpenActive::Models::Schema::Person,URI]
-        define_property :provider, as: "provider", types: [
-          "OpenActive::Models::Schema::Organization",
-          "OpenActive::Models::Schema::Person",
-          "URI",
-        ]
-
-        # @return [OpenActive::Models::Schema::PostalAddress,URI]
-        define_property :delivery_address, as: "deliveryAddress", types: [
-          "OpenActive::Models::Schema::PostalAddress",
-          "URI",
-        ]
-
-        # @return [OpenActive::Models::Schema::Order,URI]
-        define_property :part_of_order, as: "partOfOrder", types: [
-          "OpenActive::Models::Schema::Order",
-          "URI",
         ]
 
         # @return [OpenActive::Models::Schema::Organization,URI]
@@ -64,20 +69,15 @@ module OpenActive
           "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::Product,URI]
-        define_property :item_shipped, as: "itemShipped", types: [
-          "OpenActive::Models::Schema::Product",
-          "URI",
+        # @return [OpenActive::Enums::Schema::DeliveryMethod,nil]
+        define_property :has_delivery_method, as: "hasDeliveryMethod", types: [
+          "OpenActive::Enums::Schema::DeliveryMethod",
+          "null",
         ]
 
-        # @return [URI]
-        define_property :tracking_url, as: "trackingUrl", types: [
-          "URI",
-        ]
-
-        # @return [OpenActive::Models::Schema::PostalAddress,URI]
-        define_property :origin_address, as: "originAddress", types: [
-          "OpenActive::Models::Schema::PostalAddress",
+        # @return [OpenActive::Models::Schema::Order,URI]
+        define_property :part_of_order, as: "partOfOrder", types: [
+          "OpenActive::Models::Schema::Order",
           "URI",
         ]
       end

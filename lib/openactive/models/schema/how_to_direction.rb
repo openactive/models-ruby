@@ -8,6 +8,12 @@ module OpenActive
           "schema:HowToDirection"
         end
 
+        # @return [URI,OpenActive::Models::Schema::MediaObject]
+        define_property :after_media, as: "afterMedia", types: [
+          "URI",
+          "OpenActive::Models::Schema::MediaObject",
+        ]
+
         # @return [OpenActive::Models::Schema::HowToSupply,String,URI]
         define_property :supply, as: "supply", types: [
           "OpenActive::Models::Schema::HowToSupply",
@@ -15,23 +21,10 @@ module OpenActive
           "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::MediaObject,URI]
-        define_property :after_media, as: "afterMedia", types: [
+        # @return [URI,OpenActive::Models::Schema::MediaObject]
+        define_property :during_media, as: "duringMedia", types: [
+          "URI",
           "OpenActive::Models::Schema::MediaObject",
-          "URI",
-        ]
-
-        # @return [OpenActive::Models::Schema::MediaObject,URI]
-        define_property :before_media, as: "beforeMedia", types: [
-          "OpenActive::Models::Schema::MediaObject",
-          "URI",
-        ]
-
-        # @return [ActiveSupport::Duration,URI,nil]
-        define_property :perform_time, as: "performTime", types: [
-          "DateInterval",
-          "URI",
-          "null",
         ]
 
         # @return [ActiveSupport::Duration,URI,nil]
@@ -41,10 +34,16 @@ module OpenActive
           "null",
         ]
 
-        # @return [String,OpenActive::Models::Schema::HowToTool,URI]
+        # @return [URI,OpenActive::Models::Schema::MediaObject]
+        define_property :before_media, as: "beforeMedia", types: [
+          "URI",
+          "OpenActive::Models::Schema::MediaObject",
+        ]
+
+        # @return [OpenActive::Models::Schema::HowToTool,String,URI]
         define_property :tool, as: "tool", types: [
-          "string",
           "OpenActive::Models::Schema::HowToTool",
+          "string",
           "URI",
         ]
 
@@ -55,10 +54,11 @@ module OpenActive
           "null",
         ]
 
-        # @return [URI,OpenActive::Models::Schema::MediaObject]
-        define_property :during_media, as: "duringMedia", types: [
+        # @return [ActiveSupport::Duration,URI,nil]
+        define_property :perform_time, as: "performTime", types: [
+          "DateInterval",
           "URI",
-          "OpenActive::Models::Schema::MediaObject",
+          "null",
         ]
       end
     end

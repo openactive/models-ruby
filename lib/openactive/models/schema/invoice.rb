@@ -8,10 +8,10 @@ module OpenActive
           "schema:Invoice"
         end
 
-        # @return [OpenActive::Models::Schema::Organization,OpenActive::Models::Schema::Person,URI]
-        define_property :customer, as: "customer", types: [
-          "OpenActive::Models::Schema::Organization",
-          "OpenActive::Models::Schema::Person",
+        # @return [OpenActive::Models::Schema::MonetaryAmount,OpenActive::Models::Schema::PriceSpecification,URI]
+        define_property :total_payment_due, as: "totalPaymentDue", types: [
+          "OpenActive::Models::Schema::MonetaryAmount",
+          "OpenActive::Models::Schema::PriceSpecification",
           "URI",
         ]
 
@@ -22,41 +22,10 @@ module OpenActive
           "null",
         ]
 
-        # @return [OpenActive::Models::Schema::PriceSpecification,OpenActive::Models::Schema::MonetaryAmount,URI]
-        define_property :total_payment_due, as: "totalPaymentDue", types: [
-          "OpenActive::Models::Schema::PriceSpecification",
-          "OpenActive::Models::Schema::MonetaryAmount",
+        # @return [OpenActive::Models::Schema::Order,URI]
+        define_property :references_order, as: "referencesOrder", types: [
+          "OpenActive::Models::Schema::Order",
           "URI",
-        ]
-
-        # @return [DateTime,nil]
-        define_property :payment_due, as: "paymentDue", types: [
-          "DateTime",
-          "null",
-        ]
-
-        # @return [OpenActive::Models::Schema::PriceSpecification,OpenActive::Models::Schema::MonetaryAmount,URI]
-        define_property :minimum_payment_due, as: "minimumPaymentDue", types: [
-          "OpenActive::Models::Schema::PriceSpecification",
-          "OpenActive::Models::Schema::MonetaryAmount",
-          "URI",
-        ]
-
-        # @return [String]
-        define_property :confirmation_number, as: "confirmationNumber", types: [
-          "string",
-        ]
-
-        # @return [String,OpenActive::Models::Schema::PaymentStatusType,URI]
-        define_property :payment_status, as: "paymentStatus", types: [
-          "string",
-          "OpenActive::Models::Schema::PaymentStatusType",
-          "URI",
-        ]
-
-        # @return [String]
-        define_property :payment_method_id, as: "paymentMethodId", types: [
-          "string",
         ]
 
         # @return [String]
@@ -64,16 +33,31 @@ module OpenActive
           "string",
         ]
 
-        # @return [OpenActive::Models::Schema::Person,OpenActive::Models::Schema::Organization,URI]
-        define_property :broker, as: "broker", types: [
-          "OpenActive::Models::Schema::Person",
-          "OpenActive::Models::Schema::Organization",
+        # @return [URI,String,OpenActive::Enums::Schema::PhysicalActivityCategory,OpenActive::Models::Schema::Thing,OpenActive::Models::Schema::CategoryCode,nil]
+        define_property :category, as: "category", types: [
           "URI",
+          "string",
+          "OpenActive::Enums::Schema::PhysicalActivityCategory",
+          "OpenActive::Models::Schema::Thing",
+          "OpenActive::Models::Schema::CategoryCode",
+          "null",
         ]
 
-        # @return [OpenActive::Models::Schema::Order,URI]
-        define_property :references_order, as: "referencesOrder", types: [
-          "OpenActive::Models::Schema::Order",
+        # @return [Date,nil]
+        define_property :scheduled_payment_date, as: "scheduledPaymentDate", types: [
+          "Date",
+          "null",
+        ]
+
+        # @return [String]
+        define_property :confirmation_number, as: "confirmationNumber", types: [
+          "string",
+        ]
+
+        # @return [OpenActive::Models::Schema::Organization,OpenActive::Models::Schema::Person,URI]
+        define_property :customer, as: "customer", types: [
+          "OpenActive::Models::Schema::Organization",
+          "OpenActive::Models::Schema::Person",
           "URI",
         ]
 
@@ -84,10 +68,11 @@ module OpenActive
           "URI",
         ]
 
-        # @return [Date,nil]
-        define_property :scheduled_payment_date, as: "scheduledPaymentDate", types: [
-          "Date",
-          "null",
+        # @return [OpenActive::Models::Schema::MonetaryAmount,OpenActive::Models::Schema::PriceSpecification,URI]
+        define_property :minimum_payment_due, as: "minimumPaymentDue", types: [
+          "OpenActive::Models::Schema::MonetaryAmount",
+          "OpenActive::Models::Schema::PriceSpecification",
+          "URI",
         ]
 
         # @return [DateTime,Date,nil]
@@ -97,12 +82,28 @@ module OpenActive
           "null",
         ]
 
-        # @return [OpenActive::Enums::Schema::PhysicalActivityCategory,String,URI,OpenActive::Models::Schema::Thing,nil]
-        define_property :category, as: "category", types: [
-          "OpenActive::Enums::Schema::PhysicalActivityCategory",
+        # @return [OpenActive::Models::Schema::Person,OpenActive::Models::Schema::Organization,URI]
+        define_property :broker, as: "broker", types: [
+          "OpenActive::Models::Schema::Person",
+          "OpenActive::Models::Schema::Organization",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::PaymentStatusType,String,URI]
+        define_property :payment_status, as: "paymentStatus", types: [
+          "OpenActive::Models::Schema::PaymentStatusType",
           "string",
           "URI",
-          "OpenActive::Models::Schema::Thing",
+        ]
+
+        # @return [String]
+        define_property :payment_method_id, as: "paymentMethodId", types: [
+          "string",
+        ]
+
+        # @return [DateTime,nil]
+        define_property :payment_due, as: "paymentDue", types: [
+          "DateTime",
           "null",
         ]
 

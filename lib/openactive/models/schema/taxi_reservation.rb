@@ -8,10 +8,10 @@ module OpenActive
           "schema:TaxiReservation"
         end
 
-        # @return [OpenActive::Models::Schema::QuantitativeValue,int,URI,nil]
+        # @return [int,OpenActive::Models::Schema::QuantitativeValue,URI,nil]
         define_property :party_size, as: "partySize", types: [
-          "OpenActive::Models::Schema::QuantitativeValue",
           "int",
+          "OpenActive::Models::Schema::QuantitativeValue",
           "URI",
           "null",
         ]

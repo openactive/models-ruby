@@ -9,12 +9,12 @@ module OpenActive
         end
 
         # @return [String]
-        define_property :proficiency_level, as: "proficiencyLevel", types: [
+        define_property :dependencies, as: "dependencies", types: [
           "string",
         ]
 
         # @return [String]
-        define_property :dependencies, as: "dependencies", types: [
+        define_property :proficiency_level, as: "proficiencyLevel", types: [
           "string",
         ]
       end

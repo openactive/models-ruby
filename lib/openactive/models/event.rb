@@ -73,6 +73,11 @@ module OpenActive
         "OpenActive::Models::Person[]",
       ]
 
+      # @return [Array<String>]
+      define_property :customer_account_booking_restriction, as: "customerAccountBookingRestriction", types: [
+        "string[]",
+      ]
+
       # @return [ActiveSupport::Duration,nil]
       define_property :duration, as: "duration", types: [
         "DateInterval",
@@ -110,6 +115,12 @@ module OpenActive
 
       # @return [Boolean,nil]
       define_property :is_coached, as: "isCoached", types: [
+        "bool",
+        "null",
+      ]
+
+      # @return [Boolean,nil]
+      define_property :is_open_booking_with_customer_account_allowed, as: "isOpenBookingWithCustomerAccountAllowed", types: [
         "bool",
         "null",
       ]
@@ -293,6 +304,12 @@ module OpenActive
 
       # @return [Boolean,nil]
       define_property :is_first_session_accessible_for_free, as: "beta:isFirstSessionAccessibleForFree", types: [
+        "bool",
+        "null",
+      ]
+
+      # @return [Boolean,nil]
+      define_property :is_scheduled_as_slots, as: "beta:isScheduledAsSlots", types: [
         "bool",
         "null",
       ]

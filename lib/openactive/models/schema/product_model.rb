@@ -8,9 +8,8 @@ module OpenActive
           "schema:ProductModel"
         end
 
-        # @return [OpenActive::Models::Schema::ProductGroup,OpenActive::Models::Schema::ProductModel,URI]
-        define_property :is_variant_of, as: "isVariantOf", types: [
-          "OpenActive::Models::Schema::ProductGroup",
+        # @return [OpenActive::Models::Schema::ProductModel,URI]
+        define_property :successor_of, as: "successorOf", types: [
           "OpenActive::Models::Schema::ProductModel",
           "URI",
         ]
@@ -21,9 +20,10 @@ module OpenActive
           "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::ProductModel,URI]
-        define_property :successor_of, as: "successorOf", types: [
+        # @return [OpenActive::Models::Schema::ProductModel,OpenActive::Models::Schema::ProductGroup,URI]
+        define_property :is_variant_of, as: "isVariantOf", types: [
           "OpenActive::Models::Schema::ProductModel",
+          "OpenActive::Models::Schema::ProductGroup",
           "URI",
         ]
       end

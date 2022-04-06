@@ -9,7 +9,7 @@ module OpenActive
         end
 
         # @return [OpenActive::Models::Schema::Person,URI]
-        define_property :directors, as: "directors", types: [
+        define_property :director, as: "director", types: [
           "OpenActive::Models::Schema::Person",
           "URI",
         ]
@@ -20,8 +20,20 @@ module OpenActive
           "URI",
         ]
 
+        # @return [OpenActive::Models::Schema::VideoObject,URI]
+        define_property :trailer, as: "trailer", types: [
+          "OpenActive::Models::Schema::VideoObject",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::Organization,URI]
+        define_property :production_company, as: "productionCompany", types: [
+          "OpenActive::Models::Schema::Organization",
+          "URI",
+        ]
+
         # @return [OpenActive::Models::Schema::Person,URI]
-        define_property :director, as: "director", types: [
+        define_property :actors, as: "actors", types: [
           "OpenActive::Models::Schema::Person",
           "URI",
         ]
@@ -34,20 +46,8 @@ module OpenActive
         ]
 
         # @return [OpenActive::Models::Schema::Person,URI]
-        define_property :actors, as: "actors", types: [
+        define_property :directors, as: "directors", types: [
           "OpenActive::Models::Schema::Person",
-          "URI",
-        ]
-
-        # @return [OpenActive::Models::Schema::Organization,URI]
-        define_property :production_company, as: "productionCompany", types: [
-          "OpenActive::Models::Schema::Organization",
-          "URI",
-        ]
-
-        # @return [OpenActive::Models::Schema::VideoObject,URI]
-        define_property :trailer, as: "trailer", types: [
-          "OpenActive::Models::Schema::VideoObject",
           "URI",
         ]
       end

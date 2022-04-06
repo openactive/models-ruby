@@ -8,12 +8,6 @@ module OpenActive
           "schema:MedicalGuideline"
         end
 
-        # @return [Date,nil]
-        define_property :guideline_date, as: "guidelineDate", types: [
-          "Date",
-          "null",
-        ]
-
         # @return [OpenActive::Models::Schema::MedicalEvidenceLevel,URI]
         define_property :evidence_level, as: "evidenceLevel", types: [
           "OpenActive::Models::Schema::MedicalEvidenceLevel",
@@ -29,6 +23,12 @@ module OpenActive
         define_property :guideline_subject, as: "guidelineSubject", types: [
           "OpenActive::Models::Schema::MedicalEntity",
           "URI",
+        ]
+
+        # @return [Date,nil]
+        define_property :guideline_date, as: "guidelineDate", types: [
+          "Date",
+          "null",
         ]
       end
     end

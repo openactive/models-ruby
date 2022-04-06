@@ -8,13 +8,6 @@ module OpenActive
           "schema:LodgingReservation"
         end
 
-        # @return [DateTime,Time,nil]
-        define_property :checkin_time, as: "checkinTime", types: [
-          "DateTime",
-          "Time",
-          "null",
-        ]
-
         # @return [OpenActive::Enums::Schema::QualitativeValue,String,nil]
         define_property :lodging_unit_type, as: "lodgingUnitType", types: [
           "OpenActive::Enums::Schema::QualitativeValue",
@@ -22,17 +15,16 @@ module OpenActive
           "null",
         ]
 
-        # @return [int,OpenActive::Models::Schema::QuantitativeValue,URI,nil]
-        define_property :num_children, as: "numChildren", types: [
-          "int",
-          "OpenActive::Models::Schema::QuantitativeValue",
-          "URI",
-          "null",
-        ]
-
         # @return [String]
         define_property :lodging_unit_description, as: "lodgingUnitDescription", types: [
           "string",
+        ]
+
+        # @return [DateTime,Time,nil]
+        define_property :checkout_time, as: "checkoutTime", types: [
+          "DateTime",
+          "Time",
+          "null",
         ]
 
         # @return [int,OpenActive::Models::Schema::QuantitativeValue,URI,nil]
@@ -44,9 +36,17 @@ module OpenActive
         ]
 
         # @return [DateTime,Time,nil]
-        define_property :checkout_time, as: "checkoutTime", types: [
+        define_property :checkin_time, as: "checkinTime", types: [
           "DateTime",
           "Time",
+          "null",
+        ]
+
+        # @return [int,OpenActive::Models::Schema::QuantitativeValue,URI,nil]
+        define_property :num_children, as: "numChildren", types: [
+          "int",
+          "OpenActive::Models::Schema::QuantitativeValue",
+          "URI",
           "null",
         ]
       end

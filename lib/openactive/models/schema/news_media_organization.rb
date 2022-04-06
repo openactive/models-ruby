@@ -8,10 +8,12 @@ module OpenActive
           "schema:NewsMediaOrganization"
         end
 
-        # @return [OpenActive::Models::Schema::Article,URI]
-        define_property :diversity_staffing_report, as: "diversityStaffingReport", types: [
-          "OpenActive::Models::Schema::Article",
+        # @return [URI,OpenActive::Models::Schema::AboutPage,String,OpenActive::Models::Schema::CreativeWork]
+        define_property :ownership_funding_info, as: "ownershipFundingInfo", types: [
           "URI",
+          "OpenActive::Models::Schema::AboutPage",
+          "string",
+          "OpenActive::Models::Schema::CreativeWork",
         ]
 
         # @return [URI,OpenActive::Models::Schema::CreativeWork]
@@ -20,34 +22,14 @@ module OpenActive
           "OpenActive::Models::Schema::CreativeWork",
         ]
 
-        # @return [String,URI,OpenActive::Models::Schema::CreativeWork,OpenActive::Models::Schema::AboutPage]
-        define_property :ownership_funding_info, as: "ownershipFundingInfo", types: [
-          "string",
+        # @return [URI,OpenActive::Models::Schema::Article]
+        define_property :diversity_staffing_report, as: "diversityStaffingReport", types: [
           "URI",
-          "OpenActive::Models::Schema::CreativeWork",
-          "OpenActive::Models::Schema::AboutPage",
+          "OpenActive::Models::Schema::Article",
         ]
 
         # @return [OpenActive::Models::Schema::CreativeWork,URI]
-        define_property :verification_fact_checking_policy, as: "verificationFactCheckingPolicy", types: [
-          "OpenActive::Models::Schema::CreativeWork",
-          "URI",
-        ]
-
-        # @return [OpenActive::Models::Schema::CreativeWork,URI]
-        define_property :masthead, as: "masthead", types: [
-          "OpenActive::Models::Schema::CreativeWork",
-          "URI",
-        ]
-
-        # @return [URI,OpenActive::Models::Schema::CreativeWork]
-        define_property :mission_coverage_priorities_policy, as: "missionCoveragePrioritiesPolicy", types: [
-          "URI",
-          "OpenActive::Models::Schema::CreativeWork",
-        ]
-
-        # @return [OpenActive::Models::Schema::CreativeWork,URI]
-        define_property :unnamed_sources_policy, as: "unnamedSourcesPolicy", types: [
+        define_property :diversity_policy, as: "diversityPolicy", types: [
           "OpenActive::Models::Schema::CreativeWork",
           "URI",
         ]
@@ -59,15 +41,33 @@ module OpenActive
         ]
 
         # @return [OpenActive::Models::Schema::CreativeWork,URI]
-        define_property :actionable_feedback_policy, as: "actionableFeedbackPolicy", types: [
+        define_property :mission_coverage_priorities_policy, as: "missionCoveragePrioritiesPolicy", types: [
           "OpenActive::Models::Schema::CreativeWork",
           "URI",
         ]
 
+        # @return [URI,OpenActive::Models::Schema::CreativeWork]
+        define_property :actionable_feedback_policy, as: "actionableFeedbackPolicy", types: [
+          "URI",
+          "OpenActive::Models::Schema::CreativeWork",
+        ]
+
+        # @return [URI,OpenActive::Models::Schema::CreativeWork]
+        define_property :masthead, as: "masthead", types: [
+          "URI",
+          "OpenActive::Models::Schema::CreativeWork",
+        ]
+
         # @return [OpenActive::Models::Schema::CreativeWork,URI]
-        define_property :diversity_policy, as: "diversityPolicy", types: [
+        define_property :unnamed_sources_policy, as: "unnamedSourcesPolicy", types: [
           "OpenActive::Models::Schema::CreativeWork",
           "URI",
+        ]
+
+        # @return [URI,OpenActive::Models::Schema::CreativeWork]
+        define_property :verification_fact_checking_policy, as: "verificationFactCheckingPolicy", types: [
+          "URI",
+          "OpenActive::Models::Schema::CreativeWork",
         ]
 
         # @return [OpenActive::Models::Schema::CreativeWork,URI]

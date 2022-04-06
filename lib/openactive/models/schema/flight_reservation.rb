@@ -16,12 +16,12 @@ module OpenActive
         ]
 
         # @return [String]
-        define_property :security_screening, as: "securityScreening", types: [
+        define_property :boarding_group, as: "boardingGroup", types: [
           "string",
         ]
 
         # @return [String]
-        define_property :boarding_group, as: "boardingGroup", types: [
+        define_property :security_screening, as: "securityScreening", types: [
           "string",
         ]
 

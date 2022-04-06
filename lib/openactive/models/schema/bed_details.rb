@@ -8,17 +8,17 @@ module OpenActive
           "schema:BedDetails"
         end
 
+        # @return [OpenActive::Models::Schema::BedType,String,URI]
+        define_property :type_of_bed, as: "typeOfBed", types: [
+          "OpenActive::Models::Schema::BedType",
+          "string",
+          "URI",
+        ]
+
         # @return [BigDecimal,nil]
         define_property :number_of_beds, as: "numberOfBeds", types: [
           "Number",
           "null",
-        ]
-
-        # @return [String,OpenActive::Models::Schema::BedType,URI]
-        define_property :type_of_bed, as: "typeOfBed", types: [
-          "string",
-          "OpenActive::Models::Schema::BedType",
-          "URI",
         ]
       end
     end

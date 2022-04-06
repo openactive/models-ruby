@@ -8,10 +8,10 @@ module OpenActive
           "schema:Answer"
         end
 
-        # @return [OpenActive::Models::Schema::Comment,OpenActive::Models::Schema::WebContent,URI]
+        # @return [OpenActive::Models::Schema::WebContent,OpenActive::Models::Schema::Comment,URI]
         define_property :answer_explanation, as: "answerExplanation", types: [
-          "OpenActive::Models::Schema::Comment",
           "OpenActive::Models::Schema::WebContent",
+          "OpenActive::Models::Schema::Comment",
           "URI",
         ]
       end

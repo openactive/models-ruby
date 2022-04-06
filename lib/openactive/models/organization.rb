@@ -37,6 +37,12 @@ module OpenActive
         "string",
       ]
 
+      # @return [OpenActive::Models::CustomerAccount,URI]
+      define_property :has_account, as: "hasAccount", types: [
+        "OpenActive::Models::CustomerAccount",
+        "URI",
+      ]
+
       # @return [Boolean,nil]
       define_property :is_open_booking_allowed, as: "isOpenBookingAllowed", types: [
         "bool",

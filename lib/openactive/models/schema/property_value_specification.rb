@@ -8,26 +8,14 @@ module OpenActive
           "schema:PropertyValueSpecification"
         end
 
-        # @return [String]
-        define_property :value_name, as: "valueName", types: [
-          "string",
-        ]
-
-        # @return [OpenActive::Models::Schema::Thing,String,URI]
-        define_property :default_value, as: "defaultValue", types: [
-          "OpenActive::Models::Schema::Thing",
-          "string",
-          "URI",
-        ]
-
         # @return [BigDecimal,nil]
-        define_property :step_value, as: "stepValue", types: [
+        define_property :value_max_length, as: "valueMaxLength", types: [
           "Number",
           "null",
         ]
 
         # @return [Boolean,nil]
-        define_property :value_required, as: "valueRequired", types: [
+        define_property :readonly_value, as: "readonlyValue", types: [
           "bool",
           "null",
         ]
@@ -39,18 +27,25 @@ module OpenActive
         ]
 
         # @return [String]
-        define_property :value_pattern, as: "valuePattern", types: [
+        define_property :value_name, as: "valueName", types: [
           "string",
         ]
 
-        # @return [Boolean,nil]
-        define_property :multiple_values, as: "multipleValues", types: [
-          "bool",
+        # @return [String,OpenActive::Models::Schema::Thing,URI]
+        define_property :default_value, as: "defaultValue", types: [
+          "string",
+          "OpenActive::Models::Schema::Thing",
+          "URI",
+        ]
+
+        # @return [BigDecimal,nil]
+        define_property :value_min_length, as: "valueMinLength", types: [
+          "Number",
           "null",
         ]
 
         # @return [Boolean,nil]
-        define_property :readonly_value, as: "readonlyValue", types: [
+        define_property :value_required, as: "valueRequired", types: [
           "bool",
           "null",
         ]
@@ -61,15 +56,20 @@ module OpenActive
           "null",
         ]
 
+        # @return [String]
+        define_property :value_pattern, as: "valuePattern", types: [
+          "string",
+        ]
+
         # @return [BigDecimal,nil]
-        define_property :value_max_length, as: "valueMaxLength", types: [
+        define_property :step_value, as: "stepValue", types: [
           "Number",
           "null",
         ]
 
-        # @return [BigDecimal,nil]
-        define_property :value_min_length, as: "valueMinLength", types: [
-          "Number",
+        # @return [Boolean,nil]
+        define_property :multiple_values, as: "multipleValues", types: [
+          "bool",
           "null",
         ]
       end

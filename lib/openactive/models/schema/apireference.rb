@@ -9,7 +9,7 @@ module OpenActive
         end
 
         # @return [String]
-        define_property :programming_model, as: "programmingModel", types: [
+        define_property :assembly, as: "assembly", types: [
           "string",
         ]
 
@@ -19,12 +19,12 @@ module OpenActive
         ]
 
         # @return [String]
-        define_property :assembly, as: "assembly", types: [
+        define_property :executable_library_name, as: "executableLibraryName", types: [
           "string",
         ]
 
         # @return [String]
-        define_property :executable_library_name, as: "executableLibraryName", types: [
+        define_property :programming_model, as: "programmingModel", types: [
           "string",
         ]
 

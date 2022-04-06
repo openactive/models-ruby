@@ -14,16 +14,10 @@ module OpenActive
           "null",
         ]
 
-        # @return [DateTime,nil]
-        define_property :owned_through, as: "ownedThrough", types: [
-          "DateTime",
-          "null",
-        ]
-
-        # @return [OpenActive::Models::Schema::Service,OpenActive::Models::Schema::Product,URI]
+        # @return [OpenActive::Models::Schema::Product,OpenActive::Models::Schema::Service,URI]
         define_property :type_of_good, as: "typeOfGood", types: [
-          "OpenActive::Models::Schema::Service",
           "OpenActive::Models::Schema::Product",
+          "OpenActive::Models::Schema::Service",
           "URI",
         ]
 
@@ -32,6 +26,12 @@ module OpenActive
           "OpenActive::Models::Schema::Organization",
           "OpenActive::Models::Schema::Person",
           "URI",
+        ]
+
+        # @return [DateTime,nil]
+        define_property :owned_through, as: "ownedThrough", types: [
+          "DateTime",
+          "null",
         ]
       end
     end

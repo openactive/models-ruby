@@ -9,7 +9,7 @@ module OpenActive
         end
 
         # @return [String]
-        define_property :associated_pathophysiology, as: "associatedPathophysiology", types: [
+        define_property :body_location, as: "bodyLocation", types: [
           "string",
         ]
 
@@ -19,9 +19,21 @@ module OpenActive
           "URI",
         ]
 
+        # @return [OpenActive::Models::Schema::AnatomicalSystem,URI]
+        define_property :part_of_system, as: "partOfSystem", types: [
+          "OpenActive::Models::Schema::AnatomicalSystem",
+          "URI",
+        ]
+
         # @return [OpenActive::Models::Schema::MedicalTherapy,URI]
         define_property :related_therapy, as: "relatedTherapy", types: [
           "OpenActive::Models::Schema::MedicalTherapy",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::ImageObject,URI]
+        define_property :diagram, as: "diagram", types: [
+          "OpenActive::Models::Schema::ImageObject",
           "URI",
         ]
 
@@ -37,21 +49,9 @@ module OpenActive
           "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::AnatomicalSystem,URI]
-        define_property :part_of_system, as: "partOfSystem", types: [
-          "OpenActive::Models::Schema::AnatomicalSystem",
-          "URI",
-        ]
-
         # @return [String]
-        define_property :body_location, as: "bodyLocation", types: [
+        define_property :associated_pathophysiology, as: "associatedPathophysiology", types: [
           "string",
-        ]
-
-        # @return [OpenActive::Models::Schema::ImageObject,URI]
-        define_property :diagram, as: "diagram", types: [
-          "OpenActive::Models::Schema::ImageObject",
-          "URI",
         ]
       end
     end
