@@ -9,7 +9,7 @@ module OpenActive
         end
 
         # @return [OpenActive::Models::Schema::Person,URI]
-        define_property :coach, as: "coach", types: [
+        define_property :athlete, as: "athlete", types: [
           "OpenActive::Models::Schema::Person",
           "URI",
         ]
@@ -22,7 +22,7 @@ module OpenActive
         ]
 
         # @return [OpenActive::Models::Schema::Person,URI]
-        define_property :athlete, as: "athlete", types: [
+        define_property :coach, as: "coach", types: [
           "OpenActive::Models::Schema::Person",
           "URI",
         ]

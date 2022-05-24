@@ -8,15 +8,15 @@ module OpenActive
           "schema:MedicalOrganization"
         end
 
-        # @return [String]
-        define_property :health_plan_network_id, as: "healthPlanNetworkId", types: [
-          "string",
-        ]
-
         # @return [Boolean,nil]
         define_property :is_accepting_new_patients, as: "isAcceptingNewPatients", types: [
           "bool",
           "null",
+        ]
+
+        # @return [String]
+        define_property :health_plan_network_id, as: "healthPlanNetworkId", types: [
+          "string",
         ]
 
         # @return [OpenActive::Models::Schema::MedicalSpecialty,URI]

@@ -8,10 +8,16 @@ module OpenActive
           "schema:PodcastSeries"
         end
 
-        # @return [URI,OpenActive::Models::Schema::DataFeed]
-        define_property :web_feed, as: "webFeed", types: [
+        # @return [OpenActive::Models::Schema::Person,URI]
+        define_property :actor, as: "actor", types: [
+          "OpenActive::Models::Schema::Person",
           "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::DataFeed,URI]
+        define_property :web_feed, as: "webFeed", types: [
           "OpenActive::Models::Schema::DataFeed",
+          "URI",
         ]
       end
     end

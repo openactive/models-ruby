@@ -8,16 +8,22 @@ module OpenActive
           "schema:RepaymentSpecification"
         end
 
-        # @return [OpenActive::Models::Schema::MonetaryAmount,URI]
-        define_property :loan_payment_amount, as: "loanPaymentAmount", types: [
-          "OpenActive::Models::Schema::MonetaryAmount",
-          "URI",
-        ]
-
         # @return [BigDecimal,nil]
         define_property :number_of_loan_payments, as: "numberOfLoanPayments", types: [
           "Number",
           "null",
+        ]
+
+        # @return [OpenActive::Models::Schema::MonetaryAmount,URI]
+        define_property :early_prepayment_penalty, as: "earlyPrepaymentPenalty", types: [
+          "OpenActive::Models::Schema::MonetaryAmount",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::MonetaryAmount,URI]
+        define_property :loan_payment_amount, as: "loanPaymentAmount", types: [
+          "OpenActive::Models::Schema::MonetaryAmount",
+          "URI",
         ]
 
         # @return [BigDecimal,nil]
@@ -32,12 +38,6 @@ module OpenActive
           "OpenActive::Models::Schema::MonetaryAmount",
           "URI",
           "null",
-        ]
-
-        # @return [OpenActive::Models::Schema::MonetaryAmount,URI]
-        define_property :early_prepayment_penalty, as: "earlyPrepaymentPenalty", types: [
-          "OpenActive::Models::Schema::MonetaryAmount",
-          "URI",
         ]
       end
     end

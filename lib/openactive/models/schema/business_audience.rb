@@ -9,13 +9,13 @@ module OpenActive
         end
 
         # @return [OpenActive::Models::Schema::QuantitativeValue,URI]
-        define_property :number_of_employees, as: "numberOfEmployees", types: [
+        define_property :yearly_revenue, as: "yearlyRevenue", types: [
           "OpenActive::Models::Schema::QuantitativeValue",
           "URI",
         ]
 
         # @return [OpenActive::Models::Schema::QuantitativeValue,URI]
-        define_property :yearly_revenue, as: "yearlyRevenue", types: [
+        define_property :number_of_employees, as: "numberOfEmployees", types: [
           "OpenActive::Models::Schema::QuantitativeValue",
           "URI",
         ]

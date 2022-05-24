@@ -8,19 +8,6 @@ module OpenActive
           "schema:CreativeWorkSeason"
         end
 
-        # @return [int,String,nil]
-        define_property :season_number, as: "seasonNumber", types: [
-          "int",
-          "string",
-          "null",
-        ]
-
-        # @return [OpenActive::Models::Schema::Person,URI]
-        define_property :actor, as: "actor", types: [
-          "OpenActive::Models::Schema::Person",
-          "URI",
-        ]
-
         # @return [DateTime,Date,nil]
         define_property :start_date, as: "startDate", types: [
           "DateTime",
@@ -34,15 +21,15 @@ module OpenActive
           "URI",
         ]
 
-        # @return [int,nil]
-        define_property :number_of_episodes, as: "numberOfEpisodes", types: [
-          "int",
-          "null",
+        # @return [OpenActive::Models::Schema::Person,URI]
+        define_property :actor, as: "actor", types: [
+          "OpenActive::Models::Schema::Person",
+          "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::Episode,URI]
-        define_property :episodes, as: "episodes", types: [
-          "OpenActive::Models::Schema::Episode",
+        # @return [OpenActive::Models::Schema::VideoObject,URI]
+        define_property :trailer, as: "trailer", types: [
+          "OpenActive::Models::Schema::VideoObject",
           "URI",
         ]
 
@@ -54,8 +41,20 @@ module OpenActive
         ]
 
         # @return [OpenActive::Models::Schema::Episode,URI]
-        define_property :episode, as: "episode", types: [
+        define_property :episodes, as: "episodes", types: [
           "OpenActive::Models::Schema::Episode",
+          "URI",
+        ]
+
+        # @return [int,nil]
+        define_property :number_of_episodes, as: "numberOfEpisodes", types: [
+          "int",
+          "null",
+        ]
+
+        # @return [OpenActive::Models::Schema::CreativeWorkSeries,URI]
+        define_property :part_of_series, as: "partOfSeries", types: [
+          "OpenActive::Models::Schema::CreativeWorkSeries",
           "URI",
         ]
 
@@ -65,15 +64,16 @@ module OpenActive
           "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::VideoObject,URI]
-        define_property :trailer, as: "trailer", types: [
-          "OpenActive::Models::Schema::VideoObject",
-          "URI",
+        # @return [String,int,nil]
+        define_property :season_number, as: "seasonNumber", types: [
+          "string",
+          "int",
+          "null",
         ]
 
-        # @return [OpenActive::Models::Schema::CreativeWorkSeries,URI]
-        define_property :part_of_series, as: "partOfSeries", types: [
-          "OpenActive::Models::Schema::CreativeWorkSeries",
+        # @return [OpenActive::Models::Schema::Episode,URI]
+        define_property :episode, as: "episode", types: [
+          "OpenActive::Models::Schema::Episode",
           "URI",
         ]
       end

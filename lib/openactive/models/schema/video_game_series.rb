@@ -8,52 +8,15 @@ module OpenActive
           "schema:VideoGameSeries"
         end
 
-        # @return [OpenActive::Models::Schema::Person,URI]
-        define_property :directors, as: "directors", types: [
-          "OpenActive::Models::Schema::Person",
-          "URI",
-        ]
-
-        # @return [OpenActive::Models::Schema::QuantitativeValue,URI]
-        define_property :number_of_players, as: "numberOfPlayers", types: [
-          "OpenActive::Models::Schema::QuantitativeValue",
-          "URI",
-        ]
-
-        # @return [OpenActive::Models::Schema::CreativeWorkSeason,URI]
-        define_property :seasons, as: "seasons", types: [
-          "OpenActive::Models::Schema::CreativeWorkSeason",
-          "URI",
-        ]
-
-        # @return [OpenActive::Models::Schema::CreativeWorkSeason,URI]
+        # @return [URI,OpenActive::Models::Schema::CreativeWorkSeason]
         define_property :season, as: "season", types: [
+          "URI",
           "OpenActive::Models::Schema::CreativeWorkSeason",
-          "URI",
         ]
 
-        # @return [OpenActive::Enums::Schema::GamePlayMode,nil]
-        define_property :play_mode, as: "playMode", types: [
-          "OpenActive::Enums::Schema::GamePlayMode",
-          "null",
-        ]
-
-        # @return [OpenActive::Models::Schema::Person,URI]
-        define_property :actor, as: "actor", types: [
-          "OpenActive::Models::Schema::Person",
-          "URI",
-        ]
-
-        # @return [int,nil]
-        define_property :number_of_seasons, as: "numberOfSeasons", types: [
-          "int",
-          "null",
-        ]
-
-        # @return [OpenActive::Models::Schema::PostalAddress,OpenActive::Models::Schema::Place,URI]
-        define_property :game_location, as: "gameLocation", types: [
-          "OpenActive::Models::Schema::PostalAddress",
-          "OpenActive::Models::Schema::Place",
+        # @return [OpenActive::Models::Schema::CreativeWorkSeason,URI]
+        define_property :contains_season, as: "containsSeason", types: [
+          "OpenActive::Models::Schema::CreativeWorkSeason",
           "URI",
         ]
 
@@ -63,71 +26,9 @@ module OpenActive
           "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::Person,OpenActive::Models::Schema::MusicGroup,URI]
-        define_property :music_by, as: "musicBy", types: [
-          "OpenActive::Models::Schema::Person",
-          "OpenActive::Models::Schema::MusicGroup",
-          "URI",
-        ]
-
-        # @return [int,nil]
-        define_property :number_of_episodes, as: "numberOfEpisodes", types: [
-          "int",
-          "null",
-        ]
-
-        # @return [OpenActive::Models::Schema::Episode,URI]
-        define_property :episodes, as: "episodes", types: [
-          "OpenActive::Models::Schema::Episode",
-          "URI",
-        ]
-
-        # @return [OpenActive::Models::Schema::Thing,URI]
-        define_property :game_item, as: "gameItem", types: [
-          "OpenActive::Models::Schema::Thing",
-          "URI",
-        ]
-
-        # @return [OpenActive::Models::Schema::Thing,URI,String]
-        define_property :game_platform, as: "gamePlatform", types: [
-          "OpenActive::Models::Schema::Thing",
-          "URI",
-          "string",
-        ]
-
-        # @return [OpenActive::Models::Schema::Thing,URI]
-        define_property :character_attribute, as: "characterAttribute", types: [
-          "OpenActive::Models::Schema::Thing",
-          "URI",
-        ]
-
         # @return [OpenActive::Models::Schema::Person,URI]
-        define_property :actors, as: "actors", types: [
+        define_property :actor, as: "actor", types: [
           "OpenActive::Models::Schema::Person",
-          "URI",
-        ]
-
-        # @return [OpenActive::Models::Schema::CreativeWorkSeason,URI]
-        define_property :contains_season, as: "containsSeason", types: [
-          "OpenActive::Models::Schema::CreativeWorkSeason",
-          "URI",
-        ]
-
-        # @return [OpenActive::Models::Schema::Thing,URI]
-        define_property :quest, as: "quest", types: [
-          "OpenActive::Models::Schema::Thing",
-          "URI",
-        ]
-
-        # @return [OpenActive::Models::Schema::Episode,URI]
-        define_property :episode, as: "episode", types: [
-          "OpenActive::Models::Schema::Episode",
-          "URI",
-        ]
-
-        # @return [OpenActive::Models::Schema::Organization,URI]
-        define_property :production_company, as: "productionCompany", types: [
-          "OpenActive::Models::Schema::Organization",
           "URI",
         ]
 
@@ -137,9 +38,108 @@ module OpenActive
           "URI",
         ]
 
+        # @return [OpenActive::Models::Schema::Episode,URI]
+        define_property :episodes, as: "episodes", types: [
+          "OpenActive::Models::Schema::Episode",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::Thing,URI]
+        define_property :character_attribute, as: "characterAttribute", types: [
+          "OpenActive::Models::Schema::Thing",
+          "URI",
+        ]
+
+        # @return [int,nil]
+        define_property :number_of_episodes, as: "numberOfEpisodes", types: [
+          "int",
+          "null",
+        ]
+
+        # @return [OpenActive::Models::Schema::CreativeWorkSeason,URI]
+        define_property :seasons, as: "seasons", types: [
+          "OpenActive::Models::Schema::CreativeWorkSeason",
+          "URI",
+        ]
+
         # @return [OpenActive::Models::Schema::CreativeWork,URI]
         define_property :cheat_code, as: "cheatCode", types: [
           "OpenActive::Models::Schema::CreativeWork",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::Thing,URI]
+        define_property :game_item, as: "gameItem", types: [
+          "OpenActive::Models::Schema::Thing",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::Organization,URI]
+        define_property :production_company, as: "productionCompany", types: [
+          "OpenActive::Models::Schema::Organization",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::Person,URI]
+        define_property :actors, as: "actors", types: [
+          "OpenActive::Models::Schema::Person",
+          "URI",
+        ]
+
+        # @return [OpenActive::Enums::Schema::GamePlayMode,nil]
+        define_property :play_mode, as: "playMode", types: [
+          "OpenActive::Enums::Schema::GamePlayMode",
+          "null",
+        ]
+
+        # @return [String,URI,OpenActive::Models::Schema::Thing]
+        define_property :game_platform, as: "gamePlatform", types: [
+          "string",
+          "URI",
+          "OpenActive::Models::Schema::Thing",
+        ]
+
+        # @return [int,nil]
+        define_property :number_of_seasons, as: "numberOfSeasons", types: [
+          "int",
+          "null",
+        ]
+
+        # @return [OpenActive::Models::Schema::Person,OpenActive::Models::Schema::MusicGroup,URI]
+        define_property :music_by, as: "musicBy", types: [
+          "OpenActive::Models::Schema::Person",
+          "OpenActive::Models::Schema::MusicGroup",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::QuantitativeValue,URI]
+        define_property :number_of_players, as: "numberOfPlayers", types: [
+          "OpenActive::Models::Schema::QuantitativeValue",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::Thing,URI]
+        define_property :quest, as: "quest", types: [
+          "OpenActive::Models::Schema::Thing",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::Place,URI,OpenActive::Models::Schema::PostalAddress]
+        define_property :game_location, as: "gameLocation", types: [
+          "OpenActive::Models::Schema::Place",
+          "URI",
+          "OpenActive::Models::Schema::PostalAddress",
+        ]
+
+        # @return [OpenActive::Models::Schema::Episode,URI]
+        define_property :episode, as: "episode", types: [
+          "OpenActive::Models::Schema::Episode",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::Person,URI]
+        define_property :directors, as: "directors", types: [
+          "OpenActive::Models::Schema::Person",
           "URI",
         ]
       end

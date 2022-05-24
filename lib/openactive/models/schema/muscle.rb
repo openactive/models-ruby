@@ -8,9 +8,9 @@ module OpenActive
           "schema:Muscle"
         end
 
-        # @return [OpenActive::Models::Schema::Nerve,URI]
-        define_property :nerve, as: "nerve", types: [
-          "OpenActive::Models::Schema::Nerve",
+        # @return [OpenActive::Models::Schema::AnatomicalStructure,URI]
+        define_property :insertion, as: "insertion", types: [
+          "OpenActive::Models::Schema::AnatomicalStructure",
           "URI",
         ]
 
@@ -20,9 +20,10 @@ module OpenActive
           "URI",
         ]
 
-        # @return [String]
-        define_property :muscle_action, as: "muscleAction", types: [
-          "string",
+        # @return [OpenActive::Models::Schema::Nerve,URI]
+        define_property :nerve, as: "nerve", types: [
+          "OpenActive::Models::Schema::Nerve",
+          "URI",
         ]
 
         # @return [OpenActive::Models::Schema::Vessel,URI]
@@ -31,10 +32,9 @@ module OpenActive
           "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::AnatomicalStructure,URI]
-        define_property :insertion, as: "insertion", types: [
-          "OpenActive::Models::Schema::AnatomicalStructure",
-          "URI",
+        # @return [String]
+        define_property :muscle_action, as: "muscleAction", types: [
+          "string",
         ]
       end
     end

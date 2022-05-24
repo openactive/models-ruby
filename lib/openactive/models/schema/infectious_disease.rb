@@ -8,11 +8,6 @@ module OpenActive
           "schema:InfectiousDisease"
         end
 
-        # @return [String]
-        define_property :transmission_method, as: "transmissionMethod", types: [
-          "string",
-        ]
-
         # @return [OpenActive::Models::Schema::InfectiousAgentClass,URI]
         define_property :infectious_agent_class, as: "infectiousAgentClass", types: [
           "OpenActive::Models::Schema::InfectiousAgentClass",
@@ -21,6 +16,11 @@ module OpenActive
 
         # @return [String]
         define_property :infectious_agent, as: "infectiousAgent", types: [
+          "string",
+        ]
+
+        # @return [String]
+        define_property :transmission_method, as: "transmissionMethod", types: [
           "string",
         ]
       end

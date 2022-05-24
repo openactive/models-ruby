@@ -8,15 +8,15 @@ module OpenActive
           "schema:Audience"
         end
 
+        # @return [String]
+        define_property :audience_type, as: "audienceType", types: [
+          "string",
+        ]
+
         # @return [OpenActive::Models::Schema::AdministrativeArea,URI]
         define_property :geographic_area, as: "geographicArea", types: [
           "OpenActive::Models::Schema::AdministrativeArea",
           "URI",
-        ]
-
-        # @return [String]
-        define_property :audience_type, as: "audienceType", types: [
-          "string",
         ]
       end
     end

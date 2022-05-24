@@ -8,21 +8,14 @@ module OpenActive
           "schema:UserComments"
         end
 
-        # @return [OpenActive::Models::Schema::Organization,OpenActive::Models::Schema::Person,URI]
-        define_property :creator, as: "creator", types: [
-          "OpenActive::Models::Schema::Organization",
-          "OpenActive::Models::Schema::Person",
+        # @return [URI]
+        define_property :reply_to_url, as: "replyToUrl", types: [
           "URI",
         ]
 
         # @return [OpenActive::Models::Schema::CreativeWork,URI]
         define_property :discusses, as: "discusses", types: [
           "OpenActive::Models::Schema::CreativeWork",
-          "URI",
-        ]
-
-        # @return [URI]
-        define_property :reply_to_url, as: "replyToUrl", types: [
           "URI",
         ]
 
@@ -36,6 +29,13 @@ module OpenActive
         # @return [String]
         define_property :comment_text, as: "commentText", types: [
           "string",
+        ]
+
+        # @return [OpenActive::Models::Schema::Organization,OpenActive::Models::Schema::Person,URI]
+        define_property :creator, as: "creator", types: [
+          "OpenActive::Models::Schema::Organization",
+          "OpenActive::Models::Schema::Person",
+          "URI",
         ]
       end
     end

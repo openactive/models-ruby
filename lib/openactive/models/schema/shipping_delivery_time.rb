@@ -9,7 +9,7 @@ module OpenActive
         end
 
         # @return [OpenActive::Models::Schema::QuantitativeValue,URI]
-        define_property :handling_time, as: "handlingTime", types: [
+        define_property :transit_time, as: "transitTime", types: [
           "OpenActive::Models::Schema::QuantitativeValue",
           "URI",
         ]
@@ -20,16 +20,16 @@ module OpenActive
           "URI",
         ]
 
+        # @return [OpenActive::Models::Schema::QuantitativeValue,URI]
+        define_property :handling_time, as: "handlingTime", types: [
+          "OpenActive::Models::Schema::QuantitativeValue",
+          "URI",
+        ]
+
         # @return [Time,nil]
         define_property :cutoff_time, as: "cutoffTime", types: [
           "Time",
           "null",
-        ]
-
-        # @return [OpenActive::Models::Schema::QuantitativeValue,URI]
-        define_property :transit_time, as: "transitTime", types: [
-          "OpenActive::Models::Schema::QuantitativeValue",
-          "URI",
         ]
       end
     end

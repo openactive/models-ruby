@@ -58,9 +58,19 @@ module OpenActive
         "OpenActive::Models::Concept[]",
       ]
 
+      # @return [Array<String>]
+      define_property :customer_account_booking_restriction, as: "customerAccountBookingRestriction", types: [
+        "string[]",
+      ]
+
       # @return [Array<OpenActive::Models::Slot>]
       define_property :event, as: "event", types: [
         "OpenActive::Models::Slot[]",
+      ]
+
+      # @return [Array<OpenActive::Models::Concept>]
+      define_property :facility_type, as: "facilityType", types: [
+        "OpenActive::Models::Concept[]",
       ]
 
       # @return [Array<OpenActive::Models::OpeningHoursSpecification>]
@@ -76,6 +86,12 @@ module OpenActive
       # @return [Array<OpenActive::Models::IndividualFacilityUse>]
       define_property :individual_facility_use, as: "individualFacilityUse", types: [
         "OpenActive::Models::IndividualFacilityUse[]",
+      ]
+
+      # @return [Boolean,nil]
+      define_property :is_open_booking_with_customer_account_allowed, as: "isOpenBookingWithCustomerAccountAllowed", types: [
+        "bool",
+        "null",
       ]
 
       # @return [OpenActive::Models::Place]
@@ -123,11 +139,6 @@ module OpenActive
       define_property :offer_validity_period, as: "beta:offerValidityPeriod", types: [
         "DateInterval",
         "null",
-      ]
-
-      # @return [Array<OpenActive::Models::Concept>]
-      define_property :facility_type, as: "beta:facilityType", types: [
-        "OpenActive::Models::Concept[]",
       ]
 
       # @return [OpenActive::Enums::FacilitySettingType,nil]

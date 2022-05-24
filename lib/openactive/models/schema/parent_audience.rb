@@ -9,13 +9,13 @@ module OpenActive
         end
 
         # @return [BigDecimal,nil]
-        define_property :child_min_age, as: "childMinAge", types: [
+        define_property :child_max_age, as: "childMaxAge", types: [
           "Number",
           "null",
         ]
 
         # @return [BigDecimal,nil]
-        define_property :child_max_age, as: "childMaxAge", types: [
+        define_property :child_min_age, as: "childMinAge", types: [
           "Number",
           "null",
         ]

@@ -8,6 +8,12 @@ module OpenActive
           "schema:DrugStrength"
         end
 
+        # @return [OpenActive::Models::Schema::AdministrativeArea,URI]
+        define_property :available_in, as: "availableIn", types: [
+          "OpenActive::Models::Schema::AdministrativeArea",
+          "URI",
+        ]
+
         # @return [String]
         define_property :strength_unit, as: "strengthUnit", types: [
           "string",
@@ -19,21 +25,15 @@ module OpenActive
           "URI",
         ]
 
-        # @return [BigDecimal,nil]
-        define_property :strength_value, as: "strengthValue", types: [
-          "Number",
-          "null",
-        ]
-
         # @return [String]
         define_property :active_ingredient, as: "activeIngredient", types: [
           "string",
         ]
 
-        # @return [OpenActive::Models::Schema::AdministrativeArea,URI]
-        define_property :available_in, as: "availableIn", types: [
-          "OpenActive::Models::Schema::AdministrativeArea",
-          "URI",
+        # @return [BigDecimal,nil]
+        define_property :strength_value, as: "strengthValue", types: [
+          "Number",
+          "null",
         ]
       end
     end

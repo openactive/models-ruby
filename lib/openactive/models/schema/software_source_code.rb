@@ -8,11 +8,6 @@ module OpenActive
           "schema:SoftwareSourceCode"
         end
 
-        # @return [String]
-        define_property :runtime_platform, as: "runtimePlatform", types: [
-          "string",
-        ]
-
         # @return [String,OpenActive::Models::Schema::ComputerLanguage,URI]
         define_property :programming_language, as: "programmingLanguage", types: [
           "string",
@@ -21,13 +16,13 @@ module OpenActive
         ]
 
         # @return [String]
-        define_property :code_sample_type, as: "codeSampleType", types: [
+        define_property :sample_type, as: "sampleType", types: [
           "string",
         ]
 
-        # @return [URI]
-        define_property :code_repository, as: "codeRepository", types: [
-          "URI",
+        # @return [String]
+        define_property :runtime_platform, as: "runtimePlatform", types: [
+          "string",
         ]
 
         # @return [String]
@@ -41,8 +36,13 @@ module OpenActive
           "URI",
         ]
 
+        # @return [URI]
+        define_property :code_repository, as: "codeRepository", types: [
+          "URI",
+        ]
+
         # @return [String]
-        define_property :sample_type, as: "sampleType", types: [
+        define_property :code_sample_type, as: "codeSampleType", types: [
           "string",
         ]
       end

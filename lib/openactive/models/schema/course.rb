@@ -1,7 +1,7 @@
 module OpenActive
   module Models
     module Schema
-      class Course < ::OpenActive::Models::Schema::CreativeWork
+      class Course < ::OpenActive::Models::Schema::LearningResource
         # @!attribute type
         # @return [String]
         def type
@@ -16,9 +16,25 @@ module OpenActive
           "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::CourseInstance,URI]
-        define_property :has_course_instance, as: "hasCourseInstance", types: [
-          "OpenActive::Models::Schema::CourseInstance",
+        # @return [URI,OpenActive::Models::Schema::EducationalOccupationalCredential,String]
+        define_property :educational_credential_awarded, as: "educationalCredentialAwarded", types: [
+          "URI",
+          "OpenActive::Models::Schema::EducationalOccupationalCredential",
+          "string",
+        ]
+
+        # @return [int,OpenActive::Models::Schema::StructuredValue,URI,nil]
+        define_property :number_of_credits, as: "numberOfCredits", types: [
+          "int",
+          "OpenActive::Models::Schema::StructuredValue",
+          "URI",
+          "null",
+        ]
+
+        # @return [OpenActive::Models::Schema::EducationalOccupationalCredential,String,URI]
+        define_property :occupational_credential_awarded, as: "occupationalCredentialAwarded", types: [
+          "OpenActive::Models::Schema::EducationalOccupationalCredential",
+          "string",
           "URI",
         ]
 
@@ -27,26 +43,10 @@ module OpenActive
           "string",
         ]
 
-        # @return [URI,String,OpenActive::Models::Schema::EducationalOccupationalCredential]
-        define_property :occupational_credential_awarded, as: "occupationalCredentialAwarded", types: [
+        # @return [OpenActive::Models::Schema::CourseInstance,URI]
+        define_property :has_course_instance, as: "hasCourseInstance", types: [
+          "OpenActive::Models::Schema::CourseInstance",
           "URI",
-          "string",
-          "OpenActive::Models::Schema::EducationalOccupationalCredential",
-        ]
-
-        # @return [OpenActive::Models::Schema::StructuredValue,int,URI,nil]
-        define_property :number_of_credits, as: "numberOfCredits", types: [
-          "OpenActive::Models::Schema::StructuredValue",
-          "int",
-          "URI",
-          "null",
-        ]
-
-        # @return [URI,String,OpenActive::Models::Schema::EducationalOccupationalCredential]
-        define_property :educational_credential_awarded, as: "educationalCredentialAwarded", types: [
-          "URI",
-          "string",
-          "OpenActive::Models::Schema::EducationalOccupationalCredential",
         ]
       end
     end

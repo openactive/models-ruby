@@ -24,6 +24,11 @@ module OpenActive
         "null",
       ]
 
+      # @return [Array<OpenActive::Models::Concept>]
+      define_property :eligible_entitlement_type, as: "eligibleEntitlementType", types: [
+        "OpenActive::Models::Concept[]",
+      ]
+
       # @return [ActiveSupport::Duration,nil]
       define_property :latest_cancellation_before_start_date, as: "latestCancellationBeforeStartDate", types: [
         "DateInterval",
@@ -44,6 +49,12 @@ module OpenActive
 
       # @return [ActiveSupport::Duration,nil]
       define_property :valid_from_before_start_date, as: "validFromBeforeStartDate", types: [
+        "DateInterval",
+        "null",
+      ]
+
+      # @return [ActiveSupport::Duration,nil]
+      define_property :valid_through_before_start_date, as: "validThroughBeforeStartDate", types: [
         "DateInterval",
         "null",
       ]

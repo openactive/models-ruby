@@ -1,7 +1,7 @@
 module OpenActive
   module Models
     module Schema
-      class Audiobook < ::OpenActive::Models::Schema::Book
+      class Audiobook < ::OpenActive::Models::Schema::AudioObject
         # @!attribute type
         # @return [String]
         def type

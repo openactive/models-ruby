@@ -15,6 +15,12 @@ module OpenActive
         ]
 
         # @return [DateTime,nil]
+        define_property :dropoff_time, as: "dropoffTime", types: [
+          "DateTime",
+          "null",
+        ]
+
+        # @return [DateTime,nil]
         define_property :pickup_time, as: "pickupTime", types: [
           "DateTime",
           "null",
@@ -24,12 +30,6 @@ module OpenActive
         define_property :pickup_location, as: "pickupLocation", types: [
           "OpenActive::Models::Schema::Place",
           "URI",
-        ]
-
-        # @return [DateTime,nil]
-        define_property :dropoff_time, as: "dropoffTime", types: [
-          "DateTime",
-          "null",
         ]
       end
     end

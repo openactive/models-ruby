@@ -8,11 +8,11 @@ module OpenActive
           "schema:EducationalOccupationalCredential"
         end
 
-        # @return [OpenActive::Models::Schema::DefinedTerm,URI,String]
-        define_property :credential_category, as: "credentialCategory", types: [
-          "OpenActive::Models::Schema::DefinedTerm",
+        # @return [ActiveSupport::Duration,URI,nil]
+        define_property :valid_for, as: "validFor", types: [
+          "DateInterval",
           "URI",
-          "string",
+          "null",
         ]
 
         # @return [URI,OpenActive::Models::Schema::DefinedTerm,String]
@@ -22,17 +22,11 @@ module OpenActive
           "string",
         ]
 
-        # @return [OpenActive::Models::Schema::AdministrativeArea,URI]
-        define_property :valid_in, as: "validIn", types: [
-          "OpenActive::Models::Schema::AdministrativeArea",
-          "URI",
-        ]
-
-        # @return [String,URI,OpenActive::Models::Schema::DefinedTerm]
-        define_property :competency_required, as: "competencyRequired", types: [
-          "string",
+        # @return [URI,OpenActive::Models::Schema::DefinedTerm,String]
+        define_property :credential_category, as: "credentialCategory", types: [
           "URI",
           "OpenActive::Models::Schema::DefinedTerm",
+          "string",
         ]
 
         # @return [OpenActive::Models::Schema::Organization,URI]
@@ -41,11 +35,17 @@ module OpenActive
           "URI",
         ]
 
-        # @return [ActiveSupport::Duration,URI,nil]
-        define_property :valid_for, as: "validFor", types: [
-          "DateInterval",
+        # @return [String,OpenActive::Models::Schema::DefinedTerm,URI]
+        define_property :competency_required, as: "competencyRequired", types: [
+          "string",
+          "OpenActive::Models::Schema::DefinedTerm",
           "URI",
-          "null",
+        ]
+
+        # @return [OpenActive::Models::Schema::AdministrativeArea,URI]
+        define_property :valid_in, as: "validIn", types: [
+          "OpenActive::Models::Schema::AdministrativeArea",
+          "URI",
         ]
       end
     end

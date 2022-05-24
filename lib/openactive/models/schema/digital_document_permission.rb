@@ -8,12 +8,12 @@ module OpenActive
           "schema:DigitalDocumentPermission"
         end
 
-        # @return [OpenActive::Models::Schema::Organization,OpenActive::Models::Schema::Person,OpenActive::Models::Schema::Audience,OpenActive::Models::Schema::ContactPoint,URI]
+        # @return [OpenActive::Models::Schema::Person,OpenActive::Models::Schema::Audience,OpenActive::Models::Schema::ContactPoint,OpenActive::Models::Schema::Organization,URI]
         define_property :grantee, as: "grantee", types: [
-          "OpenActive::Models::Schema::Organization",
           "OpenActive::Models::Schema::Person",
           "OpenActive::Models::Schema::Audience",
           "OpenActive::Models::Schema::ContactPoint",
+          "OpenActive::Models::Schema::Organization",
           "URI",
         ]
 

@@ -8,16 +8,16 @@ module OpenActive
           "schema:MortgageLoan"
         end
 
-        # @return [Boolean,nil]
-        define_property :domiciled_mortgage, as: "domiciledMortgage", types: [
-          "bool",
-          "null",
-        ]
-
         # @return [OpenActive::Models::Schema::MonetaryAmount,URI]
         define_property :loan_mortgage_mandate_amount, as: "loanMortgageMandateAmount", types: [
           "OpenActive::Models::Schema::MonetaryAmount",
           "URI",
+        ]
+
+        # @return [Boolean,nil]
+        define_property :domiciled_mortgage, as: "domiciledMortgage", types: [
+          "bool",
+          "null",
         ]
       end
     end

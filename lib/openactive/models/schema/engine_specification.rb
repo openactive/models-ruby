@@ -8,20 +8,18 @@ module OpenActive
           "schema:EngineSpecification"
         end
 
-        # @return [OpenActive::Enums::Schema::QualitativeValue,URI,String,nil]
+        # @return [String,URI,OpenActive::Enums::Schema::QualitativeValue,nil]
         define_property :fuel_type, as: "fuelType", types: [
-          "OpenActive::Enums::Schema::QualitativeValue",
-          "URI",
           "string",
+          "URI",
+          "OpenActive::Enums::Schema::QualitativeValue",
           "null",
         ]
 
-        # @return [URI,OpenActive::Enums::Schema::QualitativeValue,String,nil]
-        define_property :engine_type, as: "engineType", types: [
+        # @return [OpenActive::Models::Schema::QuantitativeValue,URI]
+        define_property :torque, as: "torque", types: [
+          "OpenActive::Models::Schema::QuantitativeValue",
           "URI",
-          "OpenActive::Enums::Schema::QualitativeValue",
-          "string",
-          "null",
         ]
 
         # @return [OpenActive::Models::Schema::QuantitativeValue,URI]
@@ -36,10 +34,12 @@ module OpenActive
           "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::QuantitativeValue,URI]
-        define_property :torque, as: "torque", types: [
-          "OpenActive::Models::Schema::QuantitativeValue",
+        # @return [OpenActive::Enums::Schema::QualitativeValue,URI,String,nil]
+        define_property :engine_type, as: "engineType", types: [
+          "OpenActive::Enums::Schema::QualitativeValue",
           "URI",
+          "string",
+          "null",
         ]
       end
     end

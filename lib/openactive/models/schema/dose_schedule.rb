@@ -9,7 +9,17 @@ module OpenActive
         end
 
         # @return [String]
+        define_property :target_population, as: "targetPopulation", types: [
+          "string",
+        ]
+
+        # @return [String]
         define_property :frequency, as: "frequency", types: [
+          "string",
+        ]
+
+        # @return [String]
+        define_property :dose_unit, as: "doseUnit", types: [
           "string",
         ]
 
@@ -18,16 +28,6 @@ module OpenActive
           "Number",
           "OpenActive::Enums::Schema::QualitativeValue",
           "null",
-        ]
-
-        # @return [String]
-        define_property :dose_unit, as: "doseUnit", types: [
-          "string",
-        ]
-
-        # @return [String]
-        define_property :target_population, as: "targetPopulation", types: [
-          "string",
         ]
       end
     end

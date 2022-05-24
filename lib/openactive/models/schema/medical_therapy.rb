@@ -8,6 +8,12 @@ module OpenActive
           "schema:MedicalTherapy"
         end
 
+        # @return [OpenActive::Models::Schema::MedicalTherapy,URI]
+        define_property :duplicate_therapy, as: "duplicateTherapy", types: [
+          "OpenActive::Models::Schema::MedicalTherapy",
+          "URI",
+        ]
+
         # @return [OpenActive::Models::Schema::MedicalEntity,URI]
         define_property :serious_adverse_outcome, as: "seriousAdverseOutcome", types: [
           "OpenActive::Models::Schema::MedicalEntity",
@@ -18,12 +24,6 @@ module OpenActive
         define_property :contraindication, as: "contraindication", types: [
           "string",
           "OpenActive::Models::Schema::MedicalContraindication",
-          "URI",
-        ]
-
-        # @return [OpenActive::Models::Schema::MedicalTherapy,URI]
-        define_property :duplicate_therapy, as: "duplicateTherapy", types: [
-          "OpenActive::Models::Schema::MedicalTherapy",
           "URI",
         ]
       end

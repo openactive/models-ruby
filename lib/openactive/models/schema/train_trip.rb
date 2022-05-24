@@ -9,12 +9,7 @@ module OpenActive
         end
 
         # @return [String]
-        define_property :arrival_platform, as: "arrivalPlatform", types: [
-          "string",
-        ]
-
-        # @return [String]
-        define_property :departure_platform, as: "departurePlatform", types: [
+        define_property :train_name, as: "trainName", types: [
           "string",
         ]
 
@@ -25,7 +20,17 @@ module OpenActive
         ]
 
         # @return [String]
+        define_property :departure_platform, as: "departurePlatform", types: [
+          "string",
+        ]
+
+        # @return [String]
         define_property :train_number, as: "trainNumber", types: [
+          "string",
+        ]
+
+        # @return [String]
+        define_property :arrival_platform, as: "arrivalPlatform", types: [
           "string",
         ]
 
@@ -33,11 +38,6 @@ module OpenActive
         define_property :arrival_station, as: "arrivalStation", types: [
           "OpenActive::Models::Schema::TrainStation",
           "URI",
-        ]
-
-        # @return [String]
-        define_property :train_name, as: "trainName", types: [
-          "string",
         ]
       end
     end

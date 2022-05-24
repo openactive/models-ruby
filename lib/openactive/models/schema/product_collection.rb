@@ -1,7 +1,7 @@
 module OpenActive
   module Models
     module Schema
-      class ProductCollection < ::OpenActive::Models::Schema::Collection
+      class ProductCollection < ::OpenActive::Models::Schema::Product
         # @!attribute type
         # @return [String]
         def type

@@ -8,22 +8,11 @@ module OpenActive
           "schema:Episode"
         end
 
-        # @return [OpenActive::Models::Schema::CreativeWorkSeason,URI]
-        define_property :part_of_season, as: "partOfSeason", types: [
-          "OpenActive::Models::Schema::CreativeWorkSeason",
-          "URI",
-        ]
-
-        # @return [OpenActive::Models::Schema::Person,URI]
-        define_property :directors, as: "directors", types: [
-          "OpenActive::Models::Schema::Person",
-          "URI",
-        ]
-
-        # @return [OpenActive::Models::Schema::Person,URI]
-        define_property :actor, as: "actor", types: [
-          "OpenActive::Models::Schema::Person",
-          "URI",
+        # @return [int,String,nil]
+        define_property :episode_number, as: "episodeNumber", types: [
+          "int",
+          "string",
+          "null",
         ]
 
         # @return [OpenActive::Models::Schema::Person,URI]
@@ -32,29 +21,9 @@ module OpenActive
           "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::Person,OpenActive::Models::Schema::MusicGroup,URI]
-        define_property :music_by, as: "musicBy", types: [
-          "OpenActive::Models::Schema::Person",
-          "OpenActive::Models::Schema::MusicGroup",
-          "URI",
-        ]
-
-        # @return [String,int,nil]
-        define_property :episode_number, as: "episodeNumber", types: [
-          "string",
-          "int",
-          "null",
-        ]
-
         # @return [OpenActive::Models::Schema::Person,URI]
-        define_property :actors, as: "actors", types: [
+        define_property :actor, as: "actor", types: [
           "OpenActive::Models::Schema::Person",
-          "URI",
-        ]
-
-        # @return [OpenActive::Models::Schema::Organization,URI]
-        define_property :production_company, as: "productionCompany", types: [
-          "OpenActive::Models::Schema::Organization",
           "URI",
         ]
 
@@ -75,6 +44,37 @@ module OpenActive
           "DateInterval",
           "URI",
           "null",
+        ]
+
+        # @return [OpenActive::Models::Schema::CreativeWorkSeason,URI]
+        define_property :part_of_season, as: "partOfSeason", types: [
+          "OpenActive::Models::Schema::CreativeWorkSeason",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::Organization,URI]
+        define_property :production_company, as: "productionCompany", types: [
+          "OpenActive::Models::Schema::Organization",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::Person,URI]
+        define_property :actors, as: "actors", types: [
+          "OpenActive::Models::Schema::Person",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::Person,OpenActive::Models::Schema::MusicGroup,URI]
+        define_property :music_by, as: "musicBy", types: [
+          "OpenActive::Models::Schema::Person",
+          "OpenActive::Models::Schema::MusicGroup",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::Person,URI]
+        define_property :directors, as: "directors", types: [
+          "OpenActive::Models::Schema::Person",
+          "URI",
         ]
       end
     end

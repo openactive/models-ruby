@@ -8,11 +8,6 @@ module OpenActive
           "schema:Chapter"
         end
 
-        # @return [String]
-        define_property :pagination, as: "pagination", types: [
-          "string",
-        ]
-
         # @return [String,int,nil]
         define_property :page_start, as: "pageStart", types: [
           "string",
@@ -25,6 +20,11 @@ module OpenActive
           "string",
           "int",
           "null",
+        ]
+
+        # @return [String]
+        define_property :pagination, as: "pagination", types: [
+          "string",
         ]
       end
     end

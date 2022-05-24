@@ -8,10 +8,10 @@ module OpenActive
           "schema:Vein"
         end
 
-        # @return [OpenActive::Models::Schema::AnatomicalStructure,OpenActive::Models::Schema::AnatomicalSystem,URI]
+        # @return [OpenActive::Models::Schema::AnatomicalSystem,OpenActive::Models::Schema::AnatomicalStructure,URI]
         define_property :region_drained, as: "regionDrained", types: [
-          "OpenActive::Models::Schema::AnatomicalStructure",
           "OpenActive::Models::Schema::AnatomicalSystem",
+          "OpenActive::Models::Schema::AnatomicalStructure",
           "URI",
         ]
 

@@ -8,12 +8,12 @@ module OpenActive
           "schema:AuthorizeAction"
         end
 
-        # @return [OpenActive::Models::Schema::Organization,OpenActive::Models::Schema::ContactPoint,OpenActive::Models::Schema::Person,OpenActive::Models::Schema::Audience,URI]
+        # @return [OpenActive::Models::Schema::Person,OpenActive::Models::Schema::Audience,OpenActive::Models::Schema::ContactPoint,OpenActive::Models::Schema::Organization,URI]
         define_property :recipient, as: "recipient", types: [
-          "OpenActive::Models::Schema::Organization",
-          "OpenActive::Models::Schema::ContactPoint",
           "OpenActive::Models::Schema::Person",
           "OpenActive::Models::Schema::Audience",
+          "OpenActive::Models::Schema::ContactPoint",
+          "OpenActive::Models::Schema::Organization",
           "URI",
         ]
       end

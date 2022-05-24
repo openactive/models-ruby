@@ -14,28 +14,28 @@ module OpenActive
           "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::MedicalDevice,URI]
-        define_property :uses_device, as: "usesDevice", types: [
-          "OpenActive::Models::Schema::MedicalDevice",
-          "URI",
-        ]
-
-        # @return [OpenActive::Enums::Schema::MedicalEnumeration,String,nil]
-        define_property :normal_range, as: "normalRange", types: [
-          "OpenActive::Enums::Schema::MedicalEnumeration",
-          "string",
-          "null",
-        ]
-
         # @return [OpenActive::Models::Schema::Drug,URI]
         define_property :affected_by, as: "affectedBy", types: [
           "OpenActive::Models::Schema::Drug",
           "URI",
         ]
 
+        # @return [String,OpenActive::Enums::Schema::MedicalEnumeration,nil]
+        define_property :normal_range, as: "normalRange", types: [
+          "string",
+          "OpenActive::Enums::Schema::MedicalEnumeration",
+          "null",
+        ]
+
         # @return [OpenActive::Models::Schema::MedicalSign,URI]
         define_property :sign_detected, as: "signDetected", types: [
           "OpenActive::Models::Schema::MedicalSign",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::MedicalDevice,URI]
+        define_property :uses_device, as: "usesDevice", types: [
+          "OpenActive::Models::Schema::MedicalDevice",
           "URI",
         ]
       end

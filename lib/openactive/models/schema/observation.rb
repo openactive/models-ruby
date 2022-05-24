@@ -8,10 +8,9 @@ module OpenActive
           "schema:Observation"
         end
 
-        # @return [OpenActive::Models::Schema::QuantitativeValue,URI]
-        define_property :margin_of_error, as: "marginOfError", types: [
-          "OpenActive::Models::Schema::QuantitativeValue",
-          "URI",
+        # @return [OpenActive::Models::Schema::DataType]
+        define_property :measured_value, as: "measuredValue", types: [
+          "OpenActive::Models::Schema::DataType",
         ]
 
         # @return [OpenActive::Models::Schema::StatisticalPopulation,URI]
@@ -33,9 +32,10 @@ module OpenActive
           "null",
         ]
 
-        # @return [OpenActive::Models::Schema::DataType]
-        define_property :measured_value, as: "measuredValue", types: [
-          "OpenActive::Models::Schema::DataType",
+        # @return [OpenActive::Models::Schema::QuantitativeValue,URI]
+        define_property :margin_of_error, as: "marginOfError", types: [
+          "OpenActive::Models::Schema::QuantitativeValue",
+          "URI",
         ]
       end
     end
