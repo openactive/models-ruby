@@ -28,6 +28,7 @@ module OpenActive
       new :CustomerNotice, "https://openactive.io/customerNotice"
       new :EligibleEntitlementType, "https://openactive.io/eligibleEntitlementType"
       new :EmergencyContact, "https://openactive.io/emergencyContact"
+      new :EndpointUrl, "https://openactive.io/endpointUrl"
       new :Entitlement, "https://openactive.io/entitlement"
       new :EntitlementType, "https://openactive.io/entitlementType"
       new :EvidenceRequestAction, "https://openactive.io/evidenceRequestAction"

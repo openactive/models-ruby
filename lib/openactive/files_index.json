@@ -650,6 +650,7 @@
   "/models/schema/site_navigation_element.rb",
   "/models/slot.rb",
   "/models/schema/social_media_posting.rb",
+  "/models/sports_activity_location.rb",
   "/models/schema/sports_activity_location.rb",
   "/models/schema/sports_team.rb",
   "/models/schema/spreadsheet_digital_document.rb",

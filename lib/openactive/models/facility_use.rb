@@ -94,9 +94,10 @@ module OpenActive
         "null",
       ]
 
-      # @return [OpenActive::Models::Place]
+      # @return [OpenActive::Models::Place,URI]
       define_property :location, as: "location", types: [
         "OpenActive::Models::Place",
+        "URI",
       ]
 
       # @return [Array<OpenActive::Models::Offer>]
@@ -130,15 +131,20 @@ module OpenActive
         "OpenActive::Models::VideoObject[]",
       ]
 
-      # @return [Array<OpenActive::Models::Schema::SportsActivityLocation>]
+      # @return [Array<OpenActive::Models::SportsActivityLocation>]
       define_property :sports_activity_location, as: "beta:sportsActivityLocation", types: [
-        "OpenActive::Models::Schema::SportsActivityLocation[]",
+        "OpenActive::Models::SportsActivityLocation[]",
       ]
 
       # @return [ActiveSupport::Duration,nil]
       define_property :offer_validity_period, as: "beta:offerValidityPeriod", types: [
         "DateInterval",
         "null",
+      ]
+
+      # @return [Array<OpenActive::Models::Concept>]
+      define_property :facility_attribute, as: "beta:facilityAttribute", types: [
+        "OpenActive::Models::Concept[]",
       ]
 
       # @return [OpenActive::Enums::FacilitySettingType,nil]
