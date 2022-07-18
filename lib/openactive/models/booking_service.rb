@@ -13,6 +13,11 @@ module OpenActive
         "string",
       ]
 
+      # @return [URI]
+      define_property :has_credential, as: "hasCredential", types: [
+        "URI",
+      ]
+
       # @return [String]
       define_property :software_version, as: "softwareVersion", types: [
         "string",

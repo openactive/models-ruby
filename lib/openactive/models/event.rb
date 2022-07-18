@@ -136,9 +136,10 @@ module OpenActive
         "OpenActive::Models::Concept[]",
       ]
 
-      # @return [OpenActive::Models::Place]
+      # @return [OpenActive::Models::Place,URI]
       define_property :location, as: "location", types: [
         "OpenActive::Models::Place",
+        "URI",
       ]
 
       # @return [int,nil]
@@ -252,9 +253,9 @@ module OpenActive
         "OpenActive::Models::VideoObject[]",
       ]
 
-      # @return [Array<OpenActive::Models::Schema::SportsActivityLocation>]
+      # @return [Array<OpenActive::Models::SportsActivityLocation>]
       define_property :sports_activity_location, as: "beta:sportsActivityLocation", types: [
-        "OpenActive::Models::Schema::SportsActivityLocation[]",
+        "OpenActive::Models::SportsActivityLocation[]",
       ]
 
       # @return [ActiveSupport::Duration,nil]

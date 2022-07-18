@@ -42,7 +42,7 @@ module OpenActive
       ]
 
       # @return [URI]
-      define_property :endpoint_url, as: "endpointURL", types: [
+      define_property :endpoint_url, as: "endpointUrl", types: [
         "URI",
       ]
 

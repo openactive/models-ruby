@@ -20,9 +20,10 @@ module OpenActive
         "null",
       ]
 
-      # @return [OpenActive::Models::Place]
+      # @return [OpenActive::Models::Place,URI]
       define_property :location, as: "location", types: [
         "OpenActive::Models::Place",
+        "URI",
       ]
 
       # @return [int,nil]
