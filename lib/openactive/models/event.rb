@@ -186,16 +186,14 @@ module OpenActive
         "string",
       ]
 
-      # @return [Date,DateTime,nil]
+      # @return [DateTime,nil]
       define_property :start_date, as: "startDate", types: [
-        "Date",
         "DateTime",
         "null",
       ]
 
-      # @return [Date,DateTime,nil]
+      # @return [DateTime,nil]
       define_property :end_date, as: "endDate", types: [
-        "Date",
         "DateTime",
         "null",
       ]
