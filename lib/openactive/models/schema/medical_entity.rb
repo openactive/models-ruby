@@ -8,6 +8,33 @@ module OpenActive
           "schema:MedicalEntity"
         end
 
+        # @return [OpenActive::Models::Schema::DrugLegalStatus,String,OpenActive::Enums::Schema::MedicalEnumeration,URI,nil]
+        define_property :legal_status, as: "legalStatus", types: [
+          "OpenActive::Models::Schema::DrugLegalStatus",
+          "string",
+          "OpenActive::Enums::Schema::MedicalEnumeration",
+          "URI",
+          "null",
+        ]
+
+        # @return [OpenActive::Models::Schema::Grant,URI]
+        define_property :funding, as: "funding", types: [
+          "OpenActive::Models::Schema::Grant",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::MedicalStudy,URI]
+        define_property :study, as: "study", types: [
+          "OpenActive::Models::Schema::MedicalStudy",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::MedicalCode,URI]
+        define_property :code, as: "code", types: [
+          "OpenActive::Models::Schema::MedicalCode",
+          "URI",
+        ]
+
         # @return [OpenActive::Models::Schema::MedicalGuideline,URI]
         define_property :guideline, as: "guideline", types: [
           "OpenActive::Models::Schema::MedicalGuideline",
@@ -20,36 +47,15 @@ module OpenActive
           "URI",
         ]
 
-        # @return [OpenActive::Enums::Schema::MedicalEnumeration,String,OpenActive::Models::Schema::DrugLegalStatus,URI,nil]
-        define_property :legal_status, as: "legalStatus", types: [
-          "OpenActive::Enums::Schema::MedicalEnumeration",
-          "string",
-          "OpenActive::Models::Schema::DrugLegalStatus",
-          "URI",
-          "null",
-        ]
-
-        # @return [OpenActive::Models::Schema::MedicalCode,URI]
-        define_property :code, as: "code", types: [
-          "OpenActive::Models::Schema::MedicalCode",
+        # @return [OpenActive::Models::Schema::MedicineSystem,URI]
+        define_property :medicine_system, as: "medicineSystem", types: [
+          "OpenActive::Models::Schema::MedicineSystem",
           "URI",
         ]
 
         # @return [OpenActive::Models::Schema::MedicalSpecialty,URI]
         define_property :relevant_specialty, as: "relevantSpecialty", types: [
           "OpenActive::Models::Schema::MedicalSpecialty",
-          "URI",
-        ]
-
-        # @return [OpenActive::Models::Schema::MedicalStudy,URI]
-        define_property :study, as: "study", types: [
-          "OpenActive::Models::Schema::MedicalStudy",
-          "URI",
-        ]
-
-        # @return [OpenActive::Models::Schema::MedicineSystem,URI]
-        define_property :medicine_system, as: "medicineSystem", types: [
-          "OpenActive::Models::Schema::MedicineSystem",
           "URI",
         ]
       end

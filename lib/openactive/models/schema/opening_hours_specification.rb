@@ -8,15 +8,8 @@ module OpenActive
           "schema:OpeningHoursSpecification"
         end
 
-        # @return [DateTime,Date,nil]
-        define_property :valid_from, as: "validFrom", types: [
-          "DateTime",
-          "Date",
-          "null",
-        ]
-
         # @return [Time,nil]
-        define_property :opens, as: "opens", types: [
+        define_property :closes, as: "closes", types: [
           "Time",
           "null",
         ]
@@ -27,8 +20,15 @@ module OpenActive
           "null",
         ]
 
+        # @return [DateTime,Date,nil]
+        define_property :valid_from, as: "validFrom", types: [
+          "DateTime",
+          "Date",
+          "null",
+        ]
+
         # @return [Time,nil]
-        define_property :closes, as: "closes", types: [
+        define_property :opens, as: "opens", types: [
           "Time",
           "null",
         ]

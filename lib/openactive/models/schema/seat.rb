@@ -21,12 +21,12 @@ module OpenActive
         ]
 
         # @return [String]
-        define_property :seat_number, as: "seatNumber", types: [
+        define_property :seat_row, as: "seatRow", types: [
           "string",
         ]
 
         # @return [String]
-        define_property :seat_row, as: "seatRow", types: [
+        define_property :seat_number, as: "seatNumber", types: [
           "string",
         ]
       end

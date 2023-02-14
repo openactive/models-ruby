@@ -13,17 +13,17 @@ module OpenActive
           "string",
         ]
 
-        # @return [String,OpenActive::Enums::Schema::QualitativeValue,nil]
+        # @return [OpenActive::Enums::Schema::QualitativeValue,String,nil]
         define_property :broadcast_signal_modulation, as: "broadcastSignalModulation", types: [
-          "string",
           "OpenActive::Enums::Schema::QualitativeValue",
+          "string",
           "null",
         ]
 
-        # @return [OpenActive::Models::Schema::QuantitativeValue,BigDecimal,URI,nil]
+        # @return [BigDecimal,OpenActive::Models::Schema::QuantitativeValue,URI,nil]
         define_property :broadcast_frequency_value, as: "broadcastFrequencyValue", types: [
-          "OpenActive::Models::Schema::QuantitativeValue",
           "Number",
+          "OpenActive::Models::Schema::QuantitativeValue",
           "URI",
           "null",
         ]

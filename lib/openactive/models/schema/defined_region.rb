@@ -8,8 +8,15 @@ module OpenActive
           "schema:DefinedRegion"
         end
 
+        # @return [OpenActive::Models::Schema::Country,String,URI]
+        define_property :address_country, as: "addressCountry", types: [
+          "OpenActive::Models::Schema::Country",
+          "string",
+          "URI",
+        ]
+
         # @return [String]
-        define_property :postal_code_prefix, as: "postalCodePrefix", types: [
+        define_property :address_region, as: "addressRegion", types: [
           "string",
         ]
 
@@ -19,15 +26,8 @@ module OpenActive
           "URI",
         ]
 
-        # @return [String,OpenActive::Models::Schema::Country,URI]
-        define_property :address_country, as: "addressCountry", types: [
-          "string",
-          "OpenActive::Models::Schema::Country",
-          "URI",
-        ]
-
         # @return [String]
-        define_property :address_region, as: "addressRegion", types: [
+        define_property :postal_code_prefix, as: "postalCodePrefix", types: [
           "string",
         ]
 

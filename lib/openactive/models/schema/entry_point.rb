@@ -8,9 +8,10 @@ module OpenActive
           "schema:EntryPoint"
         end
 
-        # @return [String]
-        define_property :content_type, as: "contentType", types: [
-          "string",
+        # @return [OpenActive::Models::Schema::SoftwareApplication,URI]
+        define_property :action_application, as: "actionApplication", types: [
+          "OpenActive::Models::Schema::SoftwareApplication",
+          "URI",
         ]
 
         # @return [OpenActive::Models::Schema::SoftwareApplication,URI]
@@ -19,15 +20,12 @@ module OpenActive
           "URI",
         ]
 
-        # @return [String]
-        define_property :encoding_type, as: "encodingType", types: [
+        # @return [String,URI,OpenActive::Enums::Schema::DigitalPlatformEnumeration,nil]
+        define_property :action_platform, as: "actionPlatform", types: [
           "string",
-        ]
-
-        # @return [OpenActive::Models::Schema::SoftwareApplication,URI]
-        define_property :action_application, as: "actionApplication", types: [
-          "OpenActive::Models::Schema::SoftwareApplication",
           "URI",
+          "OpenActive::Enums::Schema::DigitalPlatformEnumeration",
+          "null",
         ]
 
         # @return [String]
@@ -35,14 +33,18 @@ module OpenActive
           "string",
         ]
 
-        # @return [String,URI]
-        define_property :action_platform, as: "actionPlatform", types: [
+        # @return [String]
+        define_property :url_template, as: "urlTemplate", types: [
           "string",
-          "URI",
         ]
 
         # @return [String]
-        define_property :url_template, as: "urlTemplate", types: [
+        define_property :encoding_type, as: "encodingType", types: [
+          "string",
+        ]
+
+        # @return [String]
+        define_property :content_type, as: "contentType", types: [
           "string",
         ]
       end

@@ -8,8 +8,18 @@ module OpenActive
           "schema:PhysicalActivity"
         end
 
+        # @return [URI,String,OpenActive::Enums::Schema::PhysicalActivityCategory,OpenActive::Models::Schema::Thing,OpenActive::Models::Schema::CategoryCode,nil]
+        define_property :category, as: "category", types: [
+          "URI",
+          "string",
+          "OpenActive::Enums::Schema::PhysicalActivityCategory",
+          "OpenActive::Models::Schema::Thing",
+          "OpenActive::Models::Schema::CategoryCode",
+          "null",
+        ]
+
         # @return [String]
-        define_property :epidemiology, as: "epidemiology", types: [
+        define_property :pathophysiology, as: "pathophysiology", types: [
           "string",
         ]
 
@@ -21,17 +31,8 @@ module OpenActive
           "URI",
         ]
 
-        # @return [OpenActive::Enums::Schema::PhysicalActivityCategory,String,URI,OpenActive::Models::Schema::Thing,nil]
-        define_property :category, as: "category", types: [
-          "OpenActive::Enums::Schema::PhysicalActivityCategory",
-          "string",
-          "URI",
-          "OpenActive::Models::Schema::Thing",
-          "null",
-        ]
-
         # @return [String]
-        define_property :pathophysiology, as: "pathophysiology", types: [
+        define_property :epidemiology, as: "epidemiology", types: [
           "string",
         ]
       end

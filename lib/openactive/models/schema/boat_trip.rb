@@ -9,13 +9,13 @@ module OpenActive
         end
 
         # @return [OpenActive::Models::Schema::BoatTerminal,URI]
-        define_property :departure_boat_terminal, as: "departureBoatTerminal", types: [
+        define_property :arrival_boat_terminal, as: "arrivalBoatTerminal", types: [
           "OpenActive::Models::Schema::BoatTerminal",
           "URI",
         ]
 
         # @return [OpenActive::Models::Schema::BoatTerminal,URI]
-        define_property :arrival_boat_terminal, as: "arrivalBoatTerminal", types: [
+        define_property :departure_boat_terminal, as: "departureBoatTerminal", types: [
           "OpenActive::Models::Schema::BoatTerminal",
           "URI",
         ]

@@ -9,25 +9,25 @@ module OpenActive
         end
 
         # @return [BigDecimal,nil]
-        define_property :median, as: "median", types: [
-          "Number",
-          "null",
-        ]
-
-        # @return [BigDecimal,nil]
         define_property :percentile75, as: "percentile75", types: [
           "Number",
           "null",
         ]
 
         # @return [BigDecimal,nil]
-        define_property :percentile25, as: "percentile25", types: [
+        define_property :median, as: "median", types: [
           "Number",
           "null",
         ]
 
         # @return [BigDecimal,nil]
         define_property :percentile10, as: "percentile10", types: [
+          "Number",
+          "null",
+        ]
+
+        # @return [BigDecimal,nil]
+        define_property :percentile25, as: "percentile25", types: [
           "Number",
           "null",
         ]

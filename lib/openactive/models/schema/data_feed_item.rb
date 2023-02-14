@@ -9,6 +9,20 @@ module OpenActive
         end
 
         # @return [DateTime,Date,nil]
+        define_property :date_deleted, as: "dateDeleted", types: [
+          "DateTime",
+          "Date",
+          "null",
+        ]
+
+        # @return [Date,DateTime,nil]
+        define_property :date_created, as: "dateCreated", types: [
+          "Date",
+          "DateTime",
+          "null",
+        ]
+
+        # @return [DateTime,Date,nil]
         define_property :date_modified, as: "dateModified", types: [
           "DateTime",
           "Date",
@@ -19,20 +33,6 @@ module OpenActive
         define_property :item, as: "item", types: [
           "OpenActive::Models::Schema::Thing",
           "URI",
-        ]
-
-        # @return [DateTime,Date,nil]
-        define_property :date_created, as: "dateCreated", types: [
-          "DateTime",
-          "Date",
-          "null",
-        ]
-
-        # @return [DateTime,Date,nil]
-        define_property :date_deleted, as: "dateDeleted", types: [
-          "DateTime",
-          "Date",
-          "null",
         ]
       end
     end

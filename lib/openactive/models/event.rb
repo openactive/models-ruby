@@ -73,6 +73,11 @@ module OpenActive
         "OpenActive::Models::Person[]",
       ]
 
+      # @return [Array<String>]
+      define_property :customer_account_booking_restriction, as: "customerAccountBookingRestriction", types: [
+        "string[]",
+      ]
+
       # @return [ActiveSupport::Duration,nil]
       define_property :duration, as: "duration", types: [
         "DateInterval",
@@ -114,6 +119,12 @@ module OpenActive
         "null",
       ]
 
+      # @return [Boolean,nil]
+      define_property :is_open_booking_with_customer_account_allowed, as: "isOpenBookingWithCustomerAccountAllowed", types: [
+        "bool",
+        "null",
+      ]
+
       # @return [Array<OpenActive::Models::Person>]
       define_property :leader, as: "leader", types: [
         "OpenActive::Models::Person[]",
@@ -125,9 +136,10 @@ module OpenActive
         "OpenActive::Models::Concept[]",
       ]
 
-      # @return [OpenActive::Models::Place]
+      # @return [OpenActive::Models::Place,URI]
       define_property :location, as: "location", types: [
         "OpenActive::Models::Place",
+        "URI",
       ]
 
       # @return [int,nil]
@@ -241,9 +253,9 @@ module OpenActive
         "OpenActive::Models::VideoObject[]",
       ]
 
-      # @return [Array<OpenActive::Models::Schema::SportsActivityLocation>]
+      # @return [Array<OpenActive::Models::SportsActivityLocation>]
       define_property :sports_activity_location, as: "beta:sportsActivityLocation", types: [
-        "OpenActive::Models::Schema::SportsActivityLocation[]",
+        "OpenActive::Models::SportsActivityLocation[]",
       ]
 
       # @return [ActiveSupport::Duration,nil]
@@ -293,6 +305,12 @@ module OpenActive
 
       # @return [Boolean,nil]
       define_property :is_first_session_accessible_for_free, as: "beta:isFirstSessionAccessibleForFree", types: [
+        "bool",
+        "null",
+      ]
+
+      # @return [Boolean,nil]
+      define_property :is_scheduled_as_slots, as: "beta:isScheduledAsSlots", types: [
         "bool",
         "null",
       ]

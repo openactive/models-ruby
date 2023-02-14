@@ -8,15 +8,16 @@ module OpenActive
           "schema:SellAction"
         end
 
-        # @return [OpenActive::Models::Schema::Person,URI]
-        define_property :buyer, as: "buyer", types: [
-          "OpenActive::Models::Schema::Person",
-          "URI",
-        ]
-
         # @return [OpenActive::Models::Schema::WarrantyPromise,URI]
         define_property :warranty_promise, as: "warrantyPromise", types: [
           "OpenActive::Models::Schema::WarrantyPromise",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::Person,OpenActive::Models::Schema::Organization,URI]
+        define_property :buyer, as: "buyer", types: [
+          "OpenActive::Models::Schema::Person",
+          "OpenActive::Models::Schema::Organization",
           "URI",
         ]
       end

@@ -8,11 +8,6 @@ module OpenActive
           "schema:AnatomicalSystem"
         end
 
-        # @return [String]
-        define_property :associated_pathophysiology, as: "associatedPathophysiology", types: [
-          "string",
-        ]
-
         # @return [OpenActive::Models::Schema::MedicalTherapy,URI]
         define_property :related_therapy, as: "relatedTherapy", types: [
           "OpenActive::Models::Schema::MedicalTherapy",
@@ -31,10 +26,15 @@ module OpenActive
           "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::AnatomicalSystem,OpenActive::Models::Schema::AnatomicalStructure,URI]
+        # @return [String]
+        define_property :associated_pathophysiology, as: "associatedPathophysiology", types: [
+          "string",
+        ]
+
+        # @return [OpenActive::Models::Schema::AnatomicalStructure,OpenActive::Models::Schema::AnatomicalSystem,URI]
         define_property :comprised_of, as: "comprisedOf", types: [
-          "OpenActive::Models::Schema::AnatomicalSystem",
           "OpenActive::Models::Schema::AnatomicalStructure",
+          "OpenActive::Models::Schema::AnatomicalSystem",
           "URI",
         ]
       end

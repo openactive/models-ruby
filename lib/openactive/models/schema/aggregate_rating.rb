@@ -8,12 +8,6 @@ module OpenActive
           "schema:AggregateRating"
         end
 
-        # @return [int,nil]
-        define_property :rating_count, as: "ratingCount", types: [
-          "int",
-          "null",
-        ]
-
         # @return [OpenActive::Models::Schema::Thing,URI]
         define_property :item_reviewed, as: "itemReviewed", types: [
           "OpenActive::Models::Schema::Thing",
@@ -22,6 +16,12 @@ module OpenActive
 
         # @return [int,nil]
         define_property :review_count, as: "reviewCount", types: [
+          "int",
+          "null",
+        ]
+
+        # @return [int,nil]
+        define_property :rating_count, as: "ratingCount", types: [
           "int",
           "null",
         ]

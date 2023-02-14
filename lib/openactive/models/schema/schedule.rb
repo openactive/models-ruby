@@ -8,32 +8,15 @@ module OpenActive
           "schema:Schedule"
         end
 
-        # @return [DateTime,Time,nil]
-        define_property :start_time, as: "startTime", types: [
-          "DateTime",
-          "Time",
-          "null",
+        # @return [String]
+        define_property :schedule_timezone, as: "scheduleTimezone", types: [
+          "string",
         ]
 
         # @return [DateTime,Date,nil]
         define_property :start_date, as: "startDate", types: [
           "DateTime",
           "Date",
-          "null",
-        ]
-
-        # @return [DateTime,Time,nil]
-        define_property :end_time, as: "endTime", types: [
-          "DateTime",
-          "Time",
-          "null",
-        ]
-
-        # @return [ActiveSupport::Duration,String,URI,nil]
-        define_property :repeat_frequency, as: "repeatFrequency", types: [
-          "DateInterval",
-          "string",
-          "URI",
           "null",
         ]
 
@@ -44,8 +27,15 @@ module OpenActive
           "null",
         ]
 
+        # @return [DateTime,Time,nil]
+        define_property :start_time, as: "startTime", types: [
+          "DateTime",
+          "Time",
+          "null",
+        ]
+
         # @return [int,nil]
-        define_property :by_month, as: "byMonth", types: [
+        define_property :repeat_count, as: "repeatCount", types: [
           "int",
           "null",
         ]
@@ -57,8 +47,36 @@ module OpenActive
           "null",
         ]
 
+        # @return [String,ActiveSupport::Duration,URI,nil]
+        define_property :repeat_frequency, as: "repeatFrequency", types: [
+          "string",
+          "DateInterval",
+          "URI",
+          "null",
+        ]
+
+        # @return [ActiveSupport::Duration,URI,nil]
+        define_property :duration, as: "duration", types: [
+          "DateInterval",
+          "URI",
+          "null",
+        ]
+
         # @return [int,nil]
         define_property :by_month_day, as: "byMonthDay", types: [
+          "int",
+          "null",
+        ]
+
+        # @return [DateTime,Time,nil]
+        define_property :end_time, as: "endTime", types: [
+          "DateTime",
+          "Time",
+          "null",
+        ]
+
+        # @return [int,nil]
+        define_property :by_month, as: "byMonth", types: [
           "int",
           "null",
         ]
@@ -67,24 +85,6 @@ module OpenActive
         define_property :by_day, as: "byDay", types: [
           "OpenActive::Enums::Schema::DayOfWeek",
           "string",
-          "null",
-        ]
-
-        # @return [String]
-        define_property :schedule_timezone, as: "scheduleTimezone", types: [
-          "string",
-        ]
-
-        # @return [int,nil]
-        define_property :repeat_count, as: "repeatCount", types: [
-          "int",
-          "null",
-        ]
-
-        # @return [ActiveSupport::Duration,URI,nil]
-        define_property :duration, as: "duration", types: [
-          "DateInterval",
-          "URI",
           "null",
         ]
 

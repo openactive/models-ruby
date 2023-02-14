@@ -8,15 +8,10 @@ module OpenActive
           "schema:Nerve"
         end
 
-        # @return [OpenActive::Models::Schema::BrainStructure,URI]
-        define_property :sourced_from, as: "sourcedFrom", types: [
-          "OpenActive::Models::Schema::BrainStructure",
-          "URI",
-        ]
-
-        # @return [OpenActive::Models::Schema::Muscle,URI]
-        define_property :nerve_motor, as: "nerveMotor", types: [
-          "OpenActive::Models::Schema::Muscle",
+        # @return [OpenActive::Models::Schema::SuperficialAnatomy,OpenActive::Models::Schema::AnatomicalStructure,URI]
+        define_property :sensory_unit, as: "sensoryUnit", types: [
+          "OpenActive::Models::Schema::SuperficialAnatomy",
+          "OpenActive::Models::Schema::AnatomicalStructure",
           "URI",
         ]
 
@@ -26,10 +21,15 @@ module OpenActive
           "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::SuperficialAnatomy,OpenActive::Models::Schema::AnatomicalStructure,URI]
-        define_property :sensory_unit, as: "sensoryUnit", types: [
-          "OpenActive::Models::Schema::SuperficialAnatomy",
-          "OpenActive::Models::Schema::AnatomicalStructure",
+        # @return [OpenActive::Models::Schema::BrainStructure,URI]
+        define_property :sourced_from, as: "sourcedFrom", types: [
+          "OpenActive::Models::Schema::BrainStructure",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::Muscle,URI]
+        define_property :nerve_motor, as: "nerveMotor", types: [
+          "OpenActive::Models::Schema::Muscle",
           "URI",
         ]
       end

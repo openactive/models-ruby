@@ -58,9 +58,19 @@ module OpenActive
         "OpenActive::Models::Concept[]",
       ]
 
+      # @return [Array<String>]
+      define_property :customer_account_booking_restriction, as: "customerAccountBookingRestriction", types: [
+        "string[]",
+      ]
+
       # @return [Array<OpenActive::Models::Slot>]
       define_property :event, as: "event", types: [
         "OpenActive::Models::Slot[]",
+      ]
+
+      # @return [Array<OpenActive::Models::Concept>]
+      define_property :facility_type, as: "facilityType", types: [
+        "OpenActive::Models::Concept[]",
       ]
 
       # @return [Array<OpenActive::Models::OpeningHoursSpecification>]
@@ -78,9 +88,16 @@ module OpenActive
         "OpenActive::Models::IndividualFacilityUse[]",
       ]
 
-      # @return [OpenActive::Models::Place]
+      # @return [Boolean,nil]
+      define_property :is_open_booking_with_customer_account_allowed, as: "isOpenBookingWithCustomerAccountAllowed", types: [
+        "bool",
+        "null",
+      ]
+
+      # @return [OpenActive::Models::Place,URI]
       define_property :location, as: "location", types: [
         "OpenActive::Models::Place",
+        "URI",
       ]
 
       # @return [Array<OpenActive::Models::Offer>]
@@ -114,9 +131,9 @@ module OpenActive
         "OpenActive::Models::VideoObject[]",
       ]
 
-      # @return [Array<OpenActive::Models::Schema::SportsActivityLocation>]
+      # @return [Array<OpenActive::Models::SportsActivityLocation>]
       define_property :sports_activity_location, as: "beta:sportsActivityLocation", types: [
-        "OpenActive::Models::Schema::SportsActivityLocation[]",
+        "OpenActive::Models::SportsActivityLocation[]",
       ]
 
       # @return [ActiveSupport::Duration,nil]
@@ -126,7 +143,7 @@ module OpenActive
       ]
 
       # @return [Array<OpenActive::Models::Concept>]
-      define_property :facility_type, as: "beta:facilityType", types: [
+      define_property :facility_attribute, as: "beta:facilityAttribute", types: [
         "OpenActive::Models::Concept[]",
       ]
 

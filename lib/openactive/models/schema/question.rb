@@ -8,8 +8,15 @@ module OpenActive
           "schema:Question"
         end
 
-        # @return [OpenActive::Models::Schema::Answer,OpenActive::Models::Schema::ItemList,URI]
+        # @return [OpenActive::Models::Schema::ItemList,OpenActive::Models::Schema::Answer,URI]
         define_property :suggested_answer, as: "suggestedAnswer", types: [
+          "OpenActive::Models::Schema::ItemList",
+          "OpenActive::Models::Schema::Answer",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::Answer,OpenActive::Models::Schema::ItemList,URI]
+        define_property :accepted_answer, as: "acceptedAnswer", types: [
           "OpenActive::Models::Schema::Answer",
           "OpenActive::Models::Schema::ItemList",
           "URI",
@@ -19,13 +26,6 @@ module OpenActive
         define_property :answer_count, as: "answerCount", types: [
           "int",
           "null",
-        ]
-
-        # @return [OpenActive::Models::Schema::Answer,OpenActive::Models::Schema::ItemList,URI]
-        define_property :accepted_answer, as: "acceptedAnswer", types: [
-          "OpenActive::Models::Schema::Answer",
-          "OpenActive::Models::Schema::ItemList",
-          "URI",
         ]
 
         # @return [String]

@@ -13,9 +13,16 @@ module OpenActive
           "string",
         ]
 
-        # @return [String,URI]
-        define_property :unit_code, as: "unitCode", types: [
-          "string",
+        # @return [OpenActive::Enums::Schema::BusinessFunction,nil]
+        define_property :business_function, as: "businessFunction", types: [
+          "OpenActive::Enums::Schema::BusinessFunction",
+          "null",
+        ]
+
+        # @return [OpenActive::Models::Schema::Product,OpenActive::Models::Schema::Service,URI]
+        define_property :type_of_good, as: "typeOfGood", types: [
+          "OpenActive::Models::Schema::Product",
+          "OpenActive::Models::Schema::Service",
           "URI",
         ]
 
@@ -25,16 +32,9 @@ module OpenActive
           "null",
         ]
 
-        # @return [OpenActive::Enums::Schema::BusinessFunction,nil]
-        define_property :business_function, as: "businessFunction", types: [
-          "OpenActive::Enums::Schema::BusinessFunction",
-          "null",
-        ]
-
-        # @return [OpenActive::Models::Schema::Service,OpenActive::Models::Schema::Product,URI]
-        define_property :type_of_good, as: "typeOfGood", types: [
-          "OpenActive::Models::Schema::Service",
-          "OpenActive::Models::Schema::Product",
+        # @return [String,URI]
+        define_property :unit_code, as: "unitCode", types: [
+          "string",
           "URI",
         ]
       end

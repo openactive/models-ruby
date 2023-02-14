@@ -8,13 +8,6 @@ module OpenActive
           "schema:MonetaryAmount"
         end
 
-        # @return [DateTime,Date,nil]
-        define_property :valid_from, as: "validFrom", types: [
-          "DateTime",
-          "Date",
-          "null",
-        ]
-
         # @return [BigDecimal,nil]
         define_property :max_value, as: "maxValue", types: [
           "Number",
@@ -27,12 +20,19 @@ module OpenActive
           "null",
         ]
 
-        # @return [BigDecimal,OpenActive::Models::Schema::StructuredValue,Boolean,String,URI,nil]
+        # @return [DateTime,Date,nil]
+        define_property :valid_from, as: "validFrom", types: [
+          "DateTime",
+          "Date",
+          "null",
+        ]
+
+        # @return [String,BigDecimal,OpenActive::Models::Schema::StructuredValue,Boolean,URI,nil]
         define_property :value, as: "value", types: [
+          "string",
           "Number",
           "OpenActive::Models::Schema::StructuredValue",
           "bool",
-          "string",
           "URI",
           "null",
         ]

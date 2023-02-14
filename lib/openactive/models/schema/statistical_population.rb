@@ -8,6 +8,12 @@ module OpenActive
           "schema:StatisticalPopulation"
         end
 
+        # @return [OpenActive::Models::Schema::Class,URI]
+        define_property :population_type, as: "populationType", types: [
+          "OpenActive::Models::Schema::Class",
+          "URI",
+        ]
+
         # @return [int,nil]
         define_property :num_constraints, as: "numConstraints", types: [
           "int",
@@ -18,12 +24,6 @@ module OpenActive
         define_property :constraining_property, as: "constrainingProperty", types: [
           "int",
           "null",
-        ]
-
-        # @return [OpenActive::Models::Schema::Class,URI]
-        define_property :population_type, as: "populationType", types: [
-          "OpenActive::Models::Schema::Class",
-          "URI",
         ]
       end
     end

@@ -8,29 +8,11 @@ module OpenActive
           "schema:Permit"
         end
 
-        # @return [DateTime,Date,nil]
-        define_property :valid_from, as: "validFrom", types: [
-          "DateTime",
-          "Date",
+        # @return [ActiveSupport::Duration,URI,nil]
+        define_property :valid_for, as: "validFor", types: [
+          "DateInterval",
+          "URI",
           "null",
-        ]
-
-        # @return [OpenActive::Models::Schema::Audience,URI]
-        define_property :permit_audience, as: "permitAudience", types: [
-          "OpenActive::Models::Schema::Audience",
-          "URI",
-        ]
-
-        # @return [OpenActive::Models::Schema::AdministrativeArea,URI]
-        define_property :valid_in, as: "validIn", types: [
-          "OpenActive::Models::Schema::AdministrativeArea",
-          "URI",
-        ]
-
-        # @return [OpenActive::Models::Schema::Service,URI]
-        define_property :issued_through, as: "issuedThrough", types: [
-          "OpenActive::Models::Schema::Service",
-          "URI",
         ]
 
         # @return [OpenActive::Models::Schema::Organization,URI]
@@ -45,11 +27,29 @@ module OpenActive
           "null",
         ]
 
-        # @return [ActiveSupport::Duration,URI,nil]
-        define_property :valid_for, as: "validFor", types: [
-          "DateInterval",
-          "URI",
+        # @return [DateTime,Date,nil]
+        define_property :valid_from, as: "validFrom", types: [
+          "DateTime",
+          "Date",
           "null",
+        ]
+
+        # @return [OpenActive::Models::Schema::Service,URI]
+        define_property :issued_through, as: "issuedThrough", types: [
+          "OpenActive::Models::Schema::Service",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::AdministrativeArea,URI]
+        define_property :valid_in, as: "validIn", types: [
+          "OpenActive::Models::Schema::AdministrativeArea",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::Audience,URI]
+        define_property :permit_audience, as: "permitAudience", types: [
+          "OpenActive::Models::Schema::Audience",
+          "URI",
         ]
       end
     end

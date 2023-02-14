@@ -13,11 +13,11 @@ module OpenActive
           "string",
         ]
 
-        # @return [OpenActive::Models::Schema::MonetaryAmount,OpenActive::Models::Schema::PriceSpecification,BigDecimal,URI,nil]
+        # @return [BigDecimal,OpenActive::Models::Schema::PriceSpecification,OpenActive::Models::Schema::MonetaryAmount,URI,nil]
         define_property :base_salary, as: "baseSalary", types: [
-          "OpenActive::Models::Schema::MonetaryAmount",
-          "OpenActive::Models::Schema::PriceSpecification",
           "Number",
+          "OpenActive::Models::Schema::PriceSpecification",
+          "OpenActive::Models::Schema::MonetaryAmount",
           "URI",
           "null",
         ]

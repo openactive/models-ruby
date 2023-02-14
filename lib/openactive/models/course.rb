@@ -82,6 +82,11 @@ module OpenActive
         "URI",
       ]
 
+      # @return [String]
+      define_property :formatted_description, as: "beta:formattedDescription", types: [
+        "string",
+      ]
+
       # @return [Array<OpenActive::Models::VideoObject>]
       define_property :video, as: "beta:video", types: [
         "OpenActive::Models::VideoObject[]",

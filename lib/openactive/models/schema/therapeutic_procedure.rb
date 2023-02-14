@@ -8,15 +8,15 @@ module OpenActive
           "schema:TherapeuticProcedure"
         end
 
-        # @return [OpenActive::Models::Schema::Drug,URI]
-        define_property :drug, as: "drug", types: [
-          "OpenActive::Models::Schema::Drug",
-          "URI",
-        ]
-
         # @return [OpenActive::Models::Schema::MedicalEntity,URI]
         define_property :adverse_outcome, as: "adverseOutcome", types: [
           "OpenActive::Models::Schema::MedicalEntity",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::Drug,URI]
+        define_property :drug, as: "drug", types: [
+          "OpenActive::Models::Schema::Drug",
           "URI",
         ]
 

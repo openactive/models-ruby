@@ -9,23 +9,23 @@ module OpenActive
         end
 
         # @return [OpenActive::Models::Schema::Person,OpenActive::Models::Schema::SportsTeam,URI]
-        define_property :competitor, as: "competitor", types: [
-          "OpenActive::Models::Schema::Person",
-          "OpenActive::Models::Schema::SportsTeam",
-          "URI",
-        ]
-
-        # @return [OpenActive::Models::Schema::Person,OpenActive::Models::Schema::SportsTeam,URI]
-        define_property :away_team, as: "awayTeam", types: [
+        define_property :home_team, as: "homeTeam", types: [
           "OpenActive::Models::Schema::Person",
           "OpenActive::Models::Schema::SportsTeam",
           "URI",
         ]
 
         # @return [OpenActive::Models::Schema::SportsTeam,OpenActive::Models::Schema::Person,URI]
-        define_property :home_team, as: "homeTeam", types: [
+        define_property :away_team, as: "awayTeam", types: [
           "OpenActive::Models::Schema::SportsTeam",
           "OpenActive::Models::Schema::Person",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::Person,OpenActive::Models::Schema::SportsTeam,URI]
+        define_property :competitor, as: "competitor", types: [
+          "OpenActive::Models::Schema::Person",
+          "OpenActive::Models::Schema::SportsTeam",
           "URI",
         ]
 

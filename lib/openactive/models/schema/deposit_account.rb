@@ -1,7 +1,7 @@
 module OpenActive
   module Models
     module Schema
-      class DepositAccount < ::OpenActive::Models::Schema::BankAccount
+      class DepositAccount < ::OpenActive::Models::Schema::InvestmentOrDeposit
         # @!attribute type
         # @return [String]
         def type

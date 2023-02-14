@@ -38,14 +38,20 @@ module OpenActive
         "OpenActive::Models::LocationFeatureSpecification[]",
       ]
 
-      # @return [OpenActive::Models::Place]
+      # @return [OpenActive::Models::Place,URI]
       define_property :contained_in_place, as: "containedInPlace", types: [
         "OpenActive::Models::Place",
+        "URI",
       ]
 
       # @return [Array<OpenActive::Models::Place>]
       define_property :contains_place, as: "containsPlace", types: [
         "OpenActive::Models::Place[]",
+      ]
+
+      # @return [String]
+      define_property :email, as: "email", types: [
+        "string",
       ]
 
       # @return [OpenActive::Models::GeoCoordinates]
@@ -81,6 +87,21 @@ module OpenActive
       # @return [String]
       define_property :formatted_description, as: "beta:formattedDescription", types: [
         "string",
+      ]
+
+      # @return [Array<OpenActive::Models::VideoObject>]
+      define_property :video, as: "beta:video", types: [
+        "OpenActive::Models::VideoObject[]",
+      ]
+
+      # @return [OpenActive::Models::Organization]
+      define_property :service_operator, as: "beta:serviceOperator", types: [
+        "OpenActive::Models::Organization",
+      ]
+
+      # @return [Array<OpenActive::Models::Concept>]
+      define_property :place_type, as: "beta:placeType", types: [
+        "OpenActive::Models::Concept[]",
       ]
     end
   end

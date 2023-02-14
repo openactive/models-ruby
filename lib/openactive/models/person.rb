@@ -37,13 +37,19 @@ module OpenActive
         "string",
       ]
 
+      # @return [OpenActive::Models::Person]
+      define_property :emergency_contact, as: "emergencyContact", types: [
+        "OpenActive::Models::Person",
+      ]
+
       # @return [String]
       define_property :family_name, as: "familyName", types: [
         "string",
       ]
 
-      # @return [OpenActive::Enums::Schema::GenderType,nil]
+      # @return [String,OpenActive::Enums::Schema::GenderType,nil]
       define_property :gender, as: "gender", types: [
+        "string",
         "OpenActive::Enums::Schema::GenderType",
         "null",
       ]
@@ -51,6 +57,12 @@ module OpenActive
       # @return [String]
       define_property :given_name, as: "givenName", types: [
         "string",
+      ]
+
+      # @return [OpenActive::Models::CustomerAccount,URI]
+      define_property :has_account, as: "hasAccount", types: [
+        "OpenActive::Models::CustomerAccount",
+        "URI",
       ]
 
       # @return [Boolean,nil]

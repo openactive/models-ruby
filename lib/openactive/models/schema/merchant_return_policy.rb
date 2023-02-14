@@ -14,16 +14,11 @@ module OpenActive
           "null",
         ]
 
-        # @return [OpenActive::Enums::Schema::RefundTypeEnumeration,nil]
-        define_property :refund_type, as: "refundType", types: [
-          "OpenActive::Enums::Schema::RefundTypeEnumeration",
-          "null",
-        ]
-
-        # @return [OpenActive::Enums::Schema::ReturnFeesEnumeration,nil]
-        define_property :return_fees, as: "returnFees", types: [
-          "OpenActive::Enums::Schema::ReturnFeesEnumeration",
-          "null",
+        # @return [OpenActive::Models::Schema::Country,String,URI]
+        define_property :return_policy_country, as: "returnPolicyCountry", types: [
+          "OpenActive::Models::Schema::Country",
+          "string",
+          "URI",
         ]
 
         # @return [URI]
@@ -31,15 +26,116 @@ module OpenActive
           "URI",
         ]
 
-        # @return [int,nil]
-        define_property :merchant_return_days, as: "merchantReturnDays", types: [
-          "int",
+        # @return [OpenActive::Models::Schema::MonetaryAmount,BigDecimal,URI,nil]
+        define_property :restocking_fee, as: "restockingFee", types: [
+          "OpenActive::Models::Schema::MonetaryAmount",
+          "Number",
+          "URI",
+          "null",
+        ]
+
+        # @return [OpenActive::Models::Schema::MonetaryAmount,URI]
+        define_property :item_defect_return_shipping_fees_amount, as: "itemDefectReturnShippingFeesAmount", types: [
+          "OpenActive::Models::Schema::MonetaryAmount",
+          "URI",
+        ]
+
+        # @return [OpenActive::Enums::Schema::ReturnFeesEnumeration,nil]
+        define_property :item_defect_return_fees, as: "itemDefectReturnFees", types: [
+          "OpenActive::Enums::Schema::ReturnFeesEnumeration",
           "null",
         ]
 
         # @return [Boolean,nil]
         define_property :in_store_returns_offered, as: "inStoreReturnsOffered", types: [
           "bool",
+          "null",
+        ]
+
+        # @return [OpenActive::Enums::Schema::OfferItemCondition,nil]
+        define_property :item_condition, as: "itemCondition", types: [
+          "OpenActive::Enums::Schema::OfferItemCondition",
+          "null",
+        ]
+
+        # @return [OpenActive::Enums::Schema::ReturnLabelSourceEnumeration,nil]
+        define_property :item_defect_return_label_source, as: "itemDefectReturnLabelSource", types: [
+          "OpenActive::Enums::Schema::ReturnLabelSourceEnumeration",
+          "null",
+        ]
+
+        # @return [OpenActive::Enums::Schema::ReturnLabelSourceEnumeration,nil]
+        define_property :return_label_source, as: "returnLabelSource", types: [
+          "OpenActive::Enums::Schema::ReturnLabelSourceEnumeration",
+          "null",
+        ]
+
+        # @return [OpenActive::Models::Schema::MonetaryAmount,URI]
+        define_property :customer_remorse_return_shipping_fees_amount, as: "customerRemorseReturnShippingFeesAmount", types: [
+          "OpenActive::Models::Schema::MonetaryAmount",
+          "URI",
+        ]
+
+        # @return [OpenActive::Enums::Schema::RefundTypeEnumeration,nil]
+        define_property :refund_type, as: "refundType", types: [
+          "OpenActive::Enums::Schema::RefundTypeEnumeration",
+          "null",
+        ]
+
+        # @return [OpenActive::Models::Schema::MonetaryAmount,URI]
+        define_property :return_shipping_fees_amount, as: "returnShippingFeesAmount", types: [
+          "OpenActive::Models::Schema::MonetaryAmount",
+          "URI",
+        ]
+
+        # @return [DateTime,int,Date,nil]
+        define_property :merchant_return_days, as: "merchantReturnDays", types: [
+          "DateTime",
+          "int",
+          "Date",
+          "null",
+        ]
+
+        # @return [OpenActive::Enums::Schema::ReturnMethodEnumeration,nil]
+        define_property :return_method, as: "returnMethod", types: [
+          "OpenActive::Enums::Schema::ReturnMethodEnumeration",
+          "null",
+        ]
+
+        # @return [OpenActive::Models::Schema::PropertyValue,URI]
+        define_property :additional_property, as: "additionalProperty", types: [
+          "OpenActive::Models::Schema::PropertyValue",
+          "URI",
+        ]
+
+        # @return [OpenActive::Enums::Schema::ReturnLabelSourceEnumeration,nil]
+        define_property :customer_remorse_return_label_source, as: "customerRemorseReturnLabelSource", types: [
+          "OpenActive::Enums::Schema::ReturnLabelSourceEnumeration",
+          "null",
+        ]
+
+        # @return [OpenActive::Enums::Schema::ReturnFeesEnumeration,nil]
+        define_property :customer_remorse_return_fees, as: "customerRemorseReturnFees", types: [
+          "OpenActive::Enums::Schema::ReturnFeesEnumeration",
+          "null",
+        ]
+
+        # @return [OpenActive::Models::Schema::MerchantReturnPolicySeasonalOverride,URI]
+        define_property :return_policy_seasonal_override, as: "returnPolicySeasonalOverride", types: [
+          "OpenActive::Models::Schema::MerchantReturnPolicySeasonalOverride",
+          "URI",
+        ]
+
+        # @return [String,OpenActive::Models::Schema::Country,URI]
+        define_property :applicable_country, as: "applicableCountry", types: [
+          "string",
+          "OpenActive::Models::Schema::Country",
+          "URI",
+        ]
+
+        # @return [OpenActive::Enums::Schema::ReturnFeesEnumeration,nil]
+        define_property :return_fees, as: "returnFees", types: [
+          "OpenActive::Enums::Schema::ReturnFeesEnumeration",
           "null",
         ]
       end

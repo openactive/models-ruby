@@ -8,17 +8,6 @@ module OpenActive
           "schema:WebPage"
         end
 
-        # @return [OpenActive::Models::Schema::SpeakableSpecification,URI]
-        define_property :speakable, as: "speakable", types: [
-          "OpenActive::Models::Schema::SpeakableSpecification",
-          "URI",
-        ]
-
-        # @return [URI]
-        define_property :significant_link, as: "significantLink", types: [
-          "URI",
-        ]
-
         # @return [Date,nil]
         define_property :last_reviewed, as: "lastReviewed", types: [
           "Date",
@@ -37,17 +26,15 @@ module OpenActive
           "URI",
         ]
 
+        # @return [URI]
+        define_property :significant_link, as: "significantLink", types: [
+          "URI",
+        ]
+
         # @return [OpenActive::Models::Schema::Organization,OpenActive::Models::Schema::Person,URI]
         define_property :reviewed_by, as: "reviewedBy", types: [
           "OpenActive::Models::Schema::Organization",
           "OpenActive::Models::Schema::Person",
-          "URI",
-        ]
-
-        # @return [String,OpenActive::Models::Schema::BreadcrumbList,URI]
-        define_property :breadcrumb, as: "breadcrumb", types: [
-          "string",
-          "OpenActive::Models::Schema::BreadcrumbList",
           "URI",
         ]
 
@@ -59,6 +46,19 @@ module OpenActive
 
         # @return [URI]
         define_property :related_link, as: "relatedLink", types: [
+          "URI",
+        ]
+
+        # @return [URI,OpenActive::Models::Schema::SpeakableSpecification]
+        define_property :speakable, as: "speakable", types: [
+          "URI",
+          "OpenActive::Models::Schema::SpeakableSpecification",
+        ]
+
+        # @return [OpenActive::Models::Schema::BreadcrumbList,String,URI]
+        define_property :breadcrumb, as: "breadcrumb", types: [
+          "OpenActive::Models::Schema::BreadcrumbList",
+          "string",
           "URI",
         ]
 

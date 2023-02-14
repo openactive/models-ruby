@@ -8,6 +8,12 @@ module OpenActive
         "ScheduledSession"
       end
 
+      # @return [OpenActive::Models::Person,OpenActive::Models::Organization]
+      define_property :organizer, as: "organizer", types: [
+        "OpenActive::Models::Person",
+        "OpenActive::Models::Organization",
+      ]
+
       # @return [DateTime,nil]
       define_property :start_date, as: "startDate", types: [
         "DateTime",

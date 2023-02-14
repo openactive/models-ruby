@@ -13,13 +13,6 @@ module OpenActive
           "string",
         ]
 
-        # @return [BigDecimal,String,nil]
-        define_property :rating_value, as: "ratingValue", types: [
-          "Number",
-          "string",
-          "null",
-        ]
-
         # @return [String,BigDecimal,nil]
         define_property :worst_rating, as: "worstRating", types: [
           "string",
@@ -34,16 +27,23 @@ module OpenActive
           "URI",
         ]
 
-        # @return [String]
-        define_property :rating_explanation, as: "ratingExplanation", types: [
-          "string",
-        ]
-
         # @return [String,BigDecimal,nil]
         define_property :best_rating, as: "bestRating", types: [
           "string",
           "Number",
           "null",
+        ]
+
+        # @return [BigDecimal,String,nil]
+        define_property :rating_value, as: "ratingValue", types: [
+          "Number",
+          "string",
+          "null",
+        ]
+
+        # @return [String]
+        define_property :rating_explanation, as: "ratingExplanation", types: [
+          "string",
         ]
       end
     end
