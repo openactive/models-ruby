@@ -14,6 +14,24 @@ module OpenActive
           "null",
         ]
 
+        # @return [String]
+        define_property :currency, as: "currency", types: [
+          "string",
+        ]
+
+        # @return [OpenActive::Models::Schema::Thing,String,URI]
+        define_property :required_collateral, as: "requiredCollateral", types: [
+          "OpenActive::Models::Schema::Thing",
+          "string",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::QuantitativeValue,URI]
+        define_property :loan_term, as: "loanTerm", types: [
+          "OpenActive::Models::Schema::QuantitativeValue",
+          "URI",
+        ]
+
         # @return [URI,String]
         define_property :loan_type, as: "loanType", types: [
           "URI",
@@ -26,35 +44,9 @@ module OpenActive
           "null",
         ]
 
-        # @return [OpenActive::Models::Schema::QuantitativeValue,URI]
-        define_property :loan_term, as: "loanTerm", types: [
-          "OpenActive::Models::Schema::QuantitativeValue",
-          "URI",
-        ]
-
         # @return [ActiveSupport::Duration,URI,nil]
         define_property :grace_period, as: "gracePeriod", types: [
           "DateInterval",
-          "URI",
-          "null",
-        ]
-
-        # @return [String,OpenActive::Models::Schema::Thing,URI]
-        define_property :required_collateral, as: "requiredCollateral", types: [
-          "string",
-          "OpenActive::Models::Schema::Thing",
-          "URI",
-        ]
-
-        # @return [String]
-        define_property :currency, as: "currency", types: [
-          "string",
-        ]
-
-        # @return [BigDecimal,OpenActive::Models::Schema::MonetaryAmount,URI,nil]
-        define_property :amount, as: "amount", types: [
-          "Number",
-          "OpenActive::Models::Schema::MonetaryAmount",
           "URI",
           "null",
         ]
@@ -63,6 +55,14 @@ module OpenActive
         define_property :loan_repayment_form, as: "loanRepaymentForm", types: [
           "OpenActive::Models::Schema::RepaymentSpecification",
           "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::MonetaryAmount,BigDecimal,URI,nil]
+        define_property :amount, as: "amount", types: [
+          "OpenActive::Models::Schema::MonetaryAmount",
+          "Number",
+          "URI",
+          "null",
         ]
       end
     end

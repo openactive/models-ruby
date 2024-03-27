@@ -6,8 +6,8 @@ module OpenActive
       # An EventAttendanceModeEnumeration value is one of potentially several modes of organising an event, relating to whether it is online or offline.
       class EventAttendanceModeEnumeration < TypesafeEnum::Base
         new :OfflineEventAttendanceMode, "https://schema.org/OfflineEventAttendanceMode"
-        new :MixedEventAttendanceMode, "https://schema.org/MixedEventAttendanceMode"
         new :OnlineEventAttendanceMode, "https://schema.org/OnlineEventAttendanceMode"
+        new :MixedEventAttendanceMode, "https://schema.org/MixedEventAttendanceMode"
       end
     end
   end

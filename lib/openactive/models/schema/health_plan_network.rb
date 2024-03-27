@@ -8,11 +8,6 @@ module OpenActive
           "schema:HealthPlanNetwork"
         end
 
-        # @return [String]
-        define_property :health_plan_network_id, as: "healthPlanNetworkId", types: [
-          "string",
-        ]
-
         # @return [Boolean,nil]
         define_property :health_plan_cost_sharing, as: "healthPlanCostSharing", types: [
           "bool",
@@ -21,6 +16,11 @@ module OpenActive
 
         # @return [String]
         define_property :health_plan_network_tier, as: "healthPlanNetworkTier", types: [
+          "string",
+        ]
+
+        # @return [String]
+        define_property :health_plan_network_id, as: "healthPlanNetworkId", types: [
           "string",
         ]
       end

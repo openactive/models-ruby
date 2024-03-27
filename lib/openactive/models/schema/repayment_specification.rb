@@ -8,9 +8,11 @@ module OpenActive
           "schema:RepaymentSpecification"
         end
 
-        # @return [BigDecimal,nil]
-        define_property :number_of_loan_payments, as: "numberOfLoanPayments", types: [
+        # @return [BigDecimal,OpenActive::Models::Schema::MonetaryAmount,URI,nil]
+        define_property :down_payment, as: "downPayment", types: [
           "Number",
+          "OpenActive::Models::Schema::MonetaryAmount",
+          "URI",
           "null",
         ]
 
@@ -27,16 +29,14 @@ module OpenActive
         ]
 
         # @return [BigDecimal,nil]
-        define_property :loan_payment_frequency, as: "loanPaymentFrequency", types: [
+        define_property :number_of_loan_payments, as: "numberOfLoanPayments", types: [
           "Number",
           "null",
         ]
 
-        # @return [BigDecimal,OpenActive::Models::Schema::MonetaryAmount,URI,nil]
-        define_property :down_payment, as: "downPayment", types: [
+        # @return [BigDecimal,nil]
+        define_property :loan_payment_frequency, as: "loanPaymentFrequency", types: [
           "Number",
-          "OpenActive::Models::Schema::MonetaryAmount",
-          "URI",
           "null",
         ]
       end

@@ -8,24 +8,28 @@ module OpenActive
           "schema:PropertyValue"
         end
 
-        # @return [OpenActive::Models::Schema::Enumeration,OpenActive::Models::Schema::DefinedTerm,String,OpenActive::Enums::Schema::MeasurementTypeEnumeration,OpenActive::Enums::Schema::QualitativeValue,OpenActive::Models::Schema::StructuredValue,OpenActive::Models::Schema::PropertyValue,OpenActive::Models::Schema::QuantitativeValue,URI,nil]
-        define_property :value_reference, as: "valueReference", types: [
-          "OpenActive::Models::Schema::Enumeration",
-          "OpenActive::Models::Schema::DefinedTerm",
+        # @return [String]
+        define_property :unit_text, as: "unitText", types: [
           "string",
-          "OpenActive::Enums::Schema::MeasurementTypeEnumeration",
-          "OpenActive::Enums::Schema::QualitativeValue",
-          "OpenActive::Models::Schema::StructuredValue",
-          "OpenActive::Models::Schema::PropertyValue",
-          "OpenActive::Models::Schema::QuantitativeValue",
+        ]
+
+        # @return [OpenActive::Models::Schema::DefinedTerm,URI,String,OpenActive::Enums::Schema::MeasurementMethodEnum,nil]
+        define_property :measurement_technique, as: "measurementTechnique", types: [
+          "OpenActive::Models::Schema::DefinedTerm",
           "URI",
+          "string",
+          "OpenActive::Enums::Schema::MeasurementMethodEnum",
           "null",
         ]
 
-        # @return [String,URI]
-        define_property :property_id, as: "propertyID", types: [
+        # @return [BigDecimal,Boolean,String,OpenActive::Models::Schema::StructuredValue,URI,nil]
+        define_property :value, as: "value", types: [
+          "Number",
+          "bool",
           "string",
+          "OpenActive::Models::Schema::StructuredValue",
           "URI",
+          "null",
         ]
 
         # @return [BigDecimal,nil]
@@ -34,15 +38,18 @@ module OpenActive
           "null",
         ]
 
-        # @return [String]
-        define_property :unit_text, as: "unitText", types: [
+        # @return [OpenActive::Models::Schema::QuantitativeValue,OpenActive::Models::Schema::PropertyValue,OpenActive::Models::Schema::DefinedTerm,OpenActive::Enums::Schema::MeasurementTypeEnumeration,String,OpenActive::Models::Schema::Enumeration,OpenActive::Enums::Schema::QualitativeValue,OpenActive::Models::Schema::StructuredValue,URI,nil]
+        define_property :value_reference, as: "valueReference", types: [
+          "OpenActive::Models::Schema::QuantitativeValue",
+          "OpenActive::Models::Schema::PropertyValue",
+          "OpenActive::Models::Schema::DefinedTerm",
+          "OpenActive::Enums::Schema::MeasurementTypeEnumeration",
           "string",
-        ]
-
-        # @return [String,URI]
-        define_property :measurement_technique, as: "measurementTechnique", types: [
-          "string",
+          "OpenActive::Models::Schema::Enumeration",
+          "OpenActive::Enums::Schema::QualitativeValue",
+          "OpenActive::Models::Schema::StructuredValue",
           "URI",
+          "null",
         ]
 
         # @return [BigDecimal,nil]
@@ -51,18 +58,23 @@ module OpenActive
           "null",
         ]
 
-        # @return [String,BigDecimal,OpenActive::Models::Schema::StructuredValue,Boolean,URI,nil]
-        define_property :value, as: "value", types: [
-          "string",
-          "Number",
-          "OpenActive::Models::Schema::StructuredValue",
-          "bool",
+        # @return [URI,String]
+        define_property :unit_code, as: "unitCode", types: [
           "URI",
+          "string",
+        ]
+
+        # @return [OpenActive::Models::Schema::DefinedTerm,URI,String,OpenActive::Enums::Schema::MeasurementMethodEnum,nil]
+        define_property :measurement_method, as: "measurementMethod", types: [
+          "OpenActive::Models::Schema::DefinedTerm",
+          "URI",
+          "string",
+          "OpenActive::Enums::Schema::MeasurementMethodEnum",
           "null",
         ]
 
         # @return [String,URI]
-        define_property :unit_code, as: "unitCode", types: [
+        define_property :property_id, as: "propertyID", types: [
           "string",
           "URI",
         ]

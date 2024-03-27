@@ -8,12 +8,17 @@ module OpenActive
           "schema:PhysicalActivity"
         end
 
-        # @return [URI,String,OpenActive::Enums::Schema::PhysicalActivityCategory,OpenActive::Models::Schema::Thing,OpenActive::Models::Schema::CategoryCode,nil]
-        define_property :category, as: "category", types: [
-          "URI",
+        # @return [String]
+        define_property :epidemiology, as: "epidemiology", types: [
           "string",
+        ]
+
+        # @return [OpenActive::Enums::Schema::PhysicalActivityCategory,URI,OpenActive::Models::Schema::Thing,String,OpenActive::Models::Schema::CategoryCode,nil]
+        define_property :category, as: "category", types: [
           "OpenActive::Enums::Schema::PhysicalActivityCategory",
+          "URI",
           "OpenActive::Models::Schema::Thing",
+          "string",
           "OpenActive::Models::Schema::CategoryCode",
           "null",
         ]
@@ -23,17 +28,12 @@ module OpenActive
           "string",
         ]
 
-        # @return [OpenActive::Models::Schema::AnatomicalStructure,OpenActive::Models::Schema::AnatomicalSystem,OpenActive::Models::Schema::SuperficialAnatomy,URI]
+        # @return [OpenActive::Models::Schema::AnatomicalStructure,OpenActive::Models::Schema::SuperficialAnatomy,OpenActive::Models::Schema::AnatomicalSystem,URI]
         define_property :associated_anatomy, as: "associatedAnatomy", types: [
           "OpenActive::Models::Schema::AnatomicalStructure",
-          "OpenActive::Models::Schema::AnatomicalSystem",
           "OpenActive::Models::Schema::SuperficialAnatomy",
+          "OpenActive::Models::Schema::AnatomicalSystem",
           "URI",
-        ]
-
-        # @return [String]
-        define_property :epidemiology, as: "epidemiology", types: [
-          "string",
         ]
       end
     end

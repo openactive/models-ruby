@@ -1,18 +1,18 @@
 module OpenActive
   module Models
     module Schema
-      class MedicalClinic < ::OpenActive::Models::Schema::MedicalOrganization
+      class MedicalClinic < ::OpenActive::Models::Schema::MedicalBusiness
         # @!attribute type
         # @return [String]
         def type
           "schema:MedicalClinic"
         end
 
-        # @return [OpenActive::Models::Schema::MedicalTest,OpenActive::Models::Schema::MedicalProcedure,OpenActive::Models::Schema::MedicalTherapy,URI]
+        # @return [OpenActive::Models::Schema::MedicalTherapy,OpenActive::Models::Schema::MedicalProcedure,OpenActive::Models::Schema::MedicalTest,URI]
         define_property :available_service, as: "availableService", types: [
-          "OpenActive::Models::Schema::MedicalTest",
-          "OpenActive::Models::Schema::MedicalProcedure",
           "OpenActive::Models::Schema::MedicalTherapy",
+          "OpenActive::Models::Schema::MedicalProcedure",
+          "OpenActive::Models::Schema::MedicalTest",
           "URI",
         ]
 

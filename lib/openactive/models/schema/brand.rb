@@ -8,15 +8,15 @@ module OpenActive
           "schema:Brand"
         end
 
-        # @return [OpenActive::Models::Schema::Review,URI]
-        define_property :review, as: "review", types: [
-          "OpenActive::Models::Schema::Review",
-          "URI",
-        ]
-
         # @return [OpenActive::Models::Schema::AggregateRating,URI]
         define_property :aggregate_rating, as: "aggregateRating", types: [
           "OpenActive::Models::Schema::AggregateRating",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::ImageObject,URI]
+        define_property :logo, as: "logo", types: [
+          "OpenActive::Models::Schema::ImageObject",
           "URI",
         ]
 
@@ -25,10 +25,10 @@ module OpenActive
           "string",
         ]
 
-        # @return [URI,OpenActive::Models::Schema::ImageObject]
-        define_property :logo, as: "logo", types: [
+        # @return [OpenActive::Models::Schema::Review,URI]
+        define_property :review, as: "review", types: [
+          "OpenActive::Models::Schema::Review",
           "URI",
-          "OpenActive::Models::Schema::ImageObject",
         ]
       end
     end

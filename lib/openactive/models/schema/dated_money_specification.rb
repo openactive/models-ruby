@@ -8,10 +8,23 @@ module OpenActive
           "schema:DatedMoneySpecification"
         end
 
-        # @return [DateTime,Date,nil]
+        # @return [String]
+        define_property :currency, as: "currency", types: [
+          "string",
+        ]
+
+        # @return [Date,DateTime,nil]
         define_property :start_date, as: "startDate", types: [
-          "DateTime",
           "Date",
+          "DateTime",
+          "null",
+        ]
+
+        # @return [OpenActive::Models::Schema::MonetaryAmount,BigDecimal,URI,nil]
+        define_property :amount, as: "amount", types: [
+          "OpenActive::Models::Schema::MonetaryAmount",
+          "Number",
+          "URI",
           "null",
         ]
 
@@ -19,19 +32,6 @@ module OpenActive
         define_property :end_date, as: "endDate", types: [
           "Date",
           "DateTime",
-          "null",
-        ]
-
-        # @return [String]
-        define_property :currency, as: "currency", types: [
-          "string",
-        ]
-
-        # @return [BigDecimal,OpenActive::Models::Schema::MonetaryAmount,URI,nil]
-        define_property :amount, as: "amount", types: [
-          "Number",
-          "OpenActive::Models::Schema::MonetaryAmount",
-          "URI",
           "null",
         ]
       end

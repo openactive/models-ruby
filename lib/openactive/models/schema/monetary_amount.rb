@@ -8,6 +8,35 @@ module OpenActive
           "schema:MonetaryAmount"
         end
 
+        # @return [Date,DateTime,nil]
+        define_property :valid_from, as: "validFrom", types: [
+          "Date",
+          "DateTime",
+          "null",
+        ]
+
+        # @return [String]
+        define_property :currency, as: "currency", types: [
+          "string",
+        ]
+
+        # @return [BigDecimal,Boolean,String,OpenActive::Models::Schema::StructuredValue,URI,nil]
+        define_property :value, as: "value", types: [
+          "Number",
+          "bool",
+          "string",
+          "OpenActive::Models::Schema::StructuredValue",
+          "URI",
+          "null",
+        ]
+
+        # @return [Date,DateTime,nil]
+        define_property :valid_through, as: "validThrough", types: [
+          "Date",
+          "DateTime",
+          "null",
+        ]
+
         # @return [BigDecimal,nil]
         define_property :max_value, as: "maxValue", types: [
           "Number",
@@ -17,35 +46,6 @@ module OpenActive
         # @return [BigDecimal,nil]
         define_property :min_value, as: "minValue", types: [
           "Number",
-          "null",
-        ]
-
-        # @return [DateTime,Date,nil]
-        define_property :valid_from, as: "validFrom", types: [
-          "DateTime",
-          "Date",
-          "null",
-        ]
-
-        # @return [String,BigDecimal,OpenActive::Models::Schema::StructuredValue,Boolean,URI,nil]
-        define_property :value, as: "value", types: [
-          "string",
-          "Number",
-          "OpenActive::Models::Schema::StructuredValue",
-          "bool",
-          "URI",
-          "null",
-        ]
-
-        # @return [String]
-        define_property :currency, as: "currency", types: [
-          "string",
-        ]
-
-        # @return [DateTime,Date,nil]
-        define_property :valid_through, as: "validThrough", types: [
-          "DateTime",
-          "Date",
           "null",
         ]
       end

@@ -8,15 +8,16 @@ module OpenActive
           "schema:ImageObject"
         end
 
+        # @return [OpenActive::Models::Schema::PropertyValue,String,URI]
+        define_property :exif_data, as: "exifData", types: [
+          "OpenActive::Models::Schema::PropertyValue",
+          "string",
+          "URI",
+        ]
+
         # @return [String]
         define_property :embedded_text_caption, as: "embeddedTextCaption", types: [
           "string",
-        ]
-
-        # @return [Boolean,nil]
-        define_property :representative_of_page, as: "representativeOfPage", types: [
-          "bool",
-          "null",
         ]
 
         # @return [String,OpenActive::Models::Schema::MediaObject,URI]
@@ -26,17 +27,10 @@ module OpenActive
           "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::ImageObject,URI]
-        define_property :thumbnail, as: "thumbnail", types: [
-          "OpenActive::Models::Schema::ImageObject",
-          "URI",
-        ]
-
-        # @return [OpenActive::Models::Schema::PropertyValue,String,URI]
-        define_property :exif_data, as: "exifData", types: [
-          "OpenActive::Models::Schema::PropertyValue",
-          "string",
-          "URI",
+        # @return [Boolean,nil]
+        define_property :representative_of_page, as: "representativeOfPage", types: [
+          "bool",
+          "null",
         ]
       end
     end

@@ -8,37 +8,15 @@ module OpenActive
           "schema:Clip"
         end
 
-        # @return [BigDecimal,OpenActive::Models::Schema::HyperTocEntry,URI,nil]
-        define_property :start_offset, as: "startOffset", types: [
-          "Number",
-          "OpenActive::Models::Schema::HyperTocEntry",
-          "URI",
-          "null",
-        ]
-
-        # @return [BigDecimal,OpenActive::Models::Schema::HyperTocEntry,URI,nil]
-        define_property :end_offset, as: "endOffset", types: [
-          "Number",
-          "OpenActive::Models::Schema::HyperTocEntry",
-          "URI",
-          "null",
-        ]
-
-        # @return [OpenActive::Models::Schema::Person,URI]
-        define_property :director, as: "director", types: [
-          "OpenActive::Models::Schema::Person",
+        # @return [OpenActive::Models::Schema::CreativeWorkSeries,URI]
+        define_property :part_of_series, as: "partOfSeries", types: [
+          "OpenActive::Models::Schema::CreativeWorkSeries",
           "URI",
         ]
 
         # @return [OpenActive::Models::Schema::Person,URI]
-        define_property :actor, as: "actor", types: [
+        define_property :actors, as: "actors", types: [
           "OpenActive::Models::Schema::Person",
-          "URI",
-        ]
-
-        # @return [OpenActive::Models::Schema::Episode,URI]
-        define_property :part_of_episode, as: "partOfEpisode", types: [
-          "OpenActive::Models::Schema::Episode",
           "URI",
         ]
 
@@ -49,21 +27,25 @@ module OpenActive
           "null",
         ]
 
-        # @return [OpenActive::Models::Schema::CreativeWorkSeries,URI]
-        define_property :part_of_series, as: "partOfSeries", types: [
-          "OpenActive::Models::Schema::CreativeWorkSeries",
+        # @return [OpenActive::Models::Schema::HyperTocEntry,BigDecimal,URI,nil]
+        define_property :start_offset, as: "startOffset", types: [
+          "OpenActive::Models::Schema::HyperTocEntry",
+          "Number",
           "URI",
+          "null",
         ]
 
-        # @return [OpenActive::Models::Schema::CreativeWorkSeason,URI]
-        define_property :part_of_season, as: "partOfSeason", types: [
-          "OpenActive::Models::Schema::CreativeWorkSeason",
+        # @return [OpenActive::Models::Schema::HyperTocEntry,BigDecimal,URI,nil]
+        define_property :end_offset, as: "endOffset", types: [
+          "OpenActive::Models::Schema::HyperTocEntry",
+          "Number",
           "URI",
+          "null",
         ]
 
-        # @return [OpenActive::Models::Schema::Person,URI]
-        define_property :actors, as: "actors", types: [
-          "OpenActive::Models::Schema::Person",
+        # @return [OpenActive::Models::Schema::Episode,URI]
+        define_property :part_of_episode, as: "partOfEpisode", types: [
+          "OpenActive::Models::Schema::Episode",
           "URI",
         ]
 
@@ -76,6 +58,24 @@ module OpenActive
 
         # @return [OpenActive::Models::Schema::Person,URI]
         define_property :directors, as: "directors", types: [
+          "OpenActive::Models::Schema::Person",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::CreativeWorkSeason,URI]
+        define_property :part_of_season, as: "partOfSeason", types: [
+          "OpenActive::Models::Schema::CreativeWorkSeason",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::Person,URI]
+        define_property :director, as: "director", types: [
+          "OpenActive::Models::Schema::Person",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::Person,URI]
+        define_property :actor, as: "actor", types: [
           "OpenActive::Models::Schema::Person",
           "URI",
         ]

@@ -8,17 +8,17 @@ module OpenActive
           "schema:MoneyTransfer"
         end
 
-        # @return [OpenActive::Models::Schema::BankOrCreditUnion,String,URI]
+        # @return [String,OpenActive::Models::Schema::BankOrCreditUnion,URI]
         define_property :beneficiary_bank, as: "beneficiaryBank", types: [
-          "OpenActive::Models::Schema::BankOrCreditUnion",
           "string",
+          "OpenActive::Models::Schema::BankOrCreditUnion",
           "URI",
         ]
 
-        # @return [BigDecimal,OpenActive::Models::Schema::MonetaryAmount,URI,nil]
+        # @return [OpenActive::Models::Schema::MonetaryAmount,BigDecimal,URI,nil]
         define_property :amount, as: "amount", types: [
-          "Number",
           "OpenActive::Models::Schema::MonetaryAmount",
+          "Number",
           "URI",
           "null",
         ]

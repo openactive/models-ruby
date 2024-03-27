@@ -8,19 +8,8 @@ module OpenActive
           "schema:HealthPlanCostSharingSpecification"
         end
 
-        # @return [BigDecimal,nil]
-        define_property :health_plan_coinsurance_rate, as: "healthPlanCoinsuranceRate", types: [
-          "Number",
-          "null",
-        ]
-
         # @return [String]
         define_property :health_plan_coinsurance_option, as: "healthPlanCoinsuranceOption", types: [
-          "string",
-        ]
-
-        # @return [String]
-        define_property :health_plan_pharmacy_category, as: "healthPlanPharmacyCategory", types: [
           "string",
         ]
 
@@ -30,8 +19,19 @@ module OpenActive
           "URI",
         ]
 
+        # @return [BigDecimal,nil]
+        define_property :health_plan_coinsurance_rate, as: "healthPlanCoinsuranceRate", types: [
+          "Number",
+          "null",
+        ]
+
         # @return [String]
         define_property :health_plan_copay_option, as: "healthPlanCopayOption", types: [
+          "string",
+        ]
+
+        # @return [String]
+        define_property :health_plan_pharmacy_category, as: "healthPlanPharmacyCategory", types: [
           "string",
         ]
       end

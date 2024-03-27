@@ -5,8 +5,8 @@ module OpenActive
     module Schema
       # Enumerated options related to a ContactPoint.
       class ContactPointOption < TypesafeEnum::Base
-        new :HearingImpairedSupported, "https://schema.org/HearingImpairedSupported"
         new :TollFree, "https://schema.org/TollFree"
+        new :HearingImpairedSupported, "https://schema.org/HearingImpairedSupported"
       end
     end
   end

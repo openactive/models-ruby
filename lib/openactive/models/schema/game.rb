@@ -14,8 +14,15 @@ module OpenActive
           "URI",
         ]
 
+        # @return [OpenActive::Models::Schema::Place,URI,OpenActive::Models::Schema::PostalAddress]
+        define_property :game_location, as: "gameLocation", types: [
+          "OpenActive::Models::Schema::Place",
+          "URI",
+          "OpenActive::Models::Schema::PostalAddress",
+        ]
+
         # @return [OpenActive::Models::Schema::Thing,URI]
-        define_property :game_item, as: "gameItem", types: [
+        define_property :quest, as: "quest", types: [
           "OpenActive::Models::Schema::Thing",
           "URI",
         ]
@@ -27,16 +34,9 @@ module OpenActive
         ]
 
         # @return [OpenActive::Models::Schema::Thing,URI]
-        define_property :quest, as: "quest", types: [
+        define_property :game_item, as: "gameItem", types: [
           "OpenActive::Models::Schema::Thing",
           "URI",
-        ]
-
-        # @return [OpenActive::Models::Schema::Place,URI,OpenActive::Models::Schema::PostalAddress]
-        define_property :game_location, as: "gameLocation", types: [
-          "OpenActive::Models::Schema::Place",
-          "URI",
-          "OpenActive::Models::Schema::PostalAddress",
         ]
       end
     end

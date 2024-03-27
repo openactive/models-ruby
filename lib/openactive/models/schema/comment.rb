@@ -15,13 +15,13 @@ module OpenActive
         ]
 
         # @return [int,nil]
-        define_property :downvote_count, as: "downvoteCount", types: [
+        define_property :upvote_count, as: "upvoteCount", types: [
           "int",
           "null",
         ]
 
         # @return [int,nil]
-        define_property :upvote_count, as: "upvoteCount", types: [
+        define_property :downvote_count, as: "downvoteCount", types: [
           "int",
           "null",
         ]

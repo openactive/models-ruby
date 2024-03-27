@@ -8,16 +8,16 @@ module OpenActive
           "schema:BankAccount"
         end
 
-        # @return [String,URI]
-        define_property :bank_account_type, as: "bankAccountType", types: [
-          "string",
-          "URI",
-        ]
-
         # @return [OpenActive::Models::Schema::MonetaryAmount,URI]
         define_property :account_minimum_inflow, as: "accountMinimumInflow", types: [
           "OpenActive::Models::Schema::MonetaryAmount",
           "URI",
+        ]
+
+        # @return [URI,String]
+        define_property :bank_account_type, as: "bankAccountType", types: [
+          "URI",
+          "string",
         ]
 
         # @return [OpenActive::Models::Schema::MonetaryAmount,URI]

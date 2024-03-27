@@ -8,17 +8,16 @@ module OpenActive
           "schema:BroadcastChannel"
         end
 
-        # @return [URI,String]
-        define_property :genre, as: "genre", types: [
-          "URI",
+        # @return [String,OpenActive::Models::Schema::BroadcastFrequencySpecification,URI]
+        define_property :broadcast_frequency, as: "broadcastFrequency", types: [
           "string",
+          "OpenActive::Models::Schema::BroadcastFrequencySpecification",
+          "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::BroadcastFrequencySpecification,String,URI]
-        define_property :broadcast_frequency, as: "broadcastFrequency", types: [
-          "OpenActive::Models::Schema::BroadcastFrequencySpecification",
+        # @return [String]
+        define_property :broadcast_service_tier, as: "broadcastServiceTier", types: [
           "string",
-          "URI",
         ]
 
         # @return [OpenActive::Models::Schema::BroadcastService,URI]
@@ -27,8 +26,9 @@ module OpenActive
           "URI",
         ]
 
-        # @return [String]
-        define_property :broadcast_channel_id, as: "broadcastChannelId", types: [
+        # @return [URI,String]
+        define_property :genre, as: "genre", types: [
+          "URI",
           "string",
         ]
 
@@ -39,7 +39,7 @@ module OpenActive
         ]
 
         # @return [String]
-        define_property :broadcast_service_tier, as: "broadcastServiceTier", types: [
+        define_property :broadcast_channel_id, as: "broadcastChannelId", types: [
           "string",
         ]
       end

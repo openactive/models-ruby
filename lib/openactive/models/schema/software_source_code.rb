@@ -8,10 +8,31 @@ module OpenActive
           "schema:SoftwareSourceCode"
         end
 
-        # @return [String,OpenActive::Models::Schema::ComputerLanguage,URI]
-        define_property :programming_language, as: "programmingLanguage", types: [
+        # @return [String]
+        define_property :runtime, as: "runtime", types: [
           "string",
+        ]
+
+        # @return [String]
+        define_property :code_sample_type, as: "codeSampleType", types: [
+          "string",
+        ]
+
+        # @return [OpenActive::Models::Schema::SoftwareApplication,URI]
+        define_property :target_product, as: "targetProduct", types: [
+          "OpenActive::Models::Schema::SoftwareApplication",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::ComputerLanguage,String,URI]
+        define_property :programming_language, as: "programmingLanguage", types: [
           "OpenActive::Models::Schema::ComputerLanguage",
+          "string",
+          "URI",
+        ]
+
+        # @return [URI]
+        define_property :code_repository, as: "codeRepository", types: [
           "URI",
         ]
 
@@ -22,27 +43,6 @@ module OpenActive
 
         # @return [String]
         define_property :runtime_platform, as: "runtimePlatform", types: [
-          "string",
-        ]
-
-        # @return [String]
-        define_property :runtime, as: "runtime", types: [
-          "string",
-        ]
-
-        # @return [OpenActive::Models::Schema::SoftwareApplication,URI]
-        define_property :target_product, as: "targetProduct", types: [
-          "OpenActive::Models::Schema::SoftwareApplication",
-          "URI",
-        ]
-
-        # @return [URI]
-        define_property :code_repository, as: "codeRepository", types: [
-          "URI",
-        ]
-
-        # @return [String]
-        define_property :code_sample_type, as: "codeSampleType", types: [
           "string",
         ]
       end

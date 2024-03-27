@@ -8,10 +8,10 @@ module OpenActive
           "schema:TouristTrip"
         end
 
-        # @return [OpenActive::Models::Schema::Audience,String,URI]
+        # @return [String,OpenActive::Models::Schema::Audience,URI]
         define_property :tourist_type, as: "touristType", types: [
-          "OpenActive::Models::Schema::Audience",
           "string",
+          "OpenActive::Models::Schema::Audience",
           "URI",
         ]
       end

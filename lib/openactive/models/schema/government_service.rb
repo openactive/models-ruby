@@ -8,10 +8,10 @@ module OpenActive
           "schema:GovernmentService"
         end
 
-        # @return [String,OpenActive::Models::Schema::AdministrativeArea,URI]
+        # @return [OpenActive::Models::Schema::AdministrativeArea,String,URI]
         define_property :jurisdiction, as: "jurisdiction", types: [
-          "string",
           "OpenActive::Models::Schema::AdministrativeArea",
+          "string",
           "URI",
         ]
 

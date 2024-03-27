@@ -8,9 +8,9 @@ module OpenActive
           "schema:TherapeuticProcedure"
         end
 
-        # @return [OpenActive::Models::Schema::MedicalEntity,URI]
-        define_property :adverse_outcome, as: "adverseOutcome", types: [
-          "OpenActive::Models::Schema::MedicalEntity",
+        # @return [OpenActive::Models::Schema::DoseSchedule,URI]
+        define_property :dose_schedule, as: "doseSchedule", types: [
+          "OpenActive::Models::Schema::DoseSchedule",
           "URI",
         ]
 
@@ -20,9 +20,9 @@ module OpenActive
           "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::DoseSchedule,URI]
-        define_property :dose_schedule, as: "doseSchedule", types: [
-          "OpenActive::Models::Schema::DoseSchedule",
+        # @return [OpenActive::Models::Schema::MedicalEntity,URI]
+        define_property :adverse_outcome, as: "adverseOutcome", types: [
+          "OpenActive::Models::Schema::MedicalEntity",
           "URI",
         ]
       end

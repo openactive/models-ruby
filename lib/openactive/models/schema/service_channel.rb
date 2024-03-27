@@ -8,9 +8,22 @@ module OpenActive
           "schema:ServiceChannel"
         end
 
+        # @return [OpenActive::Models::Schema::Place,URI]
+        define_property :service_location, as: "serviceLocation", types: [
+          "OpenActive::Models::Schema::Place",
+          "URI",
+        ]
+
         # @return [OpenActive::Models::Schema::Service,URI]
         define_property :provides_service, as: "providesService", types: [
           "OpenActive::Models::Schema::Service",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::Language,String,URI]
+        define_property :available_language, as: "availableLanguage", types: [
+          "OpenActive::Models::Schema::Language",
+          "string",
           "URI",
         ]
 
@@ -20,27 +33,9 @@ module OpenActive
           "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::PostalAddress,URI]
-        define_property :service_postal_address, as: "servicePostalAddress", types: [
-          "OpenActive::Models::Schema::PostalAddress",
-          "URI",
-        ]
-
-        # @return [URI]
-        define_property :service_url, as: "serviceUrl", types: [
-          "URI",
-        ]
-
         # @return [OpenActive::Models::Schema::ContactPoint,URI]
         define_property :service_phone, as: "servicePhone", types: [
           "OpenActive::Models::Schema::ContactPoint",
-          "URI",
-        ]
-
-        # @return [String,OpenActive::Models::Schema::Language,URI]
-        define_property :available_language, as: "availableLanguage", types: [
-          "string",
-          "OpenActive::Models::Schema::Language",
           "URI",
         ]
 
@@ -51,9 +46,14 @@ module OpenActive
           "null",
         ]
 
-        # @return [OpenActive::Models::Schema::Place,URI]
-        define_property :service_location, as: "serviceLocation", types: [
-          "OpenActive::Models::Schema::Place",
+        # @return [URI]
+        define_property :service_url, as: "serviceUrl", types: [
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::PostalAddress,URI]
+        define_property :service_postal_address, as: "servicePostalAddress", types: [
+          "OpenActive::Models::Schema::PostalAddress",
           "URI",
         ]
       end
