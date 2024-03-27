@@ -8,11 +8,10 @@ module OpenActive
           "schema:FoodEstablishmentReservation"
         end
 
-        # @return [int,OpenActive::Models::Schema::QuantitativeValue,URI,nil]
-        define_property :party_size, as: "partySize", types: [
-          "int",
-          "OpenActive::Models::Schema::QuantitativeValue",
-          "URI",
+        # @return [DateTime,Time,nil]
+        define_property :end_time, as: "endTime", types: [
+          "DateTime",
+          "Time",
           "null",
         ]
 
@@ -23,10 +22,11 @@ module OpenActive
           "null",
         ]
 
-        # @return [DateTime,Time,nil]
-        define_property :end_time, as: "endTime", types: [
-          "DateTime",
-          "Time",
+        # @return [OpenActive::Models::Schema::QuantitativeValue,int,URI,nil]
+        define_property :party_size, as: "partySize", types: [
+          "OpenActive::Models::Schema::QuantitativeValue",
+          "int",
+          "URI",
           "null",
         ]
       end

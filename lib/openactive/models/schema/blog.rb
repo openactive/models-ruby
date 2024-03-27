@@ -9,6 +9,12 @@ module OpenActive
         end
 
         # @return [OpenActive::Models::Schema::BlogPosting,URI]
+        define_property :blog_post, as: "blogPost", types: [
+          "OpenActive::Models::Schema::BlogPosting",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::BlogPosting,URI]
         define_property :blog_posts, as: "blogPosts", types: [
           "OpenActive::Models::Schema::BlogPosting",
           "URI",
@@ -17,12 +23,6 @@ module OpenActive
         # @return [String]
         define_property :issn, as: "issn", types: [
           "string",
-        ]
-
-        # @return [OpenActive::Models::Schema::BlogPosting,URI]
-        define_property :blog_post, as: "blogPost", types: [
-          "OpenActive::Models::Schema::BlogPosting",
-          "URI",
         ]
       end
     end

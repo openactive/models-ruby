@@ -8,16 +8,10 @@ module OpenActive
           "schema:BroadcastEvent"
         end
 
-        # @return [OpenActive::Models::Schema::Language,String,URI]
-        define_property :subtitle_language, as: "subtitleLanguage", types: [
-          "OpenActive::Models::Schema::Language",
-          "string",
-          "URI",
-        ]
-
-        # @return [String]
-        define_property :video_format, as: "videoFormat", types: [
-          "string",
+        # @return [Boolean,nil]
+        define_property :is_live_broadcast, as: "isLiveBroadcast", types: [
+          "bool",
+          "null",
         ]
 
         # @return [OpenActive::Models::Schema::Event,URI]
@@ -26,10 +20,16 @@ module OpenActive
           "URI",
         ]
 
-        # @return [Boolean,nil]
-        define_property :is_live_broadcast, as: "isLiveBroadcast", types: [
-          "bool",
-          "null",
+        # @return [String,OpenActive::Models::Schema::Language,URI]
+        define_property :subtitle_language, as: "subtitleLanguage", types: [
+          "string",
+          "OpenActive::Models::Schema::Language",
+          "URI",
+        ]
+
+        # @return [String]
+        define_property :video_format, as: "videoFormat", types: [
+          "string",
         ]
       end
     end

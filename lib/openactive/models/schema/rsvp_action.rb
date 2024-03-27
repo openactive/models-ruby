@@ -14,16 +14,16 @@ module OpenActive
           "null",
         ]
 
-        # @return [OpenActive::Models::Schema::Comment,URI]
-        define_property :comment, as: "comment", types: [
-          "OpenActive::Models::Schema::Comment",
-          "URI",
-        ]
-
         # @return [BigDecimal,nil]
         define_property :additional_number_of_guests, as: "additionalNumberOfGuests", types: [
           "Number",
           "null",
+        ]
+
+        # @return [OpenActive::Models::Schema::Comment,URI]
+        define_property :comment, as: "comment", types: [
+          "OpenActive::Models::Schema::Comment",
+          "URI",
         ]
       end
     end

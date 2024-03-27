@@ -8,10 +8,10 @@ module OpenActive
           "schema:FinancialService"
         end
 
-        # @return [URI,String]
+        # @return [String,URI]
         define_property :fees_and_commissions_specification, as: "feesAndCommissionsSpecification", types: [
-          "URI",
           "string",
+          "URI",
         ]
       end
     end

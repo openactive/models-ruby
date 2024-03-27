@@ -8,30 +8,30 @@ module OpenActive
           "schema:LodgingReservation"
         end
 
-        # @return [OpenActive::Enums::Schema::QualitativeValue,String,nil]
-        define_property :lodging_unit_type, as: "lodgingUnitType", types: [
-          "OpenActive::Enums::Schema::QualitativeValue",
-          "string",
-          "null",
-        ]
-
         # @return [String]
         define_property :lodging_unit_description, as: "lodgingUnitDescription", types: [
           "string",
         ]
 
-        # @return [DateTime,Time,nil]
-        define_property :checkout_time, as: "checkoutTime", types: [
-          "DateTime",
-          "Time",
+        # @return [OpenActive::Models::Schema::QuantitativeValue,int,URI,nil]
+        define_property :num_children, as: "numChildren", types: [
+          "OpenActive::Models::Schema::QuantitativeValue",
+          "int",
+          "URI",
           "null",
         ]
 
-        # @return [int,OpenActive::Models::Schema::QuantitativeValue,URI,nil]
-        define_property :num_adults, as: "numAdults", types: [
-          "int",
-          "OpenActive::Models::Schema::QuantitativeValue",
-          "URI",
+        # @return [Time,DateTime,nil]
+        define_property :checkout_time, as: "checkoutTime", types: [
+          "Time",
+          "DateTime",
+          "null",
+        ]
+
+        # @return [OpenActive::Enums::Schema::QualitativeValue,String,nil]
+        define_property :lodging_unit_type, as: "lodgingUnitType", types: [
+          "OpenActive::Enums::Schema::QualitativeValue",
+          "string",
           "null",
         ]
 
@@ -42,10 +42,10 @@ module OpenActive
           "null",
         ]
 
-        # @return [int,OpenActive::Models::Schema::QuantitativeValue,URI,nil]
-        define_property :num_children, as: "numChildren", types: [
-          "int",
+        # @return [OpenActive::Models::Schema::QuantitativeValue,int,URI,nil]
+        define_property :num_adults, as: "numAdults", types: [
           "OpenActive::Models::Schema::QuantitativeValue",
+          "int",
           "URI",
           "null",
         ]

@@ -8,24 +8,24 @@ module OpenActive
           "schema:AggregateOffer"
         end
 
-        # @return [String,BigDecimal,nil]
-        define_property :high_price, as: "highPrice", types: [
-          "string",
-          "Number",
-          "null",
-        ]
-
-        # @return [OpenActive::Models::Schema::Offer,OpenActive::Models::Schema::Demand,URI]
+        # @return [OpenActive::Models::Schema::Demand,OpenActive::Models::Schema::Offer,URI]
         define_property :offers, as: "offers", types: [
-          "OpenActive::Models::Schema::Offer",
           "OpenActive::Models::Schema::Demand",
+          "OpenActive::Models::Schema::Offer",
           "URI",
         ]
 
-        # @return [String,BigDecimal,nil]
-        define_property :low_price, as: "lowPrice", types: [
-          "string",
+        # @return [BigDecimal,String,nil]
+        define_property :high_price, as: "highPrice", types: [
           "Number",
+          "string",
+          "null",
+        ]
+
+        # @return [BigDecimal,String,nil]
+        define_property :low_price, as: "lowPrice", types: [
+          "Number",
+          "string",
           "null",
         ]
 

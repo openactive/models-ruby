@@ -14,17 +14,17 @@ module OpenActive
           "URI",
         ]
 
-        # @return [BigDecimal,OpenActive::Models::Schema::MonetaryAmount,URI,nil]
-        define_property :exchange_rate_spread, as: "exchangeRateSpread", types: [
-          "Number",
-          "OpenActive::Models::Schema::MonetaryAmount",
-          "URI",
-          "null",
-        ]
-
         # @return [String]
         define_property :currency, as: "currency", types: [
           "string",
+        ]
+
+        # @return [OpenActive::Models::Schema::MonetaryAmount,BigDecimal,URI,nil]
+        define_property :exchange_rate_spread, as: "exchangeRateSpread", types: [
+          "OpenActive::Models::Schema::MonetaryAmount",
+          "Number",
+          "URI",
+          "null",
         ]
       end
     end

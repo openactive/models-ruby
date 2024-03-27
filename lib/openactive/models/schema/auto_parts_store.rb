@@ -1,7 +1,7 @@
 module OpenActive
   module Models
     module Schema
-      class AutoPartsStore < ::OpenActive::Models::Schema::Store
+      class AutoPartsStore < ::OpenActive::Models::Schema::AutomotiveBusiness
         # @!attribute type
         # @return [String]
         def type

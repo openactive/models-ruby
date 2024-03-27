@@ -1,7 +1,7 @@
 module OpenActive
   module Models
     module Schema
-      class VideoGame < ::OpenActive::Models::Schema::SoftwareApplication
+      class VideoGame < ::OpenActive::Models::Schema::Game
         # @!attribute type
         # @return [String]
         def type
@@ -9,20 +9,8 @@ module OpenActive
         end
 
         # @return [OpenActive::Models::Schema::Person,URI]
-        define_property :director, as: "director", types: [
+        define_property :actors, as: "actors", types: [
           "OpenActive::Models::Schema::Person",
-          "URI",
-        ]
-
-        # @return [OpenActive::Models::Schema::Person,URI]
-        define_property :actor, as: "actor", types: [
-          "OpenActive::Models::Schema::Person",
-          "URI",
-        ]
-
-        # @return [OpenActive::Models::Schema::VideoObject,URI]
-        define_property :trailer, as: "trailer", types: [
-          "OpenActive::Models::Schema::VideoObject",
           "URI",
         ]
 
@@ -31,10 +19,11 @@ module OpenActive
           "string",
         ]
 
-        # @return [OpenActive::Models::Schema::CreativeWork,URI]
-        define_property :cheat_code, as: "cheatCode", types: [
-          "OpenActive::Models::Schema::CreativeWork",
+        # @return [URI,OpenActive::Models::Schema::Thing,String]
+        define_property :game_platform, as: "gamePlatform", types: [
           "URI",
+          "OpenActive::Models::Schema::Thing",
+          "string",
         ]
 
         # @return [OpenActive::Models::Schema::GameServer,URI]
@@ -44,28 +33,15 @@ module OpenActive
         ]
 
         # @return [OpenActive::Models::Schema::CreativeWork,URI]
-        define_property :game_tip, as: "gameTip", types: [
+        define_property :cheat_code, as: "cheatCode", types: [
           "OpenActive::Models::Schema::CreativeWork",
           "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::Person,URI]
-        define_property :actors, as: "actors", types: [
-          "OpenActive::Models::Schema::Person",
+        # @return [OpenActive::Models::Schema::VideoObject,URI]
+        define_property :trailer, as: "trailer", types: [
+          "OpenActive::Models::Schema::VideoObject",
           "URI",
-        ]
-
-        # @return [OpenActive::Enums::Schema::GamePlayMode,nil]
-        define_property :play_mode, as: "playMode", types: [
-          "OpenActive::Enums::Schema::GamePlayMode",
-          "null",
-        ]
-
-        # @return [String,URI,OpenActive::Models::Schema::Thing]
-        define_property :game_platform, as: "gamePlatform", types: [
-          "string",
-          "URI",
-          "OpenActive::Models::Schema::Thing",
         ]
 
         # @return [OpenActive::Models::Schema::Person,OpenActive::Models::Schema::MusicGroup,URI]
@@ -77,6 +53,30 @@ module OpenActive
 
         # @return [OpenActive::Models::Schema::Person,URI]
         define_property :directors, as: "directors", types: [
+          "OpenActive::Models::Schema::Person",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::CreativeWork,URI]
+        define_property :game_tip, as: "gameTip", types: [
+          "OpenActive::Models::Schema::CreativeWork",
+          "URI",
+        ]
+
+        # @return [OpenActive::Enums::Schema::GamePlayMode,nil]
+        define_property :play_mode, as: "playMode", types: [
+          "OpenActive::Enums::Schema::GamePlayMode",
+          "null",
+        ]
+
+        # @return [OpenActive::Models::Schema::Person,URI]
+        define_property :director, as: "director", types: [
+          "OpenActive::Models::Schema::Person",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::Person,URI]
+        define_property :actor, as: "actor", types: [
           "OpenActive::Models::Schema::Person",
           "URI",
         ]

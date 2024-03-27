@@ -8,8 +8,13 @@ module OpenActive
           "schema:AlignmentObject"
         end
 
+        # @return [URI]
+        define_property :target_url, as: "targetUrl", types: [
+          "URI",
+        ]
+
         # @return [String]
-        define_property :alignment_type, as: "alignmentType", types: [
+        define_property :target_name, as: "targetName", types: [
           "string",
         ]
 
@@ -19,18 +24,13 @@ module OpenActive
         ]
 
         # @return [String]
-        define_property :target_description, as: "targetDescription", types: [
+        define_property :alignment_type, as: "alignmentType", types: [
           "string",
         ]
 
         # @return [String]
-        define_property :target_name, as: "targetName", types: [
+        define_property :target_description, as: "targetDescription", types: [
           "string",
-        ]
-
-        # @return [URI]
-        define_property :target_url, as: "targetUrl", types: [
-          "URI",
         ]
       end
     end

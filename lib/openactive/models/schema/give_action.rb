@@ -8,12 +8,12 @@ module OpenActive
           "schema:GiveAction"
         end
 
-        # @return [OpenActive::Models::Schema::Person,OpenActive::Models::Schema::Audience,OpenActive::Models::Schema::ContactPoint,OpenActive::Models::Schema::Organization,URI]
+        # @return [OpenActive::Models::Schema::ContactPoint,OpenActive::Models::Schema::Organization,OpenActive::Models::Schema::Audience,OpenActive::Models::Schema::Person,URI]
         define_property :recipient, as: "recipient", types: [
-          "OpenActive::Models::Schema::Person",
-          "OpenActive::Models::Schema::Audience",
           "OpenActive::Models::Schema::ContactPoint",
           "OpenActive::Models::Schema::Organization",
+          "OpenActive::Models::Schema::Audience",
+          "OpenActive::Models::Schema::Person",
           "URI",
         ]
       end

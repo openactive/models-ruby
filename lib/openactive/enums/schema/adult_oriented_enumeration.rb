@@ -7,14 +7,14 @@ module OpenActive
       class AdultOrientedEnumeration < TypesafeEnum::Base
         new :ReducedRelevanceForChildrenConsideration, "https://schema.org/ReducedRelevanceForChildrenConsideration"
         new :SexualContentConsideration, "https://schema.org/SexualContentConsideration"
-        new :UnclassifiedAdultConsideration, "https://schema.org/UnclassifiedAdultConsideration"
-        new :HealthcareConsideration, "https://schema.org/HealthcareConsideration"
-        new :NarcoticConsideration, "https://schema.org/NarcoticConsideration"
-        new :WeaponConsideration, "https://schema.org/WeaponConsideration"
+        new :ViolenceConsideration, "https://schema.org/ViolenceConsideration"
         new :TobaccoNicotineConsideration, "https://schema.org/TobaccoNicotineConsideration"
         new :AlcoholConsideration, "https://schema.org/AlcoholConsideration"
         new :DangerousGoodConsideration, "https://schema.org/DangerousGoodConsideration"
-        new :ViolenceConsideration, "https://schema.org/ViolenceConsideration"
+        new :NarcoticConsideration, "https://schema.org/NarcoticConsideration"
+        new :WeaponConsideration, "https://schema.org/WeaponConsideration"
+        new :UnclassifiedAdultConsideration, "https://schema.org/UnclassifiedAdultConsideration"
+        new :HealthcareConsideration, "https://schema.org/HealthcareConsideration"
       end
     end
   end

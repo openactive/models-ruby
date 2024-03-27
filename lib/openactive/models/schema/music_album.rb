@@ -8,6 +8,12 @@ module OpenActive
           "schema:MusicAlbum"
         end
 
+        # @return [OpenActive::Models::Schema::MusicRelease,URI]
+        define_property :album_release, as: "albumRelease", types: [
+          "OpenActive::Models::Schema::MusicRelease",
+          "URI",
+        ]
+
         # @return [OpenActive::Enums::Schema::MusicAlbumProductionType,nil]
         define_property :album_production_type, as: "albumProductionType", types: [
           "OpenActive::Enums::Schema::MusicAlbumProductionType",
@@ -18,12 +24,6 @@ module OpenActive
         define_property :album_release_type, as: "albumReleaseType", types: [
           "OpenActive::Enums::Schema::MusicAlbumReleaseType",
           "null",
-        ]
-
-        # @return [OpenActive::Models::Schema::MusicRelease,URI]
-        define_property :album_release, as: "albumRelease", types: [
-          "OpenActive::Models::Schema::MusicRelease",
-          "URI",
         ]
 
         # @return [OpenActive::Models::Schema::Person,OpenActive::Models::Schema::MusicGroup,URI]

@@ -15,28 +15,7 @@ module OpenActive
         ]
 
         # @return [URI]
-        define_property :benefits_summary_url, as: "benefitsSummaryUrl", types: [
-          "URI",
-        ]
-
-        # @return [String]
-        define_property :health_plan_drug_option, as: "healthPlanDrugOption", types: [
-          "string",
-        ]
-
-        # @return [String]
-        define_property :health_plan_drug_tier, as: "healthPlanDrugTier", types: [
-          "string",
-        ]
-
-        # @return [String]
-        define_property :health_plan_id, as: "healthPlanId", types: [
-          "string",
-        ]
-
-        # @return [OpenActive::Models::Schema::ContactPoint,URI]
-        define_property :contact_point, as: "contactPoint", types: [
-          "OpenActive::Models::Schema::ContactPoint",
+        define_property :health_plan_marketing_url, as: "healthPlanMarketingUrl", types: [
           "URI",
         ]
 
@@ -46,15 +25,36 @@ module OpenActive
           "string",
         ]
 
+        # @return [OpenActive::Models::Schema::ContactPoint,URI]
+        define_property :contact_point, as: "contactPoint", types: [
+          "OpenActive::Models::Schema::ContactPoint",
+          "URI",
+        ]
+
+        # @return [String]
+        define_property :health_plan_drug_tier, as: "healthPlanDrugTier", types: [
+          "string",
+        ]
+
+        # @return [String]
+        define_property :health_plan_drug_option, as: "healthPlanDrugOption", types: [
+          "string",
+        ]
+
+        # @return [URI]
+        define_property :benefits_summary_url, as: "benefitsSummaryUrl", types: [
+          "URI",
+        ]
+
         # @return [OpenActive::Models::Schema::HealthPlanNetwork,URI]
         define_property :includes_health_plan_network, as: "includesHealthPlanNetwork", types: [
           "OpenActive::Models::Schema::HealthPlanNetwork",
           "URI",
         ]
 
-        # @return [URI]
-        define_property :health_plan_marketing_url, as: "healthPlanMarketingUrl", types: [
-          "URI",
+        # @return [String]
+        define_property :health_plan_id, as: "healthPlanId", types: [
+          "string",
         ]
       end
     end

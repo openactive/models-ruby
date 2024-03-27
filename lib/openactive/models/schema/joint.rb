@@ -8,9 +8,11 @@ module OpenActive
           "schema:Joint"
         end
 
-        # @return [String]
-        define_property :structural_class, as: "structuralClass", types: [
+        # @return [String,OpenActive::Models::Schema::MedicalEntity,URI]
+        define_property :functional_class, as: "functionalClass", types: [
           "string",
+          "OpenActive::Models::Schema::MedicalEntity",
+          "URI",
         ]
 
         # @return [String]
@@ -18,11 +20,9 @@ module OpenActive
           "string",
         ]
 
-        # @return [String,OpenActive::Models::Schema::MedicalEntity,URI]
-        define_property :functional_class, as: "functionalClass", types: [
+        # @return [String]
+        define_property :structural_class, as: "structuralClass", types: [
           "string",
-          "OpenActive::Models::Schema::MedicalEntity",
-          "URI",
         ]
       end
     end

@@ -14,7 +14,7 @@ module OpenActive
         ]
 
         # @return [String]
-        define_property :print_column, as: "printColumn", types: [
+        define_property :dateline, as: "dateline", types: [
           "string",
         ]
 
@@ -29,7 +29,7 @@ module OpenActive
         ]
 
         # @return [String]
-        define_property :dateline, as: "dateline", types: [
+        define_property :print_column, as: "printColumn", types: [
           "string",
         ]
       end

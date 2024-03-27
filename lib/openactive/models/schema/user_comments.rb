@@ -8,6 +8,11 @@ module OpenActive
           "schema:UserComments"
         end
 
+        # @return [String]
+        define_property :comment_text, as: "commentText", types: [
+          "string",
+        ]
+
         # @return [URI]
         define_property :reply_to_url, as: "replyToUrl", types: [
           "URI",
@@ -19,23 +24,18 @@ module OpenActive
           "URI",
         ]
 
-        # @return [DateTime,Date,nil]
-        define_property :comment_time, as: "commentTime", types: [
-          "DateTime",
-          "Date",
-          "null",
-        ]
-
-        # @return [String]
-        define_property :comment_text, as: "commentText", types: [
-          "string",
-        ]
-
-        # @return [OpenActive::Models::Schema::Organization,OpenActive::Models::Schema::Person,URI]
+        # @return [OpenActive::Models::Schema::Person,OpenActive::Models::Schema::Organization,URI]
         define_property :creator, as: "creator", types: [
-          "OpenActive::Models::Schema::Organization",
           "OpenActive::Models::Schema::Person",
+          "OpenActive::Models::Schema::Organization",
           "URI",
+        ]
+
+        # @return [Date,DateTime,nil]
+        define_property :comment_time, as: "commentTime", types: [
+          "Date",
+          "DateTime",
+          "null",
         ]
       end
     end

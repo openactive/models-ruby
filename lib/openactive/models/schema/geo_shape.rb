@@ -16,7 +16,19 @@ module OpenActive
         ]
 
         # @return [String]
-        define_property :circle, as: "circle", types: [
+        define_property :box, as: "box", types: [
+          "string",
+        ]
+
+        # @return [OpenActive::Models::Schema::PostalAddress,String,URI]
+        define_property :address, as: "address", types: [
+          "OpenActive::Models::Schema::PostalAddress",
+          "string",
+          "URI",
+        ]
+
+        # @return [String]
+        define_property :postal_code, as: "postalCode", types: [
           "string",
         ]
 
@@ -26,31 +38,19 @@ module OpenActive
         ]
 
         # @return [String]
-        define_property :polygon, as: "polygon", types: [
+        define_property :circle, as: "circle", types: [
           "string",
         ]
 
-        # @return [String,OpenActive::Models::Schema::PostalAddress,URI]
-        define_property :address, as: "address", types: [
-          "string",
-          "OpenActive::Models::Schema::PostalAddress",
-          "URI",
-        ]
-
-        # @return [String]
-        define_property :postal_code, as: "postalCode", types: [
-          "string",
-        ]
-
-        # @return [String,BigDecimal,nil]
+        # @return [BigDecimal,String,nil]
         define_property :elevation, as: "elevation", types: [
-          "string",
           "Number",
+          "string",
           "null",
         ]
 
         # @return [String]
-        define_property :box, as: "box", types: [
+        define_property :polygon, as: "polygon", types: [
           "string",
         ]
       end

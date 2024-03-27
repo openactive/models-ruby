@@ -8,11 +8,15 @@ module OpenActive
           "schema:Article"
         end
 
-        # @return [String,int,nil]
-        define_property :page_start, as: "pageStart", types: [
-          "string",
+        # @return [int,nil]
+        define_property :word_count, as: "wordCount", types: [
           "int",
           "null",
+        ]
+
+        # @return [String]
+        define_property :pagination, as: "pagination", types: [
+          "string",
         ]
 
         # @return [String]
@@ -20,11 +24,9 @@ module OpenActive
           "string",
         ]
 
-        # @return [String,int,nil]
-        define_property :page_end, as: "pageEnd", types: [
+        # @return [String]
+        define_property :article_body, as: "articleBody", types: [
           "string",
-          "int",
-          "null",
         ]
 
         # @return [String,OpenActive::Models::Schema::CreativeWork,URI]
@@ -34,26 +36,24 @@ module OpenActive
           "URI",
         ]
 
-        # @return [int,nil]
-        define_property :word_count, as: "wordCount", types: [
+        # @return [String,int,nil]
+        define_property :page_end, as: "pageEnd", types: [
+          "string",
           "int",
           "null",
         ]
 
-        # @return [String]
-        define_property :article_body, as: "articleBody", types: [
+        # @return [String,int,nil]
+        define_property :page_start, as: "pageStart", types: [
           "string",
+          "int",
+          "null",
         ]
 
-        # @return [URI,OpenActive::Models::Schema::SpeakableSpecification]
+        # @return [OpenActive::Models::Schema::SpeakableSpecification,URI]
         define_property :speakable, as: "speakable", types: [
-          "URI",
           "OpenActive::Models::Schema::SpeakableSpecification",
-        ]
-
-        # @return [String]
-        define_property :pagination, as: "pagination", types: [
-          "string",
+          "URI",
         ]
       end
     end

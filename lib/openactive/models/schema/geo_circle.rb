@@ -8,11 +8,11 @@ module OpenActive
           "schema:GeoCircle"
         end
 
-        # @return [BigDecimal,String,OpenActive::Models::Schema::Distance,URI,nil]
+        # @return [OpenActive::Models::Schema::Distance,BigDecimal,String,URI,nil]
         define_property :geo_radius, as: "geoRadius", types: [
+          "OpenActive::Models::Schema::Distance",
           "Number",
           "string",
-          "OpenActive::Models::Schema::Distance",
           "URI",
           "null",
         ]

@@ -8,24 +8,21 @@ module OpenActive
           "schema:Ticket"
         end
 
-        # @return [URI,String]
+        # @return [String]
+        define_property :price_currency, as: "priceCurrency", types: [
+          "string",
+        ]
+
+        # @return [String,URI]
         define_property :ticket_token, as: "ticketToken", types: [
-          "URI",
           "string",
-        ]
-
-        # @return [OpenActive::Models::Schema::Seat,URI]
-        define_property :ticketed_seat, as: "ticketedSeat", types: [
-          "OpenActive::Models::Schema::Seat",
           "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::PriceSpecification,BigDecimal,String,URI,nil]
-        define_property :total_price, as: "totalPrice", types: [
-          "OpenActive::Models::Schema::PriceSpecification",
-          "Number",
-          "string",
-          "URI",
+        # @return [DateTime,Date,nil]
+        define_property :date_issued, as: "dateIssued", types: [
+          "DateTime",
+          "Date",
           "null",
         ]
 
@@ -35,20 +32,23 @@ module OpenActive
           "URI",
         ]
 
-        # @return [String]
-        define_property :ticket_number, as: "ticketNumber", types: [
+        # @return [String,BigDecimal,OpenActive::Models::Schema::PriceSpecification,URI,nil]
+        define_property :total_price, as: "totalPrice", types: [
           "string",
-        ]
-
-        # @return [Date,DateTime,nil]
-        define_property :date_issued, as: "dateIssued", types: [
-          "Date",
-          "DateTime",
+          "Number",
+          "OpenActive::Models::Schema::PriceSpecification",
+          "URI",
           "null",
         ]
 
+        # @return [OpenActive::Models::Schema::Seat,URI]
+        define_property :ticketed_seat, as: "ticketedSeat", types: [
+          "OpenActive::Models::Schema::Seat",
+          "URI",
+        ]
+
         # @return [String]
-        define_property :price_currency, as: "priceCurrency", types: [
+        define_property :ticket_number, as: "ticketNumber", types: [
           "string",
         ]
 

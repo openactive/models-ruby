@@ -5,10 +5,10 @@ module OpenActive
     module Schema
       # Enumerates several kinds of product return policies.
       class MerchantReturnEnumeration < TypesafeEnum::Base
-        new :MerchantReturnNotPermitted, "https://schema.org/MerchantReturnNotPermitted"
-        new :MerchantReturnUnlimitedWindow, "https://schema.org/MerchantReturnUnlimitedWindow"
         new :MerchantReturnFiniteReturnWindow, "https://schema.org/MerchantReturnFiniteReturnWindow"
+        new :MerchantReturnNotPermitted, "https://schema.org/MerchantReturnNotPermitted"
         new :MerchantReturnUnspecified, "https://schema.org/MerchantReturnUnspecified"
+        new :MerchantReturnUnlimitedWindow, "https://schema.org/MerchantReturnUnlimitedWindow"
       end
     end
   end

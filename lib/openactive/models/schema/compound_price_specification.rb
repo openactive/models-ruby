@@ -8,17 +8,17 @@ module OpenActive
           "schema:CompoundPriceSpecification"
         end
 
-        # @return [OpenActive::Models::Schema::UnitPriceSpecification,URI]
-        define_property :price_component, as: "priceComponent", types: [
-          "OpenActive::Models::Schema::UnitPriceSpecification",
-          "URI",
-        ]
-
         # @return [OpenActive::Enums::Schema::PriceTypeEnumeration,String,nil]
         define_property :price_type, as: "priceType", types: [
           "OpenActive::Enums::Schema::PriceTypeEnumeration",
           "string",
           "null",
+        ]
+
+        # @return [OpenActive::Models::Schema::UnitPriceSpecification,URI]
+        define_property :price_component, as: "priceComponent", types: [
+          "OpenActive::Models::Schema::UnitPriceSpecification",
+          "URI",
         ]
       end
     end

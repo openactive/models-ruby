@@ -13,10 +13,10 @@ module OpenActive
           "string",
         ]
 
-        # @return [OpenActive::Models::Schema::CategoryCodeSet,URI]
+        # @return [URI,OpenActive::Models::Schema::CategoryCodeSet]
         define_property :in_code_set, as: "inCodeSet", types: [
-          "OpenActive::Models::Schema::CategoryCodeSet",
           "URI",
+          "OpenActive::Models::Schema::CategoryCodeSet",
         ]
       end
     end

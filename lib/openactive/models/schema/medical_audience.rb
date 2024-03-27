@@ -1,7 +1,7 @@
 module OpenActive
   module Models
     module Schema
-      class MedicalAudience < ::OpenActive::Models::Schema::Audience
+      class MedicalAudience < ::OpenActive::Models::Schema::PeopleAudience
         # @!attribute type
         # @return [String]
         def type

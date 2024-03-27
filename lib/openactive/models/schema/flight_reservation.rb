@@ -8,13 +8,6 @@ module OpenActive
           "schema:FlightReservation"
         end
 
-        # @return [OpenActive::Enums::Schema::QualitativeValue,String,nil]
-        define_property :passenger_priority_status, as: "passengerPriorityStatus", types: [
-          "OpenActive::Enums::Schema::QualitativeValue",
-          "string",
-          "null",
-        ]
-
         # @return [String]
         define_property :boarding_group, as: "boardingGroup", types: [
           "string",
@@ -23,6 +16,13 @@ module OpenActive
         # @return [String]
         define_property :security_screening, as: "securityScreening", types: [
           "string",
+        ]
+
+        # @return [String,OpenActive::Enums::Schema::QualitativeValue,nil]
+        define_property :passenger_priority_status, as: "passengerPriorityStatus", types: [
+          "string",
+          "OpenActive::Enums::Schema::QualitativeValue",
+          "null",
         ]
 
         # @return [String]

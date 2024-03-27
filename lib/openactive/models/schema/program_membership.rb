@@ -8,24 +8,17 @@ module OpenActive
           "schema:ProgramMembership"
         end
 
-        # @return [BigDecimal,OpenActive::Models::Schema::QuantitativeValue,URI,nil]
+        # @return [String]
+        define_property :program_name, as: "programName", types: [
+          "string",
+        ]
+
+        # @return [OpenActive::Models::Schema::QuantitativeValue,BigDecimal,URI,nil]
         define_property :membership_points_earned, as: "membershipPointsEarned", types: [
-          "Number",
           "OpenActive::Models::Schema::QuantitativeValue",
+          "Number",
           "URI",
           "null",
-        ]
-
-        # @return [OpenActive::Models::Schema::Organization,OpenActive::Models::Schema::Person,URI]
-        define_property :member, as: "member", types: [
-          "OpenActive::Models::Schema::Organization",
-          "OpenActive::Models::Schema::Person",
-          "URI",
-        ]
-
-        # @return [String]
-        define_property :membership_number, as: "membershipNumber", types: [
-          "string",
         ]
 
         # @return [OpenActive::Models::Schema::Organization,URI]
@@ -35,7 +28,7 @@ module OpenActive
         ]
 
         # @return [String]
-        define_property :program_name, as: "programName", types: [
+        define_property :membership_number, as: "membershipNumber", types: [
           "string",
         ]
 
@@ -43,6 +36,13 @@ module OpenActive
         define_property :members, as: "members", types: [
           "OpenActive::Models::Schema::Person",
           "OpenActive::Models::Schema::Organization",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::Organization,OpenActive::Models::Schema::Person,URI]
+        define_property :member, as: "member", types: [
+          "OpenActive::Models::Schema::Organization",
+          "OpenActive::Models::Schema::Person",
           "URI",
         ]
       end

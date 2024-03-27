@@ -14,7 +14,7 @@ module OpenActive
         ]
 
         # @return [DateTime,nil]
-        define_property :available_through, as: "availableThrough", types: [
+        define_property :available_from, as: "availableFrom", types: [
           "DateTime",
           "null",
         ]
@@ -26,7 +26,7 @@ module OpenActive
         ]
 
         # @return [DateTime,nil]
-        define_property :available_from, as: "availableFrom", types: [
+        define_property :available_through, as: "availableThrough", types: [
           "DateTime",
           "null",
         ]

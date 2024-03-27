@@ -8,18 +8,18 @@ module OpenActive
           "schema:EmployeeRole"
         end
 
+        # @return [OpenActive::Models::Schema::MonetaryAmount,OpenActive::Models::Schema::PriceSpecification,BigDecimal,URI,nil]
+        define_property :base_salary, as: "baseSalary", types: [
+          "OpenActive::Models::Schema::MonetaryAmount",
+          "OpenActive::Models::Schema::PriceSpecification",
+          "Number",
+          "URI",
+          "null",
+        ]
+
         # @return [String]
         define_property :salary_currency, as: "salaryCurrency", types: [
           "string",
-        ]
-
-        # @return [BigDecimal,OpenActive::Models::Schema::PriceSpecification,OpenActive::Models::Schema::MonetaryAmount,URI,nil]
-        define_property :base_salary, as: "baseSalary", types: [
-          "Number",
-          "OpenActive::Models::Schema::PriceSpecification",
-          "OpenActive::Models::Schema::MonetaryAmount",
-          "URI",
-          "null",
         ]
       end
     end

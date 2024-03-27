@@ -13,18 +13,6 @@ module OpenActive
           "OpenActive::Models::Schema::Class",
           "URI",
         ]
-
-        # @return [int,nil]
-        define_property :num_constraints, as: "numConstraints", types: [
-          "int",
-          "null",
-        ]
-
-        # @return [int,nil]
-        define_property :constraining_property, as: "constrainingProperty", types: [
-          "int",
-          "null",
-        ]
       end
     end
   end
