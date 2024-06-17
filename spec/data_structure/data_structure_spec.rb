@@ -18,7 +18,9 @@ RSpec.describe "Data structure tests" do
       }
     ]
 
-  objs.each do |model:, data:|
+  objs.each do |obj|
+    model = obj[:model]
+    data = obj[:data]
     describe model do
       let(:inst) { model.deserialize(data) }
 
