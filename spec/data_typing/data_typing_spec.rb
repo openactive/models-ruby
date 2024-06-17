@@ -15,7 +15,10 @@ RSpec.describe "Data typing" do
       }
     ]
 
-  objs.each do |model:, data:|
+  objs.each do |obj|
+    model = obj[:model]
+    data = obj[:data]
+    
     describe model do
       describe "#type" do
         it "reserializes to original value" do
