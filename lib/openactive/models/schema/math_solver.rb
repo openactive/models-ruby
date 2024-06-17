@@ -8,10 +8,10 @@ module OpenActive
           "schema:MathSolver"
         end
 
-        # @return [OpenActive::Models::Schema::SolveMathAction,String,URI]
+        # @return [String,OpenActive::Models::Schema::SolveMathAction,URI]
         define_property :math_expression, as: "mathExpression", types: [
-          "OpenActive::Models::Schema::SolveMathAction",
           "string",
+          "OpenActive::Models::Schema::SolveMathAction",
           "URI",
         ]
       end

@@ -8,15 +8,6 @@ module OpenActive
           "schema:CommunicateAction"
         end
 
-        # @return [OpenActive::Models::Schema::Person,OpenActive::Models::Schema::Audience,OpenActive::Models::Schema::ContactPoint,OpenActive::Models::Schema::Organization,URI]
-        define_property :recipient, as: "recipient", types: [
-          "OpenActive::Models::Schema::Person",
-          "OpenActive::Models::Schema::Audience",
-          "OpenActive::Models::Schema::ContactPoint",
-          "OpenActive::Models::Schema::Organization",
-          "URI",
-        ]
-
         # @return [String,OpenActive::Models::Schema::Language,URI]
         define_property :in_language, as: "inLanguage", types: [
           "string",
@@ -24,15 +15,24 @@ module OpenActive
           "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::Language,URI]
-        define_property :language, as: "language", types: [
-          "OpenActive::Models::Schema::Language",
+        # @return [OpenActive::Models::Schema::ContactPoint,OpenActive::Models::Schema::Organization,OpenActive::Models::Schema::Audience,OpenActive::Models::Schema::Person,URI]
+        define_property :recipient, as: "recipient", types: [
+          "OpenActive::Models::Schema::ContactPoint",
+          "OpenActive::Models::Schema::Organization",
+          "OpenActive::Models::Schema::Audience",
+          "OpenActive::Models::Schema::Person",
           "URI",
         ]
 
         # @return [OpenActive::Models::Schema::Thing,URI]
         define_property :about, as: "about", types: [
           "OpenActive::Models::Schema::Thing",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::Language,URI]
+        define_property :language, as: "language", types: [
+          "OpenActive::Models::Schema::Language",
           "URI",
         ]
       end

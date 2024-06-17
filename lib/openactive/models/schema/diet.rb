@@ -9,7 +9,7 @@ module OpenActive
         end
 
         # @return [String]
-        define_property :expert_considerations, as: "expertConsiderations", types: [
+        define_property :physiological_benefits, as: "physiologicalBenefits", types: [
           "string",
         ]
 
@@ -18,16 +18,16 @@ module OpenActive
           "string",
         ]
 
-        # @return [String]
-        define_property :physiological_benefits, as: "physiologicalBenefits", types: [
-          "string",
-        ]
-
         # @return [OpenActive::Models::Schema::Person,OpenActive::Models::Schema::Organization,URI]
         define_property :endorsers, as: "endorsers", types: [
           "OpenActive::Models::Schema::Person",
           "OpenActive::Models::Schema::Organization",
           "URI",
+        ]
+
+        # @return [String]
+        define_property :expert_considerations, as: "expertConsiderations", types: [
+          "string",
         ]
 
         # @return [String]

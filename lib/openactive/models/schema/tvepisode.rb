@@ -20,10 +20,10 @@ module OpenActive
           "string",
         ]
 
-        # @return [OpenActive::Models::Schema::Language,String,URI]
+        # @return [String,OpenActive::Models::Schema::Language,URI]
         define_property :subtitle_language, as: "subtitleLanguage", types: [
-          "OpenActive::Models::Schema::Language",
           "string",
+          "OpenActive::Models::Schema::Language",
           "URI",
         ]
 

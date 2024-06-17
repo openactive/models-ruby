@@ -8,10 +8,10 @@ module OpenActive
           "schema:MedicalOrganization"
         end
 
-        # @return [Boolean,nil]
-        define_property :is_accepting_new_patients, as: "isAcceptingNewPatients", types: [
-          "bool",
-          "null",
+        # @return [OpenActive::Models::Schema::MedicalSpecialty,URI]
+        define_property :medical_specialty, as: "medicalSpecialty", types: [
+          "OpenActive::Models::Schema::MedicalSpecialty",
+          "URI",
         ]
 
         # @return [String]
@@ -19,10 +19,10 @@ module OpenActive
           "string",
         ]
 
-        # @return [OpenActive::Models::Schema::MedicalSpecialty,URI]
-        define_property :medical_specialty, as: "medicalSpecialty", types: [
-          "OpenActive::Models::Schema::MedicalSpecialty",
-          "URI",
+        # @return [Boolean,nil]
+        define_property :is_accepting_new_patients, as: "isAcceptingNewPatients", types: [
+          "bool",
+          "null",
         ]
       end
     end

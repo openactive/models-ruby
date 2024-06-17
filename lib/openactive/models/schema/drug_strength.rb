@@ -8,21 +8,9 @@ module OpenActive
           "schema:DrugStrength"
         end
 
-        # @return [OpenActive::Models::Schema::AdministrativeArea,URI]
-        define_property :available_in, as: "availableIn", types: [
-          "OpenActive::Models::Schema::AdministrativeArea",
-          "URI",
-        ]
-
         # @return [String]
         define_property :strength_unit, as: "strengthUnit", types: [
           "string",
-        ]
-
-        # @return [OpenActive::Models::Schema::MaximumDoseSchedule,URI]
-        define_property :maximum_intake, as: "maximumIntake", types: [
-          "OpenActive::Models::Schema::MaximumDoseSchedule",
-          "URI",
         ]
 
         # @return [String]
@@ -34,6 +22,18 @@ module OpenActive
         define_property :strength_value, as: "strengthValue", types: [
           "Number",
           "null",
+        ]
+
+        # @return [OpenActive::Models::Schema::MaximumDoseSchedule,URI]
+        define_property :maximum_intake, as: "maximumIntake", types: [
+          "OpenActive::Models::Schema::MaximumDoseSchedule",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::AdministrativeArea,URI]
+        define_property :available_in, as: "availableIn", types: [
+          "OpenActive::Models::Schema::AdministrativeArea",
+          "URI",
         ]
       end
     end

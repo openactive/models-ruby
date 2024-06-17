@@ -9,24 +9,24 @@ module OpenActive
         end
 
         # @return [OpenActive::Models::Schema::Class,URI]
+        define_property :range_includes, as: "rangeIncludes", types: [
+          "OpenActive::Models::Schema::Class",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::Class,URI]
         define_property :domain_includes, as: "domainIncludes", types: [
           "OpenActive::Models::Schema::Class",
           "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::Enumeration,OpenActive::Models::Schema::Class,OpenActive::Enums::PropertyEnumeration,URI,nil]
+        # @return [OpenActive::Enums::PropertyEnumeration,OpenActive::Models::Schema::Enumeration,OpenActive::Models::Schema::Class,URI,nil]
         define_property :superseded_by, as: "supersededBy", types: [
+          "OpenActive::Enums::PropertyEnumeration",
           "OpenActive::Models::Schema::Enumeration",
           "OpenActive::Models::Schema::Class",
-          "OpenActive::Enums::PropertyEnumeration",
           "URI",
           "null",
-        ]
-
-        # @return [OpenActive::Models::Schema::Class,URI]
-        define_property :range_includes, as: "rangeIncludes", types: [
-          "OpenActive::Models::Schema::Class",
-          "URI",
         ]
 
         # @return [OpenActive::Enums::PropertyEnumeration,URI,nil]

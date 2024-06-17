@@ -5,9 +5,9 @@ module OpenActive
     module Schema
       # RsvpResponseType is an enumeration type whose instances represent responding to an RSVP request.
       class RsvpResponseType < TypesafeEnum::Base
-        new :RsvpResponseNo, "https://schema.org/RsvpResponseNo"
         new :RsvpResponseMaybe, "https://schema.org/RsvpResponseMaybe"
         new :RsvpResponseYes, "https://schema.org/RsvpResponseYes"
+        new :RsvpResponseNo, "https://schema.org/RsvpResponseNo"
       end
     end
   end

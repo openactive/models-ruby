@@ -14,15 +14,15 @@ module OpenActive
           "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::Drug,URI]
-        define_property :drug, as: "drug", types: [
-          "OpenActive::Models::Schema::Drug",
-          "URI",
-        ]
-
         # @return [OpenActive::Models::Schema::MedicalCondition,URI]
         define_property :diagnosis, as: "diagnosis", types: [
           "OpenActive::Models::Schema::MedicalCondition",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::Drug,URI]
+        define_property :drug, as: "drug", types: [
+          "OpenActive::Models::Schema::Drug",
           "URI",
         ]
       end

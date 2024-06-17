@@ -8,24 +8,24 @@ module OpenActive
           "schema:ItemList"
         end
 
-        # @return [int,nil]
-        define_property :number_of_items, as: "numberOfItems", types: [
-          "int",
-          "null",
-        ]
-
-        # @return [OpenActive::Models::Schema::Thing,OpenActive::Models::Schema::ListItem,String,URI]
-        define_property :item_list_element, as: "itemListElement", types: [
-          "OpenActive::Models::Schema::Thing",
-          "OpenActive::Models::Schema::ListItem",
-          "string",
-          "URI",
-        ]
-
         # @return [String,OpenActive::Enums::Schema::ItemListOrderType,nil]
         define_property :item_list_order, as: "itemListOrder", types: [
           "string",
           "OpenActive::Enums::Schema::ItemListOrderType",
+          "null",
+        ]
+
+        # @return [OpenActive::Models::Schema::Thing,String,OpenActive::Models::Schema::ListItem,URI]
+        define_property :item_list_element, as: "itemListElement", types: [
+          "OpenActive::Models::Schema::Thing",
+          "string",
+          "OpenActive::Models::Schema::ListItem",
+          "URI",
+        ]
+
+        # @return [int,nil]
+        define_property :number_of_items, as: "numberOfItems", types: [
+          "int",
           "null",
         ]
       end

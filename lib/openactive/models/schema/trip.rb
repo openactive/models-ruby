@@ -8,6 +8,19 @@ module OpenActive
           "schema:Trip"
         end
 
+        # @return [OpenActive::Models::Schema::Demand,OpenActive::Models::Schema::Offer,URI]
+        define_property :offers, as: "offers", types: [
+          "OpenActive::Models::Schema::Demand",
+          "OpenActive::Models::Schema::Offer",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::Trip,URI]
+        define_property :part_of_trip, as: "partOfTrip", types: [
+          "OpenActive::Models::Schema::Trip",
+          "URI",
+        ]
+
         # @return [Time,DateTime,nil]
         define_property :arrival_time, as: "arrivalTime", types: [
           "Time",
@@ -15,30 +28,15 @@ module OpenActive
           "null",
         ]
 
-        # @return [OpenActive::Models::Schema::Offer,OpenActive::Models::Schema::Demand,URI]
-        define_property :offers, as: "offers", types: [
-          "OpenActive::Models::Schema::Offer",
-          "OpenActive::Models::Schema::Demand",
-          "URI",
-        ]
-
-        # @return [Time,DateTime,nil]
-        define_property :departure_time, as: "departureTime", types: [
-          "Time",
-          "DateTime",
-          "null",
-        ]
-
-        # @return [OpenActive::Models::Schema::Organization,OpenActive::Models::Schema::Person,URI]
-        define_property :provider, as: "provider", types: [
-          "OpenActive::Models::Schema::Organization",
-          "OpenActive::Models::Schema::Person",
-          "URI",
-        ]
-
         # @return [OpenActive::Models::Schema::Trip,URI]
         define_property :sub_trip, as: "subTrip", types: [
           "OpenActive::Models::Schema::Trip",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::Place,URI]
+        define_property :trip_origin, as: "tripOrigin", types: [
+          "OpenActive::Models::Schema::Place",
           "URI",
         ]
 
@@ -49,10 +47,18 @@ module OpenActive
           "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::Trip,URI]
-        define_property :part_of_trip, as: "partOfTrip", types: [
-          "OpenActive::Models::Schema::Trip",
+        # @return [OpenActive::Models::Schema::Person,OpenActive::Models::Schema::Organization,URI]
+        define_property :provider, as: "provider", types: [
+          "OpenActive::Models::Schema::Person",
+          "OpenActive::Models::Schema::Organization",
           "URI",
+        ]
+
+        # @return [DateTime,Time,nil]
+        define_property :departure_time, as: "departureTime", types: [
+          "DateTime",
+          "Time",
+          "null",
         ]
       end
     end

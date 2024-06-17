@@ -8,10 +8,9 @@ module OpenActive
           "schema:LocalBusiness"
         end
 
-        # @return [OpenActive::Models::Schema::Organization,URI]
-        define_property :branch_of, as: "branchOf", types: [
-          "OpenActive::Models::Schema::Organization",
-          "URI",
+        # @return [String]
+        define_property :payment_accepted, as: "paymentAccepted", types: [
+          "string",
         ]
 
         # @return [String]
@@ -25,13 +24,14 @@ module OpenActive
         ]
 
         # @return [String]
-        define_property :payment_accepted, as: "paymentAccepted", types: [
+        define_property :currencies_accepted, as: "currenciesAccepted", types: [
           "string",
         ]
 
-        # @return [String]
-        define_property :currencies_accepted, as: "currenciesAccepted", types: [
-          "string",
+        # @return [OpenActive::Models::Schema::Organization,URI]
+        define_property :branch_of, as: "branchOf", types: [
+          "OpenActive::Models::Schema::Organization",
+          "URI",
         ]
       end
     end

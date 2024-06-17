@@ -14,12 +14,12 @@ module OpenActive
         ]
 
         # @return [String]
-        define_property :target_platform, as: "targetPlatform", types: [
+        define_property :executable_library_name, as: "executableLibraryName", types: [
           "string",
         ]
 
         # @return [String]
-        define_property :executable_library_name, as: "executableLibraryName", types: [
+        define_property :target_platform, as: "targetPlatform", types: [
           "string",
         ]
 

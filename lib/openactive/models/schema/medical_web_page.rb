@@ -13,10 +13,10 @@ module OpenActive
           "string",
         ]
 
-        # @return [OpenActive::Models::Schema::MedicalAudienceType,OpenActive::Models::Schema::MedicalAudience,URI]
+        # @return [OpenActive::Models::Schema::MedicalAudience,OpenActive::Models::Schema::MedicalAudienceType,URI]
         define_property :medical_audience, as: "medicalAudience", types: [
-          "OpenActive::Models::Schema::MedicalAudienceType",
           "OpenActive::Models::Schema::MedicalAudience",
+          "OpenActive::Models::Schema::MedicalAudienceType",
           "URI",
         ]
       end

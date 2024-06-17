@@ -8,9 +8,12 @@ module OpenActive
           "schema:Gene"
         end
 
-        # @return [OpenActive::Models::Schema::Gene,URI]
-        define_property :alternative_of, as: "alternativeOf", types: [
-          "OpenActive::Models::Schema::Gene",
+        # @return [OpenActive::Models::Schema::AnatomicalSystem,OpenActive::Models::Schema::BioChemEntity,OpenActive::Models::Schema::AnatomicalStructure,OpenActive::Models::Schema::DefinedTerm,URI]
+        define_property :expressed_in, as: "expressedIn", types: [
+          "OpenActive::Models::Schema::AnatomicalSystem",
+          "OpenActive::Models::Schema::BioChemEntity",
+          "OpenActive::Models::Schema::AnatomicalStructure",
+          "OpenActive::Models::Schema::DefinedTerm",
           "URI",
         ]
 
@@ -25,12 +28,9 @@ module OpenActive
           "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::AnatomicalStructure,OpenActive::Models::Schema::BioChemEntity,OpenActive::Models::Schema::DefinedTerm,OpenActive::Models::Schema::AnatomicalSystem,URI]
-        define_property :expressed_in, as: "expressedIn", types: [
-          "OpenActive::Models::Schema::AnatomicalStructure",
-          "OpenActive::Models::Schema::BioChemEntity",
-          "OpenActive::Models::Schema::DefinedTerm",
-          "OpenActive::Models::Schema::AnatomicalSystem",
+        # @return [OpenActive::Models::Schema::Gene,URI]
+        define_property :alternative_of, as: "alternativeOf", types: [
+          "OpenActive::Models::Schema::Gene",
           "URI",
         ]
       end

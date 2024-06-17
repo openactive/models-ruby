@@ -8,6 +8,13 @@ module OpenActive
           "schema:GeoCoordinates"
         end
 
+        # @return [BigDecimal,String,nil]
+        define_property :latitude, as: "latitude", types: [
+          "Number",
+          "string",
+          "null",
+        ]
+
         # @return [OpenActive::Models::Schema::Country,String,URI]
         define_property :address_country, as: "addressCountry", types: [
           "OpenActive::Models::Schema::Country",
@@ -15,17 +22,10 @@ module OpenActive
           "URI",
         ]
 
-        # @return [String,BigDecimal,nil]
-        define_property :latitude, as: "latitude", types: [
-          "string",
-          "Number",
-          "null",
-        ]
-
-        # @return [String,OpenActive::Models::Schema::PostalAddress,URI]
+        # @return [OpenActive::Models::Schema::PostalAddress,String,URI]
         define_property :address, as: "address", types: [
-          "string",
           "OpenActive::Models::Schema::PostalAddress",
+          "string",
           "URI",
         ]
 
@@ -34,10 +34,10 @@ module OpenActive
           "string",
         ]
 
-        # @return [String,BigDecimal,nil]
+        # @return [BigDecimal,String,nil]
         define_property :elevation, as: "elevation", types: [
-          "string",
           "Number",
+          "string",
           "null",
         ]
 

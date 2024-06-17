@@ -1,7 +1,7 @@
 module OpenActive
   module Models
     module Schema
-      class TVSeason < ::OpenActive::Models::Schema::CreativeWorkSeason
+      class TVSeason < ::OpenActive::Models::Schema::CreativeWork
         # @!attribute type
         # @return [String]
         def type
@@ -12,6 +12,12 @@ module OpenActive
         define_property :country_of_origin, as: "countryOfOrigin", types: [
           "OpenActive::Models::Schema::Country",
           "URI",
+        ]
+
+        # @return [URI,String]
+        define_property :title_eidr, as: "titleEIDR", types: [
+          "URI",
+          "string",
         ]
 
         # @return [OpenActive::Models::Schema::TVSeries,URI]

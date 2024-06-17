@@ -8,10 +8,16 @@ module OpenActive
           "schema:MusicRelease"
         end
 
-        # @return [OpenActive::Models::Schema::MusicAlbum,URI]
-        define_property :release_of, as: "releaseOf", types: [
-          "OpenActive::Models::Schema::MusicAlbum",
+        # @return [OpenActive::Models::Schema::Organization,OpenActive::Models::Schema::Person,URI]
+        define_property :credited_to, as: "creditedTo", types: [
+          "OpenActive::Models::Schema::Organization",
+          "OpenActive::Models::Schema::Person",
           "URI",
+        ]
+
+        # @return [String]
+        define_property :catalog_number, as: "catalogNumber", types: [
+          "string",
         ]
 
         # @return [OpenActive::Enums::Schema::MusicReleaseFormatType,nil]
@@ -27,22 +33,16 @@ module OpenActive
           "null",
         ]
 
-        # @return [OpenActive::Models::Schema::Person,OpenActive::Models::Schema::Organization,URI]
-        define_property :credited_to, as: "creditedTo", types: [
-          "OpenActive::Models::Schema::Person",
-          "OpenActive::Models::Schema::Organization",
-          "URI",
-        ]
-
         # @return [OpenActive::Models::Schema::Organization,URI]
         define_property :record_label, as: "recordLabel", types: [
           "OpenActive::Models::Schema::Organization",
           "URI",
         ]
 
-        # @return [String]
-        define_property :catalog_number, as: "catalogNumber", types: [
-          "string",
+        # @return [OpenActive::Models::Schema::MusicAlbum,URI]
+        define_property :release_of, as: "releaseOf", types: [
+          "OpenActive::Models::Schema::MusicAlbum",
+          "URI",
         ]
       end
     end

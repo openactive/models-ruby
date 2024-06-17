@@ -9,7 +9,7 @@ module OpenActive
         end
 
         # @return [Boolean,nil]
-        define_property :offers_prescription_by_mail, as: "offersPrescriptionByMail", types: [
+        define_property :health_plan_cost_sharing, as: "healthPlanCostSharing", types: [
           "bool",
           "null",
         ]
@@ -20,7 +20,7 @@ module OpenActive
         ]
 
         # @return [Boolean,nil]
-        define_property :health_plan_cost_sharing, as: "healthPlanCostSharing", types: [
+        define_property :offers_prescription_by_mail, as: "offersPrescriptionByMail", types: [
           "bool",
           "null",
         ]

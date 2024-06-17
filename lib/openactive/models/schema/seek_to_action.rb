@@ -8,10 +8,10 @@ module OpenActive
           "schema:SeekToAction"
         end
 
-        # @return [BigDecimal,OpenActive::Models::Schema::HyperTocEntry,URI,nil]
+        # @return [OpenActive::Models::Schema::HyperTocEntry,BigDecimal,URI,nil]
         define_property :start_offset, as: "startOffset", types: [
-          "Number",
           "OpenActive::Models::Schema::HyperTocEntry",
+          "Number",
           "URI",
           "null",
         ]

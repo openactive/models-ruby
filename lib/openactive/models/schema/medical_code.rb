@@ -1,7 +1,7 @@
 module OpenActive
   module Models
     module Schema
-      class MedicalCode < ::OpenActive::Models::Schema::MedicalIntangible
+      class MedicalCode < ::OpenActive::Models::Schema::CategoryCode
         # @!attribute type
         # @return [String]
         def type

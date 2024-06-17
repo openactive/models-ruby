@@ -8,8 +8,9 @@ module OpenActive
           "schema:PlanAction"
         end
 
-        # @return [DateTime,nil]
+        # @return [Date,DateTime,nil]
         define_property :scheduled_time, as: "scheduledTime", types: [
+          "Date",
           "DateTime",
           "null",
         ]

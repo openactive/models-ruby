@@ -16,7 +16,12 @@ module OpenActive
         ]
 
         # @return [String]
-        define_property :address_region, as: "addressRegion", types: [
+        define_property :postal_code, as: "postalCode", types: [
+          "string",
+        ]
+
+        # @return [String]
+        define_property :postal_code_prefix, as: "postalCodePrefix", types: [
           "string",
         ]
 
@@ -27,12 +32,7 @@ module OpenActive
         ]
 
         # @return [String]
-        define_property :postal_code_prefix, as: "postalCodePrefix", types: [
-          "string",
-        ]
-
-        # @return [String]
-        define_property :postal_code, as: "postalCode", types: [
+        define_property :address_region, as: "addressRegion", types: [
           "string",
         ]
       end

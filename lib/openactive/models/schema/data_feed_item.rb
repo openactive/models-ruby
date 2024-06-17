@@ -8,11 +8,17 @@ module OpenActive
           "schema:DataFeedItem"
         end
 
-        # @return [DateTime,Date,nil]
-        define_property :date_deleted, as: "dateDeleted", types: [
-          "DateTime",
+        # @return [Date,DateTime,nil]
+        define_property :date_modified, as: "dateModified", types: [
           "Date",
+          "DateTime",
           "null",
+        ]
+
+        # @return [OpenActive::Models::Schema::Thing,URI]
+        define_property :item, as: "item", types: [
+          "OpenActive::Models::Schema::Thing",
+          "URI",
         ]
 
         # @return [Date,DateTime,nil]
@@ -22,17 +28,11 @@ module OpenActive
           "null",
         ]
 
-        # @return [DateTime,Date,nil]
-        define_property :date_modified, as: "dateModified", types: [
-          "DateTime",
+        # @return [Date,DateTime,nil]
+        define_property :date_deleted, as: "dateDeleted", types: [
           "Date",
+          "DateTime",
           "null",
-        ]
-
-        # @return [OpenActive::Models::Schema::Thing,URI]
-        define_property :item, as: "item", types: [
-          "OpenActive::Models::Schema::Thing",
-          "URI",
         ]
       end
     end
