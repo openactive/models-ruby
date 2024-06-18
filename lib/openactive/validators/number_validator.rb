@@ -1,3 +1,5 @@
+require 'bigdecimal'
+
 module OpenActive
   module Validators
     class NumberValidator < BaseValidator
