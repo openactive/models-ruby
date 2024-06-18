@@ -29,6 +29,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rubocop-rspec"
   spec.add_development_dependency "yard"
 
-  spec.add_runtime_dependency "activesupport", '=> 6.1'
+  spec.add_runtime_dependency "activesupport"
   spec.add_runtime_dependency "typesafe_enum"
 end
