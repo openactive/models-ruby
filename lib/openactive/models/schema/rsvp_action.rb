@@ -8,6 +8,12 @@ module OpenActive
           "schema:RsvpAction"
         end
 
+        # @return [OpenActive::Models::Schema::Comment,URI]
+        define_property :comment, as: "comment", types: [
+          "OpenActive::Models::Schema::Comment",
+          "URI",
+        ]
+
         # @return [OpenActive::Enums::Schema::RsvpResponseType,nil]
         define_property :rsvp_response, as: "rsvpResponse", types: [
           "OpenActive::Enums::Schema::RsvpResponseType",
@@ -18,12 +24,6 @@ module OpenActive
         define_property :additional_number_of_guests, as: "additionalNumberOfGuests", types: [
           "Number",
           "null",
-        ]
-
-        # @return [OpenActive::Models::Schema::Comment,URI]
-        define_property :comment, as: "comment", types: [
-          "OpenActive::Models::Schema::Comment",
-          "URI",
         ]
       end
     end

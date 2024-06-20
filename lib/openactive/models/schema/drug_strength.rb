@@ -9,11 +9,6 @@ module OpenActive
         end
 
         # @return [String]
-        define_property :strength_unit, as: "strengthUnit", types: [
-          "string",
-        ]
-
-        # @return [String]
         define_property :active_ingredient, as: "activeIngredient", types: [
           "string",
         ]
@@ -34,6 +29,11 @@ module OpenActive
         define_property :available_in, as: "availableIn", types: [
           "OpenActive::Models::Schema::AdministrativeArea",
           "URI",
+        ]
+
+        # @return [String]
+        define_property :strength_unit, as: "strengthUnit", types: [
+          "string",
         ]
       end
     end

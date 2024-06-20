@@ -1,18 +1,21 @@
 module OpenActive
   module Models
     module Schema
-      class Physician < ::OpenActive::Models::Schema::MedicalOrganization
+      class Physician < ::OpenActive::Models::Schema::MedicalBusiness
         # @!attribute type
         # @return [String]
         def type
           "schema:Physician"
         end
 
-        # @return [OpenActive::Models::Schema::MedicalTherapy,OpenActive::Models::Schema::MedicalProcedure,OpenActive::Models::Schema::MedicalTest,URI]
-        define_property :available_service, as: "availableService", types: [
-          "OpenActive::Models::Schema::MedicalTherapy",
-          "OpenActive::Models::Schema::MedicalProcedure",
-          "OpenActive::Models::Schema::MedicalTest",
+        # @return [String]
+        define_property :us_npi, as: "usNPI", types: [
+          "string",
+        ]
+
+        # @return [OpenActive::Models::Schema::MedicalSpecialty,URI]
+        define_property :medical_specialty, as: "medicalSpecialty", types: [
+          "OpenActive::Models::Schema::MedicalSpecialty",
           "URI",
         ]
 
@@ -22,9 +25,18 @@ module OpenActive
           "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::MedicalSpecialty,URI]
-        define_property :medical_specialty, as: "medicalSpecialty", types: [
-          "OpenActive::Models::Schema::MedicalSpecialty",
+        # @return [String,OpenActive::Models::Schema::CategoryCode,URI]
+        define_property :occupational_category, as: "occupationalCategory", types: [
+          "string",
+          "OpenActive::Models::Schema::CategoryCode",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::MedicalTherapy,OpenActive::Models::Schema::MedicalTest,OpenActive::Models::Schema::MedicalProcedure,URI]
+        define_property :available_service, as: "availableService", types: [
+          "OpenActive::Models::Schema::MedicalTherapy",
+          "OpenActive::Models::Schema::MedicalTest",
+          "OpenActive::Models::Schema::MedicalProcedure",
           "URI",
         ]
       end

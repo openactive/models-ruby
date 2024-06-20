@@ -8,32 +8,29 @@ module OpenActive
           "schema:Article"
         end
 
-        # @return [int,nil]
-        define_property :word_count, as: "wordCount", types: [
-          "int",
-          "null",
-        ]
-
         # @return [String]
         define_property :pagination, as: "pagination", types: [
           "string",
         ]
 
-        # @return [String]
-        define_property :article_section, as: "articleSection", types: [
-          "string",
-        ]
-
-        # @return [String]
-        define_property :article_body, as: "articleBody", types: [
-          "string",
-        ]
-
-        # @return [String,OpenActive::Models::Schema::CreativeWork,URI]
+        # @return [OpenActive::Models::Schema::CreativeWork,String,URI]
         define_property :backstory, as: "backstory", types: [
-          "string",
           "OpenActive::Models::Schema::CreativeWork",
+          "string",
           "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::SpeakableSpecification,URI]
+        define_property :speakable, as: "speakable", types: [
+          "OpenActive::Models::Schema::SpeakableSpecification",
+          "URI",
+        ]
+
+        # @return [int,String,nil]
+        define_property :page_start, as: "pageStart", types: [
+          "int",
+          "string",
+          "null",
         ]
 
         # @return [String,int,nil]
@@ -43,17 +40,20 @@ module OpenActive
           "null",
         ]
 
-        # @return [String,int,nil]
-        define_property :page_start, as: "pageStart", types: [
-          "string",
+        # @return [int,nil]
+        define_property :word_count, as: "wordCount", types: [
           "int",
           "null",
         ]
 
-        # @return [OpenActive::Models::Schema::SpeakableSpecification,URI]
-        define_property :speakable, as: "speakable", types: [
-          "OpenActive::Models::Schema::SpeakableSpecification",
-          "URI",
+        # @return [String]
+        define_property :article_body, as: "articleBody", types: [
+          "string",
+        ]
+
+        # @return [String]
+        define_property :article_section, as: "articleSection", types: [
+          "string",
         ]
       end
     end

@@ -8,23 +8,10 @@ module OpenActive
           "schema:SizeSpecification"
         end
 
-        # @return [OpenActive::Models::Schema::QuantitativeValue,URI]
-        define_property :suggested_age, as: "suggestedAge", types: [
-          "OpenActive::Models::Schema::QuantitativeValue",
-          "URI",
-        ]
-
-        # @return [OpenActive::Enums::Schema::SizeSystemEnumeration,String,nil]
-        define_property :size_system, as: "sizeSystem", types: [
-          "OpenActive::Enums::Schema::SizeSystemEnumeration",
-          "string",
-          "null",
-        ]
-
-        # @return [String,OpenActive::Enums::Schema::SizeGroupEnumeration,nil]
+        # @return [OpenActive::Enums::Schema::SizeGroupEnumeration,String,nil]
         define_property :size_group, as: "sizeGroup", types: [
-          "string",
           "OpenActive::Enums::Schema::SizeGroupEnumeration",
+          "string",
           "null",
         ]
 
@@ -41,8 +28,21 @@ module OpenActive
           "URI",
         ]
 
+        # @return [String,OpenActive::Enums::Schema::SizeSystemEnumeration,nil]
+        define_property :size_system, as: "sizeSystem", types: [
+          "string",
+          "OpenActive::Enums::Schema::SizeSystemEnumeration",
+          "null",
+        ]
+
         # @return [OpenActive::Models::Schema::QuantitativeValue,URI]
         define_property :has_measurement, as: "hasMeasurement", types: [
+          "OpenActive::Models::Schema::QuantitativeValue",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::QuantitativeValue,URI]
+        define_property :suggested_age, as: "suggestedAge", types: [
           "OpenActive::Models::Schema::QuantitativeValue",
           "URI",
         ]

@@ -14,27 +14,12 @@ module OpenActive
         ]
 
         # @return [String]
-        define_property :how_performed, as: "howPerformed", types: [
+        define_property :followup, as: "followup", types: [
           "string",
-        ]
-
-        # @return [OpenActive::Models::Schema::MedicalProcedureType,URI]
-        define_property :procedure_type, as: "procedureType", types: [
-          "OpenActive::Models::Schema::MedicalProcedureType",
-          "URI",
-        ]
-
-        # @return [OpenActive::Enums::Schema::EventStatusType,OpenActive::Models::Schema::MedicalStudyStatus,String,URI,nil]
-        define_property :status, as: "status", types: [
-          "OpenActive::Enums::Schema::EventStatusType",
-          "OpenActive::Models::Schema::MedicalStudyStatus",
-          "string",
-          "URI",
-          "null",
         ]
 
         # @return [String]
-        define_property :followup, as: "followup", types: [
+        define_property :how_performed, as: "howPerformed", types: [
           "string",
         ]
 
@@ -42,6 +27,21 @@ module OpenActive
         define_property :preparation, as: "preparation", types: [
           "string",
           "OpenActive::Models::Schema::MedicalEntity",
+          "URI",
+        ]
+
+        # @return [OpenActive::Enums::Schema::EventStatusType,String,OpenActive::Models::Schema::MedicalStudyStatus,URI,nil]
+        define_property :status, as: "status", types: [
+          "OpenActive::Enums::Schema::EventStatusType",
+          "string",
+          "OpenActive::Models::Schema::MedicalStudyStatus",
+          "URI",
+          "null",
+        ]
+
+        # @return [OpenActive::Models::Schema::MedicalProcedureType,URI]
+        define_property :procedure_type, as: "procedureType", types: [
+          "OpenActive::Models::Schema::MedicalProcedureType",
           "URI",
         ]
       end

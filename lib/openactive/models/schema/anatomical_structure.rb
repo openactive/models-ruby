@@ -13,21 +13,26 @@ module OpenActive
           "string",
         ]
 
+        # @return [OpenActive::Models::Schema::ImageObject,URI]
+        define_property :diagram, as: "diagram", types: [
+          "OpenActive::Models::Schema::ImageObject",
+          "URI",
+        ]
+
         # @return [OpenActive::Models::Schema::AnatomicalSystem,URI]
         define_property :part_of_system, as: "partOfSystem", types: [
           "OpenActive::Models::Schema::AnatomicalSystem",
           "URI",
         ]
 
+        # @return [String]
+        define_property :associated_pathophysiology, as: "associatedPathophysiology", types: [
+          "string",
+        ]
+
         # @return [OpenActive::Models::Schema::AnatomicalStructure,URI]
         define_property :sub_structure, as: "subStructure", types: [
           "OpenActive::Models::Schema::AnatomicalStructure",
-          "URI",
-        ]
-
-        # @return [OpenActive::Models::Schema::MedicalCondition,URI]
-        define_property :related_condition, as: "relatedCondition", types: [
-          "OpenActive::Models::Schema::MedicalCondition",
           "URI",
         ]
 
@@ -43,14 +48,9 @@ module OpenActive
           "URI",
         ]
 
-        # @return [String]
-        define_property :associated_pathophysiology, as: "associatedPathophysiology", types: [
-          "string",
-        ]
-
-        # @return [OpenActive::Models::Schema::ImageObject,URI]
-        define_property :diagram, as: "diagram", types: [
-          "OpenActive::Models::Schema::ImageObject",
+        # @return [OpenActive::Models::Schema::MedicalCondition,URI]
+        define_property :related_condition, as: "relatedCondition", types: [
+          "OpenActive::Models::Schema::MedicalCondition",
           "URI",
         ]
       end

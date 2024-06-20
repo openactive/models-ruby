@@ -8,40 +8,16 @@ module OpenActive
           "schema:TVSeries"
         end
 
-        # @return [OpenActive::Models::Schema::Person,URI]
-        define_property :actors, as: "actors", types: [
-          "OpenActive::Models::Schema::Person",
-          "URI",
-        ]
-
-        # @return [OpenActive::Models::Schema::Country,URI]
-        define_property :country_of_origin, as: "countryOfOrigin", types: [
-          "OpenActive::Models::Schema::Country",
-          "URI",
-        ]
-
-        # @return [OpenActive::Models::Schema::Episode,URI]
-        define_property :episodes, as: "episodes", types: [
-          "OpenActive::Models::Schema::Episode",
-          "URI",
-        ]
-
-        # @return [URI,String]
-        define_property :title_eidr, as: "titleEIDR", types: [
-          "URI",
-          "string",
-        ]
-
-        # @return [OpenActive::Models::Schema::CreativeWorkSeason,URI]
-        define_property :season, as: "season", types: [
-          "OpenActive::Models::Schema::CreativeWorkSeason",
-          "URI",
-        ]
-
         # @return [OpenActive::Models::Schema::CreativeWorkSeason,URI]
         define_property :contains_season, as: "containsSeason", types: [
           "OpenActive::Models::Schema::CreativeWorkSeason",
           "URI",
+        ]
+
+        # @return [int,nil]
+        define_property :number_of_episodes, as: "numberOfEpisodes", types: [
+          "int",
+          "null",
         ]
 
         # @return [OpenActive::Models::Schema::VideoObject,URI]
@@ -50,15 +26,9 @@ module OpenActive
           "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::Organization,URI]
-        define_property :production_company, as: "productionCompany", types: [
-          "OpenActive::Models::Schema::Organization",
-          "URI",
-        ]
-
-        # @return [OpenActive::Models::Schema::Episode,URI]
-        define_property :episode, as: "episode", types: [
-          "OpenActive::Models::Schema::Episode",
+        # @return [OpenActive::Models::Schema::Person,URI]
+        define_property :actor, as: "actor", types: [
+          "OpenActive::Models::Schema::Person",
           "URI",
         ]
 
@@ -68,16 +38,28 @@ module OpenActive
           "URI",
         ]
 
+        # @return [OpenActive::Models::Schema::Organization,URI]
+        define_property :production_company, as: "productionCompany", types: [
+          "OpenActive::Models::Schema::Organization",
+          "URI",
+        ]
+
         # @return [int,nil]
         define_property :number_of_seasons, as: "numberOfSeasons", types: [
           "int",
           "null",
         ]
 
-        # @return [OpenActive::Models::Schema::Person,OpenActive::Models::Schema::MusicGroup,URI]
+        # @return [OpenActive::Models::Schema::MusicGroup,OpenActive::Models::Schema::Person,URI]
         define_property :music_by, as: "musicBy", types: [
-          "OpenActive::Models::Schema::Person",
           "OpenActive::Models::Schema::MusicGroup",
+          "OpenActive::Models::Schema::Person",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::Country,URI]
+        define_property :country_of_origin, as: "countryOfOrigin", types: [
+          "OpenActive::Models::Schema::Country",
           "URI",
         ]
 
@@ -93,15 +75,33 @@ module OpenActive
           "URI",
         ]
 
-        # @return [int,nil]
-        define_property :number_of_episodes, as: "numberOfEpisodes", types: [
-          "int",
-          "null",
+        # @return [OpenActive::Models::Schema::Episode,URI]
+        define_property :episode, as: "episode", types: [
+          "OpenActive::Models::Schema::Episode",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::Episode,URI]
+        define_property :episodes, as: "episodes", types: [
+          "OpenActive::Models::Schema::Episode",
+          "URI",
         ]
 
         # @return [OpenActive::Models::Schema::Person,URI]
-        define_property :actor, as: "actor", types: [
+        define_property :actors, as: "actors", types: [
           "OpenActive::Models::Schema::Person",
+          "URI",
+        ]
+
+        # @return [String,URI]
+        define_property :title_eidr, as: "titleEIDR", types: [
+          "string",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::CreativeWorkSeason,URI]
+        define_property :season, as: "season", types: [
+          "OpenActive::Models::Schema::CreativeWorkSeason",
           "URI",
         ]
       end

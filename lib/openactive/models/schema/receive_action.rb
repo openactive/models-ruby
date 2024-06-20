@@ -14,10 +14,10 @@ module OpenActive
           "null",
         ]
 
-        # @return [OpenActive::Models::Schema::Audience,OpenActive::Models::Schema::Person,OpenActive::Models::Schema::Organization,URI]
+        # @return [OpenActive::Models::Schema::Person,OpenActive::Models::Schema::Audience,OpenActive::Models::Schema::Organization,URI]
         define_property :sender, as: "sender", types: [
-          "OpenActive::Models::Schema::Audience",
           "OpenActive::Models::Schema::Person",
+          "OpenActive::Models::Schema::Audience",
           "OpenActive::Models::Schema::Organization",
           "URI",
         ]

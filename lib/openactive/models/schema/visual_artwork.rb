@@ -8,26 +8,15 @@ module OpenActive
           "schema:VisualArtwork"
         end
 
+        # @return [OpenActive::Models::Schema::Distance,OpenActive::Models::Schema::QuantitativeValue,URI]
+        define_property :depth, as: "depth", types: [
+          "OpenActive::Models::Schema::Distance",
+          "OpenActive::Models::Schema::QuantitativeValue",
+          "URI",
+        ]
+
         # @return [OpenActive::Models::Schema::Person,URI]
         define_property :inker, as: "inker", types: [
-          "OpenActive::Models::Schema::Person",
-          "URI",
-        ]
-
-        # @return [URI,String]
-        define_property :artwork_surface, as: "artworkSurface", types: [
-          "URI",
-          "string",
-        ]
-
-        # @return [OpenActive::Models::Schema::Person,URI]
-        define_property :colorist, as: "colorist", types: [
-          "OpenActive::Models::Schema::Person",
-          "URI",
-        ]
-
-        # @return [OpenActive::Models::Schema::Person,URI]
-        define_property :artist, as: "artist", types: [
           "OpenActive::Models::Schema::Person",
           "URI",
         ]
@@ -38,37 +27,22 @@ module OpenActive
           "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::QuantitativeValue,OpenActive::Models::Schema::Distance,URI]
-        define_property :depth, as: "depth", types: [
-          "OpenActive::Models::Schema::QuantitativeValue",
-          "OpenActive::Models::Schema::Distance",
-          "URI",
-        ]
-
-        # @return [OpenActive::Models::Schema::QuantitativeValue,OpenActive::Models::Schema::Distance,URI]
-        define_property :height, as: "height", types: [
-          "OpenActive::Models::Schema::QuantitativeValue",
-          "OpenActive::Models::Schema::Distance",
+        # @return [OpenActive::Models::Schema::Person,URI]
+        define_property :artist, as: "artist", types: [
+          "OpenActive::Models::Schema::Person",
           "URI",
         ]
 
         # @return [String,URI]
-        define_property :art_medium, as: "artMedium", types: [
+        define_property :artwork_surface, as: "artworkSurface", types: [
           "string",
           "URI",
         ]
 
-        # @return [URI,String]
-        define_property :surface, as: "surface", types: [
+        # @return [String,URI]
+        define_property :artform, as: "artform", types: [
+          "string",
           "URI",
-          "string",
-        ]
-
-        # @return [String,int,nil]
-        define_property :art_edition, as: "artEdition", types: [
-          "string",
-          "int",
-          "null",
         ]
 
         # @return [OpenActive::Models::Schema::Distance,OpenActive::Models::Schema::QuantitativeValue,URI]
@@ -78,16 +52,42 @@ module OpenActive
           "URI",
         ]
 
+        # @return [int,String,nil]
+        define_property :art_edition, as: "artEdition", types: [
+          "int",
+          "string",
+          "null",
+        ]
+
         # @return [OpenActive::Models::Schema::Person,URI]
         define_property :penciler, as: "penciler", types: [
           "OpenActive::Models::Schema::Person",
           "URI",
         ]
 
+        # @return [OpenActive::Models::Schema::Distance,OpenActive::Models::Schema::QuantitativeValue,URI]
+        define_property :height, as: "height", types: [
+          "OpenActive::Models::Schema::Distance",
+          "OpenActive::Models::Schema::QuantitativeValue",
+          "URI",
+        ]
+
         # @return [URI,String]
-        define_property :artform, as: "artform", types: [
+        define_property :art_medium, as: "artMedium", types: [
           "URI",
           "string",
+        ]
+
+        # @return [String,URI]
+        define_property :surface, as: "surface", types: [
+          "string",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::Person,URI]
+        define_property :colorist, as: "colorist", types: [
+          "OpenActive::Models::Schema::Person",
+          "URI",
         ]
       end
     end

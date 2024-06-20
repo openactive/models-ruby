@@ -13,15 +13,15 @@ module OpenActive
           "string",
         ]
 
-        # @return [String,int,nil]
-        define_property :page_end, as: "pageEnd", types: [
-          "string",
+        # @return [int,String,nil]
+        define_property :page_start, as: "pageStart", types: [
           "int",
+          "string",
           "null",
         ]
 
         # @return [String,int,nil]
-        define_property :page_start, as: "pageStart", types: [
+        define_property :page_end, as: "pageEnd", types: [
           "string",
           "int",
           "null",

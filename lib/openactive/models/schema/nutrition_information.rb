@@ -9,7 +9,7 @@ module OpenActive
         end
 
         # @return [OpenActive::Models::Schema::Mass,URI]
-        define_property :carbohydrate_content, as: "carbohydrateContent", types: [
+        define_property :sugar_content, as: "sugarContent", types: [
           "OpenActive::Models::Schema::Mass",
           "URI",
         ]
@@ -20,8 +20,25 @@ module OpenActive
           "URI",
         ]
 
+        # @return [String]
+        define_property :serving_size, as: "servingSize", types: [
+          "string",
+        ]
+
         # @return [OpenActive::Models::Schema::Mass,URI]
         define_property :fiber_content, as: "fiberContent", types: [
+          "OpenActive::Models::Schema::Mass",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::Mass,URI]
+        define_property :cholesterol_content, as: "cholesterolContent", types: [
+          "OpenActive::Models::Schema::Mass",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::Mass,URI]
+        define_property :carbohydrate_content, as: "carbohydrateContent", types: [
           "OpenActive::Models::Schema::Mass",
           "URI",
         ]
@@ -33,8 +50,20 @@ module OpenActive
         ]
 
         # @return [OpenActive::Models::Schema::Mass,URI]
+        define_property :saturated_fat_content, as: "saturatedFatContent", types: [
+          "OpenActive::Models::Schema::Mass",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::Mass,URI]
         define_property :sodium_content, as: "sodiumContent", types: [
           "OpenActive::Models::Schema::Mass",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::Energy,URI]
+        define_property :calories, as: "calories", types: [
+          "OpenActive::Models::Schema::Energy",
           "URI",
         ]
 
@@ -45,36 +74,7 @@ module OpenActive
         ]
 
         # @return [OpenActive::Models::Schema::Mass,URI]
-        define_property :cholesterol_content, as: "cholesterolContent", types: [
-          "OpenActive::Models::Schema::Mass",
-          "URI",
-        ]
-
-        # @return [String]
-        define_property :serving_size, as: "servingSize", types: [
-          "string",
-        ]
-
-        # @return [OpenActive::Models::Schema::Energy,URI]
-        define_property :calories, as: "calories", types: [
-          "OpenActive::Models::Schema::Energy",
-          "URI",
-        ]
-
-        # @return [OpenActive::Models::Schema::Mass,URI]
-        define_property :sugar_content, as: "sugarContent", types: [
-          "OpenActive::Models::Schema::Mass",
-          "URI",
-        ]
-
-        # @return [OpenActive::Models::Schema::Mass,URI]
         define_property :fat_content, as: "fatContent", types: [
-          "OpenActive::Models::Schema::Mass",
-          "URI",
-        ]
-
-        # @return [OpenActive::Models::Schema::Mass,URI]
-        define_property :saturated_fat_content, as: "saturatedFatContent", types: [
           "OpenActive::Models::Schema::Mass",
           "URI",
         ]

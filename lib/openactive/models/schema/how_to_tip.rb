@@ -1,7 +1,7 @@
 module OpenActive
   module Models
     module Schema
-      class HowToTip < ::OpenActive::Models::Schema::ListItem
+      class HowToTip < ::OpenActive::Models::Schema::CreativeWork
         # @!attribute type
         # @return [String]
         def type

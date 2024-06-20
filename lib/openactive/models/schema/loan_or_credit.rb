@@ -8,15 +8,21 @@ module OpenActive
           "schema:LoanOrCredit"
         end
 
-        # @return [Boolean,nil]
-        define_property :renegotiable_loan, as: "renegotiableLoan", types: [
-          "bool",
-          "null",
-        ]
-
         # @return [String]
         define_property :currency, as: "currency", types: [
           "string",
+        ]
+
+        # @return [OpenActive::Models::Schema::QuantitativeValue,URI]
+        define_property :loan_term, as: "loanTerm", types: [
+          "OpenActive::Models::Schema::QuantitativeValue",
+          "URI",
+        ]
+
+        # @return [String,URI]
+        define_property :loan_type, as: "loanType", types: [
+          "string",
+          "URI",
         ]
 
         # @return [OpenActive::Models::Schema::Thing,String,URI]
@@ -26,20 +32,8 @@ module OpenActive
           "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::QuantitativeValue,URI]
-        define_property :loan_term, as: "loanTerm", types: [
-          "OpenActive::Models::Schema::QuantitativeValue",
-          "URI",
-        ]
-
-        # @return [URI,String]
-        define_property :loan_type, as: "loanType", types: [
-          "URI",
-          "string",
-        ]
-
         # @return [Boolean,nil]
-        define_property :recourse_loan, as: "recourseLoan", types: [
+        define_property :renegotiable_loan, as: "renegotiableLoan", types: [
           "bool",
           "null",
         ]
@@ -51,10 +45,10 @@ module OpenActive
           "null",
         ]
 
-        # @return [OpenActive::Models::Schema::RepaymentSpecification,URI]
-        define_property :loan_repayment_form, as: "loanRepaymentForm", types: [
-          "OpenActive::Models::Schema::RepaymentSpecification",
-          "URI",
+        # @return [Boolean,nil]
+        define_property :recourse_loan, as: "recourseLoan", types: [
+          "bool",
+          "null",
         ]
 
         # @return [OpenActive::Models::Schema::MonetaryAmount,BigDecimal,URI,nil]
@@ -63,6 +57,12 @@ module OpenActive
           "Number",
           "URI",
           "null",
+        ]
+
+        # @return [OpenActive::Models::Schema::RepaymentSpecification,URI]
+        define_property :loan_repayment_form, as: "loanRepaymentForm", types: [
+          "OpenActive::Models::Schema::RepaymentSpecification",
+          "URI",
         ]
       end
     end

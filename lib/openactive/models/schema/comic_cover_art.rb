@@ -1,7 +1,7 @@
 module OpenActive
   module Models
     module Schema
-      class ComicCoverArt < ::OpenActive::Models::Schema::ComicStory
+      class ComicCoverArt < ::OpenActive::Models::Schema::CoverArt
         # @!attribute type
         # @return [String]
         def type

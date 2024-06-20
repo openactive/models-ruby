@@ -15,10 +15,43 @@ module OpenActive
           "URI",
         ]
 
-        # @return [URI,String]
-        define_property :legislation_identifier, as: "legislationIdentifier", types: [
+        # @return [OpenActive::Models::Schema::LegalForceStatus,URI]
+        define_property :legislation_legal_force, as: "legislationLegalForce", types: [
+          "OpenActive::Models::Schema::LegalForceStatus",
           "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::Legislation,URI]
+        define_property :legislation_changes, as: "legislationChanges", types: [
+          "OpenActive::Models::Schema::Legislation",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::AdministrativeArea,String,URI]
+        define_property :legislation_jurisdiction, as: "legislationJurisdiction", types: [
+          "OpenActive::Models::Schema::AdministrativeArea",
           "string",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::CategoryCode,String,URI]
+        define_property :legislation_type, as: "legislationType", types: [
+          "OpenActive::Models::Schema::CategoryCode",
+          "string",
+          "URI",
+        ]
+
+        # @return [String,OpenActive::Models::Schema::AdministrativeArea,URI]
+        define_property :jurisdiction, as: "jurisdiction", types: [
+          "string",
+          "OpenActive::Models::Schema::AdministrativeArea",
+          "URI",
+        ]
+
+        # @return [Date,nil]
+        define_property :legislation_date_version, as: "legislationDateVersion", types: [
+          "Date",
+          "null",
         ]
 
         # @return [OpenActive::Models::Schema::Legislation,URI]
@@ -33,16 +66,9 @@ module OpenActive
           "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::AdministrativeArea,String,URI]
-        define_property :jurisdiction, as: "jurisdiction", types: [
-          "OpenActive::Models::Schema::AdministrativeArea",
+        # @return [String,URI]
+        define_property :legislation_identifier, as: "legislationIdentifier", types: [
           "string",
-          "URI",
-        ]
-
-        # @return [OpenActive::Models::Schema::Legislation,URI]
-        define_property :legislation_consolidates, as: "legislationConsolidates", types: [
-          "OpenActive::Models::Schema::Legislation",
           "URI",
         ]
 
@@ -53,35 +79,9 @@ module OpenActive
           "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::LegalForceStatus,URI]
-        define_property :legislation_legal_force, as: "legislationLegalForce", types: [
-          "OpenActive::Models::Schema::LegalForceStatus",
-          "URI",
-        ]
-
-        # @return [Date,nil]
-        define_property :legislation_date_version, as: "legislationDateVersion", types: [
-          "Date",
-          "null",
-        ]
-
         # @return [OpenActive::Models::Schema::Legislation,URI]
-        define_property :legislation_changes, as: "legislationChanges", types: [
+        define_property :legislation_consolidates, as: "legislationConsolidates", types: [
           "OpenActive::Models::Schema::Legislation",
-          "URI",
-        ]
-
-        # @return [String,OpenActive::Models::Schema::AdministrativeArea,URI]
-        define_property :legislation_jurisdiction, as: "legislationJurisdiction", types: [
-          "string",
-          "OpenActive::Models::Schema::AdministrativeArea",
-          "URI",
-        ]
-
-        # @return [String,OpenActive::Models::Schema::CategoryCode,URI]
-        define_property :legislation_type, as: "legislationType", types: [
-          "string",
-          "OpenActive::Models::Schema::CategoryCode",
           "URI",
         ]
 

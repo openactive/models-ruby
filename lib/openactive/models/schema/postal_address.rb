@@ -8,10 +8,10 @@ module OpenActive
           "schema:PostalAddress"
         end
 
-        # @return [OpenActive::Models::Schema::Country,String,URI]
+        # @return [String,OpenActive::Models::Schema::Country,URI]
         define_property :address_country, as: "addressCountry", types: [
-          "OpenActive::Models::Schema::Country",
           "string",
+          "OpenActive::Models::Schema::Country",
           "URI",
         ]
 
@@ -26,17 +26,17 @@ module OpenActive
         ]
 
         # @return [String]
-        define_property :address_region, as: "addressRegion", types: [
-          "string",
-        ]
-
-        # @return [String]
         define_property :street_address, as: "streetAddress", types: [
           "string",
         ]
 
         # @return [String]
         define_property :address_locality, as: "addressLocality", types: [
+          "string",
+        ]
+
+        # @return [String]
+        define_property :address_region, as: "addressRegion", types: [
           "string",
         ]
       end

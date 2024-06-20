@@ -8,18 +8,25 @@ module OpenActive
           "schema:LearningResource"
         end
 
+        # @return [OpenActive::Models::Schema::DefinedTerm,String,URI]
+        define_property :learning_resource_type, as: "learningResourceType", types: [
+          "OpenActive::Models::Schema::DefinedTerm",
+          "string",
+          "URI",
+        ]
+
         # @return [String,OpenActive::Models::Schema::DefinedTerm,URI]
-        define_property :educational_use, as: "educationalUse", types: [
+        define_property :assesses, as: "assesses", types: [
           "string",
           "OpenActive::Models::Schema::DefinedTerm",
           "URI",
         ]
 
-        # @return [URI,OpenActive::Models::Schema::DefinedTerm,String]
-        define_property :educational_level, as: "educationalLevel", types: [
-          "URI",
+        # @return [OpenActive::Models::Schema::DefinedTerm,String,URI]
+        define_property :educational_use, as: "educationalUse", types: [
           "OpenActive::Models::Schema::DefinedTerm",
           "string",
+          "URI",
         ]
 
         # @return [OpenActive::Models::Schema::AlignmentObject,URI]
@@ -35,18 +42,11 @@ module OpenActive
           "string",
         ]
 
-        # @return [String,OpenActive::Models::Schema::DefinedTerm,URI]
-        define_property :assesses, as: "assesses", types: [
-          "string",
-          "OpenActive::Models::Schema::DefinedTerm",
-          "URI",
-        ]
-
-        # @return [OpenActive::Models::Schema::DefinedTerm,String,URI]
-        define_property :learning_resource_type, as: "learningResourceType", types: [
-          "OpenActive::Models::Schema::DefinedTerm",
+        # @return [String,URI,OpenActive::Models::Schema::DefinedTerm]
+        define_property :educational_level, as: "educationalLevel", types: [
           "string",
           "URI",
+          "OpenActive::Models::Schema::DefinedTerm",
         ]
 
         # @return [OpenActive::Models::Schema::DefinedTerm,String,URI]

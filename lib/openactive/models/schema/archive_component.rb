@@ -14,11 +14,11 @@ module OpenActive
           "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::PostalAddress,OpenActive::Models::Schema::Place,String,URI]
+        # @return [String,OpenActive::Models::Schema::PostalAddress,OpenActive::Models::Schema::Place,URI]
         define_property :item_location, as: "itemLocation", types: [
+          "string",
           "OpenActive::Models::Schema::PostalAddress",
           "OpenActive::Models::Schema::Place",
-          "string",
           "URI",
         ]
       end

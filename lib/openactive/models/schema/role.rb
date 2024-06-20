@@ -9,28 +9,28 @@ module OpenActive
         end
 
         # @return [String,URI]
-        define_property :named_position, as: "namedPosition", types: [
-          "string",
-          "URI",
-        ]
-
-        # @return [Date,DateTime,nil]
-        define_property :start_date, as: "startDate", types: [
-          "Date",
-          "DateTime",
-          "null",
-        ]
-
-        # @return [String,URI]
         define_property :role_name, as: "roleName", types: [
           "string",
           "URI",
         ]
 
-        # @return [Date,DateTime,nil]
-        define_property :end_date, as: "endDate", types: [
-          "Date",
+        # @return [URI,String]
+        define_property :named_position, as: "namedPosition", types: [
+          "URI",
+          "string",
+        ]
+
+        # @return [DateTime,Date,nil]
+        define_property :start_date, as: "startDate", types: [
           "DateTime",
+          "Date",
+          "null",
+        ]
+
+        # @return [DateTime,Date,nil]
+        define_property :end_date, as: "endDate", types: [
+          "DateTime",
+          "Date",
           "null",
         ]
       end

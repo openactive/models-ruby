@@ -9,6 +9,16 @@ module OpenActive
         end
 
         # @return [String]
+        define_property :speech_to_text_markup, as: "speechToTextMarkup", types: [
+          "string",
+        ]
+
+        # @return [String]
+        define_property :phonetic_text, as: "phoneticText", types: [
+          "string",
+        ]
+
+        # @return [String]
         define_property :text_value, as: "textValue", types: [
           "string",
         ]
@@ -18,16 +28,6 @@ module OpenActive
           "string",
           "OpenActive::Models::Schema::Language",
           "URI",
-        ]
-
-        # @return [String]
-        define_property :phonetic_text, as: "phoneticText", types: [
-          "string",
-        ]
-
-        # @return [String]
-        define_property :speech_to_text_markup, as: "speechToTextMarkup", types: [
-          "string",
         ]
       end
     end

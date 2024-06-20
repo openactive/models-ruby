@@ -8,10 +8,10 @@ module OpenActive
           "schema:DataCatalog"
         end
 
-        # @return [OpenActive::Models::Schema::DefinedTerm,URI,String,OpenActive::Enums::Schema::MeasurementMethodEnum,nil]
+        # @return [URI,OpenActive::Models::Schema::DefinedTerm,String,OpenActive::Enums::Schema::MeasurementMethodEnum,nil]
         define_property :measurement_technique, as: "measurementTechnique", types: [
-          "OpenActive::Models::Schema::DefinedTerm",
           "URI",
+          "OpenActive::Models::Schema::DefinedTerm",
           "string",
           "OpenActive::Enums::Schema::MeasurementMethodEnum",
           "null",
@@ -23,12 +23,12 @@ module OpenActive
           "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::DefinedTerm,URI,String,OpenActive::Enums::Schema::MeasurementMethodEnum,nil]
+        # @return [String,OpenActive::Enums::Schema::MeasurementMethodEnum,URI,OpenActive::Models::Schema::DefinedTerm,nil]
         define_property :measurement_method, as: "measurementMethod", types: [
-          "OpenActive::Models::Schema::DefinedTerm",
-          "URI",
           "string",
           "OpenActive::Enums::Schema::MeasurementMethodEnum",
+          "URI",
+          "OpenActive::Models::Schema::DefinedTerm",
           "null",
         ]
       end

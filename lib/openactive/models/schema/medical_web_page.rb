@@ -8,16 +8,16 @@ module OpenActive
           "schema:MedicalWebPage"
         end
 
+        # @return [OpenActive::Models::Schema::MedicalAudienceType,OpenActive::Models::Schema::MedicalAudience,URI]
+        define_property :medical_audience, as: "medicalAudience", types: [
+          "OpenActive::Models::Schema::MedicalAudienceType",
+          "OpenActive::Models::Schema::MedicalAudience",
+          "URI",
+        ]
+
         # @return [String]
         define_property :aspect, as: "aspect", types: [
           "string",
-        ]
-
-        # @return [OpenActive::Models::Schema::MedicalAudience,OpenActive::Models::Schema::MedicalAudienceType,URI]
-        define_property :medical_audience, as: "medicalAudience", types: [
-          "OpenActive::Models::Schema::MedicalAudience",
-          "OpenActive::Models::Schema::MedicalAudienceType",
-          "URI",
         ]
       end
     end

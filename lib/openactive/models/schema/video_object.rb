@@ -9,31 +9,9 @@ module OpenActive
         end
 
         # @return [OpenActive::Models::Schema::Person,URI]
-        define_property :actors, as: "actors", types: [
+        define_property :actor, as: "actor", types: [
           "OpenActive::Models::Schema::Person",
           "URI",
-        ]
-
-        # @return [String]
-        define_property :embedded_text_caption, as: "embeddedTextCaption", types: [
-          "string",
-        ]
-
-        # @return [String]
-        define_property :video_quality, as: "videoQuality", types: [
-          "string",
-        ]
-
-        # @return [String,OpenActive::Models::Schema::MediaObject,URI]
-        define_property :caption, as: "caption", types: [
-          "string",
-          "OpenActive::Models::Schema::MediaObject",
-          "URI",
-        ]
-
-        # @return [String]
-        define_property :video_frame_size, as: "videoFrameSize", types: [
-          "string",
         ]
 
         # @return [String]
@@ -41,11 +19,21 @@ module OpenActive
           "string",
         ]
 
-        # @return [OpenActive::Models::Schema::Person,OpenActive::Models::Schema::MusicGroup,URI]
+        # @return [String]
+        define_property :video_frame_size, as: "videoFrameSize", types: [
+          "string",
+        ]
+
+        # @return [OpenActive::Models::Schema::MusicGroup,OpenActive::Models::Schema::Person,URI]
         define_property :music_by, as: "musicBy", types: [
-          "OpenActive::Models::Schema::Person",
           "OpenActive::Models::Schema::MusicGroup",
+          "OpenActive::Models::Schema::Person",
           "URI",
+        ]
+
+        # @return [String]
+        define_property :video_quality, as: "videoQuality", types: [
+          "string",
         ]
 
         # @return [OpenActive::Models::Schema::Person,URI]
@@ -60,9 +48,21 @@ module OpenActive
           "URI",
         ]
 
+        # @return [String]
+        define_property :embedded_text_caption, as: "embeddedTextCaption", types: [
+          "string",
+        ]
+
         # @return [OpenActive::Models::Schema::Person,URI]
-        define_property :actor, as: "actor", types: [
+        define_property :actors, as: "actors", types: [
           "OpenActive::Models::Schema::Person",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::MediaObject,String,URI]
+        define_property :caption, as: "caption", types: [
+          "OpenActive::Models::Schema::MediaObject",
+          "string",
           "URI",
         ]
       end

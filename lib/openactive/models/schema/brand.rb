@@ -8,6 +8,11 @@ module OpenActive
           "schema:Brand"
         end
 
+        # @return [String]
+        define_property :slogan, as: "slogan", types: [
+          "string",
+        ]
+
         # @return [OpenActive::Models::Schema::AggregateRating,URI]
         define_property :aggregate_rating, as: "aggregateRating", types: [
           "OpenActive::Models::Schema::AggregateRating",
@@ -18,11 +23,6 @@ module OpenActive
         define_property :logo, as: "logo", types: [
           "OpenActive::Models::Schema::ImageObject",
           "URI",
-        ]
-
-        # @return [String]
-        define_property :slogan, as: "slogan", types: [
-          "string",
         ]
 
         # @return [OpenActive::Models::Schema::Review,URI]

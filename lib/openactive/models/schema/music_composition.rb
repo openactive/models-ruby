@@ -8,20 +8,9 @@ module OpenActive
           "schema:MusicComposition"
         end
 
-        # @return [OpenActive::Models::Schema::MusicComposition,URI]
-        define_property :included_composition, as: "includedComposition", types: [
-          "OpenActive::Models::Schema::MusicComposition",
-          "URI",
-        ]
-
-        # @return [String]
-        define_property :musical_key, as: "musicalKey", types: [
-          "string",
-        ]
-
-        # @return [OpenActive::Models::Schema::Event,URI]
-        define_property :first_performance, as: "firstPerformance", types: [
-          "OpenActive::Models::Schema::Event",
+        # @return [OpenActive::Models::Schema::CreativeWork,URI]
+        define_property :lyrics, as: "lyrics", types: [
+          "OpenActive::Models::Schema::CreativeWork",
           "URI",
         ]
 
@@ -31,22 +20,9 @@ module OpenActive
           "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::Organization,OpenActive::Models::Schema::Person,URI]
-        define_property :composer, as: "composer", types: [
-          "OpenActive::Models::Schema::Organization",
-          "OpenActive::Models::Schema::Person",
-          "URI",
-        ]
-
-        # @return [OpenActive::Models::Schema::CreativeWork,URI]
-        define_property :lyrics, as: "lyrics", types: [
-          "OpenActive::Models::Schema::CreativeWork",
-          "URI",
-        ]
-
-        # @return [OpenActive::Models::Schema::MusicRecording,URI]
-        define_property :recorded_as, as: "recordedAs", types: [
-          "OpenActive::Models::Schema::MusicRecording",
+        # @return [OpenActive::Models::Schema::Event,URI]
+        define_property :first_performance, as: "firstPerformance", types: [
+          "OpenActive::Models::Schema::Event",
           "URI",
         ]
 
@@ -64,6 +40,30 @@ module OpenActive
         # @return [String]
         define_property :music_composition_form, as: "musicCompositionForm", types: [
           "string",
+        ]
+
+        # @return [OpenActive::Models::Schema::Organization,OpenActive::Models::Schema::Person,URI]
+        define_property :composer, as: "composer", types: [
+          "OpenActive::Models::Schema::Organization",
+          "OpenActive::Models::Schema::Person",
+          "URI",
+        ]
+
+        # @return [String]
+        define_property :musical_key, as: "musicalKey", types: [
+          "string",
+        ]
+
+        # @return [OpenActive::Models::Schema::MusicRecording,URI]
+        define_property :recorded_as, as: "recordedAs", types: [
+          "OpenActive::Models::Schema::MusicRecording",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::MusicComposition,URI]
+        define_property :included_composition, as: "includedComposition", types: [
+          "OpenActive::Models::Schema::MusicComposition",
+          "URI",
         ]
       end
     end

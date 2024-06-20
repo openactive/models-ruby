@@ -20,10 +20,10 @@ module OpenActive
           "null",
         ]
 
-        # @return [OpenActive::Models::Schema::QuantitativeValue,BigDecimal,URI,nil]
+        # @return [BigDecimal,OpenActive::Models::Schema::QuantitativeValue,URI,nil]
         define_property :broadcast_frequency_value, as: "broadcastFrequencyValue", types: [
-          "OpenActive::Models::Schema::QuantitativeValue",
           "Number",
+          "OpenActive::Models::Schema::QuantitativeValue",
           "URI",
           "null",
         ]

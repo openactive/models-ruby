@@ -16,25 +16,18 @@ module OpenActive
           "null",
         ]
 
-        # @return [String,Boolean,nil]
-        define_property :pets_allowed, as: "petsAllowed", types: [
-          "string",
-          "bool",
-          "null",
-        ]
-
-        # @return [OpenActive::Models::Schema::Language,String,URI]
-        define_property :available_language, as: "availableLanguage", types: [
-          "OpenActive::Models::Schema::Language",
-          "string",
-          "URI",
-        ]
-
-        # @return [Time,DateTime,nil]
-        define_property :checkout_time, as: "checkoutTime", types: [
-          "Time",
+        # @return [DateTime,Time,nil]
+        define_property :checkin_time, as: "checkinTime", types: [
           "DateTime",
+          "Time",
           "null",
+        ]
+
+        # @return [String,OpenActive::Models::Schema::Language,URI]
+        define_property :available_language, as: "availableLanguage", types: [
+          "string",
+          "OpenActive::Models::Schema::Language",
+          "URI",
         ]
 
         # @return [OpenActive::Models::Schema::LocationFeatureSpecification,URI]
@@ -43,8 +36,21 @@ module OpenActive
           "URI",
         ]
 
+        # @return [String,Boolean,nil]
+        define_property :pets_allowed, as: "petsAllowed", types: [
+          "string",
+          "bool",
+          "null",
+        ]
+
+        # @return [OpenActive::Models::Schema::Rating,URI]
+        define_property :star_rating, as: "starRating", types: [
+          "OpenActive::Models::Schema::Rating",
+          "URI",
+        ]
+
         # @return [DateTime,Time,nil]
-        define_property :checkin_time, as: "checkinTime", types: [
+        define_property :checkout_time, as: "checkoutTime", types: [
           "DateTime",
           "Time",
           "null",
@@ -53,12 +59,6 @@ module OpenActive
         # @return [OpenActive::Models::Schema::Audience,URI]
         define_property :audience, as: "audience", types: [
           "OpenActive::Models::Schema::Audience",
-          "URI",
-        ]
-
-        # @return [OpenActive::Models::Schema::Rating,URI]
-        define_property :star_rating, as: "starRating", types: [
-          "OpenActive::Models::Schema::Rating",
           "URI",
         ]
       end

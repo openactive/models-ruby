@@ -13,10 +13,17 @@ module OpenActive
           "string",
         ]
 
-        # @return [Date,DateTime,nil]
+        # @return [DateTime,Date,nil]
         define_property :start_date, as: "startDate", types: [
-          "Date",
           "DateTime",
+          "Date",
+          "null",
+        ]
+
+        # @return [DateTime,Date,nil]
+        define_property :end_date, as: "endDate", types: [
+          "DateTime",
+          "Date",
           "null",
         ]
 
@@ -25,13 +32,6 @@ module OpenActive
           "OpenActive::Models::Schema::MonetaryAmount",
           "Number",
           "URI",
-          "null",
-        ]
-
-        # @return [Date,DateTime,nil]
-        define_property :end_date, as: "endDate", types: [
-          "Date",
-          "DateTime",
           "null",
         ]
       end

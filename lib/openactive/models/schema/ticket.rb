@@ -8,8 +8,14 @@ module OpenActive
           "schema:Ticket"
         end
 
+        # @return [OpenActive::Models::Schema::Organization,URI]
+        define_property :issued_by, as: "issuedBy", types: [
+          "OpenActive::Models::Schema::Organization",
+          "URI",
+        ]
+
         # @return [String]
-        define_property :price_currency, as: "priceCurrency", types: [
+        define_property :ticket_number, as: "ticketNumber", types: [
           "string",
         ]
 
@@ -19,26 +25,18 @@ module OpenActive
           "URI",
         ]
 
-        # @return [DateTime,Date,nil]
-        define_property :date_issued, as: "dateIssued", types: [
-          "DateTime",
-          "Date",
-          "null",
-        ]
-
-        # @return [OpenActive::Models::Schema::Organization,URI]
-        define_property :issued_by, as: "issuedBy", types: [
-          "OpenActive::Models::Schema::Organization",
-          "URI",
-        ]
-
-        # @return [String,BigDecimal,OpenActive::Models::Schema::PriceSpecification,URI,nil]
+        # @return [OpenActive::Models::Schema::PriceSpecification,String,BigDecimal,URI,nil]
         define_property :total_price, as: "totalPrice", types: [
+          "OpenActive::Models::Schema::PriceSpecification",
           "string",
           "Number",
-          "OpenActive::Models::Schema::PriceSpecification",
           "URI",
           "null",
+        ]
+
+        # @return [String]
+        define_property :price_currency, as: "priceCurrency", types: [
+          "string",
         ]
 
         # @return [OpenActive::Models::Schema::Seat,URI]
@@ -47,16 +45,18 @@ module OpenActive
           "URI",
         ]
 
-        # @return [String]
-        define_property :ticket_number, as: "ticketNumber", types: [
-          "string",
+        # @return [OpenActive::Models::Schema::Person,OpenActive::Models::Schema::Organization,URI]
+        define_property :under_name, as: "underName", types: [
+          "OpenActive::Models::Schema::Person",
+          "OpenActive::Models::Schema::Organization",
+          "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::Organization,OpenActive::Models::Schema::Person,URI]
-        define_property :under_name, as: "underName", types: [
-          "OpenActive::Models::Schema::Organization",
-          "OpenActive::Models::Schema::Person",
-          "URI",
+        # @return [Date,DateTime,nil]
+        define_property :date_issued, as: "dateIssued", types: [
+          "Date",
+          "DateTime",
+          "null",
         ]
       end
     end

@@ -9,19 +9,19 @@ module OpenActive
         end
 
         # @return [OpenActive::Models::Schema::MonetaryAmount,URI]
-        define_property :account_minimum_inflow, as: "accountMinimumInflow", types: [
+        define_property :account_overdraft_limit, as: "accountOverdraftLimit", types: [
           "OpenActive::Models::Schema::MonetaryAmount",
           "URI",
         ]
 
-        # @return [URI,String]
+        # @return [String,URI]
         define_property :bank_account_type, as: "bankAccountType", types: [
-          "URI",
           "string",
+          "URI",
         ]
 
         # @return [OpenActive::Models::Schema::MonetaryAmount,URI]
-        define_property :account_overdraft_limit, as: "accountOverdraftLimit", types: [
+        define_property :account_minimum_inflow, as: "accountMinimumInflow", types: [
           "OpenActive::Models::Schema::MonetaryAmount",
           "URI",
         ]

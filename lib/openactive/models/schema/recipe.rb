@@ -8,11 +8,27 @@ module OpenActive
           "schema:Recipe"
         end
 
-        # @return [String,OpenActive::Models::Schema::ItemList,OpenActive::Models::Schema::CreativeWork,URI]
+        # @return [String]
+        define_property :recipe_cuisine, as: "recipeCuisine", types: [
+          "string",
+        ]
+
+        # @return [OpenActive::Enums::Schema::RestrictedDiet,nil]
+        define_property :suitable_for_diet, as: "suitableForDiet", types: [
+          "OpenActive::Enums::Schema::RestrictedDiet",
+          "null",
+        ]
+
+        # @return [String]
+        define_property :cooking_method, as: "cookingMethod", types: [
+          "string",
+        ]
+
+        # @return [OpenActive::Models::Schema::CreativeWork,String,OpenActive::Models::Schema::ItemList,URI]
         define_property :recipe_instructions, as: "recipeInstructions", types: [
+          "OpenActive::Models::Schema::CreativeWork",
           "string",
           "OpenActive::Models::Schema::ItemList",
-          "OpenActive::Models::Schema::CreativeWork",
           "URI",
         ]
 
@@ -27,14 +43,8 @@ module OpenActive
           "URI",
         ]
 
-        # @return [OpenActive::Enums::Schema::RestrictedDiet,nil]
-        define_property :suitable_for_diet, as: "suitableForDiet", types: [
-          "OpenActive::Enums::Schema::RestrictedDiet",
-          "null",
-        ]
-
         # @return [String]
-        define_property :recipe_cuisine, as: "recipeCuisine", types: [
+        define_property :recipe_ingredient, as: "recipeIngredient", types: [
           "string",
         ]
 
@@ -45,21 +55,11 @@ module OpenActive
           "null",
         ]
 
-        # @return [OpenActive::Models::Schema::QuantitativeValue,String,URI]
+        # @return [String,OpenActive::Models::Schema::QuantitativeValue,URI]
         define_property :recipe_yield, as: "recipeYield", types: [
+          "string",
           "OpenActive::Models::Schema::QuantitativeValue",
-          "string",
           "URI",
-        ]
-
-        # @return [String]
-        define_property :recipe_ingredient, as: "recipeIngredient", types: [
-          "string",
-        ]
-
-        # @return [String]
-        define_property :cooking_method, as: "cookingMethod", types: [
-          "string",
         ]
 
         # @return [String]

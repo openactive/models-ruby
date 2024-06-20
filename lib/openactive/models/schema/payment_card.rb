@@ -8,6 +8,13 @@ module OpenActive
           "schema:PaymentCard"
         end
 
+        # @return [BigDecimal,Boolean,nil]
+        define_property :cash_back, as: "cashBack", types: [
+          "Number",
+          "bool",
+          "null",
+        ]
+
         # @return [OpenActive::Models::Schema::MonetaryAmount,URI]
         define_property :floor_limit, as: "floorLimit", types: [
           "OpenActive::Models::Schema::MonetaryAmount",
@@ -16,13 +23,6 @@ module OpenActive
 
         # @return [Boolean,nil]
         define_property :contactless_payment, as: "contactlessPayment", types: [
-          "bool",
-          "null",
-        ]
-
-        # @return [BigDecimal,Boolean,nil]
-        define_property :cash_back, as: "cashBack", types: [
-          "Number",
           "bool",
           "null",
         ]

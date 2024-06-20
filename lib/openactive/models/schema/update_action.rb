@@ -9,13 +9,13 @@ module OpenActive
         end
 
         # @return [OpenActive::Models::Schema::Thing,URI]
-        define_property :target_collection, as: "targetCollection", types: [
+        define_property :collection, as: "collection", types: [
           "OpenActive::Models::Schema::Thing",
           "URI",
         ]
 
         # @return [OpenActive::Models::Schema::Thing,URI]
-        define_property :collection, as: "collection", types: [
+        define_property :target_collection, as: "targetCollection", types: [
           "OpenActive::Models::Schema::Thing",
           "URI",
         ]

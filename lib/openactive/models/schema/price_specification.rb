@@ -8,16 +8,16 @@ module OpenActive
           "schema:PriceSpecification"
         end
 
+        # @return [DateTime,Date,nil]
+        define_property :valid_through, as: "validThrough", types: [
+          "DateTime",
+          "Date",
+          "null",
+        ]
+
         # @return [String]
         define_property :price_currency, as: "priceCurrency", types: [
           "string",
-        ]
-
-        # @return [Date,DateTime,nil]
-        define_property :valid_from, as: "validFrom", types: [
-          "Date",
-          "DateTime",
-          "null",
         ]
 
         # @return [Boolean,nil]
@@ -26,8 +26,20 @@ module OpenActive
           "null",
         ]
 
+        # @return [BigDecimal,nil]
+        define_property :max_price, as: "maxPrice", types: [
+          "Number",
+          "null",
+        ]
+
+        # @return [OpenActive::Models::Schema::PriceSpecification,URI]
+        define_property :eligible_transaction_volume, as: "eligibleTransactionVolume", types: [
+          "OpenActive::Models::Schema::PriceSpecification",
+          "URI",
+        ]
+
         # @return [Date,DateTime,nil]
-        define_property :valid_through, as: "validThrough", types: [
+        define_property :valid_from, as: "validFrom", types: [
           "Date",
           "DateTime",
           "null",
@@ -39,29 +51,17 @@ module OpenActive
           "null",
         ]
 
+        # @return [OpenActive::Models::Schema::QuantitativeValue,URI]
+        define_property :eligible_quantity, as: "eligibleQuantity", types: [
+          "OpenActive::Models::Schema::QuantitativeValue",
+          "URI",
+        ]
+
         # @return [BigDecimal,String,nil]
         define_property :price, as: "price", types: [
           "Number",
           "string",
           "null",
-        ]
-
-        # @return [OpenActive::Models::Schema::PriceSpecification,URI]
-        define_property :eligible_transaction_volume, as: "eligibleTransactionVolume", types: [
-          "OpenActive::Models::Schema::PriceSpecification",
-          "URI",
-        ]
-
-        # @return [BigDecimal,nil]
-        define_property :max_price, as: "maxPrice", types: [
-          "Number",
-          "null",
-        ]
-
-        # @return [OpenActive::Models::Schema::QuantitativeValue,URI]
-        define_property :eligible_quantity, as: "eligibleQuantity", types: [
-          "OpenActive::Models::Schema::QuantitativeValue",
-          "URI",
         ]
       end
     end

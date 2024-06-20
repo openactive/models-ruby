@@ -8,15 +8,15 @@ module OpenActive
           "schema:MovieSeries"
         end
 
-        # @return [OpenActive::Models::Schema::Person,URI]
-        define_property :actors, as: "actors", types: [
-          "OpenActive::Models::Schema::Person",
-          "URI",
-        ]
-
         # @return [OpenActive::Models::Schema::VideoObject,URI]
         define_property :trailer, as: "trailer", types: [
           "OpenActive::Models::Schema::VideoObject",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::Person,URI]
+        define_property :actor, as: "actor", types: [
+          "OpenActive::Models::Schema::Person",
           "URI",
         ]
 
@@ -26,10 +26,10 @@ module OpenActive
           "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::Person,OpenActive::Models::Schema::MusicGroup,URI]
+        # @return [OpenActive::Models::Schema::MusicGroup,OpenActive::Models::Schema::Person,URI]
         define_property :music_by, as: "musicBy", types: [
-          "OpenActive::Models::Schema::Person",
           "OpenActive::Models::Schema::MusicGroup",
+          "OpenActive::Models::Schema::Person",
           "URI",
         ]
 
@@ -46,7 +46,7 @@ module OpenActive
         ]
 
         # @return [OpenActive::Models::Schema::Person,URI]
-        define_property :actor, as: "actor", types: [
+        define_property :actors, as: "actors", types: [
           "OpenActive::Models::Schema::Person",
           "URI",
         ]

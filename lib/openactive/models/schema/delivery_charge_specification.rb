@@ -8,10 +8,12 @@ module OpenActive
           "schema:DeliveryChargeSpecification"
         end
 
-        # @return [OpenActive::Enums::Schema::DeliveryMethod,nil]
-        define_property :applies_to_delivery_method, as: "appliesToDeliveryMethod", types: [
-          "OpenActive::Enums::Schema::DeliveryMethod",
-          "null",
+        # @return [OpenActive::Models::Schema::Place,OpenActive::Models::Schema::GeoShape,String,URI]
+        define_property :eligible_region, as: "eligibleRegion", types: [
+          "OpenActive::Models::Schema::Place",
+          "OpenActive::Models::Schema::GeoShape",
+          "string",
+          "URI",
         ]
 
         # @return [String,OpenActive::Models::Schema::Place,OpenActive::Models::Schema::GeoShape,URI]
@@ -22,20 +24,18 @@ module OpenActive
           "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::GeoShape,String,OpenActive::Models::Schema::Place,URI]
-        define_property :eligible_region, as: "eligibleRegion", types: [
-          "OpenActive::Models::Schema::GeoShape",
-          "string",
-          "OpenActive::Models::Schema::Place",
-          "URI",
+        # @return [OpenActive::Enums::Schema::DeliveryMethod,nil]
+        define_property :applies_to_delivery_method, as: "appliesToDeliveryMethod", types: [
+          "OpenActive::Enums::Schema::DeliveryMethod",
+          "null",
         ]
 
-        # @return [String,OpenActive::Models::Schema::Place,OpenActive::Models::Schema::GeoShape,OpenActive::Models::Schema::AdministrativeArea,URI]
+        # @return [OpenActive::Models::Schema::GeoShape,OpenActive::Models::Schema::AdministrativeArea,String,OpenActive::Models::Schema::Place,URI]
         define_property :area_served, as: "areaServed", types: [
-          "string",
-          "OpenActive::Models::Schema::Place",
           "OpenActive::Models::Schema::GeoShape",
           "OpenActive::Models::Schema::AdministrativeArea",
+          "string",
+          "OpenActive::Models::Schema::Place",
           "URI",
         ]
       end

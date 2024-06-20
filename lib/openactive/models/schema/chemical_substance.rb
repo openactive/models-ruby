@@ -9,6 +9,12 @@ module OpenActive
         end
 
         # @return [OpenActive::Models::Schema::DefinedTerm,URI]
+        define_property :potential_use, as: "potentialUse", types: [
+          "OpenActive::Models::Schema::DefinedTerm",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::DefinedTerm,URI]
         define_property :chemical_role, as: "chemicalRole", types: [
           "OpenActive::Models::Schema::DefinedTerm",
           "URI",
@@ -17,12 +23,6 @@ module OpenActive
         # @return [String]
         define_property :chemical_composition, as: "chemicalComposition", types: [
           "string",
-        ]
-
-        # @return [OpenActive::Models::Schema::DefinedTerm,URI]
-        define_property :potential_use, as: "potentialUse", types: [
-          "OpenActive::Models::Schema::DefinedTerm",
-          "URI",
         ]
       end
     end

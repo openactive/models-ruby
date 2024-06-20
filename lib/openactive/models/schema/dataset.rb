@@ -8,10 +8,38 @@ module OpenActive
           "schema:Dataset"
         end
 
-        # @return [DateTime,nil]
-        define_property :dataset_time_interval, as: "datasetTimeInterval", types: [
-          "DateTime",
+        # @return [URI,OpenActive::Models::Schema::DefinedTerm,String,OpenActive::Enums::Schema::MeasurementMethodEnum,nil]
+        define_property :measurement_technique, as: "measurementTechnique", types: [
+          "URI",
+          "OpenActive::Models::Schema::DefinedTerm",
+          "string",
+          "OpenActive::Enums::Schema::MeasurementMethodEnum",
           "null",
+        ]
+
+        # @return [OpenActive::Models::Schema::PropertyValue,OpenActive::Models::Schema::StatisticalVariable,OpenActive::Enums::PropertyEnumeration,String,URI,nil]
+        define_property :variable_measured, as: "variableMeasured", types: [
+          "OpenActive::Models::Schema::PropertyValue",
+          "OpenActive::Models::Schema::StatisticalVariable",
+          "OpenActive::Enums::PropertyEnumeration",
+          "string",
+          "URI",
+          "null",
+        ]
+
+        # @return [String,OpenActive::Enums::Schema::MeasurementMethodEnum,URI,OpenActive::Models::Schema::DefinedTerm,nil]
+        define_property :measurement_method, as: "measurementMethod", types: [
+          "string",
+          "OpenActive::Enums::Schema::MeasurementMethodEnum",
+          "URI",
+          "OpenActive::Models::Schema::DefinedTerm",
+          "null",
+        ]
+
+        # @return [OpenActive::Models::Schema::DataDownload,URI]
+        define_property :distribution, as: "distribution", types: [
+          "OpenActive::Models::Schema::DataDownload",
+          "URI",
         ]
 
         # @return [OpenActive::Models::Schema::DataCatalog,URI]
@@ -20,22 +48,9 @@ module OpenActive
           "URI",
         ]
 
-        # @return [OpenActive::Enums::PropertyEnumeration,OpenActive::Models::Schema::StatisticalVariable,String,OpenActive::Models::Schema::PropertyValue,URI,nil]
-        define_property :variable_measured, as: "variableMeasured", types: [
-          "OpenActive::Enums::PropertyEnumeration",
-          "OpenActive::Models::Schema::StatisticalVariable",
-          "string",
-          "OpenActive::Models::Schema::PropertyValue",
-          "URI",
-          "null",
-        ]
-
-        # @return [OpenActive::Models::Schema::DefinedTerm,URI,String,OpenActive::Enums::Schema::MeasurementMethodEnum,nil]
-        define_property :measurement_technique, as: "measurementTechnique", types: [
-          "OpenActive::Models::Schema::DefinedTerm",
-          "URI",
-          "string",
-          "OpenActive::Enums::Schema::MeasurementMethodEnum",
+        # @return [DateTime,nil]
+        define_property :dataset_time_interval, as: "datasetTimeInterval", types: [
+          "DateTime",
           "null",
         ]
 
@@ -48,21 +63,6 @@ module OpenActive
         # @return [String]
         define_property :issn, as: "issn", types: [
           "string",
-        ]
-
-        # @return [OpenActive::Models::Schema::DefinedTerm,URI,String,OpenActive::Enums::Schema::MeasurementMethodEnum,nil]
-        define_property :measurement_method, as: "measurementMethod", types: [
-          "OpenActive::Models::Schema::DefinedTerm",
-          "URI",
-          "string",
-          "OpenActive::Enums::Schema::MeasurementMethodEnum",
-          "null",
-        ]
-
-        # @return [OpenActive::Models::Schema::DataDownload,URI]
-        define_property :distribution, as: "distribution", types: [
-          "OpenActive::Models::Schema::DataDownload",
-          "URI",
         ]
 
         # @return [OpenActive::Models::Schema::DataCatalog,URI]

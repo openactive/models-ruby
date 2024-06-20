@@ -8,10 +8,10 @@ module OpenActive
           "schema:PlayGameAction"
         end
 
-        # @return [OpenActive::Enums::Schema::GameAvailabilityEnumeration,String,nil]
+        # @return [String,OpenActive::Enums::Schema::GameAvailabilityEnumeration,nil]
         define_property :game_availability_type, as: "gameAvailabilityType", types: [
-          "OpenActive::Enums::Schema::GameAvailabilityEnumeration",
           "string",
+          "OpenActive::Enums::Schema::GameAvailabilityEnumeration",
           "null",
         ]
       end

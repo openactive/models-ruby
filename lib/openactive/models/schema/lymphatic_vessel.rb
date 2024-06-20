@@ -8,10 +8,9 @@ module OpenActive
           "schema:LymphaticVessel"
         end
 
-        # @return [OpenActive::Models::Schema::AnatomicalSystem,OpenActive::Models::Schema::AnatomicalStructure,URI]
-        define_property :region_drained, as: "regionDrained", types: [
-          "OpenActive::Models::Schema::AnatomicalSystem",
-          "OpenActive::Models::Schema::AnatomicalStructure",
+        # @return [OpenActive::Models::Schema::Vessel,URI]
+        define_property :originates_from, as: "originatesFrom", types: [
+          "OpenActive::Models::Schema::Vessel",
           "URI",
         ]
 
@@ -21,9 +20,10 @@ module OpenActive
           "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::Vessel,URI]
-        define_property :originates_from, as: "originatesFrom", types: [
-          "OpenActive::Models::Schema::Vessel",
+        # @return [OpenActive::Models::Schema::AnatomicalStructure,OpenActive::Models::Schema::AnatomicalSystem,URI]
+        define_property :region_drained, as: "regionDrained", types: [
+          "OpenActive::Models::Schema::AnatomicalStructure",
+          "OpenActive::Models::Schema::AnatomicalSystem",
           "URI",
         ]
       end
