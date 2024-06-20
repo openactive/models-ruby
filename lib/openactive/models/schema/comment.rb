@@ -8,22 +8,29 @@ module OpenActive
           "schema:Comment"
         end
 
-        # @return [OpenActive::Models::Schema::Comment,URI]
-        define_property :parent_item, as: "parentItem", types: [
-          "OpenActive::Models::Schema::Comment",
-          "URI",
-        ]
-
         # @return [int,nil]
         define_property :upvote_count, as: "upvoteCount", types: [
           "int",
           "null",
         ]
 
+        # @return [OpenActive::Models::Schema::CreativeWork,OpenActive::Models::Schema::Comment,URI]
+        define_property :parent_item, as: "parentItem", types: [
+          "OpenActive::Models::Schema::CreativeWork",
+          "OpenActive::Models::Schema::Comment",
+          "URI",
+        ]
+
         # @return [int,nil]
         define_property :downvote_count, as: "downvoteCount", types: [
           "int",
           "null",
+        ]
+
+        # @return [OpenActive::Models::Schema::CreativeWork,URI]
+        define_property :shared_content, as: "sharedContent", types: [
+          "OpenActive::Models::Schema::CreativeWork",
+          "URI",
         ]
       end
     end

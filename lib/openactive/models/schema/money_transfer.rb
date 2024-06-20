@@ -8,10 +8,10 @@ module OpenActive
           "schema:MoneyTransfer"
         end
 
-        # @return [String,OpenActive::Models::Schema::BankOrCreditUnion,URI]
+        # @return [OpenActive::Models::Schema::BankOrCreditUnion,String,URI]
         define_property :beneficiary_bank, as: "beneficiaryBank", types: [
-          "string",
           "OpenActive::Models::Schema::BankOrCreditUnion",
+          "string",
           "URI",
         ]
 

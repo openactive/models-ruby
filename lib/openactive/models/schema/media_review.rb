@@ -15,15 +15,15 @@ module OpenActive
           "OpenActive::Models::Schema::MediaObject",
         ]
 
-        # @return [String]
-        define_property :original_media_context_description, as: "originalMediaContextDescription", types: [
-          "string",
-        ]
-
         # @return [OpenActive::Enums::Schema::MediaManipulationRatingEnumeration,nil]
         define_property :media_authenticity_category, as: "mediaAuthenticityCategory", types: [
           "OpenActive::Enums::Schema::MediaManipulationRatingEnumeration",
           "null",
+        ]
+
+        # @return [String]
+        define_property :original_media_context_description, as: "originalMediaContextDescription", types: [
+          "string",
         ]
       end
     end

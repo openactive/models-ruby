@@ -8,9 +8,10 @@ module OpenActive
           "schema:Nerve"
         end
 
-        # @return [OpenActive::Models::Schema::AnatomicalStructure,URI]
-        define_property :branch, as: "branch", types: [
+        # @return [OpenActive::Models::Schema::AnatomicalStructure,OpenActive::Models::Schema::SuperficialAnatomy,URI]
+        define_property :sensory_unit, as: "sensoryUnit", types: [
           "OpenActive::Models::Schema::AnatomicalStructure",
+          "OpenActive::Models::Schema::SuperficialAnatomy",
           "URI",
         ]
 
@@ -20,9 +21,8 @@ module OpenActive
           "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::SuperficialAnatomy,OpenActive::Models::Schema::AnatomicalStructure,URI]
-        define_property :sensory_unit, as: "sensoryUnit", types: [
-          "OpenActive::Models::Schema::SuperficialAnatomy",
+        # @return [OpenActive::Models::Schema::AnatomicalStructure,URI]
+        define_property :branch, as: "branch", types: [
           "OpenActive::Models::Schema::AnatomicalStructure",
           "URI",
         ]

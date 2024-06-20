@@ -14,16 +14,16 @@ module OpenActive
           "null",
         ]
 
-        # @return [OpenActive::Models::Schema::Thing,URI]
-        define_property :item_reviewed, as: "itemReviewed", types: [
-          "OpenActive::Models::Schema::Thing",
-          "URI",
-        ]
-
         # @return [int,nil]
         define_property :rating_count, as: "ratingCount", types: [
           "int",
           "null",
+        ]
+
+        # @return [OpenActive::Models::Schema::Thing,URI]
+        define_property :item_reviewed, as: "itemReviewed", types: [
+          "OpenActive::Models::Schema::Thing",
+          "URI",
         ]
       end
     end

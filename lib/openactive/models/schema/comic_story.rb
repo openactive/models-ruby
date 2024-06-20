@@ -15,7 +15,7 @@ module OpenActive
         ]
 
         # @return [OpenActive::Models::Schema::Person,URI]
-        define_property :colorist, as: "colorist", types: [
+        define_property :letterer, as: "letterer", types: [
           "OpenActive::Models::Schema::Person",
           "URI",
         ]
@@ -27,13 +27,13 @@ module OpenActive
         ]
 
         # @return [OpenActive::Models::Schema::Person,URI]
-        define_property :letterer, as: "letterer", types: [
+        define_property :penciler, as: "penciler", types: [
           "OpenActive::Models::Schema::Person",
           "URI",
         ]
 
         # @return [OpenActive::Models::Schema::Person,URI]
-        define_property :penciler, as: "penciler", types: [
+        define_property :colorist, as: "colorist", types: [
           "OpenActive::Models::Schema::Person",
           "URI",
         ]

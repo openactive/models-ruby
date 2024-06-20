@@ -8,17 +8,17 @@ module OpenActive
           "schema:RealEstateListing"
         end
 
-        # @return [Date,DateTime,nil]
+        # @return [DateTime,Date,nil]
         define_property :date_posted, as: "datePosted", types: [
-          "Date",
           "DateTime",
+          "Date",
           "null",
         ]
 
-        # @return [OpenActive::Models::Schema::QuantitativeValue,ActiveSupport::Duration,URI,nil]
+        # @return [ActiveSupport::Duration,OpenActive::Models::Schema::QuantitativeValue,URI,nil]
         define_property :lease_length, as: "leaseLength", types: [
-          "OpenActive::Models::Schema::QuantitativeValue",
           "DateInterval",
+          "OpenActive::Models::Schema::QuantitativeValue",
           "URI",
           "null",
         ]

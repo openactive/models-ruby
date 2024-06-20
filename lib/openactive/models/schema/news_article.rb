@@ -19,7 +19,7 @@ module OpenActive
         ]
 
         # @return [String]
-        define_property :print_page, as: "printPage", types: [
+        define_property :print_column, as: "printColumn", types: [
           "string",
         ]
 
@@ -29,7 +29,7 @@ module OpenActive
         ]
 
         # @return [String]
-        define_property :print_column, as: "printColumn", types: [
+        define_property :print_page, as: "printPage", types: [
           "string",
         ]
       end

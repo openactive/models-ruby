@@ -8,6 +8,12 @@ module OpenActive
           "schema:DeliveryTimeSettings"
         end
 
+        # @return [OpenActive::Models::Schema::ShippingDeliveryTime,URI]
+        define_property :delivery_time, as: "deliveryTime", types: [
+          "OpenActive::Models::Schema::ShippingDeliveryTime",
+          "URI",
+        ]
+
         # @return [OpenActive::Models::Schema::DefinedRegion,URI]
         define_property :shipping_destination, as: "shippingDestination", types: [
           "OpenActive::Models::Schema::DefinedRegion",
@@ -23,12 +29,6 @@ module OpenActive
         define_property :is_unlabelled_fallback, as: "isUnlabelledFallback", types: [
           "bool",
           "null",
-        ]
-
-        # @return [OpenActive::Models::Schema::ShippingDeliveryTime,URI]
-        define_property :delivery_time, as: "deliveryTime", types: [
-          "OpenActive::Models::Schema::ShippingDeliveryTime",
-          "URI",
         ]
       end
     end

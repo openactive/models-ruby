@@ -8,28 +8,8 @@ module OpenActive
           "schema:CreativeWorkSeason"
         end
 
-        # @return [OpenActive::Models::Schema::CreativeWorkSeries,URI]
-        define_property :part_of_series, as: "partOfSeries", types: [
-          "OpenActive::Models::Schema::CreativeWorkSeries",
-          "URI",
-        ]
-
-        # @return [OpenActive::Models::Schema::Episode,URI]
-        define_property :episodes, as: "episodes", types: [
-          "OpenActive::Models::Schema::Episode",
-          "URI",
-        ]
-
-        # @return [Date,DateTime,nil]
-        define_property :start_date, as: "startDate", types: [
-          "Date",
-          "DateTime",
-          "null",
-        ]
-
-        # @return [String,int,nil]
-        define_property :season_number, as: "seasonNumber", types: [
-          "string",
+        # @return [int,nil]
+        define_property :number_of_episodes, as: "numberOfEpisodes", types: [
           "int",
           "null",
         ]
@@ -40,9 +20,42 @@ module OpenActive
           "URI",
         ]
 
+        # @return [OpenActive::Models::Schema::Person,URI]
+        define_property :actor, as: "actor", types: [
+          "OpenActive::Models::Schema::Person",
+          "URI",
+        ]
+
+        # @return [DateTime,Date,nil]
+        define_property :start_date, as: "startDate", types: [
+          "DateTime",
+          "Date",
+          "null",
+        ]
+
+        # @return [DateTime,Date,nil]
+        define_property :end_date, as: "endDate", types: [
+          "DateTime",
+          "Date",
+          "null",
+        ]
+
         # @return [OpenActive::Models::Schema::Organization,URI]
         define_property :production_company, as: "productionCompany", types: [
           "OpenActive::Models::Schema::Organization",
+          "URI",
+        ]
+
+        # @return [int,String,nil]
+        define_property :season_number, as: "seasonNumber", types: [
+          "int",
+          "string",
+          "null",
+        ]
+
+        # @return [OpenActive::Models::Schema::Person,URI]
+        define_property :director, as: "director", types: [
+          "OpenActive::Models::Schema::Person",
           "URI",
         ]
 
@@ -52,29 +65,16 @@ module OpenActive
           "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::Person,URI]
-        define_property :director, as: "director", types: [
-          "OpenActive::Models::Schema::Person",
+        # @return [OpenActive::Models::Schema::Episode,URI]
+        define_property :episodes, as: "episodes", types: [
+          "OpenActive::Models::Schema::Episode",
           "URI",
         ]
 
-        # @return [int,nil]
-        define_property :number_of_episodes, as: "numberOfEpisodes", types: [
-          "int",
-          "null",
-        ]
-
-        # @return [OpenActive::Models::Schema::Person,URI]
-        define_property :actor, as: "actor", types: [
-          "OpenActive::Models::Schema::Person",
+        # @return [OpenActive::Models::Schema::CreativeWorkSeries,URI]
+        define_property :part_of_series, as: "partOfSeries", types: [
+          "OpenActive::Models::Schema::CreativeWorkSeries",
           "URI",
-        ]
-
-        # @return [Date,DateTime,nil]
-        define_property :end_date, as: "endDate", types: [
-          "Date",
-          "DateTime",
-          "null",
         ]
       end
     end

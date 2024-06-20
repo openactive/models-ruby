@@ -8,16 +8,16 @@ module OpenActive
           "schema:ConstraintNode"
         end
 
+        # @return [int,nil]
+        define_property :num_constraints, as: "numConstraints", types: [
+          "int",
+          "null",
+        ]
+
         # @return [URI,OpenActive::Enums::PropertyEnumeration,nil]
         define_property :constraint_property, as: "constraintProperty", types: [
           "URI",
           "OpenActive::Enums::PropertyEnumeration",
-          "null",
-        ]
-
-        # @return [int,nil]
-        define_property :num_constraints, as: "numConstraints", types: [
-          "int",
           "null",
         ]
       end

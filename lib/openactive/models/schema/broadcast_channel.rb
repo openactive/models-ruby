@@ -8,13 +8,6 @@ module OpenActive
           "schema:BroadcastChannel"
         end
 
-        # @return [String,OpenActive::Models::Schema::BroadcastFrequencySpecification,URI]
-        define_property :broadcast_frequency, as: "broadcastFrequency", types: [
-          "string",
-          "OpenActive::Models::Schema::BroadcastFrequencySpecification",
-          "URI",
-        ]
-
         # @return [String]
         define_property :broadcast_service_tier, as: "broadcastServiceTier", types: [
           "string",
@@ -26,21 +19,28 @@ module OpenActive
           "URI",
         ]
 
-        # @return [URI,String]
-        define_property :genre, as: "genre", types: [
-          "URI",
+        # @return [String]
+        define_property :broadcast_channel_id, as: "broadcastChannelId", types: [
           "string",
+        ]
+
+        # @return [String,URI]
+        define_property :genre, as: "genre", types: [
+          "string",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::BroadcastFrequencySpecification,String,URI]
+        define_property :broadcast_frequency, as: "broadcastFrequency", types: [
+          "OpenActive::Models::Schema::BroadcastFrequencySpecification",
+          "string",
+          "URI",
         ]
 
         # @return [OpenActive::Models::Schema::CableOrSatelliteService,URI]
         define_property :in_broadcast_lineup, as: "inBroadcastLineup", types: [
           "OpenActive::Models::Schema::CableOrSatelliteService",
           "URI",
-        ]
-
-        # @return [String]
-        define_property :broadcast_channel_id, as: "broadcastChannelId", types: [
-          "string",
         ]
       end
     end

@@ -8,12 +8,6 @@ module OpenActive
           "schema:ExchangeRateSpecification"
         end
 
-        # @return [OpenActive::Models::Schema::UnitPriceSpecification,URI]
-        define_property :current_exchange_rate, as: "currentExchangeRate", types: [
-          "OpenActive::Models::Schema::UnitPriceSpecification",
-          "URI",
-        ]
-
         # @return [String]
         define_property :currency, as: "currency", types: [
           "string",
@@ -25,6 +19,12 @@ module OpenActive
           "Number",
           "URI",
           "null",
+        ]
+
+        # @return [OpenActive::Models::Schema::UnitPriceSpecification,URI]
+        define_property :current_exchange_rate, as: "currentExchangeRate", types: [
+          "OpenActive::Models::Schema::UnitPriceSpecification",
+          "URI",
         ]
       end
     end

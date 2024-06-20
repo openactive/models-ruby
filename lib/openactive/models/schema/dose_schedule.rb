@@ -8,6 +8,16 @@ module OpenActive
           "schema:DoseSchedule"
         end
 
+        # @return [String]
+        define_property :dose_unit, as: "doseUnit", types: [
+          "string",
+        ]
+
+        # @return [String]
+        define_property :target_population, as: "targetPopulation", types: [
+          "string",
+        ]
+
         # @return [BigDecimal,OpenActive::Enums::Schema::QualitativeValue,nil]
         define_property :dose_value, as: "doseValue", types: [
           "Number",
@@ -17,16 +27,6 @@ module OpenActive
 
         # @return [String]
         define_property :frequency, as: "frequency", types: [
-          "string",
-        ]
-
-        # @return [String]
-        define_property :target_population, as: "targetPopulation", types: [
-          "string",
-        ]
-
-        # @return [String]
-        define_property :dose_unit, as: "doseUnit", types: [
           "string",
         ]
       end

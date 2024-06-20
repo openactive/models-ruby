@@ -7,8 +7,8 @@ module OpenActive
       class MusicAlbumReleaseType < TypesafeEnum::Base
         new :AlbumRelease, "https://schema.org/AlbumRelease"
         new :BroadcastRelease, "https://schema.org/BroadcastRelease"
-        new :EPRelease, "https://schema.org/EPRelease"
         new :SingleRelease, "https://schema.org/SingleRelease"
+        new :EPRelease, "https://schema.org/EPRelease"
       end
     end
   end

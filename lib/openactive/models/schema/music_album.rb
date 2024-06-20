@@ -8,16 +8,11 @@ module OpenActive
           "schema:MusicAlbum"
         end
 
-        # @return [OpenActive::Models::Schema::MusicRelease,URI]
-        define_property :album_release, as: "albumRelease", types: [
-          "OpenActive::Models::Schema::MusicRelease",
+        # @return [OpenActive::Models::Schema::MusicGroup,OpenActive::Models::Schema::Person,URI]
+        define_property :by_artist, as: "byArtist", types: [
+          "OpenActive::Models::Schema::MusicGroup",
+          "OpenActive::Models::Schema::Person",
           "URI",
-        ]
-
-        # @return [OpenActive::Enums::Schema::MusicAlbumProductionType,nil]
-        define_property :album_production_type, as: "albumProductionType", types: [
-          "OpenActive::Enums::Schema::MusicAlbumProductionType",
-          "null",
         ]
 
         # @return [OpenActive::Enums::Schema::MusicAlbumReleaseType,nil]
@@ -26,10 +21,15 @@ module OpenActive
           "null",
         ]
 
-        # @return [OpenActive::Models::Schema::Person,OpenActive::Models::Schema::MusicGroup,URI]
-        define_property :by_artist, as: "byArtist", types: [
-          "OpenActive::Models::Schema::Person",
-          "OpenActive::Models::Schema::MusicGroup",
+        # @return [OpenActive::Enums::Schema::MusicAlbumProductionType,nil]
+        define_property :album_production_type, as: "albumProductionType", types: [
+          "OpenActive::Enums::Schema::MusicAlbumProductionType",
+          "null",
+        ]
+
+        # @return [OpenActive::Models::Schema::MusicRelease,URI]
+        define_property :album_release, as: "albumRelease", types: [
+          "OpenActive::Models::Schema::MusicRelease",
           "URI",
         ]
       end

@@ -1,7 +1,7 @@
 module OpenActive
   module Models
     module Schema
-      class MovieTheater < ::OpenActive::Models::Schema::CivicStructure
+      class MovieTheater < ::OpenActive::Models::Schema::EntertainmentBusiness
         # @!attribute type
         # @return [String]
         def type

@@ -8,42 +8,16 @@ module OpenActive
           "schema:NewsMediaOrganization"
         end
 
-        # @return [URI,OpenActive::Models::Schema::CreativeWork]
-        define_property :mission_coverage_priorities_policy, as: "missionCoveragePrioritiesPolicy", types: [
-          "URI",
-          "OpenActive::Models::Schema::CreativeWork",
-        ]
-
-        # @return [String,OpenActive::Models::Schema::CreativeWork,URI,OpenActive::Models::Schema::AboutPage]
-        define_property :ownership_funding_info, as: "ownershipFundingInfo", types: [
-          "string",
-          "OpenActive::Models::Schema::CreativeWork",
-          "URI",
-          "OpenActive::Models::Schema::AboutPage",
-        ]
-
-        # @return [OpenActive::Models::Schema::CreativeWork,URI]
-        define_property :diversity_policy, as: "diversityPolicy", types: [
-          "OpenActive::Models::Schema::CreativeWork",
-          "URI",
-        ]
-
         # @return [OpenActive::Models::Schema::CreativeWork,URI]
         define_property :no_bylines_policy, as: "noBylinesPolicy", types: [
           "OpenActive::Models::Schema::CreativeWork",
           "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::CreativeWork,URI]
-        define_property :actionable_feedback_policy, as: "actionableFeedbackPolicy", types: [
-          "OpenActive::Models::Schema::CreativeWork",
+        # @return [URI,OpenActive::Models::Schema::CreativeWork]
+        define_property :diversity_policy, as: "diversityPolicy", types: [
           "URI",
-        ]
-
-        # @return [OpenActive::Models::Schema::CreativeWork,URI]
-        define_property :verification_fact_checking_policy, as: "verificationFactCheckingPolicy", types: [
           "OpenActive::Models::Schema::CreativeWork",
-          "URI",
         ]
 
         # @return [OpenActive::Models::Schema::CreativeWork,URI]
@@ -53,21 +27,47 @@ module OpenActive
         ]
 
         # @return [URI,OpenActive::Models::Schema::CreativeWork]
-        define_property :ethics_policy, as: "ethicsPolicy", types: [
-          "URI",
-          "OpenActive::Models::Schema::CreativeWork",
-        ]
-
-        # @return [URI,OpenActive::Models::Schema::CreativeWork]
         define_property :corrections_policy, as: "correctionsPolicy", types: [
           "URI",
           "OpenActive::Models::Schema::CreativeWork",
         ]
 
-        # @return [URI,OpenActive::Models::Schema::Article]
-        define_property :diversity_staffing_report, as: "diversityStaffingReport", types: [
+        # @return [OpenActive::Models::Schema::CreativeWork,URI]
+        define_property :verification_fact_checking_policy, as: "verificationFactCheckingPolicy", types: [
+          "OpenActive::Models::Schema::CreativeWork",
           "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::Article,URI]
+        define_property :diversity_staffing_report, as: "diversityStaffingReport", types: [
           "OpenActive::Models::Schema::Article",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::CreativeWork,URI]
+        define_property :mission_coverage_priorities_policy, as: "missionCoveragePrioritiesPolicy", types: [
+          "OpenActive::Models::Schema::CreativeWork",
+          "URI",
+        ]
+
+        # @return [URI,OpenActive::Models::Schema::CreativeWork]
+        define_property :actionable_feedback_policy, as: "actionableFeedbackPolicy", types: [
+          "URI",
+          "OpenActive::Models::Schema::CreativeWork",
+        ]
+
+        # @return [URI,OpenActive::Models::Schema::CreativeWork]
+        define_property :ethics_policy, as: "ethicsPolicy", types: [
+          "URI",
+          "OpenActive::Models::Schema::CreativeWork",
+        ]
+
+        # @return [OpenActive::Models::Schema::AboutPage,OpenActive::Models::Schema::CreativeWork,String,URI]
+        define_property :ownership_funding_info, as: "ownershipFundingInfo", types: [
+          "OpenActive::Models::Schema::AboutPage",
+          "OpenActive::Models::Schema::CreativeWork",
+          "string",
+          "URI",
         ]
 
         # @return [OpenActive::Models::Schema::CreativeWork,URI]

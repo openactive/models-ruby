@@ -8,22 +8,9 @@ module OpenActive
           "schema:Permit"
         end
 
-        # @return [Date,DateTime,nil]
-        define_property :valid_from, as: "validFrom", types: [
-          "Date",
-          "DateTime",
-          "null",
-        ]
-
-        # @return [OpenActive::Models::Schema::AdministrativeArea,URI]
-        define_property :valid_in, as: "validIn", types: [
-          "OpenActive::Models::Schema::AdministrativeArea",
-          "URI",
-        ]
-
-        # @return [OpenActive::Models::Schema::Service,URI]
-        define_property :issued_through, as: "issuedThrough", types: [
-          "OpenActive::Models::Schema::Service",
+        # @return [OpenActive::Models::Schema::Organization,URI]
+        define_property :issued_by, as: "issuedBy", types: [
+          "OpenActive::Models::Schema::Organization",
           "URI",
         ]
 
@@ -34,15 +21,28 @@ module OpenActive
           "null",
         ]
 
-        # @return [OpenActive::Models::Schema::Organization,URI]
-        define_property :issued_by, as: "issuedBy", types: [
-          "OpenActive::Models::Schema::Organization",
-          "URI",
-        ]
-
         # @return [OpenActive::Models::Schema::Audience,URI]
         define_property :permit_audience, as: "permitAudience", types: [
           "OpenActive::Models::Schema::Audience",
+          "URI",
+        ]
+
+        # @return [Date,DateTime,nil]
+        define_property :valid_from, as: "validFrom", types: [
+          "Date",
+          "DateTime",
+          "null",
+        ]
+
+        # @return [OpenActive::Models::Schema::Service,URI]
+        define_property :issued_through, as: "issuedThrough", types: [
+          "OpenActive::Models::Schema::Service",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::AdministrativeArea,URI]
+        define_property :valid_in, as: "validIn", types: [
+          "OpenActive::Models::Schema::AdministrativeArea",
           "URI",
         ]
 

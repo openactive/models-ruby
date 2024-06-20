@@ -8,44 +8,27 @@ module OpenActive
           "schema:CDCPMDRecord"
         end
 
-        # @return [DateTime,String,nil]
-        define_property :cvd_collection_date, as: "cvdCollectionDate", types: [
+        # @return [BigDecimal,nil]
+        define_property :cvd_num_vent, as: "cvdNumVent", types: [
+          "Number",
+          "null",
+        ]
+
+        # @return [BigDecimal,nil]
+        define_property :cvd_num_icubeds, as: "cvdNumICUBeds", types: [
+          "Number",
+          "null",
+        ]
+
+        # @return [DateTime,Date,nil]
+        define_property :date_posted, as: "datePosted", types: [
           "DateTime",
-          "string",
-          "null",
-        ]
-
-        # @return [String]
-        define_property :cvd_facility_county, as: "cvdFacilityCounty", types: [
-          "string",
-        ]
-
-        # @return [BigDecimal,nil]
-        define_property :cvd_num_c19died, as: "cvdNumC19Died", types: [
-          "Number",
+          "Date",
           "null",
         ]
 
         # @return [BigDecimal,nil]
-        define_property :cvd_num_vent_use, as: "cvdNumVentUse", types: [
-          "Number",
-          "null",
-        ]
-
-        # @return [BigDecimal,nil]
-        define_property :cvd_num_beds_occ, as: "cvdNumBedsOcc", types: [
-          "Number",
-          "null",
-        ]
-
-        # @return [BigDecimal,nil]
-        define_property :cvd_num_c19ofmech_vent_pats, as: "cvdNumC19OFMechVentPats", types: [
-          "Number",
-          "null",
-        ]
-
-        # @return [BigDecimal,nil]
-        define_property :cvd_num_c19hosp_pats, as: "cvdNumC19HospPats", types: [
+        define_property :cvd_num_tot_beds, as: "cvdNumTotBeds", types: [
           "Number",
           "null",
         ]
@@ -62,13 +45,25 @@ module OpenActive
         ]
 
         # @return [BigDecimal,nil]
-        define_property :cvd_num_vent, as: "cvdNumVent", types: [
+        define_property :cvd_num_c19died, as: "cvdNumC19Died", types: [
           "Number",
           "null",
         ]
 
         # @return [BigDecimal,nil]
-        define_property :cvd_num_icubeds, as: "cvdNumICUBeds", types: [
+        define_property :cvd_num_vent_use, as: "cvdNumVentUse", types: [
+          "Number",
+          "null",
+        ]
+
+        # @return [BigDecimal,nil]
+        define_property :cvd_num_c19hosp_pats, as: "cvdNumC19HospPats", types: [
+          "Number",
+          "null",
+        ]
+
+        # @return [BigDecimal,nil]
+        define_property :cvd_num_beds_occ, as: "cvdNumBedsOcc", types: [
           "Number",
           "null",
         ]
@@ -79,10 +74,27 @@ module OpenActive
           "null",
         ]
 
-        # @return [Date,DateTime,nil]
-        define_property :date_posted, as: "datePosted", types: [
-          "Date",
+        # @return [BigDecimal,nil]
+        define_property :cvd_num_beds, as: "cvdNumBeds", types: [
+          "Number",
+          "null",
+        ]
+
+        # @return [String,DateTime,nil]
+        define_property :cvd_collection_date, as: "cvdCollectionDate", types: [
+          "string",
           "DateTime",
+          "null",
+        ]
+
+        # @return [String]
+        define_property :cvd_facility_county, as: "cvdFacilityCounty", types: [
+          "string",
+        ]
+
+        # @return [BigDecimal,nil]
+        define_property :cvd_num_c19ofmech_vent_pats, as: "cvdNumC19OFMechVentPats", types: [
+          "Number",
           "null",
         ]
 
@@ -93,19 +105,7 @@ module OpenActive
         ]
 
         # @return [BigDecimal,nil]
-        define_property :cvd_num_tot_beds, as: "cvdNumTotBeds", types: [
-          "Number",
-          "null",
-        ]
-
-        # @return [BigDecimal,nil]
         define_property :cvd_num_c19hopats, as: "cvdNumC19HOPats", types: [
-          "Number",
-          "null",
-        ]
-
-        # @return [BigDecimal,nil]
-        define_property :cvd_num_beds, as: "cvdNumBeds", types: [
           "Number",
           "null",
         ]

@@ -8,9 +8,9 @@ module OpenActive
           "schema:SoftwareApplication"
         end
 
-        # @return [OpenActive::Models::Schema::CreativeWork,URI]
-        define_property :software_help, as: "softwareHelp", types: [
-          "OpenActive::Models::Schema::CreativeWork",
+        # @return [String,URI]
+        define_property :feature_list, as: "featureList", types: [
+          "string",
           "URI",
         ]
 
@@ -20,44 +20,10 @@ module OpenActive
           "string",
         ]
 
-        # @return [URI]
-        define_property :download_url, as: "downloadUrl", types: [
+        # @return [OpenActive::Models::Schema::CreativeWork,URI]
+        define_property :software_help, as: "softwareHelp", types: [
+          "OpenActive::Models::Schema::CreativeWork",
           "URI",
-        ]
-
-        # @return [URI,String]
-        define_property :software_requirements, as: "softwareRequirements", types: [
-          "URI",
-          "string",
-        ]
-
-        # @return [URI,String]
-        define_property :memory_requirements, as: "memoryRequirements", types: [
-          "URI",
-          "string",
-        ]
-
-        # @return [OpenActive::Models::Schema::SoftwareApplication,URI]
-        define_property :software_add_on, as: "softwareAddOn", types: [
-          "OpenActive::Models::Schema::SoftwareApplication",
-          "URI",
-        ]
-
-        # @return [OpenActive::Models::Schema::DataFeed,URI]
-        define_property :supporting_data, as: "supportingData", types: [
-          "OpenActive::Models::Schema::DataFeed",
-          "URI",
-        ]
-
-        # @return [String]
-        define_property :countries_supported, as: "countriesSupported", types: [
-          "string",
-        ]
-
-        # @return [URI,String]
-        define_property :requirements, as: "requirements", types: [
-          "URI",
-          "string",
         ]
 
         # @return [URI]
@@ -65,20 +31,43 @@ module OpenActive
           "URI",
         ]
 
+        # @return [String,URI]
+        define_property :software_requirements, as: "softwareRequirements", types: [
+          "string",
+          "URI",
+        ]
+
+        # @return [String,URI]
+        define_property :release_notes, as: "releaseNotes", types: [
+          "string",
+          "URI",
+        ]
+
+        # @return [String,URI]
+        define_property :application_category, as: "applicationCategory", types: [
+          "string",
+          "URI",
+        ]
+
         # @return [String]
-        define_property :permissions, as: "permissions", types: [
+        define_property :application_suite, as: "applicationSuite", types: [
           "string",
         ]
 
-        # @return [URI,String]
-        define_property :feature_list, as: "featureList", types: [
-          "URI",
-          "string",
-        ]
-
-        # @return [URI,String]
+        # @return [String,URI]
         define_property :storage_requirements, as: "storageRequirements", types: [
+          "string",
           "URI",
+        ]
+
+        # @return [String,URI]
+        define_property :requirements, as: "requirements", types: [
+          "string",
+          "URI",
+        ]
+
+        # @return [String]
+        define_property :software_version, as: "softwareVersion", types: [
           "string",
         ]
 
@@ -87,8 +76,30 @@ module OpenActive
           "string",
         ]
 
+        # @return [OpenActive::Models::Schema::DataFeed,URI]
+        define_property :supporting_data, as: "supportingData", types: [
+          "OpenActive::Models::Schema::DataFeed",
+          "URI",
+        ]
+
+        # @return [String,URI]
+        define_property :memory_requirements, as: "memoryRequirements", types: [
+          "string",
+          "URI",
+        ]
+
+        # @return [URI]
+        define_property :download_url, as: "downloadUrl", types: [
+          "URI",
+        ]
+
         # @return [String]
         define_property :operating_system, as: "operatingSystem", types: [
+          "string",
+        ]
+
+        # @return [String]
+        define_property :device, as: "device", types: [
           "string",
         ]
 
@@ -99,7 +110,7 @@ module OpenActive
         ]
 
         # @return [String]
-        define_property :software_version, as: "softwareVersion", types: [
+        define_property :countries_supported, as: "countriesSupported", types: [
           "string",
         ]
 
@@ -109,25 +120,14 @@ module OpenActive
         ]
 
         # @return [String]
-        define_property :device, as: "device", types: [
+        define_property :processor_requirements, as: "processorRequirements", types: [
           "string",
         ]
 
-        # @return [URI,String]
-        define_property :application_category, as: "applicationCategory", types: [
+        # @return [OpenActive::Models::Schema::SoftwareApplication,URI]
+        define_property :software_add_on, as: "softwareAddOn", types: [
+          "OpenActive::Models::Schema::SoftwareApplication",
           "URI",
-          "string",
-        ]
-
-        # @return [URI,String]
-        define_property :release_notes, as: "releaseNotes", types: [
-          "URI",
-          "string",
-        ]
-
-        # @return [String]
-        define_property :application_suite, as: "applicationSuite", types: [
-          "string",
         ]
 
         # @return [String]
@@ -136,7 +136,7 @@ module OpenActive
         ]
 
         # @return [String]
-        define_property :processor_requirements, as: "processorRequirements", types: [
+        define_property :permissions, as: "permissions", types: [
           "string",
         ]
       end

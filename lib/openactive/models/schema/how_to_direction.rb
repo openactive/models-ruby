@@ -8,6 +8,19 @@ module OpenActive
           "schema:HowToDirection"
         end
 
+        # @return [OpenActive::Models::Schema::HowToSupply,String,URI]
+        define_property :supply, as: "supply", types: [
+          "OpenActive::Models::Schema::HowToSupply",
+          "string",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::MediaObject,URI]
+        define_property :before_media, as: "beforeMedia", types: [
+          "OpenActive::Models::Schema::MediaObject",
+          "URI",
+        ]
+
         # @return [OpenActive::Models::Schema::HowToTool,String,URI]
         define_property :tool, as: "tool", types: [
           "OpenActive::Models::Schema::HowToTool",
@@ -22,6 +35,12 @@ module OpenActive
           "null",
         ]
 
+        # @return [URI,OpenActive::Models::Schema::MediaObject]
+        define_property :during_media, as: "duringMedia", types: [
+          "URI",
+          "OpenActive::Models::Schema::MediaObject",
+        ]
+
         # @return [ActiveSupport::Duration,URI,nil]
         define_property :prep_time, as: "prepTime", types: [
           "DateInterval",
@@ -29,30 +48,11 @@ module OpenActive
           "null",
         ]
 
-        # @return [URI,OpenActive::Models::Schema::MediaObject]
-        define_property :during_media, as: "duringMedia", types: [
-          "URI",
-          "OpenActive::Models::Schema::MediaObject",
-        ]
-
-        # @return [String,OpenActive::Models::Schema::HowToSupply,URI]
-        define_property :supply, as: "supply", types: [
-          "string",
-          "OpenActive::Models::Schema::HowToSupply",
-          "URI",
-        ]
-
         # @return [ActiveSupport::Duration,URI,nil]
         define_property :perform_time, as: "performTime", types: [
           "DateInterval",
           "URI",
           "null",
-        ]
-
-        # @return [URI,OpenActive::Models::Schema::MediaObject]
-        define_property :before_media, as: "beforeMedia", types: [
-          "URI",
-          "OpenActive::Models::Schema::MediaObject",
         ]
 
         # @return [URI,OpenActive::Models::Schema::MediaObject]

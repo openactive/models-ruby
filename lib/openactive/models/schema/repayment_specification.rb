@@ -8,12 +8,10 @@ module OpenActive
           "schema:RepaymentSpecification"
         end
 
-        # @return [BigDecimal,OpenActive::Models::Schema::MonetaryAmount,URI,nil]
-        define_property :down_payment, as: "downPayment", types: [
-          "Number",
+        # @return [OpenActive::Models::Schema::MonetaryAmount,URI]
+        define_property :loan_payment_amount, as: "loanPaymentAmount", types: [
           "OpenActive::Models::Schema::MonetaryAmount",
           "URI",
-          "null",
         ]
 
         # @return [OpenActive::Models::Schema::MonetaryAmount,URI]
@@ -22,10 +20,12 @@ module OpenActive
           "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::MonetaryAmount,URI]
-        define_property :loan_payment_amount, as: "loanPaymentAmount", types: [
+        # @return [BigDecimal,OpenActive::Models::Schema::MonetaryAmount,URI,nil]
+        define_property :down_payment, as: "downPayment", types: [
+          "Number",
           "OpenActive::Models::Schema::MonetaryAmount",
           "URI",
+          "null",
         ]
 
         # @return [BigDecimal,nil]

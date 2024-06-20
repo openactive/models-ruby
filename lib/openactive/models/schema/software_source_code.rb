@@ -9,6 +9,28 @@ module OpenActive
         end
 
         # @return [String]
+        define_property :sample_type, as: "sampleType", types: [
+          "string",
+        ]
+
+        # @return [URI]
+        define_property :code_repository, as: "codeRepository", types: [
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::ComputerLanguage,String,URI]
+        define_property :programming_language, as: "programmingLanguage", types: [
+          "OpenActive::Models::Schema::ComputerLanguage",
+          "string",
+          "URI",
+        ]
+
+        # @return [String]
+        define_property :runtime_platform, as: "runtimePlatform", types: [
+          "string",
+        ]
+
+        # @return [String]
         define_property :runtime, as: "runtime", types: [
           "string",
         ]
@@ -22,28 +44,6 @@ module OpenActive
         define_property :target_product, as: "targetProduct", types: [
           "OpenActive::Models::Schema::SoftwareApplication",
           "URI",
-        ]
-
-        # @return [OpenActive::Models::Schema::ComputerLanguage,String,URI]
-        define_property :programming_language, as: "programmingLanguage", types: [
-          "OpenActive::Models::Schema::ComputerLanguage",
-          "string",
-          "URI",
-        ]
-
-        # @return [URI]
-        define_property :code_repository, as: "codeRepository", types: [
-          "URI",
-        ]
-
-        # @return [String]
-        define_property :sample_type, as: "sampleType", types: [
-          "string",
-        ]
-
-        # @return [String]
-        define_property :runtime_platform, as: "runtimePlatform", types: [
-          "string",
         ]
       end
     end

@@ -1,7 +1,7 @@
 module OpenActive
   module Models
     module Schema
-      class PoliceStation < ::OpenActive::Models::Schema::CivicStructure
+      class PoliceStation < ::OpenActive::Models::Schema::EmergencyService
         # @!attribute type
         # @return [String]
         def type

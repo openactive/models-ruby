@@ -8,16 +8,16 @@ module OpenActive
           "schema:ScreeningEvent"
         end
 
-        # @return [OpenActive::Models::Schema::Movie,URI]
-        define_property :work_presented, as: "workPresented", types: [
-          "OpenActive::Models::Schema::Movie",
-          "URI",
-        ]
-
         # @return [String,OpenActive::Models::Schema::Language,URI]
         define_property :subtitle_language, as: "subtitleLanguage", types: [
           "string",
           "OpenActive::Models::Schema::Language",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::Movie,URI]
+        define_property :work_presented, as: "workPresented", types: [
+          "OpenActive::Models::Schema::Movie",
           "URI",
         ]
 

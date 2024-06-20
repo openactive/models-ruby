@@ -8,19 +8,27 @@ module OpenActive
           "schema:Flight"
         end
 
-        # @return [ActiveSupport::Duration,String,URI,nil]
-        define_property :estimated_flight_duration, as: "estimatedFlightDuration", types: [
-          "DateInterval",
-          "string",
-          "URI",
+        # @return [OpenActive::Enums::Schema::BoardingPolicyType,nil]
+        define_property :boarding_policy, as: "boardingPolicy", types: [
+          "OpenActive::Enums::Schema::BoardingPolicyType",
           "null",
         ]
 
-        # @return [OpenActive::Models::Schema::Organization,OpenActive::Models::Schema::Person,URI]
-        define_property :seller, as: "seller", types: [
-          "OpenActive::Models::Schema::Organization",
-          "OpenActive::Models::Schema::Person",
+        # @return [String]
+        define_property :departure_terminal, as: "departureTerminal", types: [
+          "string",
+        ]
+
+        # @return [OpenActive::Models::Schema::Distance,String,URI]
+        define_property :flight_distance, as: "flightDistance", types: [
+          "OpenActive::Models::Schema::Distance",
+          "string",
           "URI",
+        ]
+
+        # @return [String]
+        define_property :departure_gate, as: "departureGate", types: [
+          "string",
         ]
 
         # @return [String]
@@ -29,12 +37,12 @@ module OpenActive
         ]
 
         # @return [String]
-        define_property :departure_gate, as: "departureGate", types: [
+        define_property :arrival_terminal, as: "arrivalTerminal", types: [
           "string",
         ]
 
         # @return [OpenActive::Models::Schema::Airport,URI]
-        define_property :departure_airport, as: "departureAirport", types: [
+        define_property :arrival_airport, as: "arrivalAirport", types: [
           "OpenActive::Models::Schema::Airport",
           "URI",
         ]
@@ -46,20 +54,23 @@ module OpenActive
           "URI",
         ]
 
-        # @return [String]
-        define_property :arrival_gate, as: "arrivalGate", types: [
-          "string",
-        ]
-
-        # @return [OpenActive::Models::Schema::Airport,URI]
-        define_property :arrival_airport, as: "arrivalAirport", types: [
-          "OpenActive::Models::Schema::Airport",
-          "URI",
+        # @return [DateTime,nil]
+        define_property :web_checkin_time, as: "webCheckinTime", types: [
+          "DateTime",
+          "null",
         ]
 
         # @return [String]
         define_property :meal_service, as: "mealService", types: [
           "string",
+        ]
+
+        # @return [ActiveSupport::Duration,String,URI,nil]
+        define_property :estimated_flight_duration, as: "estimatedFlightDuration", types: [
+          "DateInterval",
+          "string",
+          "URI",
+          "null",
         ]
 
         # @return [OpenActive::Models::Schema::Organization,URI]
@@ -68,33 +79,22 @@ module OpenActive
           "URI",
         ]
 
-        # @return [String]
-        define_property :departure_terminal, as: "departureTerminal", types: [
-          "string",
-        ]
-
-        # @return [String]
-        define_property :arrival_terminal, as: "arrivalTerminal", types: [
-          "string",
-        ]
-
-        # @return [String,OpenActive::Models::Schema::Distance,URI]
-        define_property :flight_distance, as: "flightDistance", types: [
-          "string",
-          "OpenActive::Models::Schema::Distance",
+        # @return [OpenActive::Models::Schema::Airport,URI]
+        define_property :departure_airport, as: "departureAirport", types: [
+          "OpenActive::Models::Schema::Airport",
           "URI",
         ]
 
-        # @return [DateTime,nil]
-        define_property :web_checkin_time, as: "webCheckinTime", types: [
-          "DateTime",
-          "null",
+        # @return [OpenActive::Models::Schema::Person,OpenActive::Models::Schema::Organization,URI]
+        define_property :seller, as: "seller", types: [
+          "OpenActive::Models::Schema::Person",
+          "OpenActive::Models::Schema::Organization",
+          "URI",
         ]
 
-        # @return [OpenActive::Enums::Schema::BoardingPolicyType,nil]
-        define_property :boarding_policy, as: "boardingPolicy", types: [
-          "OpenActive::Enums::Schema::BoardingPolicyType",
-          "null",
+        # @return [String]
+        define_property :arrival_gate, as: "arrivalGate", types: [
+          "string",
         ]
       end
     end

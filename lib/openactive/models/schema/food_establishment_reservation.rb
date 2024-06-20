@@ -15,17 +15,17 @@ module OpenActive
           "null",
         ]
 
-        # @return [DateTime,Time,nil]
+        # @return [Time,DateTime,nil]
         define_property :start_time, as: "startTime", types: [
-          "DateTime",
           "Time",
+          "DateTime",
           "null",
         ]
 
-        # @return [OpenActive::Models::Schema::QuantitativeValue,int,URI,nil]
+        # @return [int,OpenActive::Models::Schema::QuantitativeValue,URI,nil]
         define_property :party_size, as: "partySize", types: [
-          "OpenActive::Models::Schema::QuantitativeValue",
           "int",
+          "OpenActive::Models::Schema::QuantitativeValue",
           "URI",
           "null",
         ]

@@ -8,20 +8,20 @@ module OpenActive
           "schema:Joint"
         end
 
-        # @return [String,OpenActive::Models::Schema::MedicalEntity,URI]
+        # @return [OpenActive::Models::Schema::MedicalEntity,String,URI]
         define_property :functional_class, as: "functionalClass", types: [
-          "string",
           "OpenActive::Models::Schema::MedicalEntity",
+          "string",
           "URI",
         ]
 
         # @return [String]
-        define_property :biomechnical_class, as: "biomechnicalClass", types: [
+        define_property :structural_class, as: "structuralClass", types: [
           "string",
         ]
 
         # @return [String]
-        define_property :structural_class, as: "structuralClass", types: [
+        define_property :biomechnical_class, as: "biomechnicalClass", types: [
           "string",
         ]
       end

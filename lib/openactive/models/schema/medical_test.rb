@@ -8,15 +8,16 @@ module OpenActive
           "schema:MedicalTest"
         end
 
+        # @return [String,OpenActive::Enums::Schema::MedicalEnumeration,nil]
+        define_property :normal_range, as: "normalRange", types: [
+          "string",
+          "OpenActive::Enums::Schema::MedicalEnumeration",
+          "null",
+        ]
+
         # @return [OpenActive::Models::Schema::MedicalCondition,URI]
         define_property :used_to_diagnose, as: "usedToDiagnose", types: [
           "OpenActive::Models::Schema::MedicalCondition",
-          "URI",
-        ]
-
-        # @return [OpenActive::Models::Schema::MedicalSign,URI]
-        define_property :sign_detected, as: "signDetected", types: [
-          "OpenActive::Models::Schema::MedicalSign",
           "URI",
         ]
 
@@ -26,11 +27,10 @@ module OpenActive
           "URI",
         ]
 
-        # @return [OpenActive::Enums::Schema::MedicalEnumeration,String,nil]
-        define_property :normal_range, as: "normalRange", types: [
-          "OpenActive::Enums::Schema::MedicalEnumeration",
-          "string",
-          "null",
+        # @return [OpenActive::Models::Schema::MedicalSign,URI]
+        define_property :sign_detected, as: "signDetected", types: [
+          "OpenActive::Models::Schema::MedicalSign",
+          "URI",
         ]
 
         # @return [OpenActive::Models::Schema::Drug,URI]

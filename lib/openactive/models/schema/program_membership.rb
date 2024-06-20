@@ -8,28 +8,10 @@ module OpenActive
           "schema:ProgramMembership"
         end
 
-        # @return [String]
-        define_property :program_name, as: "programName", types: [
-          "string",
-        ]
-
-        # @return [OpenActive::Models::Schema::QuantitativeValue,BigDecimal,URI,nil]
-        define_property :membership_points_earned, as: "membershipPointsEarned", types: [
-          "OpenActive::Models::Schema::QuantitativeValue",
-          "Number",
-          "URI",
-          "null",
-        ]
-
         # @return [OpenActive::Models::Schema::Organization,URI]
         define_property :hosting_organization, as: "hostingOrganization", types: [
           "OpenActive::Models::Schema::Organization",
           "URI",
-        ]
-
-        # @return [String]
-        define_property :membership_number, as: "membershipNumber", types: [
-          "string",
         ]
 
         # @return [OpenActive::Models::Schema::Person,OpenActive::Models::Schema::Organization,URI]
@@ -39,10 +21,28 @@ module OpenActive
           "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::Organization,OpenActive::Models::Schema::Person,URI]
+        # @return [String]
+        define_property :program_name, as: "programName", types: [
+          "string",
+        ]
+
+        # @return [BigDecimal,OpenActive::Models::Schema::QuantitativeValue,URI,nil]
+        define_property :membership_points_earned, as: "membershipPointsEarned", types: [
+          "Number",
+          "OpenActive::Models::Schema::QuantitativeValue",
+          "URI",
+          "null",
+        ]
+
+        # @return [String]
+        define_property :membership_number, as: "membershipNumber", types: [
+          "string",
+        ]
+
+        # @return [OpenActive::Models::Schema::Person,OpenActive::Models::Schema::Organization,URI]
         define_property :member, as: "member", types: [
-          "OpenActive::Models::Schema::Organization",
           "OpenActive::Models::Schema::Person",
+          "OpenActive::Models::Schema::Organization",
           "URI",
         ]
       end

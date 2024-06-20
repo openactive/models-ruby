@@ -14,16 +14,16 @@ module OpenActive
           "URI",
         ]
 
+        # @return [OpenActive::Models::Schema::Recipe,URI]
+        define_property :recipe, as: "recipe", types: [
+          "OpenActive::Models::Schema::Recipe",
+          "URI",
+        ]
+
         # @return [OpenActive::Models::Schema::FoodEstablishment,OpenActive::Models::Schema::Place,URI]
         define_property :food_establishment, as: "foodEstablishment", types: [
           "OpenActive::Models::Schema::FoodEstablishment",
           "OpenActive::Models::Schema::Place",
-          "URI",
-        ]
-
-        # @return [OpenActive::Models::Schema::Recipe,URI]
-        define_property :recipe, as: "recipe", types: [
-          "OpenActive::Models::Schema::Recipe",
           "URI",
         ]
       end

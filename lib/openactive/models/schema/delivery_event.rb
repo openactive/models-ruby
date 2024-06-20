@@ -8,13 +8,14 @@ module OpenActive
           "schema:DeliveryEvent"
         end
 
-        # @return [String]
-        define_property :access_code, as: "accessCode", types: [
-          "string",
+        # @return [DateTime,nil]
+        define_property :available_from, as: "availableFrom", types: [
+          "DateTime",
+          "null",
         ]
 
         # @return [DateTime,nil]
-        define_property :available_from, as: "availableFrom", types: [
+        define_property :available_through, as: "availableThrough", types: [
           "DateTime",
           "null",
         ]
@@ -25,10 +26,9 @@ module OpenActive
           "null",
         ]
 
-        # @return [DateTime,nil]
-        define_property :available_through, as: "availableThrough", types: [
-          "DateTime",
-          "null",
+        # @return [String]
+        define_property :access_code, as: "accessCode", types: [
+          "string",
         ]
       end
     end

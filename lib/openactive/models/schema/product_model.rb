@@ -20,10 +20,10 @@ module OpenActive
           "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::ProductGroup,OpenActive::Models::Schema::ProductModel,URI]
+        # @return [OpenActive::Models::Schema::ProductModel,OpenActive::Models::Schema::ProductGroup,URI]
         define_property :is_variant_of, as: "isVariantOf", types: [
-          "OpenActive::Models::Schema::ProductGroup",
           "OpenActive::Models::Schema::ProductModel",
+          "OpenActive::Models::Schema::ProductGroup",
           "URI",
         ]
       end

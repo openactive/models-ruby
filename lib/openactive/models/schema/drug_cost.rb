@@ -8,27 +8,12 @@ module OpenActive
           "schema:DrugCost"
         end
 
-        # @return [String]
-        define_property :cost_currency, as: "costCurrency", types: [
-          "string",
-        ]
-
-        # @return [BigDecimal,String,OpenActive::Enums::Schema::QualitativeValue,nil]
+        # @return [OpenActive::Enums::Schema::QualitativeValue,BigDecimal,String,nil]
         define_property :cost_per_unit, as: "costPerUnit", types: [
+          "OpenActive::Enums::Schema::QualitativeValue",
           "Number",
           "string",
-          "OpenActive::Enums::Schema::QualitativeValue",
           "null",
-        ]
-
-        # @return [String]
-        define_property :cost_origin, as: "costOrigin", types: [
-          "string",
-        ]
-
-        # @return [String]
-        define_property :drug_unit, as: "drugUnit", types: [
-          "string",
         ]
 
         # @return [OpenActive::Models::Schema::AdministrativeArea,URI]
@@ -37,10 +22,25 @@ module OpenActive
           "URI",
         ]
 
+        # @return [String]
+        define_property :drug_unit, as: "drugUnit", types: [
+          "string",
+        ]
+
         # @return [OpenActive::Models::Schema::DrugCostCategory,URI]
         define_property :cost_category, as: "costCategory", types: [
           "OpenActive::Models::Schema::DrugCostCategory",
           "URI",
+        ]
+
+        # @return [String]
+        define_property :cost_origin, as: "costOrigin", types: [
+          "string",
+        ]
+
+        # @return [String]
+        define_property :cost_currency, as: "costCurrency", types: [
+          "string",
         ]
       end
     end
