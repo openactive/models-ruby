@@ -8,10 +8,10 @@ module OpenActive
           "schema:MediaReview"
         end
 
-        # @return [OpenActive::Models::Schema::WebPage,URI,OpenActive::Models::Schema::MediaObject]
+        # @return [URI,OpenActive::Models::Schema::WebPage,OpenActive::Models::Schema::MediaObject]
         define_property :original_media_link, as: "originalMediaLink", types: [
-          "OpenActive::Models::Schema::WebPage",
           "URI",
+          "OpenActive::Models::Schema::WebPage",
           "OpenActive::Models::Schema::MediaObject",
         ]
 

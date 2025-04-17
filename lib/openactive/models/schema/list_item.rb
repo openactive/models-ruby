@@ -8,17 +8,11 @@ module OpenActive
           "schema:ListItem"
         end
 
-        # @return [int,String,nil]
+        # @return [String,int,nil]
         define_property :position, as: "position", types: [
-          "int",
           "string",
+          "int",
           "null",
-        ]
-
-        # @return [OpenActive::Models::Schema::ListItem,URI]
-        define_property :next_item, as: "nextItem", types: [
-          "OpenActive::Models::Schema::ListItem",
-          "URI",
         ]
 
         # @return [OpenActive::Models::Schema::Thing,URI]
@@ -29,6 +23,12 @@ module OpenActive
 
         # @return [OpenActive::Models::Schema::ListItem,URI]
         define_property :previous_item, as: "previousItem", types: [
+          "OpenActive::Models::Schema::ListItem",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::ListItem,URI]
+        define_property :next_item, as: "nextItem", types: [
           "OpenActive::Models::Schema::ListItem",
           "URI",
         ]

@@ -8,6 +8,13 @@ module OpenActive
           "schema:VideoObject"
         end
 
+        # @return [OpenActive::Models::Schema::Person,OpenActive::Models::Schema::PerformingGroup,URI]
+        define_property :actor, as: "actor", types: [
+          "OpenActive::Models::Schema::Person",
+          "OpenActive::Models::Schema::PerformingGroup",
+          "URI",
+        ]
+
         # @return [OpenActive::Models::Schema::Person,URI]
         define_property :actors, as: "actors", types: [
           "OpenActive::Models::Schema::Person",
@@ -15,8 +22,14 @@ module OpenActive
         ]
 
         # @return [String]
-        define_property :embedded_text_caption, as: "embeddedTextCaption", types: [
+        define_property :transcript, as: "transcript", types: [
           "string",
+        ]
+
+        # @return [OpenActive::Models::Schema::Person,URI]
+        define_property :directors, as: "directors", types: [
+          "OpenActive::Models::Schema::Person",
+          "URI",
         ]
 
         # @return [String]
@@ -24,21 +37,22 @@ module OpenActive
           "string",
         ]
 
-        # @return [String,OpenActive::Models::Schema::MediaObject,URI]
-        define_property :caption, as: "caption", types: [
-          "string",
-          "OpenActive::Models::Schema::MediaObject",
-          "URI",
-        ]
-
         # @return [String]
         define_property :video_frame_size, as: "videoFrameSize", types: [
           "string",
         ]
 
-        # @return [String]
-        define_property :transcript, as: "transcript", types: [
+        # @return [OpenActive::Models::Schema::Person,URI]
+        define_property :director, as: "director", types: [
+          "OpenActive::Models::Schema::Person",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::MediaObject,String,URI]
+        define_property :caption, as: "caption", types: [
+          "OpenActive::Models::Schema::MediaObject",
           "string",
+          "URI",
         ]
 
         # @return [OpenActive::Models::Schema::Person,OpenActive::Models::Schema::MusicGroup,URI]
@@ -48,22 +62,9 @@ module OpenActive
           "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::Person,URI]
-        define_property :directors, as: "directors", types: [
-          "OpenActive::Models::Schema::Person",
-          "URI",
-        ]
-
-        # @return [OpenActive::Models::Schema::Person,URI]
-        define_property :director, as: "director", types: [
-          "OpenActive::Models::Schema::Person",
-          "URI",
-        ]
-
-        # @return [OpenActive::Models::Schema::Person,URI]
-        define_property :actor, as: "actor", types: [
-          "OpenActive::Models::Schema::Person",
-          "URI",
+        # @return [String]
+        define_property :embedded_text_caption, as: "embeddedTextCaption", types: [
+          "string",
         ]
       end
     end

@@ -8,10 +8,10 @@ module OpenActive
           "schema:DefinedTerm"
         end
 
-        # @return [OpenActive::Models::Schema::DefinedTermSet,URI]
+        # @return [URI,OpenActive::Models::Schema::DefinedTermSet]
         define_property :in_defined_term_set, as: "inDefinedTermSet", types: [
-          "OpenActive::Models::Schema::DefinedTermSet",
           "URI",
+          "OpenActive::Models::Schema::DefinedTermSet",
         ]
 
         # @return [String]

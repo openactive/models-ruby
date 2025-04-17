@@ -20,16 +20,16 @@ module OpenActive
           "URI",
         ]
 
+        # @return [String]
+        define_property :video_format, as: "videoFormat", types: [
+          "string",
+        ]
+
         # @return [String,OpenActive::Models::Schema::Language,URI]
         define_property :subtitle_language, as: "subtitleLanguage", types: [
           "string",
           "OpenActive::Models::Schema::Language",
           "URI",
-        ]
-
-        # @return [String]
-        define_property :video_format, as: "videoFormat", types: [
-          "string",
         ]
       end
     end

@@ -9,12 +9,12 @@ module OpenActive
         end
 
         # @return [String]
-        define_property :postal_code_begin, as: "postalCodeBegin", types: [
+        define_property :postal_code_end, as: "postalCodeEnd", types: [
           "string",
         ]
 
         # @return [String]
-        define_property :postal_code_end, as: "postalCodeEnd", types: [
+        define_property :postal_code_begin, as: "postalCodeBegin", types: [
           "string",
         ]
       end

@@ -8,21 +8,20 @@ module OpenActive
           "schema:HealthInsurancePlan"
         end
 
-        # @return [OpenActive::Models::Schema::HealthPlanFormulary,URI]
-        define_property :includes_health_plan_formulary, as: "includesHealthPlanFormulary", types: [
-          "OpenActive::Models::Schema::HealthPlanFormulary",
+        # @return [String,URI]
+        define_property :uses_health_plan_id_standard, as: "usesHealthPlanIdStandard", types: [
+          "string",
+          "URI",
+        ]
+
+        # @return [URI]
+        define_property :benefits_summary_url, as: "benefitsSummaryUrl", types: [
           "URI",
         ]
 
         # @return [URI]
         define_property :health_plan_marketing_url, as: "healthPlanMarketingUrl", types: [
           "URI",
-        ]
-
-        # @return [URI,String]
-        define_property :uses_health_plan_id_standard, as: "usesHealthPlanIdStandard", types: [
-          "URI",
-          "string",
         ]
 
         # @return [OpenActive::Models::Schema::ContactPoint,URI]
@@ -36,13 +35,9 @@ module OpenActive
           "string",
         ]
 
-        # @return [String]
-        define_property :health_plan_drug_option, as: "healthPlanDrugOption", types: [
-          "string",
-        ]
-
-        # @return [URI]
-        define_property :benefits_summary_url, as: "benefitsSummaryUrl", types: [
+        # @return [OpenActive::Models::Schema::HealthPlanFormulary,URI]
+        define_property :includes_health_plan_formulary, as: "includesHealthPlanFormulary", types: [
+          "OpenActive::Models::Schema::HealthPlanFormulary",
           "URI",
         ]
 
@@ -50,6 +45,11 @@ module OpenActive
         define_property :includes_health_plan_network, as: "includesHealthPlanNetwork", types: [
           "OpenActive::Models::Schema::HealthPlanNetwork",
           "URI",
+        ]
+
+        # @return [String]
+        define_property :health_plan_drug_option, as: "healthPlanDrugOption", types: [
+          "string",
         ]
 
         # @return [String]

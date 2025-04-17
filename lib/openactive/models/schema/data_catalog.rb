@@ -8,26 +8,26 @@ module OpenActive
           "schema:DataCatalog"
         end
 
-        # @return [OpenActive::Models::Schema::DefinedTerm,URI,String,OpenActive::Enums::Schema::MeasurementMethodEnum,nil]
-        define_property :measurement_technique, as: "measurementTechnique", types: [
-          "OpenActive::Models::Schema::DefinedTerm",
-          "URI",
-          "string",
-          "OpenActive::Enums::Schema::MeasurementMethodEnum",
-          "null",
-        ]
-
         # @return [OpenActive::Models::Schema::Dataset,URI]
         define_property :dataset, as: "dataset", types: [
           "OpenActive::Models::Schema::Dataset",
           "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::DefinedTerm,URI,String,OpenActive::Enums::Schema::MeasurementMethodEnum,nil]
+        # @return [URI,OpenActive::Models::Schema::DefinedTerm,OpenActive::Enums::Schema::MeasurementMethodEnum,String,nil]
         define_property :measurement_method, as: "measurementMethod", types: [
-          "OpenActive::Models::Schema::DefinedTerm",
           "URI",
+          "OpenActive::Models::Schema::DefinedTerm",
+          "OpenActive::Enums::Schema::MeasurementMethodEnum",
           "string",
+          "null",
+        ]
+
+        # @return [String,URI,OpenActive::Models::Schema::DefinedTerm,OpenActive::Enums::Schema::MeasurementMethodEnum,nil]
+        define_property :measurement_technique, as: "measurementTechnique", types: [
+          "string",
+          "URI",
+          "OpenActive::Models::Schema::DefinedTerm",
           "OpenActive::Enums::Schema::MeasurementMethodEnum",
           "null",
         ]

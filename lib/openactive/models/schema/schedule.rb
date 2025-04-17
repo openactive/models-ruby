@@ -8,24 +8,17 @@ module OpenActive
           "schema:Schedule"
         end
 
-        # @return [ActiveSupport::Duration,String,URI,nil]
-        define_property :repeat_frequency, as: "repeatFrequency", types: [
-          "DateInterval",
-          "string",
-          "URI",
-          "null",
-        ]
-
-        # @return [int,nil]
-        define_property :by_month, as: "byMonth", types: [
-          "int",
-          "null",
-        ]
-
-        # @return [OpenActive::Enums::Schema::DayOfWeek,String,nil]
+        # @return [String,OpenActive::Enums::Schema::DayOfWeek,nil]
         define_property :by_day, as: "byDay", types: [
-          "OpenActive::Enums::Schema::DayOfWeek",
           "string",
+          "OpenActive::Enums::Schema::DayOfWeek",
+          "null",
+        ]
+
+        # @return [DateTime,Time,nil]
+        define_property :end_time, as: "endTime", types: [
+          "DateTime",
+          "Time",
           "null",
         ]
 
@@ -35,17 +28,16 @@ module OpenActive
           "null",
         ]
 
-        # @return [Date,DateTime,nil]
-        define_property :start_date, as: "startDate", types: [
-          "Date",
-          "DateTime",
+        # @return [int,nil]
+        define_property :by_month_week, as: "byMonthWeek", types: [
+          "int",
           "null",
         ]
 
-        # @return [DateTime,Time,nil]
-        define_property :end_time, as: "endTime", types: [
+        # @return [DateTime,Date,nil]
+        define_property :start_date, as: "startDate", types: [
           "DateTime",
-          "Time",
+          "Date",
           "null",
         ]
 
@@ -63,7 +55,7 @@ module OpenActive
         ]
 
         # @return [int,nil]
-        define_property :by_month_week, as: "byMonthWeek", types: [
+        define_property :by_month, as: "byMonth", types: [
           "int",
           "null",
         ]
@@ -75,22 +67,30 @@ module OpenActive
           "null",
         ]
 
+        # @return [String,ActiveSupport::Duration,URI,nil]
+        define_property :repeat_frequency, as: "repeatFrequency", types: [
+          "string",
+          "DateInterval",
+          "URI",
+          "null",
+        ]
+
         # @return [String]
         define_property :schedule_timezone, as: "scheduleTimezone", types: [
           "string",
         ]
 
         # @return [Date,DateTime,nil]
-        define_property :except_date, as: "exceptDate", types: [
+        define_property :end_date, as: "endDate", types: [
           "Date",
           "DateTime",
           "null",
         ]
 
-        # @return [Date,DateTime,nil]
-        define_property :end_date, as: "endDate", types: [
-          "Date",
+        # @return [DateTime,Date,nil]
+        define_property :except_date, as: "exceptDate", types: [
           "DateTime",
+          "Date",
           "null",
         ]
       end

@@ -9,13 +9,13 @@ module OpenActive
         end
 
         # @return [OpenActive::Models::Schema::AnatomicalStructure,URI]
-        define_property :arterial_branch, as: "arterialBranch", types: [
+        define_property :supply_to, as: "supplyTo", types: [
           "OpenActive::Models::Schema::AnatomicalStructure",
           "URI",
         ]
 
         # @return [OpenActive::Models::Schema::AnatomicalStructure,URI]
-        define_property :supply_to, as: "supplyTo", types: [
+        define_property :arterial_branch, as: "arterialBranch", types: [
           "OpenActive::Models::Schema::AnatomicalStructure",
           "URI",
         ]

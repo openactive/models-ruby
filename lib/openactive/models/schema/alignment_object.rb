@@ -8,19 +8,14 @@ module OpenActive
           "schema:AlignmentObject"
         end
 
-        # @return [URI]
-        define_property :target_url, as: "targetUrl", types: [
-          "URI",
-        ]
-
-        # @return [String]
-        define_property :target_name, as: "targetName", types: [
-          "string",
-        ]
-
         # @return [String]
         define_property :educational_framework, as: "educationalFramework", types: [
           "string",
+        ]
+
+        # @return [URI]
+        define_property :target_url, as: "targetUrl", types: [
+          "URI",
         ]
 
         # @return [String]
@@ -30,6 +25,11 @@ module OpenActive
 
         # @return [String]
         define_property :target_description, as: "targetDescription", types: [
+          "string",
+        ]
+
+        # @return [String]
+        define_property :target_name, as: "targetName", types: [
           "string",
         ]
       end

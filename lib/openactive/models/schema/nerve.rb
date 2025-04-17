@@ -20,10 +20,10 @@ module OpenActive
           "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::SuperficialAnatomy,OpenActive::Models::Schema::AnatomicalStructure,URI]
+        # @return [OpenActive::Models::Schema::AnatomicalStructure,OpenActive::Models::Schema::SuperficialAnatomy,URI]
         define_property :sensory_unit, as: "sensoryUnit", types: [
-          "OpenActive::Models::Schema::SuperficialAnatomy",
           "OpenActive::Models::Schema::AnatomicalStructure",
+          "OpenActive::Models::Schema::SuperficialAnatomy",
           "URI",
         ]
 

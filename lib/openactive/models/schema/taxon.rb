@@ -8,17 +8,11 @@ module OpenActive
           "schema:Taxon"
         end
 
-        # @return [OpenActive::Models::Schema::DefinedTerm,URI]
-        define_property :has_defined_term, as: "hasDefinedTerm", types: [
-          "OpenActive::Models::Schema::DefinedTerm",
-          "URI",
-        ]
-
-        # @return [URI,OpenActive::Models::Schema::Taxon,String]
+        # @return [OpenActive::Models::Schema::Taxon,String,URI]
         define_property :parent_taxon, as: "parentTaxon", types: [
-          "URI",
           "OpenActive::Models::Schema::Taxon",
           "string",
+          "URI",
         ]
 
         # @return [String,URI,OpenActive::Models::Schema::Taxon]
@@ -28,11 +22,17 @@ module OpenActive
           "OpenActive::Models::Schema::Taxon",
         ]
 
-        # @return [OpenActive::Models::Schema::PropertyValue,URI,String]
+        # @return [String,URI,OpenActive::Models::Schema::PropertyValue]
         define_property :taxon_rank, as: "taxonRank", types: [
-          "OpenActive::Models::Schema::PropertyValue",
-          "URI",
           "string",
+          "URI",
+          "OpenActive::Models::Schema::PropertyValue",
+        ]
+
+        # @return [OpenActive::Models::Schema::DefinedTerm,URI]
+        define_property :has_defined_term, as: "hasDefinedTerm", types: [
+          "OpenActive::Models::Schema::DefinedTerm",
+          "URI",
         ]
       end
     end

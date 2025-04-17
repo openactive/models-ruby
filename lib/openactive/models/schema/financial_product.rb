@@ -8,6 +8,12 @@ module OpenActive
           "schema:FinancialProduct"
         end
 
+        # @return [String,URI]
+        define_property :fees_and_commissions_specification, as: "feesAndCommissionsSpecification", types: [
+          "string",
+          "URI",
+        ]
+
         # @return [OpenActive::Models::Schema::QuantitativeValue,BigDecimal,URI,nil]
         define_property :interest_rate, as: "interestRate", types: [
           "OpenActive::Models::Schema::QuantitativeValue",
@@ -16,16 +22,10 @@ module OpenActive
           "null",
         ]
 
-        # @return [String,URI]
-        define_property :fees_and_commissions_specification, as: "feesAndCommissionsSpecification", types: [
-          "string",
-          "URI",
-        ]
-
-        # @return [BigDecimal,OpenActive::Models::Schema::QuantitativeValue,URI,nil]
+        # @return [OpenActive::Models::Schema::QuantitativeValue,BigDecimal,URI,nil]
         define_property :annual_percentage_rate, as: "annualPercentageRate", types: [
-          "Number",
           "OpenActive::Models::Schema::QuantitativeValue",
+          "Number",
           "URI",
           "null",
         ]

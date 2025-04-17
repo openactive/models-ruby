@@ -8,39 +8,8 @@ module OpenActive
           "schema:Dataset"
         end
 
-        # @return [DateTime,nil]
-        define_property :dataset_time_interval, as: "datasetTimeInterval", types: [
-          "DateTime",
-          "null",
-        ]
-
         # @return [OpenActive::Models::Schema::DataCatalog,URI]
         define_property :included_data_catalog, as: "includedDataCatalog", types: [
-          "OpenActive::Models::Schema::DataCatalog",
-          "URI",
-        ]
-
-        # @return [OpenActive::Enums::PropertyEnumeration,OpenActive::Models::Schema::StatisticalVariable,String,OpenActive::Models::Schema::PropertyValue,URI,nil]
-        define_property :variable_measured, as: "variableMeasured", types: [
-          "OpenActive::Enums::PropertyEnumeration",
-          "OpenActive::Models::Schema::StatisticalVariable",
-          "string",
-          "OpenActive::Models::Schema::PropertyValue",
-          "URI",
-          "null",
-        ]
-
-        # @return [OpenActive::Models::Schema::DefinedTerm,URI,String,OpenActive::Enums::Schema::MeasurementMethodEnum,nil]
-        define_property :measurement_technique, as: "measurementTechnique", types: [
-          "OpenActive::Models::Schema::DefinedTerm",
-          "URI",
-          "string",
-          "OpenActive::Enums::Schema::MeasurementMethodEnum",
-          "null",
-        ]
-
-        # @return [OpenActive::Models::Schema::DataCatalog,URI]
-        define_property :catalog, as: "catalog", types: [
           "OpenActive::Models::Schema::DataCatalog",
           "URI",
         ]
@@ -50,12 +19,40 @@ module OpenActive
           "string",
         ]
 
-        # @return [OpenActive::Models::Schema::DefinedTerm,URI,String,OpenActive::Enums::Schema::MeasurementMethodEnum,nil]
-        define_property :measurement_method, as: "measurementMethod", types: [
-          "OpenActive::Models::Schema::DefinedTerm",
+        # @return [OpenActive::Models::Schema::DataCatalog,URI]
+        define_property :included_in_data_catalog, as: "includedInDataCatalog", types: [
+          "OpenActive::Models::Schema::DataCatalog",
           "URI",
-          "string",
+        ]
+
+        # @return [URI,OpenActive::Models::Schema::DefinedTerm,OpenActive::Enums::Schema::MeasurementMethodEnum,String,nil]
+        define_property :measurement_method, as: "measurementMethod", types: [
+          "URI",
+          "OpenActive::Models::Schema::DefinedTerm",
           "OpenActive::Enums::Schema::MeasurementMethodEnum",
+          "string",
+          "null",
+        ]
+
+        # @return [OpenActive::Models::Schema::StatisticalVariable,OpenActive::Enums::PropertyEnumeration,String,OpenActive::Models::Schema::PropertyValue,URI,nil]
+        define_property :variable_measured, as: "variableMeasured", types: [
+          "OpenActive::Models::Schema::StatisticalVariable",
+          "OpenActive::Enums::PropertyEnumeration",
+          "string",
+          "OpenActive::Models::Schema::PropertyValue",
+          "URI",
+          "null",
+        ]
+
+        # @return [OpenActive::Models::Schema::DataCatalog,URI]
+        define_property :catalog, as: "catalog", types: [
+          "OpenActive::Models::Schema::DataCatalog",
+          "URI",
+        ]
+
+        # @return [DateTime,nil]
+        define_property :dataset_time_interval, as: "datasetTimeInterval", types: [
+          "DateTime",
           "null",
         ]
 
@@ -65,10 +62,13 @@ module OpenActive
           "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::DataCatalog,URI]
-        define_property :included_in_data_catalog, as: "includedInDataCatalog", types: [
-          "OpenActive::Models::Schema::DataCatalog",
+        # @return [String,URI,OpenActive::Models::Schema::DefinedTerm,OpenActive::Enums::Schema::MeasurementMethodEnum,nil]
+        define_property :measurement_technique, as: "measurementTechnique", types: [
+          "string",
           "URI",
+          "OpenActive::Models::Schema::DefinedTerm",
+          "OpenActive::Enums::Schema::MeasurementMethodEnum",
+          "null",
         ]
       end
     end

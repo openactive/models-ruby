@@ -9,12 +9,12 @@ module OpenActive
         end
 
         # @return [String]
-        define_property :code_value, as: "codeValue", types: [
+        define_property :coding_system, as: "codingSystem", types: [
           "string",
         ]
 
         # @return [String]
-        define_property :coding_system, as: "codingSystem", types: [
+        define_property :code_value, as: "codeValue", types: [
           "string",
         ]
       end

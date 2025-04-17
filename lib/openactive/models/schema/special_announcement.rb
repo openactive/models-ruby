@@ -8,57 +8,16 @@ module OpenActive
           "schema:SpecialAnnouncement"
         end
 
-        # @return [OpenActive::Models::Schema::LocalBusiness,OpenActive::Models::Schema::CivicStructure,URI]
-        define_property :announcement_location, as: "announcementLocation", types: [
-          "OpenActive::Models::Schema::LocalBusiness",
-          "OpenActive::Models::Schema::CivicStructure",
+        # @return [URI,OpenActive::Models::Schema::DataFeed]
+        define_property :web_feed, as: "webFeed", types: [
           "URI",
+          "OpenActive::Models::Schema::DataFeed",
         ]
 
-        # @return [OpenActive::Models::Schema::WebContent,URI]
-        define_property :news_updates_and_guidelines, as: "newsUpdatesAndGuidelines", types: [
-          "OpenActive::Models::Schema::WebContent",
-          "URI",
-        ]
-
-        # @return [OpenActive::Enums::Schema::PhysicalActivityCategory,URI,OpenActive::Models::Schema::Thing,String,OpenActive::Models::Schema::CategoryCode,nil]
-        define_property :category, as: "category", types: [
-          "OpenActive::Enums::Schema::PhysicalActivityCategory",
-          "URI",
-          "OpenActive::Models::Schema::Thing",
-          "string",
-          "OpenActive::Models::Schema::CategoryCode",
-          "null",
-        ]
-
-        # @return [URI,OpenActive::Models::Schema::WebContent]
-        define_property :school_closures_info, as: "schoolClosuresInfo", types: [
-          "URI",
-          "OpenActive::Models::Schema::WebContent",
-        ]
-
-        # @return [URI,OpenActive::Models::Schema::WebContent]
-        define_property :public_transport_closures_info, as: "publicTransportClosuresInfo", types: [
-          "URI",
-          "OpenActive::Models::Schema::WebContent",
-        ]
-
-        # @return [OpenActive::Models::Schema::GovernmentService,URI]
-        define_property :government_benefits_info, as: "governmentBenefitsInfo", types: [
-          "OpenActive::Models::Schema::GovernmentService",
-          "URI",
-        ]
-
-        # @return [URI,OpenActive::Models::Schema::WebContent]
-        define_property :getting_tested_info, as: "gettingTestedInfo", types: [
-          "URI",
-          "OpenActive::Models::Schema::WebContent",
-        ]
-
-        # @return [Date,DateTime,nil]
+        # @return [DateTime,Date,nil]
         define_property :date_posted, as: "datePosted", types: [
-          "Date",
           "DateTime",
+          "Date",
           "null",
         ]
 
@@ -68,12 +27,38 @@ module OpenActive
           "OpenActive::Models::Schema::WebContent",
         ]
 
-        # @return [URI,OpenActive::Models::Schema::WebContent,OpenActive::Models::Schema::Observation,OpenActive::Models::Schema::Dataset]
-        define_property :disease_spread_statistics, as: "diseaseSpreadStatistics", types: [
+        # @return [OpenActive::Models::Schema::WebContent,URI]
+        define_property :public_transport_closures_info, as: "publicTransportClosuresInfo", types: [
+          "OpenActive::Models::Schema::WebContent",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::Thing,OpenActive::Enums::Schema::PhysicalActivityCategory,OpenActive::Models::Schema::CategoryCode,String,URI,nil]
+        define_property :category, as: "category", types: [
+          "OpenActive::Models::Schema::Thing",
+          "OpenActive::Enums::Schema::PhysicalActivityCategory",
+          "OpenActive::Models::Schema::CategoryCode",
+          "string",
+          "URI",
+          "null",
+        ]
+
+        # @return [URI,OpenActive::Models::Schema::WebContent]
+        define_property :school_closures_info, as: "schoolClosuresInfo", types: [
           "URI",
           "OpenActive::Models::Schema::WebContent",
-          "OpenActive::Models::Schema::Observation",
-          "OpenActive::Models::Schema::Dataset",
+        ]
+
+        # @return [OpenActive::Models::Schema::WebContent,URI]
+        define_property :quarantine_guidelines, as: "quarantineGuidelines", types: [
+          "OpenActive::Models::Schema::WebContent",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::GovernmentService,URI]
+        define_property :government_benefits_info, as: "governmentBenefitsInfo", types: [
+          "OpenActive::Models::Schema::GovernmentService",
+          "URI",
         ]
 
         # @return [URI,OpenActive::Models::Schema::WebContent]
@@ -82,16 +67,31 @@ module OpenActive
           "OpenActive::Models::Schema::WebContent",
         ]
 
-        # @return [OpenActive::Models::Schema::DataFeed,URI]
-        define_property :web_feed, as: "webFeed", types: [
-          "OpenActive::Models::Schema::DataFeed",
+        # @return [OpenActive::Models::Schema::WebContent,OpenActive::Models::Schema::Dataset,OpenActive::Models::Schema::Observation,URI]
+        define_property :disease_spread_statistics, as: "diseaseSpreadStatistics", types: [
+          "OpenActive::Models::Schema::WebContent",
+          "OpenActive::Models::Schema::Dataset",
+          "OpenActive::Models::Schema::Observation",
           "URI",
         ]
 
         # @return [URI,OpenActive::Models::Schema::WebContent]
-        define_property :quarantine_guidelines, as: "quarantineGuidelines", types: [
+        define_property :getting_tested_info, as: "gettingTestedInfo", types: [
           "URI",
           "OpenActive::Models::Schema::WebContent",
+        ]
+
+        # @return [OpenActive::Models::Schema::CivicStructure,OpenActive::Models::Schema::LocalBusiness,URI]
+        define_property :announcement_location, as: "announcementLocation", types: [
+          "OpenActive::Models::Schema::CivicStructure",
+          "OpenActive::Models::Schema::LocalBusiness",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::WebContent,URI]
+        define_property :news_updates_and_guidelines, as: "newsUpdatesAndGuidelines", types: [
+          "OpenActive::Models::Schema::WebContent",
+          "URI",
         ]
       end
     end

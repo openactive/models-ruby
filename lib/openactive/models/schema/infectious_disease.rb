@@ -15,12 +15,12 @@ module OpenActive
         ]
 
         # @return [String]
-        define_property :infectious_agent, as: "infectiousAgent", types: [
+        define_property :transmission_method, as: "transmissionMethod", types: [
           "string",
         ]
 
         # @return [String]
-        define_property :transmission_method, as: "transmissionMethod", types: [
+        define_property :infectious_agent, as: "infectiousAgent", types: [
           "string",
         ]
       end

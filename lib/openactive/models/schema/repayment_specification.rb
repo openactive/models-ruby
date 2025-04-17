@@ -8,14 +8,6 @@ module OpenActive
           "schema:RepaymentSpecification"
         end
 
-        # @return [BigDecimal,OpenActive::Models::Schema::MonetaryAmount,URI,nil]
-        define_property :down_payment, as: "downPayment", types: [
-          "Number",
-          "OpenActive::Models::Schema::MonetaryAmount",
-          "URI",
-          "null",
-        ]
-
         # @return [OpenActive::Models::Schema::MonetaryAmount,URI]
         define_property :early_prepayment_penalty, as: "earlyPrepaymentPenalty", types: [
           "OpenActive::Models::Schema::MonetaryAmount",
@@ -29,13 +21,21 @@ module OpenActive
         ]
 
         # @return [BigDecimal,nil]
-        define_property :number_of_loan_payments, as: "numberOfLoanPayments", types: [
+        define_property :loan_payment_frequency, as: "loanPaymentFrequency", types: [
           "Number",
           "null",
         ]
 
+        # @return [OpenActive::Models::Schema::MonetaryAmount,BigDecimal,URI,nil]
+        define_property :down_payment, as: "downPayment", types: [
+          "OpenActive::Models::Schema::MonetaryAmount",
+          "Number",
+          "URI",
+          "null",
+        ]
+
         # @return [BigDecimal,nil]
-        define_property :loan_payment_frequency, as: "loanPaymentFrequency", types: [
+        define_property :number_of_loan_payments, as: "numberOfLoanPayments", types: [
           "Number",
           "null",
         ]

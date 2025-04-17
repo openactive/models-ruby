@@ -8,33 +8,8 @@ module OpenActive
           "schema:Recipe"
         end
 
-        # @return [String,OpenActive::Models::Schema::ItemList,OpenActive::Models::Schema::CreativeWork,URI]
-        define_property :recipe_instructions, as: "recipeInstructions", types: [
-          "string",
-          "OpenActive::Models::Schema::ItemList",
-          "OpenActive::Models::Schema::CreativeWork",
-          "URI",
-        ]
-
         # @return [String]
-        define_property :recipe_category, as: "recipeCategory", types: [
-          "string",
-        ]
-
-        # @return [OpenActive::Models::Schema::NutritionInformation,URI]
-        define_property :nutrition, as: "nutrition", types: [
-          "OpenActive::Models::Schema::NutritionInformation",
-          "URI",
-        ]
-
-        # @return [OpenActive::Enums::Schema::RestrictedDiet,nil]
-        define_property :suitable_for_diet, as: "suitableForDiet", types: [
-          "OpenActive::Enums::Schema::RestrictedDiet",
-          "null",
-        ]
-
-        # @return [String]
-        define_property :recipe_cuisine, as: "recipeCuisine", types: [
+        define_property :cooking_method, as: "cookingMethod", types: [
           "string",
         ]
 
@@ -42,6 +17,12 @@ module OpenActive
         define_property :cook_time, as: "cookTime", types: [
           "DateInterval",
           "URI",
+          "null",
+        ]
+
+        # @return [OpenActive::Enums::Schema::RestrictedDiet,nil]
+        define_property :suitable_for_diet, as: "suitableForDiet", types: [
+          "OpenActive::Enums::Schema::RestrictedDiet",
           "null",
         ]
 
@@ -53,17 +34,36 @@ module OpenActive
         ]
 
         # @return [String]
+        define_property :ingredients, as: "ingredients", types: [
+          "string",
+        ]
+
+        # @return [OpenActive::Models::Schema::CreativeWork,String,OpenActive::Models::Schema::ItemList,URI]
+        define_property :recipe_instructions, as: "recipeInstructions", types: [
+          "OpenActive::Models::Schema::CreativeWork",
+          "string",
+          "OpenActive::Models::Schema::ItemList",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::NutritionInformation,URI]
+        define_property :nutrition, as: "nutrition", types: [
+          "OpenActive::Models::Schema::NutritionInformation",
+          "URI",
+        ]
+
+        # @return [String]
+        define_property :recipe_category, as: "recipeCategory", types: [
+          "string",
+        ]
+
+        # @return [String]
         define_property :recipe_ingredient, as: "recipeIngredient", types: [
           "string",
         ]
 
         # @return [String]
-        define_property :cooking_method, as: "cookingMethod", types: [
-          "string",
-        ]
-
-        # @return [String]
-        define_property :ingredients, as: "ingredients", types: [
+        define_property :recipe_cuisine, as: "recipeCuisine", types: [
           "string",
         ]
       end

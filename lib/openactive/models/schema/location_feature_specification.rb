@@ -8,17 +8,10 @@ module OpenActive
           "schema:LocationFeatureSpecification"
         end
 
-        # @return [Date,DateTime,nil]
-        define_property :valid_from, as: "validFrom", types: [
-          "Date",
-          "DateTime",
-          "null",
-        ]
-
-        # @return [Date,DateTime,nil]
+        # @return [DateTime,Date,nil]
         define_property :valid_through, as: "validThrough", types: [
-          "Date",
           "DateTime",
+          "Date",
           "null",
         ]
 
@@ -26,6 +19,13 @@ module OpenActive
         define_property :hours_available, as: "hoursAvailable", types: [
           "OpenActive::Models::Schema::OpeningHoursSpecification",
           "URI",
+        ]
+
+        # @return [DateTime,Date,nil]
+        define_property :valid_from, as: "validFrom", types: [
+          "DateTime",
+          "Date",
+          "null",
         ]
       end
     end

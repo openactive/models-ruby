@@ -8,20 +8,20 @@ module OpenActive
           "schema:DataDownload"
         end
 
-        # @return [OpenActive::Models::Schema::DefinedTerm,URI,String,OpenActive::Enums::Schema::MeasurementMethodEnum,nil]
-        define_property :measurement_technique, as: "measurementTechnique", types: [
-          "OpenActive::Models::Schema::DefinedTerm",
+        # @return [URI,OpenActive::Models::Schema::DefinedTerm,OpenActive::Enums::Schema::MeasurementMethodEnum,String,nil]
+        define_property :measurement_method, as: "measurementMethod", types: [
           "URI",
-          "string",
+          "OpenActive::Models::Schema::DefinedTerm",
           "OpenActive::Enums::Schema::MeasurementMethodEnum",
+          "string",
           "null",
         ]
 
-        # @return [OpenActive::Models::Schema::DefinedTerm,URI,String,OpenActive::Enums::Schema::MeasurementMethodEnum,nil]
-        define_property :measurement_method, as: "measurementMethod", types: [
-          "OpenActive::Models::Schema::DefinedTerm",
-          "URI",
+        # @return [String,URI,OpenActive::Models::Schema::DefinedTerm,OpenActive::Enums::Schema::MeasurementMethodEnum,nil]
+        define_property :measurement_technique, as: "measurementTechnique", types: [
           "string",
+          "URI",
+          "OpenActive::Models::Schema::DefinedTerm",
           "OpenActive::Enums::Schema::MeasurementMethodEnum",
           "null",
         ]

@@ -9,20 +9,20 @@ module OpenActive
         end
 
         # @return [String]
+        define_property :phonetic_text, as: "phoneticText", types: [
+          "string",
+        ]
+
+        # @return [String]
         define_property :text_value, as: "textValue", types: [
           "string",
         ]
 
-        # @return [String,OpenActive::Models::Schema::Language,URI]
+        # @return [OpenActive::Models::Schema::Language,String,URI]
         define_property :in_language, as: "inLanguage", types: [
-          "string",
           "OpenActive::Models::Schema::Language",
-          "URI",
-        ]
-
-        # @return [String]
-        define_property :phonetic_text, as: "phoneticText", types: [
           "string",
+          "URI",
         ]
 
         # @return [String]

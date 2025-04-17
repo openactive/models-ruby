@@ -13,18 +13,18 @@ module OpenActive
           "string",
         ]
 
-        # @return [Date,DateTime,nil]
-        define_property :start_date, as: "startDate", types: [
-          "Date",
-          "DateTime",
-          "null",
-        ]
-
         # @return [OpenActive::Models::Schema::MonetaryAmount,BigDecimal,URI,nil]
         define_property :amount, as: "amount", types: [
           "OpenActive::Models::Schema::MonetaryAmount",
           "Number",
           "URI",
+          "null",
+        ]
+
+        # @return [DateTime,Date,nil]
+        define_property :start_date, as: "startDate", types: [
+          "DateTime",
+          "Date",
           "null",
         ]
 

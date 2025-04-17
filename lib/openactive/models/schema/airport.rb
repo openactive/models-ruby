@@ -9,12 +9,12 @@ module OpenActive
         end
 
         # @return [String]
-        define_property :icao_code, as: "icaoCode", types: [
+        define_property :iata_code, as: "iataCode", types: [
           "string",
         ]
 
         # @return [String]
-        define_property :iata_code, as: "iataCode", types: [
+        define_property :icao_code, as: "icaoCode", types: [
           "string",
         ]
       end

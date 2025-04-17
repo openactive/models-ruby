@@ -8,19 +8,18 @@ module OpenActive
           "schema:FoodEstablishment"
         end
 
-        # @return [URI,OpenActive::Models::Schema::Menu,String]
-        define_property :has_menu, as: "hasMenu", types: [
-          "URI",
+        # @return [OpenActive::Models::Schema::Menu,String,URI]
+        define_property :menu, as: "menu", types: [
           "OpenActive::Models::Schema::Menu",
           "string",
+          "URI",
         ]
 
-        # @return [String,Boolean,URI,nil]
-        define_property :accepts_reservations, as: "acceptsReservations", types: [
+        # @return [OpenActive::Models::Schema::Menu,String,URI]
+        define_property :has_menu, as: "hasMenu", types: [
+          "OpenActive::Models::Schema::Menu",
           "string",
-          "bool",
           "URI",
-          "null",
         ]
 
         # @return [OpenActive::Models::Schema::Rating,URI]
@@ -34,11 +33,12 @@ module OpenActive
           "string",
         ]
 
-        # @return [URI,OpenActive::Models::Schema::Menu,String]
-        define_property :menu, as: "menu", types: [
-          "URI",
-          "OpenActive::Models::Schema::Menu",
+        # @return [String,Boolean,URI,nil]
+        define_property :accepts_reservations, as: "acceptsReservations", types: [
           "string",
+          "bool",
+          "URI",
+          "null",
         ]
       end
     end

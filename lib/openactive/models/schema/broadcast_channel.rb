@@ -15,6 +15,17 @@ module OpenActive
           "URI",
         ]
 
+        # @return [OpenActive::Models::Schema::CableOrSatelliteService,URI]
+        define_property :in_broadcast_lineup, as: "inBroadcastLineup", types: [
+          "OpenActive::Models::Schema::CableOrSatelliteService",
+          "URI",
+        ]
+
+        # @return [String]
+        define_property :broadcast_channel_id, as: "broadcastChannelId", types: [
+          "string",
+        ]
+
         # @return [String]
         define_property :broadcast_service_tier, as: "broadcastServiceTier", types: [
           "string",
@@ -26,21 +37,10 @@ module OpenActive
           "URI",
         ]
 
-        # @return [URI,String]
+        # @return [String,URI]
         define_property :genre, as: "genre", types: [
-          "URI",
           "string",
-        ]
-
-        # @return [OpenActive::Models::Schema::CableOrSatelliteService,URI]
-        define_property :in_broadcast_lineup, as: "inBroadcastLineup", types: [
-          "OpenActive::Models::Schema::CableOrSatelliteService",
           "URI",
-        ]
-
-        # @return [String]
-        define_property :broadcast_channel_id, as: "broadcastChannelId", types: [
-          "string",
         ]
       end
     end

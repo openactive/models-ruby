@@ -8,25 +8,13 @@ module OpenActive
           "schema:MedicalCondition"
         end
 
-        # @return [OpenActive::Models::Schema::MedicalSignOrSymptom,URI]
-        define_property :sign_or_symptom, as: "signOrSymptom", types: [
-          "OpenActive::Models::Schema::MedicalSignOrSymptom",
-          "URI",
-        ]
-
         # @return [String]
-        define_property :natural_progression, as: "naturalProgression", types: [
+        define_property :pathophysiology, as: "pathophysiology", types: [
           "string",
         ]
 
-        # @return [OpenActive::Models::Schema::MedicalTherapy,URI]
-        define_property :secondary_prevention, as: "secondaryPrevention", types: [
-          "OpenActive::Models::Schema::MedicalTherapy",
-          "URI",
-        ]
-
         # @return [String]
-        define_property :epidemiology, as: "epidemiology", types: [
+        define_property :possible_complication, as: "possibleComplication", types: [
           "string",
         ]
 
@@ -36,35 +24,26 @@ module OpenActive
           "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::MedicalRiskFactor,URI]
-        define_property :risk_factor, as: "riskFactor", types: [
-          "OpenActive::Models::Schema::MedicalRiskFactor",
-          "URI",
-        ]
-
-        # @return [OpenActive::Enums::Schema::EventStatusType,OpenActive::Models::Schema::MedicalStudyStatus,String,URI,nil]
-        define_property :status, as: "status", types: [
-          "OpenActive::Enums::Schema::EventStatusType",
-          "OpenActive::Models::Schema::MedicalStudyStatus",
-          "string",
-          "URI",
-          "null",
-        ]
-
         # @return [String]
-        define_property :pathophysiology, as: "pathophysiology", types: [
+        define_property :expected_prognosis, as: "expectedPrognosis", types: [
           "string",
+        ]
+
+        # @return [OpenActive::Models::Schema::MedicalTherapy,URI]
+        define_property :secondary_prevention, as: "secondaryPrevention", types: [
+          "OpenActive::Models::Schema::MedicalTherapy",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::MedicalConditionStage,URI]
+        define_property :stage, as: "stage", types: [
+          "OpenActive::Models::Schema::MedicalConditionStage",
+          "URI",
         ]
 
         # @return [OpenActive::Models::Schema::MedicalTest,URI]
         define_property :typical_test, as: "typicalTest", types: [
           "OpenActive::Models::Schema::MedicalTest",
-          "URI",
-        ]
-
-        # @return [OpenActive::Models::Schema::DDxElement,URI]
-        define_property :differential_diagnosis, as: "differentialDiagnosis", types: [
-          "OpenActive::Models::Schema::DDxElement",
           "URI",
         ]
 
@@ -74,34 +53,55 @@ module OpenActive
           "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::AnatomicalStructure,OpenActive::Models::Schema::SuperficialAnatomy,OpenActive::Models::Schema::AnatomicalSystem,URI]
+        # @return [OpenActive::Models::Schema::DDxElement,URI]
+        define_property :differential_diagnosis, as: "differentialDiagnosis", types: [
+          "OpenActive::Models::Schema::DDxElement",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::MedicalRiskFactor,URI]
+        define_property :risk_factor, as: "riskFactor", types: [
+          "OpenActive::Models::Schema::MedicalRiskFactor",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::AnatomicalStructure,OpenActive::Models::Schema::AnatomicalSystem,OpenActive::Models::Schema::SuperficialAnatomy,URI]
         define_property :associated_anatomy, as: "associatedAnatomy", types: [
           "OpenActive::Models::Schema::AnatomicalStructure",
-          "OpenActive::Models::Schema::SuperficialAnatomy",
           "OpenActive::Models::Schema::AnatomicalSystem",
+          "OpenActive::Models::Schema::SuperficialAnatomy",
           "URI",
         ]
 
-        # @return [String]
-        define_property :possible_complication, as: "possibleComplication", types: [
-          "string",
-        ]
-
-        # @return [String]
-        define_property :expected_prognosis, as: "expectedPrognosis", types: [
-          "string",
-        ]
-
-        # @return [OpenActive::Models::Schema::MedicalConditionStage,URI]
-        define_property :stage, as: "stage", types: [
-          "OpenActive::Models::Schema::MedicalConditionStage",
+        # @return [OpenActive::Models::Schema::MedicalSignOrSymptom,URI]
+        define_property :sign_or_symptom, as: "signOrSymptom", types: [
+          "OpenActive::Models::Schema::MedicalSignOrSymptom",
           "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::MedicalStudyStatus,String,OpenActive::Enums::Schema::EventStatusType,URI,nil]
+        define_property :status, as: "status", types: [
+          "OpenActive::Models::Schema::MedicalStudyStatus",
+          "string",
+          "OpenActive::Enums::Schema::EventStatusType",
+          "URI",
+          "null",
         ]
 
         # @return [OpenActive::Models::Schema::MedicalTherapy,URI]
         define_property :primary_prevention, as: "primaryPrevention", types: [
           "OpenActive::Models::Schema::MedicalTherapy",
           "URI",
+        ]
+
+        # @return [String]
+        define_property :natural_progression, as: "naturalProgression", types: [
+          "string",
+        ]
+
+        # @return [String]
+        define_property :epidemiology, as: "epidemiology", types: [
+          "string",
         ]
       end
     end

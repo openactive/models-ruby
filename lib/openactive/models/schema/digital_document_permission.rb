@@ -14,12 +14,12 @@ module OpenActive
           "null",
         ]
 
-        # @return [OpenActive::Models::Schema::Audience,OpenActive::Models::Schema::Person,OpenActive::Models::Schema::ContactPoint,OpenActive::Models::Schema::Organization,URI]
+        # @return [OpenActive::Models::Schema::Person,OpenActive::Models::Schema::Organization,OpenActive::Models::Schema::Audience,OpenActive::Models::Schema::ContactPoint,URI]
         define_property :grantee, as: "grantee", types: [
-          "OpenActive::Models::Schema::Audience",
           "OpenActive::Models::Schema::Person",
-          "OpenActive::Models::Schema::ContactPoint",
           "OpenActive::Models::Schema::Organization",
+          "OpenActive::Models::Schema::Audience",
+          "OpenActive::Models::Schema::ContactPoint",
           "URI",
         ]
       end

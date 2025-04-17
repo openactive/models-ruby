@@ -8,10 +8,10 @@ module OpenActive
           "schema:PaymentChargeSpecification"
         end
 
-        # @return [OpenActive::Enums::Schema::PaymentMethod,nil]
+        # @return [OpenActive::Models::Schema::PaymentMethod,URI]
         define_property :applies_to_payment_method, as: "appliesToPaymentMethod", types: [
-          "OpenActive::Enums::Schema::PaymentMethod",
-          "null",
+          "OpenActive::Models::Schema::PaymentMethod",
+          "URI",
         ]
 
         # @return [OpenActive::Enums::Schema::DeliveryMethod,nil]

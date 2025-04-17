@@ -9,7 +9,7 @@ module OpenActive
         end
 
         # @return [String]
-        define_property :health_plan_coinsurance_option, as: "healthPlanCoinsuranceOption", types: [
+        define_property :health_plan_pharmacy_category, as: "healthPlanPharmacyCategory", types: [
           "string",
         ]
 
@@ -26,12 +26,12 @@ module OpenActive
         ]
 
         # @return [String]
-        define_property :health_plan_copay_option, as: "healthPlanCopayOption", types: [
+        define_property :health_plan_coinsurance_option, as: "healthPlanCoinsuranceOption", types: [
           "string",
         ]
 
         # @return [String]
-        define_property :health_plan_pharmacy_category, as: "healthPlanPharmacyCategory", types: [
+        define_property :health_plan_copay_option, as: "healthPlanCopayOption", types: [
           "string",
         ]
       end

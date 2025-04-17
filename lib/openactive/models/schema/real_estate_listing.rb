@@ -8,10 +8,10 @@ module OpenActive
           "schema:RealEstateListing"
         end
 
-        # @return [Date,DateTime,nil]
+        # @return [DateTime,Date,nil]
         define_property :date_posted, as: "datePosted", types: [
-          "Date",
           "DateTime",
+          "Date",
           "null",
         ]
 

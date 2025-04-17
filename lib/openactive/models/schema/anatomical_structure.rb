@@ -8,9 +8,10 @@ module OpenActive
           "schema:AnatomicalStructure"
         end
 
-        # @return [String]
-        define_property :body_location, as: "bodyLocation", types: [
-          "string",
+        # @return [OpenActive::Models::Schema::MedicalTherapy,URI]
+        define_property :related_therapy, as: "relatedTherapy", types: [
+          "OpenActive::Models::Schema::MedicalTherapy",
+          "URI",
         ]
 
         # @return [OpenActive::Models::Schema::AnatomicalSystem,URI]
@@ -19,9 +20,9 @@ module OpenActive
           "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::AnatomicalStructure,URI]
-        define_property :sub_structure, as: "subStructure", types: [
-          "OpenActive::Models::Schema::AnatomicalStructure",
+        # @return [OpenActive::Models::Schema::ImageObject,URI]
+        define_property :diagram, as: "diagram", types: [
+          "OpenActive::Models::Schema::ImageObject",
           "URI",
         ]
 
@@ -32,26 +33,25 @@ module OpenActive
         ]
 
         # @return [OpenActive::Models::Schema::AnatomicalStructure,URI]
+        define_property :sub_structure, as: "subStructure", types: [
+          "OpenActive::Models::Schema::AnatomicalStructure",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::AnatomicalStructure,URI]
         define_property :connected_to, as: "connectedTo", types: [
           "OpenActive::Models::Schema::AnatomicalStructure",
           "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::MedicalTherapy,URI]
-        define_property :related_therapy, as: "relatedTherapy", types: [
-          "OpenActive::Models::Schema::MedicalTherapy",
-          "URI",
+        # @return [String]
+        define_property :body_location, as: "bodyLocation", types: [
+          "string",
         ]
 
         # @return [String]
         define_property :associated_pathophysiology, as: "associatedPathophysiology", types: [
           "string",
-        ]
-
-        # @return [OpenActive::Models::Schema::ImageObject,URI]
-        define_property :diagram, as: "diagram", types: [
-          "OpenActive::Models::Schema::ImageObject",
-          "URI",
         ]
       end
     end

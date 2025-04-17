@@ -8,16 +8,16 @@ module OpenActive
           "schema:TVSeason"
         end
 
+        # @return [String,URI]
+        define_property :title_eidr, as: "titleEIDR", types: [
+          "string",
+          "URI",
+        ]
+
         # @return [OpenActive::Models::Schema::Country,URI]
         define_property :country_of_origin, as: "countryOfOrigin", types: [
           "OpenActive::Models::Schema::Country",
           "URI",
-        ]
-
-        # @return [URI,String]
-        define_property :title_eidr, as: "titleEIDR", types: [
-          "URI",
-          "string",
         ]
 
         # @return [OpenActive::Models::Schema::TVSeries,URI]

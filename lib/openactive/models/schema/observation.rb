@@ -8,41 +8,36 @@ module OpenActive
           "schema:Observation"
         end
 
-        # @return [String]
-        define_property :observation_period, as: "observationPeriod", types: [
-          "string",
+        # @return [OpenActive::Enums::PropertyEnumeration,URI,nil]
+        define_property :measured_property, as: "measuredProperty", types: [
+          "OpenActive::Enums::PropertyEnumeration",
+          "URI",
+          "null",
         ]
 
-        # @return [OpenActive::Enums::PropertyEnumeration,OpenActive::Models::Schema::StatisticalVariable,String,OpenActive::Models::Schema::PropertyValue,URI,nil]
+        # @return [URI,OpenActive::Models::Schema::DefinedTerm,OpenActive::Enums::Schema::MeasurementMethodEnum,String,nil]
+        define_property :measurement_method, as: "measurementMethod", types: [
+          "URI",
+          "OpenActive::Models::Schema::DefinedTerm",
+          "OpenActive::Enums::Schema::MeasurementMethodEnum",
+          "string",
+          "null",
+        ]
+
+        # @return [OpenActive::Models::Schema::Enumeration,URI]
+        define_property :measurement_qualifier, as: "measurementQualifier", types: [
+          "OpenActive::Models::Schema::Enumeration",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::StatisticalVariable,OpenActive::Enums::PropertyEnumeration,String,OpenActive::Models::Schema::PropertyValue,URI,nil]
         define_property :variable_measured, as: "variableMeasured", types: [
-          "OpenActive::Enums::PropertyEnumeration",
           "OpenActive::Models::Schema::StatisticalVariable",
+          "OpenActive::Enums::PropertyEnumeration",
           "string",
           "OpenActive::Models::Schema::PropertyValue",
           "URI",
           "null",
-        ]
-
-        # @return [OpenActive::Models::Schema::Thing,OpenActive::Models::Schema::Place,URI]
-        define_property :observation_about, as: "observationAbout", types: [
-          "OpenActive::Models::Schema::Thing",
-          "OpenActive::Models::Schema::Place",
-          "URI",
-        ]
-
-        # @return [OpenActive::Models::Schema::DefinedTerm,URI,String,OpenActive::Enums::Schema::MeasurementMethodEnum,nil]
-        define_property :measurement_technique, as: "measurementTechnique", types: [
-          "OpenActive::Models::Schema::DefinedTerm",
-          "URI",
-          "string",
-          "OpenActive::Enums::Schema::MeasurementMethodEnum",
-          "null",
-        ]
-
-        # @return [OpenActive::Models::Schema::StatisticalVariable,URI]
-        define_property :measurement_denominator, as: "measurementDenominator", types: [
-          "OpenActive::Models::Schema::StatisticalVariable",
-          "URI",
         ]
 
         # @return [OpenActive::Models::Schema::QuantitativeValue,URI]
@@ -51,32 +46,37 @@ module OpenActive
           "URI",
         ]
 
-        # @return [OpenActive::Enums::PropertyEnumeration,URI,nil]
-        define_property :measured_property, as: "measuredProperty", types: [
-          "OpenActive::Enums::PropertyEnumeration",
-          "URI",
-          "null",
-        ]
-
-        # @return [OpenActive::Models::Schema::DefinedTerm,URI,String,OpenActive::Enums::Schema::MeasurementMethodEnum,nil]
-        define_property :measurement_method, as: "measurementMethod", types: [
-          "OpenActive::Models::Schema::DefinedTerm",
-          "URI",
-          "string",
-          "OpenActive::Enums::Schema::MeasurementMethodEnum",
-          "null",
-        ]
-
         # @return [DateTime,nil]
         define_property :observation_date, as: "observationDate", types: [
           "DateTime",
           "null",
         ]
 
-        # @return [OpenActive::Models::Schema::Enumeration,URI]
-        define_property :measurement_qualifier, as: "measurementQualifier", types: [
-          "OpenActive::Models::Schema::Enumeration",
+        # @return [OpenActive::Models::Schema::Place,OpenActive::Models::Schema::Thing,URI]
+        define_property :observation_about, as: "observationAbout", types: [
+          "OpenActive::Models::Schema::Place",
+          "OpenActive::Models::Schema::Thing",
           "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::StatisticalVariable,URI]
+        define_property :measurement_denominator, as: "measurementDenominator", types: [
+          "OpenActive::Models::Schema::StatisticalVariable",
+          "URI",
+        ]
+
+        # @return [String,URI,OpenActive::Models::Schema::DefinedTerm,OpenActive::Enums::Schema::MeasurementMethodEnum,nil]
+        define_property :measurement_technique, as: "measurementTechnique", types: [
+          "string",
+          "URI",
+          "OpenActive::Models::Schema::DefinedTerm",
+          "OpenActive::Enums::Schema::MeasurementMethodEnum",
+          "null",
+        ]
+
+        # @return [String]
+        define_property :observation_period, as: "observationPeriod", types: [
+          "string",
         ]
       end
     end

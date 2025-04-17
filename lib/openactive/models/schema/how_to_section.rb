@@ -8,11 +8,11 @@ module OpenActive
           "schema:HowToSection"
         end
 
-        # @return [String,OpenActive::Models::Schema::ItemList,OpenActive::Models::Schema::CreativeWork,URI]
+        # @return [OpenActive::Models::Schema::ItemList,OpenActive::Models::Schema::CreativeWork,String,URI]
         define_property :steps, as: "steps", types: [
-          "string",
           "OpenActive::Models::Schema::ItemList",
           "OpenActive::Models::Schema::CreativeWork",
+          "string",
           "URI",
         ]
       end

@@ -14,15 +14,15 @@ module OpenActive
           "URI",
         ]
 
+        # @return [String]
+        define_property :issn, as: "issn", types: [
+          "string",
+        ]
+
         # @return [OpenActive::Models::Schema::BlogPosting,URI]
         define_property :blog_posts, as: "blogPosts", types: [
           "OpenActive::Models::Schema::BlogPosting",
           "URI",
-        ]
-
-        # @return [String]
-        define_property :issn, as: "issn", types: [
-          "string",
         ]
       end
     end

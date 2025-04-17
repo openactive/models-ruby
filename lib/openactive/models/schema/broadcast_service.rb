@@ -15,11 +15,20 @@ module OpenActive
           "URI",
         ]
 
-        # @return [String,OpenActive::Models::Schema::Language,URI]
-        define_property :in_language, as: "inLanguage", types: [
+        # @return [String]
+        define_property :broadcast_timezone, as: "broadcastTimezone", types: [
           "string",
-          "OpenActive::Models::Schema::Language",
+        ]
+
+        # @return [OpenActive::Models::Schema::Organization,URI]
+        define_property :broadcaster, as: "broadcaster", types: [
+          "OpenActive::Models::Schema::Organization",
           "URI",
+        ]
+
+        # @return [String]
+        define_property :call_sign, as: "callSign", types: [
+          "string",
         ]
 
         # @return [OpenActive::Models::Schema::BroadcastService,URI]
@@ -28,8 +37,19 @@ module OpenActive
           "URI",
         ]
 
+        # @return [OpenActive::Models::Schema::Organization,URI]
+        define_property :broadcast_affiliate_of, as: "broadcastAffiliateOf", types: [
+          "OpenActive::Models::Schema::Organization",
+          "URI",
+        ]
+
         # @return [String]
-        define_property :broadcast_timezone, as: "broadcastTimezone", types: [
+        define_property :video_format, as: "videoFormat", types: [
+          "string",
+        ]
+
+        # @return [String]
+        define_property :broadcast_display_name, as: "broadcastDisplayName", types: [
           "string",
         ]
 
@@ -45,31 +65,11 @@ module OpenActive
           "URI",
         ]
 
-        # @return [String]
-        define_property :broadcast_display_name, as: "broadcastDisplayName", types: [
+        # @return [OpenActive::Models::Schema::Language,String,URI]
+        define_property :in_language, as: "inLanguage", types: [
+          "OpenActive::Models::Schema::Language",
           "string",
-        ]
-
-        # @return [OpenActive::Models::Schema::Organization,URI]
-        define_property :broadcast_affiliate_of, as: "broadcastAffiliateOf", types: [
-          "OpenActive::Models::Schema::Organization",
           "URI",
-        ]
-
-        # @return [OpenActive::Models::Schema::Organization,URI]
-        define_property :broadcaster, as: "broadcaster", types: [
-          "OpenActive::Models::Schema::Organization",
-          "URI",
-        ]
-
-        # @return [String]
-        define_property :video_format, as: "videoFormat", types: [
-          "string",
-        ]
-
-        # @return [String]
-        define_property :call_sign, as: "callSign", types: [
-          "string",
         ]
       end
     end

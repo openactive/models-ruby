@@ -8,10 +8,9 @@ module OpenActive
           "schema:ScreeningEvent"
         end
 
-        # @return [OpenActive::Models::Schema::Movie,URI]
-        define_property :work_presented, as: "workPresented", types: [
-          "OpenActive::Models::Schema::Movie",
-          "URI",
+        # @return [String]
+        define_property :video_format, as: "videoFormat", types: [
+          "string",
         ]
 
         # @return [String,OpenActive::Models::Schema::Language,URI]
@@ -21,9 +20,10 @@ module OpenActive
           "URI",
         ]
 
-        # @return [String]
-        define_property :video_format, as: "videoFormat", types: [
-          "string",
+        # @return [OpenActive::Models::Schema::Movie,URI]
+        define_property :work_presented, as: "workPresented", types: [
+          "OpenActive::Models::Schema::Movie",
+          "URI",
         ]
       end
     end

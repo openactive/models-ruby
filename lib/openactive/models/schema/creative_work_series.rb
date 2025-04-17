@@ -8,16 +8,16 @@ module OpenActive
           "schema:CreativeWorkSeries"
         end
 
-        # @return [Date,DateTime,nil]
-        define_property :start_date, as: "startDate", types: [
-          "Date",
-          "DateTime",
-          "null",
-        ]
-
         # @return [String]
         define_property :issn, as: "issn", types: [
           "string",
+        ]
+
+        # @return [DateTime,Date,nil]
+        define_property :start_date, as: "startDate", types: [
+          "DateTime",
+          "Date",
+          "null",
         ]
 
         # @return [Date,DateTime,nil]

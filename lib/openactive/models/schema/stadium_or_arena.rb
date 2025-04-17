@@ -1,7 +1,7 @@
 module OpenActive
   module Models
     module Schema
-      class StadiumOrArena < ::OpenActive::Models::Schema::SportsActivityLocation
+      class StadiumOrArena < ::OpenActive::Models::Schema::CivicStructure
         # @!attribute type
         # @return [String]
         def type

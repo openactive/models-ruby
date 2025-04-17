@@ -8,14 +8,11 @@ module OpenActive
           "schema:MedicalProcedure"
         end
 
-        # @return [String]
-        define_property :body_location, as: "bodyLocation", types: [
+        # @return [String,OpenActive::Models::Schema::MedicalEntity,URI]
+        define_property :preparation, as: "preparation", types: [
           "string",
-        ]
-
-        # @return [String]
-        define_property :how_performed, as: "howPerformed", types: [
-          "string",
+          "OpenActive::Models::Schema::MedicalEntity",
+          "URI",
         ]
 
         # @return [OpenActive::Models::Schema::MedicalProcedureType,URI]
@@ -24,11 +21,16 @@ module OpenActive
           "URI",
         ]
 
-        # @return [OpenActive::Enums::Schema::EventStatusType,OpenActive::Models::Schema::MedicalStudyStatus,String,URI,nil]
+        # @return [String]
+        define_property :how_performed, as: "howPerformed", types: [
+          "string",
+        ]
+
+        # @return [OpenActive::Models::Schema::MedicalStudyStatus,String,OpenActive::Enums::Schema::EventStatusType,URI,nil]
         define_property :status, as: "status", types: [
-          "OpenActive::Enums::Schema::EventStatusType",
           "OpenActive::Models::Schema::MedicalStudyStatus",
           "string",
+          "OpenActive::Enums::Schema::EventStatusType",
           "URI",
           "null",
         ]
@@ -38,11 +40,9 @@ module OpenActive
           "string",
         ]
 
-        # @return [String,OpenActive::Models::Schema::MedicalEntity,URI]
-        define_property :preparation, as: "preparation", types: [
+        # @return [String]
+        define_property :body_location, as: "bodyLocation", types: [
           "string",
-          "OpenActive::Models::Schema::MedicalEntity",
-          "URI",
         ]
       end
     end
