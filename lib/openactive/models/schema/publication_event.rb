@@ -8,10 +8,16 @@ module OpenActive
           "schema:PublicationEvent"
         end
 
-        # @return [OpenActive::Models::Schema::Organization,OpenActive::Models::Schema::Person,URI]
+        # @return [OpenActive::Models::Schema::Person,OpenActive::Models::Schema::Organization,URI]
         define_property :published_by, as: "publishedBy", types: [
-          "OpenActive::Models::Schema::Organization",
           "OpenActive::Models::Schema::Person",
+          "OpenActive::Models::Schema::Organization",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::BroadcastService,URI]
+        define_property :published_on, as: "publishedOn", types: [
+          "OpenActive::Models::Schema::BroadcastService",
           "URI",
         ]
 
@@ -19,12 +25,6 @@ module OpenActive
         define_property :free, as: "free", types: [
           "bool",
           "null",
-        ]
-
-        # @return [OpenActive::Models::Schema::BroadcastService,URI]
-        define_property :published_on, as: "publishedOn", types: [
-          "OpenActive::Models::Schema::BroadcastService",
-          "URI",
         ]
       end
     end

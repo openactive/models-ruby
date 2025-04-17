@@ -14,15 +14,15 @@ module OpenActive
           "URI",
         ]
 
-        # @return [String]
-        define_property :transit_time_label, as: "transitTimeLabel", types: [
-          "string",
-        ]
-
         # @return [Boolean,nil]
         define_property :is_unlabelled_fallback, as: "isUnlabelledFallback", types: [
           "bool",
           "null",
+        ]
+
+        # @return [String]
+        define_property :transit_time_label, as: "transitTimeLabel", types: [
+          "string",
         ]
 
         # @return [OpenActive::Models::Schema::ShippingDeliveryTime,URI]

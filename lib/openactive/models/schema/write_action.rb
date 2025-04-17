@@ -8,16 +8,16 @@ module OpenActive
           "schema:WriteAction"
         end
 
-        # @return [String,OpenActive::Models::Schema::Language,URI]
-        define_property :in_language, as: "inLanguage", types: [
-          "string",
+        # @return [OpenActive::Models::Schema::Language,URI]
+        define_property :language, as: "language", types: [
           "OpenActive::Models::Schema::Language",
           "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::Language,URI]
-        define_property :language, as: "language", types: [
+        # @return [OpenActive::Models::Schema::Language,String,URI]
+        define_property :in_language, as: "inLanguage", types: [
           "OpenActive::Models::Schema::Language",
+          "string",
           "URI",
         ]
       end

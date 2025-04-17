@@ -8,28 +8,15 @@ module OpenActive
           "schema:MusicRelease"
         end
 
-        # @return [OpenActive::Models::Schema::Organization,OpenActive::Models::Schema::Person,URI]
-        define_property :credited_to, as: "creditedTo", types: [
-          "OpenActive::Models::Schema::Organization",
-          "OpenActive::Models::Schema::Person",
+        # @return [OpenActive::Models::Schema::MusicAlbum,URI]
+        define_property :release_of, as: "releaseOf", types: [
+          "OpenActive::Models::Schema::MusicAlbum",
           "URI",
-        ]
-
-        # @return [String]
-        define_property :catalog_number, as: "catalogNumber", types: [
-          "string",
         ]
 
         # @return [OpenActive::Enums::Schema::MusicReleaseFormatType,nil]
         define_property :music_release_format, as: "musicReleaseFormat", types: [
           "OpenActive::Enums::Schema::MusicReleaseFormatType",
-          "null",
-        ]
-
-        # @return [ActiveSupport::Duration,URI,nil]
-        define_property :duration, as: "duration", types: [
-          "DateInterval",
-          "URI",
           "null",
         ]
 
@@ -39,10 +26,23 @@ module OpenActive
           "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::MusicAlbum,URI]
-        define_property :release_of, as: "releaseOf", types: [
-          "OpenActive::Models::Schema::MusicAlbum",
+        # @return [ActiveSupport::Duration,URI,nil]
+        define_property :duration, as: "duration", types: [
+          "DateInterval",
           "URI",
+          "null",
+        ]
+
+        # @return [OpenActive::Models::Schema::Person,OpenActive::Models::Schema::Organization,URI]
+        define_property :credited_to, as: "creditedTo", types: [
+          "OpenActive::Models::Schema::Person",
+          "OpenActive::Models::Schema::Organization",
+          "URI",
+        ]
+
+        # @return [String]
+        define_property :catalog_number, as: "catalogNumber", types: [
+          "string",
         ]
       end
     end

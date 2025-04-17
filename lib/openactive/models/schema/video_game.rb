@@ -8,33 +8,17 @@ module OpenActive
           "schema:VideoGame"
         end
 
-        # @return [OpenActive::Models::Schema::Person,URI]
-        define_property :actors, as: "actors", types: [
+        # @return [OpenActive::Models::Schema::Person,OpenActive::Models::Schema::PerformingGroup,URI]
+        define_property :actor, as: "actor", types: [
           "OpenActive::Models::Schema::Person",
+          "OpenActive::Models::Schema::PerformingGroup",
           "URI",
         ]
 
-        # @return [String]
-        define_property :game_edition, as: "gameEdition", types: [
-          "string",
-        ]
-
-        # @return [URI,OpenActive::Models::Schema::Thing,String]
+        # @return [OpenActive::Models::Schema::Thing,String,URI]
         define_property :game_platform, as: "gamePlatform", types: [
-          "URI",
           "OpenActive::Models::Schema::Thing",
           "string",
-        ]
-
-        # @return [OpenActive::Models::Schema::GameServer,URI]
-        define_property :game_server, as: "gameServer", types: [
-          "OpenActive::Models::Schema::GameServer",
-          "URI",
-        ]
-
-        # @return [OpenActive::Models::Schema::CreativeWork,URI]
-        define_property :cheat_code, as: "cheatCode", types: [
-          "OpenActive::Models::Schema::CreativeWork",
           "URI",
         ]
 
@@ -44,10 +28,21 @@ module OpenActive
           "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::Person,OpenActive::Models::Schema::MusicGroup,URI]
-        define_property :music_by, as: "musicBy", types: [
+        # @return [OpenActive::Models::Schema::Person,URI]
+        define_property :actors, as: "actors", types: [
           "OpenActive::Models::Schema::Person",
-          "OpenActive::Models::Schema::MusicGroup",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::GameServer,URI]
+        define_property :game_server, as: "gameServer", types: [
+          "OpenActive::Models::Schema::GameServer",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::CreativeWork,URI]
+        define_property :game_tip, as: "gameTip", types: [
+          "OpenActive::Models::Schema::CreativeWork",
           "URI",
         ]
 
@@ -58,9 +53,14 @@ module OpenActive
         ]
 
         # @return [OpenActive::Models::Schema::CreativeWork,URI]
-        define_property :game_tip, as: "gameTip", types: [
+        define_property :cheat_code, as: "cheatCode", types: [
           "OpenActive::Models::Schema::CreativeWork",
           "URI",
+        ]
+
+        # @return [String]
+        define_property :game_edition, as: "gameEdition", types: [
+          "string",
         ]
 
         # @return [OpenActive::Enums::Schema::GamePlayMode,nil]
@@ -75,9 +75,10 @@ module OpenActive
           "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::Person,URI]
-        define_property :actor, as: "actor", types: [
+        # @return [OpenActive::Models::Schema::Person,OpenActive::Models::Schema::MusicGroup,URI]
+        define_property :music_by, as: "musicBy", types: [
           "OpenActive::Models::Schema::Person",
+          "OpenActive::Models::Schema::MusicGroup",
           "URI",
         ]
       end

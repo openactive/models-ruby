@@ -8,29 +8,29 @@ module OpenActive
           "schema:PaymentCard"
         end
 
-        # @return [OpenActive::Models::Schema::MonetaryAmount,URI]
-        define_property :floor_limit, as: "floorLimit", types: [
-          "OpenActive::Models::Schema::MonetaryAmount",
-          "URI",
-        ]
-
         # @return [Boolean,nil]
         define_property :contactless_payment, as: "contactlessPayment", types: [
           "bool",
           "null",
         ]
 
-        # @return [BigDecimal,Boolean,nil]
+        # @return [Boolean,BigDecimal,nil]
         define_property :cash_back, as: "cashBack", types: [
-          "Number",
           "bool",
+          "Number",
           "null",
         ]
 
-        # @return [BigDecimal,OpenActive::Models::Schema::MonetaryAmount,URI,nil]
-        define_property :monthly_minimum_repayment_amount, as: "monthlyMinimumRepaymentAmount", types: [
-          "Number",
+        # @return [OpenActive::Models::Schema::MonetaryAmount,URI]
+        define_property :floor_limit, as: "floorLimit", types: [
           "OpenActive::Models::Schema::MonetaryAmount",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::MonetaryAmount,BigDecimal,URI,nil]
+        define_property :monthly_minimum_repayment_amount, as: "monthlyMinimumRepaymentAmount", types: [
+          "OpenActive::Models::Schema::MonetaryAmount",
+          "Number",
           "URI",
           "null",
         ]

@@ -8,13 +8,13 @@ module OpenActive
           "schema:Recommendation"
         end
 
-        # @return [OpenActive::Enums::Schema::PhysicalActivityCategory,URI,OpenActive::Models::Schema::Thing,String,OpenActive::Models::Schema::CategoryCode,nil]
+        # @return [OpenActive::Models::Schema::Thing,OpenActive::Enums::Schema::PhysicalActivityCategory,OpenActive::Models::Schema::CategoryCode,String,URI,nil]
         define_property :category, as: "category", types: [
-          "OpenActive::Enums::Schema::PhysicalActivityCategory",
-          "URI",
           "OpenActive::Models::Schema::Thing",
-          "string",
+          "OpenActive::Enums::Schema::PhysicalActivityCategory",
           "OpenActive::Models::Schema::CategoryCode",
+          "string",
+          "URI",
           "null",
         ]
       end

@@ -1,7 +1,7 @@
 module OpenActive
   module Models
     module Schema
-      class Diet < ::OpenActive::Models::Schema::LifestyleModification
+      class Diet < ::OpenActive::Models::Schema::CreativeWork
         # @!attribute type
         # @return [String]
         def type
@@ -9,12 +9,7 @@ module OpenActive
         end
 
         # @return [String]
-        define_property :physiological_benefits, as: "physiologicalBenefits", types: [
-          "string",
-        ]
-
-        # @return [String]
-        define_property :risks, as: "risks", types: [
+        define_property :expert_considerations, as: "expertConsiderations", types: [
           "string",
         ]
 
@@ -26,12 +21,17 @@ module OpenActive
         ]
 
         # @return [String]
-        define_property :expert_considerations, as: "expertConsiderations", types: [
+        define_property :diet_features, as: "dietFeatures", types: [
           "string",
         ]
 
         # @return [String]
-        define_property :diet_features, as: "dietFeatures", types: [
+        define_property :physiological_benefits, as: "physiologicalBenefits", types: [
+          "string",
+        ]
+
+        # @return [String]
+        define_property :risks, as: "risks", types: [
           "string",
         ]
       end

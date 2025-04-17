@@ -14,23 +14,23 @@ module OpenActive
         ]
 
         # @return [String,int,nil]
+        define_property :page_start, as: "pageStart", types: [
+          "string",
+          "int",
+          "null",
+        ]
+
+        # @return [String,int,nil]
         define_property :volume_number, as: "volumeNumber", types: [
           "string",
           "int",
           "null",
         ]
 
-        # @return [String,int,nil]
+        # @return [int,String,nil]
         define_property :page_end, as: "pageEnd", types: [
-          "string",
           "int",
-          "null",
-        ]
-
-        # @return [String,int,nil]
-        define_property :page_start, as: "pageStart", types: [
           "string",
-          "int",
           "null",
         ]
       end

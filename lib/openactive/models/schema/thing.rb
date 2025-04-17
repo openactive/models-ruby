@@ -8,11 +8,11 @@ module OpenActive
           "schema:Thing"
         end
 
-        # @return [String,OpenActive::Models::Schema::PropertyValue,URI]
+        # @return [String,URI,OpenActive::Models::Schema::PropertyValue]
         define_property :identifier, as: "identifier", types: [
           "string",
-          "OpenActive::Models::Schema::PropertyValue",
           "URI",
+          "OpenActive::Models::Schema::PropertyValue",
         ]
 
         # @return [String]
@@ -28,7 +28,7 @@ module OpenActive
         ]
 
         # @return [String]
-        define_property :alternate_name, as: "alternateName", types: [
+        define_property :disambiguating_description, as: "disambiguatingDescription", types: [
           "string",
         ]
 
@@ -39,20 +39,21 @@ module OpenActive
         ]
 
         # @return [URI]
-        define_property :same_as, as: "sameAs", types: [
+        define_property :url, as: "url", types: [
           "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::Event,OpenActive::Models::Schema::CreativeWork,URI]
+        # @return [OpenActive::Models::Schema::CreativeWork,OpenActive::Models::Schema::Event,URI]
         define_property :subject_of, as: "subjectOf", types: [
-          "OpenActive::Models::Schema::Event",
           "OpenActive::Models::Schema::CreativeWork",
+          "OpenActive::Models::Schema::Event",
           "URI",
         ]
 
-        # @return [String]
-        define_property :disambiguating_description, as: "disambiguatingDescription", types: [
+        # @return [String,URI]
+        define_property :additional_type, as: "additionalType", types: [
           "string",
+          "URI",
         ]
 
         # @return [OpenActive::Models::Schema::ImageObject,URI]
@@ -62,19 +63,18 @@ module OpenActive
         ]
 
         # @return [URI]
-        define_property :url, as: "url", types: [
+        define_property :same_as, as: "sameAs", types: [
           "URI",
+        ]
+
+        # @return [String]
+        define_property :alternate_name, as: "alternateName", types: [
+          "string",
         ]
 
         # @return [OpenActive::Models::Schema::CreativeWork,URI]
         define_property :main_entity_of_page, as: "mainEntityOfPage", types: [
           "OpenActive::Models::Schema::CreativeWork",
-          "URI",
-        ]
-
-        # @return [String,URI]
-        define_property :additional_type, as: "additionalType", types: [
-          "string",
           "URI",
         ]
       end

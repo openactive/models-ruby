@@ -8,9 +8,10 @@ module OpenActive
           "schema:ProductGroup"
         end
 
-        # @return [String]
-        define_property :product_group_id, as: "productGroupID", types: [
-          "string",
+        # @return [OpenActive::Models::Schema::Product,URI]
+        define_property :has_variant, as: "hasVariant", types: [
+          "OpenActive::Models::Schema::Product",
+          "URI",
         ]
 
         # @return [OpenActive::Models::Schema::DefinedTerm,String,URI]
@@ -20,10 +21,9 @@ module OpenActive
           "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::Product,URI]
-        define_property :has_variant, as: "hasVariant", types: [
-          "OpenActive::Models::Schema::Product",
-          "URI",
+        # @return [String]
+        define_property :product_group_id, as: "productGroupID", types: [
+          "string",
         ]
       end
     end

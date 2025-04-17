@@ -8,31 +8,15 @@ module OpenActive
           "schema:Action"
         end
 
-        # @return [OpenActive::Models::Schema::PostalAddress,OpenActive::Models::Schema::Place,OpenActive::Models::Schema::VirtualLocation,String,URI]
-        define_property :location, as: "location", types: [
-          "OpenActive::Models::Schema::PostalAddress",
-          "OpenActive::Models::Schema::Place",
-          "OpenActive::Models::Schema::VirtualLocation",
-          "string",
+        # @return [OpenActive::Models::Schema::HowTo,URI]
+        define_property :action_process, as: "actionProcess", types: [
+          "OpenActive::Models::Schema::HowTo",
           "URI",
         ]
 
         # @return [OpenActive::Models::Schema::Thing,URI]
-        define_property :object, as: "object", types: [
+        define_property :result, as: "result", types: [
           "OpenActive::Models::Schema::Thing",
-          "URI",
-        ]
-
-        # @return [OpenActive::Models::Schema::ActionStatusType,URI]
-        define_property :action_status, as: "actionStatus", types: [
-          "OpenActive::Models::Schema::ActionStatusType",
-          "URI",
-        ]
-
-        # @return [OpenActive::Models::Schema::Organization,OpenActive::Models::Schema::Person,URI]
-        define_property :participant, as: "participant", types: [
-          "OpenActive::Models::Schema::Organization",
-          "OpenActive::Models::Schema::Person",
           "URI",
         ]
 
@@ -43,17 +27,39 @@ module OpenActive
           "null",
         ]
 
-        # @return [DateTime,Time,nil]
-        define_property :start_time, as: "startTime", types: [
-          "DateTime",
-          "Time",
-          "null",
+        # @return [OpenActive::Models::Schema::Person,OpenActive::Models::Schema::Organization,URI]
+        define_property :agent, as: "agent", types: [
+          "OpenActive::Models::Schema::Person",
+          "OpenActive::Models::Schema::Organization",
+          "URI",
         ]
 
         # @return [OpenActive::Models::Schema::Thing,URI]
         define_property :error, as: "error", types: [
           "OpenActive::Models::Schema::Thing",
           "URI",
+        ]
+
+        # @return [String,OpenActive::Models::Schema::Place,OpenActive::Models::Schema::VirtualLocation,OpenActive::Models::Schema::PostalAddress,URI]
+        define_property :location, as: "location", types: [
+          "string",
+          "OpenActive::Models::Schema::Place",
+          "OpenActive::Models::Schema::VirtualLocation",
+          "OpenActive::Models::Schema::PostalAddress",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::ActionStatusType,URI]
+        define_property :action_status, as: "actionStatus", types: [
+          "OpenActive::Models::Schema::ActionStatusType",
+          "URI",
+        ]
+
+        # @return [DateTime,Time,nil]
+        define_property :start_time, as: "startTime", types: [
+          "DateTime",
+          "Time",
+          "null",
         ]
 
         # @return [URI,OpenActive::Models::Schema::EntryPoint]
@@ -63,7 +69,7 @@ module OpenActive
         ]
 
         # @return [OpenActive::Models::Schema::Person,OpenActive::Models::Schema::Organization,URI]
-        define_property :provider, as: "provider", types: [
+        define_property :participant, as: "participant", types: [
           "OpenActive::Models::Schema::Person",
           "OpenActive::Models::Schema::Organization",
           "URI",
@@ -75,16 +81,16 @@ module OpenActive
           "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::Thing,URI]
-        define_property :result, as: "result", types: [
-          "OpenActive::Models::Schema::Thing",
+        # @return [OpenActive::Models::Schema::Person,OpenActive::Models::Schema::Organization,URI]
+        define_property :provider, as: "provider", types: [
+          "OpenActive::Models::Schema::Person",
+          "OpenActive::Models::Schema::Organization",
           "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::Person,OpenActive::Models::Schema::Organization,URI]
-        define_property :agent, as: "agent", types: [
-          "OpenActive::Models::Schema::Person",
-          "OpenActive::Models::Schema::Organization",
+        # @return [OpenActive::Models::Schema::Thing,URI]
+        define_property :object, as: "object", types: [
+          "OpenActive::Models::Schema::Thing",
           "URI",
         ]
       end

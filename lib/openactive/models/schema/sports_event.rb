@@ -8,14 +8,15 @@ module OpenActive
           "schema:SportsEvent"
         end
 
-        # @return [String,URI]
-        define_property :sport, as: "sport", types: [
-          "string",
+        # @return [OpenActive::Models::Schema::Person,OpenActive::Models::Schema::SportsTeam,URI]
+        define_property :competitor, as: "competitor", types: [
+          "OpenActive::Models::Schema::Person",
+          "OpenActive::Models::Schema::SportsTeam",
           "URI",
         ]
 
         # @return [OpenActive::Models::Schema::Person,OpenActive::Models::Schema::SportsTeam,URI]
-        define_property :competitor, as: "competitor", types: [
+        define_property :home_team, as: "homeTeam", types: [
           "OpenActive::Models::Schema::Person",
           "OpenActive::Models::Schema::SportsTeam",
           "URI",
@@ -28,10 +29,9 @@ module OpenActive
           "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::Person,OpenActive::Models::Schema::SportsTeam,URI]
-        define_property :home_team, as: "homeTeam", types: [
-          "OpenActive::Models::Schema::Person",
-          "OpenActive::Models::Schema::SportsTeam",
+        # @return [String,URI]
+        define_property :sport, as: "sport", types: [
+          "string",
           "URI",
         ]
       end

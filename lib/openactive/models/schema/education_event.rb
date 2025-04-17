@@ -8,24 +8,24 @@ module OpenActive
           "schema:EducationEvent"
         end
 
-        # @return [URI,OpenActive::Models::Schema::DefinedTerm,String]
+        # @return [String,URI,OpenActive::Models::Schema::DefinedTerm]
         define_property :educational_level, as: "educationalLevel", types: [
+          "string",
           "URI",
           "OpenActive::Models::Schema::DefinedTerm",
-          "string",
-        ]
-
-        # @return [String,OpenActive::Models::Schema::DefinedTerm,URI]
-        define_property :assesses, as: "assesses", types: [
-          "string",
-          "OpenActive::Models::Schema::DefinedTerm",
-          "URI",
         ]
 
         # @return [OpenActive::Models::Schema::DefinedTerm,String,URI]
-        define_property :teaches, as: "teaches", types: [
+        define_property :assesses, as: "assesses", types: [
           "OpenActive::Models::Schema::DefinedTerm",
           "string",
+          "URI",
+        ]
+
+        # @return [String,OpenActive::Models::Schema::DefinedTerm,URI]
+        define_property :teaches, as: "teaches", types: [
+          "string",
+          "OpenActive::Models::Schema::DefinedTerm",
           "URI",
         ]
       end

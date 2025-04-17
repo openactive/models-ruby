@@ -5,12 +5,14 @@ module OpenActive
     module Schema
       # Enumerates different price types, for example list price, invoice price, and sale price.
       class PriceTypeEnumeration < TypesafeEnum::Base
-        new :MSRP, "https://schema.org/MSRP"
-        new :ListPrice, "https://schema.org/ListPrice"
-        new :MinimumAdvertisedPrice, "https://schema.org/MinimumAdvertisedPrice"
-        new :InvoicePrice, "https://schema.org/InvoicePrice"
-        new :SRP, "https://schema.org/SRP"
         new :SalePrice, "https://schema.org/SalePrice"
+        new :InvoicePrice, "https://schema.org/InvoicePrice"
+        new :RegularPrice, "https://schema.org/RegularPrice"
+        new :StrikethroughPrice, "https://schema.org/StrikethroughPrice"
+        new :MinimumAdvertisedPrice, "https://schema.org/MinimumAdvertisedPrice"
+        new :SRP, "https://schema.org/SRP"
+        new :ListPrice, "https://schema.org/ListPrice"
+        new :MSRP, "https://schema.org/MSRP"
       end
     end
   end

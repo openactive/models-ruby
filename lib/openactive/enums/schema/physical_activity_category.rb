@@ -5,13 +5,13 @@ module OpenActive
     module Schema
       # Categories of physical activity, organized by physiologic classification.
       class PhysicalActivityCategory < TypesafeEnum::Base
-        new :AnaerobicActivity, "https://schema.org/AnaerobicActivity"
-        new :Balance, "https://schema.org/Balance"
-        new :Flexibility, "https://schema.org/Flexibility"
-        new :AerobicActivity, "https://schema.org/AerobicActivity"
-        new :OccupationalActivity, "https://schema.org/OccupationalActivity"
-        new :LeisureTimeActivity, "https://schema.org/LeisureTimeActivity"
         new :StrengthTraining, "https://schema.org/StrengthTraining"
+        new :AnaerobicActivity, "https://schema.org/AnaerobicActivity"
+        new :LeisureTimeActivity, "https://schema.org/LeisureTimeActivity"
+        new :AerobicActivity, "https://schema.org/AerobicActivity"
+        new :Flexibility, "https://schema.org/Flexibility"
+        new :OccupationalActivity, "https://schema.org/OccupationalActivity"
+        new :Balance, "https://schema.org/Balance"
       end
     end
   end

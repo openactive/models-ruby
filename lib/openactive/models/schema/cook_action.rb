@@ -8,16 +8,16 @@ module OpenActive
           "schema:CookAction"
         end
 
-        # @return [OpenActive::Models::Schema::FoodEvent,URI]
-        define_property :food_event, as: "foodEvent", types: [
-          "OpenActive::Models::Schema::FoodEvent",
+        # @return [OpenActive::Models::Schema::Place,OpenActive::Models::Schema::FoodEstablishment,URI]
+        define_property :food_establishment, as: "foodEstablishment", types: [
+          "OpenActive::Models::Schema::Place",
+          "OpenActive::Models::Schema::FoodEstablishment",
           "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::FoodEstablishment,OpenActive::Models::Schema::Place,URI]
-        define_property :food_establishment, as: "foodEstablishment", types: [
-          "OpenActive::Models::Schema::FoodEstablishment",
-          "OpenActive::Models::Schema::Place",
+        # @return [OpenActive::Models::Schema::FoodEvent,URI]
+        define_property :food_event, as: "foodEvent", types: [
+          "OpenActive::Models::Schema::FoodEvent",
           "URI",
         ]
 

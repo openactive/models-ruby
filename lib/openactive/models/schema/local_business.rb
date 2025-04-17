@@ -1,7 +1,7 @@
 module OpenActive
   module Models
     module Schema
-      class LocalBusiness < ::OpenActive::Models::Schema::Organization
+      class LocalBusiness < ::OpenActive::Models::Schema::Place
         # @!attribute type
         # @return [String]
         def type
@@ -9,7 +9,7 @@ module OpenActive
         end
 
         # @return [String]
-        define_property :payment_accepted, as: "paymentAccepted", types: [
+        define_property :price_range, as: "priceRange", types: [
           "string",
         ]
 
@@ -19,12 +19,7 @@ module OpenActive
         ]
 
         # @return [String]
-        define_property :price_range, as: "priceRange", types: [
-          "string",
-        ]
-
-        # @return [String]
-        define_property :currencies_accepted, as: "currenciesAccepted", types: [
+        define_property :payment_accepted, as: "paymentAccepted", types: [
           "string",
         ]
 
@@ -32,6 +27,11 @@ module OpenActive
         define_property :branch_of, as: "branchOf", types: [
           "OpenActive::Models::Schema::Organization",
           "URI",
+        ]
+
+        # @return [String]
+        define_property :currencies_accepted, as: "currenciesAccepted", types: [
+          "string",
         ]
       end
     end

@@ -9,9 +9,23 @@ module OpenActive
         end
 
         # @return [OpenActive::Models::Schema::QuantitativeValue,URI]
+        define_property :engine_power, as: "enginePower", types: [
+          "OpenActive::Models::Schema::QuantitativeValue",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::QuantitativeValue,URI]
         define_property :engine_displacement, as: "engineDisplacement", types: [
           "OpenActive::Models::Schema::QuantitativeValue",
           "URI",
+        ]
+
+        # @return [OpenActive::Enums::Schema::QualitativeValue,String,URI,nil]
+        define_property :engine_type, as: "engineType", types: [
+          "OpenActive::Enums::Schema::QualitativeValue",
+          "string",
+          "URI",
+          "null",
         ]
 
         # @return [OpenActive::Models::Schema::QuantitativeValue,URI]
@@ -20,26 +34,12 @@ module OpenActive
           "URI",
         ]
 
-        # @return [URI,String,OpenActive::Enums::Schema::QualitativeValue,nil]
-        define_property :engine_type, as: "engineType", types: [
-          "URI",
-          "string",
-          "OpenActive::Enums::Schema::QualitativeValue",
-          "null",
-        ]
-
-        # @return [OpenActive::Enums::Schema::QualitativeValue,URI,String,nil]
+        # @return [URI,OpenActive::Enums::Schema::QualitativeValue,String,nil]
         define_property :fuel_type, as: "fuelType", types: [
-          "OpenActive::Enums::Schema::QualitativeValue",
           "URI",
+          "OpenActive::Enums::Schema::QualitativeValue",
           "string",
           "null",
-        ]
-
-        # @return [OpenActive::Models::Schema::QuantitativeValue,URI]
-        define_property :engine_power, as: "enginePower", types: [
-          "OpenActive::Models::Schema::QuantitativeValue",
-          "URI",
         ]
       end
     end

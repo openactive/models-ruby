@@ -8,10 +8,10 @@ module OpenActive
           "schema:MonetaryGrant"
         end
 
-        # @return [OpenActive::Models::Schema::Organization,OpenActive::Models::Schema::Person,URI]
+        # @return [OpenActive::Models::Schema::Person,OpenActive::Models::Schema::Organization,URI]
         define_property :funder, as: "funder", types: [
-          "OpenActive::Models::Schema::Organization",
           "OpenActive::Models::Schema::Person",
+          "OpenActive::Models::Schema::Organization",
           "URI",
         ]
 

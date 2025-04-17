@@ -8,32 +8,8 @@ module OpenActive
           "schema:PropertyValueSpecification"
         end
 
-        # @return [String]
-        define_property :value_pattern, as: "valuePattern", types: [
-          "string",
-        ]
-
-        # @return [Boolean,nil]
-        define_property :value_required, as: "valueRequired", types: [
-          "bool",
-          "null",
-        ]
-
-        # @return [OpenActive::Models::Schema::Thing,String,URI]
-        define_property :default_value, as: "defaultValue", types: [
-          "OpenActive::Models::Schema::Thing",
-          "string",
-          "URI",
-        ]
-
-        # @return [Boolean,nil]
-        define_property :readonly_value, as: "readonlyValue", types: [
-          "bool",
-          "null",
-        ]
-
         # @return [BigDecimal,nil]
-        define_property :step_value, as: "stepValue", types: [
+        define_property :value_max_length, as: "valueMaxLength", types: [
           "Number",
           "null",
         ]
@@ -44,9 +20,21 @@ module OpenActive
           "null",
         ]
 
+        # @return [Boolean,nil]
+        define_property :multiple_values, as: "multipleValues", types: [
+          "bool",
+          "null",
+        ]
+
         # @return [BigDecimal,nil]
-        define_property :value_max_length, as: "valueMaxLength", types: [
+        define_property :min_value, as: "minValue", types: [
           "Number",
+          "null",
+        ]
+
+        # @return [Boolean,nil]
+        define_property :readonly_value, as: "readonlyValue", types: [
+          "bool",
           "null",
         ]
 
@@ -57,9 +45,16 @@ module OpenActive
         ]
 
         # @return [BigDecimal,nil]
-        define_property :min_value, as: "minValue", types: [
+        define_property :step_value, as: "stepValue", types: [
           "Number",
           "null",
+        ]
+
+        # @return [OpenActive::Models::Schema::Thing,String,URI]
+        define_property :default_value, as: "defaultValue", types: [
+          "OpenActive::Models::Schema::Thing",
+          "string",
+          "URI",
         ]
 
         # @return [String]
@@ -67,8 +62,13 @@ module OpenActive
           "string",
         ]
 
+        # @return [String]
+        define_property :value_pattern, as: "valuePattern", types: [
+          "string",
+        ]
+
         # @return [Boolean,nil]
-        define_property :multiple_values, as: "multipleValues", types: [
+        define_property :value_required, as: "valueRequired", types: [
           "bool",
           "null",
         ]

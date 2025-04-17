@@ -8,16 +8,11 @@ module OpenActive
           "schema:PostalAddress"
         end
 
-        # @return [OpenActive::Models::Schema::Country,String,URI]
+        # @return [String,OpenActive::Models::Schema::Country,URI]
         define_property :address_country, as: "addressCountry", types: [
+          "string",
           "OpenActive::Models::Schema::Country",
-          "string",
           "URI",
-        ]
-
-        # @return [String]
-        define_property :post_office_box_number, as: "postOfficeBoxNumber", types: [
-          "string",
         ]
 
         # @return [String]
@@ -26,7 +21,7 @@ module OpenActive
         ]
 
         # @return [String]
-        define_property :address_region, as: "addressRegion", types: [
+        define_property :address_locality, as: "addressLocality", types: [
           "string",
         ]
 
@@ -36,7 +31,12 @@ module OpenActive
         ]
 
         # @return [String]
-        define_property :address_locality, as: "addressLocality", types: [
+        define_property :post_office_box_number, as: "postOfficeBoxNumber", types: [
+          "string",
+        ]
+
+        # @return [String]
+        define_property :address_region, as: "addressRegion", types: [
           "string",
         ]
       end

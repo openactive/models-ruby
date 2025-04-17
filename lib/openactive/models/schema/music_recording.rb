@@ -14,12 +14,6 @@ module OpenActive
           "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::MusicComposition,URI]
-        define_property :recording_of, as: "recordingOf", types: [
-          "OpenActive::Models::Schema::MusicComposition",
-          "URI",
-        ]
-
         # @return [String]
         define_property :isrc_code, as: "isrcCode", types: [
           "string",
@@ -37,6 +31,12 @@ module OpenActive
           "DateInterval",
           "URI",
           "null",
+        ]
+
+        # @return [OpenActive::Models::Schema::MusicComposition,URI]
+        define_property :recording_of, as: "recordingOf", types: [
+          "OpenActive::Models::Schema::MusicComposition",
+          "URI",
         ]
 
         # @return [OpenActive::Models::Schema::MusicAlbum,URI]

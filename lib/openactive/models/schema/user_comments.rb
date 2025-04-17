@@ -8,14 +8,11 @@ module OpenActive
           "schema:UserComments"
         end
 
-        # @return [String]
-        define_property :comment_text, as: "commentText", types: [
-          "string",
-        ]
-
-        # @return [URI]
-        define_property :reply_to_url, as: "replyToUrl", types: [
-          "URI",
+        # @return [DateTime,Date,nil]
+        define_property :comment_time, as: "commentTime", types: [
+          "DateTime",
+          "Date",
+          "null",
         ]
 
         # @return [OpenActive::Models::Schema::CreativeWork,URI]
@@ -31,11 +28,14 @@ module OpenActive
           "URI",
         ]
 
-        # @return [Date,DateTime,nil]
-        define_property :comment_time, as: "commentTime", types: [
-          "Date",
-          "DateTime",
-          "null",
+        # @return [String]
+        define_property :comment_text, as: "commentText", types: [
+          "string",
+        ]
+
+        # @return [URI]
+        define_property :reply_to_url, as: "replyToUrl", types: [
+          "URI",
         ]
       end
     end

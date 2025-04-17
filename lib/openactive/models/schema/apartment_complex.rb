@@ -15,8 +15,17 @@ module OpenActive
           "null",
         ]
 
-        # @return [URI]
-        define_property :tour_booking_page, as: "tourBookingPage", types: [
+        # @return [BigDecimal,OpenActive::Models::Schema::QuantitativeValue,URI,nil]
+        define_property :number_of_bedrooms, as: "numberOfBedrooms", types: [
+          "Number",
+          "OpenActive::Models::Schema::QuantitativeValue",
+          "URI",
+          "null",
+        ]
+
+        # @return [OpenActive::Models::Schema::QuantitativeValue,URI]
+        define_property :number_of_available_accommodation_units, as: "numberOfAvailableAccommodationUnits", types: [
+          "OpenActive::Models::Schema::QuantitativeValue",
           "URI",
         ]
 
@@ -26,18 +35,9 @@ module OpenActive
           "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::QuantitativeValue,URI]
-        define_property :number_of_available_accommodation_units, as: "numberOfAvailableAccommodationUnits", types: [
-          "OpenActive::Models::Schema::QuantitativeValue",
+        # @return [URI]
+        define_property :tour_booking_page, as: "tourBookingPage", types: [
           "URI",
-        ]
-
-        # @return [OpenActive::Models::Schema::QuantitativeValue,BigDecimal,URI,nil]
-        define_property :number_of_bedrooms, as: "numberOfBedrooms", types: [
-          "OpenActive::Models::Schema::QuantitativeValue",
-          "Number",
-          "URI",
-          "null",
         ]
       end
     end

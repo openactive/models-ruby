@@ -8,23 +8,23 @@ module OpenActive
           "schema:GeoShape"
         end
 
-        # @return [OpenActive::Models::Schema::Country,String,URI]
+        # @return [String,OpenActive::Models::Schema::Country,URI]
         define_property :address_country, as: "addressCountry", types: [
-          "OpenActive::Models::Schema::Country",
           "string",
+          "OpenActive::Models::Schema::Country",
+          "URI",
+        ]
+
+        # @return [String,OpenActive::Models::Schema::PostalAddress,URI]
+        define_property :address, as: "address", types: [
+          "string",
+          "OpenActive::Models::Schema::PostalAddress",
           "URI",
         ]
 
         # @return [String]
-        define_property :box, as: "box", types: [
+        define_property :polygon, as: "polygon", types: [
           "string",
-        ]
-
-        # @return [OpenActive::Models::Schema::PostalAddress,String,URI]
-        define_property :address, as: "address", types: [
-          "OpenActive::Models::Schema::PostalAddress",
-          "string",
-          "URI",
         ]
 
         # @return [String]
@@ -33,24 +33,24 @@ module OpenActive
         ]
 
         # @return [String]
+        define_property :circle, as: "circle", types: [
+          "string",
+        ]
+
+        # @return [String,BigDecimal,nil]
+        define_property :elevation, as: "elevation", types: [
+          "string",
+          "Number",
+          "null",
+        ]
+
+        # @return [String]
         define_property :line, as: "line", types: [
           "string",
         ]
 
         # @return [String]
-        define_property :circle, as: "circle", types: [
-          "string",
-        ]
-
-        # @return [BigDecimal,String,nil]
-        define_property :elevation, as: "elevation", types: [
-          "Number",
-          "string",
-          "null",
-        ]
-
-        # @return [String]
-        define_property :polygon, as: "polygon", types: [
+        define_property :box, as: "box", types: [
           "string",
         ]
       end

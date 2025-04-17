@@ -8,6 +8,13 @@ module OpenActive
           "schema:Answer"
         end
 
+        # @return [OpenActive::Models::Schema::CreativeWork,OpenActive::Models::Schema::Comment,URI]
+        define_property :parent_item, as: "parentItem", types: [
+          "OpenActive::Models::Schema::CreativeWork",
+          "OpenActive::Models::Schema::Comment",
+          "URI",
+        ]
+
         # @return [OpenActive::Models::Schema::Comment,OpenActive::Models::Schema::WebContent,URI]
         define_property :answer_explanation, as: "answerExplanation", types: [
           "OpenActive::Models::Schema::Comment",

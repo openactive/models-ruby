@@ -8,18 +8,6 @@ module OpenActive
           "schema:Occupation"
         end
 
-        # @return [String]
-        define_property :responsibilities, as: "responsibilities", types: [
-          "string",
-        ]
-
-        # @return [String,OpenActive::Models::Schema::CategoryCode,URI]
-        define_property :occupational_category, as: "occupationalCategory", types: [
-          "string",
-          "OpenActive::Models::Schema::CategoryCode",
-          "URI",
-        ]
-
         # @return [String,OpenActive::Models::Schema::EducationalOccupationalCredential,URI]
         define_property :qualifications, as: "qualifications", types: [
           "string",
@@ -27,27 +15,39 @@ module OpenActive
           "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::DefinedTerm,String,URI]
-        define_property :skills, as: "skills", types: [
-          "OpenActive::Models::Schema::DefinedTerm",
-          "string",
-          "URI",
-        ]
-
-        # @return [String,OpenActive::Models::Schema::OccupationalExperienceRequirements,URI]
+        # @return [OpenActive::Models::Schema::OccupationalExperienceRequirements,String,URI]
         define_property :experience_requirements, as: "experienceRequirements", types: [
-          "string",
           "OpenActive::Models::Schema::OccupationalExperienceRequirements",
+          "string",
           "URI",
         ]
 
-        # @return [BigDecimal,OpenActive::Models::Schema::MonetaryAmountDistribution,OpenActive::Models::Schema::MonetaryAmount,URI,nil]
+        # @return [OpenActive::Models::Schema::MonetaryAmount,BigDecimal,OpenActive::Models::Schema::MonetaryAmountDistribution,URI,nil]
         define_property :estimated_salary, as: "estimatedSalary", types: [
+          "OpenActive::Models::Schema::MonetaryAmount",
           "Number",
           "OpenActive::Models::Schema::MonetaryAmountDistribution",
-          "OpenActive::Models::Schema::MonetaryAmount",
           "URI",
           "null",
+        ]
+
+        # @return [String,OpenActive::Models::Schema::DefinedTerm,URI]
+        define_property :skills, as: "skills", types: [
+          "string",
+          "OpenActive::Models::Schema::DefinedTerm",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::CategoryCode,String,URI]
+        define_property :occupational_category, as: "occupationalCategory", types: [
+          "OpenActive::Models::Schema::CategoryCode",
+          "string",
+          "URI",
+        ]
+
+        # @return [String]
+        define_property :responsibilities, as: "responsibilities", types: [
+          "string",
         ]
 
         # @return [OpenActive::Models::Schema::AdministrativeArea,URI]

@@ -8,12 +8,12 @@ module OpenActive
           "schema:Gene"
         end
 
-        # @return [OpenActive::Models::Schema::AnatomicalSystem,OpenActive::Models::Schema::BioChemEntity,OpenActive::Models::Schema::AnatomicalStructure,OpenActive::Models::Schema::DefinedTerm,URI]
+        # @return [OpenActive::Models::Schema::AnatomicalStructure,OpenActive::Models::Schema::AnatomicalSystem,OpenActive::Models::Schema::DefinedTerm,OpenActive::Models::Schema::BioChemEntity,URI]
         define_property :expressed_in, as: "expressedIn", types: [
-          "OpenActive::Models::Schema::AnatomicalSystem",
-          "OpenActive::Models::Schema::BioChemEntity",
           "OpenActive::Models::Schema::AnatomicalStructure",
+          "OpenActive::Models::Schema::AnatomicalSystem",
           "OpenActive::Models::Schema::DefinedTerm",
+          "OpenActive::Models::Schema::BioChemEntity",
           "URI",
         ]
 

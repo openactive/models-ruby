@@ -8,26 +8,33 @@ module OpenActive
           "schema:StatisticalVariable"
         end
 
-        # @return [OpenActive::Models::Schema::DefinedTerm,URI,String,OpenActive::Enums::Schema::MeasurementMethodEnum,nil]
-        define_property :measurement_technique, as: "measurementTechnique", types: [
-          "OpenActive::Models::Schema::DefinedTerm",
+        # @return [OpenActive::Enums::PropertyEnumeration,URI,nil]
+        define_property :measured_property, as: "measuredProperty", types: [
+          "OpenActive::Enums::PropertyEnumeration",
           "URI",
-          "string",
-          "OpenActive::Enums::Schema::MeasurementMethodEnum",
           "null",
         ]
 
-        # @return [URI,OpenActive::Enums::PropertyEnumeration,String,nil]
+        # @return [OpenActive::Enums::PropertyEnumeration,String,URI,nil]
         define_property :stat_type, as: "statType", types: [
-          "URI",
           "OpenActive::Enums::PropertyEnumeration",
           "string",
+          "URI",
           "null",
         ]
 
-        # @return [OpenActive::Models::Schema::Class,URI]
-        define_property :population_type, as: "populationType", types: [
-          "OpenActive::Models::Schema::Class",
+        # @return [URI,OpenActive::Models::Schema::DefinedTerm,OpenActive::Enums::Schema::MeasurementMethodEnum,String,nil]
+        define_property :measurement_method, as: "measurementMethod", types: [
+          "URI",
+          "OpenActive::Models::Schema::DefinedTerm",
+          "OpenActive::Enums::Schema::MeasurementMethodEnum",
+          "string",
+          "null",
+        ]
+
+        # @return [OpenActive::Models::Schema::Enumeration,URI]
+        define_property :measurement_qualifier, as: "measurementQualifier", types: [
+          "OpenActive::Models::Schema::Enumeration",
           "URI",
         ]
 
@@ -37,25 +44,18 @@ module OpenActive
           "URI",
         ]
 
-        # @return [OpenActive::Enums::PropertyEnumeration,URI,nil]
-        define_property :measured_property, as: "measuredProperty", types: [
-          "OpenActive::Enums::PropertyEnumeration",
-          "URI",
-          "null",
-        ]
-
-        # @return [OpenActive::Models::Schema::DefinedTerm,URI,String,OpenActive::Enums::Schema::MeasurementMethodEnum,nil]
-        define_property :measurement_method, as: "measurementMethod", types: [
-          "OpenActive::Models::Schema::DefinedTerm",
-          "URI",
+        # @return [String,URI,OpenActive::Models::Schema::DefinedTerm,OpenActive::Enums::Schema::MeasurementMethodEnum,nil]
+        define_property :measurement_technique, as: "measurementTechnique", types: [
           "string",
+          "URI",
+          "OpenActive::Models::Schema::DefinedTerm",
           "OpenActive::Enums::Schema::MeasurementMethodEnum",
           "null",
         ]
 
-        # @return [OpenActive::Models::Schema::Enumeration,URI]
-        define_property :measurement_qualifier, as: "measurementQualifier", types: [
-          "OpenActive::Models::Schema::Enumeration",
+        # @return [OpenActive::Models::Schema::Class,URI]
+        define_property :population_type, as: "populationType", types: [
+          "OpenActive::Models::Schema::Class",
           "URI",
         ]
       end

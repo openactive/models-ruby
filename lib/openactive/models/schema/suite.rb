@@ -8,14 +8,6 @@ module OpenActive
           "schema:Suite"
         end
 
-        # @return [OpenActive::Models::Schema::QuantitativeValue,BigDecimal,URI,nil]
-        define_property :number_of_rooms, as: "numberOfRooms", types: [
-          "OpenActive::Models::Schema::QuantitativeValue",
-          "Number",
-          "URI",
-          "null",
-        ]
-
         # @return [OpenActive::Models::Schema::QuantitativeValue,URI]
         define_property :occupancy, as: "occupancy", types: [
           "OpenActive::Models::Schema::QuantitativeValue",
@@ -28,6 +20,14 @@ module OpenActive
           "OpenActive::Models::Schema::BedDetails",
           "string",
           "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::QuantitativeValue,BigDecimal,URI,nil]
+        define_property :number_of_rooms, as: "numberOfRooms", types: [
+          "OpenActive::Models::Schema::QuantitativeValue",
+          "Number",
+          "URI",
+          "null",
         ]
       end
     end

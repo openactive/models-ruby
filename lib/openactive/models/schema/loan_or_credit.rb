@@ -8,10 +8,10 @@ module OpenActive
           "schema:LoanOrCredit"
         end
 
-        # @return [Boolean,nil]
-        define_property :renegotiable_loan, as: "renegotiableLoan", types: [
-          "bool",
-          "null",
+        # @return [OpenActive::Models::Schema::QuantitativeValue,URI]
+        define_property :loan_term, as: "loanTerm", types: [
+          "OpenActive::Models::Schema::QuantitativeValue",
+          "URI",
         ]
 
         # @return [String]
@@ -19,27 +19,28 @@ module OpenActive
           "string",
         ]
 
-        # @return [OpenActive::Models::Schema::Thing,String,URI]
-        define_property :required_collateral, as: "requiredCollateral", types: [
-          "OpenActive::Models::Schema::Thing",
-          "string",
+        # @return [OpenActive::Models::Schema::MonetaryAmount,BigDecimal,URI,nil]
+        define_property :amount, as: "amount", types: [
+          "OpenActive::Models::Schema::MonetaryAmount",
+          "Number",
           "URI",
+          "null",
         ]
 
-        # @return [OpenActive::Models::Schema::QuantitativeValue,URI]
-        define_property :loan_term, as: "loanTerm", types: [
-          "OpenActive::Models::Schema::QuantitativeValue",
-          "URI",
-        ]
-
-        # @return [URI,String]
+        # @return [String,URI]
         define_property :loan_type, as: "loanType", types: [
-          "URI",
           "string",
+          "URI",
         ]
 
         # @return [Boolean,nil]
         define_property :recourse_loan, as: "recourseLoan", types: [
+          "bool",
+          "null",
+        ]
+
+        # @return [Boolean,nil]
+        define_property :renegotiable_loan, as: "renegotiableLoan", types: [
           "bool",
           "null",
         ]
@@ -57,12 +58,11 @@ module OpenActive
           "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::MonetaryAmount,BigDecimal,URI,nil]
-        define_property :amount, as: "amount", types: [
-          "OpenActive::Models::Schema::MonetaryAmount",
-          "Number",
+        # @return [OpenActive::Models::Schema::Thing,String,URI]
+        define_property :required_collateral, as: "requiredCollateral", types: [
+          "OpenActive::Models::Schema::Thing",
+          "string",
           "URI",
-          "null",
         ]
       end
     end

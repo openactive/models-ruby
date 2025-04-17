@@ -9,6 +9,12 @@ module OpenActive
         end
 
         # @return [OpenActive::Models::Schema::Person,URI]
+        define_property :letterer, as: "letterer", types: [
+          "OpenActive::Models::Schema::Person",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::Person,URI]
         define_property :inker, as: "inker", types: [
           "OpenActive::Models::Schema::Person",
           "URI",
@@ -22,12 +28,6 @@ module OpenActive
 
         # @return [OpenActive::Models::Schema::Person,URI]
         define_property :artist, as: "artist", types: [
-          "OpenActive::Models::Schema::Person",
-          "URI",
-        ]
-
-        # @return [OpenActive::Models::Schema::Person,URI]
-        define_property :letterer, as: "letterer", types: [
           "OpenActive::Models::Schema::Person",
           "URI",
         ]

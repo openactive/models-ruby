@@ -8,9 +8,11 @@ module OpenActive
           "schema:Service"
         end
 
-        # @return [String]
-        define_property :provider_mobility, as: "providerMobility", types: [
+        # @return [OpenActive::Enums::Schema::GovernmentBenefitsType,String,nil]
+        define_property :service_type, as: "serviceType", types: [
+          "OpenActive::Enums::Schema::GovernmentBenefitsType",
           "string",
+          "null",
         ]
 
         # @return [String,URI]
@@ -19,51 +21,10 @@ module OpenActive
           "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::Thing,URI]
-        define_property :produces, as: "produces", types: [
-          "OpenActive::Models::Schema::Thing",
-          "URI",
-        ]
-
-        # @return [OpenActive::Models::Schema::ServiceChannel,URI]
-        define_property :available_channel, as: "availableChannel", types: [
-          "OpenActive::Models::Schema::ServiceChannel",
-          "URI",
-        ]
-
-        # @return [OpenActive::Models::Schema::Demand,OpenActive::Models::Schema::Offer,URI]
-        define_property :offers, as: "offers", types: [
-          "OpenActive::Models::Schema::Demand",
-          "OpenActive::Models::Schema::Offer",
-          "URI",
-        ]
-
-        # @return [OpenActive::Models::Schema::Audience,URI]
-        define_property :service_audience, as: "serviceAudience", types: [
-          "OpenActive::Models::Schema::Audience",
-          "URI",
-        ]
-
-        # @return [OpenActive::Models::Schema::AggregateRating,URI]
-        define_property :aggregate_rating, as: "aggregateRating", types: [
-          "OpenActive::Models::Schema::AggregateRating",
-          "URI",
-        ]
-
-        # @return [OpenActive::Enums::Schema::PhysicalActivityCategory,URI,OpenActive::Models::Schema::Thing,String,OpenActive::Models::Schema::CategoryCode,nil]
-        define_property :category, as: "category", types: [
-          "OpenActive::Enums::Schema::PhysicalActivityCategory",
-          "URI",
-          "OpenActive::Models::Schema::Thing",
-          "string",
-          "OpenActive::Models::Schema::CategoryCode",
-          "null",
-        ]
-
-        # @return [OpenActive::Models::Schema::Person,OpenActive::Models::Schema::Organization,URI]
-        define_property :broker, as: "broker", types: [
-          "OpenActive::Models::Schema::Person",
-          "OpenActive::Models::Schema::Organization",
+        # @return [OpenActive::Models::Schema::Product,OpenActive::Models::Schema::Service,URI]
+        define_property :is_similar_to, as: "isSimilarTo", types: [
+          "OpenActive::Models::Schema::Product",
+          "OpenActive::Models::Schema::Service",
           "URI",
         ]
 
@@ -72,22 +33,10 @@ module OpenActive
           "string",
         ]
 
-        # @return [OpenActive::Models::Schema::Service,OpenActive::Models::Schema::Product,URI]
-        define_property :is_similar_to, as: "isSimilarTo", types: [
-          "OpenActive::Models::Schema::Service",
-          "OpenActive::Models::Schema::Product",
-          "URI",
-        ]
-
-        # @return [OpenActive::Models::Schema::Thing,URI]
-        define_property :service_output, as: "serviceOutput", types: [
-          "OpenActive::Models::Schema::Thing",
-          "URI",
-        ]
-
-        # @return [OpenActive::Models::Schema::ImageObject,URI]
-        define_property :logo, as: "logo", types: [
-          "OpenActive::Models::Schema::ImageObject",
+        # @return [OpenActive::Models::Schema::Organization,OpenActive::Models::Schema::Person,URI]
+        define_property :broker, as: "broker", types: [
+          "OpenActive::Models::Schema::Organization",
+          "OpenActive::Models::Schema::Person",
           "URI",
         ]
 
@@ -97,56 +46,22 @@ module OpenActive
           "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::OpeningHoursSpecification,URI]
-        define_property :hours_available, as: "hoursAvailable", types: [
-          "OpenActive::Models::Schema::OpeningHoursSpecification",
+        # @return [OpenActive::Models::Schema::Certification,URI]
+        define_property :has_certification, as: "hasCertification", types: [
+          "OpenActive::Models::Schema::Certification",
           "URI",
-        ]
-
-        # @return [OpenActive::Models::Schema::Place,OpenActive::Models::Schema::GeoShape,OpenActive::Models::Schema::AdministrativeArea,URI]
-        define_property :service_area, as: "serviceArea", types: [
-          "OpenActive::Models::Schema::Place",
-          "OpenActive::Models::Schema::GeoShape",
-          "OpenActive::Models::Schema::AdministrativeArea",
-          "URI",
-        ]
-
-        # @return [OpenActive::Models::Schema::Service,OpenActive::Models::Schema::Product,URI]
-        define_property :is_related_to, as: "isRelatedTo", types: [
-          "OpenActive::Models::Schema::Service",
-          "OpenActive::Models::Schema::Product",
-          "URI",
-        ]
-
-        # @return [String]
-        define_property :slogan, as: "slogan", types: [
-          "string",
         ]
 
         # @return [OpenActive::Models::Schema::Audience,URI]
-        define_property :audience, as: "audience", types: [
+        define_property :service_audience, as: "serviceAudience", types: [
           "OpenActive::Models::Schema::Audience",
           "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::Brand,OpenActive::Models::Schema::Organization,URI]
-        define_property :brand, as: "brand", types: [
-          "OpenActive::Models::Schema::Brand",
-          "OpenActive::Models::Schema::Organization",
+        # @return [URI,OpenActive::Models::Schema::ImageObject]
+        define_property :logo, as: "logo", types: [
           "URI",
-        ]
-
-        # @return [OpenActive::Models::Schema::Person,OpenActive::Models::Schema::Organization,URI]
-        define_property :provider, as: "provider", types: [
-          "OpenActive::Models::Schema::Person",
-          "OpenActive::Models::Schema::Organization",
-          "URI",
-        ]
-
-        # @return [OpenActive::Models::Schema::Review,URI]
-        define_property :review, as: "review", types: [
-          "OpenActive::Models::Schema::Review",
-          "URI",
+          "OpenActive::Models::Schema::ImageObject",
         ]
 
         # @return [String,OpenActive::Models::Schema::Place,OpenActive::Models::Schema::GeoShape,OpenActive::Models::Schema::AdministrativeArea,URI]
@@ -158,11 +73,102 @@ module OpenActive
           "URI",
         ]
 
-        # @return [OpenActive::Enums::Schema::GovernmentBenefitsType,String,nil]
-        define_property :service_type, as: "serviceType", types: [
-          "OpenActive::Enums::Schema::GovernmentBenefitsType",
+        # @return [OpenActive::Models::Schema::GeoShape,OpenActive::Models::Schema::AdministrativeArea,OpenActive::Models::Schema::Place,URI]
+        define_property :service_area, as: "serviceArea", types: [
+          "OpenActive::Models::Schema::GeoShape",
+          "OpenActive::Models::Schema::AdministrativeArea",
+          "OpenActive::Models::Schema::Place",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::Organization,OpenActive::Models::Schema::Brand,URI]
+        define_property :brand, as: "brand", types: [
+          "OpenActive::Models::Schema::Organization",
+          "OpenActive::Models::Schema::Brand",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::Thing,OpenActive::Enums::Schema::PhysicalActivityCategory,OpenActive::Models::Schema::CategoryCode,String,URI,nil]
+        define_property :category, as: "category", types: [
+          "OpenActive::Models::Schema::Thing",
+          "OpenActive::Enums::Schema::PhysicalActivityCategory",
+          "OpenActive::Models::Schema::CategoryCode",
           "string",
+          "URI",
           "null",
+        ]
+
+        # @return [String]
+        define_property :provider_mobility, as: "providerMobility", types: [
+          "string",
+        ]
+
+        # @return [OpenActive::Models::Schema::Product,OpenActive::Models::Schema::Service,URI]
+        define_property :is_related_to, as: "isRelatedTo", types: [
+          "OpenActive::Models::Schema::Product",
+          "OpenActive::Models::Schema::Service",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::OpeningHoursSpecification,URI]
+        define_property :hours_available, as: "hoursAvailable", types: [
+          "OpenActive::Models::Schema::OpeningHoursSpecification",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::Review,URI]
+        define_property :review, as: "review", types: [
+          "OpenActive::Models::Schema::Review",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::Thing,URI]
+        define_property :produces, as: "produces", types: [
+          "OpenActive::Models::Schema::Thing",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::Offer,OpenActive::Models::Schema::Demand,URI]
+        define_property :offers, as: "offers", types: [
+          "OpenActive::Models::Schema::Offer",
+          "OpenActive::Models::Schema::Demand",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::Person,OpenActive::Models::Schema::Organization,URI]
+        define_property :provider, as: "provider", types: [
+          "OpenActive::Models::Schema::Person",
+          "OpenActive::Models::Schema::Organization",
+          "URI",
+        ]
+
+        # @return [String]
+        define_property :slogan, as: "slogan", types: [
+          "string",
+        ]
+
+        # @return [OpenActive::Models::Schema::AggregateRating,URI]
+        define_property :aggregate_rating, as: "aggregateRating", types: [
+          "OpenActive::Models::Schema::AggregateRating",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::Thing,URI]
+        define_property :service_output, as: "serviceOutput", types: [
+          "OpenActive::Models::Schema::Thing",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::ServiceChannel,URI]
+        define_property :available_channel, as: "availableChannel", types: [
+          "OpenActive::Models::Schema::ServiceChannel",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::Audience,URI]
+        define_property :audience, as: "audience", types: [
+          "OpenActive::Models::Schema::Audience",
+          "URI",
         ]
       end
     end

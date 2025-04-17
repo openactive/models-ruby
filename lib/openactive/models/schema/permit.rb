@@ -8,22 +8,15 @@ module OpenActive
           "schema:Permit"
         end
 
-        # @return [Date,DateTime,nil]
-        define_property :valid_from, as: "validFrom", types: [
-          "Date",
-          "DateTime",
-          "null",
+        # @return [OpenActive::Models::Schema::Organization,URI]
+        define_property :issued_by, as: "issuedBy", types: [
+          "OpenActive::Models::Schema::Organization",
+          "URI",
         ]
 
         # @return [OpenActive::Models::Schema::AdministrativeArea,URI]
         define_property :valid_in, as: "validIn", types: [
           "OpenActive::Models::Schema::AdministrativeArea",
-          "URI",
-        ]
-
-        # @return [OpenActive::Models::Schema::Service,URI]
-        define_property :issued_through, as: "issuedThrough", types: [
-          "OpenActive::Models::Schema::Service",
           "URI",
         ]
 
@@ -34,15 +27,9 @@ module OpenActive
           "null",
         ]
 
-        # @return [OpenActive::Models::Schema::Organization,URI]
-        define_property :issued_by, as: "issuedBy", types: [
-          "OpenActive::Models::Schema::Organization",
-          "URI",
-        ]
-
-        # @return [OpenActive::Models::Schema::Audience,URI]
-        define_property :permit_audience, as: "permitAudience", types: [
-          "OpenActive::Models::Schema::Audience",
+        # @return [OpenActive::Models::Schema::Service,URI]
+        define_property :issued_through, as: "issuedThrough", types: [
+          "OpenActive::Models::Schema::Service",
           "URI",
         ]
 
@@ -50,6 +37,19 @@ module OpenActive
         define_property :valid_until, as: "validUntil", types: [
           "Date",
           "null",
+        ]
+
+        # @return [DateTime,Date,nil]
+        define_property :valid_from, as: "validFrom", types: [
+          "DateTime",
+          "Date",
+          "null",
+        ]
+
+        # @return [OpenActive::Models::Schema::Audience,URI]
+        define_property :permit_audience, as: "permitAudience", types: [
+          "OpenActive::Models::Schema::Audience",
+          "URI",
         ]
       end
     end

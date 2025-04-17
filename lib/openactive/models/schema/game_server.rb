@@ -8,10 +8,10 @@ module OpenActive
           "schema:GameServer"
         end
 
-        # @return [int,nil]
-        define_property :players_online, as: "playersOnline", types: [
-          "int",
-          "null",
+        # @return [OpenActive::Models::Schema::GameServerStatus,URI]
+        define_property :server_status, as: "serverStatus", types: [
+          "OpenActive::Models::Schema::GameServerStatus",
+          "URI",
         ]
 
         # @return [OpenActive::Models::Schema::VideoGame,URI]
@@ -20,10 +20,10 @@ module OpenActive
           "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::GameServerStatus,URI]
-        define_property :server_status, as: "serverStatus", types: [
-          "OpenActive::Models::Schema::GameServerStatus",
-          "URI",
+        # @return [int,nil]
+        define_property :players_online, as: "playersOnline", types: [
+          "int",
+          "null",
         ]
       end
     end

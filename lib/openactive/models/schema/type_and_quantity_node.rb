@@ -8,9 +8,23 @@ module OpenActive
           "schema:TypeAndQuantityNode"
         end
 
-        # @return [String]
-        define_property :unit_text, as: "unitText", types: [
+        # @return [String,URI]
+        define_property :unit_code, as: "unitCode", types: [
           "string",
+          "URI",
+        ]
+
+        # @return [BigDecimal,nil]
+        define_property :amount_of_this_good, as: "amountOfThisGood", types: [
+          "Number",
+          "null",
+        ]
+
+        # @return [OpenActive::Models::Schema::Product,OpenActive::Models::Schema::Service,URI]
+        define_property :type_of_good, as: "typeOfGood", types: [
+          "OpenActive::Models::Schema::Product",
+          "OpenActive::Models::Schema::Service",
+          "URI",
         ]
 
         # @return [OpenActive::Enums::Schema::BusinessFunction,nil]
@@ -19,23 +33,9 @@ module OpenActive
           "null",
         ]
 
-        # @return [OpenActive::Models::Schema::Service,OpenActive::Models::Schema::Product,URI]
-        define_property :type_of_good, as: "typeOfGood", types: [
-          "OpenActive::Models::Schema::Service",
-          "OpenActive::Models::Schema::Product",
-          "URI",
-        ]
-
-        # @return [URI,String]
-        define_property :unit_code, as: "unitCode", types: [
-          "URI",
+        # @return [String]
+        define_property :unit_text, as: "unitText", types: [
           "string",
-        ]
-
-        # @return [BigDecimal,nil]
-        define_property :amount_of_this_good, as: "amountOfThisGood", types: [
-          "Number",
-          "null",
         ]
       end
     end

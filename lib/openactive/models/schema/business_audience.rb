@@ -15,13 +15,13 @@ module OpenActive
         ]
 
         # @return [OpenActive::Models::Schema::QuantitativeValue,URI]
-        define_property :number_of_employees, as: "numberOfEmployees", types: [
+        define_property :years_in_operation, as: "yearsInOperation", types: [
           "OpenActive::Models::Schema::QuantitativeValue",
           "URI",
         ]
 
         # @return [OpenActive::Models::Schema::QuantitativeValue,URI]
-        define_property :years_in_operation, as: "yearsInOperation", types: [
+        define_property :number_of_employees, as: "numberOfEmployees", types: [
           "OpenActive::Models::Schema::QuantitativeValue",
           "URI",
         ]

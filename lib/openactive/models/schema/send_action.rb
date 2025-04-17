@@ -8,19 +8,19 @@ module OpenActive
           "schema:SendAction"
         end
 
-        # @return [OpenActive::Models::Schema::ContactPoint,OpenActive::Models::Schema::Organization,OpenActive::Models::Schema::Audience,OpenActive::Models::Schema::Person,URI]
-        define_property :recipient, as: "recipient", types: [
-          "OpenActive::Models::Schema::ContactPoint",
-          "OpenActive::Models::Schema::Organization",
-          "OpenActive::Models::Schema::Audience",
-          "OpenActive::Models::Schema::Person",
-          "URI",
-        ]
-
         # @return [OpenActive::Enums::Schema::DeliveryMethod,nil]
         define_property :delivery_method, as: "deliveryMethod", types: [
           "OpenActive::Enums::Schema::DeliveryMethod",
           "null",
+        ]
+
+        # @return [OpenActive::Models::Schema::Audience,OpenActive::Models::Schema::ContactPoint,OpenActive::Models::Schema::Person,OpenActive::Models::Schema::Organization,URI]
+        define_property :recipient, as: "recipient", types: [
+          "OpenActive::Models::Schema::Audience",
+          "OpenActive::Models::Schema::ContactPoint",
+          "OpenActive::Models::Schema::Person",
+          "OpenActive::Models::Schema::Organization",
+          "URI",
         ]
       end
     end

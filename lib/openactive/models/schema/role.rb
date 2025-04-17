@@ -14,17 +14,17 @@ module OpenActive
           "URI",
         ]
 
-        # @return [Date,DateTime,nil]
-        define_property :start_date, as: "startDate", types: [
-          "Date",
-          "DateTime",
-          "null",
-        ]
-
         # @return [String,URI]
         define_property :role_name, as: "roleName", types: [
           "string",
           "URI",
+        ]
+
+        # @return [DateTime,Date,nil]
+        define_property :start_date, as: "startDate", types: [
+          "DateTime",
+          "Date",
+          "null",
         ]
 
         # @return [Date,DateTime,nil]

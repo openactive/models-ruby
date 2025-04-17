@@ -8,23 +8,11 @@ module OpenActive
           "schema:LodgingReservation"
         end
 
-        # @return [String]
-        define_property :lodging_unit_description, as: "lodgingUnitDescription", types: [
-          "string",
-        ]
-
         # @return [OpenActive::Models::Schema::QuantitativeValue,int,URI,nil]
-        define_property :num_children, as: "numChildren", types: [
+        define_property :num_adults, as: "numAdults", types: [
           "OpenActive::Models::Schema::QuantitativeValue",
           "int",
           "URI",
-          "null",
-        ]
-
-        # @return [Time,DateTime,nil]
-        define_property :checkout_time, as: "checkoutTime", types: [
-          "Time",
-          "DateTime",
           "null",
         ]
 
@@ -35,6 +23,13 @@ module OpenActive
           "null",
         ]
 
+        # @return [Time,DateTime,nil]
+        define_property :checkout_time, as: "checkoutTime", types: [
+          "Time",
+          "DateTime",
+          "null",
+        ]
+
         # @return [DateTime,Time,nil]
         define_property :checkin_time, as: "checkinTime", types: [
           "DateTime",
@@ -42,8 +37,13 @@ module OpenActive
           "null",
         ]
 
+        # @return [String]
+        define_property :lodging_unit_description, as: "lodgingUnitDescription", types: [
+          "string",
+        ]
+
         # @return [OpenActive::Models::Schema::QuantitativeValue,int,URI,nil]
-        define_property :num_adults, as: "numAdults", types: [
+        define_property :num_children, as: "numChildren", types: [
           "OpenActive::Models::Schema::QuantitativeValue",
           "int",
           "URI",

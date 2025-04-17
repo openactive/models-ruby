@@ -14,14 +14,9 @@ module OpenActive
           "URI",
         ]
 
-        # @return [String]
-        define_property :muscle_action, as: "muscleAction", types: [
-          "string",
-        ]
-
-        # @return [OpenActive::Models::Schema::Nerve,URI]
-        define_property :nerve, as: "nerve", types: [
-          "OpenActive::Models::Schema::Nerve",
+        # @return [OpenActive::Models::Schema::Muscle,URI]
+        define_property :antagonist, as: "antagonist", types: [
+          "OpenActive::Models::Schema::Muscle",
           "URI",
         ]
 
@@ -31,9 +26,14 @@ module OpenActive
           "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::Muscle,URI]
-        define_property :antagonist, as: "antagonist", types: [
-          "OpenActive::Models::Schema::Muscle",
+        # @return [String]
+        define_property :muscle_action, as: "muscleAction", types: [
+          "string",
+        ]
+
+        # @return [OpenActive::Models::Schema::Nerve,URI]
+        define_property :nerve, as: "nerve", types: [
+          "OpenActive::Models::Schema::Nerve",
           "URI",
         ]
       end

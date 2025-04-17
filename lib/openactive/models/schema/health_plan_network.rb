@@ -15,12 +15,12 @@ module OpenActive
         ]
 
         # @return [String]
-        define_property :health_plan_network_tier, as: "healthPlanNetworkTier", types: [
+        define_property :health_plan_network_id, as: "healthPlanNetworkId", types: [
           "string",
         ]
 
         # @return [String]
-        define_property :health_plan_network_id, as: "healthPlanNetworkId", types: [
+        define_property :health_plan_network_tier, as: "healthPlanNetworkTier", types: [
           "string",
         ]
       end

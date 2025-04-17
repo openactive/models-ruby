@@ -8,28 +8,16 @@ module OpenActive
           "schema:BioChemEntity"
         end
 
-        # @return [OpenActive::Models::Schema::Gene,URI]
-        define_property :is_encoded_by_bio_chem_entity, as: "isEncodedByBioChemEntity", types: [
-          "OpenActive::Models::Schema::Gene",
-          "URI",
-        ]
-
-        # @return [OpenActive::Models::Schema::PropertyValue,URI,OpenActive::Models::Schema::DefinedTerm]
-        define_property :has_molecular_function, as: "hasMolecularFunction", types: [
-          "OpenActive::Models::Schema::PropertyValue",
+        # @return [URI,OpenActive::Models::Schema::DefinedTerm,OpenActive::Models::Schema::PropertyValue]
+        define_property :is_located_in_subcellular_location, as: "isLocatedInSubcellularLocation", types: [
           "URI",
           "OpenActive::Models::Schema::DefinedTerm",
+          "OpenActive::Models::Schema::PropertyValue",
         ]
 
-        # @return [OpenActive::Models::Schema::BioChemEntity,URI]
-        define_property :bio_chem_similarity, as: "bioChemSimilarity", types: [
-          "OpenActive::Models::Schema::BioChemEntity",
-          "URI",
-        ]
-
-        # @return [OpenActive::Models::Schema::BioChemEntity,URI]
-        define_property :has_bio_chem_entity_part, as: "hasBioChemEntityPart", types: [
-          "OpenActive::Models::Schema::BioChemEntity",
+        # @return [OpenActive::Models::Schema::Grant,URI]
+        define_property :funding, as: "funding", types: [
+          "OpenActive::Models::Schema::Grant",
           "URI",
         ]
 
@@ -39,9 +27,16 @@ module OpenActive
           "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::DefinedTerm,URI]
-        define_property :biological_role, as: "biologicalRole", types: [
+        # @return [OpenActive::Models::Schema::PropertyValue,URI,OpenActive::Models::Schema::DefinedTerm]
+        define_property :is_involved_in_biological_process, as: "isInvolvedInBiologicalProcess", types: [
+          "OpenActive::Models::Schema::PropertyValue",
+          "URI",
           "OpenActive::Models::Schema::DefinedTerm",
+        ]
+
+        # @return [OpenActive::Models::Schema::BioChemEntity,URI]
+        define_property :has_bio_chem_entity_part, as: "hasBioChemEntityPart", types: [
+          "OpenActive::Models::Schema::BioChemEntity",
           "URI",
         ]
 
@@ -51,46 +46,51 @@ module OpenActive
           "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::PropertyValue,OpenActive::Models::Schema::DefinedTerm,URI]
-        define_property :is_located_in_subcellular_location, as: "isLocatedInSubcellularLocation", types: [
-          "OpenActive::Models::Schema::PropertyValue",
-          "OpenActive::Models::Schema::DefinedTerm",
+        # @return [OpenActive::Models::Schema::BioChemEntity,URI]
+        define_property :bio_chem_similarity, as: "bioChemSimilarity", types: [
+          "OpenActive::Models::Schema::BioChemEntity",
           "URI",
         ]
 
-        # @return [OpenActive::Models::Schema::PropertyValue,URI,String]
+        # @return [String,URI,OpenActive::Models::Schema::PropertyValue]
         define_property :has_representation, as: "hasRepresentation", types: [
-          "OpenActive::Models::Schema::PropertyValue",
-          "URI",
           "string",
+          "URI",
+          "OpenActive::Models::Schema::PropertyValue",
         ]
 
-        # @return [OpenActive::Models::Schema::Grant,URI]
-        define_property :funding, as: "funding", types: [
-          "OpenActive::Models::Schema::Grant",
+        # @return [OpenActive::Models::Schema::Gene,URI]
+        define_property :is_encoded_by_bio_chem_entity, as: "isEncodedByBioChemEntity", types: [
+          "OpenActive::Models::Schema::Gene",
           "URI",
         ]
 
         # @return [URI,OpenActive::Models::Schema::DefinedTerm,OpenActive::Models::Schema::PropertyValue]
-        define_property :is_involved_in_biological_process, as: "isInvolvedInBiologicalProcess", types: [
+        define_property :has_molecular_function, as: "hasMolecularFunction", types: [
           "URI",
           "OpenActive::Models::Schema::DefinedTerm",
           "OpenActive::Models::Schema::PropertyValue",
         ]
 
-        # @return [URI,OpenActive::Models::Schema::DefinedTerm,OpenActive::Models::Schema::Taxon,String]
+        # @return [OpenActive::Models::Schema::DefinedTerm,URI]
+        define_property :biological_role, as: "biologicalRole", types: [
+          "OpenActive::Models::Schema::DefinedTerm",
+          "URI",
+        ]
+
+        # @return [String,URI,OpenActive::Models::Schema::DefinedTerm,OpenActive::Models::Schema::Taxon]
         define_property :taxonomic_range, as: "taxonomicRange", types: [
+          "string",
           "URI",
           "OpenActive::Models::Schema::DefinedTerm",
           "OpenActive::Models::Schema::Taxon",
-          "string",
         ]
 
-        # @return [OpenActive::Models::Schema::MedicalCondition,OpenActive::Models::Schema::PropertyValue,URI]
+        # @return [URI,OpenActive::Models::Schema::PropertyValue,OpenActive::Models::Schema::MedicalCondition]
         define_property :associated_disease, as: "associatedDisease", types: [
-          "OpenActive::Models::Schema::MedicalCondition",
-          "OpenActive::Models::Schema::PropertyValue",
           "URI",
+          "OpenActive::Models::Schema::PropertyValue",
+          "OpenActive::Models::Schema::MedicalCondition",
         ]
       end
     end

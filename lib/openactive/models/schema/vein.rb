@@ -8,12 +8,6 @@ module OpenActive
           "schema:Vein"
         end
 
-        # @return [OpenActive::Models::Schema::AnatomicalStructure,URI]
-        define_property :tributary, as: "tributary", types: [
-          "OpenActive::Models::Schema::AnatomicalStructure",
-          "URI",
-        ]
-
         # @return [OpenActive::Models::Schema::AnatomicalSystem,OpenActive::Models::Schema::AnatomicalStructure,URI]
         define_property :region_drained, as: "regionDrained", types: [
           "OpenActive::Models::Schema::AnatomicalSystem",
@@ -24,6 +18,12 @@ module OpenActive
         # @return [OpenActive::Models::Schema::Vessel,URI]
         define_property :drains_to, as: "drainsTo", types: [
           "OpenActive::Models::Schema::Vessel",
+          "URI",
+        ]
+
+        # @return [OpenActive::Models::Schema::AnatomicalStructure,URI]
+        define_property :tributary, as: "tributary", types: [
+          "OpenActive::Models::Schema::AnatomicalStructure",
           "URI",
         ]
       end

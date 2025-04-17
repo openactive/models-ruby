@@ -8,9 +8,11 @@ module OpenActive
           "schema:TradeAction"
         end
 
-        # @return [String]
-        define_property :price_currency, as: "priceCurrency", types: [
+        # @return [String,BigDecimal,nil]
+        define_property :price, as: "price", types: [
           "string",
+          "Number",
+          "null",
         ]
 
         # @return [OpenActive::Models::Schema::PriceSpecification,URI]
@@ -19,11 +21,9 @@ module OpenActive
           "URI",
         ]
 
-        # @return [BigDecimal,String,nil]
-        define_property :price, as: "price", types: [
-          "Number",
+        # @return [String]
+        define_property :price_currency, as: "priceCurrency", types: [
           "string",
-          "null",
         ]
       end
     end

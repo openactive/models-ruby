@@ -9,12 +9,6 @@ module OpenActive
         end
 
         # @return [DateTime,nil]
-        define_property :coverage_end_time, as: "coverageEndTime", types: [
-          "DateTime",
-          "null",
-        ]
-
-        # @return [DateTime,nil]
         define_property :coverage_start_time, as: "coverageStartTime", types: [
           "DateTime",
           "null",
@@ -24,6 +18,12 @@ module OpenActive
         define_property :live_blog_update, as: "liveBlogUpdate", types: [
           "OpenActive::Models::Schema::BlogPosting",
           "URI",
+        ]
+
+        # @return [DateTime,nil]
+        define_property :coverage_end_time, as: "coverageEndTime", types: [
+          "DateTime",
+          "null",
         ]
       end
     end
