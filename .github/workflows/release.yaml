@@ -10,14 +10,14 @@ jobs:
 
     steps:
     - name: Checkout
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
       with:
         token: ${{ secrets.PUBLIC_REPO_ACCESS_TOKEN }}
 
     - name: Identify
       run: |
-        git config user.name OpenActive Bot
-        git config user.email hello@openactive.io
+        git config --global user.name "openactive[bot]"
+        git config --global user.email 207210293+openactive[bot]@users.noreply.github.com
 
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1
